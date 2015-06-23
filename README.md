@@ -1,6 +1,6 @@
-<p align="center"><img src="http://github.fabriziobrancati.com/bfkit/resources/banner-new-swift.png" alt="BFKit Banner"></p>
+<p align="center"><img src="http://github.fabriziobrancati.com/bfkit/resources/banner-swift.png" alt="BFKit Swift Banner"></p>
 
-[![Platform](https://img.shields.io/badge/platform-iOS-black.svg)](http://cocoadocs.org/docsets/BFKit)
+[![Platform](https://img.shields.io/badge/platform-iOS-000000.svg)](http://cocoadocs.org/docsets/BFKit)
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)](https://developer.apple.com/swift/)
 [![License](https://img.shields.io/badge/license-MIT%20License-lightgrey.svg)](https://github.com/FabrizioBrancati/BBFKit-Swift/blob/master/LICENSE)
 
@@ -59,8 +59,6 @@ I'd love to see your ideas for improving this library.
 
 The best way to contribute is by submitting a pull request.
 I'll do my best to respond to you as soon as possible.
-
-You can also submit a new Github issue if you find bugs or have questions.
 
 Please make sure to follow my general coding style for new features!
 
