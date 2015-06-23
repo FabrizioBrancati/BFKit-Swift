@@ -1,10 +1,10 @@
-<p align="center"><img src="http://github.fabriziobrancati.com/bfkit/resources/banner-new.png" alt="BFKit Banner"></p>
+<p align="center"><img src="http://github.fabriziobrancati.com/bfkit/resources/banner-new-swift.png" alt="BFKit Banner"></p>
 
-[![Platform](https://img.shields.io/badge/platform-iOS-orange.svg)](http://cocoadocs.org/docsets/BFKit)
-[![Language](https://img.shields.io/badge/language-Swift-orange.svg)](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html)
-[![License](https://img.shields.io/badge/license-MIT%20License-lightgrey.svg)](https://github.com/FabrizioBrancati/BFKit/blob/master/LICENSE)
+[![Platform](https://img.shields.io/badge/platform-iOS-black.svg)](http://cocoadocs.org/docsets/BFKit)
+[![Language](https://img.shields.io/badge/language-Swift-orange.svg)](https://developer.apple.com/swift/)
+[![License](https://img.shields.io/badge/license-MIT%20License-lightgrey.svg)](https://github.com/FabrizioBrancati/BBFKit-Swift/blob/master/LICENSE)
 
-###Objective-C
+###Objective-C <img src="http://github.fabriziobrancati.com/bfkit/resources/objc-icon.png" height="20" width="20">
 If you are looking for Objective-C version check it out here: **[BFKit](https://github.com/FabrizioBrancati/BFKit)**
 
 What does it do :question:
@@ -43,7 +43,8 @@ It also adds some useful method to some classes like:
 
 Requirements :iphone:
 =====================
-- iOS SDK **8.0** or later
+- iOS SDK **7.0** or later
+- **Swift 1.2** and **Xcode 6.3** or later
 
 Communication :speaker:
 =======================
