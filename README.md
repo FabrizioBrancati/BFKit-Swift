@@ -1,14 +1,11 @@
 <p align="center"><img src="http://github.fabriziobrancati.com/bfkit/resources/banner-new.png" alt="BFKit Banner"></p>
 
-[![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit)
-[![Issues](https://img.shields.io/github/issues/FabrizioBrancati/BFKit.svg?style=flat)](https://github.com/FabrizioBrancati/BFKit/issues)
-[![Version](https://img.shields.io/cocoapods/v/BFKit.svg?style=flat)](http://cocoadocs.org/docsets/BFKit)
 [![Platform](https://img.shields.io/badge/platform-iOS-orange.svg)](http://cocoadocs.org/docsets/BFKit)
-[![Language](https://img.shields.io/badge/language-Objective--C-blue.svg)](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html)
+[![Language](https://img.shields.io/badge/language-Swift-orange.svg)](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html)
 [![License](https://img.shields.io/badge/license-MIT%20License-lightgrey.svg)](https://github.com/FabrizioBrancati/BFKit/blob/master/LICENSE)
 
-Objective-C
-===========
+###Objective-C
+==============
 If you are looking for Objective-C version check it out here: [BFKit](https://github.com/FabrizioBrancati/BFKit)
 
 What does it do :question:
@@ -20,12 +17,12 @@ For example you can use every iOS font with just an enum!
 It also adds some useful method to some classes like:
 
 ###BFKit:
-- [BFApp](http://cocoadocs.org/docsets/BFKit/1.5.3/Classes/BFApp.html)
-- [BFButton](http://cocoadocs.org/docsets/BFKit/1.5.3/Classes/BFButton.html)
-- [BFLog](http://cocoadocs.org/docsets/BFKit/1.5.3/Classes/BFLog.html)
-- [BFPassword](http://cocoadocs.org/docsets/BFKit/1.5.3/Classes/BFPassword.html)
-- [BFSystemSound](http://cocoadocs.org/docsets/BFKit/1.5.3/Classes/BFSystemSound.html)
-- [BFTouchID](http://cocoadocs.org/docsets/BFKit/1.5.3/Classes/BFTouchID.html) (iOS 8 or later)
+- [BFApp
+- BFButton
+- BFLog
+- BFPassword
+- BFSystemSound
+- BFTouchID
 
 ###Foundation:
 - Array
