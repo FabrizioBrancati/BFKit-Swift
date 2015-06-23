@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/license-MIT%20License-lightgrey.svg)](https://github.com/FabrizioBrancati/BFKit/blob/master/LICENSE)
 
 ###Objective-C
-If you are looking for Objective-C version check it out here: [BFKit](https://github.com/FabrizioBrancati/BFKit)
+If you are looking for Objective-C version check it out here: **[BFKit](https://github.com/FabrizioBrancati/BFKit)**
 
 What does it do :question:
 ===========================
@@ -16,7 +16,7 @@ For example you can use every iOS font with just an enum!
 It also adds some useful method to some classes like:
 
 ###BFKit:
-- [BFApp
+- BFApp
 - BFButton
 - BFLog
 - BFPassword
