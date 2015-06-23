@@ -28,7 +28,7 @@ import Foundation
 import UIKit
 
 /// Get App name
-let APP_NAME: String = NSBundle.mainBundle().infoDictionary!["CFBundleName"] as! String
+let APP_NAME: String = NSBundle.mainBundle().infoDictionary!["CFBundleDisplayName"] as! String
 
 /// Get App build
 let APP_BUILD: String = NSBundle.mainBundle().infoDictionary!["CFBundleVersion"] as! String
