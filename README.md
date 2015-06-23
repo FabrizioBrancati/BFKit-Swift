@@ -5,7 +5,6 @@
 [![License](https://img.shields.io/badge/license-MIT%20License-lightgrey.svg)](https://github.com/FabrizioBrancati/BFKit/blob/master/LICENSE)
 
 ###Objective-C
-==============
 If you are looking for Objective-C version check it out here: [BFKit](https://github.com/FabrizioBrancati/BFKit)
 
 What does it do :question:
@@ -51,7 +50,7 @@ Communication :speaker:
 - If you need help, use Stack Overflow.
 - If you found a bug, open an issue.
 - If you have a feature request, open an issue.
-- If you want to contribute, see [Contributing](https://github.com/FabrizioBrancati/BFKit#contributing-octocat) section.
+- If you want to contribute, see [Contributing](https://github.com/FabrizioBrancati/BFKit-Swift#contributing-octocat) section.
 
 Contributing :octocat:
 ======================
