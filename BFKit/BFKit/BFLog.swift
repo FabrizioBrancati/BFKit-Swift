@@ -55,9 +55,9 @@ import UIKit
         }
         
         let filenameNoExt = NSString(UTF8String: filename)!.lastPathComponent.stringByDeletingPathExtension
-        let log = "(\(function)) (\(filename):\(line) \(message)"
+        let log = "(\(function)) (\(filenameNoExt):\(line) \(message)"
         let timestamp = NSDate.dateInformationDescriptionWithInformation(NSDate().dateInformation(), dateSeparator: "-", usFormat: true)
-        print("\(timestamp) (\(function)) (\(filename):\(line)) \(message)")
+        print("\(timestamp) (\(function)) (\(filenameNoExt):\(line)) \(message)")
         
         BFLogClass.detailedLogString += log
     }
