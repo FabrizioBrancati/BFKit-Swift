@@ -42,9 +42,9 @@ Use BFLocalizedString to use the string translated by BFKit
 :param: key     The key string
 :param: comment An optional comment
 */
-func BFLocalizedString(key: String, comment: String = "") -> String
+func BFLocalizedString(key: String, comment: String? = nil) -> String
 {
-    return NSBundle.mainBundle().localizedStringForKey(key, value: "", table: "BFKit")
+    return NSBundle.mainBundle().localizedStringForKey(key, value: nil, table: "BFKit")
 }
 
 /// Get AppDelegate
