@@ -13,10 +13,11 @@
 		49354AE91B3AFDC300C05AED /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49354AE81B3AFDC300C05AED /* InfoViewController.swift */; };
 		4974E2571AED3DD50090F642 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4974E2561AED3DD50090F642 /* AppDelegate.swift */; };
 		4974E2591AED3DD50090F642 /* UserInterfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4974E2581AED3DD50090F642 /* UserInterfaceViewController.swift */; };
-		4974E25C1AED3DD50090F642 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4974E25A1AED3DD50090F642 /* Main.storyboard */; };
 		4974E25E1AED3DD50090F642 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4974E25D1AED3DD50090F642 /* Images.xcassets */; };
 		4974E26D1AED3DD50090F642 /* BFKitDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4974E26C1AED3DD50090F642 /* BFKitDemoTests.swift */; };
 		497B57B01B39E42200CC09C7 /* BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B57AF1B39E42200CC09C7 /* BFKit.swift */; };
+		49919AA61B3B2D3C00A9E55D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49919AA51B3B2D3C00A9E55D /* Main.storyboard */; };
+		49919AB11B3B2D6600A9E55D /* BFKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49919AA81B3B2D6600A9E55D /* BFKit.strings */; };
 		499DF7AC1B308BEE00C1CEBD /* NSMutableArray+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7AB1B308BEE00C1CEBD /* NSMutableArray+BFKit.swift */; };
 		499DF7AE1B31934C00C1CEBD /* NSMutableDictionary+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7AD1B31934C00C1CEBD /* NSMutableDictionary+BFKit.swift */; };
 		499DF7B01B31A6B200C1CEBD /* NSNumber+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7AF1B31A6B200C1CEBD /* NSNumber+BFKit.swift */; };
@@ -54,16 +55,24 @@
 		49354AE41B3AF8BF00C05AED /* FoundationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationViewController.swift; sourceTree = "<group>"; };
 		49354AE61B3AF99600C05AED /* BFKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFKitViewController.swift; sourceTree = "<group>"; };
 		49354AE81B3AFDC300C05AED /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		4974E2511AED3DD50090F642 /* BFKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = BFKitDemo.app; path = BFKitDemoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4974E2511AED3DD50090F642 /* BFKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BFKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4974E2551AED3DD50090F642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4974E2561AED3DD50090F642 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4974E2581AED3DD50090F642 /* UserInterfaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterfaceViewController.swift; sourceTree = "<group>"; };
-		4974E25B1AED3DD50090F642 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4974E25D1AED3DD50090F642 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4974E2661AED3DD50090F642 /* BFKitDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BFKitDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4974E26B1AED3DD50090F642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4974E26C1AED3DD50090F642 /* BFKitDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFKitDemoTests.swift; sourceTree = "<group>"; };
 		497B57AF1B39E42200CC09C7 /* BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFKit.swift; path = ../../BFKit/BFKit.swift; sourceTree = "<group>"; };
+		49919AA51B3B2D3C00A9E55D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		49919AA91B3B2D6600A9E55D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BFKit.strings; sourceTree = "<group>"; };
+		49919AAA1B3B2D6600A9E55D /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/BFKit.strings; sourceTree = "<group>"; };
+		49919AAB1B3B2D6600A9E55D /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/BFKit.strings; sourceTree = "<group>"; };
+		49919AAC1B3B2D6600A9E55D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/BFKit.strings; sourceTree = "<group>"; };
+		49919AAD1B3B2D6600A9E55D /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/BFKit.strings; sourceTree = "<group>"; };
+		49919AAE1B3B2D6600A9E55D /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/BFKit.strings; sourceTree = "<group>"; };
+		49919AAF1B3B2D6600A9E55D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BFKit.strings"; sourceTree = "<group>"; };
+		49919AB01B3B2D6600A9E55D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/BFKit.strings"; sourceTree = "<group>"; };
 		499DF7AB1B308BEE00C1CEBD /* NSMutableArray+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableArray+BFKit.swift"; sourceTree = "<group>"; };
 		499DF7AD1B31934C00C1CEBD /* NSMutableDictionary+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableDictionary+BFKit.swift"; sourceTree = "<group>"; };
 		499DF7AF1B31A6B200C1CEBD /* NSNumber+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumber+BFKit.swift"; sourceTree = "<group>"; };
@@ -132,7 +141,7 @@
 				49354AE61B3AF99600C05AED /* BFKitViewController.swift */,
 				49354AE21B3AEC6B00C05AED /* DetailViewController.swift */,
 				49354AE81B3AFDC300C05AED /* InfoViewController.swift */,
-				4974E25A1AED3DD50090F642 /* Main.storyboard */,
+				49919AA51B3B2D3C00A9E55D /* Main.storyboard */,
 				4974E25D1AED3DD50090F642 /* Images.xcassets */,
 				4974E2541AED3DD50090F642 /* Supporting Files */,
 			);
@@ -170,9 +179,19 @@
 				497B57AF1B39E42200CC09C7 /* BFKit.swift */,
 				49E4E1791B13291C00BBB56C /* Extensions */,
 				49E4E1761B1328B700BBB56C /* BFKit */,
+				49919AA71B3B2D6600A9E55D /* Languages */,
 			);
 			name = BFKit;
 			path = BFKitDemo;
+			sourceTree = "<group>";
+		};
+		49919AA71B3B2D6600A9E55D /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				49919AA81B3B2D6600A9E55D /* BFKit.strings */,
+			);
+			name = Languages;
+			path = ../../BFKit/Languages;
 			sourceTree = "<group>";
 		};
 		49E4E1761B1328B700BBB56C /* BFKit */ = {
@@ -282,7 +301,13 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				id,
+				it,
+				ru,
+				uk,
+				vi,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 4974E2481AED3DD50090F642;
 			productRefGroup = 4974E2521AED3DD50090F642 /* Products */;
@@ -300,8 +325,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4974E25C1AED3DD50090F642 /* Main.storyboard in Resources */,
 				4974E25E1AED3DD50090F642 /* Images.xcassets in Resources */,
+				49919AA61B3B2D3C00A9E55D /* Main.storyboard in Resources */,
+				49919AB11B3B2D6600A9E55D /* BFKit.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,12 +410,19 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4974E25A1AED3DD50090F642 /* Main.storyboard */ = {
+		49919AA81B3B2D6600A9E55D /* BFKit.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4974E25B1AED3DD50090F642 /* Base */,
+				49919AA91B3B2D6600A9E55D /* en */,
+				49919AAA1B3B2D6600A9E55D /* id */,
+				49919AAB1B3B2D6600A9E55D /* it */,
+				49919AAC1B3B2D6600A9E55D /* ru */,
+				49919AAD1B3B2D6600A9E55D /* uk */,
+				49919AAE1B3B2D6600A9E55D /* vi */,
+				49919AAF1B3B2D6600A9E55D /* zh-Hans */,
+				49919AB01B3B2D6600A9E55D /* zh-Hant */,
 			);
-			name = Main.storyboard;
+			name = BFKit.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
