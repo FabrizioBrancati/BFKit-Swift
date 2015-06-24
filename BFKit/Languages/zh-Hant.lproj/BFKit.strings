@@ -1,0 +1,74 @@
+//
+//  BFKit.strings
+//  BFKit
+//
+//  The MIT License (MIT)
+//
+//  Copyright (c) 2014 - 2015 Fabrizio Brancati. All rights reserved.
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+
+// Generals
+"OK" = "確定";
+"CONTINUE" = "繼續";
+"CANCEL" = "取消";
+"DONE" = "完成";
+"ERROR" = "錯誤";
+"WARNING" = "警告";
+"CLOSE" = "關閉";
+"OPEN" = "打開";
+"YES" = "是";
+"NO" = "否";
+
+// Days
+"TODAY" = "今天";
+"TOMORROW" = "明天";
+"SUNDAY" = "星期日";
+"MONDAY"= "星期一";
+"TUESDAY" = "星期二";
+"WEDNESDAY" = "星期三";
+"THURSDAY" = "星期四";
+"FRIDAY" = "星期五";
+"SATURDAY" = "星期六";
+
+// Months
+"JANUARY" = "一月";
+"FEBRUARY" = "二月";
+"MARCH" = "三月";
+"APRIL" = "四月";
+"MAY" = "五月";
+"JUNE" = "六月";
+"JULY" = "七月";
+"AUGUST" = "八月";
+"SEPTEMBER" = "九月";
+"OCTOBER" = "十月";
+"NOVEMBER" = "十一月";
+"DECEMBER" = "十二月";
+
+// Time zones
+"NIGHT" = "夜晚";
+"MORNING" = "早上";
+"AFTERNOON" = "中午";
+"EVENING" = "晚上";
+
+// Authorization
+"AUTHENTICATION" = "認證";
+"AUTHORIZATION" = "授權";
+"AUTHORIZED" = "授權";
+"NOT_OWNER" = "認證失敗";

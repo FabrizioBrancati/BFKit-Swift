@@ -41,6 +41,17 @@ It also adds some useful method to some classes like:
 
 ##BFKit is currently under development
 
+Language support :it:
+=====================
+- English (en)
+- Indonesian (id)
+- Italian (it)
+- Russian (ru)
+- Simplified Chinese (zh-Hans)
+- Traditional Chinese (zh-Hant)
+- Ukrainian (uk)
+- Vietnamese (vi)
+
 Requirements :iphone:
 =====================
 - iOS SDK **7.0** or later
