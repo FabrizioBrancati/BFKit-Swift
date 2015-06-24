@@ -18,6 +18,9 @@
 		497B57B01B39E42200CC09C7 /* BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B57AF1B39E42200CC09C7 /* BFKit.swift */; };
 		49919AA61B3B2D3C00A9E55D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49919AA51B3B2D3C00A9E55D /* Main.storyboard */; };
 		49919AB11B3B2D6600A9E55D /* BFKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49919AA81B3B2D6600A9E55D /* BFKit.strings */; };
+		49919AB61B3B3C3100A9E55D /* UIButton+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49919AB31B3B3C3100A9E55D /* UIButton+BFKit.swift */; };
+		49919AB71B3B3C3100A9E55D /* UIColor+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49919AB41B3B3C3100A9E55D /* UIColor+BFKit.swift */; };
+		49919AB81B3B3C3100A9E55D /* UIImage+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49919AB51B3B3C3100A9E55D /* UIImage+BFKit.swift */; };
 		499DF7AC1B308BEE00C1CEBD /* NSMutableArray+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7AB1B308BEE00C1CEBD /* NSMutableArray+BFKit.swift */; };
 		499DF7AE1B31934C00C1CEBD /* NSMutableDictionary+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7AD1B31934C00C1CEBD /* NSMutableDictionary+BFKit.swift */; };
 		499DF7B01B31A6B200C1CEBD /* NSNumber+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7AF1B31A6B200C1CEBD /* NSNumber+BFKit.swift */; };
@@ -73,6 +76,9 @@
 		49919AAE1B3B2D6600A9E55D /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/BFKit.strings; sourceTree = "<group>"; };
 		49919AAF1B3B2D6600A9E55D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BFKit.strings"; sourceTree = "<group>"; };
 		49919AB01B3B2D6600A9E55D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/BFKit.strings"; sourceTree = "<group>"; };
+		49919AB31B3B3C3100A9E55D /* UIButton+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+BFKit.swift"; sourceTree = "<group>"; };
+		49919AB41B3B3C3100A9E55D /* UIColor+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+BFKit.swift"; sourceTree = "<group>"; };
+		49919AB51B3B3C3100A9E55D /* UIImage+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+BFKit.swift"; sourceTree = "<group>"; };
 		499DF7AB1B308BEE00C1CEBD /* NSMutableArray+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableArray+BFKit.swift"; sourceTree = "<group>"; };
 		499DF7AD1B31934C00C1CEBD /* NSMutableDictionary+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableDictionary+BFKit.swift"; sourceTree = "<group>"; };
 		499DF7AF1B31A6B200C1CEBD /* NSNumber+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumber+BFKit.swift"; sourceTree = "<group>"; };
@@ -194,6 +200,16 @@
 			path = ../../BFKit/Languages;
 			sourceTree = "<group>";
 		};
+		49919AB21B3B3C3100A9E55D /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				49919AB31B3B3C3100A9E55D /* UIButton+BFKit.swift */,
+				49919AB41B3B3C3100A9E55D /* UIColor+BFKit.swift */,
+				49919AB51B3B3C3100A9E55D /* UIImage+BFKit.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		49E4E1761B1328B700BBB56C /* BFKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				49E4E17A1B13291C00BBB56C /* Foundation */,
+				49919AB21B3B3C3100A9E55D /* UIKit */,
 			);
 			name = Extensions;
 			path = ../../BFKit/Extensions;
@@ -363,6 +380,7 @@
 			files = (
 				499DF7B61B35B1F000C1CEBD /* NSThread+BFKit.swift in Sources */,
 				4974E2591AED3DD50090F642 /* UserInterfaceViewController.swift in Sources */,
+				49919AB81B3B3C3100A9E55D /* UIImage+BFKit.swift in Sources */,
 				499DF7BC1B35EF0F00C1CEBD /* NSString+BFKit.swift in Sources */,
 				49E4E1781B1328F200BBB56C /* BFApp.swift in Sources */,
 				499DF7BE1B35EF2D00C1CEBD /* String+BFKit.swift in Sources */,
@@ -379,8 +397,10 @@
 				497B57B01B39E42200CC09C7 /* BFKit.swift in Sources */,
 				499DF7AC1B308BEE00C1CEBD /* NSMutableArray+BFKit.swift in Sources */,
 				49354AE31B3AEC6B00C05AED /* DetailViewController.swift in Sources */,
+				49919AB71B3B3C3100A9E55D /* UIColor+BFKit.swift in Sources */,
 				499DF7B21B31F0C500C1CEBD /* NSObject+BFKit.swift in Sources */,
 				499DF7AE1B31934C00C1CEBD /* NSMutableDictionary+BFKit.swift in Sources */,
+				49919AB61B3B3C3100A9E55D /* UIButton+BFKit.swift in Sources */,
 				49E4E17F1B13291C00BBB56C /* Array+BFKit.swift in Sources */,
 				49E4E1801B13291C00BBB56C /* NSArray+BFKit.swift in Sources */,
 				49BD7C901B2B13340092C563 /* Dictionary+BFKit.swift in Sources */,

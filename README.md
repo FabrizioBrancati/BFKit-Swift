@@ -39,6 +39,11 @@ It also adds some useful method to some classes like:
 - NSThread
 - String
 
+###UIKit:
+- UIButton
+- UIColor
+- **More soon!**
+
 ##BFKit is currently under development
 
 Language support :it:
@@ -86,6 +91,7 @@ Todo :ballot_box_with_check:
 - :heavy_minus_sign: Create tests
 - :heavy_minus_sign: Remove all the TODO marks
 - :heavy_minus_sign: Add to CocoaPods
+- :heavy_minus_sign: Make it as a Framework
 - :heavy_minus_sign: Add all comments
 - :heavy_minus_sign: Create a great documentation
 
