@@ -7,19 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49354AE31B3AEC6B00C05AED /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49354AE21B3AEC6B00C05AED /* DetailViewController.swift */; };
+		49354AE51B3AF8BF00C05AED /* FoundationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49354AE41B3AF8BF00C05AED /* FoundationViewController.swift */; };
+		49354AE71B3AF99600C05AED /* BFKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49354AE61B3AF99600C05AED /* BFKitViewController.swift */; };
+		49354AE91B3AFDC300C05AED /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49354AE81B3AFDC300C05AED /* InfoViewController.swift */; };
 		4974E2571AED3DD50090F642 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4974E2561AED3DD50090F642 /* AppDelegate.swift */; };
-		4974E2591AED3DD50090F642 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4974E2581AED3DD50090F642 /* ViewController.swift */; };
+		4974E2591AED3DD50090F642 /* UserInterfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4974E2581AED3DD50090F642 /* UserInterfaceViewController.swift */; };
 		4974E25C1AED3DD50090F642 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4974E25A1AED3DD50090F642 /* Main.storyboard */; };
 		4974E25E1AED3DD50090F642 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4974E25D1AED3DD50090F642 /* Images.xcassets */; };
 		4974E26D1AED3DD50090F642 /* BFKitDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4974E26C1AED3DD50090F642 /* BFKitDemoTests.swift */; };
+		497B57B01B39E42200CC09C7 /* BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B57AF1B39E42200CC09C7 /* BFKit.swift */; };
 		499DF7AC1B308BEE00C1CEBD /* NSMutableArray+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7AB1B308BEE00C1CEBD /* NSMutableArray+BFKit.swift */; };
 		499DF7AE1B31934C00C1CEBD /* NSMutableDictionary+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7AD1B31934C00C1CEBD /* NSMutableDictionary+BFKit.swift */; };
 		499DF7B01B31A6B200C1CEBD /* NSNumber+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7AF1B31A6B200C1CEBD /* NSNumber+BFKit.swift */; };
 		499DF7B21B31F0C500C1CEBD /* NSObject+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7B11B31F0C500C1CEBD /* NSObject+BFKit.swift */; };
 		499DF7B41B321AAE00C1CEBD /* NSProcessInfo+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7B31B321AAE00C1CEBD /* NSProcessInfo+BFKit.swift */; };
 		499DF7B61B35B1F000C1CEBD /* NSThread+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7B51B35B1F000C1CEBD /* NSThread+BFKit.swift */; };
-		499DF7B81B35BD9500C1CEBD /* UIButton+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7B71B35BD9500C1CEBD /* UIButton+BFKit.swift */; };
-		499DF7BA1B35E7F100C1CEBD /* UIColor+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7B91B35E7F100C1CEBD /* UIColor+BFKit.swift */; };
 		499DF7BC1B35EF0F00C1CEBD /* NSString+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7BB1B35EF0F00C1CEBD /* NSString+BFKit.swift */; };
 		499DF7BE1B35EF2D00C1CEBD /* String+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7BD1B35EF2D00C1CEBD /* String+BFKit.swift */; };
 		49BD7C881B2898ED0092C563 /* BFPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD7C871B2898ED0092C563 /* BFPassword.swift */; };
@@ -33,7 +36,6 @@
 		49E4E1801B13291C00BBB56C /* NSArray+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4E17C1B13291C00BBB56C /* NSArray+BFKit.swift */; };
 		49E4E1811B13291C00BBB56C /* NSDate+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4E17D1B13291C00BBB56C /* NSDate+BFKit.swift */; };
 		49E4E1831B1378EA00BBB56C /* BFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4E1821B1378EA00BBB56C /* BFButton.swift */; };
-		49EDDEE91B1CD11A0089C6D0 /* UIImage+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EDDEE81B1CD11A0089C6D0 /* UIImage+BFKit.swift */; };
 		49EDDEEF1B20A59D0089C6D0 /* BFLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EDDEEE1B20A59D0089C6D0 /* BFLog.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,23 +50,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4974E2511AED3DD50090F642 /* BFKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BFKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49354AE21B3AEC6B00C05AED /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		49354AE41B3AF8BF00C05AED /* FoundationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationViewController.swift; sourceTree = "<group>"; };
+		49354AE61B3AF99600C05AED /* BFKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFKitViewController.swift; sourceTree = "<group>"; };
+		49354AE81B3AFDC300C05AED /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		4974E2511AED3DD50090F642 /* BFKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = BFKitDemo.app; path = BFKitDemoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4974E2551AED3DD50090F642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4974E2561AED3DD50090F642 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4974E2581AED3DD50090F642 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4974E2581AED3DD50090F642 /* UserInterfaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterfaceViewController.swift; sourceTree = "<group>"; };
 		4974E25B1AED3DD50090F642 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4974E25D1AED3DD50090F642 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4974E2661AED3DD50090F642 /* BFKitDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BFKitDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4974E26B1AED3DD50090F642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4974E26C1AED3DD50090F642 /* BFKitDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFKitDemoTests.swift; sourceTree = "<group>"; };
+		497B57AF1B39E42200CC09C7 /* BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFKit.swift; path = ../../BFKit/BFKit.swift; sourceTree = "<group>"; };
 		499DF7AB1B308BEE00C1CEBD /* NSMutableArray+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableArray+BFKit.swift"; sourceTree = "<group>"; };
 		499DF7AD1B31934C00C1CEBD /* NSMutableDictionary+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableDictionary+BFKit.swift"; sourceTree = "<group>"; };
 		499DF7AF1B31A6B200C1CEBD /* NSNumber+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumber+BFKit.swift"; sourceTree = "<group>"; };
 		499DF7B11B31F0C500C1CEBD /* NSObject+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+BFKit.swift"; sourceTree = "<group>"; };
 		499DF7B31B321AAE00C1CEBD /* NSProcessInfo+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSProcessInfo+BFKit.swift"; sourceTree = "<group>"; };
 		499DF7B51B35B1F000C1CEBD /* NSThread+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSThread+BFKit.swift"; sourceTree = "<group>"; };
-		499DF7B71B35BD9500C1CEBD /* UIButton+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+BFKit.swift"; sourceTree = "<group>"; };
-		499DF7B91B35E7F100C1CEBD /* UIColor+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+BFKit.swift"; sourceTree = "<group>"; };
 		499DF7BB1B35EF0F00C1CEBD /* NSString+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+BFKit.swift"; sourceTree = "<group>"; };
 		499DF7BD1B35EF2D00C1CEBD /* String+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+BFKit.swift"; sourceTree = "<group>"; };
 		49BD7C871B2898ED0092C563 /* BFPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFPassword.swift; path = ../../BFKit/BFKit/BFPassword.swift; sourceTree = "<group>"; };
@@ -78,7 +83,6 @@
 		49E4E17C1B13291C00BBB56C /* NSArray+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSArray+BFKit.swift"; sourceTree = "<group>"; };
 		49E4E17D1B13291C00BBB56C /* NSDate+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+BFKit.swift"; sourceTree = "<group>"; };
 		49E4E1821B1378EA00BBB56C /* BFButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFButton.swift; path = ../../BFKit/BFKit/BFButton.swift; sourceTree = "<group>"; };
-		49EDDEE81B1CD11A0089C6D0 /* UIImage+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+BFKit.swift"; sourceTree = "<group>"; };
 		49EDDEEE1B20A59D0089C6D0 /* BFLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFLog.swift; path = ../../BFKit/BFKit/BFLog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,7 +127,11 @@
 			isa = PBXGroup;
 			children = (
 				4974E2561AED3DD50090F642 /* AppDelegate.swift */,
-				4974E2581AED3DD50090F642 /* ViewController.swift */,
+				4974E2581AED3DD50090F642 /* UserInterfaceViewController.swift */,
+				49354AE41B3AF8BF00C05AED /* FoundationViewController.swift */,
+				49354AE61B3AF99600C05AED /* BFKitViewController.swift */,
+				49354AE21B3AEC6B00C05AED /* DetailViewController.swift */,
+				49354AE81B3AFDC300C05AED /* InfoViewController.swift */,
 				4974E25A1AED3DD50090F642 /* Main.storyboard */,
 				4974E25D1AED3DD50090F642 /* Images.xcassets */,
 				4974E2541AED3DD50090F642 /* Supporting Files */,
@@ -159,6 +167,7 @@
 		4974E2781AED49700090F642 /* BFKit */ = {
 			isa = PBXGroup;
 			children = (
+				497B57AF1B39E42200CC09C7 /* BFKit.swift */,
 				49E4E1791B13291C00BBB56C /* Extensions */,
 				49E4E1761B1328B700BBB56C /* BFKit */,
 			);
@@ -183,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				49E4E17A1B13291C00BBB56C /* Foundation */,
-				49E4E17E1B13291C00BBB56C /* UIKit */,
 			);
 			name = Extensions;
 			path = ../../BFKit/Extensions;
@@ -208,16 +216,6 @@
 				499DF7BD1B35EF2D00C1CEBD /* String+BFKit.swift */,
 			);
 			path = Foundation;
-			sourceTree = "<group>";
-		};
-		49E4E17E1B13291C00BBB56C /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				499DF7B71B35BD9500C1CEBD /* UIButton+BFKit.swift */,
-				499DF7B91B35E7F100C1CEBD /* UIColor+BFKit.swift */,
-				49EDDEE81B1CD11A0089C6D0 /* UIImage+BFKit.swift */,
-			);
-			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,7 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				499DF7B61B35B1F000C1CEBD /* NSThread+BFKit.swift in Sources */,
-				4974E2591AED3DD50090F642 /* ViewController.swift in Sources */,
+				4974E2591AED3DD50090F642 /* UserInterfaceViewController.swift in Sources */,
 				499DF7BC1B35EF0F00C1CEBD /* NSString+BFKit.swift in Sources */,
 				49E4E1781B1328F200BBB56C /* BFApp.swift in Sources */,
 				499DF7BE1B35EF2D00C1CEBD /* String+BFKit.swift in Sources */,
@@ -346,19 +344,21 @@
 				499DF7B41B321AAE00C1CEBD /* NSProcessInfo+BFKit.swift in Sources */,
 				49BD7C921B2B1D620092C563 /* NSFileManager+BFKit.swift in Sources */,
 				49BD7C8A1B28B7900092C563 /* BFSystemSound.swift in Sources */,
-				499DF7BA1B35E7F100C1CEBD /* UIColor+BFKit.swift in Sources */,
-				49EDDEE91B1CD11A0089C6D0 /* UIImage+BFKit.swift in Sources */,
 				49BD7C8E1B2B08A80092C563 /* NSDictionary+BFKit.swift in Sources */,
+				49354AE71B3AF99600C05AED /* BFKitViewController.swift in Sources */,
 				49BD7C881B2898ED0092C563 /* BFPassword.swift in Sources */,
 				499DF7B01B31A6B200C1CEBD /* NSNumber+BFKit.swift in Sources */,
+				49354AE91B3AFDC300C05AED /* InfoViewController.swift in Sources */,
 				49BD7C8C1B2917C50092C563 /* BFTouchID.swift in Sources */,
+				497B57B01B39E42200CC09C7 /* BFKit.swift in Sources */,
 				499DF7AC1B308BEE00C1CEBD /* NSMutableArray+BFKit.swift in Sources */,
+				49354AE31B3AEC6B00C05AED /* DetailViewController.swift in Sources */,
 				499DF7B21B31F0C500C1CEBD /* NSObject+BFKit.swift in Sources */,
 				499DF7AE1B31934C00C1CEBD /* NSMutableDictionary+BFKit.swift in Sources */,
 				49E4E17F1B13291C00BBB56C /* Array+BFKit.swift in Sources */,
-				499DF7B81B35BD9500C1CEBD /* UIButton+BFKit.swift in Sources */,
 				49E4E1801B13291C00BBB56C /* NSArray+BFKit.swift in Sources */,
 				49BD7C901B2B13340092C563 /* Dictionary+BFKit.swift in Sources */,
+				49354AE51B3AF8BF00C05AED /* FoundationViewController.swift in Sources */,
 				4974E2571AED3DD50090F642 /* AppDelegate.swift in Sources */,
 				49E4E1831B1378EA00BBB56C /* BFButton.swift in Sources */,
 				49E4E1811B13291C00BBB56C /* NSDate+BFKit.swift in Sources */,

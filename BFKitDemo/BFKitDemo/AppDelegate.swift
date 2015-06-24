@@ -8,19 +8,63 @@
 
 import UIKit
 
+let UIKitArray = [  "UIButton",
+                    "UIColor",
+                    "UIDevice",
+                    "UIFont",
+                    "UIImage",
+                    "UIImageView",
+                    "UILabel",
+                    "UIScrollView",
+                    "UITableView",
+                    "UITextField",
+                    "UITextView",
+                    "UIView",
+                    "UIWebView"]
+
+let FoundationArray = [ "Array",
+                        "Dictionary",
+                        "NSArray",
+                        "NSDate",
+                        "NSDictionary",
+                        "NSFileManager",
+                        "NSMutableArray",
+                        "NSMutableDictionary",
+                        "NSNumber",
+                        "NSObject",
+                        "NSProcessInfo",
+                        "NSString",
+                        "NSThread",
+                        "String"]
+
+let BFKitArray = [  "BFApp",
+                    "BFButton",
+                    "BFLog",
+                    "BFPassword",
+                    "BFSystemSound",
+                    "BFTouchID"]
+
+let InfoViewControllerSegueID = "InfoViewControllerSegueID"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
 {
+    // MARK: - Variables -
 
     var window: UIWindow?
 
+    // MARK: - Delegate functions -
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
-        // Override point for customization after application launch.
+        UINavigationBar.appearance().titleTextAttributes = [ NSForegroundColorAttributeName : UIColor(red: 0.9218, green: 0.565, blue: 0.139, alpha: 1.0)]
+        UINavigationBar.appearance().tintColor = UIColor(red: 0.9218, green: 0.565, blue: 0.139, alpha: 1.0)
+        UITabBar.appearance().tintColor = UIColor(red: 0.9218, green: 0.565, blue: 0.139, alpha: 1.0)
+        UIBarButtonItem.appearance().tintColor = UIColor(red: 0.9218, green: 0.565, blue: 0.139, alpha: 1.0)
+        
         return true
     }
-
+    
     func applicationWillResignActive(application: UIApplication)
     {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
