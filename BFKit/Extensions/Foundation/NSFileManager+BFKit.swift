@@ -26,18 +26,18 @@
 
 import Foundation
 
-// MARK: - Global variables -
-
-enum DirectoryType : Int
-{
-    case MainBundle
-    case Library
-    case Documents
-    case Cache
-}
-
 extension NSFileManager
 {
+    // MARK: - Enums -
+    
+    enum DirectoryType : Int
+    {
+        case MainBundle
+        case Library
+        case Documents
+        case Cache
+    }
+    
     // MARK: - Class functions -
     
     static func readTextFile(var file: String, ofType: String) -> String?

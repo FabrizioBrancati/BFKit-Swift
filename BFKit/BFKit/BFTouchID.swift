@@ -28,22 +28,26 @@ import Foundation
 import LocalAuthentication
 
 @availability(iOS, introduced=8.0)
-enum TouchIDResult : Int
-{
-    case Success
-    case Error
-    case AuthenticationFailed
-    case UserCancel
-    case UserFallback
-    case SystemCancel
-    case PasscodeNotSet
-    case NotAvailable
-    case NotEnrolled
-}
-
-@availability(iOS, introduced=8.0)
 class BFTouchID
 {
+    // MARK: - Enums -
+    
+    @availability(iOS, introduced=8.0)
+    enum TouchIDResult : Int
+    {
+        case Success
+        case Error
+        case AuthenticationFailed
+        case UserCancel
+        case UserFallback
+        case SystemCancel
+        case PasscodeNotSet
+        case NotAvailable
+        case NotEnrolled
+    }
+    
+    // MARK: - Class functions -
+    
     static func showTouchIDAuthenticationWithReason(reason: String, completion: (TouchIDResult) -> ())
     {
         let context: LAContext = LAContext()

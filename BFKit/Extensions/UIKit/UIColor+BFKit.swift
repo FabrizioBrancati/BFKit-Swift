@@ -306,7 +306,7 @@ extension UIColor
         return true
     }
     
-    // MARK: - Class functions -
+    // MARK: - Init functions -
     
     convenience init(hex: String)
     {
@@ -345,6 +345,8 @@ extension UIColor
         
         self.init(red:red, green:green, blue:blue, alpha:alpha)
     }
+    
+    // MARK: - Class functions -
     
     private static func colorComponentFrom(string: String, start: Int, lenght: Int) -> CGFloat
     {

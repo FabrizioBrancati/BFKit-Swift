@@ -29,7 +29,7 @@ import UIKit
 
 extension UIButton
 {
-    // MARK: - Class functions -
+    // MARK: - Init functions -
     
     convenience init(frame: CGRect, title: String?)
     {

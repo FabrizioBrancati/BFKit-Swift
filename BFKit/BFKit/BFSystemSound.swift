@@ -27,24 +27,28 @@
 import Foundation
 import AudioToolbox
 
-enum AudioID : Int
-{
-    case NewMail = 1000
-    case MailSent = 1001
-    case VoiceMail = 1002
-    case RecivedMessage = 1003
-    case SentMessage = 1004
-    case Alarm = 1005
-    case LowPower = 1006
-    case SMSReceived1 = 1007
-    case SMSReceived2 = 1008
-    case SMSReceived3 = 1009
-    case SMSReceived4 = 1010
-    // TODO: Create all IDs
-}
-
 class BFSystemSound
 {
+    // MARK: - Enums -
+    
+    enum AudioID : Int
+    {
+        case NewMail = 1000
+        case MailSent = 1001
+        case VoiceMail = 1002
+        case RecivedMessage = 1003
+        case SentMessage = 1004
+        case Alarm = 1005
+        case LowPower = 1006
+        case SMSReceived1 = 1007
+        case SMSReceived2 = 1008
+        case SMSReceived3 = 1009
+        case SMSReceived4 = 1010
+        // TODO: Create all IDs
+    }
+    
+    // MARK: - Class functions -
+    
     static func playSystemSound(audioID: AudioID)
     {
         AudioServicesPlaySystemSound(SystemSoundID(audioID.rawValue))
