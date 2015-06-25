@@ -28,98 +28,11 @@ import Foundation
 
 extension String
 {
-    // MARK: - Class functions -
+    // MARK: - Variables -
     
-    static func searchInString(string: String, charStart: Character, charEnd: Character) -> String
+    var floatValue: Float
     {
-        var inizio = 0, stop = 0
-        
-        for var i = 0; i < string.length(); i++
-        {
-            if string.characterAtIndex(i) == charStart
-            {
-                inizio = i+1
-                i += 1
-            }
-            if string.characterAtIndex(i) == charEnd
-            {
-                stop = i
-                break
-            }
-        }
-        
-        stop -= inizio
-        
-        var string: String = string.substringFromIndex(inizio-1)
-        string = string.substringFromIndex(0)
-        
-        return string
-    }
-    
-    static func isEmail(email: String) -> Bool
-    {
-        let emailRegEx: String =
-        "(?:[a-z0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[a-z0-9!#$%\\&'*+/=?\\^_`{|}"
-        "~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\"
-        "x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-"
-        "z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5"
-        "]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-"
-        "9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21"
-        "-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"
-        
-        let regExPredicate: NSPredicate = NSPredicate(format: "SELF MATHCES %@", emailRegEx)
-        return regExPredicate.evaluateWithObject(email.lowercaseString)
-    }
-    
-    static func convertToUTF8Entities(string: String) -> String
-    {
-        return string
-            .stringByReplacingOccurrencesOfString("%27", withString: "'")
-            .stringByReplacingOccurrencesOfString("%e2%80%99".capitalizedString, withString: "’")
-            .stringByReplacingOccurrencesOfString("%2d".capitalizedString, withString: "-")
-            .stringByReplacingOccurrencesOfString("%c2%ab".capitalizedString, withString: "«")
-            .stringByReplacingOccurrencesOfString("%c2%bb".capitalizedString, withString: "»")
-            .stringByReplacingOccurrencesOfString("%c3%80".capitalizedString, withString: "À")
-            .stringByReplacingOccurrencesOfString("%c3%82".capitalizedString, withString: "Â")
-            .stringByReplacingOccurrencesOfString("%c3%84".capitalizedString, withString: "Ä")
-            .stringByReplacingOccurrencesOfString("%c3%86".capitalizedString, withString: "Æ")
-            .stringByReplacingOccurrencesOfString("%c3%87".capitalizedString, withString: "Ç")
-            .stringByReplacingOccurrencesOfString("%c3%88".capitalizedString, withString: "È")
-            .stringByReplacingOccurrencesOfString("%c3%89".capitalizedString, withString: "É")
-            .stringByReplacingOccurrencesOfString("%c3%8a".capitalizedString, withString: "Ê")
-            .stringByReplacingOccurrencesOfString("%c3%8b".capitalizedString, withString: "Ë")
-            .stringByReplacingOccurrencesOfString("%c3%8f".capitalizedString, withString: "Ï")
-            .stringByReplacingOccurrencesOfString("%c3%91".capitalizedString, withString: "Ñ")
-            .stringByReplacingOccurrencesOfString("%c3%94".capitalizedString, withString: "Ô")
-            .stringByReplacingOccurrencesOfString("%c3%96".capitalizedString, withString: "Ö")
-            .stringByReplacingOccurrencesOfString("%c3%9b".capitalizedString, withString: "Û")
-            .stringByReplacingOccurrencesOfString("%c3%9c".capitalizedString, withString: "Ü")
-            .stringByReplacingOccurrencesOfString("%c3%a0".capitalizedString, withString: "à")
-            .stringByReplacingOccurrencesOfString("%c3%a2".capitalizedString, withString: "â")
-            .stringByReplacingOccurrencesOfString("%c3%a4".capitalizedString, withString: "ä")
-            .stringByReplacingOccurrencesOfString("%c3%a6".capitalizedString, withString: "æ")
-            .stringByReplacingOccurrencesOfString("%c3%a7".capitalizedString, withString: "ç")
-            .stringByReplacingOccurrencesOfString("%c3%a8".capitalizedString, withString: "è")
-            .stringByReplacingOccurrencesOfString("%c3%a9".capitalizedString, withString: "é")
-            .stringByReplacingOccurrencesOfString("%c3%af".capitalizedString, withString: "ï")
-            .stringByReplacingOccurrencesOfString("%c3%b4".capitalizedString, withString: "ô")
-            .stringByReplacingOccurrencesOfString("%c3%b6".capitalizedString, withString: "ö")
-            .stringByReplacingOccurrencesOfString("%c3%bb".capitalizedString, withString: "û")
-            .stringByReplacingOccurrencesOfString("%c3%bc".capitalizedString, withString: "ü")
-            .stringByReplacingOccurrencesOfString("%c3%bf".capitalizedString, withString: "ÿ")
-            .stringByReplacingOccurrencesOfString("%20", withString: " ")
-    }
-    
-    static func encodeToBase64(string: String) -> String
-    {
-        let data: NSData = string.dataUsingEncoding(NSUTF8StringEncoding)!
-        return data.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
-    }
-    
-    static func decodeBase64(string: String) -> String
-    {
-        let data: NSData = NSData(base64EncodedString: string as String, options: NSDataBase64DecodingOptions(rawValue: 0))!
-        return NSString(data: data, encoding: NSUTF8StringEncoding)! as String
+        return (self as NSString).floatValue
     }
     
     // MARK: - Instance functions -
@@ -136,12 +49,12 @@ extension String
     
     func substringFromIndex(index: Int) -> String
     {
-        return self[advance(self.startIndex, index)...advance(self.startIndex, self.length())]
+        return self[advance(self.startIndex, index)...advance(self.startIndex, self.length()-1)]
     }
     
     func substringToIndex(index: Int) -> String
     {
-        return self[advance(self.startIndex, 0)...advance(self.startIndex, index)]
+        return self[advance(self.startIndex, 0)...advance(self.startIndex, index-1)]
     }
     
     func searchCharStart(charStart: Character, charEnd: Character) -> String
@@ -228,5 +141,99 @@ extension String
     func SHA512() -> String
     {
         return ""
+    }
+    
+    // MARK: - Class functions -
+    
+    static func searchInString(string: String, charStart: Character, charEnd: Character) -> String
+    {
+        var start = 0, stop = 0
+        
+        for var i = 0; i < string.length(); i++
+        {
+            if string.characterAtIndex(i) == charStart
+            {
+                start = i+1
+                i += 1
+            }
+            if string.characterAtIndex(i) == charEnd
+            {
+                stop = i
+                break
+            }
+        }
+        
+        stop -= start
+        
+        var string: String = string.substringFromIndex(start-1)
+        string = string.substringFromIndex(0)
+        
+        return string
+    }
+    
+    static func isEmail(email: String) -> Bool
+    {
+        let emailRegEx: String =
+        "(?:[a-z0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[a-z0-9!#$%\\&'*+/=?\\^_`{|}"
+        "~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\"
+        "x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-"
+        "z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5"
+        "]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-"
+        "9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21"
+        "-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"
+        
+        let regExPredicate: NSPredicate = NSPredicate(format: "SELF MATHCES %@", emailRegEx)
+        return regExPredicate.evaluateWithObject(email.lowercaseString)
+    }
+    
+    static func convertToUTF8Entities(string: String) -> String
+    {
+        return string
+            .stringByReplacingOccurrencesOfString("%27", withString: "'")
+            .stringByReplacingOccurrencesOfString("%e2%80%99".capitalizedString, withString: "’")
+            .stringByReplacingOccurrencesOfString("%2d".capitalizedString, withString: "-")
+            .stringByReplacingOccurrencesOfString("%c2%ab".capitalizedString, withString: "«")
+            .stringByReplacingOccurrencesOfString("%c2%bb".capitalizedString, withString: "»")
+            .stringByReplacingOccurrencesOfString("%c3%80".capitalizedString, withString: "À")
+            .stringByReplacingOccurrencesOfString("%c3%82".capitalizedString, withString: "Â")
+            .stringByReplacingOccurrencesOfString("%c3%84".capitalizedString, withString: "Ä")
+            .stringByReplacingOccurrencesOfString("%c3%86".capitalizedString, withString: "Æ")
+            .stringByReplacingOccurrencesOfString("%c3%87".capitalizedString, withString: "Ç")
+            .stringByReplacingOccurrencesOfString("%c3%88".capitalizedString, withString: "È")
+            .stringByReplacingOccurrencesOfString("%c3%89".capitalizedString, withString: "É")
+            .stringByReplacingOccurrencesOfString("%c3%8a".capitalizedString, withString: "Ê")
+            .stringByReplacingOccurrencesOfString("%c3%8b".capitalizedString, withString: "Ë")
+            .stringByReplacingOccurrencesOfString("%c3%8f".capitalizedString, withString: "Ï")
+            .stringByReplacingOccurrencesOfString("%c3%91".capitalizedString, withString: "Ñ")
+            .stringByReplacingOccurrencesOfString("%c3%94".capitalizedString, withString: "Ô")
+            .stringByReplacingOccurrencesOfString("%c3%96".capitalizedString, withString: "Ö")
+            .stringByReplacingOccurrencesOfString("%c3%9b".capitalizedString, withString: "Û")
+            .stringByReplacingOccurrencesOfString("%c3%9c".capitalizedString, withString: "Ü")
+            .stringByReplacingOccurrencesOfString("%c3%a0".capitalizedString, withString: "à")
+            .stringByReplacingOccurrencesOfString("%c3%a2".capitalizedString, withString: "â")
+            .stringByReplacingOccurrencesOfString("%c3%a4".capitalizedString, withString: "ä")
+            .stringByReplacingOccurrencesOfString("%c3%a6".capitalizedString, withString: "æ")
+            .stringByReplacingOccurrencesOfString("%c3%a7".capitalizedString, withString: "ç")
+            .stringByReplacingOccurrencesOfString("%c3%a8".capitalizedString, withString: "è")
+            .stringByReplacingOccurrencesOfString("%c3%a9".capitalizedString, withString: "é")
+            .stringByReplacingOccurrencesOfString("%c3%af".capitalizedString, withString: "ï")
+            .stringByReplacingOccurrencesOfString("%c3%b4".capitalizedString, withString: "ô")
+            .stringByReplacingOccurrencesOfString("%c3%b6".capitalizedString, withString: "ö")
+            .stringByReplacingOccurrencesOfString("%c3%bb".capitalizedString, withString: "û")
+            .stringByReplacingOccurrencesOfString("%c3%bc".capitalizedString, withString: "ü")
+            .stringByReplacingOccurrencesOfString("%c3%bf".capitalizedString, withString: "ÿ")
+            .stringByReplacingOccurrencesOfString("%20", withString: " ")
+    }
+    
+    static func encodeToBase64(string: String) -> String
+    {
+        let data: NSData = string.dataUsingEncoding(NSUTF8StringEncoding)!
+        return data.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+    }
+    
+    static func decodeBase64(string: String) -> String
+    {
+        let data: NSData = NSData(base64EncodedString: string as String, options: NSDataBase64DecodingOptions(rawValue: 0))!
+        return NSString(data: data, encoding: NSUTF8StringEncoding)! as String
     }
 }
