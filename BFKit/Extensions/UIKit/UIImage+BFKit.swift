@@ -33,11 +33,10 @@ extension UIImage
     
     // MARK: - Class functions -
     
-    convenience init?(maskedText: String, imageSize: CGSize, backgroundColor: UIColor, font: UIFont, fontSize: CGFloat)
+    convenience init?(maskedText: String, imageSize: CGSize, backgroundColor: UIColor, font: FontName, fontSize: CGFloat)
     {
-        // TODO: Use fonts enum
-        //let fontName = UIFont.fontForFontName(font, size: fontSize)
-        let textAttributes = [NSFontAttributeName : font]
+        let fontName: UIFont = UIFont(fontName: font, size: fontSize)!
+        let textAttributes = [NSFontAttributeName : fontName]
         
         let textSize: CGSize = maskedText.sizeWithAttributes(textAttributes)
         

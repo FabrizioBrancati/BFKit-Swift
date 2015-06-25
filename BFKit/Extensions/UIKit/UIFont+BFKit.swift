@@ -27,6 +27,22 @@
 import Foundation
 import UIKit
 
+// MARK: - Public enums -
+
+enum FontName : String
+{
+    case AcademyEngravedLetPlain = "AcademyEngravedLetPlain"
+    case AlNile = "AlNile"
+    case AlNileBold = "AlNile-Bold"
+    case AmericanTypewriter = "AmericanTypewriter"
+    case AmericanTypewriterBold = "AmericanTypewriter-Bold"
+    case AmericanTypewriterCondensed = "AmericanTypewriter-Condensed"
+    case AmericanTypewriterCondensedBold = "AmericanTypewriter-CondensedBold"
+    case AmericanTypewriterCondensedLight = "AmericanTypewriter-CondensedLight"
+    case AmericanTypewriterLight = "AmericanTypewriter-Light"
+    // TODO: Too much fonts too! :_( ... I'll do it! I promise! :)
+}
+
 extension UIFont
 {
     // MARK: - Class variables -
@@ -100,18 +116,11 @@ extension UIFont
         // TODO: Too much fonts! :(
     }
     
-    enum FontName : String
+    // MARK: - Init functions -
+    
+    convenience init?(fontName: FontName, size: CGFloat)
     {
-        case AcademyEngravedLetPlain = "AcademyEngravedLetPlain"
-        case AlNile = "AlNile"
-        case AlNileBold = "AlNile-Bold"
-        case AmericanTypewriter = "AmericanTypewriter"
-        case AmericanTypewriterBold = "AmericanTypewriter-Bold"
-        case AmericanTypewriterCondensed = "AmericanTypewriter-Condensed"
-        case AmericanTypewriterCondensedBold = "AmericanTypewriter-CondensedBold"
-        case AmericanTypewriterCondensedLight = "AmericanTypewriter-CondensedLight"
-        case AmericanTypewriterLight = "AmericanTypewriter-Light"
-        // TODO: Too much fonts too! :_( ... I'll do it! I promise! :)
+        self.init(name: fontName.rawValue, size: size)
     }
     
     // MARK: - Class functions -
@@ -142,10 +151,5 @@ extension UIFont
         BFLog("\(fontNames)")
         
         return fontNames
-    }
-    
-    static func fontForFontName(fontName: FontName, size: CGFloat) -> UIFont?
-    {
-        return UIFont(name: fontName.rawValue, size: size)
     }
 }
