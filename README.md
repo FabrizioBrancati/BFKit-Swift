@@ -43,6 +43,7 @@ It also adds some useful method to some classes like:
 - UIButton
 - UIColor
 - UIDevice
+- UIFont
 - **More soon!**
 
 ##BFKit is currently under development
