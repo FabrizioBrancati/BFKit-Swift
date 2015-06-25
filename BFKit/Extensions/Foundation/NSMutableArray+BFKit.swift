@@ -46,7 +46,7 @@ extension NSMutableArray
         var sortedArray: NSArray = tempArray.sortedArrayUsingDescriptors([descriptor])
         
         tempArray.removeAllObjects()
-        tempArray = sortedArray as! NSMutableArray
+        tempArray = NSMutableArray(array: sortedArray)
         
         array.removeAllObjects()
         array.addObjectsFromArray(tempArray as [AnyObject])
