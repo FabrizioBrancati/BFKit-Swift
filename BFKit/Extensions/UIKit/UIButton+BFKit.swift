@@ -31,56 +31,47 @@ extension UIButton
 {
     // MARK: - Class functions -
     
-    static func initWithFrame(frame: CGRect) -> UIButton
+    convenience init(frame: CGRect, title: String?)
     {
-        return self.initWithFrame(frame, title: nil)
+        self.init(frame: frame, title: title, backgroundImage: nil)
     }
     
-    static func initWithFrame(frame: CGRect, title: String?) -> UIButton
+    convenience init(frame: CGRect, title: String?, backgroundImage: UIImage?)
     {
-        return self.initWithFrame(frame, title: title, backgroundImage: nil)
+        self.init(frame: frame, title: title, backgroundImage: backgroundImage, highlightedBackgroundImage: nil)
     }
     
-    static func initWithFrame(frame: CGRect, title: String?, backgroundImage: UIImage?) -> UIButton
+    convenience init(frame: CGRect, title: String?, backgroundImage: UIImage?, highlightedBackgroundImage: UIImage?)
     {
-        return self.initWithFrame(frame, title: title, backgroundImage: backgroundImage, highlightedBackgroundImage: nil)
+        self.init(frame: frame)
+        self.frame = frame
+        self.setTitle(title, forState: .Normal)
+        self.setBackgroundImage(backgroundImage, forState: .Normal)
+        self.setBackgroundImage(highlightedBackgroundImage, forState: .Highlighted)
     }
     
-    static func initWithFrame(frame: CGRect, title: String?, backgroundImage: UIImage?, highlightedBackgroundImage: UIImage?) -> UIButton
-    {
-        var button: UIButton = buttonWithType(.Custom) as! UIButton
-        button.frame = frame
-        button.setTitle(title, forState: .Normal)
-        button.setBackgroundImage(backgroundImage, forState: .Normal)
-        button.setBackgroundImage(highlightedBackgroundImage, forState: .Highlighted)
-        
-        return button
-    }
-    
-    static func initWithFrame(frame: CGRect, title: String, color: UIColor) -> UIButton
+    convenience init(frame: CGRect, title: String, color: UIColor)
     {
         let components: UnsafePointer<CGFloat> = CGColorGetComponents(color.CGColor)
-        return self.initWithFrame(frame, title: title, backgroundImage: UIImage.imageWithColor(color), highlightedBackgroundImage: UIImage.imageWithColor(UIColor(red: components[0]-0.1, green: components[1]-0.1, blue: components[2]-0.1, alpha: 1)))
+        self.init(frame: frame, title: title, backgroundImage: UIImage.imageWithColor(color), highlightedBackgroundImage: UIImage.imageWithColor(UIColor(red: components[0]-0.1, green: components[1]-0.1, blue: components[2]-0.1, alpha: 1)))
     }
     
-    static func initWithFrame(frame: CGRect, title: String, color: UIColor, highlightedColor: UIColor) -> UIButton
+    convenience init(frame: CGRect, title: String, color: UIColor, highlightedColor: UIColor)
     {
-        return self.initWithFrame(frame, title: title, backgroundImage: UIImage.imageWithColor(color), highlightedBackgroundImage: UIImage.imageWithColor(highlightedColor))
+        self.init(frame: frame, title: title, backgroundImage: UIImage.imageWithColor(color), highlightedBackgroundImage: UIImage.imageWithColor(highlightedColor))
     }
     
-    static func initWithFrame(frame: CGRect, image: UIImage) -> UIButton
+    convenience init(frame: CGRect, image: UIImage)
     {
-        return self.initWithFrame(frame, image: image, highlightedImage: nil)
+        self.init(frame: frame, image: image, highlightedImage: nil)
     }
     
-    static func initWithFrame(frame: CGRect, image: UIImage, highlightedImage: UIImage?) -> UIButton
+    convenience init(frame: CGRect, image: UIImage, highlightedImage: UIImage?)
     {
-        var button: UIButton = buttonWithType(.Custom) as! UIButton
-        button.frame = frame
-        button.setImage(image, forState: .Normal)
-        button.setImage(highlightedImage, forState: .Highlighted)
-        
-        return button
+        self.init(frame: frame)
+        self.frame = frame
+        self.setImage(image, forState: .Normal)
+        self.setImage(highlightedImage, forState: .Highlighted)
     }
     
     // MARK: - Instance functions -
