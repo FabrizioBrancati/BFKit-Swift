@@ -64,7 +64,7 @@ class BFKitViewController: UITableViewController
         {
             let detailViewController: DetailViewController = segue.destinationViewController as! DetailViewController
             
-            detailViewController.prepareForDetail(UIKitArray[sender!.tag!])
+            detailViewController.prepareForDetail(BFKitArray[sender!.tag!])
         }
     }
 }

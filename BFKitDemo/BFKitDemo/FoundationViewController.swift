@@ -64,7 +64,7 @@ class FoundationViewController: UITableViewController
         {
             let detailViewController: DetailViewController = segue.destinationViewController as! DetailViewController
             
-            detailViewController.prepareForDetail(UIKitArray[sender!.tag!])
+            detailViewController.prepareForDetail(FoundationArray[sender!.tag!])
         }
     }
 }
