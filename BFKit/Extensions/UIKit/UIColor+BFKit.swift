@@ -26,7 +26,8 @@
 
 import Foundation
 import UIKit
-import CoreGraphics
+
+// MARK: - Global functions -
 
 func RGBA(r: Int, g: Int, b: Int, a: Float) -> UIColor
 {

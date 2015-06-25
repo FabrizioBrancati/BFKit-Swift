@@ -53,12 +53,12 @@ extension UIButton
     convenience init(frame: CGRect, title: String, color: UIColor)
     {
         let components: UnsafePointer<CGFloat> = CGColorGetComponents(color.CGColor)
-        self.init(frame: frame, title: title, backgroundImage: UIImage.imageWithColor(color), highlightedBackgroundImage: UIImage.imageWithColor(UIColor(red: components[0]-0.1, green: components[1]-0.1, blue: components[2]-0.1, alpha: 1)))
+        self.init(frame: frame, title: title, backgroundImage: UIImage(color: color), highlightedBackgroundImage: UIImage(color: UIColor(red: components[0]-0.1, green: components[1]-0.1, blue: components[2]-0.1, alpha: 1)))
     }
     
     convenience init(frame: CGRect, title: String, color: UIColor, highlightedColor: UIColor)
     {
-        self.init(frame: frame, title: title, backgroundImage: UIImage.imageWithColor(color), highlightedBackgroundImage: UIImage.imageWithColor(highlightedColor))
+        self.init(frame: frame, title: title, backgroundImage: UIImage(color: color), highlightedBackgroundImage: UIImage(color: highlightedColor))
     }
     
     convenience init(frame: CGRect, image: UIImage)

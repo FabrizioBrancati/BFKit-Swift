@@ -33,45 +33,45 @@ extension UIImage
     
     // MARK: - Class functions -
     
-    static func imageWithTextMask(#imageSize: CGSize, backgroundColor: UIColor, maskedText: String, font: UIFont, fontSize: CGFloat) -> UIImage
+    convenience init?(maskedText: String, imageSize: CGSize, backgroundColor: UIColor, font: UIFont, fontSize: CGFloat)
     {
         // TODO: Use fonts enum
         //let fontName = UIFont.fontForFontName(font, size: fontSize)
-        let textAttributes = [NSFontAttributeName: font]
+        let textAttributes = [NSFontAttributeName : font]
         
         let textSize: CGSize = maskedText.sizeWithAttributes(textAttributes)
         
         UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.mainScreen().scale)
-        let ctx: CGContextRef = UIGraphicsGetCurrentContext();
+        let ctx: CGContextRef = UIGraphicsGetCurrentContext()
         
         CGContextSetFillColorWithColor(ctx, backgroundColor.CGColor)
         
         let path: UIBezierPath = UIBezierPath(rect: CGRectMake(0, 0, imageSize.width, imageSize.height))
-        CGContextAddPath(ctx, path.CGPath);
-        CGContextFillPath(ctx);
+        CGContextAddPath(ctx, path.CGPath)
+        CGContextFillPath(ctx)
         
-        CGContextSetBlendMode(ctx, kCGBlendModeDestinationOut);
-        let center: CGPoint = CGPointMake(imageSize.width / 2 - textSize.width / 2, imageSize.height / 2 - textSize.height / 2);
+        CGContextSetBlendMode(ctx, kCGBlendModeDestinationOut)
+        let center: CGPoint = CGPointMake(imageSize.width / 2 - textSize.width / 2, imageSize.height / 2 - textSize.height / 2)
         maskedText.drawAtPoint(center, withAttributes: textAttributes)
         
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext();
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         
         UIGraphicsEndImageContext();
         
-        return image
+        self.init(CGImage: image.CGImage)
     }
     
-    static func imageWithColor(color: UIColor) -> UIImage
+    convenience init?(color: UIColor)
     {
-        let rect: CGRect = CGRectMake(0, 0, 1, 1);
-        UIGraphicsBeginImageContext(rect.size);
-        let context: CGContextRef = UIGraphicsGetCurrentContext();
-        CGContextSetFillColorWithColor(context, color.CGColor);
+        let rect: CGRect = CGRectMake(0, 0, 1, 1)
+        UIGraphicsBeginImageContext(rect.size)
+        let context: CGContextRef = UIGraphicsGetCurrentContext()
+        CGContextSetFillColorWithColor(context, color.CGColor)
         
-        CGContextFillRect(context, rect);
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
+        CGContextFillRect(context, rect)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
         
-        return image;
+        self.init(CGImage: image.CGImage)
     }
 }
