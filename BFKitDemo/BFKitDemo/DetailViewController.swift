@@ -69,6 +69,9 @@ class DetailViewController: UIViewController
             BFLog("\(UIDevice.uniqueIdentifier())")
         case .UIFont:
             UIFont.allFamilyAndFonts()
+        case .UIImage:
+            let button = UIImageView(image: UIImage(dummyImageWithSizeAndColor: "100x100.blue"))
+            self.view.addSubview(button)
         default:
             break
         }
