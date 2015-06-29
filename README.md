@@ -46,6 +46,9 @@ It also adds some useful method to some classes like:
 - UIFont
 - UIImage
 - UIImageView
+- UILabel
+- UIScrollView
+- UITableView
 - **More soon!**
 
 ##BFKit is currently under development
