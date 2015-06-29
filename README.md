@@ -51,6 +51,7 @@ It also adds some useful method to some classes like:
 - UITableView
 - UITextField
 - UITextView
+- UIView
 - **More soon!**
 
 ##BFKit is currently under development

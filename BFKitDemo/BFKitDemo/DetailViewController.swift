@@ -72,6 +72,17 @@ class DetailViewController: UIViewController
         case .UIImage:
             let button = UIImageView(image: UIImage(dummyImageWithSizeAndColor: "100x100.blue"))
             self.view.addSubview(button)
+            let image = UIImageView(image: UIImage(named: "Logo")!.blur(radius: 50))
+            image.center = CGPointMake(20, 200)
+            self.view.addSubview(image)
+        case .UIImageView:
+            let view = UIImageView(image: UIImage(named: "Logo")!, center: CGPointMake(120, 120))
+            view.setMaskImage(UIImage(named: "Logo2")!)
+            self.view.addSubview(view)
+        case .UIView:
+            let view = UIView(frame: CGRectMake(20, 60, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40))
+            view.createGradientWithColors([UIColor.blackColor(), UIColor.redColor()], direction: .DiagonalFromLeftToRightAndTopToDown)
+            self.view.addSubview(view)
         default:
             break
         }
