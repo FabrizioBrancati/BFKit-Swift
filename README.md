@@ -44,6 +44,8 @@ It also adds some useful method to some classes like:
 - UIColor
 - UIDevice
 - UIFont
+- UIImage
+- UIImageView
 - **More soon!**
 
 ##BFKit is currently under development
