@@ -49,6 +49,7 @@ It also adds some useful method to some classes like:
 - UILabel
 - UIScrollView
 - UITableView
+- UITextField
 - **More soon!**
 
 ##BFKit is currently under development
