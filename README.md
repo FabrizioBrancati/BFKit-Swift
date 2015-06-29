@@ -90,7 +90,7 @@ Please make sure to follow my general coding style for new features!
 Installing and Usage :computer:
 ===============================
 ###Manual
-- Copy the **library** folder (**BFKit**) to the project
+- Copy the **Source** folder to the project
 - Enjoy!
 
 Todo :ballot_box_with_check:
@@ -109,8 +109,9 @@ Author :neckbeard:
 ==================
 **Fabrizio Brancati**
 
-- **[Website](http://www.fabriziobrancati.com)**
-- **[Email](mailto:fabrizio.brancati@gmail.com)**
+[![Website](https://img.shields.io/badge/website-fabriziobrancati.com-4fb0c8.svg)](http://www.fabriziobrancati.com)
+<br>
+[![Email](https://img.shields.io/badge/email-fabrizio.brancati%40gmail.com-green.svg)](mailto:fabrizio.brancati@gmail.com)
 
 License :scroll:
 ================

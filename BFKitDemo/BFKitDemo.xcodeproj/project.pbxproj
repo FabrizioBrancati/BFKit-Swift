@@ -15,43 +15,43 @@
 		4974E2591AED3DD50090F642 /* UserInterfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4974E2581AED3DD50090F642 /* UserInterfaceViewController.swift */; };
 		4974E25E1AED3DD50090F642 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4974E25D1AED3DD50090F642 /* Images.xcassets */; };
 		4974E26D1AED3DD50090F642 /* BFKitDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4974E26C1AED3DD50090F642 /* BFKitDemoTests.swift */; };
-		497B57B01B39E42200CC09C7 /* BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B57AF1B39E42200CC09C7 /* BFKit.swift */; };
 		49919AA61B3B2D3C00A9E55D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49919AA51B3B2D3C00A9E55D /* Main.storyboard */; };
-		49919AB11B3B2D6600A9E55D /* BFKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49919AA81B3B2D6600A9E55D /* BFKit.strings */; };
-		49919AB61B3B3C3100A9E55D /* UIButton+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49919AB31B3B3C3100A9E55D /* UIButton+BFKit.swift */; };
-		49919AB71B3B3C3100A9E55D /* UIColor+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49919AB41B3B3C3100A9E55D /* UIColor+BFKit.swift */; };
-		49919AB81B3B3C3100A9E55D /* UIImage+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49919AB51B3B3C3100A9E55D /* UIImage+BFKit.swift */; };
-		49919ABA1B3C1AA600A9E55D /* UIDevice+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49919AB91B3C1AA600A9E55D /* UIDevice+BFKit.swift */; };
-		49919ABC1B3C668C00A9E55D /* UIFont+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49919ABB1B3C668C00A9E55D /* UIFont+BFKit.swift */; };
-		499DF7AC1B308BEE00C1CEBD /* NSMutableArray+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7AB1B308BEE00C1CEBD /* NSMutableArray+BFKit.swift */; };
-		499DF7AE1B31934C00C1CEBD /* NSMutableDictionary+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7AD1B31934C00C1CEBD /* NSMutableDictionary+BFKit.swift */; };
-		499DF7B01B31A6B200C1CEBD /* NSNumber+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7AF1B31A6B200C1CEBD /* NSNumber+BFKit.swift */; };
-		499DF7B21B31F0C500C1CEBD /* NSObject+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7B11B31F0C500C1CEBD /* NSObject+BFKit.swift */; };
-		499DF7B41B321AAE00C1CEBD /* NSProcessInfo+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7B31B321AAE00C1CEBD /* NSProcessInfo+BFKit.swift */; };
-		499DF7B61B35B1F000C1CEBD /* NSThread+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7B51B35B1F000C1CEBD /* NSThread+BFKit.swift */; };
-		499DF7BC1B35EF0F00C1CEBD /* NSString+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7BB1B35EF0F00C1CEBD /* NSString+BFKit.swift */; };
-		499DF7BE1B35EF2D00C1CEBD /* String+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7BD1B35EF2D00C1CEBD /* String+BFKit.swift */; };
-		49B1F9581B417A8A003FC78E /* UIView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9571B417A8A003FC78E /* UIView+BFKit.swift */; };
-		49B1F95A1B41A4E7003FC78E /* UIWebView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9591B41A4E7003FC78E /* UIWebView+BFKit.swift */; };
-		49B1F95C1B41A8B8003FC78E /* UIWindow+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F95B1B41A8B8003FC78E /* UIWindow+BFKit.swift */; };
-		49BD7C881B2898ED0092C563 /* BFPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD7C871B2898ED0092C563 /* BFPassword.swift */; };
-		49BD7C8A1B28B7900092C563 /* BFSystemSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD7C891B28B7900092C563 /* BFSystemSound.swift */; };
-		49BD7C8C1B2917C50092C563 /* BFTouchID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD7C8B1B2917C50092C563 /* BFTouchID.swift */; };
-		49BD7C8E1B2B08A80092C563 /* NSDictionary+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD7C8D1B2B08A80092C563 /* NSDictionary+BFKit.swift */; };
-		49BD7C901B2B13340092C563 /* Dictionary+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD7C8F1B2B13340092C563 /* Dictionary+BFKit.swift */; };
-		49BD7C921B2B1D620092C563 /* NSFileManager+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD7C911B2B1D620092C563 /* NSFileManager+BFKit.swift */; };
-		49D65B1A1B40DEC600BD40D3 /* UIImageView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D65B191B40DEC600BD40D3 /* UIImageView+BFKit.swift */; };
-		49D65B1C1B41619F00BD40D3 /* UILabel+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D65B1B1B41619F00BD40D3 /* UILabel+BFKit.swift */; };
-		49D65B1E1B4162B200BD40D3 /* UIScrollView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D65B1D1B4162B200BD40D3 /* UIScrollView+BFKit.swift */; };
-		49D65B201B41637300BD40D3 /* UITableView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D65B1F1B41637300BD40D3 /* UITableView+BFKit.swift */; };
-		49D65B221B41656400BD40D3 /* UITextField+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D65B211B41656400BD40D3 /* UITextField+BFKit.swift */; };
-		49D65B241B4172F300BD40D3 /* UITextView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D65B231B4172F300BD40D3 /* UITextView+BFKit.swift */; };
-		49E4E1781B1328F200BBB56C /* BFApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4E1771B1328F200BBB56C /* BFApp.swift */; };
-		49E4E17F1B13291C00BBB56C /* Array+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4E17B1B13291C00BBB56C /* Array+BFKit.swift */; };
-		49E4E1801B13291C00BBB56C /* NSArray+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4E17C1B13291C00BBB56C /* NSArray+BFKit.swift */; };
-		49E4E1811B13291C00BBB56C /* NSDate+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4E17D1B13291C00BBB56C /* NSDate+BFKit.swift */; };
-		49E4E1831B1378EA00BBB56C /* BFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4E1821B1378EA00BBB56C /* BFButton.swift */; };
-		49EDDEEF1B20A59D0089C6D0 /* BFLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EDDEEE1B20A59D0089C6D0 /* BFLog.swift */; };
+		49B1F9B61B41BA8E003FC78E /* BFApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9861B41BA8E003FC78E /* BFApp.swift */; };
+		49B1F9B71B41BA8E003FC78E /* BFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9871B41BA8E003FC78E /* BFButton.swift */; };
+		49B1F9B81B41BA8E003FC78E /* BFLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9881B41BA8E003FC78E /* BFLog.swift */; };
+		49B1F9B91B41BA8E003FC78E /* BFPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9891B41BA8E003FC78E /* BFPassword.swift */; };
+		49B1F9BA1B41BA8E003FC78E /* BFSystemSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F98A1B41BA8E003FC78E /* BFSystemSound.swift */; };
+		49B1F9BB1B41BA8E003FC78E /* BFTouchID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F98B1B41BA8E003FC78E /* BFTouchID.swift */; };
+		49B1F9BC1B41BA8E003FC78E /* BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F98C1B41BA8E003FC78E /* BFKit.swift */; };
+		49B1F9BD1B41BA8E003FC78E /* Array+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F98F1B41BA8E003FC78E /* Array+BFKit.swift */; };
+		49B1F9BE1B41BA8E003FC78E /* Dictionary+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9901B41BA8E003FC78E /* Dictionary+BFKit.swift */; };
+		49B1F9BF1B41BA8E003FC78E /* NSArray+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9911B41BA8E003FC78E /* NSArray+BFKit.swift */; };
+		49B1F9C01B41BA8E003FC78E /* NSDate+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9921B41BA8E003FC78E /* NSDate+BFKit.swift */; };
+		49B1F9C11B41BA8E003FC78E /* NSDictionary+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9931B41BA8E003FC78E /* NSDictionary+BFKit.swift */; };
+		49B1F9C21B41BA8E003FC78E /* NSFileManager+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9941B41BA8E003FC78E /* NSFileManager+BFKit.swift */; };
+		49B1F9C31B41BA8E003FC78E /* NSMutableArray+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9951B41BA8E003FC78E /* NSMutableArray+BFKit.swift */; };
+		49B1F9C41B41BA8E003FC78E /* NSMutableDictionary+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9961B41BA8E003FC78E /* NSMutableDictionary+BFKit.swift */; };
+		49B1F9C51B41BA8E003FC78E /* NSNumber+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9971B41BA8E003FC78E /* NSNumber+BFKit.swift */; };
+		49B1F9C61B41BA8E003FC78E /* NSObject+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9981B41BA8E003FC78E /* NSObject+BFKit.swift */; };
+		49B1F9C71B41BA8E003FC78E /* NSProcessInfo+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9991B41BA8E003FC78E /* NSProcessInfo+BFKit.swift */; };
+		49B1F9C81B41BA8E003FC78E /* NSString+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F99A1B41BA8E003FC78E /* NSString+BFKit.swift */; };
+		49B1F9C91B41BA8E003FC78E /* NSThread+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F99B1B41BA8E003FC78E /* NSThread+BFKit.swift */; };
+		49B1F9CA1B41BA8E003FC78E /* String+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F99C1B41BA8E003FC78E /* String+BFKit.swift */; };
+		49B1F9CB1B41BA8E003FC78E /* UIButton+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F99E1B41BA8E003FC78E /* UIButton+BFKit.swift */; };
+		49B1F9CC1B41BA8E003FC78E /* UIColor+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F99F1B41BA8E003FC78E /* UIColor+BFKit.swift */; };
+		49B1F9CD1B41BA8E003FC78E /* UIDevice+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9A01B41BA8E003FC78E /* UIDevice+BFKit.swift */; };
+		49B1F9CE1B41BA8E003FC78E /* UIFont+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9A11B41BA8E003FC78E /* UIFont+BFKit.swift */; };
+		49B1F9CF1B41BA8E003FC78E /* UIImage+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9A21B41BA8E003FC78E /* UIImage+BFKit.swift */; };
+		49B1F9D01B41BA8E003FC78E /* UIImageView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9A31B41BA8E003FC78E /* UIImageView+BFKit.swift */; };
+		49B1F9D11B41BA8E003FC78E /* UILabel+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9A41B41BA8E003FC78E /* UILabel+BFKit.swift */; };
+		49B1F9D21B41BA8E003FC78E /* UIScrollView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9A51B41BA8E003FC78E /* UIScrollView+BFKit.swift */; };
+		49B1F9D31B41BA8E003FC78E /* UITableView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9A61B41BA8E003FC78E /* UITableView+BFKit.swift */; };
+		49B1F9D41B41BA8E003FC78E /* UITextField+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9A71B41BA8E003FC78E /* UITextField+BFKit.swift */; };
+		49B1F9D51B41BA8E003FC78E /* UITextView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9A81B41BA8E003FC78E /* UITextView+BFKit.swift */; };
+		49B1F9D61B41BA8E003FC78E /* UIView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9A91B41BA8E003FC78E /* UIView+BFKit.swift */; };
+		49B1F9D71B41BA8E003FC78E /* UIWebView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9AA1B41BA8E003FC78E /* UIWebView+BFKit.swift */; };
+		49B1F9D81B41BA8E003FC78E /* UIWindow+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9AB1B41BA8E003FC78E /* UIWindow+BFKit.swift */; };
+		49B1F9D91B41BA8E003FC78E /* BFKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49B1F9AD1B41BA8E003FC78E /* BFKit.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,50 +77,50 @@
 		4974E2661AED3DD50090F642 /* BFKitDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BFKitDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4974E26B1AED3DD50090F642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4974E26C1AED3DD50090F642 /* BFKitDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFKitDemoTests.swift; sourceTree = "<group>"; };
-		497B57AF1B39E42200CC09C7 /* BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFKit.swift; path = ../../BFKit/BFKit.swift; sourceTree = "<group>"; };
 		49919AA51B3B2D3C00A9E55D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		49919AA91B3B2D6600A9E55D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BFKit.strings; sourceTree = "<group>"; };
-		49919AAA1B3B2D6600A9E55D /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/BFKit.strings; sourceTree = "<group>"; };
-		49919AAB1B3B2D6600A9E55D /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/BFKit.strings; sourceTree = "<group>"; };
-		49919AAC1B3B2D6600A9E55D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/BFKit.strings; sourceTree = "<group>"; };
-		49919AAD1B3B2D6600A9E55D /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/BFKit.strings; sourceTree = "<group>"; };
-		49919AAE1B3B2D6600A9E55D /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/BFKit.strings; sourceTree = "<group>"; };
-		49919AAF1B3B2D6600A9E55D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BFKit.strings"; sourceTree = "<group>"; };
-		49919AB01B3B2D6600A9E55D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/BFKit.strings"; sourceTree = "<group>"; };
-		49919AB31B3B3C3100A9E55D /* UIButton+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+BFKit.swift"; sourceTree = "<group>"; };
-		49919AB41B3B3C3100A9E55D /* UIColor+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+BFKit.swift"; sourceTree = "<group>"; };
-		49919AB51B3B3C3100A9E55D /* UIImage+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+BFKit.swift"; sourceTree = "<group>"; };
-		49919AB91B3C1AA600A9E55D /* UIDevice+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+BFKit.swift"; sourceTree = "<group>"; };
-		49919ABB1B3C668C00A9E55D /* UIFont+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+BFKit.swift"; sourceTree = "<group>"; };
-		499DF7AB1B308BEE00C1CEBD /* NSMutableArray+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableArray+BFKit.swift"; sourceTree = "<group>"; };
-		499DF7AD1B31934C00C1CEBD /* NSMutableDictionary+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableDictionary+BFKit.swift"; sourceTree = "<group>"; };
-		499DF7AF1B31A6B200C1CEBD /* NSNumber+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumber+BFKit.swift"; sourceTree = "<group>"; };
-		499DF7B11B31F0C500C1CEBD /* NSObject+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+BFKit.swift"; sourceTree = "<group>"; };
-		499DF7B31B321AAE00C1CEBD /* NSProcessInfo+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSProcessInfo+BFKit.swift"; sourceTree = "<group>"; };
-		499DF7B51B35B1F000C1CEBD /* NSThread+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSThread+BFKit.swift"; sourceTree = "<group>"; };
-		499DF7BB1B35EF0F00C1CEBD /* NSString+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+BFKit.swift"; sourceTree = "<group>"; };
-		499DF7BD1B35EF2D00C1CEBD /* String+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+BFKit.swift"; sourceTree = "<group>"; };
-		49B1F9571B417A8A003FC78E /* UIView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+BFKit.swift"; sourceTree = "<group>"; };
-		49B1F9591B41A4E7003FC78E /* UIWebView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWebView+BFKit.swift"; sourceTree = "<group>"; };
-		49B1F95B1B41A8B8003FC78E /* UIWindow+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+BFKit.swift"; sourceTree = "<group>"; };
-		49BD7C871B2898ED0092C563 /* BFPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFPassword.swift; path = ../../BFKit/BFKit/BFPassword.swift; sourceTree = "<group>"; };
-		49BD7C891B28B7900092C563 /* BFSystemSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFSystemSound.swift; path = ../../BFKit/BFKit/BFSystemSound.swift; sourceTree = "<group>"; };
-		49BD7C8B1B2917C50092C563 /* BFTouchID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFTouchID.swift; path = ../../BFKit/BFKit/BFTouchID.swift; sourceTree = "<group>"; };
-		49BD7C8D1B2B08A80092C563 /* NSDictionary+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDictionary+BFKit.swift"; sourceTree = "<group>"; };
-		49BD7C8F1B2B13340092C563 /* Dictionary+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+BFKit.swift"; sourceTree = "<group>"; };
-		49BD7C911B2B1D620092C563 /* NSFileManager+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFileManager+BFKit.swift"; sourceTree = "<group>"; };
-		49D65B191B40DEC600BD40D3 /* UIImageView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+BFKit.swift"; sourceTree = "<group>"; };
-		49D65B1B1B41619F00BD40D3 /* UILabel+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+BFKit.swift"; sourceTree = "<group>"; };
-		49D65B1D1B4162B200BD40D3 /* UIScrollView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+BFKit.swift"; sourceTree = "<group>"; };
-		49D65B1F1B41637300BD40D3 /* UITableView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+BFKit.swift"; sourceTree = "<group>"; };
-		49D65B211B41656400BD40D3 /* UITextField+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+BFKit.swift"; sourceTree = "<group>"; };
-		49D65B231B4172F300BD40D3 /* UITextView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+BFKit.swift"; sourceTree = "<group>"; };
-		49E4E1771B1328F200BBB56C /* BFApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFApp.swift; path = ../../BFKit/BFKit/BFApp.swift; sourceTree = "<group>"; };
-		49E4E17B1B13291C00BBB56C /* Array+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+BFKit.swift"; sourceTree = "<group>"; };
-		49E4E17C1B13291C00BBB56C /* NSArray+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSArray+BFKit.swift"; sourceTree = "<group>"; };
-		49E4E17D1B13291C00BBB56C /* NSDate+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+BFKit.swift"; sourceTree = "<group>"; };
-		49E4E1821B1378EA00BBB56C /* BFButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFButton.swift; path = ../../BFKit/BFKit/BFButton.swift; sourceTree = "<group>"; };
-		49EDDEEE1B20A59D0089C6D0 /* BFLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFLog.swift; path = ../../BFKit/BFKit/BFLog.swift; sourceTree = "<group>"; };
+		49B1F9861B41BA8E003FC78E /* BFApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFApp.swift; sourceTree = "<group>"; };
+		49B1F9871B41BA8E003FC78E /* BFButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFButton.swift; sourceTree = "<group>"; };
+		49B1F9881B41BA8E003FC78E /* BFLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFLog.swift; sourceTree = "<group>"; };
+		49B1F9891B41BA8E003FC78E /* BFPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFPassword.swift; sourceTree = "<group>"; };
+		49B1F98A1B41BA8E003FC78E /* BFSystemSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFSystemSound.swift; sourceTree = "<group>"; };
+		49B1F98B1B41BA8E003FC78E /* BFTouchID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFTouchID.swift; sourceTree = "<group>"; };
+		49B1F98C1B41BA8E003FC78E /* BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFKit.swift; sourceTree = "<group>"; };
+		49B1F98F1B41BA8E003FC78E /* Array+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9901B41BA8E003FC78E /* Dictionary+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9911B41BA8E003FC78E /* NSArray+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSArray+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9921B41BA8E003FC78E /* NSDate+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9931B41BA8E003FC78E /* NSDictionary+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDictionary+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9941B41BA8E003FC78E /* NSFileManager+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFileManager+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9951B41BA8E003FC78E /* NSMutableArray+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableArray+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9961B41BA8E003FC78E /* NSMutableDictionary+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableDictionary+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9971B41BA8E003FC78E /* NSNumber+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumber+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9981B41BA8E003FC78E /* NSObject+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9991B41BA8E003FC78E /* NSProcessInfo+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSProcessInfo+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F99A1B41BA8E003FC78E /* NSString+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F99B1B41BA8E003FC78E /* NSThread+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSThread+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F99C1B41BA8E003FC78E /* String+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F99E1B41BA8E003FC78E /* UIButton+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F99F1B41BA8E003FC78E /* UIColor+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9A01B41BA8E003FC78E /* UIDevice+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9A11B41BA8E003FC78E /* UIFont+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9A21B41BA8E003FC78E /* UIImage+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9A31B41BA8E003FC78E /* UIImageView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9A41B41BA8E003FC78E /* UILabel+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9A51B41BA8E003FC78E /* UIScrollView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9A61B41BA8E003FC78E /* UITableView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9A71B41BA8E003FC78E /* UITextField+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9A81B41BA8E003FC78E /* UITextView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9A91B41BA8E003FC78E /* UIView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9AA1B41BA8E003FC78E /* UIWebView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWebView+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9AB1B41BA8E003FC78E /* UIWindow+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9AE1B41BA8E003FC78E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BFKit.strings; sourceTree = "<group>"; };
+		49B1F9AF1B41BA8E003FC78E /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/BFKit.strings; sourceTree = "<group>"; };
+		49B1F9B01B41BA8E003FC78E /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/BFKit.strings; sourceTree = "<group>"; };
+		49B1F9B11B41BA8E003FC78E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/BFKit.strings; sourceTree = "<group>"; };
+		49B1F9B21B41BA8E003FC78E /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/BFKit.strings; sourceTree = "<group>"; };
+		49B1F9B31B41BA8E003FC78E /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/BFKit.strings; sourceTree = "<group>"; };
+		49B1F9B41B41BA8E003FC78E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BFKit.strings"; sourceTree = "<group>"; };
+		49B1F9B51B41BA8E003FC78E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/BFKit.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +144,7 @@
 		4974E2481AED3DD50090F642 = {
 			isa = PBXGroup;
 			children = (
-				4974E2781AED49700090F642 /* BFKit */,
+				49B1F9841B41BA8E003FC78E /* Source */,
 				4974E2531AED3DD50090F642 /* BFKitDemo */,
 				4974E2691AED3DD50090F642 /* BFKitDemoTests */,
 				4974E2521AED3DD50090F642 /* Products */,
@@ -201,90 +201,88 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4974E2781AED49700090F642 /* BFKit */ = {
+		49B1F9841B41BA8E003FC78E /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				497B57AF1B39E42200CC09C7 /* BFKit.swift */,
-				49E4E1791B13291C00BBB56C /* Extensions */,
-				49E4E1761B1328B700BBB56C /* BFKit */,
-				49919AA71B3B2D6600A9E55D /* Languages */,
+				49B1F98C1B41BA8E003FC78E /* BFKit.swift */,
+				49B1F9851B41BA8E003FC78E /* BFKit */,
+				49B1F98D1B41BA8E003FC78E /* Extensions */,
+				49B1F9AC1B41BA8E003FC78E /* Languages */,
 			);
-			name = BFKit;
-			path = BFKitDemo;
+			name = Source;
+			path = ../Source;
 			sourceTree = "<group>";
 		};
-		49919AA71B3B2D6600A9E55D /* Languages */ = {
+		49B1F9851B41BA8E003FC78E /* BFKit */ = {
 			isa = PBXGroup;
 			children = (
-				49919AA81B3B2D6600A9E55D /* BFKit.strings */,
+				49B1F9861B41BA8E003FC78E /* BFApp.swift */,
+				49B1F9871B41BA8E003FC78E /* BFButton.swift */,
+				49B1F9881B41BA8E003FC78E /* BFLog.swift */,
+				49B1F9891B41BA8E003FC78E /* BFPassword.swift */,
+				49B1F98A1B41BA8E003FC78E /* BFSystemSound.swift */,
+				49B1F98B1B41BA8E003FC78E /* BFTouchID.swift */,
 			);
-			name = Languages;
-			path = ../../BFKit/Languages;
+			path = BFKit;
 			sourceTree = "<group>";
 		};
-		49919AB21B3B3C3100A9E55D /* UIKit */ = {
+		49B1F98D1B41BA8E003FC78E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				49919AB31B3B3C3100A9E55D /* UIButton+BFKit.swift */,
-				49919AB41B3B3C3100A9E55D /* UIColor+BFKit.swift */,
-				49919AB91B3C1AA600A9E55D /* UIDevice+BFKit.swift */,
-				49919ABB1B3C668C00A9E55D /* UIFont+BFKit.swift */,
-				49919AB51B3B3C3100A9E55D /* UIImage+BFKit.swift */,
-				49D65B191B40DEC600BD40D3 /* UIImageView+BFKit.swift */,
-				49D65B1B1B41619F00BD40D3 /* UILabel+BFKit.swift */,
-				49D65B1D1B4162B200BD40D3 /* UIScrollView+BFKit.swift */,
-				49D65B1F1B41637300BD40D3 /* UITableView+BFKit.swift */,
-				49D65B211B41656400BD40D3 /* UITextField+BFKit.swift */,
-				49D65B231B4172F300BD40D3 /* UITextView+BFKit.swift */,
-				49B1F9571B417A8A003FC78E /* UIView+BFKit.swift */,
-				49B1F9591B41A4E7003FC78E /* UIWebView+BFKit.swift */,
-				49B1F95B1B41A8B8003FC78E /* UIWindow+BFKit.swift */,
+				49B1F98E1B41BA8E003FC78E /* Foundation */,
+				49B1F99D1B41BA8E003FC78E /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		49B1F98E1B41BA8E003FC78E /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				49B1F98F1B41BA8E003FC78E /* Array+BFKit.swift */,
+				49B1F9901B41BA8E003FC78E /* Dictionary+BFKit.swift */,
+				49B1F9911B41BA8E003FC78E /* NSArray+BFKit.swift */,
+				49B1F9921B41BA8E003FC78E /* NSDate+BFKit.swift */,
+				49B1F9931B41BA8E003FC78E /* NSDictionary+BFKit.swift */,
+				49B1F9941B41BA8E003FC78E /* NSFileManager+BFKit.swift */,
+				49B1F9951B41BA8E003FC78E /* NSMutableArray+BFKit.swift */,
+				49B1F9961B41BA8E003FC78E /* NSMutableDictionary+BFKit.swift */,
+				49B1F9971B41BA8E003FC78E /* NSNumber+BFKit.swift */,
+				49B1F9981B41BA8E003FC78E /* NSObject+BFKit.swift */,
+				49B1F9991B41BA8E003FC78E /* NSProcessInfo+BFKit.swift */,
+				49B1F99A1B41BA8E003FC78E /* NSString+BFKit.swift */,
+				49B1F99B1B41BA8E003FC78E /* NSThread+BFKit.swift */,
+				49B1F99C1B41BA8E003FC78E /* String+BFKit.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		49B1F99D1B41BA8E003FC78E /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				49B1F99E1B41BA8E003FC78E /* UIButton+BFKit.swift */,
+				49B1F99F1B41BA8E003FC78E /* UIColor+BFKit.swift */,
+				49B1F9A01B41BA8E003FC78E /* UIDevice+BFKit.swift */,
+				49B1F9A11B41BA8E003FC78E /* UIFont+BFKit.swift */,
+				49B1F9A21B41BA8E003FC78E /* UIImage+BFKit.swift */,
+				49B1F9A31B41BA8E003FC78E /* UIImageView+BFKit.swift */,
+				49B1F9A41B41BA8E003FC78E /* UILabel+BFKit.swift */,
+				49B1F9A51B41BA8E003FC78E /* UIScrollView+BFKit.swift */,
+				49B1F9A61B41BA8E003FC78E /* UITableView+BFKit.swift */,
+				49B1F9A71B41BA8E003FC78E /* UITextField+BFKit.swift */,
+				49B1F9A81B41BA8E003FC78E /* UITextView+BFKit.swift */,
+				49B1F9A91B41BA8E003FC78E /* UIView+BFKit.swift */,
+				49B1F9AA1B41BA8E003FC78E /* UIWebView+BFKit.swift */,
+				49B1F9AB1B41BA8E003FC78E /* UIWindow+BFKit.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
 		};
-		49E4E1761B1328B700BBB56C /* BFKit */ = {
+		49B1F9AC1B41BA8E003FC78E /* Languages */ = {
 			isa = PBXGroup;
 			children = (
-				49E4E1771B1328F200BBB56C /* BFApp.swift */,
-				49E4E1821B1378EA00BBB56C /* BFButton.swift */,
-				49EDDEEE1B20A59D0089C6D0 /* BFLog.swift */,
-				49BD7C871B2898ED0092C563 /* BFPassword.swift */,
-				49BD7C891B28B7900092C563 /* BFSystemSound.swift */,
-				49BD7C8B1B2917C50092C563 /* BFTouchID.swift */,
+				49B1F9AD1B41BA8E003FC78E /* BFKit.strings */,
 			);
-			name = BFKit;
-			sourceTree = "<group>";
-		};
-		49E4E1791B13291C00BBB56C /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				49E4E17A1B13291C00BBB56C /* Foundation */,
-				49919AB21B3B3C3100A9E55D /* UIKit */,
-			);
-			name = Extensions;
-			path = ../../BFKit/Extensions;
-			sourceTree = "<group>";
-		};
-		49E4E17A1B13291C00BBB56C /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-				49E4E17B1B13291C00BBB56C /* Array+BFKit.swift */,
-				49BD7C8F1B2B13340092C563 /* Dictionary+BFKit.swift */,
-				49E4E17C1B13291C00BBB56C /* NSArray+BFKit.swift */,
-				49E4E17D1B13291C00BBB56C /* NSDate+BFKit.swift */,
-				49BD7C8D1B2B08A80092C563 /* NSDictionary+BFKit.swift */,
-				49BD7C911B2B1D620092C563 /* NSFileManager+BFKit.swift */,
-				499DF7AB1B308BEE00C1CEBD /* NSMutableArray+BFKit.swift */,
-				499DF7AD1B31934C00C1CEBD /* NSMutableDictionary+BFKit.swift */,
-				499DF7AF1B31A6B200C1CEBD /* NSNumber+BFKit.swift */,
-				499DF7B11B31F0C500C1CEBD /* NSObject+BFKit.swift */,
-				499DF7B31B321AAE00C1CEBD /* NSProcessInfo+BFKit.swift */,
-				499DF7BB1B35EF0F00C1CEBD /* NSString+BFKit.swift */,
-				499DF7B51B35B1F000C1CEBD /* NSThread+BFKit.swift */,
-				499DF7BD1B35EF2D00C1CEBD /* String+BFKit.swift */,
-			);
-			path = Foundation;
+			path = Languages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,7 +375,7 @@
 			files = (
 				4974E25E1AED3DD50090F642 /* Images.xcassets in Resources */,
 				49919AA61B3B2D3C00A9E55D /* Main.storyboard in Resources */,
-				49919AB11B3B2D6600A9E55D /* BFKit.strings in Resources */,
+				49B1F9D91B41BA8E003FC78E /* BFKit.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,47 +409,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49D65B221B41656400BD40D3 /* UITextField+BFKit.swift in Sources */,
-				499DF7B61B35B1F000C1CEBD /* NSThread+BFKit.swift in Sources */,
+				49B1F9D41B41BA8E003FC78E /* UITextField+BFKit.swift in Sources */,
 				4974E2591AED3DD50090F642 /* UserInterfaceViewController.swift in Sources */,
-				49919AB81B3B3C3100A9E55D /* UIImage+BFKit.swift in Sources */,
-				499DF7BC1B35EF0F00C1CEBD /* NSString+BFKit.swift in Sources */,
-				49E4E1781B1328F200BBB56C /* BFApp.swift in Sources */,
-				499DF7BE1B35EF2D00C1CEBD /* String+BFKit.swift in Sources */,
-				49EDDEEF1B20A59D0089C6D0 /* BFLog.swift in Sources */,
-				49D65B241B4172F300BD40D3 /* UITextView+BFKit.swift in Sources */,
-				499DF7B41B321AAE00C1CEBD /* NSProcessInfo+BFKit.swift in Sources */,
-				49BD7C921B2B1D620092C563 /* NSFileManager+BFKit.swift in Sources */,
-				49D65B1C1B41619F00BD40D3 /* UILabel+BFKit.swift in Sources */,
-				49BD7C8A1B28B7900092C563 /* BFSystemSound.swift in Sources */,
-				49BD7C8E1B2B08A80092C563 /* NSDictionary+BFKit.swift in Sources */,
 				49354AE71B3AF99600C05AED /* BFKitViewController.swift in Sources */,
-				49BD7C881B2898ED0092C563 /* BFPassword.swift in Sources */,
-				49D65B1E1B4162B200BD40D3 /* UIScrollView+BFKit.swift in Sources */,
-				499DF7B01B31A6B200C1CEBD /* NSNumber+BFKit.swift in Sources */,
+				49B1F9C41B41BA8E003FC78E /* NSMutableDictionary+BFKit.swift in Sources */,
+				49B1F9C71B41BA8E003FC78E /* NSProcessInfo+BFKit.swift in Sources */,
+				49B1F9BE1B41BA8E003FC78E /* Dictionary+BFKit.swift in Sources */,
+				49B1F9B81B41BA8E003FC78E /* BFLog.swift in Sources */,
+				49B1F9CE1B41BA8E003FC78E /* UIFont+BFKit.swift in Sources */,
+				49B1F9D51B41BA8E003FC78E /* UITextView+BFKit.swift in Sources */,
+				49B1F9BA1B41BA8E003FC78E /* BFSystemSound.swift in Sources */,
+				49B1F9BC1B41BA8E003FC78E /* BFKit.swift in Sources */,
+				49B1F9D11B41BA8E003FC78E /* UILabel+BFKit.swift in Sources */,
 				49354AE91B3AFDC300C05AED /* InfoViewController.swift in Sources */,
-				49BD7C8C1B2917C50092C563 /* BFTouchID.swift in Sources */,
-				49D65B201B41637300BD40D3 /* UITableView+BFKit.swift in Sources */,
-				497B57B01B39E42200CC09C7 /* BFKit.swift in Sources */,
-				499DF7AC1B308BEE00C1CEBD /* NSMutableArray+BFKit.swift in Sources */,
-				49B1F95C1B41A8B8003FC78E /* UIWindow+BFKit.swift in Sources */,
+				49B1F9CF1B41BA8E003FC78E /* UIImage+BFKit.swift in Sources */,
+				49B1F9C61B41BA8E003FC78E /* NSObject+BFKit.swift in Sources */,
+				49B1F9C11B41BA8E003FC78E /* NSDictionary+BFKit.swift in Sources */,
+				49B1F9D21B41BA8E003FC78E /* UIScrollView+BFKit.swift in Sources */,
+				49B1F9B91B41BA8E003FC78E /* BFPassword.swift in Sources */,
+				49B1F9BB1B41BA8E003FC78E /* BFTouchID.swift in Sources */,
+				49B1F9C81B41BA8E003FC78E /* NSString+BFKit.swift in Sources */,
+				49B1F9D31B41BA8E003FC78E /* UITableView+BFKit.swift in Sources */,
+				49B1F9CD1B41BA8E003FC78E /* UIDevice+BFKit.swift in Sources */,
+				49B1F9C31B41BA8E003FC78E /* NSMutableArray+BFKit.swift in Sources */,
+				49B1F9D81B41BA8E003FC78E /* UIWindow+BFKit.swift in Sources */,
+				49B1F9BF1B41BA8E003FC78E /* NSArray+BFKit.swift in Sources */,
+				49B1F9D61B41BA8E003FC78E /* UIView+BFKit.swift in Sources */,
+				49B1F9C21B41BA8E003FC78E /* NSFileManager+BFKit.swift in Sources */,
+				49B1F9D71B41BA8E003FC78E /* UIWebView+BFKit.swift in Sources */,
+				49B1F9BD1B41BA8E003FC78E /* Array+BFKit.swift in Sources */,
+				49B1F9CC1B41BA8E003FC78E /* UIColor+BFKit.swift in Sources */,
 				49354AE31B3AEC6B00C05AED /* DetailViewController.swift in Sources */,
-				49B1F9581B417A8A003FC78E /* UIView+BFKit.swift in Sources */,
-				49919AB71B3B3C3100A9E55D /* UIColor+BFKit.swift in Sources */,
-				49B1F95A1B41A4E7003FC78E /* UIWebView+BFKit.swift in Sources */,
-				499DF7B21B31F0C500C1CEBD /* NSObject+BFKit.swift in Sources */,
-				499DF7AE1B31934C00C1CEBD /* NSMutableDictionary+BFKit.swift in Sources */,
-				49919AB61B3B3C3100A9E55D /* UIButton+BFKit.swift in Sources */,
-				49D65B1A1B40DEC600BD40D3 /* UIImageView+BFKit.swift in Sources */,
-				49E4E17F1B13291C00BBB56C /* Array+BFKit.swift in Sources */,
-				49E4E1801B13291C00BBB56C /* NSArray+BFKit.swift in Sources */,
-				49BD7C901B2B13340092C563 /* Dictionary+BFKit.swift in Sources */,
+				49B1F9D01B41BA8E003FC78E /* UIImageView+BFKit.swift in Sources */,
+				49B1F9C51B41BA8E003FC78E /* NSNumber+BFKit.swift in Sources */,
+				49B1F9CB1B41BA8E003FC78E /* UIButton+BFKit.swift in Sources */,
 				49354AE51B3AF8BF00C05AED /* FoundationViewController.swift in Sources */,
-				49919ABA1B3C1AA600A9E55D /* UIDevice+BFKit.swift in Sources */,
-				49919ABC1B3C668C00A9E55D /* UIFont+BFKit.swift in Sources */,
+				49B1F9C91B41BA8E003FC78E /* NSThread+BFKit.swift in Sources */,
+				49B1F9CA1B41BA8E003FC78E /* String+BFKit.swift in Sources */,
+				49B1F9C01B41BA8E003FC78E /* NSDate+BFKit.swift in Sources */,
+				49B1F9B71B41BA8E003FC78E /* BFButton.swift in Sources */,
+				49B1F9B61B41BA8E003FC78E /* BFApp.swift in Sources */,
 				4974E2571AED3DD50090F642 /* AppDelegate.swift in Sources */,
-				49E4E1831B1378EA00BBB56C /* BFButton.swift in Sources */,
-				49E4E1811B13291C00BBB56C /* NSDate+BFKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,17 +472,17 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		49919AA81B3B2D6600A9E55D /* BFKit.strings */ = {
+		49B1F9AD1B41BA8E003FC78E /* BFKit.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				49919AA91B3B2D6600A9E55D /* en */,
-				49919AAA1B3B2D6600A9E55D /* id */,
-				49919AAB1B3B2D6600A9E55D /* it */,
-				49919AAC1B3B2D6600A9E55D /* ru */,
-				49919AAD1B3B2D6600A9E55D /* uk */,
-				49919AAE1B3B2D6600A9E55D /* vi */,
-				49919AAF1B3B2D6600A9E55D /* zh-Hans */,
-				49919AB01B3B2D6600A9E55D /* zh-Hant */,
+				49B1F9AE1B41BA8E003FC78E /* en */,
+				49B1F9AF1B41BA8E003FC78E /* id */,
+				49B1F9B01B41BA8E003FC78E /* it */,
+				49B1F9B11B41BA8E003FC78E /* ru */,
+				49B1F9B21B41BA8E003FC78E /* uk */,
+				49B1F9B31B41BA8E003FC78E /* vi */,
+				49B1F9B41B41BA8E003FC78E /* zh-Hans */,
+				49B1F9B51B41BA8E003FC78E /* zh-Hant */,
 			);
 			name = BFKit.strings;
 			sourceTree = "<group>";
