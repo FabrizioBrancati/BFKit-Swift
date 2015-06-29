@@ -52,9 +52,8 @@ It also adds some useful method to some classes like:
 - UITextField
 - UITextView
 - UIView
-- **More soon!**
-
-##BFKit is currently under development
+- UIWebView
+- UIWindow
 
 Language support :it:
 =====================
@@ -104,6 +103,7 @@ Todo :ballot_box_with_check:
 - :heavy_minus_sign: Make it as a Framework
 - :heavy_minus_sign: Add all comments
 - :heavy_minus_sign: Create a great documentation
+- :heavy_minus_sign: Create a DEMO App
 
 Author :neckbeard:
 ==================
