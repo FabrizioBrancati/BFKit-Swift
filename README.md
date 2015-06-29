@@ -50,6 +50,7 @@ It also adds some useful method to some classes like:
 - UIScrollView
 - UITableView
 - UITextField
+- UITextView
 - **More soon!**
 
 ##BFKit is currently under development
