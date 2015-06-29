@@ -30,5 +30,44 @@ import QuartzCore
 
 extension UIImageView
 {
+    // MARK: - Instance functions -
     
+    func setImageShadowColor(color: UIColor, radius: CGFloat, offset: CGSize, opacity: Float)
+    {
+        self.layer.shadowColor = color.CGColor
+        self.layer.shadowRadius = radius
+        self.layer.shadowOffset = offset
+        self.layer.shadowOpacity = opacity
+        self.clipsToBounds = false
+    }
+    
+    func setMaskImage(image: UIImage)
+    {
+        let mask: CALayer = CALayer()
+        mask.contents = image.CGImage
+        mask.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
+        self.layer.mask = mask
+        self.layer.masksToBounds = false
+    }
+    
+    // MARK: - Init functions -
+    
+    convenience init(frame: CGRect, image: UIImage)
+    {
+        self.init(frame: frame)
+        self.image = image
+    }
+    
+    convenience init(image: UIImage, size: CGSize, center: CGPoint)
+    {
+        self.init(frame: CGRectMake(0, 0, size.width, size.height))
+        self.image = image
+        self.center = center
+    }
+    
+    convenience init(image: UIImage, center: CGPoint)
+    {
+        self.init(image: image)
+        self.center = center
+    }
 }
