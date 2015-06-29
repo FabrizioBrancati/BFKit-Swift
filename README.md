@@ -100,7 +100,7 @@ Todo :ballot_box_with_check:
 - :heavy_minus_sign: Create tests
 - :heavy_minus_sign: Remove all the TODO marks
 - :heavy_minus_sign: Add to CocoaPods
-- :heavy_minus_sign: Make it as a Framework
+- :heavy_check_mark: Make it as a Framework
 - :heavy_minus_sign: Add all comments
 - :heavy_minus_sign: Create a great documentation
 - :heavy_minus_sign: Create a DEMO App
