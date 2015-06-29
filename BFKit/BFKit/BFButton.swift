@@ -55,8 +55,8 @@ class BFButton: UIButton
         
         self.setImage(image, forState: .Normal)
         self.overlayImgView = UIImageView(image: highlightedImage)
-        self.overlayImgView.frame = self.imageView!.frame;
-        self.overlayImgView.bounds = self.imageView!.bounds;
+        self.overlayImgView.frame = self.imageView!.frame
+        self.overlayImgView.bounds = self.imageView!.bounds
         
         self.adjustsImageWhenHighlighted = false
     }

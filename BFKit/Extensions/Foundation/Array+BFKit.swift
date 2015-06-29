@@ -51,22 +51,22 @@ extension Array
     
     func objectAtCircleIndex(index: Int) -> T
     {
-        return self[self.superCircle(index, size: self.count)];
+        return self[self.superCircle(index, size: self.count)]
     }
     
     func superCircle(var index: Int, size maxSize: Int) -> Int
     {
         if index < 0
         {
-            index = index % maxSize;
-            index += maxSize;
+            index = index % maxSize
+            index += maxSize
         }
         if index >= maxSize
         {
-            index = index % maxSize;
+            index = index % maxSize
         }
         
-        return index;
+        return index
     }
     
     mutating func moveObjectFromIndex(from: Int, toIndex to: Int)
@@ -96,7 +96,7 @@ extension Array
     
     static func reversedArray(array: Array) -> Array
     {
-        return array.reverse();
+        return array.reverse()
     }
     
     static func arrayToJSON(array: AnyObject) -> String

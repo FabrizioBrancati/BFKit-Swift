@@ -60,13 +60,13 @@ extension UIView
     
     func createBordersWithColor(color: UIColor, radius: CGFloat, width: CGFloat)
     {
-        self.layer.borderWidth = width;
-        self.layer.cornerRadius = radius;
-        self.layer.shouldRasterize = false;
-        self.layer.rasterizationScale = 2;
+        self.layer.borderWidth = width
+        self.layer.cornerRadius = radius
+        self.layer.shouldRasterize = false
+        self.layer.rasterizationScale = 2
         self.layer.edgeAntialiasingMask = .LayerLeftEdge | .LayerRightEdge | .LayerBottomEdge | .LayerTopEdge
-        self.clipsToBounds = true;
-        self.layer.masksToBounds = true;
+        self.clipsToBounds = true
+        self.layer.masksToBounds = true
         
         let space: CGColorSpaceRef = CGColorSpaceCreateDeviceRGB()
         let cgColor: CGColorRef = color.CGColor

@@ -68,7 +68,7 @@ class BFSystemSound
         {
             BFLog("Could not load \(soundURL)")
         }
-        return soundID;
+        return soundID
     }
     
     static func disposeSound(soundID: SystemSoundID) -> Bool

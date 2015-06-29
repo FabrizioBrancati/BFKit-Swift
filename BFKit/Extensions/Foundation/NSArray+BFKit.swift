@@ -54,22 +54,22 @@ extension NSArray
     
     func objectAtCircleIndex(index: Int) -> AnyObject
     {
-        return self[self.superCircle(index, size: self.count)];
+        return self[self.superCircle(index, size: self.count)]
     }
     
     func superCircle(var index: Int, size maxSize: Int) -> Int
     {
         if index < 0
         {
-            index = index % maxSize;
-            index += maxSize;
+            index = index % maxSize
+            index += maxSize
         }
         if index >= maxSize
         {
-            index = index % maxSize;
+            index = index % maxSize
         }
         
-        return index;
+        return index
     }
     
     // MARK: - Class functions -
@@ -84,7 +84,7 @@ extension NSArray
             arrayTemp.addObject(element)
         }
         
-        return arrayTemp;
+        return arrayTemp
     }
     
     static func arrayToJSON(array: AnyObject) -> NSString

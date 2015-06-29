@@ -51,7 +51,7 @@ import UIKit
         }
         else
         {
-            BFLogClass.logString += message;
+            BFLogClass.logString += message
         }
         
         let filenameNoExt = NSString(UTF8String: filename)!.lastPathComponent.stringByDeletingPathExtension

@@ -32,6 +32,8 @@
 		499DF7BC1B35EF0F00C1CEBD /* NSString+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7BB1B35EF0F00C1CEBD /* NSString+BFKit.swift */; };
 		499DF7BE1B35EF2D00C1CEBD /* String+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DF7BD1B35EF2D00C1CEBD /* String+BFKit.swift */; };
 		49B1F9581B417A8A003FC78E /* UIView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9571B417A8A003FC78E /* UIView+BFKit.swift */; };
+		49B1F95A1B41A4E7003FC78E /* UIWebView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9591B41A4E7003FC78E /* UIWebView+BFKit.swift */; };
+		49B1F95C1B41A8B8003FC78E /* UIWindow+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F95B1B41A8B8003FC78E /* UIWindow+BFKit.swift */; };
 		49BD7C881B2898ED0092C563 /* BFPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD7C871B2898ED0092C563 /* BFPassword.swift */; };
 		49BD7C8A1B28B7900092C563 /* BFSystemSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD7C891B28B7900092C563 /* BFSystemSound.swift */; };
 		49BD7C8C1B2917C50092C563 /* BFTouchID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD7C8B1B2917C50092C563 /* BFTouchID.swift */; };
@@ -99,6 +101,8 @@
 		499DF7BB1B35EF0F00C1CEBD /* NSString+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+BFKit.swift"; sourceTree = "<group>"; };
 		499DF7BD1B35EF2D00C1CEBD /* String+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+BFKit.swift"; sourceTree = "<group>"; };
 		49B1F9571B417A8A003FC78E /* UIView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F9591B41A4E7003FC78E /* UIWebView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWebView+BFKit.swift"; sourceTree = "<group>"; };
+		49B1F95B1B41A8B8003FC78E /* UIWindow+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+BFKit.swift"; sourceTree = "<group>"; };
 		49BD7C871B2898ED0092C563 /* BFPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFPassword.swift; path = ../../BFKit/BFKit/BFPassword.swift; sourceTree = "<group>"; };
 		49BD7C891B28B7900092C563 /* BFSystemSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFSystemSound.swift; path = ../../BFKit/BFKit/BFSystemSound.swift; sourceTree = "<group>"; };
 		49BD7C8B1B2917C50092C563 /* BFTouchID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFTouchID.swift; path = ../../BFKit/BFKit/BFTouchID.swift; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 				49D65B211B41656400BD40D3 /* UITextField+BFKit.swift */,
 				49D65B231B4172F300BD40D3 /* UITextView+BFKit.swift */,
 				49B1F9571B417A8A003FC78E /* UIView+BFKit.swift */,
+				49B1F9591B41A4E7003FC78E /* UIWebView+BFKit.swift */,
+				49B1F95B1B41A8B8003FC78E /* UIWindow+BFKit.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -428,9 +434,11 @@
 				49D65B201B41637300BD40D3 /* UITableView+BFKit.swift in Sources */,
 				497B57B01B39E42200CC09C7 /* BFKit.swift in Sources */,
 				499DF7AC1B308BEE00C1CEBD /* NSMutableArray+BFKit.swift in Sources */,
+				49B1F95C1B41A8B8003FC78E /* UIWindow+BFKit.swift in Sources */,
 				49354AE31B3AEC6B00C05AED /* DetailViewController.swift in Sources */,
 				49B1F9581B417A8A003FC78E /* UIView+BFKit.swift in Sources */,
 				49919AB71B3B3C3100A9E55D /* UIColor+BFKit.swift in Sources */,
+				49B1F95A1B41A4E7003FC78E /* UIWebView+BFKit.swift in Sources */,
 				499DF7B21B31F0C500C1CEBD /* NSObject+BFKit.swift in Sources */,
 				499DF7AE1B31934C00C1CEBD /* NSMutableDictionary+BFKit.swift in Sources */,
 				49919AB61B3B3C3100A9E55D /* UIButton+BFKit.swift in Sources */,

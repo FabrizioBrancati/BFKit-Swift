@@ -106,8 +106,8 @@ extension UIImage
                 scaleFactor = heightFactor
             }
             
-            scaledWidth = width * scaleFactor;
-            scaledHeight = height * scaleFactor;
+            scaledWidth = width * scaleFactor
+            scaledHeight = height * scaleFactor
             
             if widthFactor > heightFactor
             {
@@ -190,7 +190,7 @@ extension UIImage
         }
         else
         {
-            let newSize: CGSize = CGSizeMake(self.size.width, self.size.height);
+            let newSize: CGSize = CGSizeMake(self.size.width, self.size.height)
             UIGraphicsBeginImageContextWithOptions(newSize, false, UIScreen.mainScreen().scale)
             self.drawInRect(CGRectMake(0, 0, newSize.width, newSize.height))
         }
@@ -251,8 +251,8 @@ extension UIImage
                 scaleFactor = heightFactor
             }
             
-            scaledWidth = width * scaleFactor;
-            scaledHeight = height * scaleFactor;
+            scaledWidth = width * scaleFactor
+            scaledHeight = height * scaleFactor
             
             if widthFactor < heightFactor
             {
@@ -281,7 +281,7 @@ extension UIImage
             BFLog("Could not scale image")
         }
         
-        return newImage;
+        return newImage
     }
     
     func imageByScalingToSize(targetSize: CGSize) -> UIImage?
@@ -690,7 +690,7 @@ extension UIImage
         let array: Array = sizeString.componentsSeparatedByString("x")
         if array.count != 2
         {
-            return CGSizeZero;
+            return CGSizeZero
         }
         
         return CGSizeMake(CGFloat(array[0].floatValue), CGFloat(array[1].floatValue))
@@ -786,7 +786,7 @@ extension UIImage
         let array: Array = sizeString.componentsSeparatedByString("x")
         if array.count != 2
         {
-            return CGSizeZero;
+            return CGSizeZero
         }
         
         return CGSizeMake(CGFloat(array[0].floatValue), CGFloat(array[1].floatValue))

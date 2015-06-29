@@ -49,7 +49,7 @@ extension NSDate
     {
         var info = BFDateInformation()
         
-        let gregorian = NSCalendar.init(identifier: NSCalendarIdentifierGregorian)
+        let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
         gregorian?.timeZone = timeZone
         let comp = gregorian!.components(NSCalendarUnit(UInt.max), fromDate: self)
         
@@ -68,7 +68,7 @@ extension NSDate
     
     func month() -> NSDate
     {
-        let gregorian = NSCalendar.init(identifier: NSCalendarIdentifierGregorian)
+        let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
         let comp = gregorian!.components(.CalendarUnitYear | .CalendarUnitMonth, fromDate: self)
         
         comp.setValue(1, forComponent: .CalendarUnitDay)
@@ -78,7 +78,7 @@ extension NSDate
     
     func weekday() -> Int
     {
-        let gregorian = NSCalendar.init(identifier: NSCalendarIdentifierGregorian)
+        let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
         let comp = gregorian!.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitWeekday, fromDate: self)
         
         return comp.weekday
@@ -109,7 +109,7 @@ extension NSDate
     
     func timelessDate() -> NSDate
     {
-        let gregorian = NSCalendar.init(identifier: NSCalendarIdentifierGregorian)
+        let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
         let comp = gregorian!.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: self)
         
         return gregorian!.dateFromComponents(comp)!
@@ -117,7 +117,7 @@ extension NSDate
     
     func monthlessDate() -> NSDate
     {
-        let gregorian = NSCalendar.init(identifier: NSCalendarIdentifierGregorian)
+        let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
         let comp = gregorian!.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitWeekday, fromDate: self)
         
         return gregorian!.dateFromComponents(comp)!
@@ -134,7 +134,7 @@ extension NSDate
     
     func monthsBetweenDate(toDate: NSDate) -> Int
     {
-        let gregorian = NSCalendar.init(identifier: NSCalendarIdentifierGregorian)
+        let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
         let components = gregorian!.components(.CalendarUnitMonth, fromDate: self.monthlessDate(), toDate: toDate.monthlessDate(), options: NSCalendarOptions.WrapComponents)
         
         return abs(components.month)
@@ -167,8 +167,8 @@ extension NSDate
     {
         return self.dateByAddingTimeInterval(NSTimeInterval(days * 24 * 60 * 60))
         
-        /*var comp = NSDateComponents();
-        comp.day = days;
+        /*var comp = NSDateComponents()
+        comp.day = days
         
         return NSCalendar.currentCalendar().dateByAddingComponents(comp, toDate: self, options: .WrapComponents)!*/
     }
@@ -205,7 +205,7 @@ extension NSDate
     
     static func dateFromDateInformation(info: BFDateInformation, timeZone: NSTimeZone = NSTimeZone.systemTimeZone()) -> NSDate
     {
-        let gregorian = NSCalendar.init(identifier: NSCalendarIdentifierGregorian)
+        let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
         let comp = gregorian!.components(.CalendarUnitYear | .CalendarUnitMonth, fromDate:NSDate())
         
         comp.setValue(info.day, forComponent:.CalendarUnitDay)
