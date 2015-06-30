@@ -1,5 +1,4 @@
 //
-//  BFKit.h
 //  BFKit
 //
 //  The MIT License (MIT)

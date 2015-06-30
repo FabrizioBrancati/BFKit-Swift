@@ -27,19 +27,14 @@
 import Foundation
 import UIKit
 
-public var BFLogActive = true
+public var BFLogActive: Bool = true
 
-/**
-Extend NSLog
+public func BFLog(var message: String)
+{
+    BFLogPrivate(message)
+}
 
-In ordedr to work you must add in the "Swift Compiler - Custom Flags" section, "Other Swift Flags" line, the DEBUG symbol with the -DDEBUG entry
-
-:param: message  Message
-:param: filename Filename
-:param: function Function name
-:param: line     Line number
-*/
-public func BFLog(var message: String, filename: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__)
+private func BFLogPrivate(var message: String, filename: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__)
 {
     if BFLogActive
     {
