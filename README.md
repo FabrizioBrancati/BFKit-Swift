@@ -103,7 +103,7 @@ Installing and Usage :computer:
 - Import BFKit.framework into your project
 - Import the Framework with ```import BFKit```
 
-###Pod (iOS 8 or later compatible)
+###CocoaPods (iOS 8 or later compatible)
 ####Newbie version
 - Create a **Podfile** in your **project directory**
 - Write:
@@ -111,7 +111,8 @@ Installing and Usage :computer:
   platform :ios, '8.0'
   xcodeproj 'Project.xcodeproj'
   use_frameworks!
-  pod 'BFKit'
+
+  pod 'BFKit-Swift'
 ```
 - Obviously **change "Project"**  with your **real project name**
 - Open **Terminal**, go to **project directory** and type:
