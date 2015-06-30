@@ -28,11 +28,11 @@ import Foundation
 import UIKit
 import QuartzCore
 
-extension UIImageView
+public extension UIImageView
 {
     // MARK: - Instance functions -
     
-    func setImageShadowColor(color: UIColor, radius: CGFloat, offset: CGSize, opacity: Float)
+    public func setImageShadowColor(color: UIColor, radius: CGFloat, offset: CGSize, opacity: Float)
     {
         self.layer.shadowColor = color.CGColor
         self.layer.shadowRadius = radius
@@ -41,7 +41,7 @@ extension UIImageView
         self.clipsToBounds = false
     }
     
-    func setMaskImage(image: UIImage)
+    public func setMaskImage(image: UIImage)
     {
         let mask: CALayer = CALayer()
         mask.contents = image.CGImage
@@ -52,20 +52,20 @@ extension UIImageView
     
     // MARK: - Init functions -
     
-    convenience init(frame: CGRect, image: UIImage)
+    public convenience init(frame: CGRect, image: UIImage)
     {
         self.init(frame: frame)
         self.image = image
     }
     
-    convenience init(image: UIImage, size: CGSize, center: CGPoint)
+    public convenience init(image: UIImage, size: CGSize, center: CGPoint)
     {
         self.init(frame: CGRectMake(0, 0, size.width, size.height))
         self.image = image
         self.center = center
     }
     
-    convenience init(image: UIImage, center: CGPoint)
+    public convenience init(image: UIImage, center: CGPoint)
     {
         self.init(image: image)
         self.center = center

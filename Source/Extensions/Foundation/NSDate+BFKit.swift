@@ -26,11 +26,11 @@
 
 import Foundation
 
-extension NSDate
+public extension NSDate
 {
     // MARK: - Variables -
     
-    struct BFDateInformation
+    public struct BFDateInformation
     {
         var day = 0
         var month = 0
@@ -45,7 +45,7 @@ extension NSDate
     
     // MARK: - Instance functions -
     
-    func dateInformation(timeZone: NSTimeZone = NSTimeZone.systemTimeZone()) -> BFDateInformation
+    public func dateInformation(timeZone: NSTimeZone = NSTimeZone.systemTimeZone()) -> BFDateInformation
     {
         var info = BFDateInformation()
         
@@ -66,7 +66,7 @@ extension NSDate
         return info
     }
     
-    func month() -> NSDate
+    public func month() -> NSDate
     {
         let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
         let comp = gregorian!.components(.CalendarUnitYear | .CalendarUnitMonth, fromDate: self)
@@ -76,7 +76,7 @@ extension NSDate
         return date!
     }
     
-    func weekday() -> Int
+    public func weekday() -> Int
     {
         let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
         let comp = gregorian!.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitWeekday, fromDate: self)
@@ -84,7 +84,7 @@ extension NSDate
         return comp.weekday
     }
     
-    func dayFromWeekday() -> NSString
+    public func dayFromWeekday() -> NSString
     {
         switch self.weekday()
         {
@@ -107,7 +107,7 @@ extension NSDate
         }
     }
     
-    func timelessDate() -> NSDate
+    private func timelessDate() -> NSDate
     {
         let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
         let comp = gregorian!.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: self)
@@ -115,7 +115,7 @@ extension NSDate
         return gregorian!.dateFromComponents(comp)!
     }
     
-    func monthlessDate() -> NSDate
+    private func monthlessDate() -> NSDate
     {
         let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
         let comp = gregorian!.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitWeekday, fromDate: self)
@@ -123,7 +123,7 @@ extension NSDate
         return gregorian!.dateFromComponents(comp)!
     }
     
-    func isSameDay(anotherDate: NSDate) -> Bool
+    public func isSameDay(anotherDate: NSDate) -> Bool
     {
         let calendar = NSCalendar.currentCalendar()
         let components1 = calendar.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: self)
@@ -132,7 +132,7 @@ extension NSDate
         return components1.year == components2.year && components1.month == components2.month && components1.day == components2.day
     }
     
-    func monthsBetweenDate(toDate: NSDate) -> Int
+    public func monthsBetweenDate(toDate: NSDate) -> Int
     {
         let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
         let components = gregorian!.components(.CalendarUnitMonth, fromDate: self.monthlessDate(), toDate: toDate.monthlessDate(), options: NSCalendarOptions.WrapComponents)
@@ -140,7 +140,7 @@ extension NSDate
         return abs(components.month)
     }
     
-    func daysBetweenDate(anotherDate: NSDate) -> Int
+    public func daysBetweenDate(anotherDate: NSDate) -> Int
     {
         let time: NSTimeInterval = self.timeIntervalSinceDate(anotherDate)
         return Int(abs(time / 60 / 60 / 24))
@@ -158,12 +158,12 @@ extension NSDate
         return abs(components.day)*/
     }
     
-    func isToday() -> Bool
+    public func isToday() -> Bool
     {
         return self.isSameDay(NSDate())
     }
     
-    func dateByAddingDays(days: Int) -> NSDate
+    public func dateByAddingDays(days: Int) -> NSDate
     {
         return self.dateByAddingTimeInterval(NSTimeInterval(days * 24 * 60 * 60))
         
@@ -173,7 +173,7 @@ extension NSDate
         return NSCalendar.currentCalendar().dateByAddingComponents(comp, toDate: self, options: .WrapComponents)!*/
     }
     
-    func monthString() -> String
+    public func monthString() -> String
     {
         var dateFormatter: NSDateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MMMM"
@@ -181,7 +181,7 @@ extension NSDate
         return dateFormatter.stringFromDate(self)
     }
     
-    func yearString() -> String
+    public func yearString() -> String
     {
         var dateFormatter: NSDateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy"
@@ -191,19 +191,19 @@ extension NSDate
     
     // MARK: - Class functions -
     
-    static func yesterday() -> NSDate
+    public static func yesterday() -> NSDate
     {
         var inf: BFDateInformation = NSDate().dateInformation()
         inf.day--
         return self.dateFromDateInformation(inf)
     }
     
-    static func month() -> NSDate
+    public static func month() -> NSDate
     {
         return NSDate().month()
     }
     
-    static func dateFromDateInformation(info: BFDateInformation, timeZone: NSTimeZone = NSTimeZone.systemTimeZone()) -> NSDate
+    public static func dateFromDateInformation(info: BFDateInformation, timeZone: NSTimeZone = NSTimeZone.systemTimeZone()) -> NSDate
     {
         let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
         let comp = gregorian!.components(.CalendarUnitYear | .CalendarUnitMonth, fromDate:NSDate())
@@ -221,7 +221,7 @@ extension NSDate
         return gregorian!.dateFromComponents(comp)!
     }
     
-    static func dateWithDatePart(date: NSDate, andTimePart time: NSDate) -> NSDate
+    public static func dateWithDatePart(date: NSDate, andTimePart time: NSDate) -> NSDate
     {
         var dateFormatter: NSDateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
@@ -236,7 +236,7 @@ extension NSDate
         return dateFormatter.dateFromString(dateTime)!
     }
     
-    static func monthStringWithMonthNumber(month: Int) -> String
+    public static func monthStringWithMonthNumber(month: Int) -> String
     {
         switch month
         {
@@ -269,7 +269,7 @@ extension NSDate
         }
     }
     
-    static func dateInformationDescriptionWithInformation(info: BFDateInformation, dateSeparator: String = "/", usFormat: Bool = false) -> String
+    public static func dateInformationDescriptionWithInformation(info: BFDateInformation, dateSeparator: String = "/", usFormat: Bool = false) -> String
     {
         if(usFormat)
         {

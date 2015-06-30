@@ -26,18 +26,18 @@
 
 import Foundation
 
-extension NSMutableArray
+public extension NSMutableArray
 {
     // MARK: - Instance functions -
     
-    override func reversedArray() -> NSMutableArray
+    public override func reversedArray() -> NSMutableArray
     {
         return super.reversedArray() as! NSMutableArray
     }
     
     // MARK: - Class functions -
     
-    static func sortArrayByKey(key: String, array: NSMutableArray, ascending: Bool) -> NSMutableArray
+    public static func sortArrayByKey(key: String, array: NSMutableArray, ascending: Bool) -> NSMutableArray
     {
         var tempArray: NSMutableArray = NSMutableArray()
         tempArray.addObjectsFromArray(array as [AnyObject])

@@ -27,16 +27,16 @@
 import Foundation
 import UIKit
 
-extension UILabel
+public extension UILabel
 {
     // MARK: - Init functions -
     
-    convenience init(frame: CGRect, text: String, font: FontName, size: CGFloat, color: UIColor, alignment: NSTextAlignment, lines: Int)
+    public convenience init(frame: CGRect, text: String, font: FontName, size: CGFloat, color: UIColor, alignment: NSTextAlignment, lines: Int)
     {
         self.init(frame: frame, text: text, font: font, size: size, color: color, alignment: alignment, lines: lines, shadowColor: UIColor.clearColor())
     }
     
-    convenience init(frame: CGRect, text: String, font: FontName, size: CGFloat, color: UIColor, alignment: NSTextAlignment, lines: Int, shadowColor: UIColor)
+    public convenience init(frame: CGRect, text: String, font: FontName, size: CGFloat, color: UIColor, alignment: NSTextAlignment, lines: Int, shadowColor: UIColor)
     {
         self.init(frame: frame)
         self.font = UIFont(fontName: font, size: size)

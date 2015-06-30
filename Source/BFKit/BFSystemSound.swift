@@ -27,11 +27,11 @@
 import Foundation
 import AudioToolbox
 
-class BFSystemSound
+public class BFSystemSound
 {
     // MARK: - Enums -
     
-    enum AudioID : Int
+    public enum AudioID : Int
     {
         case NewMail = 1000
         case MailSent = 1001
@@ -49,17 +49,17 @@ class BFSystemSound
     
     // MARK: - Class functions -
     
-    static func playSystemSound(audioID: AudioID)
+    public static func playSystemSound(audioID: AudioID)
     {
         AudioServicesPlaySystemSound(SystemSoundID(audioID.rawValue))
     }
     
-    static func playSystemSoundVibrate()
+    public static func playSystemSoundVibrate()
     {
         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     
-    static func playCustomSound(soundURL: NSURL) -> SystemSoundID
+    public static func playCustomSound(soundURL: NSURL) -> SystemSoundID
     {
         var soundID: SystemSoundID = 0
         
@@ -71,7 +71,7 @@ class BFSystemSound
         return soundID
     }
     
-    static func disposeSound(soundID: SystemSoundID) -> Bool
+    public static func disposeSound(soundID: SystemSoundID) -> Bool
     {
         let error: OSStatus = AudioServicesDisposeSystemSoundID(soundID)
         if error != Int32(kAudioServicesNoError)

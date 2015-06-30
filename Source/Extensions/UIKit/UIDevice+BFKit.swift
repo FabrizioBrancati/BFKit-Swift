@@ -29,9 +29,9 @@ import UIKit
 
 // MARK: - Global variables -
 
-let BFUniqueIdentifierDefaultsKey = "BFUniqueIdentifier"
+private let BFUniqueIdentifierDefaultsKey = "BFUniqueIdentifier"
 
-var SCREEN_WIDTH: CGFloat
+public var SCREEN_WIDTH: CGFloat
 {
     get
     {
@@ -39,7 +39,7 @@ var SCREEN_WIDTH: CGFloat
     }
 }
 
-var SCREEN_HEIGHT: CGFloat
+public var SCREEN_HEIGHT: CGFloat
 {
     get
     {
@@ -49,66 +49,66 @@ var SCREEN_HEIGHT: CGFloat
 
 // MARK: - Global functions -
 
-func IOS_VERSION() -> String
+public func IOS_VERSION() -> String
 {
     return UIDevice.currentDevice().systemVersion
 }
 
-func SYSTEM_VERSION_EQUAL_TO(v: String) -> Bool
+public func SYSTEM_VERSION_EQUAL_TO(v: String) -> Bool
 {
     return UIDevice.currentDevice().systemVersion.compare(v, options: .NumericSearch) == .OrderedSame
 }
 
-func SYSTEM_VERSION_GREATER_THAN(v: String) -> Bool
+public func SYSTEM_VERSION_GREATER_THAN(v: String) -> Bool
 {
     return UIDevice.currentDevice().systemVersion.compare(v, options: .NumericSearch) == .OrderedDescending
 }
 
-func SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v: String) -> Bool
+public func SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v: String) -> Bool
 {
     return UIDevice.currentDevice().systemVersion.compare(v, options: .NumericSearch) != .OrderedAscending
 }
 
-func SYSTEM_VERSION_LESS_THAN(v: String) -> Bool
+public func SYSTEM_VERSION_LESS_THAN(v: String) -> Bool
 {
     return UIDevice.currentDevice().systemVersion.compare(v, options: .NumericSearch) == .OrderedAscending
 }
 
-func SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v: String) -> Bool
+public func SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v: String) -> Bool
 {
     return UIDevice.currentDevice().systemVersion.compare(v, options: .NumericSearch) != .OrderedDescending
 }
 
-func IS_IOS_5_OR_LATER() -> Bool
+public func IS_IOS_5_OR_LATER() -> Bool
 {
     return UIDevice.currentDevice().systemVersion.floatValue >= 5.0
 }
 
-func IS_IOS_6_OR_LATER() -> Bool
+public func IS_IOS_6_OR_LATER() -> Bool
 {
     return UIDevice.currentDevice().systemVersion.floatValue >= 6.0
 }
 
-func IS_IOS_7_OR_LATER() -> Bool
+public func IS_IOS_7_OR_LATER() -> Bool
 {
     return UIDevice.currentDevice().systemVersion.floatValue >= 7.0
 }
 
-func IS_IOS_8_OR_LATER() -> Bool
+public func IS_IOS_8_OR_LATER() -> Bool
 {
     return UIDevice.currentDevice().systemVersion.floatValue >= 8.0
 }
 
-func IS_IOS_9_OR_LATER() -> Bool
+public func IS_IOS_9_OR_LATER() -> Bool
 {
     return UIDevice.currentDevice().systemVersion.floatValue >= 9.0
 }
 
-extension UIDevice
+public extension UIDevice
 {
     // MARK: - Class functions -
     
-    static func devicePlatform() -> String
+    public static func devicePlatform() -> String
     {
         var name: [Int32] = [CTL_HW, HW_MACHINE]
         var size: Int = 2
@@ -120,7 +120,7 @@ extension UIDevice
         return hardware
     }
     
-    static func devicePlatformString() -> String
+    public static func devicePlatformString() -> String
     {
         var platform: String = self.devicePlatform()
         
@@ -186,7 +186,7 @@ extension UIDevice
         }
     }
     
-    static func isiPad() -> Bool
+    public static func isiPad() -> Bool
     {
         if self.devicePlatform().substringToIndex(4) == "iPad"
         {
@@ -198,7 +198,7 @@ extension UIDevice
         }
     }
     
-    static func isiPhone() -> Bool
+    public static func isiPhone() -> Bool
     {
         if self.devicePlatform().substringToIndex(6) == "iPhone"
         {
@@ -210,7 +210,7 @@ extension UIDevice
         }
     }
     
-    static func isiPod() -> Bool
+    public static func isiPod() -> Bool
     {
         if self.devicePlatform().substringToIndex(4) == "iPod"
         {
@@ -222,7 +222,7 @@ extension UIDevice
         }
     }
     
-    static func isAppleTV() -> Bool
+    public static func isAppleTV() -> Bool
     {
         if self.devicePlatform().substringToIndex(7) == "AppleTV"
         {
@@ -234,7 +234,7 @@ extension UIDevice
         }
     }
     
-    static func isAppleWatch() -> Bool
+    public static func isAppleWatch() -> Bool
     {
         if self.devicePlatform().substringToIndex(5) == "Watch"
         {
@@ -246,7 +246,7 @@ extension UIDevice
         }
     }
     
-    static func isSimulator() -> Bool
+    public static func isSimulator() -> Bool
     {
         if self.devicePlatform() == "i386" || self.devicePlatform() == "x86_64"
         {
@@ -258,7 +258,7 @@ extension UIDevice
         }
     }
     
-    static func isRetina() -> Bool
+    public static func isRetina() -> Bool
     {
         if UIScreen.mainScreen().respondsToSelector("displayLinkWithTarget:selector:") && (UIScreen.mainScreen().scale == 2.0 || UIScreen.mainScreen().scale == 3.0)
         {
@@ -270,7 +270,7 @@ extension UIDevice
         }
     }
     
-    static func isRetinaHD() -> Bool
+    public static func isRetinaHD() -> Bool
     {
         if UIScreen.mainScreen().respondsToSelector("displayLinkWithTarget:selector:") && UIScreen.mainScreen().scale == 3.0
         {
@@ -282,7 +282,7 @@ extension UIDevice
         }
     }
     
-    static func iOSVersion() -> Int
+    public static func iOSVersion() -> Int
     {
         return UIDevice.currentDevice().systemVersion.toInt()!
     }
@@ -298,49 +298,49 @@ extension UIDevice
         return results
     }
     
-    static func cpuFrequency() -> Int
+    public static func cpuFrequency() -> Int
     {
         return self.getSysInfo(HW_CPU_FREQ)
     }
     
-    static func busFrequency() -> Int
+    public static func busFrequency() -> Int
     {
         return self.getSysInfo(HW_TB_FREQ)
     }
     
-    static func ramSize() -> Int
+    public static func ramSize() -> Int
     {
         return self.getSysInfo(HW_MEMSIZE)
     }
     
-    static func cpuNumber() -> Int
+    public static func cpuNumber() -> Int
     {
         return self.getSysInfo(HW_NCPU)
     }
     
-    static func totalMemory() -> Int
+    public static func totalMemory() -> Int
     {
         return self.getSysInfo(HW_PHYSMEM)
     }
     
-    static func userMemory() -> Int
+    public static func userMemory() -> Int
     {
         return self.getSysInfo(HW_USERMEM)
     }
     
-    static func totalDiskSpace() -> AnyObject
+    public static func totalDiskSpace() -> AnyObject
     {
         let attributes: NSDictionary = NSFileManager.defaultManager().attributesOfFileSystemForPath(NSHomeDirectory(), error: nil)!
         return attributes.objectForKey(NSFileSystemSize)!
     }
     
-    static func freeDiskSpace() -> AnyObject
+    public static func freeDiskSpace() -> AnyObject
     {
         let attributes: NSDictionary = NSFileManager.defaultManager().attributesOfFileSystemForPath(NSHomeDirectory(), error: nil)!
         return attributes.objectForKey(NSFileSystemFreeSize)!
     }
     
-    static func uniqueIdentifier() -> String
+    public static func uniqueIdentifier() -> String
     {
         var uuid: String?
         if UIDevice.currentDevice().respondsToSelector("identifierForVendor")

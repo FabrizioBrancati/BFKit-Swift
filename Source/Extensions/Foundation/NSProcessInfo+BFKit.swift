@@ -26,11 +26,11 @@
 
 import Foundation
 
-extension NSProcessInfo
+public extension NSProcessInfo
 {
     // MARK: - Class functions -
     
-    static func cpuUsage() -> Float
+    public static func cpuUsage() -> Float
     {
         // TODO: Get CPU usage
         

@@ -29,7 +29,7 @@ import UIKit
 
 // MARK: - Public enums -
 
-enum FontName : String
+public enum FontName : String
 {
     case AcademyEngravedLetPlain = "AcademyEngravedLetPlain"
     case AlNile = "AlNile"
@@ -43,11 +43,11 @@ enum FontName : String
     // TODO: Too much fonts too! :_( ... I'll do it! I promise! :)
 }
 
-extension UIFont
+public extension UIFont
 {
     // MARK: - Class variables -
     
-    static var lightFont: UIFont
+    public static var lightFont: UIFont
     {
         get
         {
@@ -59,7 +59,7 @@ extension UIFont
         }
     }
     
-    static var regularFont: UIFont
+    public static var regularFont: UIFont
     {
         get
         {
@@ -71,7 +71,7 @@ extension UIFont
         }
     }
     
-    static var boldFont: UIFont
+    public static var boldFont: UIFont
     {
         get
         {
@@ -85,7 +85,7 @@ extension UIFont
     
     // MARK: - Enums -
     
-    enum FamilyFontName : String
+    public enum FamilyFontName : String
     {
         case AcademyEngravedLET = "Academy Engraved LET"
         case AlNile = "Al Nile"
@@ -118,14 +118,14 @@ extension UIFont
     
     // MARK: - Init functions -
     
-    convenience init?(fontName: FontName, size: CGFloat)
+    public convenience init?(fontName: FontName, size: CGFloat)
     {
         self.init(name: fontName.rawValue, size: size)
     }
     
     // MARK: - Class functions -
     
-    static func allFamilyAndFonts() -> Dictionary<String, Array<AnyObject>>
+    public static func allFamilyAndFonts() -> Dictionary<String, Array<AnyObject>>
     {
         var fontFamilies: NSMutableArray = NSMutableArray(array: UIFont.familyNames() as NSArray)
         fontFamilies = NSMutableArray.sortArrayByKey("", array: fontFamilies, ascending: true)
@@ -144,7 +144,7 @@ extension UIFont
         return fontFamilyDic
     }
     
-    static func fontsNameForFamilyName(familyFontName: FamilyFontName) -> Array<AnyObject>
+    public static func fontsNameForFamilyName(familyFontName: FamilyFontName) -> Array<AnyObject>
     {
         let fontNames: Array = UIFont.fontNamesForFamilyName(familyFontName.rawValue)
         

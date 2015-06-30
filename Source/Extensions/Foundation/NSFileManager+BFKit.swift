@@ -26,11 +26,11 @@
 
 import Foundation
 
-extension NSFileManager
+public extension NSFileManager
 {
     // MARK: - Enums -
     
-    enum DirectoryType : Int
+    public enum DirectoryType : Int
     {
         case MainBundle
         case Library
@@ -40,12 +40,12 @@ extension NSFileManager
     
     // MARK: - Class functions -
     
-    static func readTextFile(var file: String, ofType: String) -> String?
+    public static func readTextFile(var file: String, ofType: String) -> String?
     {
         return String(contentsOfFile: NSBundle.mainBundle().pathForResource(file, ofType: ofType)!, encoding: NSUTF8StringEncoding, error: nil)
     }
     
-    static func saveArrayToPath(directory: DirectoryType, filename: String, array: Array<AnyObject>) -> Bool
+    public static func saveArrayToPath(directory: DirectoryType, filename: String, array: Array<AnyObject>) -> Bool
     {
         var finalPath: String
         
@@ -66,7 +66,7 @@ extension NSFileManager
         return NSKeyedArchiver.archiveRootObject(array, toFile: finalPath)
     }
     
-    static func loadArrayToPath(directory: DirectoryType, filename: String) -> Bool
+    public static func loadArrayToPath(directory: DirectoryType, filename: String) -> Bool
     {
         var finalPath: String
         
@@ -94,31 +94,31 @@ extension NSFileManager
         }
     }
     
-    static func getBundlePathForFile(file: String) -> String
+    public static func getBundlePathForFile(file: String) -> String
     {
         let fileExtension = file.pathExtension
         return NSBundle.mainBundle().pathForResource(file.stringByReplacingOccurrencesOfString(String(format: ".%@", file), withString: ""), ofType: fileExtension)!
     }
     
-    static func getDocumentsDirectoryForFile(file: String) -> String
+    public static func getDocumentsDirectoryForFile(file: String) -> String
     {
         let documentsDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
         return documentsDirectory.stringByAppendingPathComponent(String(format: "%@/", file))
     }
     
-    static func getLibraryDirectoryForFile(file: String) -> String
+    public static func getLibraryDirectoryForFile(file: String) -> String
     {
         let libraryDirectory = NSSearchPathForDirectoriesInDomains(.LibraryDirectory, .UserDomainMask, true)[0] as! String
         return libraryDirectory.stringByAppendingPathComponent(String(format: "%@/", file))
     }
     
-    static func getCacheDirectoryForFile(file: String) -> String
+    public static func getCacheDirectoryForFile(file: String) -> String
     {
         let cacheDirectory = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0] as! String
         return cacheDirectory.stringByAppendingPathComponent(String(format: "%@/", file))
     }
     
-    static func fileSize(file: String, fromDirectory directory: DirectoryType) -> NSNumber?
+    public static func fileSize(file: String, fromDirectory directory: DirectoryType) -> NSNumber?
     {
         if count(file) != 0
         {
@@ -150,7 +150,7 @@ extension NSFileManager
         return nil
     }
     
-    static func deleteFile(file: String, fromDirectory directory: DirectoryType) -> Bool
+    public static func deleteFile(file: String, fromDirectory directory: DirectoryType) -> Bool
     {
         if count(file) != 0
         {
@@ -179,7 +179,7 @@ extension NSFileManager
         return false
     }
     
-    static func moveLocalFile(file: String, fromDirectory origin: DirectoryType, toDirectory destination: DirectoryType, withFolderName folderName: String?) -> Bool
+    public static func moveLocalFile(file: String, fromDirectory origin: DirectoryType, toDirectory destination: DirectoryType, withFolderName folderName: String?) -> Bool
     {
         var originPath: String
         
@@ -257,12 +257,12 @@ extension NSFileManager
         return false
     }
     
-    static func moveLocalFile(file: String, fromDirectory origin: DirectoryType, toDirectory destination: DirectoryType) -> Bool
+    public static func moveLocalFile(file: String, fromDirectory origin: DirectoryType, toDirectory destination: DirectoryType) -> Bool
     {
         return self.moveLocalFile(file, fromDirectory: origin, toDirectory: destination, withFolderName: nil)
     }
     
-    static func duplicateFileAtPath(origin: String, toNewPath destination: String) -> Bool
+    public static func duplicateFileAtPath(origin: String, toNewPath destination: String) -> Bool
     {
         if NSFileManager.defaultManager().fileExistsAtPath(origin)
         {
@@ -271,7 +271,7 @@ extension NSFileManager
         return false
     }
     
-    static func renameFileFromDirectory(origin: DirectoryType, atPath path: String, withOldName oldName: String, andNewName newName: String) -> Bool
+    public static func renameFileFromDirectory(origin: DirectoryType, atPath path: String, withOldName oldName: String, andNewName newName: String) -> Bool
     {
         var originPath: String
         
@@ -303,7 +303,7 @@ extension NSFileManager
         return false
     }
     
-    static func getSettings(settings: String, objectForKey: String) -> AnyObject?
+    public static func getSettings(settings: String, objectForKey: String) -> AnyObject?
     {
         var path: String = self.getLibraryDirectoryForFile(String(format: "%@-Settings.plist", settings))
         var loadedPlist: NSMutableDictionary = NSMutableDictionary(contentsOfFile: path)!
@@ -318,7 +318,7 @@ extension NSFileManager
         return loadedPlist[objectForKey]
     }
     
-    static func setSettings(settings: String, object: AnyObject, forKey objKey: String) -> Bool
+    public static func setSettings(settings: String, object: AnyObject, forKey objKey: String) -> Bool
     {
         var path: String = self.getLibraryDirectoryForFile(String(format: "%@-Settings.plist", settings))
         var loadedPlist: NSMutableDictionary = NSMutableDictionary(contentsOfFile: path)!
@@ -335,12 +335,12 @@ extension NSFileManager
         return loadedPlist.writeToFile(path, atomically: true)
     }
     
-    static func setAppSettingsForObject(object: AnyObject, forKey objKey: String) -> Bool
+    public static func setAppSettingsForObject(object: AnyObject, forKey objKey: String) -> Bool
     {
         return self.setSettings(APP_NAME, object: object, forKey: objKey)
     }
     
-    static func getAppSettingsForObjectWithKey(objKey: String) -> AnyObject?
+    public static func getAppSettingsForObjectWithKey(objKey: String) -> AnyObject?
     {
         return self.getSettings(APP_NAME, objectForKey: objKey)
     }

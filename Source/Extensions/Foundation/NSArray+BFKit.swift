@@ -26,11 +26,11 @@
 
 import Foundation
 
-extension NSArray
+public extension NSArray
 {
     // MARK: - Instance functions -
     
-    func safeObjectAtIndex(index: Int) -> AnyObject?
+    public func safeObjectAtIndex(index: Int) -> AnyObject?
     {
         if self.count > 0 && self.count > index
         {
@@ -42,22 +42,22 @@ extension NSArray
         }
     }
     
-    func reversedArray() -> NSArray
+    public func reversedArray() -> NSArray
     {
         return NSArray.reversedArray(self)
     }
     
-    func arrayToJSON() -> NSString
+    public func arrayToJSON() -> NSString
     {
         return NSArray.arrayToJSON(self)
     }
     
-    func objectAtCircleIndex(index: Int) -> AnyObject
+    public func objectAtCircleIndex(index: Int) -> AnyObject
     {
         return self[self.superCircle(index, size: self.count)]
     }
     
-    func superCircle(var index: Int, size maxSize: Int) -> Int
+    public func superCircle(var index: Int, size maxSize: Int) -> Int
     {
         if index < 0
         {
@@ -74,7 +74,7 @@ extension NSArray
     
     // MARK: - Class functions -
     
-    static func reversedArray(array: NSArray) -> NSArray
+    public static func reversedArray(array: NSArray) -> NSArray
     {
         var arrayTemp: NSMutableArray = NSMutableArray.init(capacity: array.count)
         var enumerator: NSEnumerator = array.reverseObjectEnumerator()
@@ -87,7 +87,7 @@ extension NSArray
         return arrayTemp
     }
     
-    static func arrayToJSON(array: AnyObject) -> NSString
+    public static func arrayToJSON(array: AnyObject) -> NSString
     {
         var error: NSError?
         let data = NSJSONSerialization.dataWithJSONObject(array, options: nil, error: &error)

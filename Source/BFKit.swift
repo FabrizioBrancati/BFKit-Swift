@@ -26,5 +26,5 @@
 
 import Foundation
 
-let BFKIT_VERSION = "1.0.0"
-let BFKIT_AUTHOR = "Fabrizio Brancati"
+public let BFKIT_VERSION = "1.0.0"
+public let BFKIT_AUTHOR = "Fabrizio Brancati"

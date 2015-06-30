@@ -26,11 +26,11 @@
 
 import Foundation
 
-extension NSMutableDictionary
+public extension NSMutableDictionary
 {
     // MARK: - Instance functions -
     
-    func safeSetObject(anObject: AnyObject?, forKey: NSCopying) -> Bool
+    public func safeSetObject(anObject: AnyObject?, forKey: NSCopying) -> Bool
     {
         if let obj: AnyObject = anObject
         {

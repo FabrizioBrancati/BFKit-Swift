@@ -28,13 +28,13 @@ import Foundation
 import UIKit
 
 /// Get App name
-let APP_NAME: String = NSBundle.mainBundle().infoDictionary!["CFBundleDisplayName"] as! String
+public let APP_NAME: String = NSBundle(forClass: BFApp.self).infoDictionary!["CFBundleDisplayName"] as! String
 
 /// Get App build
-let APP_BUILD: String = NSBundle.mainBundle().infoDictionary!["CFBundleVersion"] as! String
+public let APP_BUILD: String = NSBundle(forClass: BFApp.self).infoDictionary!["CFBundleVersion"] as! String
 
 /// Get App version
-let APP_VERSION: String = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+public let APP_VERSION: String = NSBundle(forClass: BFApp.self).infoDictionary!["CFBundleShortVersionString"] as! String
 
 /**
 Use BFLocalizedString to use the string translated by BFKit
@@ -42,16 +42,16 @@ Use BFLocalizedString to use the string translated by BFKit
 :param: key     The key string
 :param: comment An optional comment
 */
-func BFLocalizedString(key: String, comment: String? = nil) -> String
+public func BFLocalizedString(key: String, comment: String? = nil) -> String
 {
-    return NSBundle.mainBundle().localizedStringForKey(key, value: nil, table: "BFKit")
+    return NSBundle(forClass: BFApp.self).localizedStringForKey(key, value: nil, table: "BFKit")
 }
 
 /// Get AppDelegate
 //let APP_DELEGATE = UIApplication.sharedApplication().delegate as! AppDelegate
 
 /// This class add some useful methods to retrive the App info
-class BFApp: NSObject
+private class BFApp: NSObject
 {
    
 }

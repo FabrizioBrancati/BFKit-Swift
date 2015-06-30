@@ -26,18 +26,18 @@
 
 import Foundation
 
-extension NSDictionary
+public extension NSDictionary
 {
     // MARK: - Instance functions -
     
-    func dictionaryToJson() -> String
+    public func dictionaryToJson() -> String
     {
         return NSDictionary.dictionaryToJson(self)
     }
     
     // MARK: - Class functions -
     
-    static func dictionaryToJson(dictionary: NSDictionary) -> String
+    public static func dictionaryToJson(dictionary: NSDictionary) -> String
     {
         var json: NSString
         var error: NSError?

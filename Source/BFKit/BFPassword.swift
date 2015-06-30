@@ -26,11 +26,11 @@
 
 import Foundation
 
-class BFPassword
+public class BFPassword
 {
     // MARK: - Enums -
     
-    enum PasswordStrengthLevel : Int
+    public enum PasswordStrengthLevel : Int
     {
         case VeryWeak
         case Weak
@@ -43,7 +43,7 @@ class BFPassword
     
     // MARK: - Class functions -
     
-    static func checkPasswordStrength(password: String) -> PasswordStrengthLevel
+    public static func checkPasswordStrength(password: String) -> PasswordStrengthLevel
     {
         let lenght = count(password)
         let lowercase = self.countLowercaseLetters(password)

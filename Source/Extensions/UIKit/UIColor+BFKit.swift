@@ -29,21 +29,21 @@ import UIKit
 
 // MARK: - Global functions -
 
-func RGBA(r: Int, g: Int, b: Int, a: Float) -> UIColor
+public func RGBA(r: Int, g: Int, b: Int, a: Float) -> UIColor
 {
     return UIColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: CGFloat(a))
 }
 
-func RGB(r: Int, g: Int, b: Int) -> UIColor
+public func RGB(r: Int, g: Int, b: Int) -> UIColor
 {
     return UIColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: 1.0)
 }
 
-extension UIColor
+public extension UIColor
 {
     // MARK: - Variables -
     
-    var red: CGFloat
+    public var red: CGFloat
     {
         get
         {
@@ -62,7 +62,7 @@ extension UIColor
         }
     }
     
-    var green: CGFloat
+    public var green: CGFloat
     {
         get
         {
@@ -85,7 +85,7 @@ extension UIColor
         }
     }
     
-    var blue: CGFloat
+    public var blue: CGFloat
     {
         get
         {
@@ -108,7 +108,7 @@ extension UIColor
         }
     }
     
-    var white: CGFloat
+    public var white: CGFloat
     {
         get
         {
@@ -127,7 +127,7 @@ extension UIColor
         }
     }
     
-    var hue: CGFloat
+    public var hue: CGFloat
     {
         get
         {
@@ -147,7 +147,7 @@ extension UIColor
         }
     }
     
-    var saturation: CGFloat
+    public var saturation: CGFloat
     {
         get
         {
@@ -167,7 +167,7 @@ extension UIColor
         }
     }
     
-    var brightness: CGFloat
+    public var brightness: CGFloat
     {
         get
         {
@@ -187,7 +187,7 @@ extension UIColor
         }
     }
     
-    var alpha: CGFloat
+    public var alpha: CGFloat
     {
         get
         {
@@ -199,7 +199,7 @@ extension UIColor
         }
     }
     
-    var luminance: CGFloat
+    public var luminance: CGFloat
     {
         get
         {
@@ -224,12 +224,12 @@ extension UIColor
     
     // MARK: - Instance functions -
     
-    func contrastingColor() -> UIColor
+    public func contrastingColor() -> UIColor
     {
         return self.luminance > 0.5 ? UIColor.blackColor() : UIColor.whiteColor()
     }
     
-    func complementaryColor() -> UIColor?
+    public func complementaryColor() -> UIColor?
     {
         var h: CGFloat = 0.0, s: CGFloat = 0.0, v: CGFloat = 0.0, a: CGFloat = 0.0
         
@@ -247,7 +247,7 @@ extension UIColor
         return UIColor(hue: h, saturation: s, brightness: v, alpha: a)
     }
     
-    func canProvideRGBComponents() -> Bool
+    public func canProvideRGBComponents() -> Bool
     {
         switch CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)).value
         {
@@ -308,12 +308,12 @@ extension UIColor
     
     // MARK: - Init functions -
     
-    convenience init(hex: String)
+    public convenience init(hex: String)
     {
         self.init(hexString: hex)
     }
     
-    convenience init(hexString: String)
+    public convenience init(hexString: String)
     {
         let colorString: String = hexString.stringByReplacingOccurrencesOfString("#", withString: "").uppercaseString
         var alpha: CGFloat = 0.0, red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0
@@ -359,17 +359,17 @@ extension UIColor
         return CGFloat(hexComponent) / 255.0
     }
     
-    static func colorWithHex(hex: Int) -> UIColor
+    public static func colorWithHex(hex: Int) -> UIColor
     {
         return self.colorWithHex(hex, alpha: 1.0)
     }
     
-    static func colorWithHex(hex: Int, alpha: CGFloat) -> UIColor
+    public static func colorWithHex(hex: Int, alpha: CGFloat) -> UIColor
     {
         return UIColor(red: CGFloat(((hex & 0xFF0000) >> 16)) / 255.0, green: CGFloat(((hex & 0xFF00) >> 8)) / 255.0, blue: CGFloat((hex & 0xFF)) / 255.0, alpha: alpha)
     }
     
-    static func randomColor() -> UIColor
+    public static func randomColor() -> UIColor
     {
         let r: Int = Int(arc4random()) % 255
         let g: Int = Int(arc4random()) % 255
@@ -378,7 +378,7 @@ extension UIColor
         return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: 1.0)
     }
     
-    static func colorWithColor(color: UIColor, alpha: CGFloat) -> UIColor
+    public static func colorWithColor(color: UIColor, alpha: CGFloat) -> UIColor
     {
         return color.colorWithAlphaComponent(alpha)
     }

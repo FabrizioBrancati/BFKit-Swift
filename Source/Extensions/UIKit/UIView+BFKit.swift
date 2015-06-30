@@ -28,11 +28,11 @@ import Foundation
 import UIKit
 import QuartzCore
 
-extension UIView
+public extension UIView
 {
     // MARK: - Enums -
     
-    enum UIViewAnimationFlipDirection : Int
+    public enum UIViewAnimationFlipDirection : Int
     {
         case FromTop
         case FromLeft
@@ -40,13 +40,13 @@ extension UIView
         case FromBottom
     }
     
-    enum UIViewAnimationTranslationDirection : Int
+    public enum UIViewAnimationTranslationDirection : Int
     {
         case FromLeftToRight
         case FromRightToLeft
     }
     
-    enum UIViewLinearGradientDirection : Int
+    public enum UIViewLinearGradientDirection : Int
     {
         case Vertical
         case Horizontal
@@ -58,7 +58,7 @@ extension UIView
     
     // MARK: - Instance functions -
     
-    func createBordersWithColor(color: UIColor, radius: CGFloat, width: CGFloat)
+    public func createBordersWithColor(color: UIColor, radius: CGFloat, width: CGFloat)
     {
         self.layer.borderWidth = width
         self.layer.cornerRadius = radius
@@ -73,27 +73,27 @@ extension UIView
         self.layer.borderColor = cgColor
     }
     
-    func removeBorders()
+    public func removeBorders()
     {
         self.layer.borderWidth = 0
         self.layer.cornerRadius = 0
         self.layer.borderColor = nil
     }
     
-    func removeShadow()
+    public func removeShadow()
     {
         self.layer.shadowColor = UIColor.clearColor().CGColor
         self.layer.shadowOpacity = 0.0
         self.layer.shadowOffset = CGSizeMake(0.0, 0.0)
     }
     
-    func setCornerRadius(radius: CGFloat)
+    public func setCornerRadius(radius: CGFloat)
     {
         self.layer.cornerRadius = radius
         self.layer.masksToBounds = true
     }
     
-    func createRectShadowWithOffset(offset: CGSize, opacity: Float, radius: CGFloat)
+    public func createRectShadowWithOffset(offset: CGSize, opacity: Float, radius: CGFloat)
     {
         self.layer.shadowColor = UIColor.blackColor().CGColor
         self.layer.shadowOpacity = opacity
@@ -102,7 +102,7 @@ extension UIView
         self.layer.masksToBounds = false
     }
     
-    func createCornerRadiusShadowWithCornerRadius(cornerRadius: CGFloat, offset: CGSize, opacity: Float, radius: CGFloat)
+    public func createCornerRadiusShadowWithCornerRadius(cornerRadius: CGFloat, offset: CGSize, opacity: Float, radius: CGFloat)
     {
         self.layer.shadowColor = UIColor.blackColor().CGColor
         self.layer.shadowOpacity = opacity
@@ -114,7 +114,7 @@ extension UIView
         self.layer.masksToBounds = false
     }
     
-    func createGradientWithColors(colors: Array<UIColor>, direction: UIViewLinearGradientDirection)
+    public func createGradientWithColors(colors: Array<UIColor>, direction: UIViewLinearGradientDirection)
     {
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
@@ -153,7 +153,7 @@ extension UIView
         self.layer.insertSublayer(gradient, atIndex:0)
     }
     
-    func shakeView()
+    public func shakeView()
     {
         let shake: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform")
         shake.values = [NSValue(CATransform3D: CATransform3DMakeTranslation(-5.0, 0.0, 0.0)), NSValue(CATransform3D: CATransform3DMakeTranslation(5.0, 0.0, 0.0))]
@@ -164,7 +164,7 @@ extension UIView
         self.layer.addAnimation(shake, forKey:"shake")
     }
     
-    func pulseViewWithDuration(duration: CGFloat)
+    public func pulseViewWithDuration(duration: CGFloat)
     {
         UIView.animateWithDuration(NSTimeInterval(duration / 6), animations: { () -> Void in
             self.transform = CGAffineTransformMakeScale(1.1, 1.1)
@@ -206,7 +206,7 @@ extension UIView
         }
     }
     
-    func heartbeatViewWithDuration(duration: CGFloat)
+    public func heartbeatViewWithDuration(duration: CGFloat)
     {
         let maxSize: CGFloat = 1.4, durationPerBeat: CGFloat = 0.5
         
@@ -231,7 +231,7 @@ extension UIView
         self.layer.addAnimation(animation, forKey: "heartbeat")
     }
     
-    func applyMotionEffects()
+    public func applyMotionEffects()
     {
         let horizontalEffect: UIInterpolatingMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.x", type: .TiltAlongHorizontalAxis)
         horizontalEffect.minimumRelativeValue = -10.0
@@ -245,7 +245,7 @@ extension UIView
         self.addMotionEffect(motionEffectGroup)
     }
     
-    func flipWithDuration(duration: NSTimeInterval, direction: UIViewAnimationFlipDirection)
+    public func flipWithDuration(duration: NSTimeInterval, direction: UIViewAnimationFlipDirection)
     {
         var subtype: String = ""
         
@@ -276,7 +276,7 @@ extension UIView
         self.layer.addAnimation(transition, forKey:"flip")
     }
     
-    func translateAroundTheView(topView: UIView, duration: CGFloat, direction: UIViewAnimationTranslationDirection, repeatAnimation: Bool = true, startFromEdge: Bool = true)
+    public func translateAroundTheView(topView: UIView, duration: CGFloat, direction: UIViewAnimationTranslationDirection, repeatAnimation: Bool = true, startFromEdge: Bool = true)
     {
         var startPosition: CGFloat = self.center.x, endPosition: CGFloat
         switch(direction)
@@ -316,7 +316,7 @@ extension UIView
         }
     }
     
-    func screenshot() -> UIImage
+    public func screenshot() -> UIImage
     {
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.mainScreen().scale)
         
@@ -331,7 +331,7 @@ extension UIView
         return image
     }
     
-    func saveScreenshot() -> UIImage
+    public func saveScreenshot() -> UIImage
     {
         let image: UIImage = self.screenshot()
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
@@ -341,7 +341,7 @@ extension UIView
     
     // MARK: - Init functions -
     
-    convenience init(frame: CGRect, backgroundColor: UIColor)
+    public convenience init(frame: CGRect, backgroundColor: UIColor)
     {
         self.init(frame: frame)
         self.backgroundColor = backgroundColor

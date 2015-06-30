@@ -27,11 +27,11 @@
 import Foundation
 import UIKit
 
-extension UIWebView
+public extension UIWebView
 {
     // MARK: - Instance functions -
     
-    func removeBackgroundShadow()
+    public func removeBackgroundShadow()
     {
         for var i = 0; i < self.scrollView.subviews.count; i++
         {
@@ -44,7 +44,7 @@ extension UIWebView
         }
     }
     
-    func loadWebsite(website: String)
+    public func loadWebsite(website: String)
     {
         self.loadRequest(NSURLRequest(URL: NSURL(string: website)!))
     }

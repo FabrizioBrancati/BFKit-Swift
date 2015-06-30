@@ -27,11 +27,11 @@
 import Foundation
 import UIKit
 
-extension UIScrollView
+public extension UIScrollView
 {
     // MARK: - Init functions -
     
-    convenience init(frame: CGRect, contentSize: CGSize, clipsToBounds: Bool, pagingEnabled: Bool, showScrollIndicators: Bool, delegate: UIScrollViewDelegate)
+    public convenience init(frame: CGRect, contentSize: CGSize, clipsToBounds: Bool, pagingEnabled: Bool, showScrollIndicators: Bool, delegate: UIScrollViewDelegate)
     {
         self.init(frame: frame)
         self.delegate = delegate

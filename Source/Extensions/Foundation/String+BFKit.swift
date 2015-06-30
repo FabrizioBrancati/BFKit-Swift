@@ -26,43 +26,43 @@
 
 import Foundation
 
-extension String
+public extension String
 {
     // MARK: - Variables -
     
-    var floatValue: Float
+    public var floatValue: Float
     {
         return (self as NSString).floatValue
     }
     
     // MARK: - Instance functions -
     
-    func length() -> Int
+    public func length() -> Int
     {
         return count(self)
     }
     
-    func characterAtIndex(index: Int) -> Character
+    public func characterAtIndex(index: Int) -> Character
     {
         return self[advance(self.startIndex, index)]
     }
     
-    func substringFromIndex(index: Int) -> String
+    public func substringFromIndex(index: Int) -> String
     {
         return self[advance(self.startIndex, index)...advance(self.startIndex, self.length()-1)]
     }
     
-    func substringToIndex(index: Int) -> String
+    public func substringToIndex(index: Int) -> String
     {
         return self[advance(self.startIndex, 0)...advance(self.startIndex, index-1)]
     }
     
-    func searchCharStart(charStart: Character, charEnd: Character) -> String
+    public func searchCharStart(charStart: Character, charEnd: Character) -> String
     {
         return String.searchInString(self, charStart: charStart, charEnd: charEnd)
     }
     
-    func hasString(string: String, caseSensitive: Bool = true) -> Bool
+    public func hasString(string: String, caseSensitive: Bool = true) -> Bool
     {
         if caseSensitive
         {
@@ -74,22 +74,22 @@ extension String
         }
     }
     
-    func isEmail() -> Bool
+    public func isEmail() -> Bool
     {
         return String.isEmail(self)
     }
     
-    func encodeToBase64() -> String
+    public func encodeToBase64() -> String
     {
         return String.encodeToBase64(self)
     }
     
-    func decodeBase64() -> String
+    public func decodeBase64() -> String
     {
         return String.decodeBase64(self)
     }
     
-    func sentenceCapitalizedString() -> String
+    public func sentenceCapitalizedString() -> String
     {
         if self.length() == 0
         {
@@ -101,7 +101,7 @@ extension String
         return uppercase.stringByAppendingString(lowercaseString)
     }
     
-    func dateFromTimestamp() -> String
+    public func dateFromTimestamp() -> String
     {
         let year: String = self.substringToIndex(4)
         var month: String = self.substringFromIndex(5)
@@ -116,36 +116,36 @@ extension String
         return "\(day)/\(month)/\(year) \(hours):\(minutes)"
     }
     
-    func URLEncode() -> String
+    public func URLEncode() -> String
     {
         return self.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!
     }
     
     // TODO: Missing hash functions
     
-    func MD5() -> String
+    private func MD5() -> String
     {
         return ""
     }
     
-    func SHA1() -> String
+    private func SHA1() -> String
     {
         return ""
     }
     
-    func SHA256() -> String
+    private func SHA256() -> String
     {
         return ""
     }
     
-    func SHA512() -> String
+    private func SHA512() -> String
     {
         return ""
     }
     
     // MARK: - Class functions -
     
-    static func searchInString(string: String, charStart: Character, charEnd: Character) -> String
+    public static func searchInString(string: String, charStart: Character, charEnd: Character) -> String
     {
         var start = 0, stop = 0
         
@@ -171,7 +171,7 @@ extension String
         return string
     }
     
-    static func isEmail(email: String) -> Bool
+    public static func isEmail(email: String) -> Bool
     {
         let emailRegEx: String =
         "(?:[a-z0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[a-z0-9!#$%\\&'*+/=?\\^_`{|}"
@@ -186,7 +186,7 @@ extension String
         return regExPredicate.evaluateWithObject(email.lowercaseString)
     }
     
-    static func convertToUTF8Entities(string: String) -> String
+    public static func convertToUTF8Entities(string: String) -> String
     {
         return string
             .stringByReplacingOccurrencesOfString("%27", withString: "'")
@@ -225,13 +225,13 @@ extension String
             .stringByReplacingOccurrencesOfString("%20", withString: " ")
     }
     
-    static func encodeToBase64(string: String) -> String
+    public static func encodeToBase64(string: String) -> String
     {
         let data: NSData = string.dataUsingEncoding(NSUTF8StringEncoding)!
         return data.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
     }
     
-    static func decodeBase64(string: String) -> String
+    public static func decodeBase64(string: String) -> String
     {
         let data: NSData = NSData(base64EncodedString: string as String, options: NSDataBase64DecodingOptions(rawValue: 0))!
         return NSString(data: data, encoding: NSUTF8StringEncoding)! as String

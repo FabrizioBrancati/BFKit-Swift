@@ -28,41 +28,41 @@ import Foundation
 
 // MARK: - Global variables -
 
-let YES = true
-let NO = false
+public let YES = true
+public let NO = false
 
 // MARK: - Global functions -
 
-func DegreesToRadians(degrees: Float) -> Float
+public func DegreesToRadians(degrees: Float) -> Float
 {
     return Float(Double(degrees) * M_PI / 180)
 }
 
-func RadiansToDegrees(radians: Float) -> Float
+public func RadiansToDegrees(radians: Float) -> Float
 {
     return Float(Double(radians) * 180 / M_PI)
 }
 
-extension NSNumber
+public extension NSNumber
 {
     // MARK: - Class functions -
     
-    static func randomIntBetweenMin(minValue: Int, andMax maxValue: Int) -> Int
+    public static func randomIntBetweenMin(minValue: Int, andMax maxValue: Int) -> Int
     {
         return minValue + Int(self.randomFloat()) * (maxValue - minValue)
     }
     
-    static func randomFloat() -> Float
+    public static func randomFloat() -> Float
     {
         return Float(arc4random() / UINT32_MAX)
     }
     
-    static func randomFloatBetweenMin(minValue: Float, andMax maxValue: Float) -> Float
+    public static func randomFloatBetweenMin(minValue: Float, andMax maxValue: Float) -> Float
     {
         return Float(arc4random()) / Float(UINT32_MAX) * abs(minValue - maxValue) + min(minValue, maxValue)
     }
     
-    static func nextPowerOfTwo(number: Int) -> Int
+    public static func nextPowerOfTwo(number: Int) -> Int
     {
         var result = 1
         while result < number
@@ -72,7 +72,7 @@ extension NSNumber
         return result
     }
     
-    static func isPowerOfTwo(number: Int) -> Bool
+    public static func isPowerOfTwo(number: Int) -> Bool
     {
         return (number != 0) && Bool((number & (number - 1)))
     }

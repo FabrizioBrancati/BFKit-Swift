@@ -27,7 +27,7 @@
 import Foundation
 import UIKit
 
-class BFButton: UIButton
+public class BFButton: UIButton
 {
     // MARK: - Variables -
     
@@ -47,7 +47,7 @@ class BFButton: UIButton
     
     // MARK: - Init functions -
     
-    init(frame: CGRect, image: UIImage, highlightedImage: UIImage, fadeDuration: Float)
+    public init(frame: CGRect, image: UIImage, highlightedImage: UIImage, fadeDuration: Float)
     {
         self.fadeDuration = fadeDuration
         
@@ -61,14 +61,14 @@ class BFButton: UIButton
         self.adjustsImageWhenHighlighted = false
     }
 
-    required init(coder aDecoder: NSCoder)
+    public required init(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
     }
     
     // MARK: - Instance functions -
     
-    override var highlighted: Bool
+    public override var highlighted: Bool
     {
         didSet(highlighted)
         {

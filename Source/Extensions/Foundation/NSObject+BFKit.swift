@@ -26,11 +26,11 @@
 
 import Foundation
 
-extension NSObject
+public extension NSObject
 {
     // MARK: - Instance functions -
     
-    func isValid() -> Bool
+    public func isValid() -> Bool
     {
         return !self.isKindOfClass(NSNull)
     }

@@ -29,11 +29,11 @@ import UIKit
 import CoreImage
 import Accelerate
 
-extension UIImage
+public extension UIImage
 {
     // MARK: - Instance functions -
     
-    func blendMode(blendMode: CGBlendMode) -> UIImage
+    public func blendMode(blendMode: CGBlendMode) -> UIImage
     {
         UIGraphicsBeginImageContextWithOptions(CGSizeMake(self.size.width, self.size.height), false, UIScreen.mainScreen().scale)
         self.drawInRect(CGRectMake(0.0, 0.0, self.size.width, self.size.height), blendMode: blendMode, alpha: 1)
@@ -43,12 +43,12 @@ extension UIImage
         return image
     }
     
-    func blendOverlay() -> UIImage
+    public func blendOverlay() -> UIImage
     {
         return self.blendMode(kCGBlendModeOverlay)
     }
     
-    func imageAtRect(rect: CGRect) -> UIImage
+    public func imageAtRect(rect: CGRect) -> UIImage
     {
         let imageRef: CGImageRef = CGImageCreateWithImageInRect(self.CGImage, rect)
         let subImage: UIImage = UIImage(CGImage: imageRef)!
@@ -56,7 +56,7 @@ extension UIImage
         return subImage
     }
     
-    func imageByScalingProportionallyToMinimumSize(targetSize: CGSize) -> UIImage?
+    public func imageByScalingProportionallyToMinimumSize(targetSize: CGSize) -> UIImage?
     {
         var sourceImage: UIImage = self
         var newImage: UIImage? = nil
@@ -138,7 +138,7 @@ extension UIImage
         return newImage
     }
     
-    func imageByScalingProportionallyToMaximumSize(targetSize: CGSize) -> UIImage
+    public func imageByScalingProportionallyToMaximumSize(targetSize: CGSize) -> UIImage
     {
         var newTargetSize: CGSize = targetSize
         
@@ -201,7 +201,7 @@ extension UIImage
         return returnImage
     }
     
-    func imageByScalingProportionallyToSize(targetSize: CGSize) -> UIImage?
+    public func imageByScalingProportionallyToSize(targetSize: CGSize) -> UIImage?
     {
         var sourceImage: UIImage = self
         var newImage: UIImage? = nil
@@ -284,7 +284,7 @@ extension UIImage
         return newImage
     }
     
-    func imageByScalingToSize(targetSize: CGSize) -> UIImage?
+    public func imageByScalingToSize(targetSize: CGSize) -> UIImage?
     {
         var sourceImage: UIImage = self
         var newImage: UIImage? = nil
@@ -317,12 +317,12 @@ extension UIImage
         return newImage
     }
     
-    func imageRotatedByRadians(radians: CGFloat) -> UIImage
+    public func imageRotatedByRadians(radians: CGFloat) -> UIImage
     {
         return self.imageRotatedByDegrees(CGFloat(RadiansToDegrees(Float(radians))))
     }
     
-    func imageRotatedByDegrees(degrees: CGFloat) -> UIImage
+    public func imageRotatedByDegrees(degrees: CGFloat) -> UIImage
     {
         let rotatedViewBox: UIView = UIView(frame: CGRectMake(0, 0, self.size.width, self.size.height))
         let t: CGAffineTransform = CGAffineTransformMakeRotation(CGFloat(DegreesToRadians(Float(degrees))))
@@ -345,13 +345,13 @@ extension UIImage
         return newImage
     }
     
-    func hasAlpha() -> Bool
+    public func hasAlpha() -> Bool
     {
         let alpha: CGImageAlphaInfo = CGImageGetAlphaInfo(self.CGImage)
         return (alpha == .First || alpha == .Last || alpha == .PremultipliedFirst || alpha == .PremultipliedLast)
     }
     
-    func removeAlpha() -> UIImage
+    public func removeAlpha() -> UIImage
     {
         if !self.hasAlpha()
         {
@@ -368,12 +368,12 @@ extension UIImage
         return returnImage
     }
     
-    func fillAlpha() -> UIImage
+    public func fillAlpha() -> UIImage
     {
         return self.fillAlphaWithColor(UIColor.whiteColor())
     }
     
-    func fillAlphaWithColor(color: UIColor) -> UIImage
+    public func fillAlphaWithColor(color: UIColor) -> UIImage
     {
         var im_r: CGRect = CGRect(origin: CGPointZero, size: self.size)
         
@@ -391,7 +391,7 @@ extension UIImage
         return returnImage
     }
     
-    func isGrayscale() -> Bool
+    public func isGrayscale() -> Bool
     {
         let imgRef: CGImageRef = self.CGImage
         let clrMod: CGColorSpaceModel = CGColorSpaceGetModel(CGImageGetColorSpace(imgRef))
@@ -406,7 +406,7 @@ extension UIImage
         }
     }
     
-    func imageToGrayscale() -> UIImage
+    public func imageToGrayscale() -> UIImage
     {
         let rect: CGRect = CGRectMake(0.0, 0.0, size.width, size.height)
         
@@ -420,7 +420,7 @@ extension UIImage
         return returnImage
     }
     
-    func imageToBlackAndWhite() -> UIImage
+    public func imageToBlackAndWhite() -> UIImage
     {
         let colorSpace: CGColorSpaceRef = CGColorSpaceCreateDeviceGray()
         let context: CGContextRef = CGBitmapContextCreate(nil, Int(self.size.width), Int(self.size.height), 8, 0, colorSpace, CGBitmapInfo(rawValue: 0))
@@ -435,7 +435,7 @@ extension UIImage
         return returnImage
     }
     
-    func invertColors() -> UIImage
+    public func invertColors() -> UIImage
     {
         UIGraphicsBeginImageContextWithOptions(self.size, false, UIScreen .mainScreen().scale)
         CGContextSetBlendMode(UIGraphicsGetCurrentContext(), kCGBlendModeCopy)
@@ -450,7 +450,7 @@ extension UIImage
         return returnImage
     }
     
-    func bloom(radius: Float, intensity: Float) -> UIImage
+    public func bloom(radius: Float, intensity: Float) -> UIImage
     {
         let context: CIContext = CIContext(options: nil)
         let filter: CIFilter = CIFilter(name: "CIBloom")
@@ -464,7 +464,7 @@ extension UIImage
         return returnImage
     }
     
-    func bumpDistortion(center: CIVector, radius: Float, scale: Float) -> UIImage
+    public func bumpDistortion(center: CIVector, radius: Float, scale: Float) -> UIImage
     {
         let context: CIContext = CIContext(options: nil)
         let filter: CIFilter = CIFilter(name: "CIBumpDistortion")
@@ -479,7 +479,7 @@ extension UIImage
         return returnImage
     }
     
-    func bumpDistortionLinear(center: CIVector, radius: Float, angle: Float, scale: Float) -> UIImage
+    public func bumpDistortionLinear(center: CIVector, radius: Float, angle: Float, scale: Float) -> UIImage
     {
         let context: CIContext = CIContext(options: nil)
         let filter: CIFilter = CIFilter(name: "CIBumpDistortionLinear")
@@ -495,7 +495,7 @@ extension UIImage
         return returnImage
     }
     
-    func circleSplashDistortion(center: CIVector, radius: Float) -> UIImage
+    public func circleSplashDistortion(center: CIVector, radius: Float) -> UIImage
     {
         let context: CIContext = CIContext(options: nil)
         let filter: CIFilter = CIFilter(name: "CICircleSplashDistortion")
@@ -509,7 +509,7 @@ extension UIImage
         return returnImage
     }
     
-    func circularWrap(center: CIVector, radius: Float, angle: Float) -> UIImage
+    public func circularWrap(center: CIVector, radius: Float, angle: Float) -> UIImage
     {
         let context: CIContext = CIContext(options: nil)
         let filter: CIFilter = CIFilter(name: "CICircularWrap")
@@ -524,7 +524,7 @@ extension UIImage
         return returnImage
     }
     
-    func cmykHalftone(center: CIVector, width: Float, angle: Float, sharpness: Float, gcr: Float, ucr: Float) -> UIImage
+    public func cmykHalftone(center: CIVector, width: Float, angle: Float, sharpness: Float, gcr: Float, ucr: Float) -> UIImage
     {
         let context: CIContext = CIContext(options: nil)
         let filter: CIFilter = CIFilter(name: "CICMYKHalftone")
@@ -542,7 +542,7 @@ extension UIImage
         return returnImage
     }
     
-    func sepiaToneWithIntensity(intensity: Float) -> UIImage
+    public func sepiaToneWithIntensity(intensity: Float) -> UIImage
     {
         let context: CIContext = CIContext(options: nil)
         let filter: CIFilter = CIFilter(name: "CISepiaTone")
@@ -555,7 +555,7 @@ extension UIImage
         return returnImage
     }
     
-    func blur(radius blurRadius: CGFloat, tintColor: UIColor? = nil, saturationDeltaFactor: CGFloat = 1.8, maskImage: UIImage? = nil) -> UIImage?
+    public func blur(radius blurRadius: CGFloat, tintColor: UIColor? = nil, saturationDeltaFactor: CGFloat = 1.8, maskImage: UIImage? = nil) -> UIImage?
     {
         if size.width < 1 || size.height < 1
         {
@@ -813,7 +813,7 @@ extension UIImage
     
     // MARK: - Init functions -
     
-    convenience init?(dummyImageWithSizeAndColor dummy: String)
+    public convenience init?(dummyImageWithSizeAndColor dummy: String)
     {
         var size: CGSize = CGSizeZero, color: UIColor = UIColor.lightGrayColor()
         
@@ -853,7 +853,7 @@ extension UIImage
         self.init(CGImage: result.CGImage)
     }
     
-    convenience init?(fromText text: String, font: FontName, fontSize: CGFloat, imageSize: CGSize)
+    public convenience init?(fromText text: String, font: FontName, fontSize: CGFloat, imageSize: CGSize)
     {
         UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.mainScreen().scale)
         
@@ -866,7 +866,7 @@ extension UIImage
         self.init(CGImage: image.CGImage)
     }
     
-    convenience init?(maskedText: String, font: FontName, fontSize: CGFloat, imageSize: CGSize, backgroundColor: UIColor)
+    public convenience init?(maskedText: String, font: FontName, fontSize: CGFloat, imageSize: CGSize, backgroundColor: UIColor)
     {
         let fontName: UIFont = UIFont(fontName: font, size: fontSize)!
         let textAttributes = [NSFontAttributeName : fontName]
@@ -893,7 +893,7 @@ extension UIImage
         self.init(CGImage: image.CGImage)
     }
     
-    convenience init?(color: UIColor)
+    public convenience init?(color: UIColor)
     {
         let rect: CGRect = CGRectMake(0, 0, 1, 1)
         UIGraphicsBeginImageContext(rect.size)

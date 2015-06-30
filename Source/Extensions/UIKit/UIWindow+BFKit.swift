@@ -27,11 +27,11 @@
 import Foundation
 import UIKit
 
-extension UIWindow
+public extension UIWindow
 {
     // MARK: - Instance functions -
     
-    func takeScreenshot() -> UIImage
+    public func takeScreenshot() -> UIImage
     {
         let ignoreOrientation: Bool = SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO("8.0")
         

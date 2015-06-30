@@ -27,11 +27,11 @@
 import Foundation
 import UIKit
 
-extension UITableView
+public extension UITableView
 {
     // MARK: - Instance functions -
     
-    func getIndexPathsForSection(section: Int) -> Array<NSIndexPath>
+    public func getIndexPathsForSection(section: Int) -> Array<NSIndexPath>
     {
         var indexPaths: Array<NSIndexPath> = Array()
         let rows: Int = self.numberOfRowsInSection(section)
@@ -44,13 +44,13 @@ extension UITableView
         return indexPaths
     }
     
-    func getNextIndexPath(row: Int, forSection section: Int) -> NSIndexPath
+    public func getNextIndexPath(row: Int, forSection section: Int) -> NSIndexPath
     {
         let indexPath: Array<NSIndexPath> = self.getIndexPathsForSection(section)
         return indexPath[row + 1]
     }
     
-    func getPreviousIndexPath(row: Int, forSection section: Int) -> NSIndexPath
+    public func getPreviousIndexPath(row: Int, forSection section: Int) -> NSIndexPath
     {
         let indexPath: Array<NSIndexPath> = self.getIndexPathsForSection(section)
         return indexPath[row - 1]
@@ -58,7 +58,7 @@ extension UITableView
 
     // MARK: - Init functions -
     
-    convenience init(frame: CGRect, style: UITableViewStyle, cellSeparatorStyle: UITableViewCellSeparatorStyle, separatorInset: UIEdgeInsets, dataSource: UITableViewDataSource, delegate: UITableViewDelegate)
+    public convenience init(frame: CGRect, style: UITableViewStyle, cellSeparatorStyle: UITableViewCellSeparatorStyle, separatorInset: UIEdgeInsets, dataSource: UITableViewDataSource, delegate: UITableViewDelegate)
     {
         self.init(frame: frame)
         self.separatorStyle = cellSeparatorStyle

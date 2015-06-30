@@ -28,14 +28,14 @@ import Foundation
 
 // MARK: - Global functions -
 
-func runOnMainThread(block: () -> ())
+public func runOnMainThread(block: () -> ())
 {
     dispatch_async(dispatch_get_main_queue(), {
         block()
     })
 }
 
-extension NSThread
+private extension NSThread
 {
     
 }

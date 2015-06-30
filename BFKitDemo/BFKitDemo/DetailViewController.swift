@@ -55,6 +55,8 @@ class DetailViewController: UIViewController
 
         switch detailType
         {
+        case .BFApp:
+            BFLog("\(APP_BUILD)")
         case .UIDevice:
             BFLog("\(UIDevice.devicePlatform())")
             BFLog("\(UIDevice.isSimulator()) - \(UIDevice.isiPhone())")

@@ -27,21 +27,21 @@
 import Foundation
 import UIKit
 
-extension UIButton
+public extension UIButton
 {
     // MARK: - Init functions -
     
-    convenience init(frame: CGRect, title: String?)
+    public convenience init(frame: CGRect, title: String?)
     {
         self.init(frame: frame, title: title, backgroundImage: nil)
     }
     
-    convenience init(frame: CGRect, title: String?, backgroundImage: UIImage?)
+    public convenience init(frame: CGRect, title: String?, backgroundImage: UIImage?)
     {
         self.init(frame: frame, title: title, backgroundImage: backgroundImage, highlightedBackgroundImage: nil)
     }
     
-    convenience init(frame: CGRect, title: String?, backgroundImage: UIImage?, highlightedBackgroundImage: UIImage?)
+    public convenience init(frame: CGRect, title: String?, backgroundImage: UIImage?, highlightedBackgroundImage: UIImage?)
     {
         self.init(frame: frame)
         self.frame = frame
@@ -50,23 +50,23 @@ extension UIButton
         self.setBackgroundImage(highlightedBackgroundImage, forState: .Highlighted)
     }
     
-    convenience init(frame: CGRect, title: String, color: UIColor)
+    public convenience init(frame: CGRect, title: String, color: UIColor)
     {
         let components: UnsafePointer<CGFloat> = CGColorGetComponents(color.CGColor)
         self.init(frame: frame, title: title, backgroundImage: UIImage(color: color), highlightedBackgroundImage: UIImage(color: UIColor(red: components[0]-0.1, green: components[1]-0.1, blue: components[2]-0.1, alpha: 1)))
     }
     
-    convenience init(frame: CGRect, title: String, color: UIColor, highlightedColor: UIColor)
+    public convenience init(frame: CGRect, title: String, color: UIColor, highlightedColor: UIColor)
     {
         self.init(frame: frame, title: title, backgroundImage: UIImage(color: color), highlightedBackgroundImage: UIImage(color: highlightedColor))
     }
     
-    convenience init(frame: CGRect, image: UIImage)
+    public convenience init(frame: CGRect, image: UIImage)
     {
         self.init(frame: frame, image: image, highlightedImage: nil)
     }
     
-    convenience init(frame: CGRect, image: UIImage, highlightedImage: UIImage?)
+    public convenience init(frame: CGRect, image: UIImage, highlightedImage: UIImage?)
     {
         self.init(frame: frame)
         self.frame = frame
@@ -83,12 +83,12 @@ extension UIButton
         self.titleLabel.font = UIFont.fontForFontName(fontName, size: size)
     }*/
     
-    func setTitleColor(color: UIColor)
+    public func setTitleColor(color: UIColor)
     {
         self.setTitleColor(color, highlightedColor: color.colorWithAlphaComponent(0.4))
     }
     
-    func setTitleColor(color: UIColor, highlightedColor: UIColor)
+    public func setTitleColor(color: UIColor, highlightedColor: UIColor)
     {
         self.setTitleColor(color, forState: .Normal)
         self.setTitleColor(highlightedColor, forState: .Highlighted)

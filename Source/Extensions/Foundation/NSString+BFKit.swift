@@ -26,16 +26,16 @@
 
 import Foundation
 
-extension NSString
+public extension NSString
 {
     // MARK: - Instance functions -
     
-    func searchCharStart(charStart: unichar, charEnd: unichar) -> NSString
+    public func searchCharStart(charStart: unichar, charEnd: unichar) -> NSString
     {
         return NSString.searchInString(self, charStart: charStart, charEnd: charEnd)
     }
     
-    func hasString(string: NSString, caseSensitive: Bool = true) -> Bool
+    public func hasString(string: NSString, caseSensitive: Bool = true) -> Bool
     {
         if caseSensitive
         {
@@ -47,22 +47,22 @@ extension NSString
         }
     }
     
-    func isEmail() -> Bool
+    public func isEmail() -> Bool
     {
         return NSString.isEmail(self)
     }
     
-    func encodeToBase64() -> NSString
+    public func encodeToBase64() -> NSString
     {
         return NSString.encodeToBase64(self)
     }
     
-    func decodeBase64() -> NSString
+    public func decodeBase64() -> NSString
     {
         return NSString.decodeBase64(self)
     }
     
-    func sentenceCapitalizedString() -> NSString
+    public func sentenceCapitalizedString() -> NSString
     {
         if self.length == 0
         {
@@ -74,7 +74,7 @@ extension NSString
         return uppercase.stringByAppendingString(lowercaseString)
     }
     
-    func dateFromTimestamp() -> NSString
+    public func dateFromTimestamp() -> NSString
     {
         let year: NSString = self.substringToIndex(4)
         var month: NSString = self.substringFromIndex(5)
@@ -89,36 +89,36 @@ extension NSString
         return "\(day)/\(month)/\(year) \(hours):\(minutes)"
     }
     
-    func URLEncode() -> NSString
+    public func URLEncode() -> NSString
     {
         return self.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!
     }
     
     // TODO: Missing hash functions
     
-    func MD5() -> NSString
+    private func MD5() -> NSString
     {
         return ""
     }
     
-    func SHA1() -> NSString
+    private func SHA1() -> NSString
     {
         return ""
     }
     
-    func SHA256() -> NSString
+    private func SHA256() -> NSString
     {
         return ""
     }
     
-    func SHA512() -> NSString
+    private func SHA512() -> NSString
     {
         return ""
     }
     
     // MARK: - Class functions -
     
-    static func searchInString(string: NSString, charStart: unichar, charEnd: unichar) -> NSString
+    public static func searchInString(string: NSString, charStart: unichar, charEnd: unichar) -> NSString
     {
         var start = 0, stop = 0
         
@@ -144,7 +144,7 @@ extension NSString
         return string
     }
     
-    static func isEmail(email: NSString) -> Bool
+    public static func isEmail(email: NSString) -> Bool
     {
         let emailRegEx: NSString =
         "(?:[a-z0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[a-z0-9!#$%\\&'*+/=?\\^_`{|}"
@@ -159,7 +159,7 @@ extension NSString
         return regExPredicate.evaluateWithObject(email.lowercaseString)
     }
     
-    static func convertToUTF8Entities(string: NSString) -> NSString
+    public static func convertToUTF8Entities(string: NSString) -> NSString
     {
         return string
             .stringByReplacingOccurrencesOfString("%27", withString: "'")
@@ -198,13 +198,13 @@ extension NSString
             .stringByReplacingOccurrencesOfString("%20", withString: " ")
     }
     
-    static func encodeToBase64(string: NSString) -> NSString
+    public static func encodeToBase64(string: NSString) -> NSString
     {
         let data: NSData = string.dataUsingEncoding(NSUTF8StringEncoding)!
         return data.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
     }
     
-    static func decodeBase64(string: NSString) -> NSString
+    public static func decodeBase64(string: NSString) -> NSString
     {
         let data: NSData = NSData(base64EncodedString: string as String, options: NSDataBase64DecodingOptions(rawValue: 0))!
         return NSString(data: data, encoding: NSUTF8StringEncoding)!
