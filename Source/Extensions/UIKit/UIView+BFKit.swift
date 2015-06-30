@@ -276,7 +276,7 @@ extension UIView
         self.layer.addAnimation(transition, forKey:"flip")
     }
     
-    func translateAroundTheView(topView: UIView, duration: CGFloat, direction: UIViewAnimationTranslationDirection, repeat: Bool, startFromEdge: Bool)
+    func translateAroundTheView(topView: UIView, duration: CGFloat, direction: UIViewAnimationTranslationDirection, repeatAnimation: Bool = true, startFromEdge: Bool = true)
     {
         var startPosition: CGFloat = self.center.x, endPosition: CGFloat
         switch(direction)
@@ -306,9 +306,9 @@ extension UIView
                 }) { (finished: Bool) -> Void in
                     if finished
                     {
-                        if repeat
+                        if repeatAnimation
                         {
-                            self.translateAroundTheView(topView, duration: duration, direction: direction, repeat: repeat, startFromEdge: startFromEdge)
+                            self.translateAroundTheView(topView, duration: duration, direction: direction, repeatAnimation: repeatAnimation, startFromEdge: startFromEdge)
                         }
                     }
                 }

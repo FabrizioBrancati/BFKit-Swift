@@ -1,5 +1,6 @@
 <p align="center"><img src="http://github.fabriziobrancati.com/bfkit/resources/banner-swift.png" alt="BFKit Swift Banner"></p>
 
+[![Issues](https://img.shields.io/github/issues/FabrizioBrancati/BFKit-Swift.svg?style=flat)](https://github.com/FabrizioBrancati/BFKit-Swift/issues)
 [![Platform](https://img.shields.io/badge/platform-iOS-000000.svg)](http://cocoadocs.org/docsets/BFKit)
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)](https://developer.apple.com/swift/)
 [![License](https://img.shields.io/badge/license-MIT%20License-lightgrey.svg)](https://github.com/FabrizioBrancati/BBFKit-Swift/blob/master/LICENSE)
@@ -115,4 +116,4 @@ Author :neckbeard:
 
 License :scroll:
 ================
-BFKit is available under the MIT license. See the **[LICENSE](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)** file for more info.
+BFKit-Swift is available under the MIT license. See the **[LICENSE](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)** file for more info.
