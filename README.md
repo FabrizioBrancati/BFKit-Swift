@@ -1,7 +1,8 @@
 <p align="center"><img src="http://github.fabriziobrancati.com/bfkit/resources/banner-swift.png" alt="BFKit Swift Banner"></p>
 
 [![Issues](https://img.shields.io/github/issues/FabrizioBrancati/BFKit-Swift.svg?style=flat)](https://github.com/FabrizioBrancati/BFKit-Swift/issues)
-[![Platform](https://img.shields.io/badge/platform-iOS-000000.svg)](http://cocoadocs.org/docsets/BFKit)
+[![Version](https://img.shields.io/cocoapods/v/BFKit-Swift.svg?style=flat)][CocoaDocs]
+[![Platform](https://img.shields.io/badge/platform-iOS-000000.svg)][CocoaDocs]
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)](https://developer.apple.com/swift/)
 [![License](https://img.shields.io/badge/license-MIT%20License-lightgrey.svg)](https://github.com/FabrizioBrancati/BBFKit-Swift/blob/master/LICENSE)
 
@@ -69,7 +70,7 @@ Language support :it:
 
 Requirements :iphone:
 =====================
-- iOS SDK **7.0** or later
+- iOS SDK **7.0** or later (iOS SDK 8.0 if you use it as a Framework)
 - **Swift 1.2** and **Xcode 6.3** or later
 
 Communication :speaker:
@@ -91,7 +92,37 @@ Please make sure to follow my general coding style for new features!
 Installing and Usage :computer:
 ===============================
 ###Manual
+####iOS 7 (or later) compatible
 - Copy the **Source** folder to the project
+- Enjoy!
+- N.B.: You will no longer need to import BFKit since you are not actually loading a framework
+
+####iOS 8 (or later) compatible
+- Open the **BFKit** folder and build the Framework from the project
+- Import BFKit.framework into your project
+- Import the Framework by "**import BFKit**"
+
+###Pod (iOS 8 or later compatible)
+####Newbie version
+- Create a **Podfile** in your **project directory**
+- Write:
+```ruby
+  platform :ios, '8.0'
+  xcodeproj 'Project.xcodeproj'
+  use_frameworks!
+  pod 'BFKit'
+```
+- Obviously **change "Project"**  with your **real project name**
+- Open **Terminal**, go to **project directory** and type:
+```bash
+  pod install
+```
+- Import the Framework by "**import BFKit**"
+- Enjoy!
+
+####Pro version
+- ```pod 'BFKit'```
+- Import the Framework by "**import BFKit**"
 - Enjoy!
 
 Todo :ballot_box_with_check:
@@ -100,7 +131,8 @@ Todo :ballot_box_with_check:
 - :heavy_minus_sign: Create a category for every UIKit element
 - :heavy_minus_sign: Create tests
 - :heavy_minus_sign: Remove all the TODO marks
-- :heavy_minus_sign: Add to CocoaPods
+- :heavy_minus_sign: Add Catharge support
+- :heavy_check_mark: Add to CocoaPods
 - :heavy_check_mark: Make it as a Framework
 - :heavy_minus_sign: Add all comments
 - :heavy_minus_sign: Create a great documentation
@@ -117,3 +149,5 @@ Author :neckbeard:
 License :scroll:
 ================
 BFKit-Swift is available under the MIT license. See the **[LICENSE](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)** file for more info.
+
+[CocoaDocs]: http://cocoadocs.org/docsets/BFKit-Swift/1.0.0/
