@@ -123,7 +123,7 @@ Installing and Usage :computer:
 - Enjoy!
 
 ####Pro version
-- ```pod 'BFKit'```
+- ```pod 'BFKit-Swift'```
 - Import the Framework with ```import BFKit```
 - Enjoy!
 
