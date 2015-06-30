@@ -70,7 +70,7 @@ Language support :it:
 
 Requirements :iphone:
 =====================
-- iOS SDK **7.0** or later (iOS SDK 8.0 if you use it as a Framework)
+- iOS SDK **7.0** or later (iOS SDK **8.0** if you use it as a Framework)
 - **Swift 1.2** and **Xcode 6.3** or later
 
 Communication :speaker:
@@ -100,7 +100,7 @@ Installing and Usage :computer:
 ####iOS 8 (or later) compatible
 - Open the **BFKit** folder and build the Framework from the project
 - Import BFKit.framework into your project
-- Import the Framework by "**import BFKit**"
+- Import the Framework with ```import BFKit```
 
 ###Pod (iOS 8 or later compatible)
 ####Newbie version
@@ -117,12 +117,12 @@ Installing and Usage :computer:
 ```bash
   pod install
 ```
-- Import the Framework by "**import BFKit**"
+- Import the Framework with ```import BFKit```
 - Enjoy!
 
 ####Pro version
 - ```pod 'BFKit'```
-- Import the Framework by "**import BFKit**"
+- Import the Framework with ```import BFKit```
 - Enjoy!
 
 Todo :ballot_box_with_check:
@@ -131,7 +131,7 @@ Todo :ballot_box_with_check:
 - :heavy_minus_sign: Create a category for every UIKit element
 - :heavy_minus_sign: Create tests
 - :heavy_minus_sign: Remove all the TODO marks
-- :heavy_minus_sign: Add Catharge support
+- :heavy_minus_sign: Add Carthage support
 - :heavy_check_mark: Add to CocoaPods
 - :heavy_check_mark: Make it as a Framework
 - :heavy_minus_sign: Add all comments
