@@ -27,18 +27,21 @@
 import Foundation
 import UIKit
 
-#if DEBUG
-    /**
-    Extend NSLog
-    
-    In ordedr to work you must add in the "Swift Compiler - Custom Flags" section, "Other Swift Flags" line, the DEBUG symbol with the -DDEBUG entry
-    
-    :param: message  Message
-    :param: filename Filename
-    :param: function Function name
-    :param: line     Line number
-    */
-    func BFLog(var message: String, filename: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__)
+public var BFLogActive = true
+
+/**
+Extend NSLog
+
+In ordedr to work you must add in the "Swift Compiler - Custom Flags" section, "Other Swift Flags" line, the DEBUG symbol with the -DDEBUG entry
+
+:param: message  Message
+:param: filename Filename
+:param: function Function name
+:param: line     Line number
+*/
+public func BFLog(var message: String, filename: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__)
+{
+    if BFLogActive
     {
         if message.hasSuffix("\n") == false
         {
@@ -61,29 +64,41 @@ import UIKit
         
         BFLogClass.detailedLogString += log
     }
-    
-    func BFLogString() -> String
+}
+
+public func BFLogString() -> String
+{
+    if BFLogActive
     {
         return BFLogClass.logString
     }
+    else
+    {
+        return ""
+    }
+}
 
-    func BFDetailedLogString() -> String
+public func BFDetailedLogString() -> String
+{
+    if BFLogActive
     {
         return BFLogClass.detailedLogString
     }
+    else
+    {
+        return ""
+    }
+}
 
-    func BFLogClear()
+public func BFLogClear()
+{
+    if BFLogActive
     {
         BFLogClass.clearLog()
     }
-#else
-    func BFLog(message: String, filename: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__) { }
-    func BFLogString() -> String { return "" }
-    func BFDetailedLogString() -> String { return "" }
-    func BFLogClear() { }
-#endif
+}
 
-class BFLogClass
+private class BFLogClass
 {
     // MARK: - Variables -
     
