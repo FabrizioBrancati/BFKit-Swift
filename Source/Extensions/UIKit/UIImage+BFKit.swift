@@ -799,15 +799,53 @@ public extension UIImage
             return UIColor.lightGrayColor()
         }
         
-        let colorSelector = Selector(colorString!.stringByAppendingString("Color"))
+        let colorSelector = Selector(colorString!.lowercaseString.stringByAppendingString("Color"))
         if UIColor.respondsToSelector(colorSelector)
         {
-            // TODO: Perform selector of the right color
-            return UIColor(hex: colorString!)
+            return self.getColorFromColorString(colorString!)
         }
         else
         {
             return UIColor(hex: colorString!)
+        }
+    }
+    
+    private static func getColorFromColorString(color: String) -> UIColor
+    {
+        switch color
+        {
+        case "black":
+            return UIColor.blackColor()
+        case "darkgray":
+            return UIColor.darkGrayColor()
+        case "lightgray":
+            return UIColor.lightGrayColor()
+        case "white":
+            return UIColor.whiteColor()
+        case "gray":
+            return UIColor.grayColor()
+        case "red":
+            return UIColor.redColor()
+        case "green":
+            return UIColor.greenColor()
+        case "blue":
+            return UIColor.blueColor()
+        case "cyan":
+            return UIColor.cyanColor()
+        case "yellow":
+            return UIColor.yellowColor()
+        case "magenta":
+            return UIColor.magentaColor()
+        case "orange":
+            return UIColor.orangeColor()
+        case "purple":
+            return UIColor.purpleColor()
+        case "brown":
+            return UIColor.brownColor()
+        case "clear":
+            return UIColor.clearColor()
+        default:
+            return UIColor.grayColor()
         }
     }
     
