@@ -165,10 +165,7 @@ public extension String
         
         stop -= start
         
-        var string: String = string.substringFromIndex(start-1)
-        string = string.substringFromIndex(0)
-        
-        return string
+        return string.substringFromIndex(start).substringToIndex(stop)
     }
     
     public static func isEmail(email: String) -> Bool

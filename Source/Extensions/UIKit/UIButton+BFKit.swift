@@ -76,12 +76,10 @@ public extension UIButton
     
     // MARK: - Instance functions -
     
-    // TODO: Fix it
-    /*
-    func setTitleFont(fontName: FontName, size: Float)
+    public func setTitleFont(fontName: FontName, size: CGFloat)
     {
-        self.titleLabel.font = UIFont.fontForFontName(fontName, size: size)
-    }*/
+        self.titleLabel!.font = UIFont(fontName: fontName, size: size)
+    }
     
     public func setTitleColor(color: UIColor)
     {
