@@ -34,6 +34,4 @@ public extension NSObject
     {
         return !self.isKindOfClass(NSNull)
     }
-    
-    // TODO: Perform selector
 }
