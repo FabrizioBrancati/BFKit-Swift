@@ -29,12 +29,7 @@ import UIKit
 
 public var BFLogActive: Bool = true
 
-public func BFLog(var message: String)
-{
-    BFLogPrivate(message)
-}
-
-private func BFLogPrivate(var message: String, filename: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__)
+public func BFLog(var message: String, filename: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__)
 {
     if BFLogActive
     {

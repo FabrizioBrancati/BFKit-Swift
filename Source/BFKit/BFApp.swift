@@ -44,7 +44,7 @@ Use BFLocalizedString to use the string translated by BFKit
 */
 public func BFLocalizedString(key: String, comment: String? = nil) -> String
 {
-    return NSBundle(forClass: BFApp.self).localizedStringForKey(key, value: nil, table: "BFKit")
+    return NSBundle(forClass: BFApp.self).localizedStringForKey(key, value: key, table: "BFKit")
 }
 
 /// Get AppDelegate
