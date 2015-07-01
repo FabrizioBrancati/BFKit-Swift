@@ -32,13 +32,12 @@ extension Dictionary
     
     func dictionaryToJson() -> String
     {
-        return Dictionary.dictionaryToJson(self)()
-        // TODO: Check here
+        return Dictionary.dictionaryToJson(self as! AnyObject)
     }
     
     // MARK: - Class functions -
     
-    static func dictionaryToJson(dictionary: Dictionary<String, String>) -> String
+    static func dictionaryToJson(dictionary: AnyObject) -> String
     {
         var json: NSString
         var error: NSError?
