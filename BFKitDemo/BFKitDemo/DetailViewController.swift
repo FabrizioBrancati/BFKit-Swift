@@ -55,6 +55,10 @@ class DetailViewController: UIViewController
 
         switch detailType
         {
+        case .Dictionary:
+            let temp: Dictionary = ["Prova" : "Maybe"]
+            let json: String = temp.dictionaryToJson()
+            BFLog("\(temp) - \(json)")
         case .BFApp:
             BFLog("\(APP_BUILD)")
         case .UIDevice:
@@ -71,11 +75,12 @@ class DetailViewController: UIViewController
             BFLog("\(UIDevice.uniqueIdentifier())")
         case .UIFont:
             UIFont.allFamilyAndFonts()
+            UIFont.fontsNameForFamilyName(.BanglaSangamMN)
         case .UIImage:
-            let button = UIImageView(image: UIImage(dummyImageWithSizeAndColor: "100x100.blue"))
+            let button = UIImageView(image: UIImage(dummyImageWithSizeAndColor: "100x100.red"))
             self.view.addSubview(button)
             let image = UIImageView(image: UIImage(named: "Logo")!.blur(radius: 50))
-            image.center = CGPointMake(20, 200)
+            image.center = CGPointMake(20, 300)
             self.view.addSubview(image)
         case .UIImageView:
             let view = UIImageView(image: UIImage(named: "Logo")!, center: CGPointMake(120, 120))

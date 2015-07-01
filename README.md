@@ -3,8 +3,8 @@
 [![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit-Swift.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit-Swift)
 [![Issues](https://img.shields.io/github/issues/FabrizioBrancati/BFKit-Swift.svg?style=flat)](https://github.com/FabrizioBrancati/BFKit-Swift/issues)
 [![Version](https://img.shields.io/cocoapods/v/BFKit-Swift.svg?style=flat)][CocoaDocs]
-[![Platform](https://img.shields.io/badge/platform-iOS-000000.svg)][CocoaDocs]
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)](https://developer.apple.com/swift/)
+[![Platform](https://img.shields.io/badge/platform-iOS-ffc713.svg)][CocoaDocs]
 [![License](https://img.shields.io/badge/license-MIT%20License-lightgrey.svg)](https://github.com/FabrizioBrancati/BBFKit-Swift/blob/master/LICENSE)
 
 ###Objective-C <img src="http://github.fabriziobrancati.com/bfkit/resources/objc-icon.png" height="20" width="20">
@@ -132,7 +132,8 @@ Todo :ballot_box_with_check:
 - :heavy_minus_sign: Create instance methods for UIKit categories
 - :heavy_minus_sign: Create a category for every UIKit element
 - :heavy_minus_sign: Create tests
-- :heavy_minus_sign: Remove all the TODO marks
+- :heavy_minus_sign: Add CPU App usage function in NSProcessInfo extension
+- :heavy_minus_sign: Add Hashing functions (MD5, SHA1, SHA256, SHA512) in String and NSString extension
 - :heavy_minus_sign: Add Carthage support
 - :heavy_check_mark: Add to CocoaPods
 - :heavy_check_mark: Make it as a Framework
