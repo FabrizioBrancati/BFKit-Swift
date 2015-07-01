@@ -66,7 +66,7 @@ public extension NSFileManager
         return NSKeyedArchiver.archiveRootObject(array, toFile: finalPath)
     }
     
-    public static func loadArrayToPath(directory: DirectoryType, filename: String) -> Bool
+    public static func loadArrayFromPath(directory: DirectoryType, filename: String) -> AnyObject?
     {
         var finalPath: String
         
@@ -84,14 +84,7 @@ public extension NSFileManager
             finalPath = self.getBundlePathForFile(filename)
         }
         
-        if(NSKeyedUnarchiver.unarchiveObjectWithFile(finalPath) != nil)
-        {
-            return true
-        }
-        else
-        {
-            return false
-        }
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(finalPath)
     }
     
     public static func getBundlePathForFile(file: String) -> String
