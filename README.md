@@ -128,7 +128,7 @@ Installing and Usage :computer:
 - Import the Framework with ```import BFKit```
 - Enjoy!
 
-####Carthage (iOS 8 or later compatible)
+###Carthage (iOS 8 or later compatible)
 - ```github "FabrizioBrancati/BFKit-Swift"```
 - Open **Terminal**, go to **project directory** and type:
 ```bash
