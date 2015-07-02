@@ -27,8 +27,17 @@
 import Foundation
 import UIKit
 
+/// Use this variable to activate o deactivate the BFLog function
 public var BFLogActive: Bool = true
 
+/**
+Exented NSLog
+
+:param: message  Console message
+:param: filename File
+:param: function Function name
+:param: line     Line number
+*/
 public func BFLog(var message: String, filename: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__)
 {
     if BFLogActive
@@ -56,6 +65,11 @@ public func BFLog(var message: String, filename: String = __FILE__, function: St
     }
 }
 
+/**
+Get the log string
+
+:returns: Return the log string
+*/
 public func BFLogString() -> String
 {
     if BFLogActive
@@ -68,6 +82,11 @@ public func BFLogString() -> String
     }
 }
 
+/**
+Get the detailed log string
+
+:returns: Return the detailed log string
+*/
 public func BFDetailedLogString() -> String
 {
     if BFLogActive
@@ -80,6 +99,9 @@ public func BFDetailedLogString() -> String
     }
 }
 
+/**
+Clear the log string
+*/
 public func BFLogClear()
 {
     if BFLogActive
@@ -88,15 +110,21 @@ public func BFLogClear()
     }
 }
 
+/// The private BFLogClass created to manage the log strings
 private class BFLogClass
 {
     // MARK: - Variables -
     
+    /// The log string
     private static var logString: String = ""
+    /// The detailed log string
     private static var detailedLogString: String = ""
     
     // MARK: - Class functions -
     
+    /**
+    Private, clear the log string
+    */
     private static func clearLog()
     {
         logString = ""

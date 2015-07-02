@@ -27,10 +27,137 @@
 import Foundation
 import AudioToolbox
 
+/// This class add some useful methods to play system sounds
 public class BFSystemSound
 {
     // MARK: - Enums -
     
+    /**
+    Audio IDs enum - http://iphonedevwiki.net/index.php/AudioServices
+    
+    - NewMail:                   New Mail
+    - MailSent:                  Mail Sent
+    - VoiceMail:                 Voice Mail
+    - RecivedMessage:            Recived Message
+    - SentMessage:               Sent Message
+    - Alarm:                     Alarm
+    - LowPower:                  Low Power
+    - SMSReceived1:              SMS Received 1
+    - SMSReceived2:              SMS Received 2
+    - SMSReceived3:              SMS Received 3
+    - SMSReceived4:              SMS Received 4
+    - SMSReceived5:              SMS Received 5
+    - SMSReceived6:              SMS Received 6
+    - TweetSent:                 Tweet Sent
+    - Anticipate:                Anticipate 
+    - Bloom:                     Bloom 
+    - Calypso:                   Calypso 
+    - ChooChoo:                  Choo Choo
+    - Descent:                   Descent 
+    - Fanfare:                   Fanfare 
+    - Ladder:                    Ladder 
+    - Minuet:                    Minuet 
+    - NewsFlash:                 News Flash
+    - Noir:                      Noir 
+    - SherwoodForest:            Sherwood Forest
+    - Spell:                     Spell 
+    - Suspence:                  Suspence 
+    - Telegraph:                 Telegraph 
+    - Tiptoes:                   Tiptoes 
+    - Typewriters:               Typewriters 
+    - Update:                    Update 
+    - USSDAlert:                 USSD Alert
+    - SIMToolkitCallDropped:     SIM Toolkit Call Dropped
+    - SIMToolkitGeneralBeep:     SIM Toolkit General Beep
+    - SIMToolkitNegativeACK:     SIM Toolkit Negative ACK
+    - SIMToolkitPositiveACK:     SIM Toolkit Positive ACK
+    - SIMToolkitSMS:             SIM Toolkit SMS
+    - Tink:                      Tink 
+    - CTBusy:                    CT Busy
+    - CTCongestion:              CT Congestion
+    - CTPathACK:                 CT Path ACK
+    - CTError:                   CT Error
+    - CTCallWaiting:             CT Call Waiting
+    - CTKeytone:                 CT Keytone
+    - Lock:                      Lock 
+    - Unlock:                    Unlock 
+    - FailedUnlock:              Failed Unlock
+    - KeypressedTink:            Keypressed Tink
+    - KeypressedTock:            Keypressed Tock
+    - Tock:                      Tock 
+    - BeepBeep:                  Beep Beep
+    - RingerCharged:             Ringer Charged
+    - PhotoShutter:              Photo Shutter
+    - Shake:                     Shake 
+    - JBLBegin:                  JBL Begin
+    - JBLConfirm:                JBL Confirm
+    - JBLCancel:                 JBL Cancel
+    - BeginRecording:            Begin Recording
+    - EndRecording:              End Recording
+    - JBLAmbiguous:              JBL Ambiguous
+    - JBLNoMatch:                JBL No Match
+    - BeginVideoRecord:          Begin Video Record
+    - EndVideoRecord:            End Video Record
+    - VCInvitationAccepted:      VC Invitation Accepted
+    - VCRinging:                 VC Ringing
+    - VCEnded:                   VC Ended
+    - VCCallWaiting:             VC Call Waiting
+    - VCCallUpgrade:             VC Call Upgrade
+    - TouchTone1:                Touch Tone 1
+    - TouchTone2:                Touch Tone 2
+    - TouchTone3:                Touch Tone 3
+    - TouchTone4:                Touch Tone 4
+    - TouchTone5:                Touch Tone 5
+    - TouchTone6:                Touch Tone 6
+    - TouchTone7:                Touch Tone 7
+    - TouchTone8:                Touch Tone 8
+    - TouchTone9:                Touch Tone 9
+    - TouchTone10:               Touch Tone 10
+    - TouchToneStar:             Touch Tone Star
+    - TouchTonePound:            Touch Tone Pound
+    - HeadsetStartCall:          Headset Start Call
+    - HeadsetRedial:             Headset Redial
+    - HeadsetAnswerCall:         Headset Answer Call
+    - HeadsetEndCall:            Headset End Call
+    - HeadsetCallWaitingActions: Headset Call Waiting Actions
+    - HeadsetTransitionEnd:      Headset Transition End
+    - Voicemail:                 Voicemail 
+    - ReceivedMessage:           Received Message
+    - NewMail2:                  New Mail 2
+    - MailSent2:                 Mail Sent 2
+    - Alarm2:                    Alarm 2
+    - Lock2:                     Lock 2
+    - Tock2:                     Tock 2
+    - SMSReceived1_2:            SMS Received 1_2
+    - SMSReceived2_2:            SMS Received 2_2
+    - SMSReceived3_2:            SMS Received 3_2
+    - SMSReceived4_2:            SMS Received 4_2
+    - SMSReceivedVibrate:        SMS Received Vibrate
+    - SMSReceived1_3:            SMS Received 1_3
+    - SMSReceived5_3:            SMS Received 5_3
+    - SMSReceived6_3:            SMS Received 6_3
+    - Voicemail2:                Voicemail 2
+    - Anticipate2:               Anticipate 2
+    - Bloom2:                    Bloom 2
+    - Calypso2:                  Calypso 2
+    - ChooChoo2:                 Choo Choo 2
+    - Descent2:                  Descent 2
+    - Fanfare2:                  Fanfare 2
+    - Ladder2:                   Ladder 2
+    - Minuet2:                   Minuet 2
+    - NewsFlash2:                News Flash 2
+    - Noir2:                     Noir 2
+    - SherwoodForest2:           Sherwood Forest 2
+    - Spell2:                    Spell 2
+    - Suspence2:                 Suspence 2
+    - Telegraph2:                Telegraph 2
+    - Tiptoes2:                  Tiptoes 2
+    - Typewriters2:              Typewriters 2
+    - Update2:                   Update 2
+    - RingerVibeChanged:         Ringer Vibe Changed
+    - SilentVibeChanged:         Silent Vibe Changed
+    - Vibrate:                   Vibrate 
+    */
     public enum AudioID : Int
     {
         case NewMail = 1000
@@ -159,16 +286,31 @@ public class BFSystemSound
     
     // MARK: - Class functions -
     
+    /**
+    Play a system sound from the ID
+    
+    :param: audioID ID of system audio from the AudioID enum
+    */
     public static func playSystemSound(audioID: AudioID)
     {
         AudioServicesPlaySystemSound(SystemSoundID(audioID.rawValue))
     }
     
+    /**
+    Play system sound vibrate
+    */
     public static func playSystemSoundVibrate()
     {
         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     
+    /**
+    Play custom sound with url
+    
+    :param: soundURL Sound URL
+    
+    :returns: Return the SystemSoundID
+    */
     public static func playCustomSound(soundURL: NSURL) -> SystemSoundID
     {
         var soundID: SystemSoundID = 0
@@ -181,6 +323,13 @@ public class BFSystemSound
         return soundID
     }
     
+    /**
+    Dispose custom sound
+    
+    :param: soundID SystemSoundID
+    
+    :returns: Return YES if has been disposed, otherwise NO
+    */
     public static func disposeSound(soundID: SystemSoundID) -> Bool
     {
         let error: OSStatus = AudioServicesDisposeSystemSoundID(soundID)

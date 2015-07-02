@@ -103,6 +103,7 @@ Installing and Usage :computer:
 - Open the **BFKit** folder and build the Framework from the project
 - Import BFKit.framework into your project
 - Import the Framework with ```import BFKit```
+- Enjoy!
 
 ###CocoaPods (iOS 8 or later compatible)
 ####Newbie version
@@ -116,10 +117,7 @@ Installing and Usage :computer:
   pod 'BFKit-Swift'
 ```
 - Obviously **change "Project"**  with your **real project name**
-- Open **Terminal**, go to **project directory** and type:
-```bash
-  pod install
-```
+- Open **Terminal**, go to **project directory** and type: ```pod install```
 - Import the Framework with ```import BFKit```
 - Enjoy!
 
@@ -130,10 +128,9 @@ Installing and Usage :computer:
 
 ###Carthage (iOS 8 or later compatible)
 - ```github "FabrizioBrancati/BFKit-Swift"```
-- Open **Terminal**, go to **project directory** and type:
-```bash
-  carthage update
-```
+- Open **Terminal**, go to **project directory** and type: ```carthage update```
+- Import the Framework with ```import BFKit```
+- Enjoy!
 
 Todo :ballot_box_with_check:
 ============================

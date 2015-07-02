@@ -26,10 +26,22 @@
 
 import Foundation
 
+/// This class add some useful methods to manage passwords
 public class BFPassword
 {
     // MARK: - Enums -
     
+    /**
+    Password strength level enum, from 0 (min) to 6 (max)
+    
+    - VeryWeak:   Password strength very weak
+    - Weak:       Password strength weak
+    - Average:    Password strength average
+    - Strong:     Password strength strong
+    - VeryStrong: Password strength very strong
+    - Secure:     Password strength secure
+    - VerySecure: Password strength very secure
+    */
     public enum PasswordStrengthLevel : Int
     {
         case VeryWeak
@@ -43,6 +55,13 @@ public class BFPassword
     
     // MARK: - Class functions -
     
+    /**
+    Check the password strength level
+    
+    :param: password Password string
+    
+    :returns: Return the password strength level with value from enum PasswordStrengthLevel
+    */
     public static func checkPasswordStrength(password: String) -> PasswordStrengthLevel
     {
         let lenght = count(password)
@@ -193,6 +212,13 @@ public class BFPassword
         }
     }
     
+    /**
+    Private, count the number of lowercase letters
+    
+    :param: password Password string
+    
+    :returns: Number of lowercase letters
+    */
     private static func countLowercaseLetters(password: String) -> Int
     {
         var countChar = 0
@@ -208,6 +234,13 @@ public class BFPassword
         return countChar
     }
     
+    /**
+    Private, count the number of uppercase letters
+    
+    :param: password Password string
+    
+    :returns: Number of uppercase letters
+    */
     private static func countUppercaseLetters(password: String) -> Int
     {
         var countChar = 0
@@ -223,6 +256,13 @@ public class BFPassword
         return countChar
     }
     
+    /**
+    Private, count the number of numbers
+    
+    :param: password Password string
+    
+    :returns: Number of numbers
+    */
     private static func countNumbers(password: String) -> Int
     {
         var countNumber = 0
@@ -238,12 +278,19 @@ public class BFPassword
         return countNumber
     }
     
+    /**
+    Private, count the number of symbols
+    
+    :param: password Password string
+    
+    :returns: Number of symbols
+    */
     private static func countSymbols(password: String) -> Int
     {
         var countSymbol = 0
         for var i = 0; i < count(password); i++
         {
-            let isSymbol = NSCharacterSet(charactersInString: "`~!?@#$€£¥§%^&*()_+-={}[]:\";<>'•\\|/").characterIsMember((String(password) as NSString).characterAtIndex(i))
+            let isSymbol = NSCharacterSet(charactersInString: "`~!?@#$€£¥§%^&*()_+-={}[]:\";.,<>'•\\|/").characterIsMember((String(password) as NSString).characterAtIndex(i))
             if isSymbol
             {
                 countSymbol++

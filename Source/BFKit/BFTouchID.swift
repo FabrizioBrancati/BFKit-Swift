@@ -28,11 +28,25 @@ import Foundation
 import LocalAuthentication
 
 @availability(iOS, introduced=8.0)
+/// This class add some useful methods to use TouchID
 public class BFTouchID
 {
     // MARK: - Enums -
     
     @availability(iOS, introduced=8.0)
+    /**
+    Touch result enum
+    
+    - Success:              Success
+    - Error:                Error
+    - AuthenticationFailed: Authentication Failed
+    - UserCancel:           User Cancel
+    - UserFallback:         User Fallback
+    - SystemCancel:         System Cancel
+    - PasscodeNotSet:       Passcode Not Set
+    - NotAvailable:         Not Available
+    - NotEnrolled:          Not Enrolled
+    */
     public enum TouchIDResult : Int
     {
         case Success
@@ -48,6 +62,12 @@ public class BFTouchID
     
     // MARK: - Class functions -
     
+    /**
+    Shows the TouchID alert
+    
+    :param: reason     Text to show in the alert
+    :param: completion Completion handler. It returns the TouchID result, from the TouchIDResult enum
+    */
     public static func showTouchIDAuthenticationWithReason(reason: String, completion: (TouchIDResult) -> ())
     {
         let context: LAContext = LAContext()
