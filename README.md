@@ -128,6 +128,13 @@ Installing and Usage :computer:
 - Import the Framework with ```import BFKit```
 - Enjoy!
 
+####Carthage (iOS 8 or later compatible)
+- ```github "FabrizioBrancati/BFKit-Swift"```
+- Open **Terminal**, go to **project directory** and type:
+```bash
+  carthage update
+```
+
 Todo :ballot_box_with_check:
 ============================
 - :heavy_minus_sign: Create instance methods for UIKit categories
