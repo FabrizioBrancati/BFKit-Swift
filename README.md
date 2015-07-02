@@ -154,4 +154,4 @@ License :scroll:
 ================
 BFKit-Swift is available under the MIT license. See the **[LICENSE](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)** file for more info.
 
-[CocoaDocs]: http://cocoadocs.org/docsets/BFKit-Swift/1.0.0/
+[CocoaDocs]: http://cocoadocs.org/docsets/BFKit-Swift/1.1.0/
