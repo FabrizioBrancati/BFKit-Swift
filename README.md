@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit-Swift.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit-Swift)
 [![Issues](https://img.shields.io/github/issues/FabrizioBrancati/BFKit-Swift.svg?style=flat)](https://github.com/FabrizioBrancati/BFKit-Swift/issues)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/BFKit-Swift.svg?style=flat)][CocoaDocs]
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)](https://developer.apple.com/swift/)
 [![Platform](https://img.shields.io/badge/platform-iOS-ffc713.svg)][CocoaDocs]
@@ -134,7 +135,7 @@ Todo :ballot_box_with_check:
 - :heavy_minus_sign: Create tests
 - :heavy_minus_sign: Add CPU App usage function in NSProcessInfo extension
 - :heavy_minus_sign: Add Hashing functions (MD5, SHA1, SHA256, SHA512) in String and NSString extension
-- :heavy_minus_sign: Add Carthage support
+- :heavy_check_mark: Add Carthage support
 - :heavy_check_mark: Add to CocoaPods
 - :heavy_check_mark: Make it as a Framework
 - :heavy_minus_sign: Add all comments

@@ -1,6 +1,7 @@
 Changelog
 =========
 ###Version 1.1.0
+- Added Carthage support
 - Added all IDs in BFSystemSound class
 - Added all font family names and font names in UIFont extension
 - Now you can use word like ```red```, ```blue``` or any predefined color in UIColor class to create dummy images with ```UIColor(dummyImageWithSizeAndColor:)```
