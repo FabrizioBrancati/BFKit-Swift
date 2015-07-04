@@ -26,10 +26,16 @@
 
 import Foundation
 
+/// This extension adds some useful functions to NSDictionary
 public extension NSDictionary
 {
     // MARK: - Instance functions -
     
+    /**
+    Convert self to JSON as String
+    
+    :returns: Returns the JSON as String or nil if error while parsing
+    */
     public func dictionaryToJson() -> String
     {
         return NSDictionary.dictionaryToJson(self)
@@ -37,6 +43,13 @@ public extension NSDictionary
     
     // MARK: - Class functions -
     
+    /**
+    Convert the given dictionary to JSON as String
+    
+    :param: dictionary The dictionary to be converted
+    
+    :returns: Returns the JSON as String or nil if error while parsing
+    */
     public static func dictionaryToJson(dictionary: NSDictionary) -> String
     {
         var json: NSString

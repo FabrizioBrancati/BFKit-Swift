@@ -28,6 +28,11 @@ import Foundation
 
 // MARK: - Global functions -
 
+/**
+Runs a block in the main thread
+
+:param: block Block to be executed
+*/
 public func runOnMainThread(block: () -> ())
 {
     dispatch_async(dispatch_get_main_queue(), {
@@ -35,6 +40,7 @@ public func runOnMainThread(block: () -> ())
     })
 }
 
+/// This extesion adds some useful functions to NSThread
 private extension NSThread
 {
     

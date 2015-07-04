@@ -26,6 +26,7 @@
 
 import Foundation
 
+/// This extension adds some useful functions to Array
 extension Array
 {
     // MARK: - Instance functions -
@@ -35,7 +36,7 @@ extension Array
     
     :param: index The index
     
-    :returns: Return the object at a given index in safe mode (nil if self is empty or out of range)
+    :returns: Returns the object at a given index in safe mode (nil if self is empty or out of range)
     */
     func safeObjectAtIndex(index: Int) -> T?
     {
@@ -49,11 +50,36 @@ extension Array
         }
     }
     
+    /**
+    Convert self to JSON as String
+    
+    :returns: Returns the JSON as String or nil if error while parsing
+    */
+    func arrayToJSON() -> String
+    {
+        return Array.arrayToJSON(self as! AnyObject)
+    }
+    
+    /**
+    Simulates the array as a circle. When it is out of range, begins again
+    
+    :param: index The index
+    
+    :returns: Returns the object at a given index
+    */
     func objectAtCircleIndex(index: Int) -> T
     {
         return self[self.superCircle(index, size: self.count)]
     }
     
+    /**
+    Private, to get the index as a circle
+    
+    :param: index   The index
+    :param: maxSize Max size of the array
+    
+    :returns: Returns the right index
+    */
     func superCircle(var index: Int, size maxSize: Int) -> Int
     {
         if index < 0
@@ -69,6 +95,12 @@ extension Array
         return index
     }
     
+    /**
+    Move object from an index to another
+    
+    :param: from The start index
+    :param: to   The end index
+    */
     mutating func moveObjectFromIndex(from: Int, toIndex to: Int)
     {
         if to != from
@@ -87,6 +119,11 @@ extension Array
         }
     }
     
+    /**
+    Create a reversed array from self
+    
+    :returns: Returns the reversed array
+    */
     func reversedArray() -> Array
     {
         return Array.reversedArray(self)
@@ -94,11 +131,25 @@ extension Array
     
     // MARK: - Class functions -
     
+    /**
+    Create a reversed array from the given array
+    
+    :param: array The array to be reverse
+    
+    :returns: Returns the reversed array
+    */
     static func reversedArray(array: Array) -> Array
     {
         return array.reverse()
     }
     
+    /**
+    Create a reversed array from the given array
+    
+    :param: array The array to be converted
+    
+    :returns: Returns the JSON as String or nil if error while parsing
+    */
     static func arrayToJSON(array: AnyObject) -> String
     {
         var error: NSError?

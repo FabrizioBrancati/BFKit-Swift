@@ -26,10 +26,16 @@
 
 import Foundation
 
+/// This extension adds some useful functions to NSMutableArray
 public extension NSMutableArray
 {
     // MARK: - Instance functions -
     
+    /**
+    Create a reversed array from self
+    
+    :returns: Returns the reversed array
+    */
     public override func reversedArray() -> NSMutableArray
     {
         return super.reversedArray() as! NSMutableArray
@@ -37,6 +43,15 @@ public extension NSMutableArray
     
     // MARK: - Class functions -
     
+    /**
+    Sort an array by a given key with option for ascending or descending
+    
+    :param: key       The key to order the array
+    :param: array     The array to be ordered
+    :param: ascending A Bool to choose if ascending or descending
+    
+    :returns: Returns the given array ordered by the given key ascending or descending
+    */
     public static func sortArrayByKey(key: String, array: NSMutableArray, ascending: Bool) -> NSMutableArray
     {
         var tempArray: NSMutableArray = NSMutableArray()

@@ -26,10 +26,19 @@
 
 import Foundation
 
+/// This extension adds some useful functions to NSMutableDictionary
 public extension NSMutableDictionary
 {
     // MARK: - Instance functions -
     
+    /**
+    Set the object for a given key in safe mode (if not nil)
+    
+    :param: anObject The object
+    :param: forKey   The key
+    
+    :returns: Returns YES if has been setted, otherwise NO
+    */
     public func safeSetObject(anObject: AnyObject?, forKey: NSCopying) -> Bool
     {
         if let obj: AnyObject = anObject

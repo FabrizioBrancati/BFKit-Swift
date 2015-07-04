@@ -26,25 +26,43 @@
 
 import Foundation
 
+/// This extension add some useful functions to NSDate
 public extension NSDate
 {
     // MARK: - Variables -
     
+    /**
+    *  The simplified date structure
+    */
     public struct BFDateInformation
     {
+        /// Day of the year
         var day = 0
+        /// Month of the year
         var month = 0
+        /// Year
         var year = 0
         
+        /// Day of the week
         var weekday = 0
         
+        /// Minute of the day
         var minute = 0
+        /// Hour of the day
         var hour = 0
+        /// Second of the day
         var second = 0
     }
     
     // MARK: - Instance functions -
     
+    /**
+    Get self as a BFDateInformation structure with a given time zone
+    
+    :param: timeZone The timezone
+    
+    :returns: Return self as a BFDateInformation structure with a given time zone
+    */
     public func dateInformation(timeZone: NSTimeZone = NSTimeZone.systemTimeZone()) -> BFDateInformation
     {
         var info = BFDateInformation()
@@ -66,6 +84,11 @@ public extension NSDate
         return info
     }
     
+    /**
+    Get the month from today
+    
+    :returns: Return the month
+    */
     public func month() -> NSDate
     {
         let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
@@ -76,6 +99,18 @@ public extension NSDate
         return date!
     }
     
+    /**
+    Get the weekday number from self
+    
+    :returns: Return weekday number
+    - [1 - Sunday]
+    - [2 - Monday]
+    - [3 - Tuerday]
+    - [4 - Wednesday]
+    - [5 - Thursday]
+    - [6 - Friday]
+    - [7 - Saturday]
+    */
     public func weekday() -> Int
     {
         let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
@@ -84,6 +119,18 @@ public extension NSDate
         return comp.weekday
     }
     
+    /**
+    Get the weekday as a localized string from self
+    
+    :returns: Return weekday as a localized string
+    - [1 - Sunday]
+    - [2 - Monday]
+    - [3 - Tuerday]
+    - [4 - Wednesday]
+    - [5 - Thursday]
+    - [6 - Friday]
+    - [7 - Saturday]
+    */
     public func dayFromWeekday() -> NSString
     {
         switch self.weekday()
@@ -107,6 +154,11 @@ public extension NSDate
         }
     }
     
+    /**
+    Private, return the date with time informations
+    
+    :returns: Return the date with time informations
+    */
     private func timelessDate() -> NSDate
     {
         let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
@@ -115,6 +167,11 @@ public extension NSDate
         return gregorian!.dateFromComponents(comp)!
     }
     
+    /**
+    Private, return the date with time informations
+    
+    :returns: Return the date with time informations
+    */
     private func monthlessDate() -> NSDate
     {
         let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
@@ -123,6 +180,13 @@ public extension NSDate
         return gregorian!.dateFromComponents(comp)!
     }
     
+    /**
+    Compare self with another date
+    
+    :param: anotherDate The another date to compare as NSDate
+    
+    :returns: Returns YES if is same day, NO if not
+    */
     public func isSameDay(anotherDate: NSDate) -> Bool
     {
         let calendar = NSCalendar.currentCalendar()
@@ -132,6 +196,13 @@ public extension NSDate
         return components1.year == components2.year && components1.month == components2.month && components1.day == components2.day
     }
     
+    /**
+    Get the months number between self and another date
+    
+    :param: toDate The another date
+    
+    :returns: Returns the months between the two dates
+    */
     public func monthsBetweenDate(toDate: NSDate) -> Int
     {
         let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
@@ -140,6 +211,13 @@ public extension NSDate
         return abs(components.month)
     }
     
+    /**
+    Get the days number between self and another date
+    
+    :param: anotherDate The another date
+    
+    :returns: Returns the days between the two dates
+    */
     public func daysBetweenDate(anotherDate: NSDate) -> Int
     {
         let time: NSTimeInterval = self.timeIntervalSinceDate(anotherDate)
@@ -158,11 +236,23 @@ public extension NSDate
         return abs(components.day)*/
     }
     
+    /**
+    Returns if self is today
+    
+    :returns: Returns if self is today
+    */
     public func isToday() -> Bool
     {
         return self.isSameDay(NSDate())
     }
     
+    /**
+    Add days to self
+    
+    :param: days The number of days to add
+    
+    :returns: Returns self by adding the gived days number
+    */
     public func dateByAddingDays(days: Int) -> NSDate
     {
         return self.dateByAddingTimeInterval(NSTimeInterval(days * 24 * 60 * 60))
@@ -173,6 +263,11 @@ public extension NSDate
         return NSCalendar.currentCalendar().dateByAddingComponents(comp, toDate: self, options: .WrapComponents)!*/
     }
     
+    /**
+    Get the month string from self
+    
+    :returns: Returns the month string
+    */
     public func monthString() -> String
     {
         var dateFormatter: NSDateFormatter = NSDateFormatter()
@@ -181,6 +276,11 @@ public extension NSDate
         return dateFormatter.stringFromDate(self)
     }
     
+    /**
+    Get the year string from self
+    
+    :returns: Returns the year string
+    */
     public func yearString() -> String
     {
         var dateFormatter: NSDateFormatter = NSDateFormatter()
@@ -191,6 +291,11 @@ public extension NSDate
     
     // MARK: - Class functions -
     
+    /**
+    Create a NSDate with the yesterday date
+    
+    :returns: Returns a NSDate with the yesterday date
+    */
     public static func yesterday() -> NSDate
     {
         var inf: BFDateInformation = NSDate().dateInformation()
@@ -198,11 +303,24 @@ public extension NSDate
         return self.dateFromDateInformation(inf)
     }
     
+    /**
+    Get the month from today
+    
+    :returns: Returns the month
+    */
     public static func month() -> NSDate
     {
         return NSDate().month()
     }
     
+    /**
+    Returns a date from a given BFDateInformation structure with a given time zone
+    
+    :param: info     The BFDateInformation to be converted
+    :param: timeZone The timezone
+    
+    :returns: Returns a NSDate from a given BFDateInformation structure with a given time zone
+    */
     public static func dateFromDateInformation(info: BFDateInformation, timeZone: NSTimeZone = NSTimeZone.systemTimeZone()) -> NSDate
     {
         let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
@@ -221,6 +339,16 @@ public extension NSDate
         return gregorian!.dateFromComponents(comp)!
     }
     
+    /**
+    Create an NSDate with other two NSDate objects.
+    Taken from the first date: day, month and year.
+    Taken from the second date: hours and minutes.
+    
+    :param: date The first date for date
+    :param: time The second date for time
+    
+    :returns: Returns the created NSDate
+    */
     public static func dateWithDatePart(date: NSDate, andTimePart time: NSDate) -> NSDate
     {
         var dateFormatter: NSDateFormatter = NSDateFormatter()
@@ -236,6 +364,25 @@ public extension NSDate
         return dateFormatter.dateFromString(dateTime)!
     }
     
+    /**
+    Get the month as a localized string from the given month number
+    
+    :param: month The month to be converted in string
+    - [1 - January]
+    - [2 - February]
+    - [3 - March]
+    - [4 - April]
+    - [5 - May]
+    - [6 - June]
+    - [7 - July]
+    - [8 - August]
+    - [9 - September]
+    - [10 - October]
+    - [11 - November]
+    - [12 - December]
+    
+    :returns: Returns the given month as a localized string
+    */
     public static func monthStringWithMonthNumber(month: Int) -> String
     {
         switch month
@@ -269,6 +416,15 @@ public extension NSDate
         }
     }
     
+    /**
+    Get the given BFDateInformation structure as a formatted string
+    
+    :param: info          The BFDateInformation to be formatted
+    :param: dateSeparator The string to be used as date separator
+    :param: usFormat      Set if the timestamp is in US format or not
+    
+    :returns: Returns a NSString in the following format (dateSeparator = "/" and usFormat to NO). D/M/Y H:M:S. Example: 15/10/2013 10:38:43
+    */
     public static func dateInformationDescriptionWithInformation(info: BFDateInformation, dateSeparator: String = "/", usFormat: Bool = false) -> String
     {
         if(usFormat)
