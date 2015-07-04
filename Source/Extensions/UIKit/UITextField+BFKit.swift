@@ -27,10 +27,32 @@
 import Foundation
 import UIKit
 
+/// This extesion adds some useful functions to UITextField
 public extension UITextField
 {
     // MARK: - Init functions -
     
+    /**
+    Create an UITextField and set some parameters
+    
+    :param: frame                         TextField's frame
+    :param: placeholder                   TextField's text placeholder
+    :param: font                          TextField's text font
+    :param: size                          TextField's text size
+    :param: color                         TextField's text color
+    :param: returnType                    TextField's return key type
+    :param: keyboardType                  TextField's keyboard type
+    :param: secure                        Set if the TextField is secure or not
+    :param: borderStyle                   TextField's border style
+    :param: autoCapitalization            TextField's text capitalization
+    :param: keyboardAppearance            TextField's keyboard appearence
+    :param: enablesReturnKeyAutomatically Set if the TextField has to automatically enables the return key
+    :param: clearButtonMode               TextField's clear button mode
+    :param: autoCorrectionType            TextField's auto correction type
+    :param: delegate                      TextField's delegate. Set nil if it has no delegate
+    
+    :returns: Returns the created UITextField
+    */
     public convenience init(frame: CGRect, placeholder: String, font: FontName, size: CGFloat, color: UIColor, returnType: UIReturnKeyType, keyboardType: UIKeyboardType, secure: Bool, borderStyle: UITextBorderStyle, autoCapitalization: UITextAutocapitalizationType, keyboardAppearance: UIKeyboardAppearance, enablesReturnKeyAutomatically: Bool, clearButtonMode: UITextFieldViewMode, autoCorrectionType: UITextAutocorrectionType, delegate: UITextFieldDelegate)
     {
         self.init(frame: frame)

@@ -27,10 +27,14 @@
 import Foundation
 import UIKit
 
+/// This extesion adds some useful functions to UIWebView
 public extension UIWebView
 {
     // MARK: - Instance functions -
     
+    /**
+    Remove the background shadow of the UIWebView
+    */
     public func removeBackgroundShadow()
     {
         for var i = 0; i < self.scrollView.subviews.count; i++
@@ -44,6 +48,11 @@ public extension UIWebView
         }
     }
     
+    /**
+    Load the requested website
+    
+    :param: website Website to load
+    */
     public func loadWebsite(website: String)
     {
         self.loadRequest(NSURLRequest(URL: NSURL(string: website)!))
