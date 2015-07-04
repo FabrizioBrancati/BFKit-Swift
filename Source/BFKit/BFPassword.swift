@@ -26,7 +26,7 @@
 
 import Foundation
 
-/// This class add some useful methods to manage passwords
+/// This class adds some useful functions to manage passwords
 public class BFPassword
 {
     // MARK: - Enums -
@@ -60,7 +60,7 @@ public class BFPassword
     
     :param: password Password string
     
-    :returns: Return the password strength level with value from enum PasswordStrengthLevel
+    :returns: Returns the password strength level with value from enum PasswordStrengthLevel
     */
     public static func checkPasswordStrength(password: String) -> PasswordStrengthLevel
     {

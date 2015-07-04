@@ -50,7 +50,7 @@ public func BFLocalizedString(key: String, comment: String? = nil) -> String
 /// Get AppDelegate
 //let APP_DELEGATE = UIApplication.sharedApplication().delegate as! AppDelegate
 
-/// This class add some useful methods to retrive the App info
+/// This class adds some useful functions for the App
 private class BFApp: NSObject
 {
    

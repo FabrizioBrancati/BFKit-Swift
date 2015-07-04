@@ -27,7 +27,7 @@
 import Foundation
 import UIKit
 
-/// This class add some useful methods to UIButton that cannot be in an extension
+/// This class adds some useful functions to UIButton that cannot be in an extension
 public class BFButton: UIButton
 {
     // MARK: - Variables -
@@ -86,7 +86,7 @@ public class BFButton: UIButton
     :param: highlightedImage Button's highlighted image
     :param: fadeDuration     Fade duration
     
-    :returns: Return the created BFButton, subclass of UIButton
+    :returns: Returns the created BFButton, subclass of UIButton
     */
     public init(frame: CGRect, image: UIImage, highlightedImage: UIImage, fadeDuration: Float)
     {

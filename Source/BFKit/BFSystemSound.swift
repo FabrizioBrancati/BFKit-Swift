@@ -27,7 +27,7 @@
 import Foundation
 import AudioToolbox
 
-/// This class add some useful methods to play system sounds
+/// This class adds some useful functions to play system sounds
 public class BFSystemSound
 {
     // MARK: - Enums -
@@ -309,7 +309,7 @@ public class BFSystemSound
     
     :param: soundURL Sound URL
     
-    :returns: Return the SystemSoundID
+    :returns: Returns the SystemSoundID
     */
     public static func playCustomSound(soundURL: NSURL) -> SystemSoundID
     {
@@ -328,7 +328,7 @@ public class BFSystemSound
     
     :param: soundID SystemSoundID
     
-    :returns: Return YES if has been disposed, otherwise NO
+    :returns: Returns YES if has been disposed, otherwise NO
     */
     public static func disposeSound(soundID: SystemSoundID) -> Bool
     {

@@ -68,7 +68,7 @@ public func BFLog(var message: String, filename: String = __FILE__, function: St
 /**
 Get the log string
 
-:returns: Return the log string
+:returns: Returns the log string
 */
 public func BFLogString() -> String
 {
@@ -85,7 +85,7 @@ public func BFLogString() -> String
 /**
 Get the detailed log string
 
-:returns: Return the detailed log string
+:returns: Returns the detailed log string
 */
 public func BFDetailedLogString() -> String
 {
