@@ -27,11 +27,30 @@
 import Foundation
 import UIKit
 
+/// This extesion adds some useful functions to UIWindow
 public extension UIWindow
 {
     // MARK: - Instance functions -
     
+    /**
+    Take a screenshot of current window, without saving it
+    
+    :returns: Returns the screenshot as an UIImage
+    */
+    @availability(*, deprecated=1.2.0, message="Use takeScreenshot(_ )")
     public func takeScreenshot() -> UIImage
+    {
+        return takeScreenshot(save: false)
+    }
+    
+    /**
+    Take a screenshot of current window and choose if save it or not
+    
+    :param: save true to save, false to don't save
+    
+    :returns: Returns the screenshot as an UIImage
+    */
+    public func takeScreenshot(save: Bool = false) -> UIImage
     {
         let ignoreOrientation: Bool = SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO("8.0")
         
@@ -86,6 +105,25 @@ public extension UIWindow
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
+        if save
+        {
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        }
+        
         return image
+    }
+    
+    /**
+    Take a screenshot of current window, choose if save it or not after a delay
+    
+    :param: delay      The delay, in seconds
+    :param: save       true to save, false to don't save
+    :param: completion Completion handler with the UIImage
+    */
+    public func takeScreenshotWithDelay(delay: Double, save: Bool, completion: (image: UIImage) -> ())
+    {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+            completion(image: self.takeScreenshot(save: save))
+        })
     }
 }
