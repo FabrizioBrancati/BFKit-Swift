@@ -61,8 +61,6 @@ class DetailViewController: UIViewController
             BFLog("\(temp) - \(json)")
         case .BFApp:
             BFLog("\(APP_BUILD)")
-        case .UIButton:
-            let button = UIButton(frame: CGRectZero, image: UIImage(named: "")!)
         case .UIDevice:
             BFLog("\(UIDevice.devicePlatform())")
             BFLog("\(UIDevice.isSimulator()) - \(UIDevice.isiPhone())")
