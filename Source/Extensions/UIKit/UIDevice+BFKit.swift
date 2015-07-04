@@ -270,7 +270,7 @@ public extension UIDevice
     /**
     Check if the current device is an iPad
     
-    :returns: Returns YES if it's an iPad, NO if not
+    :returns: Returns true if it's an iPad, fasle if not
     */
     public static func isiPad() -> Bool
     {
@@ -287,7 +287,7 @@ public extension UIDevice
     /**
     Check if the current device is an iPhone
     
-    :returns: Returns YES if it's an iPhone, NO if not
+    :returns: Returns true if it's an iPhone, false if not
     */
     public static func isiPhone() -> Bool
     {
@@ -304,7 +304,7 @@ public extension UIDevice
     /**
     Check if the current device is an iPod
     
-    :returns: Returns YES if it's an iPod, NO if not
+    :returns: Returns true if it's an iPod, false if not
     */
     public static func isiPod() -> Bool
     {
@@ -321,7 +321,7 @@ public extension UIDevice
     /**
     Check if the current device is an Apple TV
     
-    :returns: Returns YES if it's an Apple TV, NO if not
+    :returns: Returns true if it's an Apple TV, false if not
     */
     public static func isAppleTV() -> Bool
     {
@@ -338,7 +338,7 @@ public extension UIDevice
     /**
     Check if the current device is an Apple Watch
     
-    :returns: Returns YES if it's an Apple Watch, NO if not
+    :returns: Returns true if it's an Apple Watch, false if not
     */
     public static func isAppleWatch() -> Bool
     {
@@ -355,7 +355,7 @@ public extension UIDevice
     /**
     Check if the current device is a Simulator
     
-    :returns: Returns YES if it's a Simulator, NO if not
+    :returns: Returns true if it's a Simulator, false if not
     */
     public static func isSimulator() -> Bool
     {
@@ -372,7 +372,7 @@ public extension UIDevice
     /**
     Check if the current device has a Retina display
     
-    :returns: Returns YES if it has a Retina display, NO if not
+    :returns: Returns true if it has a Retina display, false if not
     */
     public static func isRetina() -> Bool
     {
@@ -389,7 +389,7 @@ public extension UIDevice
     /**
     Check if the current device has a Retina HD display
     
-    :returns: Returns YES if it has a Retina HD display, NO if not
+    :returns: Returns true if it has a Retina HD display, false if not
     */
     public static func isRetinaHD() -> Bool
     {

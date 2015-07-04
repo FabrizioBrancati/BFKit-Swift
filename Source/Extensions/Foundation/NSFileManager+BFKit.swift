@@ -69,7 +69,7 @@ public extension NSFileManager
     :param: filename  PLIST filename
     :param: array     Array to save into PLIST
     
-    :returns: Returns YES if the operation was successful, otherwise NO
+    :returns: Returns true if the operation was successful, otherwise false
     */
     public static func saveArrayToPath(directory: DirectoryType, filename: String, array: Array<AnyObject>) -> Bool
     {
@@ -219,7 +219,7 @@ public extension NSFileManager
     :param: file      Filename to delete
     :param: directory Directory of the file
     
-    :returns: Returns YES if the operation was successful, otherwise NO
+    :returns: Returns true if the operation was successful, otherwise false
     */
     public static func deleteFile(file: String, fromDirectory directory: DirectoryType) -> Bool
     {
@@ -258,7 +258,7 @@ public extension NSFileManager
     :param: destination Destination directory of the file
     :param: folderName  Folder name where to move the file. If folder not exist it will be created automatically
     
-    :returns: Returns YES if the operation was successful, otherwise NO
+    :returns: Returns true if the operation was successful, otherwise false
     */
     public static func moveLocalFile(file: String, fromDirectory origin: DirectoryType, toDirectory destination: DirectoryType, withFolderName folderName: String? = nil) -> Bool
     {
@@ -346,7 +346,7 @@ public extension NSFileManager
     :param: origin      Origin directory of the file
     :param: destination Destination directory of the file
     
-    :returns: Returns YES if the operation was successful, otherwise NO
+    :returns: Returns true if the operation was successful, otherwise false
     */
     @availability(*, deprecated=1.2.0, message="Use moveLocalFile(_, fromDirectory:, toDirectory:, withFolderName:)")
     public static func moveLocalFile(file: String, fromDirectory origin: DirectoryType, toDirectory destination: DirectoryType) -> Bool
@@ -360,7 +360,7 @@ public extension NSFileManager
     :param: origin      Origin path
     :param: destination Destination path
     
-    :returns: Returns YES if the operation was successful, otherwise NO
+    :returns: Returns true if the operation was successful, otherwise false
     */
     public static func duplicateFileAtPath(origin: String, toNewPath destination: String) -> Bool
     {
@@ -379,7 +379,7 @@ public extension NSFileManager
     :param: oldName Old filename
     :param: newName New filename
     
-    :returns: Returns YES if the operation was successful, otherwise NO
+    :returns: Returns true if the operation was successful, otherwise false
     */
     public static func renameFileFromDirectory(origin: DirectoryType, atPath path: String, withOldName oldName: String, andNewName newName: String) -> Bool
     {
@@ -443,7 +443,7 @@ public extension NSFileManager
     :param: object   Object to set
     :param: objKey   Key to set the object
     
-    :returns: Returns YES if the operation was successful, otherwise NO
+    :returns: Returns true if the operation was successful, otherwise false
     */
     public static func setSettings(settings: String, object: AnyObject, forKey objKey: String) -> Bool
     {
@@ -468,7 +468,7 @@ public extension NSFileManager
     :param: object Object to set
     :param: objKey Key to set the object
     
-    :returns: Returns YES if the operation was successful, otherwise NO
+    :returns: Returns true if the operation was successful, otherwise false
     */
     public static func setAppSettingsForObject(object: AnyObject, forKey objKey: String) -> Bool
     {

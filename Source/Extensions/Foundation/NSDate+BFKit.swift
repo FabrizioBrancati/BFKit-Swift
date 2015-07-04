@@ -185,7 +185,7 @@ public extension NSDate
     
     :param: anotherDate The another date to compare as NSDate
     
-    :returns: Returns YES if is same day, NO if not
+    :returns: Returns true if is same day, false if not
     */
     public func isSameDay(anotherDate: NSDate) -> Bool
     {

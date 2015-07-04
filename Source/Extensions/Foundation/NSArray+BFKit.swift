@@ -26,7 +26,7 @@
 
 import Foundation
 
-/// This category add some useful methods to NSArray
+/// This extension add some useful functions to NSArray
 public extension NSArray
 {
     // MARK: - Instance functions -

@@ -37,7 +37,7 @@ public extension NSMutableDictionary
     :param: anObject The object
     :param: forKey   The key
     
-    :returns: Returns YES if has been setted, otherwise NO
+    :returns: Returns true if has been setted, otherwise false
     */
     public func safeSetObject(anObject: AnyObject?, forKey: NSCopying) -> Bool
     {

@@ -328,7 +328,7 @@ public class BFSystemSound
     
     :param: soundID SystemSoundID
     
-    :returns: Returns YES if has been disposed, otherwise NO
+    :returns: Returns true if has been disposed, otherwise false
     */
     public static func disposeSound(soundID: SystemSoundID) -> Bool
     {

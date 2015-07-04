@@ -51,7 +51,7 @@ public extension NSString
     :param: string        The substring to be searched
     :param: caseSensitive If the search has to be case-sensitive or not
     
-    :returns: Returns YES if founded, NO if not
+    :returns: Returns true if founded, false if not
     */
     public func hasString(string: NSString, caseSensitive: Bool = true) -> Bool
     {
@@ -68,7 +68,7 @@ public extension NSString
     /**
     Check if self is an email
     
-    :returns: Returns YES if it's an email, NO if not
+    :returns: Returns true if it's an email, false if not
     */
     public func isEmail() -> Bool
     {
@@ -228,7 +228,7 @@ public extension NSString
     
     :param: email The string to be checked
     
-    :returns: Returns YES if it's an email, NO if not
+    :returns: Returns true if it's an email, false if not
     */
     public static func isEmail(email: NSString) -> Bool
     {
