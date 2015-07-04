@@ -93,23 +93,6 @@ public extension UIImage
         let width: CGFloat = imageSize.width
         let height: CGFloat = imageSize.height
         
-        if UIDevice.isRetinaHD()
-        {
-            let retinaTargetSize: CGSize = CGSizeMake(targetSize.width * 3, targetSize.height * 3)
-            if !CGSizeEqualToSize(imageSize, retinaTargetSize)
-            {
-                newTargetSize = retinaTargetSize
-            }
-        }
-        else if UIDevice.isRetina()
-        {
-            let retinaTargetSize: CGSize = CGSizeMake(targetSize.width * 2, targetSize.height * 2)
-            if !CGSizeEqualToSize(imageSize, retinaTargetSize)
-            {
-                newTargetSize = retinaTargetSize
-            }
-        }
-        
         let targetWidth: CGFloat = newTargetSize.width
         let targetHeight: CGFloat = newTargetSize.height
         
@@ -176,23 +159,6 @@ public extension UIImage
     {
         var newTargetSize: CGSize = targetSize
         
-        if UIDevice.isRetinaHD()
-        {
-            let retinaMaxtSize: CGSize = CGSizeMake(targetSize.width * 3, targetSize.height * 3)
-            if !CGSizeEqualToSize(targetSize, retinaMaxtSize)
-            {
-                newTargetSize = retinaMaxtSize
-            }
-        }
-        else if UIDevice.isRetina()
-        {
-            let retinaMaxtSize: CGSize = CGSizeMake(targetSize.width * 2, targetSize.height * 2)
-            if !CGSizeEqualToSize(targetSize, retinaMaxtSize)
-            {
-                newTargetSize = retinaMaxtSize
-            }
-        }
-        
         if (self.size.width > newTargetSize.width || newTargetSize.width == newTargetSize.height) && self.size.width > self.size.height
         {
             let factor: CGFloat = (newTargetSize.width * 100)/self.size.width
@@ -251,23 +217,6 @@ public extension UIImage
         let imageSize: CGSize = sourceImage.size
         let width: CGFloat = imageSize.width
         let height: CGFloat = imageSize.height
-        
-        if UIDevice.isRetinaHD()
-        {
-            let retinaTargetSize: CGSize = CGSizeMake(targetSize.width * 3, targetSize.height * 2)
-            if !CGSizeEqualToSize(imageSize, retinaTargetSize)
-            {
-                newTargetSize = retinaTargetSize
-            }
-        }
-        else if UIDevice.isRetina()
-        {
-            let retinaTargetSize: CGSize = CGSizeMake(targetSize.width * 2, targetSize.height * 2)
-            if !CGSizeEqualToSize(imageSize, retinaTargetSize)
-            {
-                newTargetSize = retinaTargetSize
-            }
-        }
         
         let targetWidth: CGFloat = newTargetSize.width
         let targetHeight: CGFloat = newTargetSize.height
@@ -410,7 +359,7 @@ public extension UIImage
     /**
     Check if the image has alpha
     
-    :returns: Returns YES if has alpha, NO if not
+    :returns: Returns true if has alpha, false if not
     */
     public func hasAlpha() -> Bool
     {
@@ -478,7 +427,7 @@ public extension UIImage
     /**
     Check if the image is in grayscale
     
-    :returns: Returns YES if is in grayscale, NO if not
+    :returns: Returns true if is in grayscale, false if not
     */
     public func isGrayscale() -> Bool
     {
@@ -730,7 +679,7 @@ public extension UIImage
     :param: saturationDeltaFactor Saturation delta factor, leave it default (1.8) if you don't what is
     :param: maskImage             Apply a mask image, leave it default (nil) if you don't want to mask
     
-    :returns: <#return value description#>
+    :returns: Return the transformed image
     */
     public func blur(radius blurRadius: CGFloat, tintColor: UIColor? = nil, saturationDeltaFactor: CGFloat = 1.8, maskImage: UIImage? = nil) -> UIImage?
     {
