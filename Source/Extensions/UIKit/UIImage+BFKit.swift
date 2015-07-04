@@ -29,10 +29,18 @@ import UIKit
 import CoreImage
 import Accelerate
 
+/// This extesion adds some useful functions to UIImage
 public extension UIImage
 {
     // MARK: - Instance functions -
     
+    /**
+    Apply the given Blend Mode
+    
+    :param: blendMode The choosed Blend Mode
+    
+    :returns: Returns the image
+    */
     public func blendMode(blendMode: CGBlendMode) -> UIImage
     {
         UIGraphicsBeginImageContextWithOptions(CGSizeMake(self.size.width, self.size.height), false, UIScreen.mainScreen().scale)
@@ -43,11 +51,23 @@ public extension UIImage
         return image
     }
     
+    /**
+    Apply the Blend Mode Overlay
+    
+    :returns: Returns the image
+    */
     public func blendOverlay() -> UIImage
     {
         return self.blendMode(kCGBlendModeOverlay)
     }
     
+    /**
+    Create an image from a given rect of self
+    
+    :param: rect Rect to take the image
+    
+    :returns: Returns the image from a given rect
+    */
     public func imageAtRect(rect: CGRect) -> UIImage
     {
         let imageRef: CGImageRef = CGImageCreateWithImageInRect(self.CGImage, rect)
@@ -56,6 +76,13 @@ public extension UIImage
         return subImage
     }
     
+    /**
+    Scale the image to the minimum given size
+    
+    :param: targetSize The site to scale to
+    
+    :returns: Returns the scaled image
+    */
     public func imageByScalingProportionallyToMinimumSize(targetSize: CGSize) -> UIImage?
     {
         var sourceImage: UIImage = self
@@ -138,6 +165,13 @@ public extension UIImage
         return newImage
     }
     
+    /**
+    Scale the image to the maxinum given size
+    
+    :param: targetSize The site to scale to
+    
+    :returns: Returns the scaled image
+    */
     public func imageByScalingProportionallyToMaximumSize(targetSize: CGSize) -> UIImage
     {
         var newTargetSize: CGSize = targetSize
@@ -201,6 +235,13 @@ public extension UIImage
         return returnImage
     }
     
+    /**
+    Scale the image proportionally to the given size
+    
+    :param: targetSize The site to scale to
+    
+    :returns: Returns the scaled image
+    */
     public func imageByScalingProportionallyToSize(targetSize: CGSize) -> UIImage?
     {
         var sourceImage: UIImage = self
@@ -284,6 +325,13 @@ public extension UIImage
         return newImage
     }
     
+    /**
+    Scele the iamge to the given size
+    
+    :param: targetSize The site to scale to
+    
+    :returns: Returns the scaled image
+    */
     public func imageByScalingToSize(targetSize: CGSize) -> UIImage?
     {
         var sourceImage: UIImage = self
@@ -317,11 +365,25 @@ public extension UIImage
         return newImage
     }
     
+    /**
+    Rotate the image to the given radians
+    
+    :param: radians Radians to rotate to
+    
+    :returns: Returns the rotated image
+    */
     public func imageRotatedByRadians(radians: CGFloat) -> UIImage
     {
         return self.imageRotatedByDegrees(CGFloat(RadiansToDegrees(Float(radians))))
     }
     
+    /**
+    Rotate the image to the given degrees
+    
+    :param: degrees Degrees to rotate to
+    
+    :returns: Returns the rotated image
+    */
     public func imageRotatedByDegrees(degrees: CGFloat) -> UIImage
     {
         let rotatedViewBox: UIView = UIView(frame: CGRectMake(0, 0, self.size.width, self.size.height))
@@ -345,12 +407,22 @@ public extension UIImage
         return newImage
     }
     
+    /**
+    Check if the image has alpha
+    
+    :returns: Returns YES if has alpha, NO if not
+    */
     public func hasAlpha() -> Bool
     {
         let alpha: CGImageAlphaInfo = CGImageGetAlphaInfo(self.CGImage)
         return (alpha == .First || alpha == .Last || alpha == .PremultipliedFirst || alpha == .PremultipliedLast)
     }
     
+    /**
+    Remove the alpha of the image
+    
+    :returns: Returns the image without alpha
+    */
     public func removeAlpha() -> UIImage
     {
         if !self.hasAlpha()
@@ -368,11 +440,23 @@ public extension UIImage
         return returnImage
     }
     
+    /**
+    Fill the alpha with the white color
+    
+    :returns: Returns the filled image
+    */
     public func fillAlpha() -> UIImage
     {
         return self.fillAlphaWithColor(UIColor.whiteColor())
     }
     
+    /**
+    Fill the alpha with the given color
+    
+    :param: color Color to fill
+    
+    :returns: Returns the filled image
+    */
     public func fillAlphaWithColor(color: UIColor) -> UIImage
     {
         var im_r: CGRect = CGRect(origin: CGPointZero, size: self.size)
@@ -391,6 +475,11 @@ public extension UIImage
         return returnImage
     }
     
+    /**
+    Check if the image is in grayscale
+    
+    :returns: Returns YES if is in grayscale, NO if not
+    */
     public func isGrayscale() -> Bool
     {
         let imgRef: CGImageRef = self.CGImage
@@ -406,6 +495,11 @@ public extension UIImage
         }
     }
     
+    /**
+    Transform the image to grayscale
+    
+    :returns: Returns the transformed image
+    */
     public func imageToGrayscale() -> UIImage
     {
         let rect: CGRect = CGRectMake(0.0, 0.0, size.width, size.height)
@@ -420,6 +514,11 @@ public extension UIImage
         return returnImage
     }
     
+    /**
+    Transform the image to black and white
+    
+    :returns: Returns the transformed image
+    */
     public func imageToBlackAndWhite() -> UIImage
     {
         let colorSpace: CGColorSpaceRef = CGColorSpaceCreateDeviceGray()
@@ -435,6 +534,11 @@ public extension UIImage
         return returnImage
     }
     
+    /**
+    Invert the color of the image
+    
+    :returns: Returns the transformed image
+    */
     public func invertColors() -> UIImage
     {
         UIGraphicsBeginImageContextWithOptions(self.size, false, UIScreen .mainScreen().scale)
@@ -450,6 +554,14 @@ public extension UIImage
         return returnImage
     }
     
+    /**
+    Apply the bloom effect to the image
+    
+    :param: radius    Radius of the bloom
+    :param: intensity Intensity of the bloom
+    
+    :returns: Returns the transformed image
+    */
     public func bloom(radius: Float, intensity: Float) -> UIImage
     {
         let context: CIContext = CIContext(options: nil)
@@ -464,6 +576,15 @@ public extension UIImage
         return returnImage
     }
     
+    /**
+    Apply the bump distortion effect to the image
+    
+    :param: center Vector of the distortion. Use CIVector(x: X, y: Y)
+    :param: radius Radius of the effect
+    :param: scale  Scale of the effect
+    
+    :returns: Returns the transformed image
+    */
     public func bumpDistortion(center: CIVector, radius: Float, scale: Float) -> UIImage
     {
         let context: CIContext = CIContext(options: nil)
@@ -479,6 +600,16 @@ public extension UIImage
         return returnImage
     }
     
+    /**
+    Apply the bump distortion linear effect to the image
+    
+    :param: center Vector of the distortion. Use CIVector(x: X, y: Y)
+    :param: radius Radius of the effect
+    :param: angle  Angle of the effect in radians
+    :param: scale  Scale of the effect
+    
+    :returns: Returns the transformed image
+    */
     public func bumpDistortionLinear(center: CIVector, radius: Float, angle: Float, scale: Float) -> UIImage
     {
         let context: CIContext = CIContext(options: nil)
@@ -495,6 +626,14 @@ public extension UIImage
         return returnImage
     }
     
+    /**
+    Apply the circular splash distortion effect to the image
+    
+    :param: center Vector of the distortion. Use CIVector(x: X, y: Y)
+    :param: radius Radius of the effect
+    
+    :returns: Returns the transformed image
+    */
     public func circleSplashDistortion(center: CIVector, radius: Float) -> UIImage
     {
         let context: CIContext = CIContext(options: nil)
@@ -509,6 +648,15 @@ public extension UIImage
         return returnImage
     }
     
+    /**
+    Apply the circular wrap effect to the image
+    
+    :param: center Vector of the distortion. Use CIVector(x: X, y: Y)
+    :param: radius Radius of the effect
+    :param: angle  Angle of the effect in radians
+    
+    :returns: Returns the transformed image
+    */
     public func circularWrap(center: CIVector, radius: Float, angle: Float) -> UIImage
     {
         let context: CIContext = CIContext(options: nil)
@@ -524,6 +672,18 @@ public extension UIImage
         return returnImage
     }
     
+    /**
+    Apply the CMY halftone effect to the image
+    
+    :param: center    Vector of the distortion. Use CIVector(x: X, y: Y)
+    :param: width     Width value
+    :param: angle     Angle of the effect in radians
+    :param: sharpness Sharpness Value
+    :param: gcr       GCR value
+    :param: ucr       UCR value
+    
+    :returns: Returns the transformed image
+    */
     public func cmykHalftone(center: CIVector, width: Float, angle: Float, sharpness: Float, gcr: Float, ucr: Float) -> UIImage
     {
         let context: CIContext = CIContext(options: nil)
@@ -542,6 +702,13 @@ public extension UIImage
         return returnImage
     }
     
+    /**
+    Apply the sepia filter to the image
+    
+    :param: intensity Intensity of the filter
+    
+    :returns: Returns the transformed image
+    */
     public func sepiaToneWithIntensity(intensity: Float) -> UIImage
     {
         let context: CIContext = CIContext(options: nil)
@@ -555,6 +722,16 @@ public extension UIImage
         return returnImage
     }
     
+    /**
+    Apply the blur effect to the image
+    
+    :param: blurRadius            Blur radius
+    :param: tintColor             Blur tint color
+    :param: saturationDeltaFactor Saturation delta factor, leave it default (1.8) if you don't what is
+    :param: maskImage             Apply a mask image, leave it default (nil) if you don't want to mask
+    
+    :returns: <#return value description#>
+    */
     public func blur(radius blurRadius: CGFloat, tintColor: UIColor? = nil, saturationDeltaFactor: CGFloat = 1.8, maskImage: UIImage? = nil) -> UIImage?
     {
         if size.width < 1 || size.height < 1
@@ -781,6 +958,13 @@ public extension UIImage
         return result
     }*/
     
+    /**
+    Private, create a CGSize with a given string (100x100)
+    
+    :param: sizeString String with the size
+    
+    :returns: Returns the created CGSize
+    */
     private static func sizeForSizeString(sizeString: String) -> CGSize
     {
         let array: Array = sizeString.componentsSeparatedByString("x")
@@ -792,15 +976,21 @@ public extension UIImage
         return CGSizeMake(CGFloat(array[0].floatValue), CGFloat(array[1].floatValue))
     }
     
-    private static func colorForColorString(colorString: String?) -> UIColor
+    /**
+    Create an UIColor from a given string ("blue" or "ff00ff" or "#00ff00")
+    
+    :param: colorString String with the color
+    
+    :returns: Returns the created UIColor
+    */
+    public static func colorForColorString(colorString: String?) -> UIColor
     {
         if colorString == nil
         {
             return UIColor.lightGrayColor()
         }
         
-        let colorSelector = Selector(colorString!.lowercaseString.stringByAppendingString("Color"))
-        if UIColor.respondsToSelector(colorSelector)
+        if UIColor.respondsToSelector(Selector(colorString!.lowercaseString.stringByAppendingString("Color")))
         {
             return self.getColorFromColorString(colorString!)
         }
@@ -810,6 +1000,13 @@ public extension UIImage
         }
     }
     
+    /**
+    Private, used the retrive the color from the string color ("blue" or "red")
+    
+    :param: color String with the color
+    
+    :returns: Returns the created UIColor
+    */
     private static func getColorFromColorString(color: String) -> UIColor
     {
         switch color
@@ -851,6 +1048,13 @@ public extension UIImage
     
     // MARK: - Init functions -
     
+    /**
+    Create a dummy image
+    
+    :param: dummy To use it, name parameter must contain: "dummy.100x100" and "dummy.100x100.#FFFFFF" or "dummy.100x100.blue" (if it's a color defined in UIColor class) if you want to define a color
+    
+    :returns: Returns the created dummy image
+    */
     public convenience init?(dummyImageWithSizeAndColor dummy: String)
     {
         var size: CGSize = CGSizeZero, color: UIColor = UIColor.lightGrayColor()
@@ -891,6 +1095,16 @@ public extension UIImage
         self.init(CGImage: result.CGImage)
     }
     
+    /**
+    Create an image from a given text
+    
+    :param: text      Text
+    :param: font      Text's font name
+    :param: fontSize  Text's font size
+    :param: imageSize Image's size
+    
+    :returns: Returns the created UIImage
+    */
     public convenience init?(fromText text: String, font: FontName, fontSize: CGFloat, imageSize: CGSize)
     {
         UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.mainScreen().scale)
@@ -904,6 +1118,17 @@ public extension UIImage
         self.init(CGImage: image.CGImage)
     }
     
+    /**
+    Create an image with a background color and with a text with a mask
+    
+    :param: maskedText      Text to mask
+    :param: font            Text's font name
+    :param: fontSize        Text's font size
+    :param: imageSize       Image's size
+    :param: backgroundColor Image's background color
+    
+    :returns: Returns the created UIImage
+    */
     public convenience init?(maskedText: String, font: FontName, fontSize: CGFloat, imageSize: CGSize, backgroundColor: UIColor)
     {
         let fontName: UIFont = UIFont(fontName: font, size: fontSize)!
@@ -931,6 +1156,13 @@ public extension UIImage
         self.init(CGImage: image.CGImage)
     }
     
+    /**
+    Create an image from a given color
+    
+    :param: color Color value
+    
+    :returns: Returns the created UIImage
+    */
     public convenience init?(color: UIColor)
     {
         let rect: CGRect = CGRectMake(0, 0, 1, 1)

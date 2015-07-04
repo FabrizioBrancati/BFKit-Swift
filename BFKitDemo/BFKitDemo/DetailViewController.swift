@@ -57,10 +57,12 @@ class DetailViewController: UIViewController
         {
         case .Dictionary:
             let temp: Dictionary = ["Prova" : "Maybe"]
-            let json: String = temp.dictionaryToJson()
+            let json: String = temp.dictionaryToJSON()
             BFLog("\(temp) - \(json)")
         case .BFApp:
             BFLog("\(APP_BUILD)")
+        case .UIButton:
+            let button = UIButton(frame: CGRectZero, image: UIImage(named: "")!)
         case .UIDevice:
             BFLog("\(UIDevice.devicePlatform())")
             BFLog("\(UIDevice.isSimulator()) - \(UIDevice.isiPhone())")

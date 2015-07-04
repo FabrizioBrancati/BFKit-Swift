@@ -27,21 +27,51 @@
 import Foundation
 import UIKit
 
+/// This extesion adds some useful functions to UIButton
 public extension UIButton
 {
     // MARK: - Init functions -
     
+    /**
+    Create an UIButton in a frame with a title and a clear color
+    
+    :param: frame Button's frame
+    :param: title Button's title, the title color will be white
+    
+    :returns: Returns the UIButton instance
+    */
+    @availability(*, deprecated=1.2.0, message="Use UIButton_, title:, backgroundImage:, highlightedBackgroundImage:)")
     public convenience init(frame: CGRect, title: String?)
     {
-        self.init(frame: frame, title: title, backgroundImage: nil)
+        self.init(frame: frame, title: title, backgroundImage: nil, highlightedBackgroundImage: nil)
     }
     
-    public convenience init(frame: CGRect, title: String?, backgroundImage: UIImage?)
+    /**
+    Create an UIButton in a frame with a title and a background image
+    
+    :param: frame           Button's frame
+    :param: title           Button's title
+    :param: backgroundImage Button's background image
+    
+    :returns: Returns the UIButton instance
+    */
+    @availability(*, deprecated=1.2.0, message="Use UIButton_, title:, backgroundImage:, highlightedBackgroundImage:)")
+    public convenience init(frame: CGRect, title: String?, backgroundImage: UIImage? = nil)
     {
         self.init(frame: frame, title: title, backgroundImage: backgroundImage, highlightedBackgroundImage: nil)
     }
     
-    public convenience init(frame: CGRect, title: String?, backgroundImage: UIImage?, highlightedBackgroundImage: UIImage?)
+    /**
+    Create an UIButton in a frame with a title, a background image and highlighted background image
+    
+    :param: frame                      Button's frame
+    :param: title                      Button's title
+    :param: backgroundImage            Button's background image
+    :param: highlightedBackgroundImage Button's highlighted background image
+    
+    :returns: Returns the UIButton instance
+    */
+    public convenience init(frame: CGRect, title: String?, backgroundImage: UIImage? = nil, highlightedBackgroundImage: UIImage? = nil)
     {
         self.init(frame: frame)
         self.frame = frame
@@ -50,23 +80,60 @@ public extension UIButton
         self.setBackgroundImage(highlightedBackgroundImage, forState: .Highlighted)
     }
     
+    /**
+    Create an UIButton in a frame with a title and a color
+    
+    :param: frame Button's frame
+    :param: title Button's title
+    :param: color Button's color, the highlighted color will be automatically created
+    
+    :returns: Returns the UIButton instance
+    */
     public convenience init(frame: CGRect, title: String, color: UIColor)
     {
         let components: UnsafePointer<CGFloat> = CGColorGetComponents(color.CGColor)
         self.init(frame: frame, title: title, backgroundImage: UIImage(color: color), highlightedBackgroundImage: UIImage(color: UIColor(red: components[0]-0.1, green: components[1]-0.1, blue: components[2]-0.1, alpha: 1)))
     }
     
+    /**
+    Create an UIButton in a frame with a title, a color and highlighted color
+    
+    :param: frame            Button's frame
+    :param: title            Button's title
+    :param: color            Button's color
+    :param: highlightedColor Button's highlighted color
+    
+    :returns: Returns the UIButton instance
+    */
     public convenience init(frame: CGRect, title: String, color: UIColor, highlightedColor: UIColor)
     {
         self.init(frame: frame, title: title, backgroundImage: UIImage(color: color), highlightedBackgroundImage: UIImage(color: highlightedColor))
     }
     
+    /**
+    Create an UIButton in a frame with a color
+    
+    :param: frame Button's frame
+    :param: image Button's color, the highlighted color will be automatically created
+    
+    :returns: Returns the UIButton instance
+    */
+    @availability(*, deprecated=1.2.0, message="Use UIButton(_, image:, highlightedImage:)")
     public convenience init(frame: CGRect, image: UIImage)
     {
         self.init(frame: frame, image: image, highlightedImage: nil)
     }
     
-    public convenience init(frame: CGRect, image: UIImage, highlightedImage: UIImage?)
+    /**
+    Create an UIButton in a frame with a color and highlighted color
+    
+    :param: frame            Button's frame
+    :param: image            Button's color
+    :param: highlightedImage Button's highlighted color
+    
+    :returns: eturns the UIButton instance
+    */
+    public convenience init(frame: CGRect, image: UIImage, highlightedImage: UIImage? = nil)
     {
         self.init(frame: frame)
         self.frame = frame
@@ -76,16 +143,33 @@ public extension UIButton
     
     // MARK: - Instance functions -
     
+    /**
+    Set the title font with a size
+    
+    :param: fontName Font name from the FontName enum declared in UIFont+BFKit
+    :param: size     Font size
+    */
     public func setTitleFont(fontName: FontName, size: CGFloat)
     {
         self.titleLabel!.font = UIFont(fontName: fontName, size: size)
     }
     
+    /**
+    Set the title color
+    
+    :param: color Font color, the highlighted color will be automatically created
+    */
     public func setTitleColor(color: UIColor)
     {
         self.setTitleColor(color, highlightedColor: color.colorWithAlphaComponent(0.4))
     }
     
+    /**
+    Set the title color and highlighted color
+    
+    :param: color            Button's color
+    :param: highlightedColor Button's highlighted color
+    */
     public func setTitleColor(color: UIColor, highlightedColor: UIColor)
     {
         self.setTitleColor(color, forState: .Normal)

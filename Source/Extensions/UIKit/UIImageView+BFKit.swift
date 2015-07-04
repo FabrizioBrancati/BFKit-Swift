@@ -28,10 +28,19 @@ import Foundation
 import UIKit
 import QuartzCore
 
+/// This extesion adds some useful functions to UIImageView
 public extension UIImageView
 {
     // MARK: - Instance functions -
     
+    /**
+    Create a drop shadow effect
+    
+    :param: color   Shadow's color
+    :param: radius  Shadow's radius
+    :param: offset  Shadow's offset
+    :param: opacity adow's opacity
+    */
     public func setImageShadowColor(color: UIColor, radius: CGFloat, offset: CGSize, opacity: Float)
     {
         self.layer.shadowColor = color.CGColor
@@ -41,6 +50,11 @@ public extension UIImageView
         self.clipsToBounds = false
     }
     
+    /**
+    Mask the current UIImageView with an UIImage
+    
+    :param: image The mask UIImage
+    */
     public func setMaskImage(image: UIImage)
     {
         let mask: CALayer = CALayer()
@@ -52,12 +66,29 @@ public extension UIImageView
     
     // MARK: - Init functions -
     
+    /**
+    Create an UIImageView with the given image and frame
+    
+    :param: frame UIImageView frame
+    :param: image UIImageView image
+    
+    :returns: Returns the created UIImageView
+    */
     public convenience init(frame: CGRect, image: UIImage)
     {
         self.init(frame: frame)
         self.image = image
     }
     
+    /**
+    Create an UIImageView with the given image, size and center
+    
+    :param: image  UIImageView image
+    :param: size   UIImageView size
+    :param: center UIImageView center
+    
+    :returns: Returns the created UIImageView
+    */
     public convenience init(image: UIImage, size: CGSize, center: CGPoint)
     {
         self.init(frame: CGRectMake(0, 0, size.width, size.height))
@@ -65,6 +96,14 @@ public extension UIImageView
         self.center = center
     }
     
+    /**
+    Create an UIImageView with the given image and center
+    
+    :param: image  UIImageView image
+    :param: center UIImageView center
+    
+    :returns: Returns the created UIImageView
+    */
     public convenience init(image: UIImage, center: CGPoint)
     {
         self.init(image: image)

@@ -27,16 +27,45 @@
 import Foundation
 import UIKit
 
+/// This extesion adds some useful functions to UILabel
 public extension UILabel
 {
     // MARK: - Init functions -
     
+    /**
+    Create an UILabel with the given parameters, with clearColor for the shadow
+    
+    :param: frame     Label's frame
+    :param: text      Label's text
+    :param: font      Label's font name, FontName enum is declared in UIFont+BFKit
+    :param: size      Label's font size
+    :param: color     Label's text color
+    :param: alignment Label's text alignment
+    :param: lines     Label's text lines
+    
+    :returns: Returns the created UILabel
+    */
+    @availability(*, deprecated=1.2.0, message="Use UILabel(_, text:, font:, size:, color:, alignment:, lines:, shadowColor:)")
     public convenience init(frame: CGRect, text: String, font: FontName, size: CGFloat, color: UIColor, alignment: NSTextAlignment, lines: Int)
     {
         self.init(frame: frame, text: text, font: font, size: size, color: color, alignment: alignment, lines: lines, shadowColor: UIColor.clearColor())
     }
     
-    public convenience init(frame: CGRect, text: String, font: FontName, size: CGFloat, color: UIColor, alignment: NSTextAlignment, lines: Int, shadowColor: UIColor)
+    /**
+    Create an UILabel with the given parameters
+    
+    :param: frame       Label's frame
+    :param: text        Label's text
+    :param: font        Label's font name, FontName enum is declared in UIFont+BFKit
+    :param: size        Label's font size
+    :param: color       Label's text color
+    :param: alignment   Label's text alignment
+    :param: lines       Label's text lines
+    :param: shadowColor Label's text shadow color
+    
+    :returns: Returns the created UILabel
+    */
+    public convenience init(frame: CGRect, text: String, font: FontName, size: CGFloat, color: UIColor, alignment: NSTextAlignment, lines: Int, shadowColor: UIColor = UIColor.clearColor())
     {
         self.init(frame: frame)
         self.font = UIFont(fontName: font, size: size)
