@@ -40,8 +40,8 @@ public extension UIButton
     
     :returns: Returns the UIButton instance
     */
-    @availability(*, deprecated=1.2.0, message="Use UIButton(_, title:, backgroundImage:, highlightedBackgroundImage:)")
-    public convenience init(frame: CGRect, title: String?)
+    @availability(*, obsoleted=1.2.0, message="Use UIButton(_, title:, backgroundImage:, highlightedBackgroundImage:)")
+    public convenience init(frame: CGRect, title: String)
     {
         self.init(frame: frame, title: title, backgroundImage: nil, highlightedBackgroundImage: nil)
     }
@@ -55,8 +55,8 @@ public extension UIButton
     
     :returns: Returns the UIButton instance
     */
-    @availability(*, deprecated=1.2.0, message="Use UIButton(_, title:, backgroundImage:, highlightedBackgroundImage:)")
-    public convenience init(frame: CGRect, title: String?, backgroundImage: UIImage? = nil)
+    @availability(*, obsoleted=1.2.0, message="Use UIButton(_, title:, backgroundImage:, highlightedBackgroundImage:)")
+    public convenience init(frame: CGRect, title: String, backgroundImage: UIImage?)
     {
         self.init(frame: frame, title: title, backgroundImage: backgroundImage, highlightedBackgroundImage: nil)
     }
@@ -71,7 +71,7 @@ public extension UIButton
     
     :returns: Returns the UIButton instance
     */
-    public convenience init(frame: CGRect, title: String?, backgroundImage: UIImage? = nil, highlightedBackgroundImage: UIImage? = nil)
+    public convenience init(frame: CGRect, title: String, backgroundImage: UIImage? = nil, highlightedBackgroundImage: UIImage? = nil)
     {
         self.init(frame: frame)
         self.frame = frame
@@ -111,10 +111,10 @@ public extension UIButton
     }
     
     /**
-    Create an UIButton in a frame with a color
+    Create an UIButton in a frame with an image
     
     :param: frame Button's frame
-    :param: image Button's color, the highlighted color will be automatically created
+    :param: image Button's image
     
     :returns: Returns the UIButton instance
     */
@@ -125,11 +125,11 @@ public extension UIButton
     }
     
     /**
-    Create an UIButton in a frame with a color and highlighted color
+    Create an UIButton in a frame with an image
     
     :param: frame            Button's frame
-    :param: image            Button's color
-    :param: highlightedImage Button's highlighted color
+    :param: image            Button's image
+    :param: highlightedImage Button's highlighted image
     
     :returns: eturns the UIButton instance
     */
