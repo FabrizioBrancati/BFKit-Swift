@@ -99,6 +99,12 @@ Installing and Usage :computer:
 - Enjoy!
 - N.B.: You will no longer need to import BFKit since you are not actually loading a framework
 
+---
+###Warning
+The following installing methods doesn't allows to declare ```Array``` and ```Dictionary``` extensions as public due to a bug in the compiler
+[Read more](https://devforums.apple.com/message/983747)
+---
+
 ####iOS 8 (or later) compatible
 - Open the **BFKit** folder and build the Framework from the project
 - Import BFKit.framework into your project
@@ -158,4 +164,4 @@ License :scroll:
 ================
 BFKit-Swift is available under the MIT license. See the **[LICENSE](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)** file for more info.
 
-[CocoaDocs]: http://cocoadocs.org/docsets/BFKit-Swift/1.1.0/
+[CocoaDocs]: http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/

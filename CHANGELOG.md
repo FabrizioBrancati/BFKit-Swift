@@ -1,5 +1,11 @@
 Changelog
 =========
+###Version 1.2.0
+- Added comments to all classes and extensions
+- Added the documentation with [CocoaDocs](http://cocoadocs.org/docsets/BFKit-Swift/)
+- Declared public ```colorForColorString``` in UIColor extension
+- Declared as deprecated some functions in favor of default values
+
 ###Version 1.1.0
 - Added Carthage support
 - Added all IDs in BFSystemSound class
