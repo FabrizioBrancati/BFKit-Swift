@@ -142,6 +142,14 @@ From iOS 9 this bug will be fixed, and once it'll be released I'll update BFKit-
 - Import the Framework with ```import BFKit```
 - Enjoy!
 
+Documentation :100:
+===================
+###[CocoaDocs] - 100% Documented
+
+Changelog :bookmark_tabs:
+=========================
+To see what has changed in recent version of BFKit, see the **[CHANGELOG](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/CHANGELOG.md)**
+
 Todo :ballot_box_with_check:
 ============================
 - :heavy_minus_sign: Create instance methods for UIKit categories
