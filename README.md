@@ -103,6 +103,9 @@ Installing and Usage :computer:
 ###Warning
 The following installing methods doesn't allows to declare ```Array``` and ```Dictionary``` extensions as public due to a bug in the compiler
 [Read more](https://devforums.apple.com/message/983747)
+
+####iOS 9
+From iOS 9 this bug will be fixed, and once it'll be released I'll update BFKit-Swift to take advantage of this! ;)
 ---
 
 ####iOS 8 (or later) compatible
