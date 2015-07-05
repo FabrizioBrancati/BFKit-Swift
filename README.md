@@ -106,6 +106,7 @@ The following installing methods doesn't allows to declare ```Array``` and ```Di
 
 ####iOS 9
 From iOS 9 this bug will be fixed, and once it'll be released I'll update BFKit-Swift to take advantage of this! ;)
+
 ---
 
 ####iOS 8 (or later) compatible
