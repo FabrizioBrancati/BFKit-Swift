@@ -29,6 +29,9 @@ import UIKit
 import CoreImage
 import Accelerate
 
+/// Due to a bug in Xcode (typecasting Fails only inside the extension block) I created this alias of CIImage
+typealias BFCIImage = CIImage
+
 /// This extesion adds some useful functions to UIImage
 public extension UIImage
 {
@@ -516,11 +519,13 @@ public extension UIImage
         let context: CIContext = CIContext(options: nil)
         let filter: CIFilter = CIFilter(name: "CIBloom")
         
-        filter.setValue(self.CIImage, forKey: kCIInputImageKey)
-        filter.setValue(NSNumber(float: radius), forKey: "inputRadius")
-        filter.setValue(NSNumber(float: intensity), forKey: "inputIntensity")
+        var ciimage: BFCIImage = BFCIImage(image: self)
         
-        let returnImage: UIImage = UIImage(CIImage: filter.outputImage)!
+        filter.setValue(ciimage, forKey: kCIInputImageKey)
+        filter.setValue(radius, forKey: kCIInputRadiusKey)
+        filter.setValue(intensity, forKey: kCIInputIntensityKey)
+        
+        let returnImage: UIImage = UIImage(CGImage: context.createCGImage(filter.outputImage, fromRect: filter.outputImage.extent()))!
         
         return returnImage
     }
@@ -539,12 +544,14 @@ public extension UIImage
         let context: CIContext = CIContext(options: nil)
         let filter: CIFilter = CIFilter(name: "CIBumpDistortion")
         
-        filter.setValue(self.CIImage, forKey: kCIInputImageKey)
-        filter.setValue(center, forKey: "inputCenter")
-        filter.setValue(NSNumber(float: radius), forKey: "inputRadius")
-        filter.setValue(NSNumber(float: scale), forKey: "inputScale")
+        var ciimage: BFCIImage = BFCIImage(image: self)
         
-        let returnImage: UIImage = UIImage(CIImage: filter.outputImage)!
+        filter.setValue(ciimage, forKey: kCIInputImageKey)
+        filter.setValue(center, forKey: kCIInputCenterKey)
+        filter.setValue(radius, forKey: kCIInputRadiusKey)
+        filter.setValue(scale, forKey: kCIInputScaleKey)
+        
+        let returnImage: UIImage = UIImage(CGImage: context.createCGImage(filter.outputImage, fromRect: filter.outputImage.extent()))!
         
         return returnImage
     }
@@ -564,13 +571,15 @@ public extension UIImage
         let context: CIContext = CIContext(options: nil)
         let filter: CIFilter = CIFilter(name: "CIBumpDistortionLinear")
         
-        filter.setValue(self.CIImage, forKey: kCIInputImageKey)
-        filter.setValue(center, forKey: "inputCenter")
-        filter.setValue(NSNumber(float: radius), forKey: "inputRadius")
-        filter.setValue(NSNumber(float: angle), forKey: "inputAngle")
-        filter.setValue(NSNumber(float: scale), forKey: "inputScale")
+        var ciimage: BFCIImage = BFCIImage(image: self)
         
-        let returnImage: UIImage = UIImage(CIImage: filter.outputImage)!
+        filter.setValue(ciimage, forKey: kCIInputImageKey)
+        filter.setValue(center, forKey: kCIInputCenterKey)
+        filter.setValue(radius, forKey: kCIInputRadiusKey)
+        filter.setValue(angle, forKey: kCIInputAngleKey)
+        filter.setValue(scale, forKey: kCIInputScaleKey)
+        
+        let returnImage: UIImage = UIImage(CGImage: context.createCGImage(filter.outputImage, fromRect: filter.outputImage.extent()))!
         
         return returnImage
     }
@@ -588,11 +597,13 @@ public extension UIImage
         let context: CIContext = CIContext(options: nil)
         let filter: CIFilter = CIFilter(name: "CICircleSplashDistortion")
         
-        filter.setValue(self.CIImage, forKey: kCIInputImageKey)
-        filter.setValue(center, forKey: "inputCenter")
-        filter.setValue(NSNumber(float: radius), forKey: "inputRadius")
+        var ciimage: BFCIImage = BFCIImage(image: self)
         
-        let returnImage: UIImage = UIImage(CIImage: filter.outputImage)!
+        filter.setValue(ciimage, forKey: kCIInputImageKey)
+        filter.setValue(center, forKey: kCIInputCenterKey)
+        filter.setValue(radius, forKey: kCIInputRadiusKey)
+        
+        let returnImage: UIImage = UIImage(CGImage: context.createCGImage(filter.outputImage, fromRect: filter.outputImage.extent()))!
         
         return returnImage
     }
@@ -611,12 +622,14 @@ public extension UIImage
         let context: CIContext = CIContext(options: nil)
         let filter: CIFilter = CIFilter(name: "CICircularWrap")
         
-        filter.setValue(self.CIImage, forKey: kCIInputImageKey)
-        filter.setValue(center, forKey: "inputCenter")
-        filter.setValue(NSNumber(float: radius), forKey: "inputRadius")
-        filter.setValue(NSNumber(float: angle), forKey: "inputAngle")
+        var ciimage: BFCIImage = BFCIImage(image: self)
         
-        let returnImage: UIImage = UIImage(CIImage: filter.outputImage)!
+        filter.setValue(ciimage, forKey: kCIInputImageKey)
+        filter.setValue(center, forKey: kCIInputCenterKey)
+        filter.setValue(radius, forKey: kCIInputRadiusKey)
+        filter.setValue(angle, forKey: kCIInputAngleKey)
+        
+        let returnImage: UIImage = UIImage(CGImage: context.createCGImage(filter.outputImage, fromRect: filter.outputImage.extent()))!
         
         return returnImage
     }
@@ -638,15 +651,17 @@ public extension UIImage
         let context: CIContext = CIContext(options: nil)
         let filter: CIFilter = CIFilter(name: "CICMYKHalftone")
         
-        filter.setValue(self.CIImage, forKey: kCIInputImageKey)
-        filter.setValue(center, forKey: "inputCenter")
-        filter.setValue(NSNumber(float: width), forKey: "inputWidth")
-        filter.setValue(NSNumber(float: angle), forKey: "inputAngle")
-        filter.setValue(NSNumber(float: sharpness), forKey: "inputSharpness")
-        filter.setValue(NSNumber(float: gcr), forKey: "inputGCR")
-        filter.setValue(NSNumber(float: ucr), forKey: "inputUCR")
+        var ciimage: BFCIImage = BFCIImage(image: self)
         
-        let returnImage: UIImage = UIImage(CIImage: filter.outputImage)!
+        filter.setValue(ciimage, forKey: kCIInputImageKey)
+        filter.setValue(center, forKey: kCIInputCenterKey)
+        filter.setValue(width, forKey: kCIInputWidthKey)
+        filter.setValue(sharpness, forKey: kCIInputSharpnessKey)
+        filter.setValue(angle, forKey: kCIInputAngleKey)
+        filter.setValue(gcr, forKey: "inputGCR")
+        filter.setValue(ucr, forKey: "inputUCR")
+        
+        let returnImage: UIImage = UIImage(CGImage: context.createCGImage(filter.outputImage, fromRect: filter.outputImage.extent()))!
         
         return returnImage
     }
@@ -663,10 +678,12 @@ public extension UIImage
         let context: CIContext = CIContext(options: nil)
         let filter: CIFilter = CIFilter(name: "CISepiaTone")
         
-        filter.setValue(self.CIImage, forKey: kCIInputImageKey)
-        filter.setValue(NSNumber(float: intensity), forKey: "inputIntensity")
+        var ciimage: BFCIImage = BFCIImage(image: self)
         
-        let returnImage: UIImage = UIImage(CIImage: filter.outputImage)!
+        filter.setValue(ciimage, forKey: kCIInputImageKey)
+        filter.setValue(intensity, forKey: kCIInputIntensityKey)
+        
+        let returnImage: UIImage = UIImage(CGImage: context.createCGImage(filter.outputImage, fromRect: filter.outputImage.extent()))!
         
         return returnImage
     }
