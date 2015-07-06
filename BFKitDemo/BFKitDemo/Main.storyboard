@@ -94,7 +94,18 @@
                     <view key="view" contentMode="scaleToFill" id="qaS-tr-Ku5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdF-0h-70g">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hdF-0h-70g" secondAttribute="trailing" id="ZDS-wm-dbl"/>
+                            <constraint firstItem="hdF-0h-70g" firstAttribute="top" secondItem="qaS-tr-Ku5" secondAttribute="top" id="gcb-Us-TfE"/>
+                            <constraint firstItem="hdF-0h-70g" firstAttribute="leading" secondItem="qaS-tr-Ku5" secondAttribute="leading" id="pcW-4z-TeI"/>
+                            <constraint firstItem="i62-Ly-jWd" firstAttribute="top" secondItem="hdF-0h-70g" secondAttribute="bottom" id="yFc-oI-kw5"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Info" id="29a-0g-0js">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="ULg-h0-gMl">
@@ -103,6 +114,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="scrollView" destination="hdF-0h-70g" id="09s-cV-sfh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cvB-Hy-t54" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
