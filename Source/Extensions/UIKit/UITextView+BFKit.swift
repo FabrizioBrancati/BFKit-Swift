@@ -55,7 +55,7 @@ public extension UITextView
     
     :returns: Returns the created UITextView
     */
-    public convenience init(frame: CGRect, text: String, font: FontName, size: CGFloat, color: UIColor, alignment: NSTextAlignment, dataDetectorTypes: UIDataDetectorTypes, editable: Bool, selectable: Bool, returnType: UIReturnKeyType, keyboardType: UIKeyboardType, secure: Bool, autoCapitalization: UITextAutocapitalizationType, keyboardAppearance: UIKeyboardAppearance, enablesReturnKeyAutomatically: Bool, autoCorrectionType: UITextAutocorrectionType, delegate: UITextViewDelegate)
+    public convenience init(frame: CGRect, text: String, font: FontName, size: CGFloat, color: UIColor, alignment: NSTextAlignment, dataDetectorTypes: UIDataDetectorTypes, editable: Bool, selectable: Bool, returnType: UIReturnKeyType, keyboardType: UIKeyboardType, secure: Bool, autoCapitalization: UITextAutocapitalizationType, keyboardAppearance: UIKeyboardAppearance, enablesReturnKeyAutomatically: Bool, autoCorrectionType: UITextAutocorrectionType, delegate: UITextViewDelegate?)
     {
         self.init(frame: frame)
         self.text = text

@@ -44,7 +44,7 @@ public extension UIScrollView
     
     :returns: Returns the created UIScrollView
     */
-    public convenience init(frame: CGRect, contentSize: CGSize, clipsToBounds: Bool, pagingEnabled: Bool, showScrollIndicators: Bool, delegate: UIScrollViewDelegate)
+    public convenience init(frame: CGRect, contentSize: CGSize, clipsToBounds: Bool, pagingEnabled: Bool, showScrollIndicators: Bool, delegate: UIScrollViewDelegate?)
     {
         self.init(frame: frame)
         self.delegate = delegate

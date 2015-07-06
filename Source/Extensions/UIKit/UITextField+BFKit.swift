@@ -53,7 +53,7 @@ public extension UITextField
     
     :returns: Returns the created UITextField
     */
-    public convenience init(frame: CGRect, placeholder: String, font: FontName, size: CGFloat, color: UIColor, returnType: UIReturnKeyType, keyboardType: UIKeyboardType, secure: Bool, borderStyle: UITextBorderStyle, autoCapitalization: UITextAutocapitalizationType, keyboardAppearance: UIKeyboardAppearance, enablesReturnKeyAutomatically: Bool, clearButtonMode: UITextFieldViewMode, autoCorrectionType: UITextAutocorrectionType, delegate: UITextFieldDelegate)
+    public convenience init(frame: CGRect, placeholder: String, font: FontName, size: CGFloat, color: UIColor, returnType: UIReturnKeyType, keyboardType: UIKeyboardType, secure: Bool, borderStyle: UITextBorderStyle, autoCapitalization: UITextAutocapitalizationType, keyboardAppearance: UIKeyboardAppearance, enablesReturnKeyAutomatically: Bool, clearButtonMode: UITextFieldViewMode, autoCorrectionType: UITextAutocorrectionType, delegate: UITextFieldDelegate?)
     {
         self.init(frame: frame)
         self.borderStyle = borderStyle
