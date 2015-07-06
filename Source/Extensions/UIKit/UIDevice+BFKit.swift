@@ -411,7 +411,7 @@ public extension UIDevice
     */
     public static func iOSVersion() -> Int
     {
-        return UIDevice.currentDevice().systemVersion.toInt()!
+        return UIDevice.currentDevice().systemVersion.substringToIndex(1).toInt()!
     }
     
     /**
