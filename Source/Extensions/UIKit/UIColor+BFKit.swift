@@ -389,6 +389,19 @@ public extension UIColor
     }
     
     /**
+    Create a color from HEX with alpha
+    
+    :param: hex   HEX value
+    :param: alpha Alpha value
+    
+    :returns: Returns the UIColor instance
+    */
+    public convenience init(hex: Int, alpha: CGFloat = 1.0)
+    {
+        self.init(red: CGFloat(((hex & 0xFF0000) >> 16)) / 255.0, green: CGFloat(((hex & 0xFF00) >> 8)) / 255.0, blue: CGFloat((hex & 0xFF)) / 255.0, alpha: alpha)
+    }
+    
+    /**
     Create a color from a HEX string.
     It supports the following type:
     - #RGB
@@ -464,7 +477,7 @@ public extension UIColor
     @availability(*, obsoleted=1.2.0, message="Use colorWithHex(_, alpha:)")
     public static func colorWithHex(hex: Int) -> UIColor
     {
-        return self.colorWithHex(hex, alpha: 1.0)
+        return UIColor(hex: hex)
     }
     
     /**
@@ -475,9 +488,10 @@ public extension UIColor
     
     :returns: Returns the UIColor instance
     */
+    @availability(*, deprecated=1.3.0, message="Use colorWithHex(_, alpha:)")
     public static func colorWithHex(hex: Int, alpha: CGFloat = 1.0) -> UIColor
     {
-        return UIColor(red: CGFloat(((hex & 0xFF0000) >> 16)) / 255.0, green: CGFloat(((hex & 0xFF00) >> 8)) / 255.0, blue: CGFloat((hex & 0xFF)) / 255.0, alpha: alpha)
+        return UIColor(hex: hex, alpha: alpha)
     }
     
     /**
