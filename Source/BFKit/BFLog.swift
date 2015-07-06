@@ -65,12 +65,8 @@ public func BFLog(var message: String, filename: String = __FILE__, function: St
     }
 }
 
-/**
-Get the log string
-
-:returns: Returns the log string
-*/
-public func BFLogString() -> String
+/// Get the log string
+public var BFLogString: String
 {
     if BFLogActive
     {
@@ -82,12 +78,8 @@ public func BFLogString() -> String
     }
 }
 
-/**
-Get the detailed log string
-
-:returns: Returns the detailed log string
-*/
-public func BFDetailedLogString() -> String
+/// Get the detailed log string
+public var BFDetailedLogString: String
 {
     if BFLogActive
     {
