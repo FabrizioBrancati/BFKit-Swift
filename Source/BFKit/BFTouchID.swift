@@ -68,7 +68,7 @@ public class BFTouchID
     :param: reason     Text to show in the alert
     :param: completion Completion handler. It returns the TouchID result, from the TouchIDResult enum
     */
-    public static func showTouchIDAuthenticationWithReason(reason: String, completion: (TouchIDResult) -> ())
+    public static func showTouchIDAuthenticationWithReason(reason: String, completion: (result: TouchIDResult) -> ())
     {
         let context: LAContext = LAContext()
         
@@ -78,22 +78,22 @@ public class BFTouchID
             context.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reason, reply: { (success: Bool, error: NSError!) -> Void in
                 if success
                 {
-                    completion(.Success)
+                    completion(result: .Success)
                 }
                 else
                 {
                     switch error.code
                     {
                     case LAError.AuthenticationFailed.rawValue:
-                        completion(.AuthenticationFailed)
+                        completion(result: .AuthenticationFailed)
                     case LAError.UserCancel.rawValue:
-                        completion(.UserCancel)
+                        completion(result: .UserCancel)
                     case LAError.UserFallback.rawValue:
-                        completion(.UserFallback)
+                        completion(result: .UserFallback)
                     case LAError.SystemCancel.rawValue:
-                        completion(.SystemCancel)
+                        completion(result: .SystemCancel)
                     default:
-                        completion(.Error)
+                        completion(result: .Error)
                     }
                 }
             })
@@ -103,13 +103,13 @@ public class BFTouchID
             switch error!.code
             {
             case LAError.PasscodeNotSet.rawValue:
-                completion(.PasscodeNotSet)
+                completion(result: .PasscodeNotSet)
             case LAError.TouchIDNotAvailable.rawValue:
-                completion(.NotAvailable)
+                completion(result: .NotAvailable)
             case LAError.TouchIDNotEnrolled.rawValue:
-                completion(.NotEnrolled)
+                completion(result: .NotEnrolled)
             default:
-                completion(.Error)
+                completion(result: .Error)
             }
         }
     }
