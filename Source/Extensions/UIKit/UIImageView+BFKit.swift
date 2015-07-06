@@ -109,4 +109,19 @@ public extension UIImageView
         self.init(image: image)
         self.center = center
     }
+    
+    /**
+    Create an UIImageView with an image and use it as a template with the given color
+    
+    :param: imageAsTemplate UIImageView image
+    :param: tintColor       UIImageView tint color
+    
+    :returns: Returns the created UIImageView
+    */
+    public convenience init(imageAsTemplate: UIImage, tintColor: UIColor)
+    {
+        self.init(image: imageAsTemplate)
+        let _imageAsTemplate = imageAsTemplate.imageWithRenderingMode(.AlwaysTemplate)
+        self.tintColor = tintColor
+    }
 }
