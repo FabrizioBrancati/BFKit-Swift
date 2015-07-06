@@ -37,7 +37,7 @@ public extension UIWindow
     
     :returns: Returns the screenshot as an UIImage
     */
-    @availability(*, deprecated=1.2.0, message="Use takeScreenshot(_ )")
+    @availability(*, obsoleted=1.2.0, message="Use takeScreenshot(_)")
     public func takeScreenshot() -> UIImage
     {
         return takeScreenshot(save: false)

@@ -348,7 +348,7 @@ public extension NSFileManager
     
     :returns: Returns true if the operation was successful, otherwise false
     */
-    @availability(*, deprecated=1.2.0, message="Use moveLocalFile(_, fromDirectory:, toDirectory:, withFolderName:)")
+    @availability(*, obsoleted=1.2.0, message="Use moveLocalFile(_, fromDirectory:, toDirectory:, withFolderName:)")
     public static func moveLocalFile(file: String, fromDirectory origin: DirectoryType, toDirectory destination: DirectoryType) -> Bool
     {
         return self.moveLocalFile(file, fromDirectory: origin, toDirectory: destination, withFolderName: nil)

@@ -118,7 +118,7 @@ public extension UIButton
     
     :returns: Returns the UIButton instance
     */
-    @availability(*, deprecated=1.2.0, message="Use UIButton(_, image:, highlightedImage:)")
+    @availability(*, obsoleted=1.2.0, message="Use UIButton(_, image:, highlightedImage:)")
     public convenience init(frame: CGRect, image: UIImage)
     {
         self.init(frame: frame, image: image, highlightedImage: nil)

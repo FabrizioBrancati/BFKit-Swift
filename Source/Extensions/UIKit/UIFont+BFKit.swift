@@ -692,7 +692,7 @@ public extension UIFont
     // MARK: - Init functions -
     
     /**
-    Craete an UIFont object from the given font name and size
+    Create an UIFont object from the given font name and size
     
     :param: fontName Font name
     :param: size     Size of the font
