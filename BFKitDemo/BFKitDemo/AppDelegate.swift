@@ -20,7 +20,8 @@ let UIKitArray = [  "UIButton",
                     "UITextField",
                     "UITextView",
                     "UIView",
-                    "UIWebView"]
+                    "UIWebView",
+                    "UIWindow"]
 
 let FoundationArray = [ "Array",
                         "Dictionary",
