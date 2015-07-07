@@ -36,9 +36,20 @@ public extension NSDictionary
     
     :returns: Returns the JSON as String or nil if error while parsing
     */
+    @availability(*, deprecated=1.3.0, message="Use dictionaryToJSON()")
     public func dictionaryToJson() -> String
     {
-        return NSDictionary.dictionaryToJson(self)
+        return self.dictionaryToJSON()
+    }
+    
+    /**
+    Convert self to JSON as String
+    
+    :returns: Returns the JSON as String or nil if error while parsing
+    */
+    public func dictionaryToJSON() -> String
+    {
+        return NSDictionary.dictionaryToJSON(self)
     }
     
     // MARK: - Class functions -
@@ -50,7 +61,20 @@ public extension NSDictionary
     
     :returns: Returns the JSON as String or nil if error while parsing
     */
+    @availability(*, deprecated=1.3.0, message="Use dictionaryToJSON(_ )")
     public static func dictionaryToJson(dictionary: NSDictionary) -> String
+    {
+        return self.dictionaryToJSON(dictionary)
+    }
+    
+    /**
+    Convert the given dictionary to JSON as String
+    
+    :param: dictionary The dictionary to be converted
+    
+    :returns: Returns the JSON as String or nil if error while parsing
+    */
+    public static func dictionaryToJSON(dictionary: NSDictionary) -> String
     {
         var json: NSString
         var error: NSError?
