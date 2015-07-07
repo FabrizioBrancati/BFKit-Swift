@@ -942,75 +942,7 @@ public extension UIImage
         return CGSizeMake(CGFloat(array[0].floatValue), CGFloat(array[1].floatValue))
     }
     
-    /**
-    Create an UIColor from a given string ("blue" or "ff00ff" or "#00ff00")
     
-    :param: colorString String with the color
-    
-    :returns: Returns the created UIColor
-    */
-    public static func colorForColorString(colorString: String?) -> UIColor
-    {
-        if colorString == nil
-        {
-            return UIColor.lightGrayColor()
-        }
-        
-        if UIColor.respondsToSelector(Selector(colorString!.lowercaseString.stringByAppendingString("Color")))
-        {
-            return self.getColorFromColorString(colorString!)
-        }
-        else
-        {
-            return UIColor(hex: colorString!)
-        }
-    }
-    
-    /**
-    Private, used the retrive the color from the string color ("blue" or "red")
-    
-    :param: color String with the color
-    
-    :returns: Returns the created UIColor
-    */
-    private static func getColorFromColorString(color: String) -> UIColor
-    {
-        switch color
-        {
-        case "black":
-            return UIColor.blackColor()
-        case "darkgray":
-            return UIColor.darkGrayColor()
-        case "lightgray":
-            return UIColor.lightGrayColor()
-        case "white":
-            return UIColor.whiteColor()
-        case "gray":
-            return UIColor.grayColor()
-        case "red":
-            return UIColor.redColor()
-        case "green":
-            return UIColor.greenColor()
-        case "blue":
-            return UIColor.blueColor()
-        case "cyan":
-            return UIColor.cyanColor()
-        case "yellow":
-            return UIColor.yellowColor()
-        case "magenta":
-            return UIColor.magentaColor()
-        case "orange":
-            return UIColor.orangeColor()
-        case "purple":
-            return UIColor.purpleColor()
-        case "brown":
-            return UIColor.brownColor()
-        case "clear":
-            return UIColor.clearColor()
-        default:
-            return UIColor.grayColor()
-        }
-    }
     
     // MARK: - Init functions -
     
@@ -1033,7 +965,7 @@ public extension UIImage
             var colorString: String
             if array.count >= 2
             {
-                color = UIImage.colorForColorString(array[1])
+                color = UIColor.colorForColorString(array[1])
             }
             
             size = UIImage.sizeForSizeString(sizeString)
