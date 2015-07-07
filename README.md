@@ -20,44 +20,44 @@ For example you can use every iOS font with just an enum!
 It also adds some useful method to some classes like:
 
 ###BFKit:
-- [BFApp](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Global%20Variables.html#/)
-- [BFButton](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Classes/BFButton.html)
-- [BFLog](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Functions.html#/)
-- [BFPassword](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Classes/BFPassword.html)
-- [BFSystemSound](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Classes/BFSystemSound.html)
-- [BFTouchID](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Classes/BFTouchID.html)
+- [BFApp](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Global%20Variables.html#/)
+- [BFButton](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Classes/BFButton.html)
+- [BFLog](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Functions.html#/)
+- [BFPassword](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Classes/BFPassword.html)
+- [BFSystemSound](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Classes/BFSystemSound.html)
+- [BFTouchID](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Classes/BFTouchID.html)
 
 ###Foundation:
-- [Array](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions.html#/s:Sa)
-- [Dictionary](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions.html#/s:VSs10Dictionary)
-- [NSArray](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/NSArray.html)
-- [NSDate](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/NSDate.html)
-- [NSDictionary](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/NSDictionary.html)
-- [NSFileManager](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/NSFileManager.html)
-- [NSMutableArray](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/NSMutableArray.html)
-- [NSMutableDictionary](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/NSMutableDictionary.html)
-- [NSNumber](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/NSNumber.html)
-- [NSObject](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/NSObject.html)
-- [NSProcessInfo](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions.html#/)
-- [NSString](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/NSString.html)
-- [NSThread](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Functions.html#/s:F5BFKit15runOnMainThreadFFT_T_T_)
-- [String](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/String.html)
+- [Array](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions.html#/s:Sa)
+- [Dictionary](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions.html#/s:VSs10Dictionary)
+- [NSArray](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/NSArray.html)
+- [NSDate](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/NSDate.html)
+- [NSDictionary](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/NSDictionary.html)
+- [NSFileManager](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/NSFileManager.html)
+- [NSMutableArray](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/NSMutableArray.html)
+- [NSMutableDictionary](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/NSMutableDictionary.html)
+- [NSNumber](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/NSNumber.html)
+- [NSObject](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/NSObject.html)
+- [NSProcessInfo](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions.html#/)
+- [NSString](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/NSString.html)
+- [NSThread](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Functions.html#/s:F5BFKit15runOnMainThreadFFT_T_T_)
+- [String](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/String.html)
 
 ###UIKit:
-- [UIButton](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/UIButton.html)
-- [UIColor](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/UIColor.html)
-- [UIDevice](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/UIDevice.html)
-- [UIFont](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/UIFont.html)
-- [UIImage](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/UIImage.html)
-- [UIImageView](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/UIImageView.html)
-- [UILabel](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/UILabel.html)
-- [UIScrollView](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/UIScrollView.html)
-- [UITableView](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/UITableView.html)
-- [UITextField](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/UITextField.html)
-- [UITextView](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/UITextView.html)
-- [UIView](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/UIView.html)
-- [UIWebView](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/UIWebView.html)
-- [UIWindow](http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/Extensions/UIWindow.html)
+- [UIButton](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/UIButton.html)
+- [UIColor](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/UIColor.html)
+- [UIDevice](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/UIDevice.html)
+- [UIFont](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/UIFont.html)
+- [UIImage](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/UIImage.html)
+- [UIImageView](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/UIImageView.html)
+- [UILabel](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/UILabel.html)
+- [UIScrollView](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/UIScrollView.html)
+- [UITableView](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/UITableView.html)
+- [UITextField](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/UITextField.html)
+- [UITextView](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/UITextView.html)
+- [UIView](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/UIView.html)
+- [UIWebView](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/UIWebView.html)
+- [UIWindow](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/UIWindow.html)
 
 Language support :it:
 =====================
@@ -150,6 +150,10 @@ Changelog :bookmark_tabs:
 =========================
 To see what has changed in recent version of BFKit-Swift, see the **[CHANGELOG](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/CHANGELOG.md)**
 
+Demo :wrench:
+=============
+Open and run the BFKitDemo project in Xcode and see BFKit in action!
+
 Todo :ballot_box_with_check:
 ============================
 - :heavy_minus_sign: Create instance methods for UIKit categories
@@ -161,7 +165,7 @@ Todo :ballot_box_with_check:
 - :heavy_check_mark: Add to CocoaPods
 - :heavy_check_mark: Make it as a Framework
 - :heavy_check_mark: Create a great documentation
-- :heavy_minus_sign: Create a DEMO App
+- :heavy_check_mark: Create a DEMO App
 
 Author :neckbeard:
 ==================
@@ -175,4 +179,4 @@ License :scroll:
 ================
 BFKit-Swift is available under the MIT license. See the **[LICENSE](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)** file for more info.
 
-[CocoaDocs]: http://cocoadocs.org/docsets/BFKit-Swift/1.2.0/
+[CocoaDocs]: http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/
