@@ -94,7 +94,7 @@ public extension UITableView
     
     :returns: Returns the created UITableView
     */
-    public convenience init(frame: CGRect, style: UITableViewStyle, cellSeparatorStyle: UITableViewCellSeparatorStyle, separatorInset: UIEdgeInsets, dataSource: UITableViewDataSource, delegate: UITableViewDelegate?)
+    public convenience init(frame: CGRect, style: UITableViewStyle, cellSeparatorStyle: UITableViewCellSeparatorStyle, separatorInset: UIEdgeInsets, dataSource: UITableViewDataSource?, delegate: UITableViewDelegate?)
     {
         self.init(frame: frame)
         self.separatorStyle = cellSeparatorStyle
