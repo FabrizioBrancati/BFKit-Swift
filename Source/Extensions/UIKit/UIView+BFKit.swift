@@ -212,8 +212,7 @@ public extension UIView
             gradient.startPoint = CGPointMake(1.0, 1.0)
             gradient.endPoint = CGPointMake(0.0, 0.0)
         default:
-            gradient.startPoint = CGPointMake(0.0, 0.5)
-            gradient.endPoint = CGPointMake(1.0, 0.5)
+            break
         }
         self.layer.insertSublayer(gradient, atIndex:0)
     }

@@ -120,10 +120,10 @@ public extension UIWindow
     :param: save       true to save, false to don't save
     :param: completion Completion handler with the UIImage
     */
-    public func takeScreenshotWithDelay(delay: Double, save: Bool, completion: (image: UIImage) -> ())
+    public func takeScreenshotWithDelay(delay: Double, save: Bool, completion: (screeshot: UIImage) -> ())
     {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-            completion(image: self.takeScreenshot(save: save))
+            completion(screeshot: self.takeScreenshot(save: save))
         })
     }
 }
