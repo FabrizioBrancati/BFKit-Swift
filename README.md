@@ -40,7 +40,7 @@ It also adds some useful method to some classes like:
 - [NSObject](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/NSObject.html)
 - [NSProcessInfo](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions.html#/)
 - [NSString](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/NSString.html)
-- [NSThread](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Functions.html#/s:F5BFKit15runOnMainThreadFFT_T_T_)
+- [NSThread](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/NSThread.html)
 - [String](http://cocoadocs.org/docsets/BFKit-Swift/1.3.0/Extensions/String.html)
 
 ###UIKit:
@@ -156,8 +156,7 @@ Open and run the BFKitDemo project in Xcode and see BFKit in action!
 
 Todo :ballot_box_with_check:
 ============================
-- :heavy_minus_sign: Create instance methods for UIKit categories
-- :heavy_minus_sign: Create a category for every UIKit element
+- :heavy_minus_sign: Create an extension for every UIKit element
 - :heavy_minus_sign: Create tests
 - :heavy_minus_sign: Add CPU App usage function in NSProcessInfo extension
 - :heavy_minus_sign: Add Hashing functions (MD5, SHA1, SHA256, SHA512) in String and NSString extension
