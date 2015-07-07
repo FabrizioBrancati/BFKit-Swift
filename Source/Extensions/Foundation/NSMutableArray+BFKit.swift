@@ -41,6 +41,30 @@ public extension NSMutableArray
         return super.reversedArray() as! NSMutableArray
     }
     
+    /**
+    Move an object from an index to another
+    
+    :param: from The index to move from
+    :param: to   The index to move to
+    */
+    public func moveObjectFromIndex(from: Int, toIndex to: Int)
+    {
+        if to != from
+        {
+            let obj: AnyObject? = self.safeObjectAtIndex(from)
+            self.removeObjectAtIndex(from)
+            
+            if to >= self.count
+            {
+                self.addObject(obj!)
+            }
+            else
+            {
+                self.insertObject(obj!, atIndex:to)
+            }
+        }
+    }
+    
     // MARK: - Class functions -
     
     /**
