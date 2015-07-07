@@ -40,7 +40,7 @@ public extension NSString
     
     :returns: Returns the substring
     */
-    public func searchCharStart(charStart: unichar, charEnd: unichar) -> NSString
+    public func searchCharStart(charStart: NSString, charEnd: NSString) -> NSString
     {
         return NSString.searchInString(self, charStart: charStart, charEnd: charEnd)
     }
@@ -197,18 +197,18 @@ public extension NSString
     
     :returns: Returns the substring
     */
-    public static func searchInString(string: NSString, charStart: unichar, charEnd: unichar) -> NSString
+    public static func searchInString(string: NSString, charStart: NSString, charEnd: NSString) -> NSString
     {
         var start = 0, stop = 0
         
         for var i = 0; i < string.length; i++
         {
-            if string.characterAtIndex(i) == charStart
+            if string.characterAtIndex(i) == charStart.characterAtIndex(0)
             {
                 start = i+1
                 i += 1
             }
-            if string.characterAtIndex(i) == charEnd
+            if string.characterAtIndex(i) == charEnd.characterAtIndex(0)
             {
                 stop = i
                 break
@@ -217,10 +217,7 @@ public extension NSString
         
         stop -= start
         
-        var string: NSString = string.substringFromIndex(start-1)
-        string = string.substringFromIndex(0)
-        
-        return string
+        return string.substringFromIndex(start).substringToIndex(stop)
     }
     
     /**
@@ -232,16 +229,9 @@ public extension NSString
     */
     public static func isEmail(email: NSString) -> Bool
     {
-        let emailRegEx: NSString =
-        "(?:[a-z0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[a-z0-9!#$%\\&'*+/=?\\^_`{|}"
-        "~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\"
-        "x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-"
-        "z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5"
-        "]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-"
-        "9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21"
-        "-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"
+        let emailRegEx: NSString = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
         
-        let regExPredicate: NSPredicate = NSPredicate(format: "SELF MATHCES %@", emailRegEx)
+        let regExPredicate: NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return regExPredicate.evaluateWithObject(email.lowercaseString)
     }
     
