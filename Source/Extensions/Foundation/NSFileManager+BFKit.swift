@@ -78,15 +78,15 @@ public extension NSFileManager
         switch directory
         {
         case .MainBundle:
-            finalPath = self.getBundlePathForFile(filename)
+            finalPath = self.getBundlePathForFile("\(filename).plist")
         case .Library:
-            finalPath = self.getLibraryDirectoryForFile(filename)
+            finalPath = self.getLibraryDirectoryForFile("\(filename).plist")
         case .Documents:
-            finalPath = self.getDocumentsDirectoryForFile(filename)
+            finalPath = self.getDocumentsDirectoryForFile("\(filename).plist")
         case .Cache:
-            finalPath = self.getCacheDirectoryForFile(filename)
+            finalPath = self.getCacheDirectoryForFile("\(filename).plist")
         default:
-            finalPath = self.getBundlePathForFile(filename)
+            break
         }
         
         return NSKeyedArchiver.archiveRootObject(array, toFile: finalPath)
@@ -115,7 +115,7 @@ public extension NSFileManager
         case .Cache:
             finalPath = self.getCacheDirectoryForFile(filename)
         default:
-            finalPath = self.getBundlePathForFile(filename)
+            break
         }
         
         return NSKeyedUnarchiver.unarchiveObjectWithFile(finalPath)
@@ -198,7 +198,7 @@ public extension NSFileManager
             case .Cache:
                 path = self.getCacheDirectoryForFile(file)
             default:
-                path = self.getBundlePathForFile(file)
+                break
             }
             
             if(NSFileManager.defaultManager().fileExistsAtPath(path))
@@ -238,7 +238,7 @@ public extension NSFileManager
             case .Cache:
                 path = self.getCacheDirectoryForFile(file)
             default:
-                path = self.getBundlePathForFile(file)
+                break
             }
             
             if(NSFileManager.defaultManager().fileExistsAtPath(path))
@@ -275,7 +275,7 @@ public extension NSFileManager
         case .Cache:
             originPath = self.getCacheDirectoryForFile(file)
         default:
-            originPath = self.getBundlePathForFile(file)
+            break
         }
         
         var destinationPath: String = ""
@@ -299,7 +299,7 @@ public extension NSFileManager
         case .Cache:
             destinationPath = self.getCacheDirectoryForFile(destinationPath)
         default:
-            destinationPath = self.getBundlePathForFile(destinationPath)
+            break
         }
         
         if folderName != nil
@@ -396,7 +396,7 @@ public extension NSFileManager
         case .Cache:
             originPath = self.getCacheDirectoryForFile(path)
         default:
-            originPath = self.getBundlePathForFile(path)
+            break
         }
         
         if NSFileManager.defaultManager().fileExistsAtPath(originPath)
