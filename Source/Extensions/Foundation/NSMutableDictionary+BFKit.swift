@@ -41,12 +41,12 @@ public extension NSMutableDictionary
     */
     public func safeSetObject(anObject: AnyObject?, forKey: NSCopying) -> Bool
     {
-        if let obj: AnyObject = anObject
+        if anObject == nil
         {
             return false
         }
         
-        self.setObject(anObject!, forKey: forKey)
+        self[forKey] = anObject!
         
         return true
     }
