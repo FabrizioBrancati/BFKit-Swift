@@ -20,7 +20,7 @@ For example you can use every iOS font with just an enum!
 It also adds some useful method to some classes like:
 
 ###BFKit:
-- [BFApp](http://cocoadocs.org/docsets/BFKit-Swift/1.3.1/BFApp.html)
+- [BFApp](http://cocoadocs.org/docsets/BFKit-Swift/1.3.1/Classes/BFApp.html)
 - [BFButton](http://cocoadocs.org/docsets/BFKit-Swift/1.3.1/Classes/BFButton.html)
 - [BFLog](http://cocoadocs.org/docsets/BFKit-Swift/1.3.1/Functions.html#/)
 - [BFPassword](http://cocoadocs.org/docsets/BFKit-Swift/1.3.1/Classes/BFPassword.html)
