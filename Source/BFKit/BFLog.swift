@@ -27,7 +27,7 @@
 import Foundation
 import UIKit
 
-/// Use this variable to activate o deactivate the BFLog function
+/// Use this variable to activate or deactivate the BFLog function
 public var BFLogActive: Bool = true
 
 /**
@@ -47,19 +47,12 @@ public func BFLog(var message: String, filename: String = __FILE__, function: St
             message += "\n"
         }
         
-        if BFLogClass.logString == ""
-        {
-            BFLogClass.logString = message
-        }
-        else
-        {
-            BFLogClass.logString += message
-        }
+        BFLogClass.logString += message
         
         let filenameNoExt = NSString(UTF8String: filename)!.lastPathComponent.stringByDeletingPathExtension
         let log = "(\(function)) (\(filenameNoExt):\(line) \(message)"
-        let timestamp = NSDate.dateInformationDescriptionWithInformation(NSDate().dateInformation(), dateSeparator: "-", usFormat: true)
-        print("\(timestamp) (\(function)) (\(filenameNoExt):\(line)) \(message)")
+        let timestamp = NSDate.dateInformationDescriptionWithInformation(NSDate().dateInformation(), dateSeparator: "-", usFormat: true, nanosecond: true)
+        print("\(timestamp) \(filenameNoExt):\(line) \(function): \(message)")
         
         BFLogClass.detailedLogString += log
     }
