@@ -143,6 +143,20 @@ public extension NSString
         return self.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!
     }
     
+    /**
+    Returns a new string containing matching regular expressions replaced with the template string
+    
+    :param: regexString The regex string
+    :param: replacement The replacement string
+    
+    :returns: Returns a new string containing matching regular expressions replaced with the template string
+    */
+    public func stringByReplacingWithRegex(regexString: NSString, withString replacement: NSString) -> NSString
+    {
+        let regex: NSRegularExpression = NSRegularExpression(pattern: regexString as String, options: .CaseInsensitive, error: nil)!
+        return regex.stringByReplacingMatchesInString(self as String, options: NSMatchingOptions(rawValue: 0), range:NSMakeRange(0, self.length), withTemplate: "")
+    }
+    
     // TODO: Missing hash functions
     
     /**

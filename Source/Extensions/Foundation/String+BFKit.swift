@@ -44,7 +44,7 @@ public extension String
     
     :returns: Returns the lenght of the string
     */
-    public func length() -> Int
+    public var length: Int
     {
         return count(self)
     }
@@ -70,7 +70,7 @@ public extension String
     */
     public func substringFromIndex(index: Int) -> String
     {
-        return self[advance(self.startIndex, index)...advance(self.startIndex, self.length()-1)]
+        return self[advance(self.startIndex, index)...advance(self.startIndex, self.length-1)]
     }
     
     /**
@@ -157,7 +157,7 @@ public extension String
     */
     public func sentenceCapitalizedString() -> String
     {
-        if self.length() == 0
+        if self.length == 0
         {
             return ""
         }
@@ -185,6 +185,20 @@ public extension String
         minutes = minutes.substringToIndex(2)
         
         return "\(day)/\(month)/\(year) \(hours):\(minutes)"
+    }
+    
+    /**
+    Returns a new string containing matching regular expressions replaced with the template string
+    
+    :param: regexString The regex string
+    :param: replacement The replacement string
+    
+    :returns: Returns a new string containing matching regular expressions replaced with the template string
+    */
+    public func stringByReplacingWithRegex(regexString: NSString, withString replacement: NSString) -> NSString
+    {
+        let regex: NSRegularExpression = NSRegularExpression(pattern: regexString as String, options: .CaseInsensitive, error: nil)!
+        return regex.stringByReplacingMatchesInString(self, options: NSMatchingOptions(rawValue: 0), range:NSMakeRange(0, self.length), withTemplate: "")
     }
     
     /**
@@ -255,7 +269,7 @@ public extension String
     {
         var start = 0, stop = 0
         
-        for var i = 0; i < string.length(); i++
+        for var i = 0; i < string.length; i++
         {
             if string.characterAtIndex(i) == charStart
             {
