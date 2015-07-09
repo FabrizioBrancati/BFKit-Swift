@@ -27,6 +27,11 @@
 import Foundation
 import UIKit
 
+/// Used to store the BFHasBeenOpened in defaults
+private let BFHasBeenOpened = "BFHasBeenOpened"
+/// Used to store the BFHasBeenOpenedForCurrentVersion in defaults
+private let BFHasBeenOpenedForCurrentVersion = "BFHasBeenOpened\(APP_VERSION)"
+
 /// Get App name
 public let APP_NAME: String = NSBundle(forClass: BFApp.self).infoDictionary!["CFBundleDisplayName"] as! String
 
@@ -51,7 +56,43 @@ public func BFLocalizedString(key: String, _ comment: String? = nil) -> String
 //let APP_DELEGATE = UIApplication.sharedApplication().delegate as! AppDelegate
 
 /// This class adds some useful functions for the App
-private class BFApp: NSObject
+public class BFApp
 {
-   
+    /**
+    Executes a block on first start of the App.
+    Remember to execute UI instuctions on main thread
+    
+    :param: block The block to execute, returns isFirstStart
+    */
+    public static func onFirstStart(block: (isFirstStart: Bool) -> ())
+    {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let hasBeenOpened: Bool = defaults.boolForKey(BFHasBeenOpened)
+        if hasBeenOpened == false
+        {
+            defaults.setBool(true, forKey: BFHasBeenOpened)
+            defaults.synchronize()
+        }
+        
+        block(isFirstStart: !hasBeenOpened)
+    }
+    
+    /**
+    Executes a block on first start of the App for current version.
+    Remember to execute UI instuctions on main thread
+    
+    :param: block The block to execute, returns isFirstStartForCurrentVersion
+    */
+    public static func onFirstStartForCurrentVersion(block: (isFirstStartForCurrentVersion: Bool) -> ())
+    {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let hasBeenOpenedForCurrentVersion: Bool = defaults.boolForKey(BFHasBeenOpenedForCurrentVersion)
+        if hasBeenOpenedForCurrentVersion == false
+        {
+            defaults.setBool(true, forKey: BFHasBeenOpenedForCurrentVersion)
+            defaults.synchronize()
+        }
+        
+        block(isFirstStartForCurrentVersion: !hasBeenOpenedForCurrentVersion)
+    }
 }
