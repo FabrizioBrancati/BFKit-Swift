@@ -67,6 +67,17 @@ class DetailViewController: UIViewController
             let openString = BFLocalizedString("OPEN")
             BFLog("Localized string from BFKit: \(openString)")
             
+            BFApp.onFirstStart({ (isFirstStart) -> () in
+                if isFirstStart
+                {
+                    BFLog("Is first start!")
+                }
+                else
+                {
+                    BFLog("Is not first start!")
+                }
+            })
+            
             let textView: UITextView = UITextView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), text: BFLogString, font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Left, dataDetectorTypes: .All, editable: false, selectable: false, returnType: .Default, keyboardType: .Default, secure: false, autoCapitalization: .None, keyboardAppearance: .Default, enablesReturnKeyAutomatically: true, autoCorrectionType: .Default, delegate: nil)
             self.view.addSubview(textView)
         case .BFButton:
