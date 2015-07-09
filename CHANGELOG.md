@@ -1,5 +1,12 @@
 Changelog
 =========
+###Version 1.3.1
+- Added ```onFirstStart``` and ```onFirstStartForCurrentVersion``` in BFApp class
+- Added ```stringByReplacingWithRegex:withString:``` in NSString and String extensions
+- BFLog now prints: ```timestamp filename:line function message```
+- NSDate extension now has ```nanosecond``` and use ```autoupdatingCurrentCalendar```
+- Bug fix in DEMO App
+
 ###Version 1.3.0
 - Added a DEMO App
 - Added ```init(imageAsTemplate:, tintColor:)``` to create UIImageView with a template image
