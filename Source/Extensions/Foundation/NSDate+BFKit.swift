@@ -36,22 +36,24 @@ public extension NSDate
     */
     public struct BFDateInformation
     {
-        /// Day of the year
-        var day = 0
-        /// Month of the year
-        var month = 0
         /// Year
         var year = 0
+        /// Month of the year
+        var month = 0
+        /// Day of the month
+        var day = 0
         
         /// Day of the week
         var weekday = 0
         
-        /// Minute of the day
-        var minute = 0
         /// Hour of the day
         var hour = 0
-        /// Second of the day
+        /// Minute of the hour
+        var minute = 0
+        /// Second of the minute
         var second = 0
+        /// Nanosecond of the second
+        var nanosecond = 0
     }
     
     // MARK: - Instance functions -
@@ -67,9 +69,9 @@ public extension NSDate
     {
         var info = BFDateInformation()
         
-        let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
-        gregorian?.timeZone = timeZone
-        let comp = gregorian!.components(NSCalendarUnit(UInt.max), fromDate: self)
+        let calendar = NSCalendar.autoupdatingCurrentCalendar()
+        calendar.timeZone = timeZone
+        let comp = calendar.components(NSCalendarUnit(UInt.max), fromDate: self)
         
         info.day = comp.day
         info.month = comp.month
@@ -78,6 +80,7 @@ public extension NSDate
         info.hour = comp.hour
         info.minute = comp.minute
         info.second = comp.second
+        info.nanosecond = comp.nanosecond
         
         info.weekday = comp.weekday
         
@@ -91,11 +94,11 @@ public extension NSDate
     */
     public func month() -> NSDate
     {
-        let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
-        let comp = gregorian!.components(.CalendarUnitYear | .CalendarUnitMonth, fromDate: self)
+        let calendar = NSCalendar.autoupdatingCurrentCalendar()
+        let comp = calendar.components(.CalendarUnitYear | .CalendarUnitMonth, fromDate: self)
         
         comp.setValue(1, forComponent: .CalendarUnitDay)
-        let date = gregorian?.dateFromComponents(comp)
+        let date = calendar.dateFromComponents(comp)
         return date!
     }
     
@@ -113,8 +116,8 @@ public extension NSDate
     */
     public func weekday() -> Int
     {
-        let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
-        let comp = gregorian!.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitWeekday, fromDate: self)
+        let calendar = NSCalendar.autoupdatingCurrentCalendar()
+        let comp = calendar.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitWeekday, fromDate: self)
         
         return comp.weekday
     }
@@ -161,10 +164,10 @@ public extension NSDate
     */
     private func timelessDate() -> NSDate
     {
-        let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
-        let comp = gregorian!.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: self)
+        let calendar = NSCalendar.autoupdatingCurrentCalendar()
+        let comp = calendar.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: self)
         
-        return gregorian!.dateFromComponents(comp)!
+        return calendar.dateFromComponents(comp)!
     }
     
     /**
@@ -174,10 +177,10 @@ public extension NSDate
     */
     private func monthlessDate() -> NSDate
     {
-        let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
-        let comp = gregorian!.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitWeekday, fromDate: self)
+        let calendar = NSCalendar.autoupdatingCurrentCalendar()
+        let comp = calendar.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitWeekday, fromDate: self)
         
-        return gregorian!.dateFromComponents(comp)!
+        return calendar.dateFromComponents(comp)!
     }
     
     /**
@@ -189,7 +192,7 @@ public extension NSDate
     */
     public func isSameDay(anotherDate: NSDate) -> Bool
     {
-        let calendar = NSCalendar.currentCalendar()
+        let calendar = NSCalendar.autoupdatingCurrentCalendar()
         let components1 = calendar.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: self)
         let components2 = calendar.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: anotherDate)
         
@@ -205,8 +208,8 @@ public extension NSDate
     */
     public func monthsBetweenDate(toDate: NSDate) -> Int
     {
-        let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
-        let components = gregorian!.components(.CalendarUnitMonth, fromDate: self.monthlessDate(), toDate: toDate.monthlessDate(), options: NSCalendarOptions.WrapComponents)
+        let calendar = NSCalendar.autoupdatingCurrentCalendar()
+        let components = calendar.components(.CalendarUnitMonth, fromDate: self.monthlessDate(), toDate: toDate.monthlessDate(), options: NSCalendarOptions.WrapComponents)
         
         return abs(components.month)
     }
@@ -222,18 +225,6 @@ public extension NSDate
     {
         let time: NSTimeInterval = self.timeIntervalSinceDate(anotherDate)
         return Int(abs(time / 60 / 60 / 24))
-        
-        /*var fromDate: NSDate? = nil
-        var toDate: NSDate? = nil
-        var duration: NSTimeInterval = 0
-        
-        let gregorian = NSCalendar.init(identifier: NSCalendarIdentifierGregorian)
-        gregorian!.rangeOfUnit(.CalendarUnitDay, startDate: &fromDate, interval: &duration, forDate: self)
-        gregorian!.rangeOfUnit(.CalendarUnitDay, startDate: &toDate, interval: &duration, forDate: anotherDate)
-        
-        let components = gregorian!.components(.CalendarUnitDay, fromDate: fromDate!, toDate: toDate!, options: .WrapComponents)
-        
-        return abs(components.day)*/
     }
     
     /**
@@ -256,11 +247,6 @@ public extension NSDate
     public func dateByAddingDays(days: Int) -> NSDate
     {
         return self.dateByAddingTimeInterval(NSTimeInterval(days * 24 * 60 * 60))
-        
-        /*var comp = NSDateComponents()
-        comp.day = days
-        
-        return NSCalendar.currentCalendar().dateByAddingComponents(comp, toDate: self, options: .WrapComponents)!*/
     }
     
     /**
@@ -323,8 +309,8 @@ public extension NSDate
     */
     public static func dateFromDateInformation(info: BFDateInformation, timeZone: NSTimeZone = NSTimeZone.systemTimeZone()) -> NSDate
     {
-        let gregorian = NSCalendar(identifier: NSCalendarIdentifierGregorian)
-        let comp = gregorian!.components(.CalendarUnitYear | .CalendarUnitMonth, fromDate:NSDate())
+        let calendar = NSCalendar.autoupdatingCurrentCalendar()
+        let comp = calendar.components(.CalendarUnitYear | .CalendarUnitMonth, fromDate:NSDate())
         
         comp.setValue(info.day, forComponent:.CalendarUnitDay)
         comp.setValue(info.month, forComponent:.CalendarUnitMonth)
@@ -333,10 +319,11 @@ public extension NSDate
         comp.setValue(info.hour, forComponent:.CalendarUnitHour)
         comp.setValue(info.minute, forComponent:.CalendarUnitMinute)
         comp.setValue(info.second, forComponent:.CalendarUnitSecond)
+        comp.setValue(info.nanosecond, forComponent:.CalendarUnitNanosecond)
         
         comp.setValue(0, forComponent:.CalendarUnitTimeZone)
         
-        return gregorian!.dateFromComponents(comp)!
+        return calendar.dateFromComponents(comp)!
     }
     
     /**
@@ -422,18 +409,28 @@ public extension NSDate
     :param: info          The BFDateInformation to be formatted
     :param: dateSeparator The string to be used as date separator
     :param: usFormat      Set if the timestamp is in US format or not
+    :param: nanosecond    Set if the timestamp has to have the nanosecond
     
-    :returns: Returns a NSString in the following format (dateSeparator = "/" and usFormat to NO). D/M/Y H:M:S. Example: 15/10/2013 10:38:43
+    :returns: Returns a String in the following format (dateSeparator = "/", usFormat to false and nanosecond to false). D/M/Y H:M:S. Example: 15/10/2013 10:38:43
     */
-    public static func dateInformationDescriptionWithInformation(info: BFDateInformation, dateSeparator: String = "/", usFormat: Bool = false) -> String
+    public static func dateInformationDescriptionWithInformation(info: BFDateInformation, dateSeparator: String = "/", usFormat: Bool = false, nanosecond: Bool = false) -> String
     {
-        if(usFormat)
+        var description: String
+        
+        if usFormat
         {
-            return String(format:"%04li%@%02li%@%02li %02li:%02li:%02li", info.year, dateSeparator, info.month, dateSeparator, info.day, info.hour, info.minute, info.second)
+            description = String(format: "%04li%@%02li%@%02li %02li:%02li:%02li", info.year, dateSeparator, info.month, dateSeparator, info.day, info.hour, info.minute, info.second)
         }
         else
         {
-            return String(format: "%02li%@%02li%@%04li %02li:%02li:%02li", info.month, dateSeparator, info.day, dateSeparator, info.year, info.hour, info.minute, info.second)
+            description = String(format: "%02li%@%02li%@%04li %02li:%02li:%02li", info.month, dateSeparator, info.day, dateSeparator, info.year, info.hour, info.minute, info.second)
         }
+        
+        if nanosecond
+        {
+            description += String(format: ":%03li", info.nanosecond / 1000000)
+        }
+        
+        return description
     }
 }
