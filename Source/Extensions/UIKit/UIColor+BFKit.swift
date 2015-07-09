@@ -416,7 +416,7 @@ public extension UIColor
     {
         let colorString: String = hexString.stringByReplacingOccurrencesOfString("#", withString: "").uppercaseString
         var alpha: CGFloat = 0.0, red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0
-        switch colorString.length()
+        switch colorString.length
         {
         case 3: // #RGB
             alpha = 1.0
