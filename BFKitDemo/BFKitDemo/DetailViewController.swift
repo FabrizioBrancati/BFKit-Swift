@@ -400,6 +400,8 @@ class DetailViewController: UIViewController
                 screenshotView.createRectShadowWithOffset(CGSizeZero, opacity: 10, radius: 10)
                 self.view.addSubview(screenshotView)
             })
+            
+            BFShowTouchOnScreen()
         case .Array:
             scrollView.removeFromSuperview()
             
@@ -591,6 +593,13 @@ class DetailViewController: UIViewController
         default:
             break
         }
+    }
+    
+    override func viewWillDisappear(animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+        
+        BFHideTouchOnScreen()
     }
     
     func prepareForDetail(detailTypeString: String)
