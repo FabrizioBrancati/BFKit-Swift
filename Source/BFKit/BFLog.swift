@@ -27,8 +27,12 @@
 import Foundation
 import UIKit
 
+// MARK: - Global variables -
+
 /// Use this variable to activate or deactivate the BFLog function
 public var BFLogActive: Bool = true
+
+// MARK: - Global functions -
 
 /**
 Exented NSLog

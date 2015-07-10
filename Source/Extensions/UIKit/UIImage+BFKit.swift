@@ -827,103 +827,6 @@ public extension UIImage
     
     // MARK: - Class functions -
     
-    // MARK: First attempt to use UIImage(named: name) to create dummy images (Failed)
-    /*private static func sizeForSizeString(sizeString: String) -> CGSize
-    {
-        let array: Array = sizeString.componentsSeparatedByString("x")
-        if array.count != 2
-        {
-            return CGSizeZero
-        }
-        
-        return CGSizeMake(CGFloat(array[0].floatValue), CGFloat(array[1].floatValue))
-    }
-    
-    private static func colorForColorString(colorString: String?) -> UIColor
-    {
-        if colorString == nil
-        {
-            return UIColor.lightGrayColor()
-        }
-        
-        let colorSelector = Selector(colorString!.stringByAppendingString("Color"))
-        if UIColor.respondsToSelector(colorSelector)
-        {
-            return UIColor.forwardingTargetForSelector(colorSelector) as! UIColor
-        }
-        else
-        {
-            return UIColor(hex: colorString!)
-        }
-    }
-    
-    private static var predicate: dispatch_once_t = 0
-    
-    public override class func initialize()
-    {
-        dispatch_once(&predicate) {
-            let originalSelector = Selector("named:")
-            let swizzledSelector = Selector("dummyImageNamed:")
-            
-            let originalMethod = class_getClassMethod(self, originalSelector)
-            let swizzledMethod = class_getClassMethod(self, swizzledSelector)
-            method_exchangeImplementations(originalMethod, swizzledMethod)
-        }
-    }
-    
-    static func dummyImageNamed(name: String) -> UIImage?
-    {
-        var result: UIImage
-        
-        let array: Array = name.componentsSeparatedByString(".")
-        if array[0].lowercaseString == "dummy"
-        {
-            let sizeString: String? = array[1]
-            if sizeString == nil
-            {
-                return nil
-            }
-            
-            var colorString: String? = nil
-            if array.count >= 3
-            {
-                colorString = array[2]
-            }
-            
-            return self.dummyImageWithSize(sizeForSizeString(sizeString!), color:colorForColorString(colorString))
-        }
-        else
-        {
-            result = self.dummyImageNamed(name)!
-        }
-        
-        return result
-    }
-    
-    static func dummyImageWithSize(size: CGSize, color: UIColor) -> UIImage
-    {
-        UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.mainScreen().scale)
-        let context: CGContextRef = UIGraphicsGetCurrentContext()
-        
-        let rect: CGRect = CGRectMake(0.0, 0.0, size.width, size.height)
-        
-        color.setFill()
-        CGContextFillRect(context, rect)
-        
-        let sizeString: String = "\(Int(size.width)) x \(Int(size.height))"
-        let style: NSMutableParagraphStyle = NSParagraphStyle.defaultParagraphStyle() as! NSMutableParagraphStyle
-        style.alignment = .Center
-        style.minimumLineHeight = size.height / 2
-        let attributes: Dictionary = [NSParagraphStyleAttributeName : style]
-        sizeString.drawInRect(rect, withAttributes:attributes)
-        
-        let result: UIImage = UIGraphicsGetImageFromCurrentImageContext()
-        
-        UIGraphicsEndImageContext()
-        
-        return result
-    }*/
-    
     /**
     Private, create a CGSize with a given string (100x100)
     
@@ -941,8 +844,6 @@ public extension UIImage
         
         return CGSizeMake(CGFloat(array[0].floatValue), CGFloat(array[1].floatValue))
     }
-    
-    
     
     // MARK: - Init functions -
     

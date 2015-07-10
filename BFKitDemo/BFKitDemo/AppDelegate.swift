@@ -51,7 +51,7 @@ let InfoViewControllerSegueID = "InfoViewControllerSegueID"
 class AppDelegate: UIResponder, UIApplicationDelegate
 {
     // MARK: - Variables -
-
+    
     var window: UIWindow?
 
     // MARK: - Delegate functions -

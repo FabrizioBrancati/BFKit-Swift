@@ -50,7 +50,7 @@ public class BFButton: UIButton
     
     /// The animation on highlighted status
     public override var highlighted: Bool
-        {
+    {
         didSet(highlighted)
         {
             if highlighted == false
@@ -67,10 +67,10 @@ public class BFButton: UIButton
                 UIView.animateWithDuration(NSTimeInterval(self.fadeDuration), animations: {
                     self.overlayImgView.alpha = 0
                 }, completion: { (completed) in
-                        if completed
-                        {
-                            self.overlayImgView.removeFromSuperview()
-                        }
+                    if completed
+                    {
+                        self.overlayImgView.removeFromSuperview()
+                    }
                 })
             }
         }
