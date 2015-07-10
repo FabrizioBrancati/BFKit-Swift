@@ -52,8 +52,8 @@ public func BFLocalizedString(key: String, _ comment: String? = nil) -> String
     return NSBundle(forClass: BFApp.self).localizedStringForKey(key, value: key, table: "BFKit")
 }
 
-/// Get AppDelegate
-//let APP_DELEGATE = UIApplication.sharedApplication().delegate as! AppDelegate
+/// Get AppDelegate (To use it, cast to AppDelegate with "as! AppDelegate")
+let APP_DELEGATE: UIApplicationDelegate? = UIApplication.sharedApplication().delegate
 
 /// This class adds some useful functions for the App
 public class BFApp
