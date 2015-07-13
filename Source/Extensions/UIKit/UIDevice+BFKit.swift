@@ -27,28 +27,10 @@
 import Foundation
 import UIKit
 
-// MARK: - Global variables -
+// MARK: - Private variables -
 
 /// Used to store the BFUniqueIdentifier in defaults
 private let BFUniqueIdentifierDefaultsKey = "BFUniqueIdentifier"
-
-/// Get the screen width
-public var SCREEN_WIDTH: CGFloat
-{
-    get
-    {
-        return (UIApplication.sharedApplication().statusBarOrientation == .Portrait || UIApplication.sharedApplication().statusBarOrientation == .PortraitUpsideDown) ? UIScreen.mainScreen().bounds.size.width : UIScreen.mainScreen().bounds.size.height
-    }
-}
-
-/// Get the screen height
-public var SCREEN_HEIGHT: CGFloat
-{
-    get
-    {
-        return (UIApplication.sharedApplication().statusBarOrientation == .Portrait || UIApplication.sharedApplication().statusBarOrientation == .PortraitUpsideDown) ? UIScreen.mainScreen().bounds.size.height : UIScreen.mainScreen().bounds.size.width
-    }
-}
 
 // MARK: - Global functions -
 
@@ -374,16 +356,10 @@ public extension UIDevice
     
     :returns: Returns true if it has a Retina display, false if not
     */
+    @availability(*, deprecated=1.4.0, message="Use isRetina() in UIScreen class")
     public static func isRetina() -> Bool
     {
-        if UIScreen.mainScreen().respondsToSelector("displayLinkWithTarget:selector:") && (UIScreen.mainScreen().scale == 2.0 || UIScreen.mainScreen().scale == 3.0)
-        {
-            return true
-        }
-        else
-        {
-            return false
-        }
+        return UIScreen.isRetina()
     }
     
     /**
@@ -391,16 +367,10 @@ public extension UIDevice
     
     :returns: Returns true if it has a Retina HD display, false if not
     */
+    @availability(*, deprecated=1.4.0, message="Use isRetinaHD() in UIScreen class")
     public static func isRetinaHD() -> Bool
     {
-        if UIScreen.mainScreen().respondsToSelector("displayLinkWithTarget:selector:") && UIScreen.mainScreen().scale == 3.0
-        {
-            return true
-        }
-        else
-        {
-            return false
-        }
+        return UIScreen.isRetinaHD()
     }
     
     /**
@@ -411,7 +381,7 @@ public extension UIDevice
     */
     public static func iOSVersion() -> Int
     {
-        return UIDevice.currentDevice().systemVersion.substringToIndex(1).toInt()!
+        return UIDevice.currentDevice().systemVersion.substringToCharacter(".")!.toInt()!
     }
     
     /**
