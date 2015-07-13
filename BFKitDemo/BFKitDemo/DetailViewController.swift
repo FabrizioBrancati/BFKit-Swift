@@ -16,6 +16,13 @@ class DetailViewController: UIViewController
     
     enum DetailType : String
     {
+        case BFApp = "BFApp"
+        case BFButton = "BFButton"
+        case BFLog = "BFLog"
+        case BFPassword = "BFPassword"
+        case BFDataStructures = "BFDataStructures"
+        case BFSystemSound = "BFSystemSound"
+        case BFTouchID = "BFTouchID"
         case UIButton = "UIButton"
         case UIColor = "UIColor"
         case UIDevice = "UIDevice"
@@ -23,10 +30,13 @@ class DetailViewController: UIViewController
         case UIImage = "UIImage"
         case UIImageView = "UIImageView"
         case UILabel = "UILabel"
+        case UINavigationBar = "UINavigationBar"
+        case UIScreen = "UIScreen"
         case UIScrollView = "UIScrollView"
         case UITableView = "UITableView"
         case UITextField = "UITextField"
         case UITextView = "UITextView"
+        case UIToolbar = "UIToolbar"
         case UIView = "UIView"
         case UIWebView = "UIWebView"
         case UIWindow = "UIWindow"
@@ -44,12 +54,6 @@ class DetailViewController: UIViewController
         case NSString = "NSString"
         case NSThread = "NSThread"
         case String = "String"
-        case BFApp = "BFApp"
-        case BFButton = "BFButton"
-        case BFLog = "BFLog"
-        case BFPassword = "BFPassword"
-        case BFSystemSound = "BFSystemSound"
-        case BFTouchID = "BFTouchID"
     }
     
     override func viewDidLoad()
@@ -105,6 +109,45 @@ class DetailViewController: UIViewController
             let pass2 = "kqi019ASC.v1|!-2"
             let passLevel2 = BFPassword.checkPasswordStrength(pass2)
             BFLog("Password: \(pass2) - Level: \(passLevel2.rawValue) of \(BFPassword.PasswordStrengthLevel.VerySecure.rawValue)")
+            
+            let textView: UITextView = UITextView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), text: BFLogString, font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Left, dataDetectorTypes: .All, editable: false, selectable: false, returnType: .Default, keyboardType: .Default, secure: false, autoCapitalization: .None, keyboardAppearance: .Default, enablesReturnKeyAutomatically: true, autoCorrectionType: .Default, delegate: nil)
+            self.view.addSubview(textView)
+        case .BFDataStructures:
+            scrollView.removeFromSuperview()
+            
+            BFLogClear()
+            
+            let stack: Stack = Stack()
+            stack.push("1")
+            stack.push("2")
+            BFLog("Push: 1\nPush: 2\nStack: \(stack)")
+            stack.pop()
+            BFLog("Pop\nStack: \(stack)")
+            stack.empty() ? BFLog("Is empty") : BFLog("Is not empty")
+            
+            let list: List = List()
+            list.insert("1")
+            list.insert("2")
+            list.insert("3")
+            BFLog("\n\nInsert: 1\nInsert: 2\nInsert: 3\nList: \(list)")
+            BFLog("Search index 0: \(list.search(0))")
+            let search = list.search("3")
+            BFLog("Search object \"3\": \(search)")
+            list.delete("3")
+            BFLog("Delete: 3\nList: \(list)")
+            list.delete(0)
+            BFLog("Delete index: 0\nList: \(list)")
+            
+            let queue: Queue = Queue()
+            queue.enqueue("1")
+            queue.enqueue("2")
+            queue.enqueue("3")
+            BFLog("\n\nEnqueue: 1\nEnqueue: 2\nEnqueue: 3\nQueue: \(queue)")
+            BFLog("Top: \(queue.top())")
+            queue.dequeue()
+            BFLog("Dequeue\nQueue: \(queue)")
+            queue.emptyQueue()
+            BFLog("Empty queue: \(queue)")
             
             let textView: UITextView = UITextView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), text: BFLogString, font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Left, dataDetectorTypes: .All, editable: false, selectable: false, returnType: .Default, keyboardType: .Default, secure: false, autoCapitalization: .None, keyboardAppearance: .Default, enablesReturnKeyAutomatically: true, autoCorrectionType: .Default, delegate: nil)
             self.view.addSubview(textView)
@@ -220,24 +263,6 @@ class DetailViewController: UIViewController
                 deviceInfoString += "Device: Simulator\n"
             }
             
-            if UIDevice.isRetina()
-            {
-                deviceInfoString += "Retina: Yes\n"
-            }
-            else
-            {
-                deviceInfoString += "Retina: No\n"
-            }
-            
-            if UIDevice.isRetinaHD()
-            {
-                deviceInfoString += "Retina HD: Yes\n"
-            }
-            else
-            {
-                deviceInfoString += "Retina HD: No\n"
-            }
-            
             deviceInfoString += "iOS Version: \(UIDevice.iOSVersion())\n"
             
             deviceInfoString += "RAM Size: \(UIDevice.ramSize() / 1024 / 1024) MB\n"
@@ -337,6 +362,38 @@ class DetailViewController: UIViewController
             
             let shadowLabel: UILabel = UILabel(frame: CGRectMake(20, 60, SCREEN_WIDTH - 40, 25), text: "Label with Shadow and other font", font: .HoeflerTextBlack, size: 12, color: UIColor ( red: 0.9218, green: 0.565, blue: 0.139, alpha: 1.0 ), alignment: .Center, lines: 1, shadowColor: UIColor.blackColor())
             scrollView.addSubview(shadowLabel)
+        case .UINavigationBar:
+            scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)
+            
+            self.navigationController?.navigationBar.setTransparent(true)
+            
+            let navigationInfoLabel: UILabel = UILabel(frame: CGRectMake(20, 20, SCREEN_WIDTH - 40, 200), text: "Check the transparent UINavigationBar", font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Left, lines: 8)
+            scrollView.addSubview(navigationInfoLabel)
+        case .UIScreen:
+            scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)
+            
+            var screenInfoString: String = ""
+            
+            if UIScreen.isRetina()
+            {
+                screenInfoString += "Retina: Yes\n"
+            }
+            else
+            {
+                screenInfoString += "Retina: No\n"
+            }
+            
+            if UIScreen.isRetinaHD()
+            {
+                screenInfoString += "Retina HD: Yes\n"
+            }
+            else
+            {
+                screenInfoString += "Retina HD: No\n"
+            }
+            
+            let screenInfoLabel: UILabel = UILabel(frame: CGRectMake(20, 20, SCREEN_WIDTH - 40, 200), text: screenInfoString, font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Left, lines: 8)
+            scrollView.addSubview(screenInfoLabel)
         case .UIScrollView:
             scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, 1000)
             
@@ -357,6 +414,13 @@ class DetailViewController: UIViewController
             
             let textView: UITextView = UITextView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), text: "This is a text view\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia blandit eros, sit amet aliquet tellus sollicitudin et. Nullam a ipsum nec libero hendrerit aliquet. Pellentesque faucibus pretium odio, sit amet accumsan arcu malesuada ut. Cras rhoncus volutpat nisl consequat eleifend. Donec tincidunt consectetur justo, molestie hendrerit justo dictum vel. Vestibulum nec commodo arcu. Donec sodales, augue vel fermentum ultrices, nunc augue vulputate tortor, sit amet eleifend nisl sapien eget magna. Donec aliquet mattis mi vel fermentum. Donec elementum pellentesque libero, in aliquam mauris luctus vel. In et vulputate nibh, id tristique ipsum. Donec fermentum ante et augue cursus aliquam. Vivamus nisi justo, pulvinar porta dolor id, tristique pretium augue. Nulla blandit felis felis, ut rutrum eros rutrum eu. Morbi mauris dolor, feugiat non placerat non, ultrices nec eros. Sed at eleifend felis. Mauris blandit feugiat nulla eget tempor. Nunc semper suscipit magna et semper. Suspendisse a arcu vitae diam scelerisque vestibulum ut eu dolor. Suspendisse accumsan venenatis leo, id maximus turpis. Pellentesque ac nunc augue. Etiam pharetra velit quis metus ornare vehicula. Cras eleifend sapien vitae est ultrices, a ullamcorper nibh scelerisque. Pellentesque tempor tortor dignissim, cursus tortor ac, sagittis felis. Praesent ultrices scelerisque odio, in fringilla sem tincidunt quis. Aenean sem augue, mattis luctus magna vel, accumsan volutpat felis. Nam blandit venenatis tincidunt. Pellentesque sodales lectus at orci tempus, vel pharetra massa vestibulum. Integer scelerisque ex aliquet quam molestie, a laoreet augue mattis. Etiam ut ex nisi. Mauris mollis tincidunt hendrerit. Nunc mi lectus, viverra ut nunc et, sagittis maximus augue. Pellentesque ullamcorper condimentum enim, vitae tempus risus. Maecenas facilisis lectus eget sem luctus porta. Etiam ut nunc non diam facilisis volutpat. Phasellus a augue feugiat, iaculis metus sit amet, pharetra lacus. Nulla facilisi. Maecenas sollicitudin justo ac auctor feugiat. Nunc ac dui sem. Aliquam fringilla porttitor massa, quis mattis nisl sodales a. Pellentesque iaculis non nisi aliquam malesuada. Aliquam erat volutpat. Donec arcu dui, rutrum ut tortor id, hendrerit aliquam ligula.", font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Left, dataDetectorTypes: .All, editable: false, selectable: false, returnType: .Default, keyboardType: .Default, secure: false, autoCapitalization: .None, keyboardAppearance: .Default, enablesReturnKeyAutomatically: true, autoCorrectionType: .Default, delegate: nil)
             self.view.addSubview(textView)
+        case .UIToolbar:
+            scrollView.removeFromSuperview()
+            
+            let toolbar: UIToolbar = UIToolbar(frame: CGRectMake(0, SCREEN_HEIGHT - 50 - 44, SCREEN_WIDTH, 44))
+            toolbar.setItems([UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: "barButtonItemsAction:"), UIBarButtonItem(barButtonSpaceType: .FlexibleSpace), UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "barButtonItemsAction:")], animated: true)
+            toolbar.setTransparent(true)
+            self.view.addSubview(toolbar)
         case .UIView:
             scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, 240 + SCREEN_WIDTH)
             
@@ -599,7 +663,15 @@ class DetailViewController: UIViewController
     {
         super.viewWillDisappear(animated)
         
-        BFHideTouchOnScreen()
+        switch detailType
+        {
+        case .UINavigationBar:
+            self.navigationController?.navigationBar.setTransparent(false)
+        case .UIWindow:
+            BFHideTouchOnScreen()
+        default:
+            break
+        }
     }
     
     func prepareForDetail(detailTypeString: String)
@@ -612,6 +684,11 @@ class DetailViewController: UIViewController
     func shakeButtonAction(button: UIButton)
     {
         button.shakeView()
+    }
+    
+    func barButtonItemsAction(button: UIBarButtonItem)
+    {
+        BFLog("Bar button pressed")
     }
     
     func threadFunciton()

@@ -15,6 +15,11 @@
 		4974E2591AED3DD50090F642 /* UserInterfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4974E2581AED3DD50090F642 /* UserInterfaceViewController.swift */; };
 		4974E25E1AED3DD50090F642 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4974E25D1AED3DD50090F642 /* Images.xcassets */; };
 		49919AA61B3B2D3C00A9E55D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49919AA51B3B2D3C00A9E55D /* Main.storyboard */; };
+		49ABFB661B51596E00D47D7A /* BFDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ABFB651B51596E00D47D7A /* BFDataStructures.swift */; };
+		49ABFB681B51834700D47D7A /* UIScreen+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ABFB671B51834700D47D7A /* UIScreen+BFKit.swift */; };
+		49ABFB6E1B52D00D00D47D7A /* UINavigationBar+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ABFB6D1B52D00D00D47D7A /* UINavigationBar+BFKit.swift */; };
+		49ABFB701B52D2FB00D47D7A /* UIToolbar+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ABFB6F1B52D2FB00D47D7A /* UIToolbar+BFKit.swift */; };
+		49ABFB721B53312600D47D7A /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ABFB711B53312600D47D7A /* UIBarButtonItem.swift */; };
 		49B1F9B61B41BA8E003FC78E /* BFApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9861B41BA8E003FC78E /* BFApp.swift */; };
 		49B1F9B71B41BA8E003FC78E /* BFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9871B41BA8E003FC78E /* BFButton.swift */; };
 		49B1F9B81B41BA8E003FC78E /* BFLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9881B41BA8E003FC78E /* BFLog.swift */; };
@@ -64,6 +69,11 @@
 		4974E2581AED3DD50090F642 /* UserInterfaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterfaceViewController.swift; sourceTree = "<group>"; };
 		4974E25D1AED3DD50090F642 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		49919AA51B3B2D3C00A9E55D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		49ABFB651B51596E00D47D7A /* BFDataStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFDataStructures.swift; sourceTree = "<group>"; };
+		49ABFB671B51834700D47D7A /* UIScreen+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+BFKit.swift"; sourceTree = "<group>"; };
+		49ABFB6D1B52D00D00D47D7A /* UINavigationBar+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+BFKit.swift"; sourceTree = "<group>"; };
+		49ABFB6F1B52D2FB00D47D7A /* UIToolbar+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIToolbar+BFKit.swift"; sourceTree = "<group>"; };
+		49ABFB711B53312600D47D7A /* UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
 		49B1F9861B41BA8E003FC78E /* BFApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFApp.swift; sourceTree = "<group>"; };
 		49B1F9871B41BA8E003FC78E /* BFButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFButton.swift; sourceTree = "<group>"; };
 		49B1F9881B41BA8E003FC78E /* BFLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFLog.swift; sourceTree = "<group>"; };
@@ -180,6 +190,7 @@
 				49B1F9871B41BA8E003FC78E /* BFButton.swift */,
 				49B1F9881B41BA8E003FC78E /* BFLog.swift */,
 				49B1F9891B41BA8E003FC78E /* BFPassword.swift */,
+				49ABFB651B51596E00D47D7A /* BFDataStructures.swift */,
 				49B1F98A1B41BA8E003FC78E /* BFSystemSound.swift */,
 				49B1F98B1B41BA8E003FC78E /* BFTouchID.swift */,
 			);
@@ -220,16 +231,20 @@
 			isa = PBXGroup;
 			children = (
 				49B1F99E1B41BA8E003FC78E /* UIButton+BFKit.swift */,
+				49ABFB711B53312600D47D7A /* UIBarButtonItem.swift */,
 				49B1F99F1B41BA8E003FC78E /* UIColor+BFKit.swift */,
 				49B1F9A01B41BA8E003FC78E /* UIDevice+BFKit.swift */,
 				49B1F9A11B41BA8E003FC78E /* UIFont+BFKit.swift */,
 				49B1F9A21B41BA8E003FC78E /* UIImage+BFKit.swift */,
 				49B1F9A31B41BA8E003FC78E /* UIImageView+BFKit.swift */,
 				49B1F9A41B41BA8E003FC78E /* UILabel+BFKit.swift */,
+				49ABFB6D1B52D00D00D47D7A /* UINavigationBar+BFKit.swift */,
+				49ABFB671B51834700D47D7A /* UIScreen+BFKit.swift */,
 				49B1F9A51B41BA8E003FC78E /* UIScrollView+BFKit.swift */,
 				49B1F9A61B41BA8E003FC78E /* UITableView+BFKit.swift */,
 				49B1F9A71B41BA8E003FC78E /* UITextField+BFKit.swift */,
 				49B1F9A81B41BA8E003FC78E /* UITextView+BFKit.swift */,
+				49ABFB6F1B52D2FB00D47D7A /* UIToolbar+BFKit.swift */,
 				49B1F9A91B41BA8E003FC78E /* UIView+BFKit.swift */,
 				49B1F9AA1B41BA8E003FC78E /* UIWebView+BFKit.swift */,
 				49B1F9AB1B41BA8E003FC78E /* UIWindow+BFKit.swift */,
@@ -339,10 +354,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49ABFB721B53312600D47D7A /* UIBarButtonItem.swift in Sources */,
 				49B1F9D41B41BA8E003FC78E /* UITextField+BFKit.swift in Sources */,
 				4974E2591AED3DD50090F642 /* UserInterfaceViewController.swift in Sources */,
 				49354AE71B3AF99600C05AED /* BFKitViewController.swift in Sources */,
 				49B1F9C41B41BA8E003FC78E /* NSMutableDictionary+BFKit.swift in Sources */,
+				49ABFB681B51834700D47D7A /* UIScreen+BFKit.swift in Sources */,
 				49B1F9C71B41BA8E003FC78E /* NSProcessInfo+BFKit.swift in Sources */,
 				49B1F9BE1B41BA8E003FC78E /* Dictionary+BFKit.swift in Sources */,
 				49B1F9B81B41BA8E003FC78E /* BFLog.swift in Sources */,
@@ -364,6 +381,7 @@
 				49B1F9C31B41BA8E003FC78E /* NSMutableArray+BFKit.swift in Sources */,
 				49B1F9D81B41BA8E003FC78E /* UIWindow+BFKit.swift in Sources */,
 				49B1F9BF1B41BA8E003FC78E /* NSArray+BFKit.swift in Sources */,
+				49ABFB661B51596E00D47D7A /* BFDataStructures.swift in Sources */,
 				49B1F9D61B41BA8E003FC78E /* UIView+BFKit.swift in Sources */,
 				49B1F9C21B41BA8E003FC78E /* NSFileManager+BFKit.swift in Sources */,
 				49B1F9D71B41BA8E003FC78E /* UIWebView+BFKit.swift in Sources */,
@@ -372,7 +390,9 @@
 				49354AE31B3AEC6B00C05AED /* DetailViewController.swift in Sources */,
 				49B1F9D01B41BA8E003FC78E /* UIImageView+BFKit.swift in Sources */,
 				49B1F9C51B41BA8E003FC78E /* NSNumber+BFKit.swift in Sources */,
+				49ABFB701B52D2FB00D47D7A /* UIToolbar+BFKit.swift in Sources */,
 				49B1F9CB1B41BA8E003FC78E /* UIButton+BFKit.swift in Sources */,
+				49ABFB6E1B52D00D00D47D7A /* UINavigationBar+BFKit.swift in Sources */,
 				49354AE51B3AF8BF00C05AED /* FoundationViewController.swift in Sources */,
 				49B1F9C91B41BA8E003FC78E /* NSThread+BFKit.swift in Sources */,
 				49B1F9CA1B41BA8E003FC78E /* String+BFKit.swift in Sources */,
@@ -497,7 +517,7 @@
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
 				);
-				OTHER_SWIFT_FLAGS = "-DDEBUG";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;

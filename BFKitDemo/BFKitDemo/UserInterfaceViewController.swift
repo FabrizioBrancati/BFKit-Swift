@@ -11,6 +11,7 @@ import UIKit
 class UserInterfaceViewController: UITableViewController
 {
     let CellIdentifier = "UIKitCell"
+    let CellIdentifierSubtitle = "UIKitCellSubtitle"
     
     override func viewDidLoad()
     {
@@ -50,7 +51,18 @@ class UserInterfaceViewController: UITableViewController
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        var cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as! UITableViewCell
+        var cell: UITableViewCell
+        
+        if UIKitArray[indexPath.row] == "UIToolbar"
+        {
+            cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifierSubtitle) as! UITableViewCell
+            
+            cell.detailTextLabel?.text = "+ UIBarButtonItem"
+        }
+        else
+        {
+            cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as! UITableViewCell
+        }
         
         cell.textLabel?.text = UIKitArray[indexPath.row]
         cell.tag = indexPath.row

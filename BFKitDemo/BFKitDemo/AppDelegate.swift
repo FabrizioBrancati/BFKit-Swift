@@ -8,6 +8,14 @@
 
 import UIKit
 
+let BFKitArray = [  "BFApp",
+                    "BFButton",
+                    "BFLog",
+                    "BFPassword",
+                    "BFDataStructures",
+                    "BFSystemSound",
+                    "BFTouchID"]
+
 let UIKitArray = [  "UIButton",
                     "UIColor",
                     "UIDevice",
@@ -15,10 +23,13 @@ let UIKitArray = [  "UIButton",
                     "UIImage",
                     "UIImageView",
                     "UILabel",
+                    "UINavigationBar",
+                    "UIScreen",
                     "UIScrollView",
                     "UITableView",
                     "UITextField",
                     "UITextView",
+                    "UIToolbar",
                     "UIView",
                     "UIWebView",
                     "UIWindow"]
@@ -37,13 +48,6 @@ let FoundationArray = [ "Array",
                         "NSString",
                         "NSThread",
                         "String"]
-
-let BFKitArray = [  "BFApp",
-                    "BFButton",
-                    "BFLog",
-                    "BFPassword",
-                    "BFSystemSound",
-                    "BFTouchID"]
 
 let InfoViewControllerSegueID = "InfoViewControllerSegueID"
 

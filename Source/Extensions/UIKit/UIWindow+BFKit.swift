@@ -27,7 +27,7 @@
 import Foundation
 import UIKit
 
-// MARK: - Global variables -
+// MARK: - Private variables -
 
 /// Private, touch images dictionary
 private var touchImages: Dictionary<Int, UIImageView> = [:]
