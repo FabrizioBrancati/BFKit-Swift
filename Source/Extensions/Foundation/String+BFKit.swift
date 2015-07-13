@@ -86,6 +86,69 @@ public extension String
     }
     
     /**
+    Creates a substring with a given range
+    
+    :param: range The range
+    
+    :returns: Returns the string between the range
+    */
+    public func substringWithRange(range: Range<Int>) -> String
+    {
+        let start = advance(self.startIndex, range.startIndex)
+        let end = advance(self.startIndex, range.endIndex)
+        
+        return self.substringWithRange(start..<end)
+    }
+    
+    /**
+    Creates a substring from the given character
+    
+    :param: character The character
+    
+    :returns: Returns the substring from character
+    */
+    public func substringFromCharacter(character: Character) -> String?
+    {
+        if let index: Int = self.indexOfCharacter(character)
+        {
+            return substringFromIndex(index)
+        }
+        return nil
+    }
+    
+    /**
+    Creates a substring to the given character
+    
+    :param: character The character
+    
+    :returns: Returns the substring to character
+    */
+    public func substringToCharacter(character: Character) -> String?
+    {
+        if let index: Int = self.indexOfCharacter(character)
+        {
+            return substringToIndex(index)
+        }
+        return nil
+    }
+    
+    /**
+    Returns the index of the given character
+    
+    :param: char The character to search
+    
+    :returns: Returns the index of the given character
+    */
+    public func indexOfCharacter(character: Character) -> Int?
+    {
+        if let index = find(self, character)
+        {
+            return distance(self.startIndex, index)
+        }
+        return nil
+    }
+    
+    /**
     Search in a given string a substring from the start char to the end char (excluded form final string).
     Example: "This is a test" with start char 'h' and end char 't' will return "is is a "
     
@@ -251,6 +314,35 @@ public extension String
     private func SHA512() -> String
     {
         return ""
+    }
+    
+    // MARK: - Subscript functions -
+    
+    /**
+    Returns the character at the given index
+    
+    :param: index The index
+    
+    :returns: Returns the character at the given index
+    */
+    public subscript(index: Int) -> Character
+    {
+        return self[advance(self.startIndex, index)]
+    }
+    
+    /**
+    Returns the string from a given range
+    
+    :param: range The range
+    
+    :returns: Returns the string from a given range
+    */
+    public subscript(range: Range<Int>) -> String
+    {
+        let start = advance(self.startIndex, range.startIndex)
+        let end = advance(self.startIndex, range.endIndex)
+        
+        return self[start..<end]
     }
     
     // MARK: - Class functions -
