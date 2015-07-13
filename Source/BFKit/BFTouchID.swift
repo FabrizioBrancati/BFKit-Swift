@@ -65,12 +65,15 @@ public class BFTouchID
     /**
     Shows the TouchID alert
     
-    :param: reason     Text to show in the alert
-    :param: completion Completion handler. It returns the TouchID result, from the TouchIDResult enum
+    :param: reason        Text to show in the alert
+    :param: fallbackTitle Default title "Enter Password" is used when this property is left nil. If set to empty string, the button will be hidden
+    :param: completion    Completion handler. It returns the TouchID result, from the TouchIDResult enum
     */
-    public static func showTouchIDAuthenticationWithReason(reason: String, completion: (result: TouchIDResult) -> ())
+    public static func showTouchIDAuthenticationWithReason(reason: String, fallbackTitle: String? = nil, completion: (result: TouchIDResult) -> ())
     {
         let context: LAContext = LAContext()
+        
+        context.localizedFallbackTitle = fallbackTitle
         
         var error: NSError?
         if context.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: &error)
