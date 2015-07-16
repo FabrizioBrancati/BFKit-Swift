@@ -30,7 +30,7 @@ import UIKit
 /// This extesion adds some useful functions to UINavigationBar
 public extension UINavigationBar
 {
-    //  MARK: - Class functions -
+    // MARK: - Instance functions -
     
     /**
     Set the UINavigationBar to transparent or not

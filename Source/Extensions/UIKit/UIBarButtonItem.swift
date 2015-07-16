@@ -30,6 +30,8 @@ import UIKit
 /// This extesion adds some useful functions to UIBarButtonItem
 public extension UIBarButtonItem
 {
+    //  MARK: - Init functions -
+    
     /**
     Create an UIBarButtonItem with type setted to FlexibleSpace or FixedSpace
     

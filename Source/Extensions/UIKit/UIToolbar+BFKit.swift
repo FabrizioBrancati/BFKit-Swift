@@ -30,6 +30,8 @@ import UIKit
 /// This extesion adds some useful functions to UIToolbar
 public extension UIToolbar
 {
+    // MARK: - Instance functions -
+    
     /**
     Set the UIToolbar transparent or not
     
