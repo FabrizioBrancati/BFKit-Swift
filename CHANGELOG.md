@@ -1,5 +1,9 @@
 Changelog
 =========
+###Version 1.4.1
+- Added support for iPod Touch 6G
+- Fixed a problem with Carthage project
+
 ###Version 1.4.0
 - Added APP_DELEGATE global variable
 - Added UINavigationBar extension

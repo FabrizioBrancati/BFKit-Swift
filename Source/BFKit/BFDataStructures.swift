@@ -43,7 +43,7 @@ public class Stack: Printable
     /**
     Returns if the Stack is empty or not
     
-    :returns: Return true if the Stack is empty, otherwise false
+    :returns: Returns true if the Stack is empty, otherwise false
     */
     public func empty() -> Bool
     {

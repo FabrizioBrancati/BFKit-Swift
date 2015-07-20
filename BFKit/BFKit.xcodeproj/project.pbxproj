@@ -198,11 +198,11 @@
 		49B1FA001B41BAEE003FC78E /* BFKit */ = {
 			isa = PBXGroup;
 			children = (
-				49ABFB731B53D58200D47D7A /* BFDataStructures.swift */,
 				49B1FA011B41BAEE003FC78E /* BFApp.swift */,
 				49B1FA021B41BAEE003FC78E /* BFButton.swift */,
 				49B1FA031B41BAEE003FC78E /* BFLog.swift */,
 				49B1FA041B41BAEE003FC78E /* BFPassword.swift */,
+				49ABFB731B53D58200D47D7A /* BFDataStructures.swift */,
 				49B1FA051B41BAEE003FC78E /* BFSystemSound.swift */,
 				49B1FA061B41BAEE003FC78E /* BFTouchID.swift */,
 			);
