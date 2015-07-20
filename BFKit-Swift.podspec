@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.platform         = :ios, "8.0"
   s.source           = {
                           :git => "https://github.com/FabrizioBrancati/BFKit-Swift.git",
-                          :tag => s.version.to_s
+                          :tag => "v1.4.1"
                        }
   s.source_files     = "Source/**/*.{swift}"
   s.resources        = "Source/Languages/**"
