@@ -331,6 +331,18 @@ public extension String
     }
     
     /**
+    Returns the character at the given index as String
+    
+    :param: index The index
+    
+    :returns: Returns the character at the given index as String
+    */
+    public subscript(index: Int) -> String
+    {
+            return String(self[index] as Character)
+    }
+    
+    /**
     Returns the string from a given range
     
     :param: range The range
