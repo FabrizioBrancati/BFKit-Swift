@@ -230,8 +230,8 @@
 		49B1F99D1B41BA8E003FC78E /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				49B1F99E1B41BA8E003FC78E /* UIButton+BFKit.swift */,
 				49ABFB711B53312600D47D7A /* UIBarButtonItem.swift */,
+				49B1F99E1B41BA8E003FC78E /* UIButton+BFKit.swift */,
 				49B1F99F1B41BA8E003FC78E /* UIColor+BFKit.swift */,
 				49B1F9A01B41BA8E003FC78E /* UIDevice+BFKit.swift */,
 				49B1F9A11B41BA8E003FC78E /* UIFont+BFKit.swift */,

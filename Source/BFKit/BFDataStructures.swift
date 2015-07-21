@@ -28,7 +28,7 @@ import Foundation
 
 // MARK: - Stack class -
 
-/// Primitive stack implementation
+/// Primitive Stack implementation
 public class Stack: Printable
 {
     /// Describe the Stack

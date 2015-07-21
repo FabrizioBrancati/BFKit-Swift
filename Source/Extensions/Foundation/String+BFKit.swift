@@ -137,7 +137,7 @@ public extension String
     
     :param: char The character to search
     
-    :returns: Returns the index of the given character
+    :returns: Returns the index of the given character, nil if not found
     */
     public func indexOfCharacter(character: Character) -> Int?
     {
