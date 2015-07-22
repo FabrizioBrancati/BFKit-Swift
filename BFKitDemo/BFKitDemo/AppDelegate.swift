@@ -10,9 +10,9 @@ import UIKit
 
 let BFKitArray = [  "BFApp",
                     "BFButton",
+                    "BFDataStructures",
                     "BFLog",
                     "BFPassword",
-                    "BFDataStructures",
                     "BFSystemSound",
                     "BFTouchID"]
 

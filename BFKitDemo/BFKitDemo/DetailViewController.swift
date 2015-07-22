@@ -18,9 +18,9 @@ class DetailViewController: UIViewController
     {
         case BFApp = "BFApp"
         case BFButton = "BFButton"
+        case BFDataStructures = "BFDataStructures"
         case BFLog = "BFLog"
         case BFPassword = "BFPassword"
-        case BFDataStructures = "BFDataStructures"
         case BFSystemSound = "BFSystemSound"
         case BFTouchID = "BFTouchID"
         case UIButton = "UIButton"
@@ -89,29 +89,6 @@ class DetailViewController: UIViewController
             
             let button: BFButton = BFButton(frame: CGRectMake(20, 84, SCREEN_WIDTH - 40, 50), image: UIImage(maskedText: "BFKit", font: .HelveticaNeueBold, fontSize: 20, imageSize: CGSizeMake(SCREEN_WIDTH, 50), backgroundColor: UIColor ( red: 0.9218, green: 0.565, blue: 0.139, alpha: 1.0 ))!, highlightedImage: UIImage(maskedText: "BFKit", font: .HelveticaNeueBold, fontSize: 20, imageSize: CGSizeMake(SCREEN_WIDTH, 50), backgroundColor: UIColor ( red: 0.301, green: 0.55, blue: 0.686, alpha: 1.0 ))!, fadeDuration: 1)
             self.view.addSubview(button)
-        case .BFLog:
-            scrollView.removeFromSuperview()
-            
-            BFLogClear()
-            
-            BFLog("This will be shown only if in DEBUG mode")
-            
-            let textView: UITextView = UITextView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), text: BFLogString, font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Left, dataDetectorTypes: .All, editable: false, selectable: false, returnType: .Default, keyboardType: .Default, secure: false, autoCapitalization: .None, keyboardAppearance: .Default, enablesReturnKeyAutomatically: true, autoCorrectionType: .Default, delegate: nil)
-            self.view.addSubview(textView)
-        case .BFPassword:
-            scrollView.removeFromSuperview()
-            
-            BFLogClear()
-            
-            let pass1 = "Password"
-            let passLevel1 = BFPassword.checkPasswordStrength(pass1)
-            BFLog("Password: \(pass1) - Level: \(passLevel1.rawValue) of \(BFPassword.PasswordStrengthLevel.VerySecure.rawValue)")
-            let pass2 = "kqi019ASC.v1|!-2"
-            let passLevel2 = BFPassword.checkPasswordStrength(pass2)
-            BFLog("Password: \(pass2) - Level: \(passLevel2.rawValue) of \(BFPassword.PasswordStrengthLevel.VerySecure.rawValue)")
-            
-            let textView: UITextView = UITextView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), text: BFLogString, font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Left, dataDetectorTypes: .All, editable: false, selectable: false, returnType: .Default, keyboardType: .Default, secure: false, autoCapitalization: .None, keyboardAppearance: .Default, enablesReturnKeyAutomatically: true, autoCorrectionType: .Default, delegate: nil)
-            self.view.addSubview(textView)
         case .BFDataStructures:
             scrollView.removeFromSuperview()
             
@@ -148,6 +125,29 @@ class DetailViewController: UIViewController
             BFLog("Dequeue\nQueue: \(queue)")
             queue.emptyQueue()
             BFLog("Empty queue: \(queue)")
+            
+            let textView: UITextView = UITextView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), text: BFLogString, font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Left, dataDetectorTypes: .All, editable: false, selectable: false, returnType: .Default, keyboardType: .Default, secure: false, autoCapitalization: .None, keyboardAppearance: .Default, enablesReturnKeyAutomatically: true, autoCorrectionType: .Default, delegate: nil)
+            self.view.addSubview(textView)
+        case .BFLog:
+            scrollView.removeFromSuperview()
+            
+            BFLogClear()
+            
+            BFLog("This will be shown only if in DEBUG mode")
+            
+            let textView: UITextView = UITextView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), text: BFLogString, font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Left, dataDetectorTypes: .All, editable: false, selectable: false, returnType: .Default, keyboardType: .Default, secure: false, autoCapitalization: .None, keyboardAppearance: .Default, enablesReturnKeyAutomatically: true, autoCorrectionType: .Default, delegate: nil)
+            self.view.addSubview(textView)
+        case .BFPassword:
+            scrollView.removeFromSuperview()
+            
+            BFLogClear()
+            
+            let pass1 = "Password"
+            let passLevel1 = BFPassword.checkPasswordStrength(pass1)
+            BFLog("Password: \(pass1) - Level: \(passLevel1.rawValue) of \(BFPassword.PasswordStrengthLevel.VerySecure.rawValue)")
+            let pass2 = "kqi019ASC.v1|!-2"
+            let passLevel2 = BFPassword.checkPasswordStrength(pass2)
+            BFLog("Password: \(pass2) - Level: \(passLevel2.rawValue) of \(BFPassword.PasswordStrengthLevel.VerySecure.rawValue)")
             
             let textView: UITextView = UITextView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), text: BFLogString, font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Left, dataDetectorTypes: .All, editable: false, selectable: false, returnType: .Default, keyboardType: .Default, secure: false, autoCapitalization: .None, keyboardAppearance: .Default, enablesReturnKeyAutomatically: true, autoCorrectionType: .Default, delegate: nil)
             self.view.addSubview(textView)
@@ -367,7 +367,7 @@ class DetailViewController: UIViewController
             
             self.navigationController?.navigationBar.setTransparent(true)
             
-            let navigationInfoLabel: UILabel = UILabel(frame: CGRectMake(20, 20, SCREEN_WIDTH - 40, 200), text: "Check the transparent UINavigationBar", font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Left, lines: 8)
+            let navigationInfoLabel: UILabel = UILabel(frame: CGRectMake(20, 20, SCREEN_WIDTH - 40, 200), text: "Check the transparent UINavigationBar 🔝", font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Left, lines: 1)
             scrollView.addSubview(navigationInfoLabel)
         case .UIScreen:
             scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)

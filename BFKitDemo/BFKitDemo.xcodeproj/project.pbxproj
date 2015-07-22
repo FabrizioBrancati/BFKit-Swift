@@ -188,9 +188,9 @@
 			children = (
 				49B1F9861B41BA8E003FC78E /* BFApp.swift */,
 				49B1F9871B41BA8E003FC78E /* BFButton.swift */,
+				49ABFB651B51596E00D47D7A /* BFDataStructures.swift */,
 				49B1F9881B41BA8E003FC78E /* BFLog.swift */,
 				49B1F9891B41BA8E003FC78E /* BFPassword.swift */,
-				49ABFB651B51596E00D47D7A /* BFDataStructures.swift */,
 				49B1F98A1B41BA8E003FC78E /* BFSystemSound.swift */,
 				49B1F98B1B41BA8E003FC78E /* BFTouchID.swift */,
 			);

@@ -5,16 +5,16 @@ Changelog
 - Fixed a problem with Carthage project
 
 ###Version 1.4.0
-- Added APP_DELEGATE global variable
+- Added ```APP_DELEGATE``` global variable
 - Added UINavigationBar extension
 - Added UIToolbar & UIBarButtonItem extensions
 - Added BFDataStructures class with primitive data structures
 - Added new substring, indexOf and subscript functions in String extension
-- Added fallbackTitle parameter in showTouchIDAuthenticationWithReason function in BFTouchID class
-- Added touch on screen with BFShowTouchOnScreen() and BFHideTouchOnScreen() functions
+- Added ```fallbackTitle``` parameter in ```showTouchIDAuthenticationWithReason``` function in BFTouchID class
+- Added touch on screen with ```BFShowTouchOnScreen()``` and ```BFHideTouchOnScreen()``` functions
 - Removed UIScreen functions from UIDevice extension and created UIScreen extension
-- Changed SCREEN_WIDTH & SCREEN_HEIGHT variables and Fixed #2. Thanks to @jiongge
-- Fixed iOSVersion function in UIDevice extension
+- Changed ```SCREEN_WIDTH``` & ```SCREEN_HEIGHT``` variables and Fixed #2. Thanks to @jiongge
+- Fixed ```iOSVersion``` function in UIDevice extension
 
 ###Version 1.3.1
 - Added ```onFirstStart``` and ```onFirstStartForCurrentVersion``` in BFApp class
