@@ -169,8 +169,6 @@ class DetailViewController: UIViewController
             let normalLabel: UILabel = UILabel(frame: CGRectMake(20, 20, SCREEN_WIDTH - 40, 50), text: "Waiting for Touch ID...", font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Center, lines: 2)
             scrollView.addSubview(normalLabel)
             
-            BFLog("\(scrollView)")
-            
             if SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO("8.0")
             {
                 BFTouchID.showTouchIDAuthenticationWithReason(BFLocalizedString("AUTHENTICATION"), completion: { (result) -> () in
@@ -178,11 +176,11 @@ class DetailViewController: UIViewController
                     {
                     case .Success:
                         runOnMainThread({
-                            normalLabel.text = "AUTHORIZED"
+                            normalLabel.text = BFLocalizedString("AUTHORIZED")
                         })
                     case .AuthenticationFailed:
                         runOnMainThread({
-                            normalLabel.text = "NOT_OWNER"
+                            normalLabel.text = BFLocalizedString("NOT_OWNER")
                         })
                     default:
                         runOnMainThread({

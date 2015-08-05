@@ -1,7 +1,6 @@
 <p align="center"><img src="http://github.fabriziobrancati.com/bfkit/resources/banner-swift.png" alt="BFKit Swift Banner"></p>
 
 [![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit-Swift.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit-Swift)
-[![Issues](https://img.shields.io/github/issues/FabrizioBrancati/BFKit-Swift.svg?style=flat)](https://github.com/FabrizioBrancati/BFKit-Swift/issues)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/BFKit-Swift.svg?style=flat)][CocoaDocs]
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)](https://developer.apple.com/swift/)
@@ -26,7 +25,7 @@ It also adds some useful method to some classes like:
 - [BFLog](http://cocoadocs.org/docsets/BFKit-Swift/1.4.1/Functions.html#/)
 - [BFPassword](http://cocoadocs.org/docsets/BFKit-Swift/1.4.1/Classes/BFPassword.html)
 - [BFSystemSound](http://cocoadocs.org/docsets/BFKit-Swift/1.4.1/Classes/BFSystemSound.html)
-- [BFTouchID](http://cocoadocs.org/docsets/BFKit-Swift/1.4.1/Classes/BFTouchID.html)
+- [BFTouchID](http://cocoadocs.org/docsets/BFKit-Swift/1.4.1/Classes/BFTouchID.html) (iOS 8 or later)
 
 ###Foundation:
 - [Array](http://cocoadocs.org/docsets/BFKit-Swift/1.4.1/Extensions.html#/s:Sa)
