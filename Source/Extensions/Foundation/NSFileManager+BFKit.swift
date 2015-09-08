@@ -423,14 +423,18 @@ public extension NSFileManager
     */
     public static func getSettings(settings: String, objectForKey: String) -> AnyObject?
     {
-        var path: String = self.getLibraryDirectoryForFile(String(format: "%@-Settings.plist", settings))
-        var loadedPlist: NSMutableDictionary = NSMutableDictionary(contentsOfFile: path)!
+        var path: String = self.getLibraryDirectoryForFile("")
+        path = path.stringByAppendingString("/Preferences/")
+        path = path.stringByAppendingString("\(settings)-Settings.plist")
         
+        var loadedPlist: NSMutableDictionary
         if NSFileManager.defaultManager().fileExistsAtPath(path)
         {
-            path = NSBundle.mainBundle().pathForResource(String(format: "%@-Settings", settings), ofType: "plist")!
-            self.moveLocalFile(String(format: "%@-Settings.plist", settings), fromDirectory: .MainBundle, toDirectory: .Library, withFolderName: "")
             loadedPlist = NSMutableDictionary(contentsOfFile: path)!
+        }
+        else
+        {
+            return nil
         }
         
         return loadedPlist[objectForKey]
@@ -447,14 +451,18 @@ public extension NSFileManager
     */
     public static func setSettings(settings: String, object: AnyObject, forKey objKey: String) -> Bool
     {
-        var path: String = self.getLibraryDirectoryForFile(String(format: "%@-Settings.plist", settings))
-        var loadedPlist: NSMutableDictionary = NSMutableDictionary(contentsOfFile: path)!
+        var path: String = self.getLibraryDirectoryForFile("")
+        path = path.stringByAppendingString("/Preferences/")
+        path = path.stringByAppendingString("\(settings)-Settings.plist")
         
+        var loadedPlist: NSMutableDictionary
         if NSFileManager.defaultManager().fileExistsAtPath(path)
         {
-            path = NSBundle.mainBundle().pathForResource(String(format: "%@-Settings", settings), ofType: "plist")!
-            self.moveLocalFile(String(format: "%@-Settings.plist", settings), fromDirectory: .MainBundle, toDirectory: .Library, withFolderName: "")
             loadedPlist = NSMutableDictionary(contentsOfFile: path)!
+        }
+        else
+        {
+            loadedPlist = NSMutableDictionary()
         }
         
         loadedPlist[objKey] = object
