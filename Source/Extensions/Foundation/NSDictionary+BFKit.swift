@@ -36,7 +36,7 @@ public extension NSDictionary
     
     :returns: Returns the JSON as String or nil if error while parsing
     */
-    @availability(*, deprecated=1.3.0, message="Use dictionaryToJSON()")
+    @available(*, deprecated=1.3.0, message="Use dictionaryToJSON()")
     public func dictionaryToJson() -> String
     {
         return self.dictionaryToJSON()
@@ -61,7 +61,7 @@ public extension NSDictionary
     
     :returns: Returns the JSON as String or nil if error while parsing
     */
-    @availability(*, deprecated=1.3.0, message="Use dictionaryToJSON(_ )")
+    @available(*, deprecated=1.3.0, message="Use dictionaryToJSON(_ )")
     public static func dictionaryToJson(dictionary: NSDictionary) -> String
     {
         return self.dictionaryToJSON(dictionary)

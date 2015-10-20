@@ -40,7 +40,7 @@ public extension UIButton
     
     :returns: Returns the UIButton instance
     */
-    @availability(*, obsoleted=1.2.0, message="Use UIButton(_, title:, backgroundImage:, highlightedBackgroundImage:)")
+    @available(*, obsoleted=1.2.0, message="Use UIButton(_, title:, backgroundImage:, highlightedBackgroundImage:)")
     public convenience init(frame: CGRect, title: String)
     {
         self.init(frame: frame, title: title, backgroundImage: nil, highlightedBackgroundImage: nil)
@@ -55,7 +55,7 @@ public extension UIButton
     
     :returns: Returns the UIButton instance
     */
-    @availability(*, obsoleted=1.2.0, message="Use UIButton(_, title:, backgroundImage:, highlightedBackgroundImage:)")
+    @available(*, obsoleted=1.2.0, message="Use UIButton(_, title:, backgroundImage:, highlightedBackgroundImage:)")
     public convenience init(frame: CGRect, title: String, backgroundImage: UIImage?)
     {
         self.init(frame: frame, title: title, backgroundImage: backgroundImage, highlightedBackgroundImage: nil)
@@ -118,7 +118,7 @@ public extension UIButton
     
     :returns: Returns the UIButton instance
     */
-    @availability(*, obsoleted=1.2.0, message="Use UIButton(_, image:, highlightedImage:)")
+    @available(*, obsoleted=1.2.0, message="Use UIButton(_, image:, highlightedImage:)")
     public convenience init(frame: CGRect, image: UIImage)
     {
         self.init(frame: frame, image: image, highlightedImage: nil)

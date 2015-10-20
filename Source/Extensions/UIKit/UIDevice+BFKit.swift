@@ -185,7 +185,7 @@ public extension UIDevice
     */
     public static func devicePlatformString() -> String
     {
-        var platform: String = self.devicePlatform()
+        let platform: String = self.devicePlatform()
         
         switch platform
         {
@@ -357,7 +357,7 @@ public extension UIDevice
     
     :returns: Returns true if it has a Retina display, false if not
     */
-    @availability(*, deprecated=1.4.0, message="Use isRetina() in UIScreen class")
+    @available(*, deprecated=1.4.0, message="Use isRetina() in UIScreen class")
     public static func isRetina() -> Bool
     {
         return UIScreen.isRetina()
@@ -368,7 +368,7 @@ public extension UIDevice
     
     :returns: Returns true if it has a Retina HD display, false if not
     */
-    @availability(*, deprecated=1.4.0, message="Use isRetinaHD() in UIScreen class")
+    @available(*, deprecated=1.4.0, message="Use isRetinaHD() in UIScreen class")
     public static func isRetinaHD() -> Bool
     {
         return UIScreen.isRetinaHD()
@@ -495,7 +495,7 @@ public extension UIDevice
         var uuid: String?
         if UIDevice.currentDevice().respondsToSelector("identifierForVendor")
         {
-            uuid = UIDevice.currentDevice().identifierForVendor.UUIDString
+            uuid = UIDevice.currentDevice().identifierForVendor!.UUIDString
         }
         else
         {

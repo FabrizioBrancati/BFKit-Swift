@@ -18,7 +18,7 @@ class UserInterfaceViewController: UITableViewController
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let infoButton: UIButton = UIButton.buttonWithType(.InfoLight) as! UIButton
+        let infoButton: UIButton = UIButton(type: .InfoLight)
         infoButton.addTarget(self, action: "showInfo:", forControlEvents: .TouchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: infoButton)
     }
@@ -55,13 +55,13 @@ class UserInterfaceViewController: UITableViewController
         
         if UIKitArray[indexPath.row] == "UIToolbar"
         {
-            cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifierSubtitle) as! UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifierSubtitle)!
             
             cell.detailTextLabel?.text = "+ UIBarButtonItem"
         }
         else
         {
-            cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as! UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier)!
         }
         
         cell.textLabel?.text = UIKitArray[indexPath.row]

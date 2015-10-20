@@ -27,7 +27,7 @@
 import Foundation
 
 /// This extension adds some useful functions to Array
-extension Array
+public extension Array
 {
     // MARK: - Instance functions -
     
@@ -38,7 +38,7 @@ extension Array
     
     :returns: Returns the object at a given index in safe mode (nil if self is empty or out of range)
     */
-    func safeObjectAtIndex(index: Int) -> T?
+    func safeObjectAtIndex(index: Int) -> Element?
     {
         if self.count > 0 && self.count > index
         {
@@ -55,9 +55,10 @@ extension Array
     
     :returns: Returns the JSON as String or nil if error while parsing
     */
-    func arrayToJSON() -> String
+    func arrayToJSON() throws -> String
     {
-        return Array.arrayToJSON(self as! AnyObject)
+        // TODO: Check it
+        return try Array.arrayToJSON(self as! AnyObject)
     }
     
     /**
@@ -67,7 +68,7 @@ extension Array
     
     :returns: Returns the object at a given index
     */
-    func objectAtCircleIndex(index: Int) -> T
+    func objectAtCircleIndex(index: Int) -> Element
     {
         return self[self.superCircle(index, size: self.count)]
     }
@@ -105,7 +106,7 @@ extension Array
     {
         if to != from
         {
-            var obj: T = self.safeObjectAtIndex(from)!
+            let obj: Element = self.safeObjectAtIndex(from)!
             self.removeAtIndex(from)
             
             if to >= self.count
@@ -150,18 +151,16 @@ extension Array
     
     :returns: Returns the JSON as String or nil if error while parsing
     */
-    static func arrayToJSON(array: AnyObject) -> String
+    static func arrayToJSON(array: AnyObject) throws -> String
     {
-        var error: NSError?
-        let data = NSJSONSerialization.dataWithJSONObject(array, options: nil, error: &error)
-        let string = NSString(data: data!, encoding: NSUTF8StringEncoding)
-        if error == nil
-        {
-            return NSString(data: data!, encoding: NSUTF8StringEncoding)! as String
-        }
-        else
-        {
-            return error!.localizedDescription
-        }
+        // TODO: Check it
+        /*do {
+            let data = try NSJSONSerialization.dataWithJSONObject(array, options: NSJSONWritingOptions())
+            return NSString(data: data, encoding: NSUTF8StringEncoding)! as String
+        } catch let error as NSError {
+            return error.localizedDescription
+        }*/
+        let data = try NSJSONSerialization.dataWithJSONObject(array, options: NSJSONWritingOptions())
+        return NSString(data: data, encoding: NSUTF8StringEncoding)! as String
     }
 }

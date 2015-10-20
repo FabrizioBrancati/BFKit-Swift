@@ -474,7 +474,7 @@ public extension UIColor
     
     :returns: Returns the UIColor instance
     */
-    @availability(*, obsoleted=1.2.0, message="Use colorWithHex(_, alpha:)")
+    @available(*, obsoleted=1.2.0, message="Use colorWithHex(_, alpha:)")
     public static func colorWithHex(hex: Int) -> UIColor
     {
         return UIColor(hex: hex)
@@ -488,7 +488,7 @@ public extension UIColor
     
     :returns: Returns the UIColor instance
     */
-    @availability(*, deprecated=1.3.0, message="Use colorWithHex(_, alpha:)")
+    @available(*, deprecated=1.3.0, message="Use colorWithHex(_, alpha:)")
     public static func colorWithHex(hex: Int, alpha: CGFloat = 1.0) -> UIColor
     {
         return UIColor(hex: hex, alpha: alpha)

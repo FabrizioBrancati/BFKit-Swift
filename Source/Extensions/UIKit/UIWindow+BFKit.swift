@@ -63,7 +63,7 @@ public extension UIWindow
     
     :returns: Returns the screenshot as an UIImage
     */
-    @availability(*, obsoleted=1.2.0, message="Use takeScreenshot(_)")
+    @available(*, obsoleted=1.2.0, message="Use takeScreenshot(_)")
     public func takeScreenshot() -> UIImage
     {
         return takeScreenshot(save: false)
@@ -76,7 +76,7 @@ public extension UIWindow
     
     :returns: Returns the screenshot as an UIImage
     */
-    public func takeScreenshot(save: Bool = false) -> UIImage
+    public func takeScreenshot(save save: Bool = false) -> UIImage
     {
         let ignoreOrientation: Bool = SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO("8.0")
         

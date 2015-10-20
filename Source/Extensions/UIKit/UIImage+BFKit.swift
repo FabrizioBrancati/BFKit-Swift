@@ -27,6 +27,7 @@
 import Foundation
 import UIKit
 import CoreImage
+import CoreGraphics
 import Accelerate
 
 /// Due to a bug in Xcode (typecasting Fails only inside the extension block) I created this alias of CIImage
@@ -61,7 +62,7 @@ public extension UIImage
     */
     public func blendOverlay() -> UIImage
     {
-        return self.blendMode(kCGBlendModeOverlay)
+        return self.blendMode(.Overlay)
     }
     
     /**
@@ -73,8 +74,8 @@ public extension UIImage
     */
     public func imageAtRect(rect: CGRect) -> UIImage
     {
-        let imageRef: CGImageRef = CGImageCreateWithImageInRect(self.CGImage, rect)
-        let subImage: UIImage = UIImage(CGImage: imageRef)!
+        let imageRef: CGImageRef = CGImageCreateWithImageInRect(self.CGImage, rect)!
+        let subImage: UIImage = UIImage(CGImage: imageRef)
         
         return subImage
     }
@@ -88,9 +89,9 @@ public extension UIImage
     */
     public func imageByScalingProportionallyToMinimumSize(targetSize: CGSize) -> UIImage?
     {
-        var sourceImage: UIImage = self
+        let sourceImage: UIImage = self
         var newImage: UIImage? = nil
-        var newTargetSize: CGSize = targetSize
+        let newTargetSize: CGSize = targetSize
         
         let imageSize: CGSize = sourceImage.size
         let width: CGFloat = imageSize.width
@@ -160,7 +161,7 @@ public extension UIImage
     */
     public func imageByScalingProportionallyToMaximumSize(targetSize: CGSize) -> UIImage
     {
-        var newTargetSize: CGSize = targetSize
+        let newTargetSize: CGSize = targetSize
         
         if (self.size.width > newTargetSize.width || newTargetSize.width == newTargetSize.height) && self.size.width > self.size.height
         {
@@ -213,9 +214,9 @@ public extension UIImage
     */
     public func imageByScalingProportionallyToSize(targetSize: CGSize) -> UIImage?
     {
-        var sourceImage: UIImage = self
+        let sourceImage: UIImage = self
         var newImage: UIImage? = nil
-        var newTargetSize: CGSize = targetSize
+        let newTargetSize: CGSize = targetSize
 
         let imageSize: CGSize = sourceImage.size
         let width: CGFloat = imageSize.width
@@ -286,7 +287,7 @@ public extension UIImage
     */
     public func imageByScalingToSize(targetSize: CGSize) -> UIImage?
     {
-        var sourceImage: UIImage = self
+        let sourceImage: UIImage = self
         var newImage: UIImage? = nil
         
         let targetWidth: CGFloat = targetSize.width
@@ -344,7 +345,7 @@ public extension UIImage
         let rotatedSize: CGSize = rotatedViewBox.frame.size
         
         UIGraphicsBeginImageContextWithOptions(rotatedSize, false, UIScreen.mainScreen().scale)
-        let bitmap: CGContextRef = UIGraphicsGetCurrentContext()
+        let bitmap: CGContextRef = UIGraphicsGetCurrentContext()!
         
         CGContextTranslateCTM(bitmap, rotatedSize.width / 2, rotatedSize.height / 2)
         
@@ -382,12 +383,12 @@ public extension UIImage
             return self
         }
         
-        let colorSpace: CGColorSpaceRef = CGColorSpaceCreateDeviceRGB()
+        let colorSpace: CGColorSpaceRef = CGColorSpaceCreateDeviceRGB()!
         let mainViewContentContext: CGContextRef = CGBitmapContextCreate(nil, Int(self.size.width), Int(self.size.height), 8, 0, colorSpace, CGBitmapInfo(rawValue: 0))
         
         CGContextDrawImage(mainViewContentContext, CGRectMake(0, 0, self.size.width, self.size.height), self.CGImage)
-        let mainViewContentBitmapContext: CGImageRef = CGBitmapContextCreateImage(mainViewContentContext)
-        let returnImage: UIImage = UIImage(CGImage: mainViewContentBitmapContext)!
+        let mainViewContentBitmapContext: CGImageRef = CGBitmapContextCreateImage(mainViewContentContext)!
+        let returnImage: UIImage = UIImage(CGImage: mainViewContentBitmapContext)
         
         return returnImage
     }
@@ -411,12 +412,12 @@ public extension UIImage
     */
     public func fillAlphaWithColor(color: UIColor) -> UIImage
     {
-        var im_r: CGRect = CGRect(origin: CGPointZero, size: self.size)
+        let im_r: CGRect = CGRect(origin: CGPointZero, size: self.size)
         
         let cgColor: CGColorRef = color.CGColor
         
         UIGraphicsBeginImageContextWithOptions(self.size, false, UIScreen.mainScreen().scale)
-        let context: CGContextRef = UIGraphicsGetCurrentContext()
+        let context: CGContextRef = UIGraphicsGetCurrentContext()!
         CGContextSetFillColorWithColor(context, cgColor)
         CGContextFillRect(context,im_r)
         self.drawInRect(im_r)
@@ -434,10 +435,10 @@ public extension UIImage
     */
     public func isGrayscale() -> Bool
     {
-        let imgRef: CGImageRef = self.CGImage
+        let imgRef: CGImageRef = self.CGImage!
         let clrMod: CGColorSpaceModel = CGColorSpaceGetModel(CGImageGetColorSpace(imgRef))
         
-        if clrMod.value == kCGColorSpaceModelMonochrome.value
+        if clrMod == CGColorSpaceModel.Monochrome
         {
             return true
         }
@@ -456,12 +457,12 @@ public extension UIImage
     {
         let rect: CGRect = CGRectMake(0.0, 0.0, size.width, size.height)
         
-        let colorSpace: CGColorSpaceRef = CGColorSpaceCreateDeviceGray()
+        let colorSpace: CGColorSpaceRef = CGColorSpaceCreateDeviceGray()!
         let context: CGContextRef = CGBitmapContextCreate(nil, Int(self.size.width), Int(self.size.height), 8, 0, colorSpace, CGBitmapInfo(rawValue: 0))
 
         CGContextDrawImage(context, rect, self.CGImage)
-        let grayscale: CGImageRef = CGBitmapContextCreateImage(context)
-        let returnImage: UIImage = UIImage(CGImage: grayscale)!
+        let grayscale: CGImageRef = CGBitmapContextCreateImage(context)!
+        let returnImage: UIImage = UIImage(CGImage: grayscale)
         
         return returnImage
     }
@@ -473,15 +474,15 @@ public extension UIImage
     */
     public func imageToBlackAndWhite() -> UIImage
     {
-        let colorSpace: CGColorSpaceRef = CGColorSpaceCreateDeviceGray()
+        let colorSpace: CGColorSpaceRef = CGColorSpaceCreateDeviceGray()!
         let context: CGContextRef = CGBitmapContextCreate(nil, Int(self.size.width), Int(self.size.height), 8, 0, colorSpace, CGBitmapInfo(rawValue: 0))
-        CGContextSetInterpolationQuality(context, kCGInterpolationHigh)
+        CGContextSetInterpolationQuality(context, .High)
         CGContextSetShouldAntialias(context, false)
         CGContextDrawImage(context, CGRectMake(0, 0, self.size.width, self.size.height), self.CGImage)
         
-        let bwImage: CGImageRef = CGBitmapContextCreateImage(context)
+        let bwImage: CGImageRef = CGBitmapContextCreateImage(context)!
         
-        let returnImage: UIImage = UIImage(CGImage: bwImage)!
+        let returnImage: UIImage = UIImage(CGImage: bwImage)
         
         return returnImage
     }
@@ -494,9 +495,9 @@ public extension UIImage
     public func invertColors() -> UIImage
     {
         UIGraphicsBeginImageContextWithOptions(self.size, false, UIScreen .mainScreen().scale)
-        CGContextSetBlendMode(UIGraphicsGetCurrentContext(), kCGBlendModeCopy)
+        CGContextSetBlendMode(UIGraphicsGetCurrentContext(), .Copy)
         self.drawInRect(CGRectMake(0, 0, self.size.width, self.size.height))
-        CGContextSetBlendMode(UIGraphicsGetCurrentContext(), kCGBlendModeDifference)
+        CGContextSetBlendMode(UIGraphicsGetCurrentContext(), .Difference)
         CGContextSetFillColorWithColor(UIGraphicsGetCurrentContext(), UIColor.whiteColor().CGColor)
         CGContextFillRect(UIGraphicsGetCurrentContext(), CGRectMake(0, 0, self.size.width, self.size.height))
         
@@ -517,15 +518,15 @@ public extension UIImage
     public func bloom(radius: Float, intensity: Float) -> UIImage
     {
         let context: CIContext = CIContext(options: nil)
-        let filter: CIFilter = CIFilter(name: "CIBloom")
+        let filter: CIFilter = CIFilter(name: "CIBloom")!
         
-        var ciimage: BFCIImage = BFCIImage(image: self)
+        let ciimage: BFCIImage = BFCIImage(image: self)!
         
         filter.setValue(ciimage, forKey: kCIInputImageKey)
         filter.setValue(radius, forKey: kCIInputRadiusKey)
         filter.setValue(intensity, forKey: kCIInputIntensityKey)
         
-        let returnImage: UIImage = UIImage(CGImage: context.createCGImage(filter.outputImage, fromRect: filter.outputImage.extent()))!
+        let returnImage: UIImage = UIImage(CGImage: context.createCGImage(filter.outputImage!, fromRect: filter.outputImage!.extent))
         
         return returnImage
     }
@@ -542,16 +543,16 @@ public extension UIImage
     public func bumpDistortion(center: CIVector, radius: Float, scale: Float) -> UIImage
     {
         let context: CIContext = CIContext(options: nil)
-        let filter: CIFilter = CIFilter(name: "CIBumpDistortion")
+        let filter: CIFilter = CIFilter(name: "CIBumpDistortion")!
         
-        var ciimage: BFCIImage = BFCIImage(image: self)
+        let ciimage: BFCIImage = BFCIImage(image: self)!
         
         filter.setValue(ciimage, forKey: kCIInputImageKey)
         filter.setValue(center, forKey: kCIInputCenterKey)
         filter.setValue(radius, forKey: kCIInputRadiusKey)
         filter.setValue(scale, forKey: kCIInputScaleKey)
         
-        let returnImage: UIImage = UIImage(CGImage: context.createCGImage(filter.outputImage, fromRect: filter.outputImage.extent()))!
+        let returnImage: UIImage = UIImage(CGImage: context.createCGImage(filter.outputImage!, fromRect: filter.outputImage!.extent))
         
         return returnImage
     }
@@ -569,9 +570,9 @@ public extension UIImage
     public func bumpDistortionLinear(center: CIVector, radius: Float, angle: Float, scale: Float) -> UIImage
     {
         let context: CIContext = CIContext(options: nil)
-        let filter: CIFilter = CIFilter(name: "CIBumpDistortionLinear")
+        let filter: CIFilter = CIFilter(name: "CIBumpDistortionLinear")!
         
-        var ciimage: BFCIImage = BFCIImage(image: self)
+        let ciimage: BFCIImage = BFCIImage(image: self)!
         
         filter.setValue(ciimage, forKey: kCIInputImageKey)
         filter.setValue(center, forKey: kCIInputCenterKey)
@@ -579,7 +580,7 @@ public extension UIImage
         filter.setValue(angle, forKey: kCIInputAngleKey)
         filter.setValue(scale, forKey: kCIInputScaleKey)
         
-        let returnImage: UIImage = UIImage(CGImage: context.createCGImage(filter.outputImage, fromRect: filter.outputImage.extent()))!
+        let returnImage: UIImage = UIImage(CGImage: context.createCGImage(filter.outputImage!, fromRect: filter.outputImage!.extent))
         
         return returnImage
     }
@@ -595,15 +596,15 @@ public extension UIImage
     public func circleSplashDistortion(center: CIVector, radius: Float) -> UIImage
     {
         let context: CIContext = CIContext(options: nil)
-        let filter: CIFilter = CIFilter(name: "CICircleSplashDistortion")
+        let filter: CIFilter = CIFilter(name: "CICircleSplashDistortion")!
         
-        var ciimage: BFCIImage = BFCIImage(image: self)
+        let ciimage: BFCIImage = BFCIImage(image: self)!
         
         filter.setValue(ciimage, forKey: kCIInputImageKey)
         filter.setValue(center, forKey: kCIInputCenterKey)
         filter.setValue(radius, forKey: kCIInputRadiusKey)
         
-        let returnImage: UIImage = UIImage(CGImage: context.createCGImage(filter.outputImage, fromRect: filter.outputImage.extent()))!
+        let returnImage: UIImage = UIImage(CGImage: context.createCGImage(filter.outputImage!, fromRect: filter.outputImage!.extent))
         
         return returnImage
     }
@@ -620,16 +621,16 @@ public extension UIImage
     public func circularWrap(center: CIVector, radius: Float, angle: Float) -> UIImage
     {
         let context: CIContext = CIContext(options: nil)
-        let filter: CIFilter = CIFilter(name: "CICircularWrap")
+        let filter: CIFilter = CIFilter(name: "CICircularWrap")!
         
-        var ciimage: BFCIImage = BFCIImage(image: self)
+        let ciimage: BFCIImage = BFCIImage(image: self)!
         
         filter.setValue(ciimage, forKey: kCIInputImageKey)
         filter.setValue(center, forKey: kCIInputCenterKey)
         filter.setValue(radius, forKey: kCIInputRadiusKey)
         filter.setValue(angle, forKey: kCIInputAngleKey)
         
-        let returnImage: UIImage = UIImage(CGImage: context.createCGImage(filter.outputImage, fromRect: filter.outputImage.extent()))!
+        let returnImage: UIImage = UIImage(CGImage: context.createCGImage(filter.outputImage!, fromRect: filter.outputImage!.extent))
         
         return returnImage
     }
@@ -649,9 +650,9 @@ public extension UIImage
     public func cmykHalftone(center: CIVector, width: Float, angle: Float, sharpness: Float, gcr: Float, ucr: Float) -> UIImage
     {
         let context: CIContext = CIContext(options: nil)
-        let filter: CIFilter = CIFilter(name: "CICMYKHalftone")
+        let filter: CIFilter = CIFilter(name: "CICMYKHalftone")!
         
-        var ciimage: BFCIImage = BFCIImage(image: self)
+        let ciimage: BFCIImage = BFCIImage(image: self)!
         
         filter.setValue(ciimage, forKey: kCIInputImageKey)
         filter.setValue(center, forKey: kCIInputCenterKey)
@@ -661,7 +662,7 @@ public extension UIImage
         filter.setValue(gcr, forKey: "inputGCR")
         filter.setValue(ucr, forKey: "inputUCR")
         
-        let returnImage: UIImage = UIImage(CGImage: context.createCGImage(filter.outputImage, fromRect: filter.outputImage.extent()))!
+        let returnImage: UIImage = UIImage(CGImage: context.createCGImage(filter.outputImage!, fromRect: filter.outputImage!.extent))
         
         return returnImage
     }
@@ -676,14 +677,14 @@ public extension UIImage
     public func sepiaToneWithIntensity(intensity: Float) -> UIImage
     {
         let context: CIContext = CIContext(options: nil)
-        let filter: CIFilter = CIFilter(name: "CISepiaTone")
+        let filter: CIFilter = CIFilter(name: "CISepiaTone")!
         
-        var ciimage: BFCIImage = BFCIImage(image: self)
+        let ciimage: BFCIImage = BFCIImage(image: self)!
         
         filter.setValue(ciimage, forKey: kCIInputImageKey)
         filter.setValue(intensity, forKey: kCIInputIntensityKey)
         
-        let returnImage: UIImage = UIImage(CGImage: context.createCGImage(filter.outputImage, fromRect: filter.outputImage.extent()))!
+        let returnImage: UIImage = UIImage(CGImage: context.createCGImage(filter.outputImage!, fromRect: filter.outputImage!.extent))
         
         return returnImage
     }
@@ -764,7 +765,6 @@ public extension UIImage
                 ]
                 
                 let divisor: CGFloat = 256
-                let matrixSize = count(floatingPointSaturationMatrix)
                 let saturationMatrix = map(floatingPointSaturationMatrix) {
                     return Int16(round($0 * divisor))
                 }
@@ -863,7 +863,6 @@ public extension UIImage
         {
             let sizeString: String = array[0]
             
-            var colorString: String
             if array.count >= 2
             {
                 color = UIColor.colorForColorString(array[1])
@@ -873,7 +872,7 @@ public extension UIImage
         }
         
         UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.mainScreen().scale)
-        let context: CGContextRef = UIGraphicsGetCurrentContext()
+        let context: CGContextRef = UIGraphicsGetCurrentContext()!
         
         let rect: CGRect = CGRectMake(0.0, 0.0, size.width, size.height)
         
@@ -891,7 +890,7 @@ public extension UIImage
         
         UIGraphicsEndImageContext()
         
-        self.init(CGImage: result.CGImage)
+        self.init(CGImage: result.CGImage!)
     }
     
     /**
@@ -914,7 +913,7 @@ public extension UIImage
         
         UIGraphicsEndImageContext()
         
-        self.init(CGImage: image.CGImage)
+        self.init(CGImage: image.CGImage!)
     }
     
     /**
@@ -936,7 +935,7 @@ public extension UIImage
         let textSize: CGSize = maskedText.sizeWithAttributes(textAttributes)
         
         UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.mainScreen().scale)
-        let ctx: CGContextRef = UIGraphicsGetCurrentContext()
+        let ctx: CGContextRef = UIGraphicsGetCurrentContext()!
         
         CGContextSetFillColorWithColor(ctx, backgroundColor.CGColor)
         
@@ -944,7 +943,7 @@ public extension UIImage
         CGContextAddPath(ctx, path.CGPath)
         CGContextFillPath(ctx)
         
-        CGContextSetBlendMode(ctx, kCGBlendModeDestinationOut)
+        CGContextSetBlendMode(ctx, .DestinationOut)
         let center: CGPoint = CGPointMake(imageSize.width / 2 - textSize.width / 2, imageSize.height / 2 - textSize.height / 2)
         maskedText.drawAtPoint(center, withAttributes: textAttributes)
         
@@ -952,7 +951,7 @@ public extension UIImage
         
         UIGraphicsEndImageContext()
         
-        self.init(CGImage: image.CGImage)
+        self.init(CGImage: image.CGImage!)
     }
     
     /**
@@ -966,13 +965,13 @@ public extension UIImage
     {
         let rect: CGRect = CGRectMake(0, 0, 1, 1)
         UIGraphicsBeginImageContext(rect.size)
-        let context: CGContextRef = UIGraphicsGetCurrentContext()
+        let context: CGContextRef = UIGraphicsGetCurrentContext()!
         CGContextSetFillColorWithColor(context, color.CGColor)
         
         CGContextFillRect(context, rect)
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        self.init(CGImage: image.CGImage)
+        self.init(CGImage: image.CGImage!)
     }
 }

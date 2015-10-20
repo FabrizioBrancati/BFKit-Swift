@@ -53,7 +53,8 @@ public func BFLog(var message: String, filename: String = __FILE__, function: St
         
         BFLogClass.logString += message
         
-        let filenameNoExt = NSString(UTF8String: filename)!.lastPathComponent.stringByDeletingPathExtension
+        //let filenameNoExt = NSString(UTF8String: filename)!.lastPathComponent.stringByDeletingPathExtension
+        let filenameNoExt = NSURL(string: NSString(UTF8String: filename)! as String)?.URLByDeletingLastPathComponent
         let log = "(\(function)) (\(filenameNoExt):\(line) \(message)"
         let timestamp = NSDate.dateInformationDescriptionWithInformation(NSDate().dateInformation(), dateSeparator: "-", usFormat: true, nanosecond: true)
         print("\(timestamp) \(filenameNoExt):\(line) \(function): \(message)")

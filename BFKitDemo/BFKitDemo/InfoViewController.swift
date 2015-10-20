@@ -22,7 +22,7 @@ class InfoViewController : UIViewController
         scrollView.addSubview(shadowLayer)
         scrollView.addSubview(profileImage)
         
-        var logoImage: UIImageView = UIImageView(image: UIImage(named: "Logo2")!, size: CGSizeMake(80, 80), center: CGPointMake(profileImage.frame.origin.x + profileImage.frame.size.width - 30, profileImage.frame.origin.y + profileImage.frame.size.height - 30))
+        let logoImage: UIImageView = UIImageView(image: UIImage(named: "Logo2")!, size: CGSizeMake(80, 80), center: CGPointMake(profileImage.frame.origin.x + profileImage.frame.size.width - 30, profileImage.frame.origin.y + profileImage.frame.size.height - 30))
         scrollView.addSubview(logoImage)
         
         let nameLabel: UILabel = UILabel(frame: CGRectMake(0, profileImage.frame.origin.y + profileImage.frame.size.height + 50, SCREEN_WIDTH, 30), text: "Fabrizio Brancati", font: .HelveticaNeueMedium, size: 25, color: UIColor.blackColor(), alignment: .Center, lines: 1)

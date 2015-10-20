@@ -17,7 +17,7 @@ class BFKitViewController: UITableViewController
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let infoButton: UIButton = UIButton.buttonWithType(.InfoLight) as! UIButton
+        let infoButton: UIButton = UIButton(type: .InfoLight)
         infoButton.addTarget(self, action: "showInfo:", forControlEvents: .TouchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: infoButton)
     }
@@ -50,7 +50,7 @@ class BFKitViewController: UITableViewController
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        var cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier)!
         
         cell.textLabel?.text = BFKitArray[indexPath.row]
         cell.tag = indexPath.row
