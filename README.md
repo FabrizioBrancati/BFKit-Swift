@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit-Swift.svg?branch=Swift_2.0)](https://travis-ci.org/FabrizioBrancati/BFKit-Swift)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/BFKit-Swift.svg?style=flat)][CocoaDocs]
-[![Language](https://img.shields.io/badge/language-Swift%202.0-orange.svg)](https://developer.apple.com/swift/)
+[![Language](https://img.shields.io/badge/language-Swift%201.2%20/%202.0-orange.svg)](https://developer.apple.com/swift/)
 [![Platform](https://img.shields.io/badge/platform-iOS-ffc713.svg)][CocoaDocs]
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/FabrizioBrancati/BBFKit-Swift/blob/master/LICENSE)
 
@@ -97,21 +97,20 @@ Please make sure to follow my general coding style for new features!
 
 Installing and Usage :computer:
 ===============================
+
+---
+
+###Swift 1.2
+If you need support for Swift 1.2 use BFKit-Swift 1.4.1.
+From 1.5.0 BFKit-Swift supports Swift 2.0.
+
+---
+
 ###Manual
 ####iOS 7 (or later) compatible
 - Copy the **Source** folder to the project
 - Enjoy!
 - N.B.: You will no longer need to import BFKit since you are not actually loading a framework
-
----
-###Warning
-The following installing methods doesn't allows to declare ```Array``` and ```Dictionary``` extensions as public due to a bug in the compiler
-[Read more](https://devforums.apple.com/message/983747)
-
-####iOS 9
-From iOS 9 this bug will be fixed, and once it'll be released I'll update BFKit-Swift to take advantage of this! ;)
-
----
 
 ####iOS 8 (or later) compatible
 - Open the **BFKit** folder and build the Framework from the project

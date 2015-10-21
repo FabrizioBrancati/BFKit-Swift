@@ -1,5 +1,6 @@
 Changelog
 =========
+
 All notable changes to this project will be documented in this file.
 `BFKit-Swift` adheres to [Semantic Versioning](http://semver.org/).
 
@@ -7,6 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ###Version 1.5.0
 - Added support for Swift 2.0
+- Now ```Array``` and ```Dictionary``` extensions are declared as public
 - Fixed various bugs
 
 ###Version 1.4.1
