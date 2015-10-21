@@ -29,7 +29,7 @@ import Foundation
 // MARK: - Stack class -
 
 /// Primitive Stack implementation
-public class Stack: Printable
+public class Stack: CustomStringConvertible
 {
     /// Describe the Stack
     public var description: String
@@ -77,7 +77,7 @@ public class Stack: Printable
 // MARK: - List class -
 
 /// Primitive List implementation. In order to work, the List must contain only objects that is subclass of NSObject
-public class List: Printable
+public class List: CustomStringConvertible
 {
     /// Describe the List
     public var description: String
@@ -175,7 +175,7 @@ public class List: Printable
 // MARK: - Queue class -
 
 /// Primitive Queue implementation
-public class Queue: Printable
+public class Queue: CustomStringConvertible
 {
     /// Describe the Queue
     public var description: String

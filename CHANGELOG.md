@@ -1,5 +1,14 @@
 Changelog
 =========
+All notable changes to this project will be documented in this file.
+`BFKit-Swift` adheres to [Semantic Versioning](http://semver.org/).
+
+---
+
+###Version 1.5.0
+- Added support for Swift 2.0
+- Fixed various bugs
+
 ###Version 1.4.1
 - Added support for iPod Touch 6G
 - Fixed a problem with Carthage project

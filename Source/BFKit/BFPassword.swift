@@ -64,7 +64,7 @@ public class BFPassword
     */
     public static func checkPasswordStrength(password: String) -> PasswordStrengthLevel
     {
-        let lenght = count(password)
+        let lenght = password.length
         let lowercase = self.countLowercaseLetters(password)
         let uppercase = self.countUppercaseLetters(password)
         let numbers = self.countNumbers(password)
@@ -222,7 +222,7 @@ public class BFPassword
     private static func countLowercaseLetters(password: String) -> Int
     {
         var countChar = 0
-        for var i = 0; i < count(password); i++
+        for var i = 0; i < password.length; i++
         {
             let isLowercase = NSCharacterSet.lowercaseLetterCharacterSet().characterIsMember((String(password) as NSString).characterAtIndex(i))
             if isLowercase
@@ -244,7 +244,7 @@ public class BFPassword
     private static func countUppercaseLetters(password: String) -> Int
     {
         var countChar = 0
-        for var i = 0; i < count(password); i++
+        for var i = 0; i < password.length; i++
         {
             let isUppercase = NSCharacterSet.lowercaseLetterCharacterSet().characterIsMember((String(password) as NSString).characterAtIndex(i))
             if isUppercase
@@ -266,7 +266,7 @@ public class BFPassword
     private static func countNumbers(password: String) -> Int
     {
         var countNumber = 0
-        for var i = 0; i < count(password); i++
+        for var i = 0; i < password.length; i++
         {
             let isNumber = NSCharacterSet(charactersInString: "0123456789").characterIsMember((String(password) as NSString).characterAtIndex(i))
             if isNumber
@@ -288,7 +288,7 @@ public class BFPassword
     private static func countSymbols(password: String) -> Int
     {
         var countSymbol = 0
-        for var i = 0; i < count(password); i++
+        for var i = 0; i < password.length; i++
         {
             let isSymbol = NSCharacterSet(charactersInString: "`~!?@#$€£¥§%^&*()_+-={}[]:\";.,<>'•\\|/").characterIsMember((String(password) as NSString).characterAtIndex(i))
             if isSymbol

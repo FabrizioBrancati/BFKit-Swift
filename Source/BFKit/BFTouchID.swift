@@ -78,14 +78,14 @@ public class BFTouchID
         var error: NSError?
         if context.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: &error)
         {
-            context.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reason, reply: { (success: Bool, error: NSError!) -> Void in
+            context.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reason, reply: { (success: Bool, error: NSError?) -> Void in
                 if success
                 {
                     completion(result: .Success)
                 }
                 else
                 {
-                    switch error.code
+                    switch error!.code
                     {
                     case LAError.AuthenticationFailed.rawValue:
                         completion(result: .AuthenticationFailed)

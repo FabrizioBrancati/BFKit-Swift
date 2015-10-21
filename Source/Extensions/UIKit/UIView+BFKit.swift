@@ -92,15 +92,14 @@ public extension UIView
     */
     public func createBordersWithColor(color: UIColor, radius: CGFloat, width: CGFloat)
     {
+        // TODO: Check it - Antialiasing borders
         self.layer.borderWidth = width
         self.layer.cornerRadius = radius
         self.layer.shouldRasterize = false
         self.layer.rasterizationScale = 2
-        self.layer.edgeAntialiasingMask = .LayerLeftEdge | .LayerRightEdge | .LayerBottomEdge | .LayerTopEdge
         self.clipsToBounds = true
         self.layer.masksToBounds = true
         
-        let space: CGColorSpaceRef = CGColorSpaceCreateDeviceRGB()
         let cgColor: CGColorRef = color.CGColor
         self.layer.borderColor = cgColor
     }
@@ -183,7 +182,7 @@ public extension UIView
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
         
-        var mutableColors: NSMutableArray = NSMutableArray(array: colors)
+        let mutableColors: NSMutableArray = NSMutableArray(array: colors)
         for var i = 0; i < colors.count; i++
         {
             let currentColor: UIColor = colors[i]
@@ -211,8 +210,6 @@ public extension UIView
         case .DiagonalFromRightToLeftAndDownToTop:
             gradient.startPoint = CGPointMake(1.0, 1.0)
             gradient.endPoint = CGPointMake(0.0, 0.0)
-        default:
-            break
         }
         self.layer.insertSublayer(gradient, atIndex:0)
     }
@@ -345,8 +342,6 @@ public extension UIView
             subtype = "fromBottom"
         case .FromRight:
             subtype = "fromRight"
-        default:
-            break
         }
         
         let transition: CATransition = CATransition()
@@ -382,8 +377,6 @@ public extension UIView
         case .FromRightToLeft:
             startPosition = -(self.frame.size.width / 2) + topView.frame.size.width
             endPosition = self.frame.size.width / 2
-        default:
-            break
         }
         
         if startFromEdge
@@ -425,7 +418,7 @@ public extension UIView
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        let imageData: NSData = UIImagePNGRepresentation(image)
+        let imageData: NSData = UIImagePNGRepresentation(image)!
         image = UIImage(data: imageData)!
         
         return image

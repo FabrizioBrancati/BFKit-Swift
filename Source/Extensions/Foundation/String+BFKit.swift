@@ -46,7 +46,8 @@ public extension String
     */
     public var length: Int
     {
-        return count(self)
+        // TODO: Check it
+        return self.characters.count
     }
     
     /**
@@ -58,7 +59,8 @@ public extension String
     */
     public func characterAtIndex(index: Int) -> Character
     {
-        return self[advance(self.startIndex, index)]
+        // TODO: Check it
+        return self[self.startIndex.advancedBy(index)]
     }
     
     /**
@@ -70,7 +72,9 @@ public extension String
     */
     public func substringFromIndex(index: Int) -> String
     {
-        return self[advance(self.startIndex, index)...advance(self.startIndex, self.length-1)]
+        // TODO: Check it
+        //return self[advance(self.startIndex, index)...advance(self.startIndex, self.length-1)]
+        return self.substringFromIndex(self.endIndex.advancedBy(-index))
     }
     
     /**
@@ -82,7 +86,9 @@ public extension String
     */
     public func substringToIndex(index: Int) -> String
     {
-        return self[advance(self.startIndex, 0)...advance(self.startIndex, index-1)]
+        // TODO: Check it
+        //return self[advance(self.startIndex, 0)...advance(self.startIndex, index-1)]
+        return self.substringToIndex(self.startIndex.advancedBy(index))
     }
     
     /**
@@ -94,8 +100,11 @@ public extension String
     */
     public func substringWithRange(range: Range<Int>) -> String
     {
-        let start = advance(self.startIndex, range.startIndex)
-        let end = advance(self.startIndex, range.endIndex)
+        // TODO: Check it
+        //let start = advance(self.startIndex, range.startIndex)
+        let start = self.startIndex.advancedBy(range.startIndex)
+        //let end = advance(self.startIndex, range.endIndex)
+        let end = self.startIndex.advancedBy(range.endIndex)
         
         return self.substringWithRange(start..<end)
     }

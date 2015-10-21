@@ -65,9 +65,9 @@ public extension NSArray
     
     :returns: Returns the JSON as String or nil if error while parsing
     */
-    public func arrayToJSON() -> NSString
+    public func arrayToJSON() throws -> NSString
     {
-        return NSArray.arrayToJSON(self)
+        return try NSArray.arrayToJSON(self)
     }
     
     /**
@@ -116,8 +116,8 @@ public extension NSArray
     */
     public static func reversedArray(array: NSArray) -> NSArray
     {
-        var arrayTemp: NSMutableArray = NSMutableArray.init(capacity: array.count)
-        var enumerator: NSEnumerator = array.reverseObjectEnumerator()
+        let arrayTemp: NSMutableArray = NSMutableArray.init(capacity: array.count)
+        let enumerator: NSEnumerator = array.reverseObjectEnumerator()
         
         for element in enumerator
         {
@@ -134,18 +134,9 @@ public extension NSArray
     
     :returns: Returns the JSON as String or nil if error while parsing
     */
-    public static func arrayToJSON(array: AnyObject) -> NSString
+    public static func arrayToJSON(array: AnyObject) throws -> NSString
     {
-        var error: NSError?
-        let data = NSJSONSerialization.dataWithJSONObject(array, options: nil, error: &error)
-        let string = NSString(data: data!, encoding: NSUTF8StringEncoding)
-        if error == nil
-        {
-            return NSString(data: data!, encoding: NSUTF8StringEncoding)!
-        }
-        else
-        {
-            return error!.localizedDescription
-        }
+        let data = try NSJSONSerialization.dataWithJSONObject(array, options: NSJSONWritingOptions())
+        return NSString(data: data, encoding: NSUTF8StringEncoding)!
     }
 }

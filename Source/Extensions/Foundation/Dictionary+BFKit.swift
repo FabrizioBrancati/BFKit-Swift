@@ -36,9 +36,10 @@ public extension Dictionary
     
     :returns: Returns the JSON as String or nil if error while parsing
     */
-    func dictionaryToJSON() -> String
+    func dictionaryToJSON() throws -> String
     {
-        return Dictionary.dictionaryToJSON(self as! AnyObject)
+        // TODO: Check it
+        return try Dictionary.dictionaryToJSON(self as! AnyObject)
     }
     
     // MARK: - Class functions -
@@ -50,24 +51,20 @@ public extension Dictionary
     
     :returns: Returns the JSON as String or nil if error while parsing
     */
-    static func dictionaryToJSON(dictionary: AnyObject) -> String
+    static func dictionaryToJSON(dictionary: AnyObject) throws -> String
     {
+        // TODO: Check it
         var json: NSString
-        var error: NSError?
-        let jsonData: NSData = NSJSONSerialization.dataWithJSONObject(dictionary, options: .PrettyPrinted, error: &error)!
+        let jsonData: NSData = try NSJSONSerialization.dataWithJSONObject(dictionary, options: .PrettyPrinted)
         
         if jsonData == false
         {
             return "{}"
         }
-        else if error == nil
+        else
         {
             json = NSString(data: jsonData, encoding: NSUTF8StringEncoding)!
             return json as String
-        }
-        else
-        {
-            return error!.localizedDescription
         }
     }
 }

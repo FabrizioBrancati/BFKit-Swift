@@ -382,7 +382,7 @@ public extension UIDevice
     */
     public static func iOSVersion() -> Int
     {
-        return UIDevice.currentDevice().systemVersion.substringToCharacter(".")!.toInt()!
+        return Int(UIDevice.currentDevice().systemVersion.substringToCharacter(".")!)!
     }
     
     /**
@@ -468,9 +468,9 @@ public extension UIDevice
     
     :returns: Returns the current device total disk space
     */
-    public static func totalDiskSpace() -> AnyObject
+    public static func totalDiskSpace() throws -> AnyObject
     {
-        let attributes: NSDictionary = NSFileManager.defaultManager().attributesOfFileSystemForPath(NSHomeDirectory(), error: nil)!
+        let attributes: NSDictionary = try NSFileManager.defaultManager().attributesOfFileSystemForPath(NSHomeDirectory())
         return attributes.objectForKey(NSFileSystemSize)!
     }
     
@@ -479,9 +479,9 @@ public extension UIDevice
     
     :returns: Returns the current device free disk space
     */
-    public static func freeDiskSpace() -> AnyObject
+    public static func freeDiskSpace() throws -> AnyObject
     {
-        let attributes: NSDictionary = NSFileManager.defaultManager().attributesOfFileSystemForPath(NSHomeDirectory(), error: nil)!
+        let attributes: NSDictionary = try NSFileManager.defaultManager().attributesOfFileSystemForPath(NSHomeDirectory())
         return attributes.objectForKey(NSFileSystemFreeSize)!
     }
     

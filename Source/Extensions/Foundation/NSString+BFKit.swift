@@ -110,7 +110,7 @@ public extension NSString
         let uppercase: NSString = self.substringToIndex(1).uppercaseString
         let lowercase: NSString = self.substringFromIndex(1).lowercaseString
         
-        return uppercase.stringByAppendingString(lowercaseString)
+        return uppercase.stringByAppendingString(lowercase as String)
     }
     
     /**
@@ -151,9 +151,9 @@ public extension NSString
     
     :returns: Returns a new string containing matching regular expressions replaced with the template string
     */
-    public func stringByReplacingWithRegex(regexString: NSString, withString replacement: NSString) -> NSString
+    public func stringByReplacingWithRegex(regexString: NSString, withString replacement: NSString) throws -> NSString
     {
-        let regex: NSRegularExpression = NSRegularExpression(pattern: regexString as String, options: .CaseInsensitive, error: nil)!
+        let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString as String, options: .CaseInsensitive)
         return regex.stringByReplacingMatchesInString(self as String, options: NSMatchingOptions(rawValue: 0), range:NSMakeRange(0, self.length), withTemplate: "")
     }
     

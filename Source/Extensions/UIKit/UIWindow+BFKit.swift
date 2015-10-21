@@ -93,7 +93,7 @@ public extension UIWindow
         }
         
         UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.mainScreen().scale)
-        let context: CGContextRef = UIGraphicsGetCurrentContext()
+        let context: CGContextRef = UIGraphicsGetCurrentContext()!
         CGContextSaveGState(context)
         CGContextTranslateCTM(context, self.center.x, self.center.y)
         CGContextConcatCTM(context, self.transform)
@@ -124,7 +124,7 @@ public extension UIWindow
         }
         else
         {
-            self.layer.renderInContext(UIGraphicsGetCurrentContext())
+            self.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         }
         
         CGContextRestoreGState(context)
@@ -163,8 +163,8 @@ public extension UIWindow
             return
         }
         
-        var sendEvent = class_getInstanceMethod(object_getClass(self), "sendEvent:")
-        var exchangedSendEvent = class_getInstanceMethod(object_getClass(self), "exchangedSendEvent:")
+        let sendEvent = class_getInstanceMethod(object_getClass(self), "sendEvent:")
+        let exchangedSendEvent = class_getInstanceMethod(object_getClass(self), "exchangedSendEvent:")
         method_exchangeImplementations(sendEvent, exchangedSendEvent)
         
         sendEventExchanged = true
@@ -180,8 +180,8 @@ public extension UIWindow
             return
         }
         
-        var sendEvent = class_getInstanceMethod(object_getClass(self), "sendEvent:")
-        var exchangedSendEvent = class_getInstanceMethod(object_getClass(self), "exchangedSendEvent:")
+        let sendEvent = class_getInstanceMethod(object_getClass(self), "sendEvent:")
+        let exchangedSendEvent = class_getInstanceMethod(object_getClass(self), "exchangedSendEvent:")
         method_exchangeImplementations(exchangedSendEvent, sendEvent)
         
         sendEventExchanged = false
@@ -212,7 +212,7 @@ public extension UIWindow
             return
         }
         
-        for touch in event.allTouches()! as! Set<UITouch>
+        for touch in event.allTouches()!
         {
             let phase = touch.phase
             

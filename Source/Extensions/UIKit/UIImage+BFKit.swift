@@ -384,7 +384,7 @@ public extension UIImage
         }
         
         let colorSpace: CGColorSpaceRef = CGColorSpaceCreateDeviceRGB()!
-        let mainViewContentContext: CGContextRef = CGBitmapContextCreate(nil, Int(self.size.width), Int(self.size.height), 8, 0, colorSpace, CGBitmapInfo(rawValue: 0))
+        let mainViewContentContext: CGContextRef = CGBitmapContextCreate(nil, Int(self.size.width), Int(self.size.height), 8, 0, colorSpace, CGImageGetBitmapInfo(self.CGImage).rawValue)!
         
         CGContextDrawImage(mainViewContentContext, CGRectMake(0, 0, self.size.width, self.size.height), self.CGImage)
         let mainViewContentBitmapContext: CGImageRef = CGBitmapContextCreateImage(mainViewContentContext)!
@@ -458,7 +458,7 @@ public extension UIImage
         let rect: CGRect = CGRectMake(0.0, 0.0, size.width, size.height)
         
         let colorSpace: CGColorSpaceRef = CGColorSpaceCreateDeviceGray()!
-        let context: CGContextRef = CGBitmapContextCreate(nil, Int(self.size.width), Int(self.size.height), 8, 0, colorSpace, CGBitmapInfo(rawValue: 0))
+        let context: CGContextRef = CGBitmapContextCreate(nil, Int(self.size.width), Int(self.size.height), 8, 0, colorSpace, CGImageGetBitmapInfo(self.CGImage).rawValue)!
 
         CGContextDrawImage(context, rect, self.CGImage)
         let grayscale: CGImageRef = CGBitmapContextCreateImage(context)!
@@ -475,7 +475,7 @@ public extension UIImage
     public func imageToBlackAndWhite() -> UIImage
     {
         let colorSpace: CGColorSpaceRef = CGColorSpaceCreateDeviceGray()!
-        let context: CGContextRef = CGBitmapContextCreate(nil, Int(self.size.width), Int(self.size.height), 8, 0, colorSpace, CGBitmapInfo(rawValue: 0))
+        let context: CGContextRef = CGBitmapContextCreate(nil, Int(self.size.width), Int(self.size.height), 8, 0, colorSpace, CGImageGetBitmapInfo(self.CGImage).rawValue)!
         CGContextSetInterpolationQuality(context, .High)
         CGContextSetShouldAntialias(context, false)
         CGContextDrawImage(context, CGRectMake(0, 0, self.size.width, self.size.height), self.CGImage)
@@ -765,7 +765,8 @@ public extension UIImage
                 ]
                 
                 let divisor: CGFloat = 256
-                let saturationMatrix = map(floatingPointSaturationMatrix) {
+                // TODO: Check it
+                let saturationMatrix = floatingPointSaturationMatrix.map {
                     return Int16(round($0 * divisor))
                 }
                 
