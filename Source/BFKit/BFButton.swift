@@ -111,6 +111,6 @@ public class BFButton: UIButton
     */
     public required init(coder aDecoder: NSCoder)
     {
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
     }
 }

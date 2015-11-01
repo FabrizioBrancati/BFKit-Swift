@@ -85,8 +85,6 @@ public extension NSFileManager
             finalPath = self.getDocumentsDirectoryForFile("\(filename).plist")
         case .Cache:
             finalPath = self.getCacheDirectoryForFile("\(filename).plist")
-        default:
-            break
         }
         
         return NSKeyedArchiver.archiveRootObject(array, toFile: finalPath)
@@ -114,8 +112,6 @@ public extension NSFileManager
             finalPath = self.getDocumentsDirectoryForFile(filename)
         case .Cache:
             finalPath = self.getCacheDirectoryForFile(filename)
-        default:
-            break
         }
         
         return NSKeyedUnarchiver.unarchiveObjectWithFile(finalPath)
@@ -197,8 +193,6 @@ public extension NSFileManager
                 path = self.getDocumentsDirectoryForFile(file)
             case .Cache:
                 path = self.getCacheDirectoryForFile(file)
-            default:
-                break
             }
             
             if(NSFileManager.defaultManager().fileExistsAtPath(path))
@@ -222,7 +216,7 @@ public extension NSFileManager
     
     :returns: Returns true if the operation was successful, otherwise false
     */
-    public static func deleteFile(file: String, fromDirectory directory: DirectoryType) -> Bool
+    public static func deleteFile(file: String, fromDirectory directory: DirectoryType) throws -> Bool
     {
         if file.characters.count != 0
         {
@@ -238,13 +232,19 @@ public extension NSFileManager
                 path = self.getDocumentsDirectoryForFile(file)
             case .Cache:
                 path = self.getCacheDirectoryForFile(file)
-            default:
-                break
             }
             
             if(NSFileManager.defaultManager().fileExistsAtPath(path))
             {
-                return NSFileManager.defaultManager().removeItemAtPath(path, error: nil)
+                do
+                {
+                    try NSFileManager.defaultManager().removeItemAtPath(path)
+                    return true
+                }
+                catch
+                {
+                    return false
+                }
             }
         }
         
@@ -261,7 +261,7 @@ public extension NSFileManager
     
     :returns: Returns true if the operation was successful, otherwise false
     */
-    public static func moveLocalFile(file: String, fromDirectory origin: DirectoryType, toDirectory destination: DirectoryType, withFolderName folderName: String? = nil) -> Bool
+    public static func moveLocalFile(file: String, fromDirectory origin: DirectoryType, toDirectory destination: DirectoryType, withFolderName folderName: String? = nil) throws -> Bool
     {
         var originPath: String
         
@@ -275,8 +275,6 @@ public extension NSFileManager
             originPath = self.getDocumentsDirectoryForFile(file)
         case .Cache:
             originPath = self.getCacheDirectoryForFile(file)
-        default:
-            break
         }
         
         var destinationPath: String = ""
@@ -299,8 +297,6 @@ public extension NSFileManager
             destinationPath = self.getDocumentsDirectoryForFile(destinationPath)
         case .Cache:
             destinationPath = self.getCacheDirectoryForFile(destinationPath)
-        default:
-            break
         }
         
         if folderName != nil
@@ -308,16 +304,21 @@ public extension NSFileManager
             let folderPath: String = String(format: "%@/%@", destinationPath, folderName!)
             if !NSFileManager.defaultManager().fileExistsAtPath(originPath)
             {
-                NSFileManager.defaultManager().createDirectoryAtPath(folderPath, withIntermediateDirectories: false, attributes: nil, error: nil)
+                try NSFileManager.defaultManager().createDirectoryAtPath(folderPath, withIntermediateDirectories: false, attributes: nil)
             }
         }
         
         var copied: Bool = false, deleted: Bool = false
         if NSFileManager.defaultManager().fileExistsAtPath(originPath)
         {
-            if NSFileManager.defaultManager().copyItemAtPath(originPath, toPath: destinationPath, error: nil)
+            do
             {
+                try NSFileManager.defaultManager().copyItemAtPath(originPath, toPath: destinationPath)
                 copied = true
+            }
+            catch
+            {
+                // TODO: Test it
             }
         }
         
@@ -325,9 +326,14 @@ public extension NSFileManager
         {
             if NSFileManager.defaultManager().fileExistsAtPath(originPath)
             {
-                if NSFileManager.defaultManager().removeItemAtPath(originPath, error: nil)
+                do
                 {
+                    try NSFileManager.defaultManager().removeItemAtPath(originPath)
                     deleted = true
+                }
+                catch
+                {
+                    // TODO: Test it
                 }
             }
         }
@@ -350,9 +356,9 @@ public extension NSFileManager
     :returns: Returns true if the operation was successful, otherwise false
     */
     @available(*, obsoleted=1.2.0, message="Use moveLocalFile(_, fromDirectory:, toDirectory:, withFolderName:)")
-    public static func moveLocalFile(file: String, fromDirectory origin: DirectoryType, toDirectory destination: DirectoryType) -> Bool
+    public static func moveLocalFile(file: String, fromDirectory origin: DirectoryType, toDirectory destination: DirectoryType) throws -> Bool
     {
-        return self.moveLocalFile(file, fromDirectory: origin, toDirectory: destination, withFolderName: nil)
+        return try self.moveLocalFile(file, fromDirectory: origin, toDirectory: destination, withFolderName: nil)
     }
     
     /**
@@ -367,7 +373,15 @@ public extension NSFileManager
     {
         if NSFileManager.defaultManager().fileExistsAtPath(origin)
         {
-            return NSFileManager.defaultManager().copyItemAtPath(origin, toPath: destination, error: nil)
+            do
+            {
+                try NSFileManager.defaultManager().copyItemAtPath(origin, toPath: destination)
+                return true
+            }
+            catch
+            {
+                return false
+            }
         }
         return false
     }
@@ -396,19 +410,27 @@ public extension NSFileManager
             originPath = self.getDocumentsDirectoryForFile(path)
         case .Cache:
             originPath = self.getCacheDirectoryForFile(path)
-        default:
-            break
         }
         
         if NSFileManager.defaultManager().fileExistsAtPath(originPath)
         {
             let newNamePath: String = originPath.stringByReplacingOccurrencesOfString(oldName, withString: newName)
-            if NSFileManager.defaultManager().copyItemAtPath(originPath, toPath: newNamePath, error: nil)
+            do
             {
-                if NSFileManager.defaultManager().removeItemAtPath(originPath, error: nil)
+                try NSFileManager.defaultManager().copyItemAtPath(originPath, toPath: newNamePath)
+                do
                 {
+                    try NSFileManager.defaultManager().removeItemAtPath(originPath)
                     return true
                 }
+                catch
+                {
+                    return false
+                }
+            }
+            catch
+            {
+                return false
             }
         }
         return false
