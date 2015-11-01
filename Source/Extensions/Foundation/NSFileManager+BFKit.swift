@@ -57,9 +57,9 @@ public extension NSFileManager
     
     :returns: Returns the content of the file a String
     */
-    public static func readTextFile(var file: String, ofType: String) -> String?
+    public static func readTextFile(file: String, ofType: String) throws -> String?
     {
-        return String(contentsOfFile: NSBundle.mainBundle().pathForResource(file, ofType: ofType)!, encoding: NSUTF8StringEncoding, error: nil)
+        return try String(contentsOfFile: NSBundle.mainBundle().pathForResource(file, ofType: ofType)!, encoding: NSUTF8StringEncoding)
     }
     
     /**
@@ -143,7 +143,7 @@ public extension NSFileManager
     */
     public static func getDocumentsDirectoryForFile(file: String) -> String
     {
-        let documentsDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
+        let documentsDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
         return documentsDirectory.stringByAppendingPathComponent(String(format: "%@/", file))
     }
     
@@ -156,7 +156,7 @@ public extension NSFileManager
     */
     public static func getLibraryDirectoryForFile(file: String) -> String
     {
-        let libraryDirectory = NSSearchPathForDirectoriesInDomains(.LibraryDirectory, .UserDomainMask, true)[0] as! String
+        let libraryDirectory = NSSearchPathForDirectoriesInDomains(.LibraryDirectory, .UserDomainMask, true)[0]
         return libraryDirectory.stringByAppendingPathComponent(String(format: "%@/", file))
     }
     
@@ -169,7 +169,7 @@ public extension NSFileManager
     */
     public static func getCacheDirectoryForFile(file: String) -> String
     {
-        let cacheDirectory = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0] as! String
+        let cacheDirectory = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0]
         return cacheDirectory.stringByAppendingPathComponent(String(format: "%@/", file))
     }
     
@@ -181,9 +181,9 @@ public extension NSFileManager
     
     :returns: Returns the file size
     */
-    public static func fileSize(file: String, fromDirectory directory: DirectoryType) -> NSNumber?
+    public static func fileSize(file: String, fromDirectory directory: DirectoryType) throws -> NSNumber?
     {
-        if count(file) != 0
+        if file.characters.count != 0
         {
             var path: String
             
@@ -203,9 +203,10 @@ public extension NSFileManager
             
             if(NSFileManager.defaultManager().fileExistsAtPath(path))
             {
-                if let fileAttributes = NSFileManager.defaultManager().attributesOfItemAtPath(file, error: nil)
+                let fileAttributes: NSDictionary? = try NSFileManager.defaultManager().attributesOfItemAtPath(file)
+                if let _fileAttributes = fileAttributes
                 {
-                    return fileAttributes[NSFileSize] as? NSNumber
+                    return NSNumber(unsignedLongLong: _fileAttributes.fileSize())
                 }
             }
         }
@@ -223,7 +224,7 @@ public extension NSFileManager
     */
     public static func deleteFile(file: String, fromDirectory directory: DirectoryType) -> Bool
     {
-        if count(file) != 0
+        if file.characters.count != 0
         {
             var path: String
             

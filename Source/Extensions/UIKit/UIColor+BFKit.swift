@@ -92,7 +92,8 @@ public extension UIColor
             {
                 let c = CGColorGetComponents(self.CGColor)
                 
-                if CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)).value == kCGColorSpaceModelMonochrome.value
+                // TODO: Test it
+                if CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)) == .Monochrome
                 {
                     return c[0]
                 }
@@ -116,7 +117,8 @@ public extension UIColor
             {
                 let c = CGColorGetComponents(self.CGColor)
                 
-                if CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)).value == kCGColorSpaceModelMonochrome.value
+                // TODO: Test it
+                if CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)) == .Monochrome
                 {
                     return c[0]
                 }
@@ -136,7 +138,8 @@ public extension UIColor
     {
         get
         {
-            if CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)).value == kCGColorSpaceModelMonochrome.value
+            // TODO: Test it
+            if CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)) == .Monochrome
             {
                 let c = CGColorGetComponents(self.CGColor)
                 
@@ -293,11 +296,12 @@ public extension UIColor
     */
     public func canProvideRGBComponents() -> Bool
     {
-        switch CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)).value
+        // TODO: Test it
+        switch CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor))
         {
-        case kCGColorSpaceModelRGB.value:
+        case CGColorSpaceModel.RGB:
             return true
-        case kCGColorSpaceModelMonochrome.value:
+        case CGColorSpaceModel.Monochrome:
             return true
         default:
             return false
@@ -346,14 +350,15 @@ public extension UIColor
         
         var r, g, b, a: CGFloat
         
-        switch CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)).value
+        // TODO: Test it
+        switch CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor))
         {
-        case kCGColorSpaceModelMonochrome.value:
+        case CGColorSpaceModel.Monochrome:
             r = components[0]
             g = components[0]
             b = components[0]
             a = components[1]
-        case kCGColorSpaceModelRGB.value:
+        case CGColorSpaceModel.RGB:
             r = components[0]
             g = components[1]
             b = components[2]

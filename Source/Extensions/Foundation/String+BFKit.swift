@@ -150,9 +150,10 @@ public extension String
     */
     public func indexOfCharacter(character: Character) -> Int?
     {
-        if let index = find(self, character)
+        // TODO: Check it
+        if let index = self.characters.indexOf(character)
         {
-            return distance(self.startIndex, index)
+            return self.startIndex.distanceTo(index)
         }
         return nil
     }
@@ -236,7 +237,7 @@ public extension String
         let uppercase: String = self.substringToIndex(1).uppercaseString
         let lowercase: String = self.substringFromIndex(1).lowercaseString
         
-        return uppercase.stringByAppendingString(lowercaseString)
+        return uppercase.stringByAppendingString(lowercase)
     }
     
     /**
@@ -267,9 +268,9 @@ public extension String
     
     :returns: Returns a new string containing matching regular expressions replaced with the template string
     */
-    public func stringByReplacingWithRegex(regexString: NSString, withString replacement: NSString) -> NSString
+    public func stringByReplacingWithRegex(regexString: NSString, withString replacement: NSString) throws -> NSString
     {
-        let regex: NSRegularExpression = NSRegularExpression(pattern: regexString as String, options: .CaseInsensitive, error: nil)!
+        let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString as String, options: .CaseInsensitive)
         return regex.stringByReplacingMatchesInString(self, options: NSMatchingOptions(rawValue: 0), range:NSMakeRange(0, self.length), withTemplate: "")
     }
     
@@ -283,8 +284,86 @@ public extension String
         return self.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!
     }
     
-    // TODO: Missing hash functions
+    /// Returns the last path component
+    var lastPathComponent: String
+    {
+        get
+        {
+            return (self as NSString).lastPathComponent
+        }
+    }
     
+    /// Returns the path extension
+    var pathExtension: String
+    {
+        get
+        {
+            return (self as NSString).pathExtension
+        }
+    }
+    
+    /// Delete the last path component
+    var stringByDeletingLastPathComponent: String
+    {
+        get
+        {
+            return (self as NSString).stringByDeletingLastPathComponent
+        }
+    }
+    
+    /// Delete the path extension
+    var stringByDeletingPathExtension: String
+    {
+        get
+        {
+            return (self as NSString).stringByDeletingPathExtension
+        }
+    }
+    
+    /// Returns an array of path components
+    var pathComponents: [String]
+    {
+        get
+        {
+            return (self as NSString).pathComponents
+        }
+    }
+    
+    /**
+     Appends a path component to the string
+     
+     - parameter path: Path component to append
+     
+     - returns: Returns all the string
+     */
+    func stringByAppendingPathComponent(path: String) -> String
+    {
+        let string = self as NSString
+        
+        return string.stringByAppendingPathComponent(path)
+    }
+    
+    /**
+     Appends a path extension to the string
+     
+     - parameter ext: Extension to append
+     
+     - returns: returns all the string
+     */
+    func stringByAppendingPathExtension(ext: String) -> String?
+    {
+        let nsSt = self as NSString
+        
+        return nsSt.stringByAppendingPathExtension(ext)
+    }
+    
+    /// Converts self to a NSString
+    var NS: NSString
+    {
+        return (self as NSString)
+    }
+    
+    // TODO: Missing hash functions
     /**
     Create a MD5 string from self
     
@@ -336,7 +415,8 @@ public extension String
     */
     public subscript(index: Int) -> Character
     {
-        return self[advance(self.startIndex, index)]
+        // TODO: Check it
+        return self[self.startIndex.advancedBy(index)]
     }
     
     /**
@@ -353,6 +433,7 @@ public extension String
     
     /**
     Returns the string from a given range
+    Example: print("BFKit"[1...3]) //the result is "FKi"
     
     :param: range The range
     
@@ -360,10 +441,8 @@ public extension String
     */
     public subscript(range: Range<Int>) -> String
     {
-        let start = advance(self.startIndex, range.startIndex)
-        let end = advance(self.startIndex, range.endIndex)
-        
-        return self[start..<end]
+        // TODO: Check it
+        return substringWithRange(Range(start: startIndex.advancedBy(range.startIndex), end: startIndex.advancedBy(range.endIndex)))
     }
     
     // MARK: - Class functions -
