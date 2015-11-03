@@ -39,7 +39,7 @@ public extension UIWebView
     {
         for var i = 0; i < self.scrollView.subviews.count; i++
         {
-            let singleSubview: UIView = self.scrollView.subviews[i] as! UIView
+            let singleSubview: UIView = self.scrollView.subviews[i]
             if singleSubview.isKindOfClass(UIImageView.self) && singleSubview.frame.origin.x <= 500
             {
                 singleSubview.hidden = true

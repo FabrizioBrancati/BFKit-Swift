@@ -74,7 +74,7 @@ public extension String
     {
         // TODO: Check it
         //return self[advance(self.startIndex, index)...advance(self.startIndex, self.length-1)]
-        return self.substringFromIndex(self.endIndex.advancedBy(-index))
+        return self.substringFromIndex(self.startIndex.advancedBy(index))
     }
     
     /**
