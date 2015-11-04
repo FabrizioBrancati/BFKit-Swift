@@ -294,4 +294,74 @@ public extension NSString {
         let data: NSData = NSData(base64EncodedString: string as String, options: NSDataBase64DecodingOptions(rawValue: 0))!
         return NSString(data: data, encoding: NSUTF8StringEncoding)!
     }
+    
+    /**
+     Remove double or more duplicated spaces
+     
+     - returns: String without additional spaces
+     */
+    public func removeExtraSpaces() -> NSString {
+        let squashed = self.stringByReplacingOccurrencesOfString("[ ]+", withString: " ", options: .RegularExpressionSearch, range: NSMakeRange(0, self.length))
+        return squashed.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+    }
+    
+    /**
+     Returns a new string containing matching regular expressions replaced with the template string
+     
+     - parameter regexString: The regex string
+     - parameter replacement: The replacement string
+     
+     - returns: Returns a new string containing matching regular expressions replaced with the template string
+     */
+    public func stringByReplacingWithRegex(regexString: NSString, replacement: NSString) -> NSString? {
+        do {
+            let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString as String, options: .CaseInsensitive)
+            return regex.stringByReplacingMatchesInString(self as String, options: NSMatchingOptions(rawValue: 0), range: NSMakeRange(0, self.length), withTemplate: "")
+        } catch {
+            
+        }
+        
+        return nil
+    }
+    
+    /**
+     Convert HEX string (separated by space) to "usual" characters string.
+     Example: "68 65 6c 6c 6f" -> "hello"
+     
+     - returns: Readable string
+     */
+    public func HEXToString() -> NSString {
+        var hex = self as String
+        hex = hex.stringByReplacingOccurrencesOfString(" ", withString: "")
+        var s: String = ""
+        while hex.characters.count > 0 {
+            let c: String = hex.substringToIndex(hex.startIndex.advancedBy(2))
+            hex = hex.substringFromIndex(hex.startIndex.advancedBy(2))
+            var ch: UInt32 = 0
+            NSScanner(string: c).scanHexInt(&ch)
+            s = s.stringByAppendingString(String(format: "%c", ch))
+        }
+        return s
+    }
+    
+    /**
+     Convert string to HEX string
+     Example: "hello" -> "68656c6c6f"
+     
+     - returns: HEX string
+     */
+    public func stringToHEX() -> NSString {
+        let len: Int = self.length
+        let chars: UnsafeMutablePointer<unichar> = UnsafeMutablePointer<unichar>(malloc(len * sizeof(unichar)));
+        self.getCharacters(UnsafeMutablePointer<unichar>(chars))
+        
+        let hexString: NSMutableString = NSMutableString()
+        
+        for var i = 0; i < len; i++ {
+            hexString.appendFormat("%02x", chars[i])
+        }
+        free(chars)
+        
+        return hexString
+    }
 }
