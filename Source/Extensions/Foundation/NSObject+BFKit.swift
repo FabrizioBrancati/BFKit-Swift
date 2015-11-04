@@ -27,8 +27,7 @@
 import Foundation
 
 /// This extension adds some useful functions to NSObject
-public extension NSObject
-{
+public extension NSObject {
     // MARK: - Instance functions -
     
     /**
@@ -36,8 +35,7 @@ public extension NSObject
     
      - returns: Returns if the object is valid
      */
-    public func isValid() -> Bool
-    {
+    public func isValid() -> Bool {
         return !self.isKindOfClass(NSNull)
     }
 }

@@ -8,14 +8,12 @@
 
 import UIKit
 
-class DetailViewController: UIViewController
-{
+class DetailViewController: UIViewController {
     @IBOutlet var scrollView: UIScrollView!
     
     var detailType: DetailType = .UIButton
     
-    enum DetailType : String
-    {
+    enum DetailType : String {
         case BFApp = "BFApp"
         case BFButton = "BFButton"
         case BFDataStructures = "BFDataStructures"
@@ -56,10 +54,8 @@ class DetailViewController: UIViewController
         case String = "String"
     }
     
-    override func viewDidLoad()
-    {
-        switch detailType
-        {
+    override func viewDidLoad() {
+        switch detailType {
         case .BFApp:
             scrollView.removeFromSuperview()
             
@@ -72,12 +68,9 @@ class DetailViewController: UIViewController
             BFLog("Localized string from BFKit: \(openString)")
             
             BFApp.onFirstStart({ (isFirstStart) -> () in
-                if isFirstStart
-                {
+                if isFirstStart {
                     BFLog("Is first start!")
-                }
-                else
-                {
+                } else {
                     BFLog("Is not first start!")
                 }
             })
@@ -171,8 +164,7 @@ class DetailViewController: UIViewController
             
             if #available(iOS 8.0, *) {
                 BFTouchID.showTouchIDAuthenticationWithReason(BFLocalizedString("AUTHENTICATION"), completion: { (result) -> () in
-                    switch result
-                    {
+                    switch result {
                     case .Success:
                         runOnMainThread({
                             normalLabel.text = BFLocalizedString("AUTHORIZED")
@@ -241,20 +233,13 @@ class DetailViewController: UIViewController
             
             var deviceInfoString: String = ""
             
-            if UIDevice.isiPhone()
-            {
+            if UIDevice.isiPhone() {
                 deviceInfoString += "Device: iPhone\n"
-            }
-            else if UIDevice.isiPad()
-            {
+            } else if UIDevice.isiPad() {
                 deviceInfoString += "Device: iPad\n"
-            }
-            else if UIDevice.isiPod()
-            {
+            } else if UIDevice.isiPod() {
                 deviceInfoString += "Device: iPod\n"
-            }
-            else if UIDevice.isSimulator()
-            {
+            } else if UIDevice.isSimulator() {
                 deviceInfoString += "Device: Simulator\n"
             }
             
@@ -369,21 +354,15 @@ class DetailViewController: UIViewController
             
             var screenInfoString: String = ""
             
-            if UIScreen.isRetina()
-            {
+            if UIScreen.isRetina() {
                 screenInfoString += "Retina: Yes\n"
-            }
-            else
-            {
+            } else {
                 screenInfoString += "Retina: No\n"
             }
             
-            if UIScreen.isRetinaHD()
-            {
+            if UIScreen.isRetinaHD() {
                 screenInfoString += "Retina HD: Yes\n"
-            }
-            else
-            {
+            } else {
                 screenInfoString += "Retina HD: No\n"
             }
             
@@ -652,12 +631,10 @@ class DetailViewController: UIViewController
         }
     }
     
-    override func viewWillDisappear(animated: Bool)
-    {
+    override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        switch detailType
-        {
+        switch detailType {
         case .UINavigationBar:
             self.navigationController?.navigationBar.setTransparent(false)
         case .UIWindow:
@@ -667,25 +644,21 @@ class DetailViewController: UIViewController
         }
     }
     
-    func prepareForDetail(detailTypeString: String)
-    {
+    func prepareForDetail(detailTypeString: String) {
         detailType = DetailType(rawValue: detailTypeString)!
         
         self.title = detailTypeString
     }
     
-    func shakeButtonAction(button: UIButton)
-    {
+    func shakeButtonAction(button: UIButton) {
         button.shakeView()
     }
     
-    func barButtonItemsAction(button: UIBarButtonItem)
-    {
+    func barButtonItemsAction(button: UIBarButtonItem) {
         BFLog("Bar button pressed")
     }
     
-    func threadFunciton()
-    {
+    func threadFunciton() {
         BFLog("Background: \(NSThread.currentThread())")
         
         runOnMainThread {

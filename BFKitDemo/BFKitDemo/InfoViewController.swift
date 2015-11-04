@@ -8,12 +8,10 @@
 
 import UIKit
 
-class InfoViewController : UIViewController
-{
+class InfoViewController : UIViewController {
     @IBOutlet var scrollView: UIScrollView!
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         let profileImage: UIImageView = UIImageView(image: UIImage(named: "Profile")!, size: CGSizeMake(200, 200), center: CGPointMake(SCREEN_WIDTH / 2, SCREEN_WIDTH / 2.5))
         profileImage.setCornerRadius(profileImage.frame.size.width / 2)
         profileImage.createBordersWithColor(UIColor ( red: 0.9218, green: 0.565, blue: 0.139, alpha: 1.0 ), radius: 100, width: 5)
@@ -40,13 +38,11 @@ class InfoViewController : UIViewController
         scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, profileImage.frame.origin.y + profileImage.frame.size.height + 50 + nameLabel.frame.size.height + 40 + workLabel.frame.size.height + 35 + siteButton.frame.size.height + 20)
     }
     
-    @IBAction func closeInfo(sender: UIBarButtonItem)
-    {
+    @IBAction func closeInfo(sender: UIBarButtonItem) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func openWebsite()
-    {
+    func openWebsite() {
         UIApplication.sharedApplication().openURL(NSURL(string: "http://www.fabriziobrancati.com")!)
     }
 }

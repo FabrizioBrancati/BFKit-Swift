@@ -8,12 +8,10 @@
 
 import UIKit
 
-class FoundationViewController: UITableViewController
-{
+class FoundationViewController: UITableViewController {
     let CellIdentifier = "FoundationCell"
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -22,34 +20,28 @@ class FoundationViewController: UITableViewController
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: infoButton)
     }
     
-    override func didReceiveMemoryWarning()
-    {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func showInfo(sender: UIButton)
-    {
+    func showInfo(sender: UIButton) {
         self.performSegueWithIdentifier(InfoViewControllerSegueID, sender: self.navigationItem.rightBarButtonItem)
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int
-    {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String?
-    {
+    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return "By \(BFKIT_AUTHOR) - BFKit v\(APP_VERSION) (\(APP_BUILD))"
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return FoundationArray.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
-    {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as UITableViewCell!
         
         cell.textLabel?.text = FoundationArray[indexPath.row]
@@ -58,10 +50,8 @@ class FoundationViewController: UITableViewController
         return cell
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
-    {
-        if segue.destinationViewController.isKindOfClass(DetailViewController)
-        {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.destinationViewController.isKindOfClass(DetailViewController) {
             let detailViewController: DetailViewController = segue.destinationViewController as! DetailViewController
             
             detailViewController.prepareForDetail(FoundationArray[sender!.tag!])

@@ -27,13 +27,11 @@
 import Foundation
 
 /// This extesion adds some useful functions to String
-public extension String
-{
+public extension String {
     // MARK: - Variables -
     
     /// Return the float value
-    public var floatValue: Float
-    {
+    public var floatValue: Float {
         return (self as NSString).floatValue
     }
     
@@ -44,8 +42,7 @@ public extension String
     
      - returns: Returns the lenght of the string
      */
-    public var length: Int
-    {
+    public var length: Int {
         // TODO: Check it
         return self.characters.count
     }
@@ -57,8 +54,7 @@ public extension String
     
      - returns: Returns the character at a given index
      */
-    public func characterAtIndex(index: Int) -> Character
-    {
+    public func characterAtIndex(index: Int) -> Character {
         // TODO: Check it
         return self[self.startIndex.advancedBy(index)]
     }
@@ -70,8 +66,7 @@ public extension String
     
      - returns: Returns the substring from index
      */
-    public func substringFromIndex(index: Int) -> String
-    {
+    public func substringFromIndex(index: Int) -> String {
         // TODO: Check it
         //return self[advance(self.startIndex, index)...advance(self.startIndex, self.length-1)]
         return self.substringFromIndex(self.startIndex.advancedBy(index))
@@ -84,8 +79,7 @@ public extension String
     
      - returns: Returns the substring to index
      */
-    public func substringToIndex(index: Int) -> String
-    {
+    public func substringToIndex(index: Int) -> String {
         // TODO: Check it
         //return self[advance(self.startIndex, 0)...advance(self.startIndex, index-1)]
         return self.substringToIndex(self.startIndex.advancedBy(index))
@@ -98,8 +92,7 @@ public extension String
     
      - returns: Returns the string between the range
      */
-    public func substringWithRange(range: Range<Int>) -> String
-    {
+    public func substringWithRange(range: Range<Int>) -> String {
         // TODO: Check it
         //let start = advance(self.startIndex, range.startIndex)
         let start = self.startIndex.advancedBy(range.startIndex)
@@ -116,10 +109,8 @@ public extension String
     
      - returns: Returns the substring from character
      */
-    public func substringFromCharacter(character: Character) -> String?
-    {
-        if let index: Int = self.indexOfCharacter(character)
-        {
+    public func substringFromCharacter(character: Character) -> String? {
+        if let index: Int = self.indexOfCharacter(character) {
             return substringFromIndex(index)
         }
         return nil
@@ -132,10 +123,8 @@ public extension String
     
      - returns: Returns the substring to character
      */
-    public func substringToCharacter(character: Character) -> String?
-    {
-        if let index: Int = self.indexOfCharacter(character)
-        {
+    public func substringToCharacter(character: Character) -> String? {
+        if let index: Int = self.indexOfCharacter(character) {
             return substringToIndex(index)
         }
         return nil
@@ -148,11 +137,9 @@ public extension String
     
      - returns: Returns the index of the given character, nil if not found
      */
-    public func indexOfCharacter(character: Character) -> Int?
-    {
+    public func indexOfCharacter(character: Character) -> Int? {
         // TODO: Check it
-        if let index = self.characters.indexOf(character)
-        {
+        if let index = self.characters.indexOf(character) {
             return self.startIndex.distanceTo(index)
         }
         return nil
@@ -167,8 +154,7 @@ public extension String
     
      - returns: Returns the substring
      */
-    public func searchCharStart(charStart: Character, charEnd: Character) -> String
-    {
+    public func searchCharStart(charStart: Character, charEnd: Character) -> String {
         return String.searchInString(self, charStart: charStart, charEnd: charEnd)
     }
     
@@ -180,14 +166,10 @@ public extension String
     
      - returns: Returns true if founded, false if not
      */
-    public func hasString(string: String, caseSensitive: Bool = true) -> Bool
-    {
-        if caseSensitive
-        {
+    public func hasString(string: String, caseSensitive: Bool = true) -> Bool {
+        if caseSensitive {
             return self.rangeOfString(string) != nil
-        }
-        else
-        {
+        } else {
             return self.lowercaseString.rangeOfString(string.lowercaseString) != nil
         }
     }
@@ -197,8 +179,7 @@ public extension String
     
      - returns: Returns true if it's an email, false if not
      */
-    public func isEmail() -> Bool
-    {
+    public func isEmail() -> Bool {
         return String.isEmail(self)
     }
     
@@ -207,8 +188,7 @@ public extension String
     
      - returns: Returns the encoded string
      */
-    public func encodeToBase64() -> String
-    {
+    public func encodeToBase64() -> String {
         return String.encodeToBase64(self)
     }
     
@@ -217,8 +197,7 @@ public extension String
     
      - returns: Returns the decoded string
      */
-    public func decodeBase64() -> String
-    {
+    public func decodeBase64() -> String {
         return String.decodeBase64(self)
     }
     
@@ -228,10 +207,8 @@ public extension String
     
      - returns: Returns the capitalized sentence string
      */
-    public func sentenceCapitalizedString() -> String
-    {
-        if self.length == 0
-        {
+    public func sentenceCapitalizedString() -> String {
+        if self.length == 0 {
             return ""
         }
         let uppercase: String = self.substringToIndex(1).uppercaseString
@@ -245,8 +222,7 @@ public extension String
     
      - returns: Returns a human legible string from a timestamp
      */
-    public func dateFromTimestamp() -> String
-    {
+    public func dateFromTimestamp() -> String {
         let year: String = self.substringToIndex(4)
         var month: String = self.substringFromIndex(5)
         month = month.substringToIndex(4)
@@ -268,8 +244,7 @@ public extension String
     
      - returns: Returns a new string containing matching regular expressions replaced with the template string
      */
-    public func stringByReplacingWithRegex(regexString: NSString, withString replacement: NSString) throws -> NSString
-    {
+    public func stringByReplacingWithRegex(regexString: NSString, withString replacement: NSString) throws -> NSString {
         let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString as String, options: .CaseInsensitive)
         return regex.stringByReplacingMatchesInString(self, options: NSMatchingOptions(rawValue: 0), range:NSMakeRange(0, self.length), withTemplate: "")
     }
@@ -279,52 +254,41 @@ public extension String
     
      - returns: Returns the encoded NSString
      */
-    public func URLEncode() -> String
-    {
+    public func URLEncode() -> String {
         return self.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!
     }
     
     /// Returns the last path component
-    var lastPathComponent: String
-    {
-        get
-        {
+    var lastPathComponent: String {
+        get {
             return (self as NSString).lastPathComponent
         }
     }
     
     /// Returns the path extension
-    var pathExtension: String
-    {
-        get
-        {
+    var pathExtension: String {
+        get {
             return (self as NSString).pathExtension
         }
     }
     
     /// Delete the last path component
-    var stringByDeletingLastPathComponent: String
-    {
-        get
-        {
+    var stringByDeletingLastPathComponent: String {
+        get {
             return (self as NSString).stringByDeletingLastPathComponent
         }
     }
     
     /// Delete the path extension
-    var stringByDeletingPathExtension: String
-    {
-        get
-        {
+    var stringByDeletingPathExtension: String {
+        get {
             return (self as NSString).stringByDeletingPathExtension
         }
     }
     
     /// Returns an array of path components
-    var pathComponents: [String]
-    {
-        get
-        {
+    var pathComponents: [String] {
+        get {
             return (self as NSString).pathComponents
         }
     }
@@ -336,8 +300,7 @@ public extension String
      
      - returns: Returns all the string
      */
-    func stringByAppendingPathComponent(path: String) -> String
-    {
+    func stringByAppendingPathComponent(path: String) -> String {
         let string = self as NSString
         
         return string.stringByAppendingPathComponent(path)
@@ -350,16 +313,14 @@ public extension String
      
      - returns: returns all the string
      */
-    func stringByAppendingPathExtension(ext: String) -> String?
-    {
+    func stringByAppendingPathExtension(ext: String) -> String? {
         let nsSt = self as NSString
         
         return nsSt.stringByAppendingPathExtension(ext)
     }
     
     /// Converts self to a NSString
-    var NS: NSString
-    {
+    var NS: NSString {
         return (self as NSString)
     }
     
@@ -369,8 +330,7 @@ public extension String
     
      - returns: Returns the MD5 NSString from self
      */
-    private func MD5() -> String
-    {
+    private func MD5() -> String {
         return ""
     }
     
@@ -379,8 +339,7 @@ public extension String
     
      - returns: Returns the SHA1 NSString from self
      */
-    private func SHA1() -> String
-    {
+    private func SHA1() -> String {
         return ""
     }
     
@@ -389,8 +348,7 @@ public extension String
     
      - returns: Returns the SHA256 NSString from self
      */
-    private func SHA256() -> String
-    {
+    private func SHA256() -> String {
         return ""
     }
     
@@ -399,8 +357,7 @@ public extension String
     
      - returns: Returns the SHA512 NSString from self
      */
-    private func SHA512() -> String
-    {
+    private func SHA512() -> String {
         return ""
     }
     
@@ -413,8 +370,7 @@ public extension String
     
      - returns: Returns the character at the given index
      */
-    public subscript(index: Int) -> Character
-    {
+    public subscript(index: Int) -> Character {
         // TODO: Check it
         return self[self.startIndex.advancedBy(index)]
     }
@@ -426,8 +382,7 @@ public extension String
     
      - returns: Returns the character at the given index as String
      */
-    public subscript(index: Int) -> String
-    {
+    public subscript(index: Int) -> String {
             return String(self[index] as Character)
     }
     
@@ -439,8 +394,7 @@ public extension String
     
      - returns: Returns the string from a given range
      */
-    public subscript(range: Range<Int>) -> String
-    {
+    public subscript(range: Range<Int>) -> String {
         // TODO: Check it
         return substringWithRange(Range(start: startIndex.advancedBy(range.startIndex), end: startIndex.advancedBy(range.endIndex)))
     }
@@ -457,19 +411,15 @@ public extension String
     
      - returns: Returns the substring
      */
-    public static func searchInString(string: String, charStart: Character, charEnd: Character) -> String
-    {
+    public static func searchInString(string: String, charStart: Character, charEnd: Character) -> String {
         var start = 0, stop = 0
         
-        for var i = 0; i < string.length; i++
-        {
-            if string.characterAtIndex(i) == charStart
-            {
+        for var i = 0; i < string.length; i++ {
+            if string.characterAtIndex(i) == charStart {
                 start = i+1
                 i += 1
             }
-            if string.characterAtIndex(i) == charEnd
-            {
+            if string.characterAtIndex(i) == charEnd {
                 stop = i
                 break
             }
@@ -487,8 +437,7 @@ public extension String
     
      - returns: Returns true if it's an email, false if not
      */
-    public static func isEmail(email: String) -> Bool
-    {
+    public static func isEmail(email: String) -> Bool {
         let emailRegEx: String = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
         
         let regExPredicate: NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
@@ -502,8 +451,7 @@ public extension String
     
      - returns: Returns the converted string
      */
-    public static func convertToUTF8Entities(string: String) -> String
-    {
+    public static func convertToUTF8Entities(string: String) -> String {
         return string
             .stringByReplacingOccurrencesOfString("%27", withString: "'")
             .stringByReplacingOccurrencesOfString("%e2%80%99".capitalizedString, withString: "’")
@@ -548,8 +496,7 @@ public extension String
     
      - returns: Returns the encoded string
      */
-    public static func encodeToBase64(string: String) -> String
-    {
+    public static func encodeToBase64(string: String) -> String {
         let data: NSData = string.dataUsingEncoding(NSUTF8StringEncoding)!
         return data.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
     }
@@ -561,8 +508,7 @@ public extension String
     
      - returns: Returns the decoded string
      */
-    public static func decodeBase64(string: String) -> String
-    {
+    public static func decodeBase64(string: String) -> String {
         let data: NSData = NSData(base64EncodedString: string as String, options: NSDataBase64DecodingOptions(rawValue: 0))!
         return NSString(data: data, encoding: NSUTF8StringEncoding)! as String
     }

@@ -29,8 +29,7 @@ import UIKit
 import QuartzCore
 
 /// This extesion adds some useful functions to UIImageView
-public extension UIImageView
-{
+public extension UIImageView {
     // MARK: - Instance functions -
     
     /**
@@ -41,8 +40,7 @@ public extension UIImageView
      - parameter offset:  Shadow's offset
      - parameter opacity: adow's opacity
      */
-    public func setImageShadowColor(color: UIColor, radius: CGFloat, offset: CGSize, opacity: Float)
-    {
+    public func setImageShadowColor(color: UIColor, radius: CGFloat, offset: CGSize, opacity: Float) {
         self.layer.shadowColor = color.CGColor
         self.layer.shadowRadius = radius
         self.layer.shadowOffset = offset
@@ -55,8 +53,7 @@ public extension UIImageView
     
      - parameter image The mask UIImage
      */
-    public func setMaskImage(image: UIImage)
-    {
+    public func setMaskImage(image: UIImage) {
         let mask: CALayer = CALayer()
         mask.contents = image.CGImage
         mask.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
@@ -74,8 +71,7 @@ public extension UIImageView
     
      - returns: Returns the created UIImageView
      */
-    public convenience init(frame: CGRect, image: UIImage)
-    {
+    public convenience init(frame: CGRect, image: UIImage) {
         self.init(frame: frame)
         self.image = image
     }
@@ -89,8 +85,7 @@ public extension UIImageView
     
      - returns: Returns the created UIImageView
      */
-    public convenience init(image: UIImage, size: CGSize, center: CGPoint)
-    {
+    public convenience init(image: UIImage, size: CGSize, center: CGPoint) {
         self.init(frame: CGRectMake(0, 0, size.width, size.height))
         self.image = image
         self.center = center
@@ -104,8 +99,7 @@ public extension UIImageView
     
      - returns: Returns the created UIImageView
      */
-    public convenience init(image: UIImage, center: CGPoint)
-    {
+    public convenience init(image: UIImage, center: CGPoint) {
         self.init(image: image)
         self.center = center
     }
@@ -118,8 +112,7 @@ public extension UIImageView
     
      - returns: Returns the created UIImageView
      */
-    public convenience init(var imageAsTemplate: UIImage, tintColor: UIColor)
-    {
+    public convenience init(var imageAsTemplate: UIImage, tintColor: UIColor) {
         self.init(image: imageAsTemplate)
         imageAsTemplate = imageAsTemplate.imageWithRenderingMode(.AlwaysTemplate)
         self.tintColor = tintColor

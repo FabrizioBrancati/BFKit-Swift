@@ -28,8 +28,7 @@ import Foundation
 import AudioToolbox
 
 /// This class adds some useful functions to play system sounds
-public class BFSystemSound
-{
+public class BFSystemSound {
     // MARK: - Enums -
     
     /**
@@ -158,8 +157,7 @@ public class BFSystemSound
      - SilentVibeChanged:         Silent Vibe Changed
      - Vibrate:                   Vibrate
      */
-    public enum AudioID : Int
-    {
+    public enum AudioID : Int {
         case NewMail = 1000
         case MailSent = 1001
         case VoiceMail = 1002
@@ -291,16 +289,14 @@ public class BFSystemSound
     
      - parameter audioID: ID of system audio from the AudioID enum
      */
-    public static func playSystemSound(audioID: AudioID)
-    {
+    public static func playSystemSound(audioID: AudioID) {
         AudioServicesPlaySystemSound(SystemSoundID(audioID.rawValue))
     }
     
     /**
      Play system sound vibrate
      */
-    public static func playSystemSoundVibrate()
-    {
+    public static func playSystemSoundVibrate() {
         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     
@@ -311,13 +307,11 @@ public class BFSystemSound
     
      - returns: Returns the SystemSoundID
      */
-    public static func playCustomSound(soundURL: NSURL) -> SystemSoundID
-    {
+    public static func playCustomSound(soundURL: NSURL) -> SystemSoundID {
         var soundID: SystemSoundID = 0
         
         let error: OSStatus = AudioServicesCreateSystemSoundID(soundURL as CFURLRef, &soundID)
-        if error != Int32(kAudioServicesNoError)
-        {
+        if error != Int32(kAudioServicesNoError) {
             BFLog("Could not load \(soundURL)")
         }
         return soundID
@@ -330,11 +324,9 @@ public class BFSystemSound
     
      - returns: Returns true if has been disposed, otherwise false
      */
-    public static func disposeSound(soundID: SystemSoundID) -> Bool
-    {
+    public static func disposeSound(soundID: SystemSoundID) -> Bool {
         let error: OSStatus = AudioServicesDisposeSystemSoundID(soundID)
-        if error != Int32(kAudioServicesNoError)
-        {
+        if error != Int32(kAudioServicesNoError) {
             BFLog("Error while disposing sound \(soundID)")
             return false
         }

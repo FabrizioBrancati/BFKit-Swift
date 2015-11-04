@@ -27,8 +27,7 @@
 import Foundation
 
 /// This extension add some useful functions to NSArray
-public extension NSArray
-{
+public extension NSArray {
     // MARK: - Instance functions -
     
     /**
@@ -38,14 +37,10 @@ public extension NSArray
     
      - returns: Returns the object at a given index in safe mode (nil if self is empty or out of range)
      */
-    public func safeObjectAtIndex(index: Int) -> AnyObject?
-    {
-        if self.count > 0 && self.count > index
-        {
+    public func safeObjectAtIndex(index: Int) -> AnyObject? {
+        if self.count > 0 && self.count > index {
             return self[index]
-        }
-        else
-        {
+        } else {
             return nil
         }
     }
@@ -55,8 +50,7 @@ public extension NSArray
     
      - returns: Returns the reversed array
      */
-    public func reversedArray() -> NSArray
-    {
+    public func reversedArray() -> NSArray {
         return NSArray.reversedArray(self)
     }
     
@@ -65,8 +59,7 @@ public extension NSArray
     
      - returns: Returns the JSON as String or nil if error while parsing
      */
-    public func arrayToJSON() throws -> NSString
-    {
+    public func arrayToJSON() throws -> NSString {
         return try NSArray.arrayToJSON(self)
     }
     
@@ -77,8 +70,7 @@ public extension NSArray
     
      - returns: Returns the object at a given index
      */
-    public func objectAtCircleIndex(index: Int) -> AnyObject
-    {
+    public func objectAtCircleIndex(index: Int) -> AnyObject {
         return self[self.superCircle(index, size: self.count)]
     }
     
@@ -90,15 +82,12 @@ public extension NSArray
     
      - returns: Returns the right index
      */
-    private func superCircle(var index: Int, size maxSize: Int) -> Int
-    {
-        if index < 0
-        {
+    private func superCircle(var index: Int, size maxSize: Int) -> Int{
+        if index < 0 {
             index = index % maxSize
             index += maxSize
         }
-        if index >= maxSize
-        {
+        if index >= maxSize {
             index = index % maxSize
         }
         
@@ -114,13 +103,11 @@ public extension NSArray
     
      - returns: Returns the reversed array
      */
-    public static func reversedArray(array: NSArray) -> NSArray
-    {
+    public static func reversedArray(array: NSArray) -> NSArray {
         let arrayTemp: NSMutableArray = NSMutableArray.init(capacity: array.count)
         let enumerator: NSEnumerator = array.reverseObjectEnumerator()
         
-        for element in enumerator
-        {
+        for element in enumerator {
             arrayTemp.addObject(element)
         }
         
@@ -134,8 +121,7 @@ public extension NSArray
     
      - returns: Returns the JSON as String or nil if error while parsing
      */
-    public static func arrayToJSON(array: AnyObject) throws -> NSString
-    {
+    public static func arrayToJSON(array: AnyObject) throws -> NSString {
         let data = try NSJSONSerialization.dataWithJSONObject(array, options: NSJSONWritingOptions())
         return NSString(data: data, encoding: NSUTF8StringEncoding)!
     }

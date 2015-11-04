@@ -29,11 +29,9 @@ import Foundation
 // MARK: - Stack class -
 
 /// Primitive Stack implementation
-public class Stack: CustomStringConvertible
-{
+public class Stack: CustomStringConvertible {
     /// Describe the Stack
-    public var description: String
-    {
+    public var description: String {
         return "\(stack)"
     }
     
@@ -45,8 +43,7 @@ public class Stack: CustomStringConvertible
     
      - returns: Returns true if the Stack is empty, otherwise false
      */
-    public func empty() -> Bool
-    {
+    public func empty() -> Bool {
         return stack.isEmpty
     }
     
@@ -55,8 +52,7 @@ public class Stack: CustomStringConvertible
     
      - parameter object: The element to add
      */
-    public func push(object: AnyObject)
-    {
+    public func push(object: AnyObject) {
         stack.append(object)
     }
     
@@ -65,8 +61,7 @@ public class Stack: CustomStringConvertible
     
      - returns: Returns the removed element
      */
-    public func pop() -> AnyObject
-    {
+    public func pop() -> AnyObject {
         let popped: AnyObject = stack[stack.count - 1]
         stack.removeAtIndex(stack.count - 1)
         
@@ -77,11 +72,9 @@ public class Stack: CustomStringConvertible
 // MARK: - List class -
 
 /// Primitive List implementation. In order to work, the List must contain only objects that is subclass of NSObject
-public class List: CustomStringConvertible
-{
+public class List: CustomStringConvertible {
     /// Describe the List
-    public var description: String
-    {
+    public var description: String {
         return "\(list)"
     }
     
@@ -95,19 +88,13 @@ public class List: CustomStringConvertible
     
      - returns: Returns the index of the searched element
      */
-    public func search(object: AnyObject) -> Int?
-    {
-        for var i = 0; i < list.count; i++
-        {
-            if object is NSObject
-            {
-                if list[i] as! NSObject == object as! NSObject
-                {
+    public func search(object: AnyObject) -> Int? {
+        for var i = 0; i < list.count; i++ {
+            if object is NSObject {
+                if list[i] as! NSObject == object as! NSObject {
                     return i
                 }
-            }
-            else
-            {
+            } else {
                 return nil
             }
         }
@@ -122,8 +109,7 @@ public class List: CustomStringConvertible
     
      - returns: Returns the element of the searched index
      */
-    public func search(index: Int) -> AnyObject?
-    {
+    public func search(index: Int) -> AnyObject? {
         return list.safeObjectAtIndex(index)
     }
     
@@ -132,8 +118,7 @@ public class List: CustomStringConvertible
     
      - parameter object: The element to insert in the List
      */
-    public func insert(object: AnyObject)
-    {
+    public func insert(object: AnyObject) {
         list.append(object)
     }
     
@@ -142,16 +127,12 @@ public class List: CustomStringConvertible
     
      - parameter object: The object to be deleted
      */
-    public func delete(object: AnyObject)
-    {
+    public func delete(object: AnyObject) {
         var index: Int = -1
         
-        for var i = 0; i < list.count; i++
-        {
-            if object is NSObject
-            {
-                if list[i] as! NSObject == object as! NSObject
-                {
+        for var i = 0; i < list.count; i++ {
+            if object is NSObject {
+                if list[i] as! NSObject == object as! NSObject {
                     index = i
                     break
                 }
@@ -166,8 +147,7 @@ public class List: CustomStringConvertible
     
      - parameter index: The index to delete
      */
-    public func delete(index: Int)
-    {
+    public func delete(index: Int) {
         list.removeAtIndex(index)
     }
 }
@@ -175,11 +155,9 @@ public class List: CustomStringConvertible
 // MARK: - Queue class -
 
 /// Primitive Queue implementation
-public class Queue: CustomStringConvertible
-{
+public class Queue: CustomStringConvertible {
     /// Describe the Queue
-    public var description: String
-    {
+    public var description: String {
         return "\(queue)"
     }
     
@@ -191,16 +169,14 @@ public class Queue: CustomStringConvertible
     
      - parameter object: The element to add
      */
-    public func enqueue(object: AnyObject)
-    {
+    public func enqueue(object: AnyObject) {
         queue.append(object)
     }
     
     /**
      Dequeue the first element
      */
-    public func dequeue()
-    {
+    public func dequeue() {
         queue.removeAtIndex(0)
     }
     
@@ -209,16 +185,14 @@ public class Queue: CustomStringConvertible
     
      - returns: Returns the element on the top of the Queue
      */
-    public func top() -> AnyObject?
-    {
+    public func top() -> AnyObject? {
         return queue.first
     }
     
     /**
      Remove all the elements in the Queue
      */
-    public func emptyQueue()
-    {
+    public func emptyQueue() {
         queue.removeAll(keepCapacity: false)
     }
 }

@@ -39,8 +39,7 @@ private let BFUniqueIdentifierDefaultsKey = "BFUniqueIdentifier"
 
  - returns: Get the iOS version string
  */
-public func IOS_VERSION() -> String
-{
+public func IOS_VERSION() -> String {
     return UIDevice.currentDevice().systemVersion
 }
 
@@ -51,8 +50,7 @@ public func IOS_VERSION() -> String
 
  - returns: Returns a Bool
  */
-public func SYSTEM_VERSION_EQUAL_TO(v: String) -> Bool
-{
+public func SYSTEM_VERSION_EQUAL_TO(v: String) -> Bool {
     return UIDevice.currentDevice().systemVersion.compare(v, options: .NumericSearch) == .OrderedSame
 }
 
@@ -63,8 +61,7 @@ public func SYSTEM_VERSION_EQUAL_TO(v: String) -> Bool
 
  - returns: Returns a Bool
  */
-public func SYSTEM_VERSION_GREATER_THAN(v: String) -> Bool
-{
+public func SYSTEM_VERSION_GREATER_THAN(v: String) -> Bool {
     return UIDevice.currentDevice().systemVersion.compare(v, options: .NumericSearch) == .OrderedDescending
 }
 
@@ -75,8 +72,7 @@ public func SYSTEM_VERSION_GREATER_THAN(v: String) -> Bool
 
  - returns: Returns a Bool
  */
-public func SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v: String) -> Bool
-{
+public func SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v: String) -> Bool {
     return UIDevice.currentDevice().systemVersion.compare(v, options: .NumericSearch) != .OrderedAscending
 }
 
@@ -87,8 +83,7 @@ public func SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v: String) -> Bool
 
  - returns: Returns a Bool
  */
-public func SYSTEM_VERSION_LESS_THAN(v: String) -> Bool
-{
+public func SYSTEM_VERSION_LESS_THAN(v: String) -> Bool {
     return UIDevice.currentDevice().systemVersion.compare(v, options: .NumericSearch) == .OrderedAscending
 }
 
@@ -99,8 +94,7 @@ public func SYSTEM_VERSION_LESS_THAN(v: String) -> Bool
 
  - returns: Returns a Bool
  */
-public func SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v: String) -> Bool
-{
+public func SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v: String) -> Bool {
     return UIDevice.currentDevice().systemVersion.compare(v, options: .NumericSearch) != .OrderedDescending
 }
 
@@ -109,8 +103,7 @@ public func SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v: String) -> Bool
 
  - returns: Returns if the iOS version is greater or equal to choosed one
  */
-public func IS_IOS_5_OR_LATER() -> Bool
-{
+public func IS_IOS_5_OR_LATER() -> Bool {
     return UIDevice.currentDevice().systemVersion.floatValue >= 5.0
 }
 
@@ -119,8 +112,7 @@ public func IS_IOS_5_OR_LATER() -> Bool
 
  - returns: Returns if the iOS version is greater or equal to choosed one
  */
-public func IS_IOS_6_OR_LATER() -> Bool
-{
+public func IS_IOS_6_OR_LATER() -> Bool {
     return UIDevice.currentDevice().systemVersion.floatValue >= 6.0
 }
 
@@ -129,8 +121,7 @@ public func IS_IOS_6_OR_LATER() -> Bool
 
  - returns: Returns if the iOS version is greater or equal to choosed one
  */
-public func IS_IOS_7_OR_LATER() -> Bool
-{
+public func IS_IOS_7_OR_LATER() -> Bool {
     return UIDevice.currentDevice().systemVersion.floatValue >= 7.0
 }
 
@@ -139,8 +130,7 @@ public func IS_IOS_7_OR_LATER() -> Bool
 
  - returns: Returns if the iOS version is greater or equal to choosed one
  */
-public func IS_IOS_8_OR_LATER() -> Bool
-{
+public func IS_IOS_8_OR_LATER() -> Bool {
     return UIDevice.currentDevice().systemVersion.floatValue >= 8.0
 }
 
@@ -149,14 +139,12 @@ public func IS_IOS_8_OR_LATER() -> Bool
 
  - returns: Returns if the iOS version is greater or equal to choosed one
  */
-public func IS_IOS_9_OR_LATER() -> Bool
-{
+public func IS_IOS_9_OR_LATER() -> Bool {
     return UIDevice.currentDevice().systemVersion.floatValue >= 9.0
 }
 
 /// This extesion adds some useful functions to UIDevice
-public extension UIDevice
-{
+public extension UIDevice {
     // MARK: - Class functions -
     
     /**
@@ -165,8 +153,7 @@ public extension UIDevice
     
      - returns: Returns the device platform string
      */
-    public static func devicePlatform() -> String
-    {
+    public static func devicePlatform() -> String {
         var name: [Int32] = [CTL_HW, HW_MACHINE]
         var size: Int = 2
         sysctl(&name, 2, nil, &size, &name, 0)
@@ -183,12 +170,10 @@ public extension UIDevice
     
      - returns: Returns the user-friendly device platform string
      */
-    public static func devicePlatformString() -> String
-    {
+    public static func devicePlatformString() -> String {
         let platform: String = self.devicePlatform()
         
-        switch platform
-        {
+        switch platform {
         // iPhone
         case "iPhone1,1":       return "iPhone 2G"
         case "iPhone1,2":       return "iPhone 3G"
@@ -255,14 +240,10 @@ public extension UIDevice
     
      - returns: Returns true if it's an iPad, fasle if not
      */
-    public static func isiPad() -> Bool
-    {
-        if self.devicePlatform().substringToIndex(4) == "iPad"
-        {
+    public static func isiPad() -> Bool {
+        if self.devicePlatform().substringToIndex(4) == "iPad" {
             return true
-        }
-        else
-        {
+        } else {
             return false
         }
     }
@@ -272,14 +253,10 @@ public extension UIDevice
     
      - returns: Returns true if it's an iPhone, false if not
      */
-    public static func isiPhone() -> Bool
-    {
-        if self.devicePlatform().substringToIndex(6) == "iPhone"
-        {
+    public static func isiPhone() -> Bool {
+        if self.devicePlatform().substringToIndex(6) == "iPhone" {
             return true
-        }
-        else
-        {
+        } else {
             return false
         }
     }
@@ -289,14 +266,10 @@ public extension UIDevice
     
      - returns: Returns true if it's an iPod, false if not
      */
-    public static func isiPod() -> Bool
-    {
-        if self.devicePlatform().substringToIndex(4) == "iPod"
-        {
+    public static func isiPod() -> Bool {
+        if self.devicePlatform().substringToIndex(4) == "iPod" {
             return true
-        }
-        else
-        {
+        } else {
             return false
         }
     }
@@ -306,14 +279,10 @@ public extension UIDevice
     
      - returns: Returns true if it's an Apple TV, false if not
      */
-    public static func isAppleTV() -> Bool
-    {
-        if self.devicePlatform().substringToIndex(7) == "AppleTV"
-        {
+    public static func isAppleTV() -> Bool {
+        if self.devicePlatform().substringToIndex(7) == "AppleTV" {
             return true
-        }
-        else
-        {
+        } else {
             return false
         }
     }
@@ -323,14 +292,10 @@ public extension UIDevice
     
      - returns: Returns true if it's an Apple Watch, false if not
      */
-    public static func isAppleWatch() -> Bool
-    {
-        if self.devicePlatform().substringToIndex(5) == "Watch"
-        {
+    public static func isAppleWatch() -> Bool {
+        if self.devicePlatform().substringToIndex(5) == "Watch" {
             return true
-        }
-        else
-        {
+        } else {
             return false
         }
     }
@@ -340,14 +305,10 @@ public extension UIDevice
     
      - returns: Returns true if it's a Simulator, false if not
      */
-    public static func isSimulator() -> Bool
-    {
-        if self.devicePlatform() == "i386" || self.devicePlatform() == "x86_64"
-        {
+    public static func isSimulator() -> Bool {
+        if self.devicePlatform() == "i386" || self.devicePlatform() == "x86_64" {
             return true
-        }
-        else
-        {
+        } else {
             return false
         }
     }
@@ -358,8 +319,7 @@ public extension UIDevice
      - returns: Returns true if it has a Retina display, false if not
      */
     @available(*, deprecated=1.4.0, message="Use isRetina() in UIScreen class")
-    public static func isRetina() -> Bool
-    {
+    public static func isRetina() -> Bool {
         return UIScreen.isRetina()
     }
     
@@ -369,8 +329,7 @@ public extension UIDevice
      - returns: Returns true if it has a Retina HD display, false if not
      */
     @available(*, deprecated=1.4.0, message="Use isRetinaHD() in UIScreen class")
-    public static func isRetinaHD() -> Bool
-    {
+    public static func isRetinaHD() -> Bool {
         return UIScreen.isRetinaHD()
     }
     
@@ -380,8 +339,7 @@ public extension UIDevice
     
      - returns: Returns the iOS version
      */
-    public static func iOSVersion() -> Int
-    {
+    public static func iOSVersion() -> Int {
         return Int(UIDevice.currentDevice().systemVersion.substringToCharacter(".")!)!
     }
     
@@ -392,8 +350,7 @@ public extension UIDevice
     
      - returns: Return the sysyem info
      */
-    private static func getSysInfo(typeSpecifier: Int32) -> Int
-    {
+    private static func getSysInfo(typeSpecifier: Int32) -> Int {
         var name: [Int32] = [CTL_HW, typeSpecifier]
         var size: Int = 2
         sysctl(&name, 2, nil, &size, &name, 0)
@@ -408,8 +365,7 @@ public extension UIDevice
     
      - returns: Returns the current device CPU frequency
      */
-    public static func cpuFrequency() -> Int
-    {
+    public static func cpuFrequency() -> Int {
         return self.getSysInfo(HW_CPU_FREQ)
     }
     
@@ -418,8 +374,7 @@ public extension UIDevice
     
      - returns: Returns the current device BUS frequency
      */
-    public static func busFrequency() -> Int
-    {
+    public static func busFrequency() -> Int {
         return self.getSysInfo(HW_TB_FREQ)
     }
     
@@ -428,8 +383,7 @@ public extension UIDevice
     
      - returns: Returns the current device RAM size
      */
-    public static func ramSize() -> Int
-    {
+    public static func ramSize() -> Int {
         return self.getSysInfo(HW_MEMSIZE)
     }
     
@@ -438,8 +392,7 @@ public extension UIDevice
     
      - returns: Returns the current device CPU number
      */
-    public static func cpuNumber() -> Int
-    {
+    public static func cpuNumber() -> Int {
         return self.getSysInfo(HW_NCPU)
     }
     
@@ -448,8 +401,7 @@ public extension UIDevice
     
      - returns: Returns the current device total memory
      */
-    public static func totalMemory() -> Int
-    {
+    public static func totalMemory() -> Int {
         return self.getSysInfo(HW_PHYSMEM)
     }
     
@@ -458,8 +410,7 @@ public extension UIDevice
     
      - returns: Returns the current device non-kernel memory
      */
-    public static func userMemory() -> Int
-    {
+    public static func userMemory() -> Int {
         return self.getSysInfo(HW_USERMEM)
     }
     
@@ -468,8 +419,7 @@ public extension UIDevice
     
      - returns: Returns the current device total disk space
      */
-    public static func totalDiskSpace() throws -> AnyObject
-    {
+    public static func totalDiskSpace() throws -> AnyObject {
         let attributes: NSDictionary = try NSFileManager.defaultManager().attributesOfFileSystemForPath(NSHomeDirectory())
         return attributes.objectForKey(NSFileSystemSize)!
     }
@@ -479,8 +429,7 @@ public extension UIDevice
     
      - returns: Returns the current device free disk space
      */
-    public static func freeDiskSpace() throws -> AnyObject
-    {
+    public static func freeDiskSpace() throws -> AnyObject {
         let attributes: NSDictionary = try NSFileManager.defaultManager().attributesOfFileSystemForPath(NSHomeDirectory())
         return attributes.objectForKey(NSFileSystemFreeSize)!
     }
@@ -490,19 +439,14 @@ public extension UIDevice
     
      - returns: Returns a unique identifier as a String
      */
-    public static func uniqueIdentifier() -> String
-    {
+    public static func uniqueIdentifier() -> String {
         var uuid: String?
-        if UIDevice.currentDevice().respondsToSelector("identifierForVendor")
-        {
+        if UIDevice.currentDevice().respondsToSelector("identifierForVendor") {
             uuid = UIDevice.currentDevice().identifierForVendor!.UUIDString
-        }
-        else
-        {
+        } else {
             let defaults = NSUserDefaults.standardUserDefaults()
             uuid = defaults.objectForKey(BFUniqueIdentifierDefaultsKey) as? String
-            if uuid == nil
-            {
+            if uuid == nil {
                 uuid = self.generateUUID()
                 defaults.setObject(uuid, forKey: BFUniqueIdentifierDefaultsKey)
                 defaults.synchronize()
@@ -516,8 +460,7 @@ public extension UIDevice
     
      - returns: Returns the created UUID string
      */
-    private static func generateUUID() -> String
-    {
+    private static func generateUUID() -> String {
         let theUUID: CFUUIDRef? = CFUUIDCreate(kCFAllocatorDefault)
         let string: CFStringRef? = CFUUIDCreateString(kCFAllocatorDefault, theUUID)
         return string! as String

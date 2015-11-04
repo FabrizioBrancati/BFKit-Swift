@@ -42,12 +42,9 @@ public var BFLogActive: Bool = true
  - parameter function: Function name
  - parameter line:     Line number
  */
-public func BFLog(var message: String, filename: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__)
-{
-    if BFLogActive
-    {
-        if message.hasSuffix("\n") == false
-        {
+public func BFLog(var message: String, filename: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__) {
+    if BFLogActive {
+        if message.hasSuffix("\n") == false {
             message += "\n"
         }
         
@@ -63,27 +60,19 @@ public func BFLog(var message: String, filename: String = __FILE__, function: St
 }
 
 /// Get the log string
-public var BFLogString: String
-{
-    if BFLogActive
-    {
+public var BFLogString: String {
+    if BFLogActive {
         return BFLogClass.logString
-    }
-    else
-    {
+    } else {
         return ""
     }
 }
 
 /// Get the detailed log string
-public var BFDetailedLogString: String
-{
-    if BFLogActive
-    {
+public var BFDetailedLogString: String {
+    if BFLogActive {
         return BFLogClass.detailedLogString
-    }
-    else
-    {
+    } else {
         return ""
     }
 }
@@ -91,17 +80,14 @@ public var BFDetailedLogString: String
 /**
  Clear the log string
  */
-public func BFLogClear()
-{
-    if BFLogActive
-    {
+public func BFLogClear() {
+    if BFLogActive {
         BFLogClass.clearLog()
     }
 }
 
 /// The private BFLogClass created to manage the log strings
-private class BFLogClass
-{
+private class BFLogClass {
     // MARK: - Variables -
     
     /// The log string
@@ -114,8 +100,7 @@ private class BFLogClass
     /**
      Private, clear the log string
      */
-    private static func clearLog()
-    {
+    private static func clearLog() {
         logString = ""
         detailedLogString = ""
     }

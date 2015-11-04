@@ -49,8 +49,7 @@ public let APP_VERSION: String = NSBundle(forClass: BFApp.self).infoDictionary![
  
  - returns: Returns the localized string
  */
-public func BFLocalizedString(key: String, _ comment: String? = nil) -> String
-{
+public func BFLocalizedString(key: String, _ comment: String? = nil) -> String {
     return NSBundle(forClass: BFApp.self).localizedStringForKey(key, value: key, table: "BFKit")
 }
 
@@ -58,20 +57,17 @@ public func BFLocalizedString(key: String, _ comment: String? = nil) -> String
 let APP_DELEGATE: UIApplicationDelegate? = UIApplication.sharedApplication().delegate
 
 /// This class adds some useful functions for the App
-public class BFApp
-{
+public class BFApp {
     /**
      Executes a block on first start of the App.
      Remember to execute UI instuctions on main thread
     
      - parameter block: The block to execute, returns isFirstStart
      */
-    public static func onFirstStart(block: (isFirstStart: Bool) -> ())
-    {
+    public static func onFirstStart(block: (isFirstStart: Bool) -> ()) {
         let defaults = NSUserDefaults.standardUserDefaults()
         let hasBeenOpened: Bool = defaults.boolForKey(BFHasBeenOpened)
-        if hasBeenOpened == false
-        {
+        if hasBeenOpened == false {
             defaults.setBool(true, forKey: BFHasBeenOpened)
             defaults.synchronize()
         }
@@ -85,12 +81,10 @@ public class BFApp
     
      - parameter block: The block to execute, returns isFirstStartForCurrentVersion
      */
-    public static func onFirstStartForCurrentVersion(block: (isFirstStartForCurrentVersion: Bool) -> ())
-    {
+    public static func onFirstStartForCurrentVersion(block: (isFirstStartForCurrentVersion: Bool) -> ()) {
         let defaults = NSUserDefaults.standardUserDefaults()
         let hasBeenOpenedForCurrentVersion: Bool = defaults.boolForKey(BFHasBeenOpenedForCurrentVersion)
-        if hasBeenOpenedForCurrentVersion == false
-        {
+        if hasBeenOpenedForCurrentVersion == false {
             defaults.setBool(true, forKey: BFHasBeenOpenedForCurrentVersion)
             defaults.synchronize()
         }

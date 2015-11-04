@@ -29,8 +29,7 @@ import LocalAuthentication
 
 /// This class adds some useful functions to use TouchID
 @available(iOS 8, *)
-public class BFTouchID
-{
+public class BFTouchID {
     // MARK: - Enums -
     
     /**
@@ -47,8 +46,7 @@ public class BFTouchID
      - NotEnrolled:          Not Enrolled
      */
     @available(iOS 8, *)
-    public enum TouchIDResult : Int
-    {
+    public enum TouchIDResult : Int {
         case Success
         case Error
         case AuthenticationFailed
@@ -69,24 +67,19 @@ public class BFTouchID
      - parameter fallbackTitle: Default title "Enter Password" is used when this property is left nil. If set to empty string, the button will be hidden
      - parameter completion:    Completion handler. It returns the TouchID result, from the TouchIDResult enum
      */
-    public static func showTouchIDAuthenticationWithReason(reason: String, fallbackTitle: String? = nil, completion: (result: TouchIDResult) -> ())
-    {
+    public static func showTouchIDAuthenticationWithReason(reason: String, fallbackTitle: String? = nil, completion: (result: TouchIDResult) -> ()) {
+        
         let context: LAContext = LAContext()
         
         context.localizedFallbackTitle = fallbackTitle
         
         var error: NSError?
-        if context.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: &error)
-        {
+        if context.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: &error) {
             context.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reason, reply: { (success: Bool, error: NSError?) -> Void in
-                if success
-                {
+                if success {
                     completion(result: .Success)
-                }
-                else
-                {
-                    switch error!.code
-                    {
+                } else {
+                    switch error!.code {
                     case LAError.AuthenticationFailed.rawValue:
                         completion(result: .AuthenticationFailed)
                     case LAError.UserCancel.rawValue:
@@ -103,8 +96,7 @@ public class BFTouchID
         }
         else
         {
-            switch error!.code
-            {
+            switch error!.code {
             case LAError.PasscodeNotSet.rawValue:
                 completion(result: .PasscodeNotSet)
             case LAError.TouchIDNotAvailable.rawValue:

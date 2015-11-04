@@ -28,20 +28,16 @@ import Foundation
 import UIKit
 
 /// This extesion adds some useful functions to UIWebView
-public extension UIWebView
-{
+public extension UIWebView {
     // MARK: - Instance functions -
     
     /**
      Remove the background shadow of the UIWebView
      */
-    public func removeBackgroundShadow()
-    {
-        for var i = 0; i < self.scrollView.subviews.count; i++
-        {
+    public func removeBackgroundShadow() {
+        for var i = 0; i < self.scrollView.subviews.count; i++ {
             let singleSubview: UIView = self.scrollView.subviews[i]
-            if singleSubview.isKindOfClass(UIImageView.self) && singleSubview.frame.origin.x <= 500
-            {
+            if singleSubview.isKindOfClass(UIImageView.self) && singleSubview.frame.origin.x <= 500 {
                 singleSubview.hidden = true
                 singleSubview.removeFromSuperview()
             }
@@ -53,8 +49,7 @@ public extension UIWebView
     
      - parameter website: Website to load
      */
-    public func loadWebsite(website: String)
-    {
+    public func loadWebsite(website: String) {
         self.loadRequest(NSURLRequest(URL: NSURL(string: website)!))
     }
 }

@@ -27,15 +27,13 @@
 import Foundation
 
 /// This extension add some useful functions to NSDate
-public extension NSDate
-{
+public extension NSDate {
     // MARK: - Variables -
     
     /**
      The simplified date structure
      */
-    public struct BFDateInformation
-    {
+    public struct BFDateInformation {
         /// Year
         var year = 0
         /// Month of the year
@@ -65,8 +63,7 @@ public extension NSDate
     
      - returns: Return self as a BFDateInformation structure with a given time zone
      */
-    public func dateInformation(timeZone: NSTimeZone = NSTimeZone.systemTimeZone()) -> BFDateInformation
-    {
+    public func dateInformation(timeZone: NSTimeZone = NSTimeZone.systemTimeZone()) -> BFDateInformation {
         var info = BFDateInformation()
         
         let calendar = NSCalendar.autoupdatingCurrentCalendar()
@@ -92,8 +89,7 @@ public extension NSDate
     
      - returns: Return the month
      */
-    public func month() -> NSDate
-    {
+    public func month() -> NSDate {
         let calendar = NSCalendar.autoupdatingCurrentCalendar()
         let comp = calendar.components([.Year, .Month], fromDate: self)
         
@@ -118,8 +114,7 @@ public extension NSDate
      
      - returns: Return weekday number
      */
-    public func weekday() -> Int
-    {
+    public func weekday() -> Int {
         let calendar = NSCalendar.autoupdatingCurrentCalendar()
         let comp = calendar.components([.Year, .Month, .Day, .Weekday], fromDate: self)
         
@@ -138,26 +133,24 @@ public extension NSDate
      
      - returns: Return weekday as a localized string
      */
-    public func dayFromWeekday() -> NSString
-    {
-        switch self.weekday()
-        {
-            case 1:
-                return BFLocalizedString("SUNDAY")
-            case 2:
-                return BFLocalizedString("MONDAY")
-            case 3:
-                return BFLocalizedString("TUESDAY")
-            case 4:
-                return BFLocalizedString("WEDNESDAY")
-            case 5:
-                return BFLocalizedString("THURSDAY")
-            case 6:
-                return BFLocalizedString("FRIDAY")
-            case 7:
-                return BFLocalizedString("SATURDAY")
-            default:
-                return ""
+    public func dayFromWeekday() -> NSString {
+        switch self.weekday() {
+        case 1:
+            return BFLocalizedString("SUNDAY")
+        case 2:
+            return BFLocalizedString("MONDAY")
+        case 3:
+            return BFLocalizedString("TUESDAY")
+        case 4:
+            return BFLocalizedString("WEDNESDAY")
+        case 5:
+            return BFLocalizedString("THURSDAY")
+        case 6:
+            return BFLocalizedString("FRIDAY")
+        case 7:
+            return BFLocalizedString("SATURDAY")
+        default:
+            return ""
         }
     }
     
@@ -166,8 +159,7 @@ public extension NSDate
     
      - returns: Return the date with time informations
      */
-    private func timelessDate() -> NSDate
-    {
+    private func timelessDate() -> NSDate {
         let calendar = NSCalendar.autoupdatingCurrentCalendar()
         let comp = calendar.components([.Year, .Month, .Day], fromDate: self)
         
@@ -179,8 +171,7 @@ public extension NSDate
     
      - returns: Return the date with time informations
      */
-    private func monthlessDate() -> NSDate
-    {
+    private func monthlessDate() -> NSDate {
         let calendar = NSCalendar.autoupdatingCurrentCalendar()
         let comp = calendar.components([.Year, .Month, .Day, .Weekday], fromDate: self)
         
@@ -194,8 +185,7 @@ public extension NSDate
     
      - returns: Returns true if is same day, false if not
      */
-    public func isSameDay(anotherDate: NSDate) -> Bool
-    {
+    public func isSameDay(anotherDate: NSDate) -> Bool {
         let calendar = NSCalendar.autoupdatingCurrentCalendar()
         let components1 = calendar.components([.Year, .Month, .Day], fromDate: self)
         let components2 = calendar.components([.Year, .Month, .Day], fromDate: anotherDate)
@@ -210,8 +200,7 @@ public extension NSDate
     
      - returns: Returns the months between the two dates
      */
-    public func monthsBetweenDate(toDate: NSDate) -> Int
-    {
+    public func monthsBetweenDate(toDate: NSDate) -> Int {
         let calendar = NSCalendar.autoupdatingCurrentCalendar()
         let components = calendar.components(.Month, fromDate: self.monthlessDate(), toDate: toDate.monthlessDate(), options: NSCalendarOptions.WrapComponents)
         
@@ -225,8 +214,7 @@ public extension NSDate
     
      - returns: Returns the days between the two dates
      */
-    public func daysBetweenDate(anotherDate: NSDate) -> Int
-    {
+    public func daysBetweenDate(anotherDate: NSDate) -> Int {
         let time: NSTimeInterval = self.timeIntervalSinceDate(anotherDate)
         return Int(abs(time / 60 / 60 / 24))
     }
@@ -236,8 +224,7 @@ public extension NSDate
     
      - returns: Returns if self is today
      */
-    public func isToday() -> Bool
-    {
+    public func isToday() -> Bool {
         return self.isSameDay(NSDate())
     }
     
@@ -248,8 +235,7 @@ public extension NSDate
     
      - returns: Returns self by adding the gived days number
      */
-    public func dateByAddingDays(days: Int) -> NSDate
-    {
+    public func dateByAddingDays(days: Int) -> NSDate {
         return self.dateByAddingTimeInterval(NSTimeInterval(days * 24 * 60 * 60))
     }
     
@@ -258,8 +244,7 @@ public extension NSDate
     
      - returns: Returns the month string
      */
-    public func monthString() -> String
-    {
+    public func monthString() -> String {
         let dateFormatter: NSDateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MMMM"
         
@@ -271,8 +256,7 @@ public extension NSDate
     
      - returns: Returns the year string
      */
-    public func yearString() -> String
-    {
+    public func yearString() -> String {
         let dateFormatter: NSDateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy"
         
@@ -286,8 +270,7 @@ public extension NSDate
     
      - returns: Returns a NSDate with the yesterday date
      */
-    public static func yesterday() -> NSDate
-    {
+    public static func yesterday() -> NSDate {
         var inf: BFDateInformation = NSDate().dateInformation()
         inf.day--
         return self.dateFromDateInformation(inf)
@@ -298,8 +281,7 @@ public extension NSDate
     
      - returns: Returns the month
      */
-    public static func month() -> NSDate
-    {
+    public static func month() -> NSDate {
         return NSDate().month()
     }
     
@@ -311,13 +293,11 @@ public extension NSDate
     
      - returns: Returns a NSDate from a given BFDateInformation structure with a given time zone
      */
-    public static func dateFromDateInformation(info: BFDateInformation, timeZone: NSTimeZone = NSTimeZone.systemTimeZone()) -> NSDate
-    {
+    public static func dateFromDateInformation(info: BFDateInformation, timeZone: NSTimeZone = NSTimeZone.systemTimeZone()) -> NSDate {
         let calendar = NSCalendar.autoupdatingCurrentCalendar()
         let comp = calendar.components([.Year, .Month], fromDate:NSDate())
         
-        if #available(iOS 8.0, *)
-        {
+        if #available(iOS 8.0, *) {
             comp.setValue(info.day, forComponent:.Day)
             comp.setValue(info.month, forComponent:.Month)
             comp.setValue(info.year, forComponent:.Year)
@@ -345,8 +325,7 @@ public extension NSDate
     
      - returns: Returns the created NSDate
      */
-    public static func dateWithDatePart(date: NSDate, andTimePart time: NSDate) -> NSDate
-    {
+    public static func dateWithDatePart(date: NSDate, andTimePart time: NSDate) -> NSDate {
         let dateFormatter: NSDateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
         let datePortion: String = dateFormatter.stringFromDate(date)
@@ -379,10 +358,8 @@ public extension NSDate
     
      - returns: Returns the given month as a localized string
      */
-    public static func monthStringWithMonthNumber(month: Int) -> String
-    {
-        switch month
-        {
+    public static func monthStringWithMonthNumber(month: Int) -> String {
+        switch month {
         case 1:
             return BFLocalizedString("JANUARY")
         case 2:
@@ -422,21 +399,16 @@ public extension NSDate
     
      - returns: Returns a String in the following format (dateSeparator = "/", usFormat to false and nanosecond to false). D/M/Y H:M:S. Example: 15/10/2013 10:38:43
      */
-    public static func dateInformationDescriptionWithInformation(info: BFDateInformation, dateSeparator: String = "/", usFormat: Bool = false, nanosecond: Bool = false) -> String
-    {
+    public static func dateInformationDescriptionWithInformation(info: BFDateInformation, dateSeparator: String = "/", usFormat: Bool = false, nanosecond: Bool = false) -> String {
         var description: String
         
-        if usFormat
-        {
+        if usFormat {
             description = String(format: "%04li%@%02li%@%02li %02li:%02li:%02li", info.year, dateSeparator, info.month, dateSeparator, info.day, info.hour, info.minute, info.second)
-        }
-        else
-        {
+        } else {
             description = String(format: "%02li%@%02li%@%04li %02li:%02li:%02li", info.month, dateSeparator, info.day, dateSeparator, info.year, info.hour, info.minute, info.second)
         }
         
-        if nanosecond
-        {
+        if nanosecond {
             description += String(format: ":%03li", info.nanosecond / 1000000)
         }
         

@@ -27,8 +27,7 @@
 import Foundation
 
 /// This extension adds some useful functions to NSString
-public extension NSString
-{
+public extension NSString {
     // MARK: - Instance functions -
     
     /**
@@ -40,8 +39,7 @@ public extension NSString
     
      - returns: Returns the substring
      */
-    public func searchCharStart(charStart: NSString, charEnd: NSString) -> NSString
-    {
+    public func searchCharStart(charStart: NSString, charEnd: NSString) -> NSString {
         return NSString.searchInString(self, charStart: charStart, charEnd: charEnd)
     }
     
@@ -53,14 +51,10 @@ public extension NSString
     
      - returns: Returns true if founded, false if not
      */
-    public func hasString(string: NSString, caseSensitive: Bool = true) -> Bool
-    {
-        if caseSensitive
-        {
+    public func hasString(string: NSString, caseSensitive: Bool = true) -> Bool {
+        if caseSensitive {
             return !(self.rangeOfString(string as String).location == NSNotFound)
-        }
-        else
-        {
+        } else {
             return !(self.rangeOfString(string.lowercaseString as String).location == NSNotFound)
         }
     }
@@ -70,8 +64,7 @@ public extension NSString
     
      - returns: Returns true if it's an email, false if not
      */
-    public func isEmail() -> Bool
-    {
+    public func isEmail() -> Bool {
         return NSString.isEmail(self)
     }
     
@@ -80,8 +73,7 @@ public extension NSString
     
      - returns: Returns the encoded string
      */
-    public func encodeToBase64() -> NSString
-    {
+    public func encodeToBase64() -> NSString {
         return NSString.encodeToBase64(self)
     }
     
@@ -90,8 +82,7 @@ public extension NSString
     
      - returns: Returns the decoded string
      */
-    public func decodeBase64() -> NSString
-    {
+    public func decodeBase64() -> NSString {
         return NSString.decodeBase64(self)
     }
     
@@ -101,10 +92,8 @@ public extension NSString
     
      - returns: Returns the capitalized sentence string
      */
-    public func sentenceCapitalizedString() -> NSString
-    {
-        if self.length == 0
-        {
+    public func sentenceCapitalizedString() -> NSString {
+        if self.length == 0 {
             return ""
         }
         let uppercase: NSString = self.substringToIndex(1).uppercaseString
@@ -118,8 +107,7 @@ public extension NSString
     
      - returns: Returns a human legible string from a timestamp
      */
-    public func dateFromTimestamp() -> NSString
-    {
+    public func dateFromTimestamp() -> NSString {
         let year: NSString = self.substringToIndex(4)
         var month: NSString = self.substringFromIndex(5)
             month = month.substringToIndex(4)
@@ -138,8 +126,7 @@ public extension NSString
     
      - returns: Returns the encoded NSString
      */
-    public func URLEncode() -> NSString
-    {
+    public func URLEncode() -> NSString {
         return self.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!
     }
     
@@ -151,8 +138,7 @@ public extension NSString
     
      - returns: Returns a new string containing matching regular expressions replaced with the template string
      */
-    public func stringByReplacingWithRegex(regexString: NSString, withString replacement: NSString) throws -> NSString
-    {
+    public func stringByReplacingWithRegex(regexString: NSString, withString replacement: NSString) throws -> NSString {
         let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString as String, options: .CaseInsensitive)
         return regex.stringByReplacingMatchesInString(self as String, options: NSMatchingOptions(rawValue: 0), range:NSMakeRange(0, self.length), withTemplate: "")
     }
@@ -164,8 +150,7 @@ public extension NSString
     
      - returns: Returns the MD5 NSString from self
      */
-    private func MD5() -> NSString
-    {
+    private func MD5() -> NSString {
         return ""
     }
     
@@ -174,8 +159,7 @@ public extension NSString
     
      - returns: Returns the SHA1 NSString from self
      */
-    private func SHA1() -> NSString
-    {
+    private func SHA1() -> NSString {
         return ""
     }
     
@@ -184,8 +168,7 @@ public extension NSString
     
      - returns: Returns the SHA256 NSString from self
      */
-    private func SHA256() -> NSString
-    {
+    private func SHA256() -> NSString {
         return ""
     }
     
@@ -194,8 +177,7 @@ public extension NSString
     
      - returns: Returns the SHA512 NSString from self
      */
-    private func SHA512() -> NSString
-    {
+    private func SHA512() -> NSString {
         return ""
     }
     
@@ -211,19 +193,15 @@ public extension NSString
     
      - returns: Returns the substring
      */
-    public static func searchInString(string: NSString, charStart: NSString, charEnd: NSString) -> NSString
-    {
+    public static func searchInString(string: NSString, charStart: NSString, charEnd: NSString) -> NSString {
         var start = 0, stop = 0
         
-        for var i = 0; i < string.length; i++
-        {
-            if string.characterAtIndex(i) == charStart.characterAtIndex(0)
-            {
+        for var i = 0; i < string.length; i++ {
+            if string.characterAtIndex(i) == charStart.characterAtIndex(0) {
                 start = i+1
                 i += 1
             }
-            if string.characterAtIndex(i) == charEnd.characterAtIndex(0)
-            {
+            if string.characterAtIndex(i) == charEnd.characterAtIndex(0) {
                 stop = i
                 break
             }
@@ -241,8 +219,7 @@ public extension NSString
     
      - returns: Returns true if it's an email, false if not
      */
-    public static func isEmail(email: NSString) -> Bool
-    {
+    public static func isEmail(email: NSString) -> Bool {
         let emailRegEx: NSString = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
         
         let regExPredicate: NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
@@ -256,8 +233,7 @@ public extension NSString
     
      - returns: Returns the converted string
      */
-    public static func convertToUTF8Entities(string: NSString) -> NSString
-    {
+    public static func convertToUTF8Entities(string: NSString) -> NSString {
         return string
             .stringByReplacingOccurrencesOfString("%27", withString: "'")
             .stringByReplacingOccurrencesOfString("%e2%80%99".capitalizedString, withString: "’")
@@ -302,8 +278,7 @@ public extension NSString
     
      - returns: Returns the encoded string
      */
-    public static func encodeToBase64(string: NSString) -> NSString
-    {
+    public static func encodeToBase64(string: NSString) -> NSString {
         let data: NSData = string.dataUsingEncoding(NSUTF8StringEncoding)!
         return data.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
     }
@@ -315,8 +290,7 @@ public extension NSString
     
      - returns: Returns the decoded string
      */
-    public static func decodeBase64(string: NSString) -> NSString
-    {
+    public static func decodeBase64(string: NSString) -> NSString {
         let data: NSData = NSData(base64EncodedString: string as String, options: NSDataBase64DecodingOptions(rawValue: 0))!
         return NSString(data: data, encoding: NSUTF8StringEncoding)!
     }

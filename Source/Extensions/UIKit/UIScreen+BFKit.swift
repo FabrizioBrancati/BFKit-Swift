@@ -30,26 +30,21 @@ import UIKit
 // MARK: - Global variables -
 
 /// Get the screen width
-public var SCREEN_WIDTH: CGFloat
-{
-    get
-    {
+public var SCREEN_WIDTH: CGFloat {
+    get {
         return UIScreen.mainScreen().fixedScreenSize().width
     }
 }
 
 /// Get the screen height
-public var SCREEN_HEIGHT: CGFloat
-{
-    get
-    {
+public var SCREEN_HEIGHT: CGFloat {
+    get {
         return UIScreen.mainScreen().fixedScreenSize().height
     }
 }
 
 /// This extesion adds some useful functions to UIScreen
-public extension UIScreen
-{
+public extension UIScreen {
     // MARK: - Class functions -
     
     /**
@@ -57,14 +52,10 @@ public extension UIScreen
     
      - returns: Returns true if it has a Retina display, false if not
      */
-    public static func isRetina() -> Bool
-    {
-        if UIScreen.mainScreen().respondsToSelector("displayLinkWithTarget:selector:") && (UIScreen.mainScreen().scale == 2.0 || UIScreen.mainScreen().scale == 3.0)
-        {
+    public static func isRetina() -> Bool {
+        if UIScreen.mainScreen().respondsToSelector("displayLinkWithTarget:selector:") && (UIScreen.mainScreen().scale == 2.0 || UIScreen.mainScreen().scale == 3.0) {
             return true
-        }
-        else
-        {
+        } else {
             return false
         }
     }
@@ -74,14 +65,10 @@ public extension UIScreen
     
      - returns: Returns true if it has a Retina HD display, false if not
      */
-    public static func isRetinaHD() -> Bool
-    {
-        if UIScreen.mainScreen().respondsToSelector("displayLinkWithTarget:selector:") && UIScreen.mainScreen().scale == 3.0
-        {
+    public static func isRetinaHD() -> Bool {
+        if UIScreen.mainScreen().respondsToSelector("displayLinkWithTarget:selector:") && UIScreen.mainScreen().scale == 3.0 {
             return true
-        }
-        else
-        {
+        } else {
             return false
         }
     }
@@ -93,12 +80,10 @@ public extension UIScreen
     
      - returns: Returns a GCSize with the fixed screen size
      */
-    public func fixedScreenSize() -> CGSize
-    {
+    public func fixedScreenSize() -> CGSize {
         let screenSize = self.bounds.size
         
-        if (NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1) && UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication().statusBarOrientation)
-        {
+        if NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1 && UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication().statusBarOrientation) {
             return CGSizeMake(screenSize.height, screenSize.width)
         }
         

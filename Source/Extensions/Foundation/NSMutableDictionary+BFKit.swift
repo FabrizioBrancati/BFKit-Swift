@@ -27,8 +27,7 @@
 import Foundation
 
 /// This extension adds some useful functions to NSMutableDictionary
-public extension NSMutableDictionary
-{
+public extension NSMutableDictionary {
     // MARK: - Instance functions -
     
     /**
@@ -39,10 +38,8 @@ public extension NSMutableDictionary
     
      - returns: Returns true if has been setted, otherwise false
      */
-    public func safeSetObject(anObject: AnyObject?, forKey: NSCopying) -> Bool
-    {
-        if anObject == nil
-        {
+    public func safeSetObject(anObject: AnyObject?, forKey: NSCopying) -> Bool {
+        if anObject == nil {
             return false
         }
         

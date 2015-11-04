@@ -28,8 +28,7 @@ import Foundation
 import UIKit
 
 /// This extesion adds some useful functions to UIBarButtonItem
-public extension UIBarButtonItem
-{
+public extension UIBarButtonItem {
     //  MARK: - Init functions -
     
     /**
@@ -40,18 +39,13 @@ public extension UIBarButtonItem
     
      - returns: Returns the created UIBarButtonItem
      */
-    public convenience init(barButtonSpaceType space: UIBarButtonSystemItem, width: CGFloat = 0.0)
-    {
-        if space == .FixedSpace || space == .FlexibleSpace
-        {
+    public convenience init(barButtonSpaceType space: UIBarButtonSystemItem, width: CGFloat = 0.0) {
+        if space == .FixedSpace || space == .FlexibleSpace {
             self.init(barButtonSystemItem: space, target: nil, action: "")
-            if space == .FixedSpace
-            {
+            if space == .FixedSpace {
                 self.width = width
             }
-        }
-        else
-        {
+        } else {
             self.init(barButtonSystemItem: .FlexibleSpace, target: nil, action: "")
         }
     }

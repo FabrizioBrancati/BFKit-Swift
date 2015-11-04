@@ -27,8 +27,7 @@
 import Foundation
 
 /// This extension adds some useful functions to NSDictionary
-public extension NSDictionary
-{
+public extension NSDictionary {
     // MARK: - Instance functions -
     
     /**
@@ -37,8 +36,7 @@ public extension NSDictionary
      - returns: Returns the JSON as String or nil if error while parsing
      */
     @available(*, deprecated=1.3.0, message="Use dictionaryToJSON()")
-    public func dictionaryToJson()  throws-> String
-    {
+    public func dictionaryToJson()  throws-> String {
         return try self.dictionaryToJSON()
     }
     
@@ -47,8 +45,7 @@ public extension NSDictionary
     
      - returns: Returns the JSON as String or nil if error while parsing
      */
-    public func dictionaryToJSON() throws -> String
-    {
+    public func dictionaryToJSON() throws -> String {
         return try NSDictionary.dictionaryToJSON(self)
     }
     
@@ -62,8 +59,7 @@ public extension NSDictionary
      - returns: Returns the JSON as String or nil if error while parsing
      */
     @available(*, deprecated=1.3.0, message="Use dictionaryToJSON(_ )")
-    public static func dictionaryToJson(dictionary: NSDictionary) throws -> String
-    {
+    public static func dictionaryToJson(dictionary: NSDictionary) throws -> String {
         return try self.dictionaryToJSON(dictionary)
     }
     
@@ -74,17 +70,13 @@ public extension NSDictionary
     
      - returns: Returns the JSON as String or nil if error while parsing
      */
-    public static func dictionaryToJSON(dictionary: NSDictionary) throws -> String
-    {
+    public static func dictionaryToJSON(dictionary: NSDictionary) throws -> String {
         var json: NSString
         let jsonData: NSData = try NSJSONSerialization.dataWithJSONObject(dictionary, options: .PrettyPrinted)
         
-        if(jsonData == false)
-        {
+        if jsonData == false {
             return "{}"
-        }
-        else
-        {
+        } else {
             json = NSString(data: jsonData, encoding: NSUTF8StringEncoding)!
             return json as String
         }

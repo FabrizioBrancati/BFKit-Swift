@@ -27,8 +27,7 @@
 import Foundation
 
 /// This class adds some useful functions to manage passwords
-public class BFPassword
-{
+public class BFPassword {
     // MARK: - Enums -
     
     /**
@@ -42,8 +41,7 @@ public class BFPassword
      - Secure:     Password strength secure
      - VerySecure: Password strength very secure
      */
-    public enum PasswordStrengthLevel : Int
-    {
+    public enum PasswordStrengthLevel : Int {
         case VeryWeak
         case Weak
         case Average
@@ -62,8 +60,7 @@ public class BFPassword
     
      - returns: Returns the password strength level with value from enum PasswordStrengthLevel
      */
-    public static func checkPasswordStrength(password: String) -> PasswordStrengthLevel
-    {
+    public static func checkPasswordStrength(password: String) -> PasswordStrengthLevel {
         let lenght = password.length
         let lowercase = self.countLowercaseLetters(password)
         let uppercase = self.countUppercaseLetters(password)
@@ -72,137 +69,84 @@ public class BFPassword
         
         var score = 0
         
-        if lenght < 5
-        {
+        if lenght < 5 {
             score += 5
-        }
-        else
-        {
-            if lenght > 4 && lenght < 8
-            {
+        } else {
+            if lenght > 4 && lenght < 8 {
                 score += 10
-            }
-            else
-            {
-                if lenght > 7
-                {
+            } else {
+                if lenght > 7 {
                     score += 20
                 }
             }
         }
         
-        if numbers == 1
-        {
+        if numbers == 1 {
             score += 10
-        }
-        else
-        {
-            if numbers == 2
-            {
+        } else {
+            if numbers == 2 {
                 score += 15
-            }
-            else
-            {
-                if numbers > 2
-                {
+            } else {
+                if numbers > 2 {
                     score += 20
                 }
             }
         }
         
-        if symbols == 1
-        {
+        if symbols == 1 {
             score += 10
-        }
-        else
-        {
-            if symbols == 2
-            {
+        } else {
+            if symbols == 2 {
                 score += 15
-            }
-            else
-            {
-                if symbols > 2
-                {
+            } else {
+                if symbols > 2 {
                     score += 20
                 }
             }
         }
         
-        if lowercase == 1
-        {
+        if lowercase == 1 {
             score += 10
-        }
-        else
-        {
-            if lowercase == 2
-            {
+        } else {
+            if lowercase == 2 {
                 score += 15
-            }
-            else
-            {
-                if lowercase > 2
-                {
+            } else {
+                if lowercase > 2 {
                     score += 20
                 }
             }
         }
         
-        if uppercase == 1
-        {
+        if uppercase == 1 {
             score += 10
-        }
-        else
-        {
-            if uppercase == 2
-            {
+        } else {
+            if uppercase == 2 {
                 score += 15
-            }
-            else
-            {
-                if uppercase > 2
-                {
+            } else {
+                if uppercase > 2 {
                     score += 20
                 }
             }
         }
         
-        if score == 100
-        {
+        if score == 100 {
             return .VerySecure
-        }
-        else
-        {
-            if score >= 90
-            {
+        } else {
+            if score >= 90 {
                 return .Secure
-            }
-            else
-            {
-                if score >= 80
-                {
+            } else {
+                if score >= 80 {
                     return .VeryStrong
-                }
-                else
-                {
-                    if score >= 70
-                    {
+                } else {
+                    if score >= 70 {
                         return .Strong
-                    }
-                    else
-                    {
-                        if score >= 60
-                        {
+                    } else {
+                        if score >= 60 {
                             return .Average
-                        }
-                        else
-                        {
-                            if score >= 50
-                            {
+                        } else {
+                            if score >= 50 {
                                 return .Weak
-                            }
-                            else
-                            {
+                            } else {
                                 return .VeryWeak
                             }
                         }
@@ -219,14 +163,11 @@ public class BFPassword
     
      - returns: Number of lowercase letters
      */
-    private static func countLowercaseLetters(password: String) -> Int
-    {
+    private static func countLowercaseLetters(password: String) -> Int {
         var countChar = 0
-        for var i = 0; i < password.length; i++
-        {
+        for var i = 0; i < password.length; i++ {
             let isLowercase = NSCharacterSet.lowercaseLetterCharacterSet().characterIsMember((String(password) as NSString).characterAtIndex(i))
-            if isLowercase
-            {
+            if isLowercase {
                 countChar++
             }
         }
@@ -241,14 +182,11 @@ public class BFPassword
     
      - returns: Number of uppercase letters
      */
-    private static func countUppercaseLetters(password: String) -> Int
-    {
+    private static func countUppercaseLetters(password: String) -> Int {
         var countChar = 0
-        for var i = 0; i < password.length; i++
-        {
+        for var i = 0; i < password.length; i++ {
             let isUppercase = NSCharacterSet.lowercaseLetterCharacterSet().characterIsMember((String(password) as NSString).characterAtIndex(i))
-            if isUppercase
-            {
+            if isUppercase {
                 countChar++
             }
         }
@@ -263,14 +201,11 @@ public class BFPassword
     
      - returns: Number of numbers
      */
-    private static func countNumbers(password: String) -> Int
-    {
+    private static func countNumbers(password: String) -> Int {
         var countNumber = 0
-        for var i = 0; i < password.length; i++
-        {
+        for var i = 0; i < password.length; i++ {
             let isNumber = NSCharacterSet(charactersInString: "0123456789").characterIsMember((String(password) as NSString).characterAtIndex(i))
-            if isNumber
-            {
+            if isNumber {
                 countNumber++
             }
         }
@@ -285,14 +220,11 @@ public class BFPassword
     
      - returns: Number of symbols
      */
-    private static func countSymbols(password: String) -> Int
-    {
+    private static func countSymbols(password: String) -> Int {
         var countSymbol = 0
-        for var i = 0; i < password.length; i++
-        {
+        for var i = 0; i < password.length; i++ {
             let isSymbol = NSCharacterSet(charactersInString: "`~!?@#$€£¥§%^&*()_+-={}[]:\";.,<>'•\\|/").characterIsMember((String(password) as NSString).characterAtIndex(i))
-            if isSymbol
-            {
+            if isSymbol {
                 countSymbol++
             }
         }

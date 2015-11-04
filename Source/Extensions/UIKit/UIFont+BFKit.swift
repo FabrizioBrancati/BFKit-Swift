@@ -248,8 +248,7 @@ import UIKit
  - VerdanaBoldItalic:                   Verdana Bold Italic
  - VerdanaItalic:                       Verdana Italic
  */
-public enum FontName : String
-{
+public enum FontName : String {
     case AcademyEngravedLetPlain = "AcademyEngravedLetPlain"
     case AlNile = "AlNile"
     case AlNileBold = "AlNile-Bold"
@@ -496,45 +495,35 @@ public enum FontName : String
 }
 
 /// This extesion adds some useful functions to UIFont
-public extension UIFont
-{
+public extension UIFont {
     // MARK: - Class variables -
     
     /// Static light font to use in App
-    public static var lightFont: UIFont
-    {
-        get
-        {
+    public static var lightFont: UIFont {
+        get {
             return UIFont.lightFont
         }
-        set(newValue)
-        {
+        set(newValue) {
             UIFont.lightFont = newValue
         }
     }
     
     /// Static regular font to use in App
-    public static var regularFont: UIFont
-    {
-        get
-        {
+    public static var regularFont: UIFont {
+        get {
             return UIFont.regularFont
         }
-        set(newValue)
-        {
+        set(newValue) {
             UIFont.regularFont = newValue
         }
     }
     
     /// Static bold font to use in App
-    public static var boldFont: UIFont
-    {
-        get
-        {
+    public static var boldFont: UIFont {
+        get {
             return UIFont.boldFont
         }
-        set(newValue)
-        {
+        set(newValue) {
             UIFont.boldFont = newValue
         }
     }
@@ -610,8 +599,7 @@ public extension UIFont
      - ZapfDingbats:           Zapf Dingbats
      - Zapfino:                Zapfino
      */
-    public enum FamilyFontName : String
-    {
+    public enum FamilyFontName : String {
         case AcademyEngravedLET = "Academy Engraved LET"
         case AlNile = "Al Nile"
         case AmericanTypewriter = "American Typewriter"
@@ -699,8 +687,7 @@ public extension UIFont
     
      - returns: Returns an UIFont from the given font name and size
      */
-    public convenience init?(fontName: FontName, size: CGFloat)
-    {
+    public convenience init?(fontName: FontName, size: CGFloat) {
         self.init(name: fontName.rawValue, size: size)
     }
     
@@ -711,15 +698,13 @@ public extension UIFont
     
      - returns: Returns all the font family names
      */
-    public static func allFamilyAndFonts() -> Dictionary<String, Array<AnyObject>>
-    {
+    public static func allFamilyAndFonts() -> Dictionary<String, Array<AnyObject>> {
         var fontFamilies: NSMutableArray = NSMutableArray(array: UIFont.familyNames() as NSArray)
         fontFamilies = NSMutableArray.sortArrayByKey("", array: fontFamilies, ascending: true)
         
         var fontFamilyDic: Dictionary<String, Array<AnyObject>> = Dictionary()
         
-        for var i = 0; i < fontFamilies.count; i++
-        {
+        for var i = 0; i < fontFamilies.count; i++ {
             let fontFamily: String = fontFamilies.objectAtIndex(i) as! String
             let fontNames: Array = UIFont.fontNamesForFamilyName(fontFamily)
             fontFamilyDic[fontFamily] = fontNames
@@ -737,8 +722,7 @@ public extension UIFont
     
      - returns: Returns all the fonts for the given family
      */
-    public static func fontsNameForFamilyName(familyFontName: FamilyFontName) -> Array<AnyObject>
-    {
+    public static func fontsNameForFamilyName(familyFontName: FamilyFontName) -> Array<AnyObject> {
         let fontNames: Array = UIFont.fontNamesForFamilyName(familyFontName.rawValue)
         
         BFLog("\(fontNames)")

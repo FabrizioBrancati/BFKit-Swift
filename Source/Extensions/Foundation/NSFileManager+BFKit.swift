@@ -27,8 +27,7 @@
 import Foundation
 
 /// This extension adds some useful functions to NSFileManager
-public extension NSFileManager
-{
+public extension NSFileManager {
     // MARK: - Enums -
     
     /**
@@ -39,8 +38,7 @@ public extension NSFileManager
      - Documents:  Documents directory
      - Cache:      Cache directory
      */
-    public enum DirectoryType : Int
-    {
+    public enum DirectoryType : Int {
         case MainBundle
         case Library
         case Documents
@@ -57,8 +55,7 @@ public extension NSFileManager
     
      - returns: Returns the content of the file a String
      */
-    public static func readTextFile(file: String, ofType: String) throws -> String?
-    {
+    public static func readTextFile(file: String, ofType: String) throws -> String? {
         return try String(contentsOfFile: NSBundle.mainBundle().pathForResource(file, ofType: ofType)!, encoding: NSUTF8StringEncoding)
     }
     
@@ -71,12 +68,10 @@ public extension NSFileManager
     
      - returns: Returns true if the operation was successful, otherwise false
      */
-    public static func saveArrayToPath(directory: DirectoryType, filename: String, array: Array<AnyObject>) -> Bool
-    {
+    public static func saveArrayToPath(directory: DirectoryType, filename: String, array: Array<AnyObject>) -> Bool {
         var finalPath: String
         
-        switch directory
-        {
+        switch directory {
         case .MainBundle:
             finalPath = self.getBundlePathForFile("\(filename).plist")
         case .Library:
@@ -98,12 +93,10 @@ public extension NSFileManager
     
      - returns: Returns the loaded array
      */
-    public static func loadArrayFromPath(directory: DirectoryType, filename: String) -> AnyObject?
-    {
+    public static func loadArrayFromPath(directory: DirectoryType, filename: String) -> AnyObject? {
         var finalPath: String
         
-        switch directory
-        {
+        switch directory {
         case .MainBundle:
             finalPath = self.getBundlePathForFile(filename)
         case .Library:
@@ -124,8 +117,7 @@ public extension NSFileManager
     
      - returns: Returns the path as a String
      */
-    public static func getBundlePathForFile(file: String) -> String
-    {
+    public static func getBundlePathForFile(file: String) -> String {
         let fileExtension = file.pathExtension
         return NSBundle.mainBundle().pathForResource(file.stringByReplacingOccurrencesOfString(String(format: ".%@", file), withString: ""), ofType: fileExtension)!
     }
@@ -137,8 +129,7 @@ public extension NSFileManager
     
      - returns: Returns the directory as a String
      */
-    public static func getDocumentsDirectoryForFile(file: String) -> String
-    {
+    public static func getDocumentsDirectoryForFile(file: String) -> String {
         let documentsDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
         return documentsDirectory.stringByAppendingPathComponent(String(format: "%@/", file))
     }
@@ -150,8 +141,7 @@ public extension NSFileManager
     
      - returns: Returns the directory as a String
      */
-    public static func getLibraryDirectoryForFile(file: String) -> String
-    {
+    public static func getLibraryDirectoryForFile(file: String) -> String {
         let libraryDirectory = NSSearchPathForDirectoriesInDomains(.LibraryDirectory, .UserDomainMask, true)[0]
         return libraryDirectory.stringByAppendingPathComponent(String(format: "%@/", file))
     }
@@ -163,8 +153,7 @@ public extension NSFileManager
     
      - returns: Returns the directory as a String
      */
-    public static func getCacheDirectoryForFile(file: String) -> String
-    {
+    public static func getCacheDirectoryForFile(file: String) -> String {
         let cacheDirectory = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0]
         return cacheDirectory.stringByAppendingPathComponent(String(format: "%@/", file))
     }
@@ -177,14 +166,11 @@ public extension NSFileManager
     
      - returns: Returns the file size
      */
-    public static func fileSize(file: String, fromDirectory directory: DirectoryType) throws -> NSNumber?
-    {
-        if file.characters.count != 0
-        {
+    public static func fileSize(file: String, fromDirectory directory: DirectoryType) throws -> NSNumber? {
+        if file.characters.count != 0 {
             var path: String
             
-            switch directory
-            {
+            switch directory {
             case .MainBundle:
                 path = self.getBundlePathForFile(file)
             case .Library:
@@ -195,11 +181,9 @@ public extension NSFileManager
                 path = self.getCacheDirectoryForFile(file)
             }
             
-            if(NSFileManager.defaultManager().fileExistsAtPath(path))
-            {
+            if NSFileManager.defaultManager().fileExistsAtPath(path) {
                 let fileAttributes: NSDictionary? = try NSFileManager.defaultManager().attributesOfItemAtPath(file)
-                if let _fileAttributes = fileAttributes
-                {
+                if let _fileAttributes = fileAttributes {
                     return NSNumber(unsignedLongLong: _fileAttributes.fileSize())
                 }
             }
@@ -216,14 +200,11 @@ public extension NSFileManager
     
      - returns: Returns true if the operation was successful, otherwise false
      */
-    public static func deleteFile(file: String, fromDirectory directory: DirectoryType) throws -> Bool
-    {
-        if file.characters.count != 0
-        {
+    public static func deleteFile(file: String, fromDirectory directory: DirectoryType) throws -> Bool {
+        if file.characters.count != 0 {
             var path: String
             
-            switch directory
-            {
+            switch directory {
             case .MainBundle:
                 path = self.getBundlePathForFile(file)
             case .Library:
@@ -234,15 +215,11 @@ public extension NSFileManager
                 path = self.getCacheDirectoryForFile(file)
             }
             
-            if(NSFileManager.defaultManager().fileExistsAtPath(path))
-            {
-                do
-                {
+            if NSFileManager.defaultManager().fileExistsAtPath(path) {
+                do {
                     try NSFileManager.defaultManager().removeItemAtPath(path)
                     return true
-                }
-                catch
-                {
+                } catch {
                     return false
                 }
             }
@@ -261,12 +238,10 @@ public extension NSFileManager
     
      - returns: Returns true if the operation was successful, otherwise false
      */
-    public static func moveLocalFile(file: String, fromDirectory origin: DirectoryType, toDirectory destination: DirectoryType, withFolderName folderName: String? = nil) throws -> Bool
-    {
+    public static func moveLocalFile(file: String, fromDirectory origin: DirectoryType, toDirectory destination: DirectoryType, withFolderName folderName: String? = nil) throws -> Bool {
         var originPath: String
         
-        switch origin
-        {
+        switch origin {
         case .MainBundle:
             originPath = self.getBundlePathForFile(file)
         case .Library:
@@ -278,17 +253,13 @@ public extension NSFileManager
         }
         
         var destinationPath: String = ""
-        if folderName != nil
-        {
+        if folderName != nil {
             destinationPath = String(format: "%@/%@", destinationPath, folderName!)
-        }
-        else
-        {
+        } else {
             destinationPath = file
         }
         
-        switch destination
-        {
+        switch destination {
         case .MainBundle:
             destinationPath = self.getBundlePathForFile(destinationPath)
         case .Library:
@@ -299,47 +270,35 @@ public extension NSFileManager
             destinationPath = self.getCacheDirectoryForFile(destinationPath)
         }
         
-        if folderName != nil
-        {
+        if folderName != nil {
             let folderPath: String = String(format: "%@/%@", destinationPath, folderName!)
-            if !NSFileManager.defaultManager().fileExistsAtPath(originPath)
-            {
+            if !NSFileManager.defaultManager().fileExistsAtPath(originPath) {
                 try NSFileManager.defaultManager().createDirectoryAtPath(folderPath, withIntermediateDirectories: false, attributes: nil)
             }
         }
         
         var copied: Bool = false, deleted: Bool = false
-        if NSFileManager.defaultManager().fileExistsAtPath(originPath)
-        {
-            do
-            {
+        if NSFileManager.defaultManager().fileExistsAtPath(originPath) {
+            do {
                 try NSFileManager.defaultManager().copyItemAtPath(originPath, toPath: destinationPath)
                 copied = true
-            }
-            catch
-            {
+            } catch {
                 // TODO: Test it
             }
         }
         
-        if destination != .MainBundle
-        {
-            if NSFileManager.defaultManager().fileExistsAtPath(originPath)
-            {
-                do
-                {
+        if destination != .MainBundle {
+            if NSFileManager.defaultManager().fileExistsAtPath(originPath) {
+                do {
                     try NSFileManager.defaultManager().removeItemAtPath(originPath)
                     deleted = true
-                }
-                catch
-                {
+                } catch {
                     // TODO: Test it
                 }
             }
         }
         
-        if copied && deleted
-        {
+        if copied && deleted {
             return true
         }
         return false
@@ -356,8 +315,7 @@ public extension NSFileManager
      - returns: Returns true if the operation was successful, otherwise false
      */
     @available(*, obsoleted=1.2.0, message="Use moveLocalFile(_, fromDirectory:, toDirectory:, withFolderName:)")
-    public static func moveLocalFile(file: String, fromDirectory origin: DirectoryType, toDirectory destination: DirectoryType) throws -> Bool
-    {
+    public static func moveLocalFile(file: String, fromDirectory origin: DirectoryType, toDirectory destination: DirectoryType) throws -> Bool {
         return try self.moveLocalFile(file, fromDirectory: origin, toDirectory: destination, withFolderName: nil)
     }
     
@@ -369,17 +327,12 @@ public extension NSFileManager
     
      - returns: Returns true if the operation was successful, otherwise false
      */
-    public static func duplicateFileAtPath(origin: String, toNewPath destination: String) -> Bool
-    {
-        if NSFileManager.defaultManager().fileExistsAtPath(origin)
-        {
-            do
-            {
+    public static func duplicateFileAtPath(origin: String, toNewPath destination: String) -> Bool {
+        if NSFileManager.defaultManager().fileExistsAtPath(origin) {
+            do {
                 try NSFileManager.defaultManager().copyItemAtPath(origin, toPath: destination)
                 return true
-            }
-            catch
-            {
+            } catch {
                 return false
             }
         }
@@ -396,12 +349,10 @@ public extension NSFileManager
     
      - returns: Returns true if the operation was successful, otherwise false
      */
-    public static func renameFileFromDirectory(origin: DirectoryType, atPath path: String, withOldName oldName: String, andNewName newName: String) -> Bool
-    {
+    public static func renameFileFromDirectory(origin: DirectoryType, atPath path: String, withOldName oldName: String, andNewName newName: String) -> Bool {
         var originPath: String
         
-        switch origin
-        {
+        switch origin {
         case .MainBundle:
             originPath = self.getBundlePathForFile(path)
         case .Library:
@@ -412,24 +363,17 @@ public extension NSFileManager
             originPath = self.getCacheDirectoryForFile(path)
         }
         
-        if NSFileManager.defaultManager().fileExistsAtPath(originPath)
-        {
+        if NSFileManager.defaultManager().fileExistsAtPath(originPath) {
             let newNamePath: String = originPath.stringByReplacingOccurrencesOfString(oldName, withString: newName)
-            do
-            {
+            do {
                 try NSFileManager.defaultManager().copyItemAtPath(originPath, toPath: newNamePath)
-                do
-                {
+                do {
                     try NSFileManager.defaultManager().removeItemAtPath(originPath)
                     return true
-                }
-                catch
-                {
+                } catch {
                     return false
                 }
-            }
-            catch
-            {
+            } catch {
                 return false
             }
         }
@@ -444,19 +388,15 @@ public extension NSFileManager
     
      - returns: Returns the object for the given key
      */
-    public static func getSettings(settings: String, objectForKey: String) -> AnyObject?
-    {
+    public static func getSettings(settings: String, objectForKey: String) -> AnyObject? {
         var path: String = self.getLibraryDirectoryForFile("")
         path = path.stringByAppendingString("/Preferences/")
         path = path.stringByAppendingString("\(settings)-Settings.plist")
         
         var loadedPlist: NSMutableDictionary
-        if NSFileManager.defaultManager().fileExistsAtPath(path)
-        {
+        if NSFileManager.defaultManager().fileExistsAtPath(path) {
             loadedPlist = NSMutableDictionary(contentsOfFile: path)!
-        }
-        else
-        {
+        } else {
             return nil
         }
         
@@ -472,19 +412,15 @@ public extension NSFileManager
     
      - returns: Returns true if the operation was successful, otherwise false
      */
-    public static func setSettings(settings: String, object: AnyObject, forKey objKey: String) -> Bool
-    {
+    public static func setSettings(settings: String, object: AnyObject, forKey objKey: String) -> Bool {
         var path: String = self.getLibraryDirectoryForFile("")
         path = path.stringByAppendingString("/Preferences/")
         path = path.stringByAppendingString("\(settings)-Settings.plist")
         
         var loadedPlist: NSMutableDictionary
-        if NSFileManager.defaultManager().fileExistsAtPath(path)
-        {
+        if NSFileManager.defaultManager().fileExistsAtPath(path) {
             loadedPlist = NSMutableDictionary(contentsOfFile: path)!
-        }
-        else
-        {
+        } else {
             loadedPlist = NSMutableDictionary()
         }
         
@@ -501,8 +437,7 @@ public extension NSFileManager
     
      - returns: Returns true if the operation was successful, otherwise false
      */
-    public static func setAppSettingsForObject(object: AnyObject, forKey objKey: String) -> Bool
-    {
+    public static func setAppSettingsForObject(object: AnyObject, forKey objKey: String) -> Bool {
         return self.setSettings(APP_NAME, object: object, forKey: objKey)
     }
     
@@ -513,8 +448,7 @@ public extension NSFileManager
     
      - returns: Returns the object for the given key
      */
-    public static func getAppSettingsForObjectWithKey(objKey: String) -> AnyObject?
-    {
+    public static func getAppSettingsForObjectWithKey(objKey: String) -> AnyObject? {
         return self.getSettings(APP_NAME, objectForKey: objKey)
     }
 }

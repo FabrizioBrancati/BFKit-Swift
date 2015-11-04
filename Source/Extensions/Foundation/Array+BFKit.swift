@@ -27,8 +27,7 @@
 import Foundation
 
 /// This extension adds some useful functions to Array
-public extension Array
-{
+public extension Array {
     // MARK: - Instance functions -
     
     /**
@@ -38,14 +37,10 @@ public extension Array
     
      - returns: Returns the object at a given index in safe mode (nil if self is empty or out of range)
       */
-    func safeObjectAtIndex(index: Int) -> Element?
-    {
-        if self.count > 0 && self.count > index
-        {
+    func safeObjectAtIndex(index: Int) -> Element? {
+        if self.count > 0 && self.count > index {
             return self[index]
-        }
-        else
-        {
+        } else {
             return nil
         }
     }
@@ -55,8 +50,7 @@ public extension Array
     
      - returns: Returns the JSON as String or nil if error while parsing
      */
-    func arrayToJSON() throws -> String
-    {
+    func arrayToJSON() throws -> String {
         // TODO: Check it
         return try Array.arrayToJSON(self as! AnyObject)
     }
@@ -68,8 +62,7 @@ public extension Array
     
      - returns: Returns the object at a given index
      */
-    func objectAtCircleIndex(index: Int) -> Element
-    {
+    func objectAtCircleIndex(index: Int) -> Element {
         return self[self.superCircle(index, size: self.count)]
     }
     
@@ -81,15 +74,12 @@ public extension Array
     
      - returns: Returns the right index
      */
-    func superCircle(var index: Int, size maxSize: Int) -> Int
-    {
-        if index < 0
-        {
+    func superCircle(var index: Int, size maxSize: Int) -> Int {
+        if index < 0 {
             index = index % maxSize
             index += maxSize
         }
-        if index >= maxSize
-        {
+        if index >= maxSize {
             index = index % maxSize
         }
         
@@ -102,19 +92,14 @@ public extension Array
      - parameter from: The start index
      - parameter to:   The end index
      */
-    mutating func moveObjectFromIndex(from: Int, toIndex to: Int)
-    {
-        if to != from
-        {
+    mutating func moveObjectFromIndex(from: Int, toIndex to: Int) {
+        if to != from {
             let obj: Element = self.safeObjectAtIndex(from)!
             self.removeAtIndex(from)
             
-            if to >= self.count
-            {
+            if to >= self.count {
                 self.append(obj)
-            }
-            else
-            {
+            } else {
                 self.insert(obj, atIndex: to)
             }
         }
@@ -125,8 +110,7 @@ public extension Array
     
      - returns: Returns the reversed array
      */
-    func reversedArray() -> Array
-    {
+    func reversedArray() -> Array {
         return Array.reversedArray(self)
     }
     
@@ -139,8 +123,7 @@ public extension Array
     
      - returns: Returns the reversed array
      */
-    static func reversedArray(array: Array) -> Array
-    {
+    static func reversedArray(array: Array) -> Array {
         return array.reverse()
     }
     
@@ -151,8 +134,7 @@ public extension Array
     
      - returns: Returns the JSON as String or nil if error while parsing
      */
-    static func arrayToJSON(array: AnyObject) throws -> String
-    {
+    static func arrayToJSON(array: AnyObject) throws -> String {
         // TODO: Check it
         /*do {
             let data = try NSJSONSerialization.dataWithJSONObject(array, options: NSJSONWritingOptions())

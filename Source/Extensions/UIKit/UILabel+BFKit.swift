@@ -28,8 +28,7 @@ import Foundation
 import UIKit
 
 /// This extesion adds some useful functions to UILabel
-public extension UILabel
-{
+public extension UILabel {
     // MARK: - Init functions -
     
     /**
@@ -46,8 +45,7 @@ public extension UILabel
      - returns: Returns the created UILabel
      */
     @available(*, obsoleted=1.2.0, message="Use UILabel(_, text:, font:, size:, color:, alignment:, lines:, shadowColor:)")
-    public convenience init(frame: CGRect, text: String, font: FontName, size: CGFloat, color: UIColor, alignment: NSTextAlignment, lines: Int)
-    {
+    public convenience init(frame: CGRect, text: String, font: FontName, size: CGFloat, color: UIColor, alignment: NSTextAlignment, lines: Int) {
         self.init(frame: frame, text: text, font: font, size: size, color: color, alignment: alignment, lines: lines, shadowColor: UIColor.clearColor())
     }
     
@@ -65,8 +63,7 @@ public extension UILabel
     
      - returns: Returns the created UILabel
      */
-    public convenience init(frame: CGRect, text: String, font: FontName, size: CGFloat, color: UIColor, alignment: NSTextAlignment, lines: Int, shadowColor: UIColor = UIColor.clearColor())
-    {
+    public convenience init(frame: CGRect, text: String, font: FontName, size: CGFloat, color: UIColor, alignment: NSTextAlignment, lines: Int, shadowColor: UIColor = UIColor.clearColor()) {
         self.init(frame: frame)
         self.font = UIFont(fontName: font, size: size)
         self.text = text
