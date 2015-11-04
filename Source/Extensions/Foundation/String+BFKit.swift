@@ -43,7 +43,6 @@ public extension String {
      - returns: Returns the lenght of the string
      */
     public var length: Int {
-        // TODO: Check it
         return self.characters.count
     }
     
@@ -55,7 +54,6 @@ public extension String {
      - returns: Returns the character at a given index
      */
     public func characterAtIndex(index: Int) -> Character {
-        // TODO: Check it
         return self[self.startIndex.advancedBy(index)]
     }
     
@@ -67,8 +65,6 @@ public extension String {
      - returns: Returns the substring from index
      */
     public func substringFromIndex(index: Int) -> String {
-        // TODO: Check it
-        //return self[advance(self.startIndex, index)...advance(self.startIndex, self.length-1)]
         return self.substringFromIndex(self.startIndex.advancedBy(index))
     }
     
@@ -80,8 +76,6 @@ public extension String {
      - returns: Returns the substring to index
      */
     public func substringToIndex(index: Int) -> String {
-        // TODO: Check it
-        //return self[advance(self.startIndex, 0)...advance(self.startIndex, index-1)]
         return self.substringToIndex(self.startIndex.advancedBy(index))
     }
     
@@ -93,10 +87,7 @@ public extension String {
      - returns: Returns the string between the range
      */
     public func substringWithRange(range: Range<Int>) -> String {
-        // TODO: Check it
-        //let start = advance(self.startIndex, range.startIndex)
         let start = self.startIndex.advancedBy(range.startIndex)
-        //let end = advance(self.startIndex, range.endIndex)
         let end = self.startIndex.advancedBy(range.endIndex)
         
         return self.substringWithRange(start..<end)
@@ -135,14 +126,13 @@ public extension String {
     
      - parameter char: The character to search
     
-     - returns: Returns the index of the given character, nil if not found
+     - returns: Returns the index of the given character, -1 if not found
      */
-    public func indexOfCharacter(character: Character) -> Int? {
-        // TODO: Check it
+    public func indexOfCharacter(character: Character) -> Int {
         if let index = self.characters.indexOf(character) {
             return self.startIndex.distanceTo(index)
         }
-        return nil
+        return -1
     }
     
     /**
@@ -371,8 +361,18 @@ public extension String {
      - returns: Returns the character at the given index
      */
     public subscript(index: Int) -> Character {
-        // TODO: Check it
         return self[self.startIndex.advancedBy(index)]
+    }
+    
+    /**
+     Returns the index of the given character, -1 if not found
+     
+     - parameter character: The character to found
+     
+     - returns: Returns the index of the given character, -1 if not found
+     */
+    public subscript(character: Character) -> Int {
+        return self.indexOfCharacter(character)
     }
     
     /**
@@ -388,14 +388,13 @@ public extension String {
     
     /**
      Returns the string from a given range
-     Example: print("BFKit"[1...3]) //the result is "FKi"
+     Example: print("BFKit"[1...3]) the result is "FKi"
     
      - parameter range: The range
     
      - returns: Returns the string from a given range
      */
     public subscript(range: Range<Int>) -> String {
-        // TODO: Check it
         return substringWithRange(Range(start: startIndex.advancedBy(range.startIndex), end: startIndex.advancedBy(range.endIndex)))
     }
     
@@ -511,5 +510,46 @@ public extension String {
     public static func decodeBase64(string: String) -> String {
         let data: NSData = NSData(base64EncodedString: string as String, options: NSDataBase64DecodingOptions(rawValue: 0))!
         return NSString(data: data, encoding: NSUTF8StringEncoding)! as String
+    }
+    
+    /**
+     Remove double or more duplicated spaces
+     
+     - returns: String without additional spaces
+     */
+    public func removeExtraSpaces() -> String {
+        return self.NS.removeExtraSpaces() as String
+    }
+    
+    /**
+     Returns a new string containing matching regular expressions replaced with the template string
+     
+     - parameter regexString: The regex string
+     - parameter replacement: The replacement string
+     
+     - returns: Returns a new string containing matching regular expressions replaced with the template string
+     */
+    public func stringByReplacingWithRegex(regexString: String, replacement: String) -> String? {
+        return self.NS.stringByReplacingWithRegex(regexString, replacement: replacement) as? String
+    }
+    
+    /**
+     Convert HEX string (separated by space) to "usual" characters string.
+     Example: "68 65 6c 6c 6f" -> "hello"
+     
+     - returns: Readable string
+     */
+    public func HEXToString() -> String {
+        return self.NS.HEXToString() as String
+    }
+    
+    /**
+     Convert string to HEX string
+     Example: "hello" -> "68656c6c6f"
+     
+     - returns: HEX string
+     */
+    public func stringToHEX() -> String {
+        return self.NS.stringToHEX() as String
     }
 }

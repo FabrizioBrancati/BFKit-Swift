@@ -51,7 +51,6 @@ public extension Array {
      - returns: Returns the JSON as String or nil if error while parsing
      */
     func arrayToJSON() throws -> String {
-        // TODO: Check it
         return try Array.arrayToJSON(self as! AnyObject)
     }
     
@@ -135,13 +134,6 @@ public extension Array {
      - returns: Returns the JSON as String or nil if error while parsing
      */
     static func arrayToJSON(array: AnyObject) throws -> String {
-        // TODO: Check it
-        /*do {
-            let data = try NSJSONSerialization.dataWithJSONObject(array, options: NSJSONWritingOptions())
-            return NSString(data: data, encoding: NSUTF8StringEncoding)! as String
-        } catch let error as NSError {
-            return error.localizedDescription
-        } */
         let data = try NSJSONSerialization.dataWithJSONObject(array, options: NSJSONWritingOptions())
         return NSString(data: data, encoding: NSUTF8StringEncoding)! as String
     }

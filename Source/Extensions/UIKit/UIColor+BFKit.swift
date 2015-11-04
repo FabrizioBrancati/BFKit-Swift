@@ -81,7 +81,6 @@ public extension UIColor {
             if self.canProvideRGBComponents() {
                 let c = CGColorGetComponents(self.CGColor)
                 
-                // TODO: Test it
                 if CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)) == .Monochrome {
                     return c[0]
                 }
@@ -101,7 +100,6 @@ public extension UIColor {
             if self.canProvideRGBComponents() {
                 let c = CGColorGetComponents(self.CGColor)
                 
-                // TODO: Test it
                 if CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)) == .Monochrome {
                     return c[0]
                 }
@@ -118,7 +116,6 @@ public extension UIColor {
     /// RGB properties: white
     public var white: CGFloat {
         get {
-            // TODO: Test it
             if CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)) == .Monochrome {
                 let c = CGColorGetComponents(self.CGColor)
                 
@@ -249,7 +246,6 @@ public extension UIColor {
      - returns: Returns if the color is in RGB format
      */
     public func canProvideRGBComponents() -> Bool {
-        // TODO: Test it
         switch CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)) {
         case CGColorSpaceModel.RGB:
             return true
@@ -299,7 +295,6 @@ public extension UIColor {
         
         var r, g, b, a: CGFloat
         
-        // TODO: Test it
         switch CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)) {
         case CGColorSpaceModel.Monochrome:
             r = components[0]

@@ -283,7 +283,7 @@ public extension NSFileManager {
                 try NSFileManager.defaultManager().copyItemAtPath(originPath, toPath: destinationPath)
                 copied = true
             } catch {
-                // TODO: Test it
+                copied = false
             }
         }
         
@@ -293,7 +293,7 @@ public extension NSFileManager {
                     try NSFileManager.defaultManager().removeItemAtPath(originPath)
                     deleted = true
                 } catch {
-                    // TODO: Test it
+                    deleted = false
                 }
             }
         }

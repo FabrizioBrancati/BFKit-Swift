@@ -635,6 +635,9 @@ class DetailViewController: UIViewController {
             BFLog("SHA256 (currently doesn't work): -")
             BFLog("SHA512 (currently doesn't work): -")
             BFLog("\(isEmail)")
+            BFLog("Lenght: \(string.length)")
+            BFLog("Char at index 5: \(string.characterAtIndex(5))")
+            BFLog("Substring with range: \(string.substringWithRange(0...5))")
             
             let textView: UITextView = UITextView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), text: BFLogString, font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Left, dataDetectorTypes: .All, editable: false, selectable: false, returnType: .Default, keyboardType: .Default, secure: false, autoCapitalization: .None, keyboardAppearance: .Default, enablesReturnKeyAutomatically: true, autoCorrectionType: .Default, delegate: nil)
             self.view.addSubview(textView)

@@ -87,7 +87,6 @@ public extension UIView {
      - parameter width:  Border's width
      */
     public func createBordersWithColor(color: UIColor, radius: CGFloat, width: CGFloat) {
-        // TODO: Check it - Antialiasing borders
         self.layer.borderWidth = width
         self.layer.cornerRadius = radius
         self.layer.shouldRasterize = false

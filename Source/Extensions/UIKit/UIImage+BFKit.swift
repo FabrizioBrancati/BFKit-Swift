@@ -724,7 +724,6 @@ public extension UIImage {
                 ]
                 
                 let divisor: CGFloat = 256
-                // TODO: Check it
                 let saturationMatrix = floatingPointSaturationMatrix.map {
                     return Int16(round($0 * divisor))
                 }
