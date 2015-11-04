@@ -32,27 +32,27 @@ public extension NSString
     // MARK: - Instance functions -
     
     /**
-    Search in a given string a substring from the start char to the end char (excluded form final string).
-    Example: "This is a test" with start char 'h' and end char 't' will return "is is a "
+     Search in a given string a substring from the start char to the end char (excluded form final string).
+     Example: "This is a test" with start char 'h' and end char 't' will return "is is a "
     
-    :param: charStart The start char
-    :param: charEnd   The end char
+     - parameter charStart: The start char
+     - parameter charEnd:   The end char
     
-    :returns: Returns the substring
-    */
+     - returns: Returns the substring
+     */
     public func searchCharStart(charStart: NSString, charEnd: NSString) -> NSString
     {
         return NSString.searchInString(self, charStart: charStart, charEnd: charEnd)
     }
     
     /**
-    Check if self has the given substring in case-sensitive
+     Check if self has the given substring in case-sensitive
     
-    :param: string        The substring to be searched
-    :param: caseSensitive If the search has to be case-sensitive or not
+     - parameter string:        The substring to be searched
+     - parameter caseSensitive: If the search has to be case-sensitive or not
     
-    :returns: Returns true if founded, false if not
-    */
+     - returns: Returns true if founded, false if not
+     */
     public func hasString(string: NSString, caseSensitive: Bool = true) -> Bool
     {
         if caseSensitive
@@ -66,41 +66,41 @@ public extension NSString
     }
     
     /**
-    Check if self is an email
+     Check if self is an email
     
-    :returns: Returns true if it's an email, false if not
-    */
+     - returns: Returns true if it's an email, false if not
+     */
     public func isEmail() -> Bool
     {
         return NSString.isEmail(self)
     }
     
     /**
-    Encode the given string to Base64
+     Encode the given string to Base64
     
-    :returns: Returns the encoded string
-    */
+     - returns: Returns the encoded string
+     */
     public func encodeToBase64() -> NSString
     {
         return NSString.encodeToBase64(self)
     }
     
     /**
-    Decode the given Base64 to string
+     Decode the given Base64 to string
     
-    :returns: Returns the decoded string
-    */
+     - returns: Returns the decoded string
+     */
     public func decodeBase64() -> NSString
     {
         return NSString.decodeBase64(self)
     }
     
     /**
-    Conver self to a capitalized string.
-    Example: "This is a Test" will return "This is a test" and "this is a test" will return "This is a test"
+     Conver self to a capitalized string.
+     Example: "This is a Test" will return "This is a test" and "this is a test" will return "This is a test"
     
-    :returns: Returns the capitalized sentence string
-    */
+     - returns: Returns the capitalized sentence string
+     */
     public func sentenceCapitalizedString() -> NSString
     {
         if self.length == 0
@@ -114,10 +114,10 @@ public extension NSString
     }
     
     /**
-    Returns a human legible string from a timestamp
+     Returns a human legible string from a timestamp
     
-    :returns: Returns a human legible string from a timestamp
-    */
+     - returns: Returns a human legible string from a timestamp
+     */
     public func dateFromTimestamp() -> NSString
     {
         let year: NSString = self.substringToIndex(4)
@@ -134,23 +134,23 @@ public extension NSString
     }
     
     /**
-    Encode self to an encoded url string
+     Encode self to an encoded url string
     
-    :returns: Returns the encoded NSString
-    */
+     - returns: Returns the encoded NSString
+     */
     public func URLEncode() -> NSString
     {
         return self.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!
     }
     
     /**
-    Returns a new string containing matching regular expressions replaced with the template string
+     Returns a new string containing matching regular expressions replaced with the template string
     
-    :param: regexString The regex string
-    :param: replacement The replacement string
+     - parameter regexString: The regex string
+     - parameter replacement: The replacement string
     
-    :returns: Returns a new string containing matching regular expressions replaced with the template string
-    */
+     - returns: Returns a new string containing matching regular expressions replaced with the template string
+     */
     public func stringByReplacingWithRegex(regexString: NSString, withString replacement: NSString) throws -> NSString
     {
         let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString as String, options: .CaseInsensitive)
@@ -160,40 +160,40 @@ public extension NSString
     // TODO: Missing hash functions
     
     /**
-    Create a MD5 string from self
+     Create a MD5 string from self
     
-    :returns: Returns the MD5 NSString from self
-    */
+     - returns: Returns the MD5 NSString from self
+     */
     private func MD5() -> NSString
     {
         return ""
     }
     
     /**
-    Create a SHA1 string from self
+     Create a SHA1 string from self
     
-    :returns: Returns the SHA1 NSString from self
-    */
+     - returns: Returns the SHA1 NSString from self
+     */
     private func SHA1() -> NSString
     {
         return ""
     }
     
     /**
-    Create a SHA256 string from self
+     Create a SHA256 string from self
     
-    :returns: Returns the SHA256 NSString from self
-    */
+     - returns: Returns the SHA256 NSString from self
+     */
     private func SHA256() -> NSString
     {
         return ""
     }
     
     /**
-    Create a SHA512 string from self
+     Create a SHA512 string from self
     
-    :returns: Returns the SHA512 NSString from self
-    */
+     - returns: Returns the SHA512 NSString from self
+     */
     private func SHA512() -> NSString
     {
         return ""
@@ -202,15 +202,15 @@ public extension NSString
     // MARK: - Class functions -
     
     /**
-    Search in a given string a substring from the start char to the end char (excluded form final string).
-    Example: "This is a test" with start char 'h' and end char 't' will return "is is a "
+     Search in a given string a substring from the start char to the end char (excluded form final string).
+     Example: "This is a test" with start char 'h' and end char 't' will return "is is a "
     
-    :param: string    The string to search in
-    :param: charStart The start char
-    :param: charEnd   The end char
+     - parameter string:    The string to search in
+     - parameter charStart: The start char
+     - parameter charEnd:   The end char
     
-    :returns: Returns the substring
-    */
+     - returns: Returns the substring
+     */
     public static func searchInString(string: NSString, charStart: NSString, charEnd: NSString) -> NSString
     {
         var start = 0, stop = 0
@@ -235,12 +235,12 @@ public extension NSString
     }
     
     /**
-    Check if the given string is an email
+     Check if the given string is an email
     
-    :param: email The string to be checked
+     - parameter email: The string to be checked
     
-    :returns: Returns true if it's an email, false if not
-    */
+     - returns: Returns true if it's an email, false if not
+     */
     public static func isEmail(email: NSString) -> Bool
     {
         let emailRegEx: NSString = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
@@ -250,12 +250,12 @@ public extension NSString
     }
     
     /**
-    Convert a string to UTF8
+     Convert a string to UTF8
     
-    :param: string String to be converted
+     - parameter string: String to be converted
     
-    :returns: Returns the converted string
-    */
+     - returns: Returns the converted string
+     */
     public static func convertToUTF8Entities(string: NSString) -> NSString
     {
         return string
@@ -296,12 +296,12 @@ public extension NSString
     }
     
     /**
-    Encode the given string to Base64
+     Encode the given string to Base64
     
-    :param: string String to encode
+     - parameter string: String to encode
     
-    :returns: Returns the encoded string
-    */
+     - returns: Returns the encoded string
+     */
     public static func encodeToBase64(string: NSString) -> NSString
     {
         let data: NSData = string.dataUsingEncoding(NSUTF8StringEncoding)!
@@ -309,12 +309,12 @@ public extension NSString
     }
     
     /**
-    Decode the given Base64 to string
+     Decode the given Base64 to string
     
-    :param: string String to decode
+     - parameter string: String to decode
     
-    :returns: Returns the decoded string
-    */
+     - returns: Returns the decoded string
+     */
     public static func decodeBase64(string: NSString) -> NSString
     {
         let data: NSData = NSData(base64EncodedString: string as String, options: NSDataBase64DecodingOptions(rawValue: 0))!

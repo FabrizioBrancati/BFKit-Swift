@@ -42,11 +42,13 @@ public let APP_BUILD: String = NSBundle(forClass: BFApp.self).infoDictionary!["C
 public let APP_VERSION: String = NSBundle(forClass: BFApp.self).infoDictionary!["CFBundleShortVersionString"] as! String
 
 /**
-Use BFLocalizedString to use the string translated by BFKit
-
-:param: key     The key string
-:param: comment An optional comment
-*/
+ Use BFLocalizedString to use the string translated by BFKit
+ 
+ - parameter key:     The key string
+ - parameter comment: An optional comment
+ 
+ - returns: Returns the localized string
+ */
 public func BFLocalizedString(key: String, _ comment: String? = nil) -> String
 {
     return NSBundle(forClass: BFApp.self).localizedStringForKey(key, value: key, table: "BFKit")
@@ -59,11 +61,11 @@ let APP_DELEGATE: UIApplicationDelegate? = UIApplication.sharedApplication().del
 public class BFApp
 {
     /**
-    Executes a block on first start of the App.
-    Remember to execute UI instuctions on main thread
+     Executes a block on first start of the App.
+     Remember to execute UI instuctions on main thread
     
-    :param: block The block to execute, returns isFirstStart
-    */
+     - parameter block: The block to execute, returns isFirstStart
+     */
     public static func onFirstStart(block: (isFirstStart: Bool) -> ())
     {
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -78,11 +80,11 @@ public class BFApp
     }
     
     /**
-    Executes a block on first start of the App for current version.
-    Remember to execute UI instuctions on main thread
+     Executes a block on first start of the App for current version.
+     Remember to execute UI instuctions on main thread
     
-    :param: block The block to execute, returns isFirstStartForCurrentVersion
-    */
+     - parameter block: The block to execute, returns isFirstStartForCurrentVersion
+     */
     public static func onFirstStartForCurrentVersion(block: (isFirstStartForCurrentVersion: Bool) -> ())
     {
         let defaults = NSUserDefaults.standardUserDefaults()

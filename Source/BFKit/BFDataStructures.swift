@@ -41,30 +41,30 @@ public class Stack: CustomStringConvertible
     private var stack: Array<AnyObject> = Array<AnyObject>()
     
     /**
-    Returns if the Stack is empty or not
+     Returns if the Stack is empty or not
     
-    :returns: Returns true if the Stack is empty, otherwise false
-    */
+     - returns: Returns true if the Stack is empty, otherwise false
+     */
     public func empty() -> Bool
     {
         return stack.isEmpty
     }
     
     /**
-    Adds an element on top of the Stack
+     Adds an element on top of the Stack
     
-    :param: object The element to add
-    */
+     - parameter object: The element to add
+     */
     public func push(object: AnyObject)
     {
         stack.append(object)
     }
     
     /**
-    Removes an element on top of the Stack
+     Removes an element on top of the Stack
     
-    :returns: Returns the removed element
-    */
+     - returns: Returns the removed element
+     */
     public func pop() -> AnyObject
     {
         let popped: AnyObject = stack[stack.count - 1]
@@ -89,12 +89,12 @@ public class List: CustomStringConvertible
     private var list: Array<AnyObject> = Array<AnyObject>()
     
     /**
-    Search an element and returns the index
+     Search an element and returns the index
     
-    :param: object The element to search
+     - parameter object: The element to search
     
-    :returns: Returns the index of the searched element
-    */
+     - returns: Returns the index of the searched element
+     */
     public func search(object: AnyObject) -> Int?
     {
         for var i = 0; i < list.count; i++
@@ -116,32 +116,32 @@ public class List: CustomStringConvertible
     }
     
     /**
-    Search for an index and returns the element
+     Search for an index and returns the element
     
-    :param: index The index
+     - parameter index: The index
     
-    :returns: Returns the element of the searched index
-    */
+     - returns: Returns the element of the searched index
+     */
     public func search(index: Int) -> AnyObject?
     {
         return list.safeObjectAtIndex(index)
     }
     
     /**
-    Insert an element in the List
+     Insert an element in the List
     
-    :param: object The element to insert in the List
-    */
+     - parameter object: The element to insert in the List
+     */
     public func insert(object: AnyObject)
     {
         list.append(object)
     }
     
     /**
-    Delete an element in the List
+     Delete an element in the List
     
-    :param: object The object to be deleted
-    */
+     - parameter object: The object to be deleted
+     */
     public func delete(object: AnyObject)
     {
         var index: Int = -1
@@ -162,10 +162,10 @@ public class List: CustomStringConvertible
     }
     
     /**
-    Delete an element at the given index
+     Delete an element at the given index
     
-    :param: index The index to delete
-    */
+     - parameter index: The index to delete
+     */
     public func delete(index: Int)
     {
         list.removeAtIndex(index)
@@ -187,36 +187,36 @@ public class Queue: CustomStringConvertible
     private var queue: Array<AnyObject> = Array<AnyObject>()
     
     /**
-    Adds an element to the Queue
+     Adds an element to the Queue
     
-    :param: object The element to add
-    */
+     - parameter object: The element to add
+     */
     public func enqueue(object: AnyObject)
     {
         queue.append(object)
     }
     
     /**
-    Dequeue the first element
-    */
+     Dequeue the first element
+     */
     public func dequeue()
     {
         queue.removeAtIndex(0)
     }
     
     /**
-    Returns the element on the top of the Queue
+     Returns the element on the top of the Queue
     
-    :returns: Returns the element on the top of the Queue
-    */
+     - returns: Returns the element on the top of the Queue
+     */
     public func top() -> AnyObject?
     {
         return queue.first
     }
     
     /**
-    Remove all the elements in the Queue
-    */
+     Remove all the elements in the Queue
+     */
     public func emptyQueue()
     {
         queue.removeAll(keepCapacity: false)

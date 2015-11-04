@@ -32,21 +32,21 @@ public extension NSMutableArray
     // MARK: - Instance functions -
     
     /**
-    Create a reversed array from self
+     Create a reversed array from self
     
-    :returns: Returns the reversed array
-    */
+     - returns: Returns the reversed array
+     */
     public override func reversedArray() -> NSMutableArray
     {
         return super.reversedArray() as! NSMutableArray
     }
     
     /**
-    Move an object from an index to another
+     Move an object from an index to another
     
-    :param: from The index to move from
-    :param: to   The index to move to
-    */
+     - parameter from: The index to move from
+     - parameter to:   The index to move to
+     */
     public func moveObjectFromIndex(from: Int, toIndex to: Int)
     {
         if to != from
@@ -68,14 +68,14 @@ public extension NSMutableArray
     // MARK: - Class functions -
     
     /**
-    Sort an array by a given key with option for ascending or descending
+     Sort an array by a given key with option for ascending or descending
     
-    :param: key       The key to order the array
-    :param: array     The array to be ordered
-    :param: ascending A Bool to choose if ascending or descending
+     - parameter key:       The key to order the array
+     - parameter array:     The array to be ordered
+     - parameter ascending: A Bool to choose if ascending or descending
     
-    :returns: Returns the given array ordered by the given key ascending or descending
-    */
+     - returns: Returns the given array ordered by the given key ascending or descending
+     */
     public static func sortArrayByKey(key: String, array: NSMutableArray, ascending: Bool) -> NSMutableArray
     {
         var tempArray: NSMutableArray = NSMutableArray()

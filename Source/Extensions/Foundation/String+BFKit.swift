@@ -40,10 +40,10 @@ public extension String
     // MARK: - Instance functions -
     
     /**
-    Returns the lenght of the string
+     Returns the lenght of the string
     
-    :returns: Returns the lenght of the string
-    */
+     - returns: Returns the lenght of the string
+     */
     public var length: Int
     {
         // TODO: Check it
@@ -51,12 +51,12 @@ public extension String
     }
     
     /**
-    Get the character at a given index
+     Get the character at a given index
     
-    :param: index The index
+     - parameter index: The index
     
-    :returns: Returns the character at a given index
-    */
+     - returns: Returns the character at a given index
+     */
     public func characterAtIndex(index: Int) -> Character
     {
         // TODO: Check it
@@ -64,12 +64,12 @@ public extension String
     }
     
     /**
-    It's like substringFromIndex(index: String.Index), but it requires an Int as index
+     It's like substringFromIndex(index: String.Index), but it requires an Int as index
     
-    :param: index The index
+     - parameter index: The index
     
-    :returns: Returns the substring from index
-    */
+     - returns: Returns the substring from index
+     */
     public func substringFromIndex(index: Int) -> String
     {
         // TODO: Check it
@@ -78,12 +78,12 @@ public extension String
     }
     
     /**
-    It's like substringToIndex(index: String.Index), but it requires an Int as index
+     It's like substringToIndex(index: String.Index), but it requires an Int as index
     
-    :param: index The index
+     - parameter index: The index
     
-    :returns: Returns the substring to index
-    */
+     - returns: Returns the substring to index
+     */
     public func substringToIndex(index: Int) -> String
     {
         // TODO: Check it
@@ -92,12 +92,12 @@ public extension String
     }
     
     /**
-    Creates a substring with a given range
+     Creates a substring with a given range
     
-    :param: range The range
+     - parameter range: The range
     
-    :returns: Returns the string between the range
-    */
+     - returns: Returns the string between the range
+     */
     public func substringWithRange(range: Range<Int>) -> String
     {
         // TODO: Check it
@@ -110,12 +110,12 @@ public extension String
     }
     
     /**
-    Creates a substring from the given character
+     Creates a substring from the given character
     
-    :param: character The character
+     - parameter character: The character
     
-    :returns: Returns the substring from character
-    */
+     - returns: Returns the substring from character
+     */
     public func substringFromCharacter(character: Character) -> String?
     {
         if let index: Int = self.indexOfCharacter(character)
@@ -126,12 +126,12 @@ public extension String
     }
     
     /**
-    Creates a substring to the given character
+     Creates a substring to the given character
     
-    :param: character The character
+     - parameter character: The character
     
-    :returns: Returns the substring to character
-    */
+     - returns: Returns the substring to character
+     */
     public func substringToCharacter(character: Character) -> String?
     {
         if let index: Int = self.indexOfCharacter(character)
@@ -142,12 +142,12 @@ public extension String
     }
     
     /**
-    Returns the index of the given character
+     Returns the index of the given character
     
-    :param: char The character to search
+     - parameter char: The character to search
     
-    :returns: Returns the index of the given character, nil if not found
-    */
+     - returns: Returns the index of the given character, nil if not found
+     */
     public func indexOfCharacter(character: Character) -> Int?
     {
         // TODO: Check it
@@ -159,27 +159,27 @@ public extension String
     }
     
     /**
-    Search in a given string a substring from the start char to the end char (excluded form final string).
-    Example: "This is a test" with start char 'h' and end char 't' will return "is is a "
+     Search in a given string a substring from the start char to the end char (excluded form final string).
+     Example: "This is a test" with start char 'h' and end char 't' will return "is is a "
     
-    :param: charStart The start char
-    :param: charEnd   The end char
+     - parameter charStart: The start char
+     - parameter charEnd:   The end char
     
-    :returns: Returns the substring
-    */
+     - returns: Returns the substring
+     */
     public func searchCharStart(charStart: Character, charEnd: Character) -> String
     {
         return String.searchInString(self, charStart: charStart, charEnd: charEnd)
     }
     
     /**
-    Check if self has the given substring in case-sensitive
+     Check if self has the given substring in case-sensitive
     
-    :param: string        The substring to be searched
-    :param: caseSensitive If the search has to be case-sensitive or not
+     - parameter string:        The substring to be searched
+     - parameter caseSensitive: If the search has to be case-sensitive or not
     
-    :returns: Returns true if founded, false if not
-    */
+     - returns: Returns true if founded, false if not
+     */
     public func hasString(string: String, caseSensitive: Bool = true) -> Bool
     {
         if caseSensitive
@@ -193,41 +193,41 @@ public extension String
     }
     
     /**
-    Check if self is an email
+     Check if self is an email
     
-    :returns: Returns true if it's an email, false if not
-    */
+     - returns: Returns true if it's an email, false if not
+     */
     public func isEmail() -> Bool
     {
         return String.isEmail(self)
     }
     
     /**
-    Encode the given string to Base64
+     Encode the given string to Base64
     
-    :returns: Returns the encoded string
-    */
+     - returns: Returns the encoded string
+     */
     public func encodeToBase64() -> String
     {
         return String.encodeToBase64(self)
     }
     
     /**
-    Decode the given Base64 to string
+     Decode the given Base64 to string
     
-    :returns: Returns the decoded string
-    */
+     - returns: Returns the decoded string
+     */
     public func decodeBase64() -> String
     {
         return String.decodeBase64(self)
     }
     
     /**
-    Conver self to a capitalized string.
-    Example: "This is a Test" will return "This is a test" and "this is a test" will return "This is a test"
+     Conver self to a capitalized string.
+     Example: "This is a Test" will return "This is a test" and "this is a test" will return "This is a test"
     
-    :returns: Returns the capitalized sentence string
-    */
+     - returns: Returns the capitalized sentence string
+     */
     public func sentenceCapitalizedString() -> String
     {
         if self.length == 0
@@ -241,10 +241,10 @@ public extension String
     }
     
     /**
-    Returns a human legible string from a timestamp
+     Returns a human legible string from a timestamp
     
-    :returns: Returns a human legible string from a timestamp
-    */
+     - returns: Returns a human legible string from a timestamp
+     */
     public func dateFromTimestamp() -> String
     {
         let year: String = self.substringToIndex(4)
@@ -261,13 +261,13 @@ public extension String
     }
     
     /**
-    Returns a new string containing matching regular expressions replaced with the template string
+     Returns a new string containing matching regular expressions replaced with the template string
     
-    :param: regexString The regex string
-    :param: replacement The replacement string
+     - parameter regexString: The regex string
+     - parameter replacement: The replacement string
     
-    :returns: Returns a new string containing matching regular expressions replaced with the template string
-    */
+     - returns: Returns a new string containing matching regular expressions replaced with the template string
+     */
     public func stringByReplacingWithRegex(regexString: NSString, withString replacement: NSString) throws -> NSString
     {
         let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString as String, options: .CaseInsensitive)
@@ -275,10 +275,10 @@ public extension String
     }
     
     /**
-    Encode self to an encoded url string
+     Encode self to an encoded url string
     
-    :returns: Returns the encoded NSString
-    */
+     - returns: Returns the encoded NSString
+     */
     public func URLEncode() -> String
     {
         return self.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!
@@ -365,40 +365,40 @@ public extension String
     
     // TODO: Missing hash functions
     /**
-    Create a MD5 string from self
+     Create a MD5 string from self
     
-    :returns: Returns the MD5 NSString from self
-    */
+     - returns: Returns the MD5 NSString from self
+     */
     private func MD5() -> String
     {
         return ""
     }
     
     /**
-    Create a SHA1 string from self
+     Create a SHA1 string from self
     
-    :returns: Returns the SHA1 NSString from self
-    */
+     - returns: Returns the SHA1 NSString from self
+     */
     private func SHA1() -> String
     {
         return ""
     }
     
     /**
-    Create a SHA256 string from self
+     Create a SHA256 string from self
     
-    :returns: Returns the SHA256 NSString from self
-    */
+     - returns: Returns the SHA256 NSString from self
+     */
     private func SHA256() -> String
     {
         return ""
     }
     
     /**
-    Create a SHA512 string from self
+     Create a SHA512 string from self
     
-    :returns: Returns the SHA512 NSString from self
-    */
+     - returns: Returns the SHA512 NSString from self
+     */
     private func SHA512() -> String
     {
         return ""
@@ -407,12 +407,12 @@ public extension String
     // MARK: - Subscript functions -
     
     /**
-    Returns the character at the given index
+     Returns the character at the given index
     
-    :param: index The index
+     - parameter index: The index
     
-    :returns: Returns the character at the given index
-    */
+     - returns: Returns the character at the given index
+     */
     public subscript(index: Int) -> Character
     {
         // TODO: Check it
@@ -420,25 +420,25 @@ public extension String
     }
     
     /**
-    Returns the character at the given index as String
+     Returns the character at the given index as String
     
-    :param: index The index
+     - parameter index: The index
     
-    :returns: Returns the character at the given index as String
-    */
+     - returns: Returns the character at the given index as String
+     */
     public subscript(index: Int) -> String
     {
             return String(self[index] as Character)
     }
     
     /**
-    Returns the string from a given range
-    Example: print("BFKit"[1...3]) //the result is "FKi"
+     Returns the string from a given range
+     Example: print("BFKit"[1...3]) //the result is "FKi"
     
-    :param: range The range
+     - parameter range: The range
     
-    :returns: Returns the string from a given range
-    */
+     - returns: Returns the string from a given range
+     */
     public subscript(range: Range<Int>) -> String
     {
         // TODO: Check it
@@ -448,15 +448,15 @@ public extension String
     // MARK: - Class functions -
     
     /**
-    Search in a given string a substring from the start char to the end char (excluded form final string).
-    Example: "This is a test" with start char 'h' and end char 't' will return "is is a "
+     Search in a given string a substring from the start char to the end char (excluded form final string).
+     Example: "This is a test" with start char 'h' and end char 't' will return "is is a "
     
-    :param: string    The string to search in
-    :param: charStart The start char
-    :param: charEnd   The end char
+     - parameter string:    The string to search in
+     - parameter charStart: The start char
+     - parameter charEnd:   The end char
     
-    :returns: Returns the substring
-    */
+     - returns: Returns the substring
+     */
     public static func searchInString(string: String, charStart: Character, charEnd: Character) -> String
     {
         var start = 0, stop = 0
@@ -481,12 +481,12 @@ public extension String
     }
     
     /**
-    Check if the given string is an email
+     Check if the given string is an email
     
-    :param: email The string to be checked
+     - parameter email: The string to be checked
     
-    :returns: Returns true if it's an email, false if not
-    */
+     - returns: Returns true if it's an email, false if not
+     */
     public static func isEmail(email: String) -> Bool
     {
         let emailRegEx: String = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
@@ -496,12 +496,12 @@ public extension String
     }
     
     /**
-    Convert a string to UTF8
+     Convert a string to UTF8
     
-    :param: string String to be converted
+     - parameter string: String to be converted
     
-    :returns: Returns the converted string
-    */
+     - returns: Returns the converted string
+     */
     public static func convertToUTF8Entities(string: String) -> String
     {
         return string
@@ -542,12 +542,12 @@ public extension String
     }
     
     /**
-    Encode the given string to Base64
+     Encode the given string to Base64
     
-    :param: string String to encode
+     - parameter string: String to encode
     
-    :returns: Returns the encoded string
-    */
+     - returns: Returns the encoded string
+     */
     public static func encodeToBase64(string: String) -> String
     {
         let data: NSData = string.dataUsingEncoding(NSUTF8StringEncoding)!
@@ -555,12 +555,12 @@ public extension String
     }
     
     /**
-    Decode the given Base64 to string
+     Decode the given Base64 to string
     
-    :param: string String to decode
+     - parameter string: String to decode
     
-    :returns: Returns the decoded string
-    */
+     - returns: Returns the decoded string
+     */
     public static func decodeBase64(string: String) -> String
     {
         let data: NSData = NSData(base64EncodedString: string as String, options: NSDataBase64DecodingOptions(rawValue: 0))!

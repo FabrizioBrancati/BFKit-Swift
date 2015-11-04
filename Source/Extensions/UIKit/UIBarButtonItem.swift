@@ -33,13 +33,13 @@ public extension UIBarButtonItem
     //  MARK: - Init functions -
     
     /**
-    Create an UIBarButtonItem with type setted to FlexibleSpace or FixedSpace
+     Create an UIBarButtonItem with type setted to FlexibleSpace or FixedSpace
     
-    :param: space Must be FlexibleSpace or FixedSpace, otherwise a FlexibleSpace UIBarButtonItem will be created
-    :param: width To use only if space is setted to FixedSpace, and it will be the width of it
+     - parameter space: Must be FlexibleSpace or FixedSpace, otherwise a FlexibleSpace UIBarButtonItem will be created
+     - parameter width: To use only if space is setted to FixedSpace, and it will be the width of it
     
-    :returns: Returns the created UIBarButtonItem
-    */
+     - returns: Returns the created UIBarButtonItem
+     */
     public convenience init(barButtonSpaceType space: UIBarButtonSystemItem, width: CGFloat = 0.0)
     {
         if space == .FixedSpace || space == .FlexibleSpace

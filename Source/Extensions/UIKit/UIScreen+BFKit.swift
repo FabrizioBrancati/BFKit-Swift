@@ -53,10 +53,10 @@ public extension UIScreen
     // MARK: - Class functions -
     
     /**
-    Check if the current device has a Retina display
+     Check if the current device has a Retina display
     
-    :returns: Returns true if it has a Retina display, false if not
-    */
+     - returns: Returns true if it has a Retina display, false if not
+     */
     public static func isRetina() -> Bool
     {
         if UIScreen.mainScreen().respondsToSelector("displayLinkWithTarget:selector:") && (UIScreen.mainScreen().scale == 2.0 || UIScreen.mainScreen().scale == 3.0)
@@ -70,10 +70,10 @@ public extension UIScreen
     }
     
     /**
-    Check if the current device has a Retina HD display
+     Check if the current device has a Retina HD display
     
-    :returns: Returns true if it has a Retina HD display, false if not
-    */
+     - returns: Returns true if it has a Retina HD display, false if not
+     */
     public static func isRetinaHD() -> Bool
     {
         if UIScreen.mainScreen().respondsToSelector("displayLinkWithTarget:selector:") && UIScreen.mainScreen().scale == 3.0
@@ -89,10 +89,10 @@ public extension UIScreen
     // MARK: - Instance functions -
     
     /**
-    Returns the fixed screen size, based on device orientation
+     Returns the fixed screen size, based on device orientation
     
-    :returns: Returns a GCSize with the fixed screen size
-    */
+     - returns: Returns a GCSize with the fixed screen size
+     */
     public func fixedScreenSize() -> CGSize
     {
         let screenSize = self.bounds.size

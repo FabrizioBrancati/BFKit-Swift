@@ -32,13 +32,13 @@ public extension NSFileManager
     // MARK: - Enums -
     
     /**
-    Directory type enum
+     Directory type enum
     
-    - MainBundle: Main bundle directory
-    - Library:    Library directory
-    - Documents:  Documents directory
-    - Cache:      Cache directory
-    */
+     - MainBundle: Main bundle directory
+     - Library:    Library directory
+     - Documents:  Documents directory
+     - Cache:      Cache directory
+     */
     public enum DirectoryType : Int
     {
         case MainBundle
@@ -50,27 +50,27 @@ public extension NSFileManager
     // MARK: - Class functions -
     
     /**
-    Read a file an returns the content as String
+     Read a file an returns the content as String
     
-    :param: file   File name
-    :param: ofType File type
+     - parameter file:   File name
+     - parameter ofType: File type
     
-    :returns: Returns the content of the file a String
-    */
+     - returns: Returns the content of the file a String
+     */
     public static func readTextFile(file: String, ofType: String) throws -> String?
     {
         return try String(contentsOfFile: NSBundle.mainBundle().pathForResource(file, ofType: ofType)!, encoding: NSUTF8StringEncoding)
     }
     
     /**
-    Save a given array into a PLIST with the given filename
+     Save a given array into a PLIST with the given filename
     
-    :param: directory Path of the PLIST
-    :param: filename  PLIST filename
-    :param: array     Array to save into PLIST
+     - parameter directory: Path of the PLIST
+     - parameter filename:  PLIST filename
+     - parameter array:     Array to save into PLIST
     
-    :returns: Returns true if the operation was successful, otherwise false
-    */
+     - returns: Returns true if the operation was successful, otherwise false
+     */
     public static func saveArrayToPath(directory: DirectoryType, filename: String, array: Array<AnyObject>) -> Bool
     {
         var finalPath: String
@@ -91,13 +91,13 @@ public extension NSFileManager
     }
     
     /**
-    Load array from a PLIST with the given filename
+     Load array from a PLIST with the given filename
     
-    :param: directory Path of the PLIST
-    :param: filename  PLIST filename
+     - parameter directory: Path of the PLIST
+     - parameter filename:  PLIST filename
     
-    :returns: Returns the loaded array
-    */
+     - returns: Returns the loaded array
+     */
     public static func loadArrayFromPath(directory: DirectoryType, filename: String) -> AnyObject?
     {
         var finalPath: String
@@ -118,12 +118,12 @@ public extension NSFileManager
     }
     
     /**
-    Get the Bundle path for a filename
+     Get the Bundle path for a filename
     
-    :param: file Filename
+     - parameter file: Filename
     
-    :returns: Returns the path as a String
-    */
+     - returns: Returns the path as a String
+     */
     public static func getBundlePathForFile(file: String) -> String
     {
         let fileExtension = file.pathExtension
@@ -131,12 +131,12 @@ public extension NSFileManager
     }
     
     /**
-    Get the Documents directory for a filename
+     Get the Documents directory for a filename
     
-    :param: file Filename
+     - parameter file: Filename
     
-    :returns: Returns the directory as a String
-    */
+     - returns: Returns the directory as a String
+     */
     public static func getDocumentsDirectoryForFile(file: String) -> String
     {
         let documentsDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
@@ -144,12 +144,12 @@ public extension NSFileManager
     }
     
     /**
-    Get the Library directory for a filename
+     Get the Library directory for a filename
     
-    :param: file Filename
+     - parameter file: Filename
     
-    :returns: Returns the directory as a String
-    */
+     - returns: Returns the directory as a String
+     */
     public static func getLibraryDirectoryForFile(file: String) -> String
     {
         let libraryDirectory = NSSearchPathForDirectoriesInDomains(.LibraryDirectory, .UserDomainMask, true)[0]
@@ -157,12 +157,12 @@ public extension NSFileManager
     }
     
     /**
-    Get the Cache directory for a filename
+     Get the Cache directory for a filename
     
-    :param: file Filename
+     - parameter file: Filename
     
-    :returns: Returns the directory as a String
-    */
+     - returns: Returns the directory as a String
+     */
     public static func getCacheDirectoryForFile(file: String) -> String
     {
         let cacheDirectory = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0]
@@ -170,13 +170,13 @@ public extension NSFileManager
     }
     
     /**
-    Returns the size of the file
+     Returns the size of the file
     
-    :param: file      Filename
-    :param: directory Directory of the file
+     - parameter file:      Filename
+     - parameter directory: Directory of the file
     
-    :returns: Returns the file size
-    */
+     - returns: Returns the file size
+     */
     public static func fileSize(file: String, fromDirectory directory: DirectoryType) throws -> NSNumber?
     {
         if file.characters.count != 0
@@ -209,13 +209,13 @@ public extension NSFileManager
     }
     
     /**
-    Delete a file with the given filename
+     Delete a file with the given filename
     
-    :param: file      Filename to delete
-    :param: directory Directory of the file
+     - parameter file:      Filename to delete
+     - parameter directory: Directory of the file
     
-    :returns: Returns true if the operation was successful, otherwise false
-    */
+     - returns: Returns true if the operation was successful, otherwise false
+     */
     public static func deleteFile(file: String, fromDirectory directory: DirectoryType) throws -> Bool
     {
         if file.characters.count != 0
@@ -252,15 +252,15 @@ public extension NSFileManager
     }
     
     /**
-    Move a file from a directory to another
+     Move a file from a directory to another
     
-    :param: file        Filename to move
-    :param: origin      Origin directory of the file
-    :param: destination Destination directory of the file
-    :param: folderName  Folder name where to move the file. If folder not exist it will be created automatically
+     - parameter file:        Filename to move
+     - parameter origin:      Origin directory of the file
+     - parameter destination: Destination directory of the file
+     - parameter folderName:  Folder name where to move the file. If folder not exist it will be created automatically
     
-    :returns: Returns true if the operation was successful, otherwise false
-    */
+     - returns: Returns true if the operation was successful, otherwise false
+     */
     public static func moveLocalFile(file: String, fromDirectory origin: DirectoryType, toDirectory destination: DirectoryType, withFolderName folderName: String? = nil) throws -> Bool
     {
         var originPath: String
@@ -347,14 +347,14 @@ public extension NSFileManager
     
     
     /**
-    Move a file from a directory to another
+     Move a file from a directory to another
     
-    :param: file        Filename to move
-    :param: origin      Origin directory of the file
-    :param: destination Destination directory of the file
+     - parameter file:        Filename to move
+     - parameter origin:      Origin directory of the file
+     - parameter destination: Destination directory of the file
     
-    :returns: Returns true if the operation was successful, otherwise false
-    */
+     - returns: Returns true if the operation was successful, otherwise false
+     */
     @available(*, obsoleted=1.2.0, message="Use moveLocalFile(_, fromDirectory:, toDirectory:, withFolderName:)")
     public static func moveLocalFile(file: String, fromDirectory origin: DirectoryType, toDirectory destination: DirectoryType) throws -> Bool
     {
@@ -362,13 +362,13 @@ public extension NSFileManager
     }
     
     /**
-    Duplicate a file into another directory
+     Duplicate a file into another directory
     
-    :param: origin      Origin path
-    :param: destination Destination path
+     - parameter origin:      Origin path
+     - parameter destination: Destination path
     
-    :returns: Returns true if the operation was successful, otherwise false
-    */
+     - returns: Returns true if the operation was successful, otherwise false
+     */
     public static func duplicateFileAtPath(origin: String, toNewPath destination: String) -> Bool
     {
         if NSFileManager.defaultManager().fileExistsAtPath(origin)
@@ -387,15 +387,15 @@ public extension NSFileManager
     }
     
     /**
-    Rename a file with another filename
+     Rename a file with another filename
     
-    :param: origin  Origin path
-    :param: path    Subdirectory path
-    :param: oldName Old filename
-    :param: newName New filename
+     - parameter origin:  Origin path
+     - parameter path:    Subdirectory path
+     - parameter oldName: Old filename
+     - parameter newName: New filename
     
-    :returns: Returns true if the operation was successful, otherwise false
-    */
+     - returns: Returns true if the operation was successful, otherwise false
+     */
     public static func renameFileFromDirectory(origin: DirectoryType, atPath path: String, withOldName oldName: String, andNewName newName: String) -> Bool
     {
         var originPath: String
@@ -437,13 +437,13 @@ public extension NSFileManager
     }
     
     /**
-    Get the given settings for a given key
+     Get the given settings for a given key
     
-    :param: settings     Settings filename
-    :param: objectForKey Key to set the object
+     - parameter settings:     Settings filename
+     - parameter objectForKey: Key to set the object
     
-    :returns: Returns the object for the given key
-    */
+     - returns: Returns the object for the given key
+     */
     public static func getSettings(settings: String, objectForKey: String) -> AnyObject?
     {
         var path: String = self.getLibraryDirectoryForFile("")
@@ -464,14 +464,14 @@ public extension NSFileManager
     }
     
     /**
-    Set the given settings for a given object and key. The file will be saved in the Library directory
+     Set the given settings for a given object and key. The file will be saved in the Library directory
     
-    :param: settings Settings filename
-    :param: object   Object to set
-    :param: objKey   Key to set the object
+     - parameter settings: Settings filename
+     - parameter object:   Object to set
+     - parameter objKey:   Key to set the object
     
-    :returns: Returns true if the operation was successful, otherwise false
-    */
+     - returns: Returns true if the operation was successful, otherwise false
+     */
     public static func setSettings(settings: String, object: AnyObject, forKey objKey: String) -> Bool
     {
         var path: String = self.getLibraryDirectoryForFile("")
@@ -494,25 +494,25 @@ public extension NSFileManager
     }
     
     /**
-    Set the App settings for a given object and key. The file will be saved in the Library directory
+     Set the App settings for a given object and key. The file will be saved in the Library directory
     
-    :param: object Object to set
-    :param: objKey Key to set the object
+     - parameter object: Object to set
+     - parameter objKey: Key to set the object
     
-    :returns: Returns true if the operation was successful, otherwise false
-    */
+     - returns: Returns true if the operation was successful, otherwise false
+     */
     public static func setAppSettingsForObject(object: AnyObject, forKey objKey: String) -> Bool
     {
         return self.setSettings(APP_NAME, object: object, forKey: objKey)
     }
     
     /**
-    Get the App settings for a given key
+     Get the App settings for a given key
     
-    :param: objKey Key to get the object
+     - parameter objKey: Key to get the object
     
-    :returns: Returns the object for the given key
-    */
+     - returns: Returns the object for the given key
+     */
     public static func getAppSettingsForObjectWithKey(objKey: String) -> AnyObject?
     {
         return self.getSettings(APP_NAME, objectForKey: objKey)

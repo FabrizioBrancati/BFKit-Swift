@@ -32,12 +32,12 @@ public extension Array
     // MARK: - Instance functions -
     
     /**
-    Get the object at a given index in safe mode (nil if self is empty or out of range)
+      Get the object at a given index in safe mode (nil if self is empty or out of range)
     
-    :param: index The index
+     - parameter index: The index
     
-    :returns: Returns the object at a given index in safe mode (nil if self is empty or out of range)
-    */
+     - returns: Returns the object at a given index in safe mode (nil if self is empty or out of range)
+      */
     func safeObjectAtIndex(index: Int) -> Element?
     {
         if self.count > 0 && self.count > index
@@ -51,10 +51,10 @@ public extension Array
     }
     
     /**
-    Convert self to JSON as String
+     Convert self to JSON as String
     
-    :returns: Returns the JSON as String or nil if error while parsing
-    */
+     - returns: Returns the JSON as String or nil if error while parsing
+     */
     func arrayToJSON() throws -> String
     {
         // TODO: Check it
@@ -62,25 +62,25 @@ public extension Array
     }
     
     /**
-    Simulates the array as a circle. When it is out of range, begins again
+     Simulates the array as a circle. When it is out of range, begins again
     
-    :param: index The index
+     - parameter index: The index
     
-    :returns: Returns the object at a given index
-    */
+     - returns: Returns the object at a given index
+     */
     func objectAtCircleIndex(index: Int) -> Element
     {
         return self[self.superCircle(index, size: self.count)]
     }
     
     /**
-    Private, to get the index as a circle
+     Private, to get the index as a circle
     
-    :param: index   The index
-    :param: maxSize Max size of the array
+     - parameter index:   The index
+     - parameter maxSize: Max size of the array
     
-    :returns: Returns the right index
-    */
+     - returns: Returns the right index
+     */
     func superCircle(var index: Int, size maxSize: Int) -> Int
     {
         if index < 0
@@ -97,11 +97,11 @@ public extension Array
     }
     
     /**
-    Move object from an index to another
+     Move object from an index to another
     
-    :param: from The start index
-    :param: to   The end index
-    */
+     - parameter from: The start index
+     - parameter to:   The end index
+     */
     mutating func moveObjectFromIndex(from: Int, toIndex to: Int)
     {
         if to != from
@@ -121,10 +121,10 @@ public extension Array
     }
     
     /**
-    Create a reversed array from self
+     Create a reversed array from self
     
-    :returns: Returns the reversed array
-    */
+     - returns: Returns the reversed array
+     */
     func reversedArray() -> Array
     {
         return Array.reversedArray(self)
@@ -133,24 +133,24 @@ public extension Array
     // MARK: - Class functions -
     
     /**
-    Create a reversed array from the given array
+     Create a reversed array from the given array
     
-    :param: array The array to be reverse
+     - parameter array: The array to be reverse
     
-    :returns: Returns the reversed array
-    */
+     - returns: Returns the reversed array
+     */
     static func reversedArray(array: Array) -> Array
     {
         return array.reverse()
     }
     
     /**
-    Create a reversed array from the given array
+     Create a reversed array from the given array
     
-    :param: array The array to be converted
+     - parameter array: The array to be converted
     
-    :returns: Returns the JSON as String or nil if error while parsing
-    */
+     - returns: Returns the JSON as String or nil if error while parsing
+     */
     static func arrayToJSON(array: AnyObject) throws -> String
     {
         // TODO: Check it
@@ -159,7 +159,7 @@ public extension Array
             return NSString(data: data, encoding: NSUTF8StringEncoding)! as String
         } catch let error as NSError {
             return error.localizedDescription
-        }*/
+        } */
         let data = try NSJSONSerialization.dataWithJSONObject(array, options: NSJSONWritingOptions())
         return NSString(data: data, encoding: NSUTF8StringEncoding)! as String
     }

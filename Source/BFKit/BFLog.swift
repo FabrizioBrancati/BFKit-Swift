@@ -35,13 +35,13 @@ public var BFLogActive: Bool = true
 // MARK: - Global functions -
 
 /**
-Exented NSLog
+ Exented NSLog
 
-:param: message  Console message
-:param: filename File
-:param: function Function name
-:param: line     Line number
-*/
+ - parameter message:  Console message
+ - parameter filename: File
+ - parameter function: Function name
+ - parameter line:     Line number
+ */
 public func BFLog(var message: String, filename: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__)
 {
     if BFLogActive
@@ -53,7 +53,6 @@ public func BFLog(var message: String, filename: String = __FILE__, function: St
         
         BFLogClass.logString += message
         
-        //let filenameNoExt = NSString(UTF8String: filename)!.lastPathComponent.stringByDeletingPathExtension
         let filenameNoExt = NSURL(string: NSString(UTF8String: filename)! as String)!.URLByDeletingPathExtension!
         let log = "(\(function)) (\(filenameNoExt):\(line) \(message)"
         let timestamp = NSDate.dateInformationDescriptionWithInformation(NSDate().dateInformation(), dateSeparator: "-", usFormat: true, nanosecond: true)
@@ -90,8 +89,8 @@ public var BFDetailedLogString: String
 }
 
 /**
-Clear the log string
-*/
+ Clear the log string
+ */
 public func BFLogClear()
 {
     if BFLogActive
@@ -113,8 +112,8 @@ private class BFLogClass
     // MARK: - Class functions -
     
     /**
-    Private, clear the log string
-    */
+     Private, clear the log string
+     */
     private static func clearLog()
     {
         logString = ""

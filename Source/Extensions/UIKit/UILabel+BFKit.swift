@@ -33,18 +33,18 @@ public extension UILabel
     // MARK: - Init functions -
     
     /**
-    Create an UILabel with the given parameters, with clearColor for the shadow
+     Create an UILabel with the given parameters, with clearColor for the shadow
     
-    :param: frame     Label's frame
-    :param: text      Label's text
-    :param: font      Label's font name, FontName enum is declared in UIFont+BFKit
-    :param: size      Label's font size
-    :param: color     Label's text color
-    :param: alignment Label's text alignment
-    :param: lines     Label's text lines
+     - parameter frame:     Label's frame
+     - parameter text:      Label's text
+     - parameter font:      Label's font name, FontName enum is declared in UIFont+BFKit
+     - parameter size:      Label's font size
+     - parameter color:     Label's text color
+     - parameter alignment: Label's text alignment
+     - parameter lines:     Label's text lines
     
-    :returns: Returns the created UILabel
-    */
+     - returns: Returns the created UILabel
+     */
     @available(*, obsoleted=1.2.0, message="Use UILabel(_, text:, font:, size:, color:, alignment:, lines:, shadowColor:)")
     public convenience init(frame: CGRect, text: String, font: FontName, size: CGFloat, color: UIColor, alignment: NSTextAlignment, lines: Int)
     {
@@ -52,19 +52,19 @@ public extension UILabel
     }
     
     /**
-    Create an UILabel with the given parameters
+     Create an UILabel with the given parameters
     
-    :param: frame       Label's frame
-    :param: text        Label's text
-    :param: font        Label's font name, FontName enum is declared in UIFont+BFKit
-    :param: size        Label's font size
-    :param: color       Label's text color
-    :param: alignment   Label's text alignment
-    :param: lines       Label's text lines
-    :param: shadowColor Label's text shadow color
+     - parameter frame:       Label's frame
+     - parameter text:        Label's text
+     - parameter font:        Label's font name, FontName enum is declared in UIFont+BFKit
+     - parameter size:        Label's font size
+     - parameter color:       Label's text color
+     - parameter alignment:   Label's text alignment
+     - parameter lines:       Label's text lines
+     - parameter shadowColor: Label's text shadow color
     
-    :returns: Returns the created UILabel
-    */
+     - returns: Returns the created UILabel
+     */
     public convenience init(frame: CGRect, text: String, font: FontName, size: CGFloat, color: UIColor, alignment: NSTextAlignment, lines: Int, shadowColor: UIColor = UIColor.clearColor())
     {
         self.init(frame: frame)

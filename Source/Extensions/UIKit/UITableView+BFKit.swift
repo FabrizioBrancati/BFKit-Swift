@@ -33,12 +33,12 @@ public extension UITableView
     // MARK: - Instance functions -
     
     /**
-    Retrive all the IndexPaths for the section
+     Retrive all the IndexPaths for the section
     
-    :param: section The section
+     - parameter section: The section
     
-    :returns: Return an array with all the IndexPaths
-    */
+     - returns: Return an array with all the IndexPaths
+     */
     public func getIndexPathsForSection(section: Int) -> Array<NSIndexPath>
     {
         var indexPaths: Array<NSIndexPath> = Array()
@@ -53,13 +53,13 @@ public extension UITableView
     }
     
     /**
-    Retrive the next index path for the given row at section
+     Retrive the next index path for the given row at section
     
-    :param: row     Row of the index path
-    :param: section Section of the index path
+     - parameter row:     Row of the index path
+     - parameter section: Section of the index path
     
-    :returns: Returns the next index path
-    */
+     - returns: Returns the next index path
+     */
     public func getNextIndexPath(row: Int, forSection section: Int) -> NSIndexPath
     {
         let indexPath: Array<NSIndexPath> = self.getIndexPathsForSection(section)
@@ -67,13 +67,13 @@ public extension UITableView
     }
     
     /**
-    Retrive the previous index path for the given row at section
+     Retrive the previous index path for the given row at section
     
-    :param: row     Row of the index path
-    :param: section Section of the index path
+     - parameter row:     Row of the index path
+     - parameter section: Section of the index path
     
-    :returns: Returns the previous index path
-    */
+     - returns: Returns the previous index path
+     */
     public func getPreviousIndexPath(row: Int, forSection section: Int) -> NSIndexPath
     {
         let indexPath: Array<NSIndexPath> = self.getIndexPathsForSection(section)
@@ -83,17 +83,17 @@ public extension UITableView
     // MARK: - Init functions -
     
     /**
-    Create an UITableView and set some parameters
+     Create an UITableView and set some parameters
     
-    :param: frame              TableView's frame
-    :param: style              TableView's style
-    :param: cellSeparatorStyle Cell separator style
-    :param: separatorInset     Cell separator inset
-    :param: dataSource         TableView's data source
-    :param: delegate           TableView's delegate
+     - parameter frame:              TableView's frame
+     - parameter style:              TableView's style
+     - parameter cellSeparatorStyle: Cell separator style
+     - parameter separatorInset:     Cell separator inset
+     - parameter dataSource:         TableView's data source
+     - parameter delegate:           TableView's delegate
     
-    :returns: Returns the created UITableView
-    */
+     - returns: Returns the created UITableView
+     */
     public convenience init(frame: CGRect, style: UITableViewStyle, cellSeparatorStyle: UITableViewCellSeparatorStyle, separatorInset: UIEdgeInsets, dataSource: UITableViewDataSource?, delegate: UITableViewDelegate?)
     {
         self.init(frame: frame)

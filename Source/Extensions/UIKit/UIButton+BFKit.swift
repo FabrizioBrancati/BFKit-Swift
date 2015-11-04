@@ -33,13 +33,13 @@ public extension UIButton
     // MARK: - Init functions -
     
     /**
-    Create an UIButton in a frame with a title and a clear color
+     Create an UIButton in a frame with a title and a clear color
     
-    :param: frame Button's frame
-    :param: title Button's title, the title color will be white
+     - parameter frame: Button's frame
+     - parameter title: Button's title, the title color will be white
     
-    :returns: Returns the UIButton instance
-    */
+     - returns: Returns the UIButton instance
+     */
     @available(*, obsoleted=1.2.0, message="Use UIButton(_, title:, backgroundImage:, highlightedBackgroundImage:)")
     public convenience init(frame: CGRect, title: String)
     {
@@ -47,14 +47,14 @@ public extension UIButton
     }
     
     /**
-    Create an UIButton in a frame with a title and a background image
+     Create an UIButton in a frame with a title and a background image
     
-    :param: frame           Button's frame
-    :param: title           Button's title
-    :param: backgroundImage Button's background image
+     - parameter frame:           Button's frame
+     - parameter title:           Button's title
+     - parameter backgroundImage: Button's background image
     
-    :returns: Returns the UIButton instance
-    */
+     - returns: Returns the UIButton instance
+     */
     @available(*, obsoleted=1.2.0, message="Use UIButton(_, title:, backgroundImage:, highlightedBackgroundImage:)")
     public convenience init(frame: CGRect, title: String, backgroundImage: UIImage?)
     {
@@ -62,15 +62,15 @@ public extension UIButton
     }
     
     /**
-    Create an UIButton in a frame with a title, a background image and highlighted background image
+     Create an UIButton in a frame with a title, a background image and highlighted background image
     
-    :param: frame                      Button's frame
-    :param: title                      Button's title
-    :param: backgroundImage            Button's background image
-    :param: highlightedBackgroundImage Button's highlighted background image
+     - parameter frame:                      Button's frame
+     - parameter title:                      Button's title
+     - parameter backgroundImage:            Button's background image
+     - parameter highlightedBackgroundImage: Button's highlighted background image
     
-    :returns: Returns the UIButton instance
-    */
+     - returns: Returns the UIButton instance
+     */
     public convenience init(frame: CGRect, title: String, backgroundImage: UIImage? = nil, highlightedBackgroundImage: UIImage? = nil)
     {
         self.init(frame: frame)
@@ -81,14 +81,14 @@ public extension UIButton
     }
     
     /**
-    Create an UIButton in a frame with a title and a color
+     Create an UIButton in a frame with a title and a color
     
-    :param: frame Button's frame
-    :param: title Button's title
-    :param: color Button's color, the highlighted color will be automatically created
+     - parameter frame: Button's frame
+     - parameter title: Button's title
+     - parameter color: Button's color, the highlighted color will be automatically created
     
-    :returns: Returns the UIButton instance
-    */
+     - returns: Returns the UIButton instance
+     */
     public convenience init(frame: CGRect, title: String, color: UIColor)
     {
         let components: UnsafePointer<CGFloat> = CGColorGetComponents(color.CGColor)
@@ -96,28 +96,28 @@ public extension UIButton
     }
     
     /**
-    Create an UIButton in a frame with a title, a color and highlighted color
+     Create an UIButton in a frame with a title, a color and highlighted color
     
-    :param: frame            Button's frame
-    :param: title            Button's title
-    :param: color            Button's color
-    :param: highlightedColor Button's highlighted color
+     - parameter frame:            Button's frame
+     - parameter title:            Button's title
+     - parameter color:            Button's color
+     - parameter highlightedColor: Button's highlighted color
     
-    :returns: Returns the UIButton instance
-    */
+     - returns: Returns the UIButton instance
+     */
     public convenience init(frame: CGRect, title: String, color: UIColor, highlightedColor: UIColor)
     {
         self.init(frame: frame, title: title, backgroundImage: UIImage(color: color), highlightedBackgroundImage: UIImage(color: highlightedColor))
     }
     
     /**
-    Create an UIButton in a frame with an image
+     Create an UIButton in a frame with an image
     
-    :param: frame Button's frame
-    :param: image Button's image
+     - parameter frame: Button's frame
+     - parameter image: Button's image
     
-    :returns: Returns the UIButton instance
-    */
+     - returns: Returns the UIButton instance
+     */
     @available(*, obsoleted=1.2.0, message="Use UIButton(_, image:, highlightedImage:)")
     public convenience init(frame: CGRect, image: UIImage)
     {
@@ -125,14 +125,14 @@ public extension UIButton
     }
     
     /**
-    Create an UIButton in a frame with an image
+     Create an UIButton in a frame with an image
     
-    :param: frame            Button's frame
-    :param: image            Button's image
-    :param: highlightedImage Button's highlighted image
+     - parameter frame:            Button's frame
+     - parameter image:            Button's image
+     - parameter highlightedImage: Button's highlighted image
     
-    :returns: eturns the UIButton instance
-    */
+     - returns: eturns the UIButton instance
+     */
     public convenience init(frame: CGRect, image: UIImage, highlightedImage: UIImage? = nil)
     {
         self.init(frame: frame)
@@ -144,32 +144,32 @@ public extension UIButton
     // MARK: - Instance functions -
     
     /**
-    Set the title font with a size
+     Set the title font with a size
     
-    :param: fontName Font name from the FontName enum declared in UIFont+BFKit
-    :param: size     Font size
-    */
+     - parameter fontName: Font name from the FontName enum declared in UIFont+BFKit
+     - parameter size:     Font size
+     */
     public func setTitleFont(fontName: FontName, size: CGFloat)
     {
         self.titleLabel!.font = UIFont(fontName: fontName, size: size)
     }
     
     /**
-    Set the title color
+     Set the title color
     
-    :param: color Font color, the highlighted color will be automatically created
-    */
+     - parameter color: Font color, the highlighted color will be automatically created
+     */
     public func setTitleColor(color: UIColor)
     {
         self.setTitleColor(color, highlightedColor: color.colorWithAlphaComponent(0.4))
     }
     
     /**
-    Set the title color and highlighted color
+     Set the title color and highlighted color
     
-    :param: color            Button's color
-    :param: highlightedColor Button's highlighted color
-    */
+     - parameter color:            Button's color
+     - parameter highlightedColor: Button's highlighted color
+     */
     public func setTitleColor(color: UIColor, highlightedColor: UIColor)
     {
         self.setTitleColor(color, forState: .Normal)

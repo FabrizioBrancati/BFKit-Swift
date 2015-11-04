@@ -33,11 +33,11 @@ public extension UINavigationBar
     // MARK: - Instance functions -
     
     /**
-    Set the UINavigationBar to transparent or not
+     Set the UINavigationBar to transparent or not
     
-    :param: transparent true to set it transparent, false to not
-    :param: translucent A Boolean value indicating whether the navigation bar is translucent or not
-    */
+     - parameter transparent: true to set it transparent, false to not
+     - parameter translucent: A Boolean value indicating whether the navigation bar is translucent or not
+     */
     public func setTransparent(transparent: Bool, translucent: Bool = true)
     {
         if transparent

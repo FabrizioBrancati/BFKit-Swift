@@ -32,10 +32,10 @@ public extension NSDictionary
     // MARK: - Instance functions -
     
     /**
-    Convert self to JSON as String
+     Convert self to JSON as String
     
-    :returns: Returns the JSON as String or nil if error while parsing
-    */
+     - returns: Returns the JSON as String or nil if error while parsing
+     */
     @available(*, deprecated=1.3.0, message="Use dictionaryToJSON()")
     public func dictionaryToJson()  throws-> String
     {
@@ -43,10 +43,10 @@ public extension NSDictionary
     }
     
     /**
-    Convert self to JSON as String
+     Convert self to JSON as String
     
-    :returns: Returns the JSON as String or nil if error while parsing
-    */
+     - returns: Returns the JSON as String or nil if error while parsing
+     */
     public func dictionaryToJSON() throws -> String
     {
         return try NSDictionary.dictionaryToJSON(self)
@@ -55,12 +55,12 @@ public extension NSDictionary
     // MARK: - Class functions -
     
     /**
-    Convert the given dictionary to JSON as String
+     Convert the given dictionary to JSON as String
     
-    :param: dictionary The dictionary to be converted
+     - parameter dictionary: The dictionary to be converted
     
-    :returns: Returns the JSON as String or nil if error while parsing
-    */
+     - returns: Returns the JSON as String or nil if error while parsing
+     */
     @available(*, deprecated=1.3.0, message="Use dictionaryToJSON(_ )")
     public static func dictionaryToJson(dictionary: NSDictionary) throws -> String
     {
@@ -68,12 +68,12 @@ public extension NSDictionary
     }
     
     /**
-    Convert the given dictionary to JSON as String
+     Convert the given dictionary to JSON as String
     
-    :param: dictionary The dictionary to be converted
+     - parameter dictionary: The dictionary to be converted
     
-    :returns: Returns the JSON as String or nil if error while parsing
-    */
+     - returns: Returns the JSON as String or nil if error while parsing
+     */
     public static func dictionaryToJSON(dictionary: NSDictionary) throws -> String
     {
         var json: NSString

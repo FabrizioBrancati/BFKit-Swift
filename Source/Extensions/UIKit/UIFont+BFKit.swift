@@ -30,224 +30,224 @@ import UIKit
 // MARK: - Public enums -
 
 /**
-All font names for all family available from iOS 7.0 to iOS 9.0
+ All font names for all family available from iOS 7.0 to iOS 9.0
 
-- AcademyEngravedLetPlain:             Academy Engraved Let Plain
-- AlNile:                              Al Nile
-- AlNileBold:                          Al Nile Bold
-- AmericanTypewriter:                  American Typewriter
-- AmericanTypewriterBold:              American Typewriter Bold
-- AmericanTypewriterCondensed:         American Typewriter Condensed
-- AmericanTypewriterCondensedBold:     American Typewriter Condensed Bold
-- AmericanTypewriterCondensedLight:    American Typewriter Condensed Light
-- AmericanTypewriterLight:             American Typewriter Light
-- AppleColorEmoji:                     Apple Color Emoji
-- AppleSDGothicNeoBold:                Apple SD Gothic Neo Bold
-- AppleSDGothicNeoLight:               Apple SD Gothic Neo Light
-- AppleSDGothicNeoMedium:              Apple SD Gothic Neo Medium
-- AppleSDGothicNeoRegular:             Apple SD Gothic Neo Regular
-- AppleSDGothicNeoSemiBold:            Apple SD Gothic Neo Semi Bold
-- AppleSDGothicNeoThin:                Apple SD Gothic Neo Thin
-- ArialBoldItalicMT:                   Arial Bold Italic MT
-- ArialBoldMT:                         Arial Bold MT
-- ArialHebrew:                         Arial Hebrew
-- ArialHebrewBold:                     Arial Hebrew Bold
-- ArialHebrewLight:                    Arial Hebrew Light
-- ArialItalicMT:                       Arial Italic MT
-- ArialMT:                             Arial MT
-- ArialRoundedMTBold:                  Arial Rounded MT Bold
-- ASTHeitiLight:                       AST Heiti Light
-- ASTHeitiMedium:                      AST Heiti Medium
-- AvenirBlack:                         Avenir Black
-- AvenirBlackOblique:                  Avenir Black Oblique
-- AvenirBook:                          Avenir Book
-- AvenirBookOblique:                   Avenir Book Oblique
-- AvenirHeavyOblique:                  Avenir Heavy Oblique
-- AvenirHeavy:                         Avenir Heavy
-- AvenirLight:                         Avenir Light
-- AvenirLightOblique:                  Avenir Light Oblique
-- AvenirMedium:                        Avenir Medium
-- AvenirMediumOblique:                 Avenir Medium Oblique
-- AvenirNextBold:                      Avenir Next Bold
-- AvenirNextBoldItalic:                Avenir Next Bold Italic
-- AvenirNextCondensedBold:             Avenir Next Condensed Bold
-- AvenirNextCondensedBoldItalic:       Avenir Next Condensed Bold Italic
-- AvenirNextCondensedDemiBold:         Avenir Next Condensed Demi Bold
-- AvenirNextCondensedDemiBoldItalic:   Avenir Next Condensed Demi Bold Italic
-- AvenirNextCondensedHeavy:            Avenir Next Condensed Heavy
-- AvenirNextCondensedHeavyItalic:      Avenir Next Condensed Heavy Italic
-- AvenirNextCondensedItalic:           Avenir Next Condensed Italic
-- AvenirNextCondensedMedium:           Avenir Next Condensed Medium
-- AvenirNextCondensedMediumItalic:     Avenir Next Condensed Medium Italic
-- AvenirNextCondensedRegular:          Avenir Next Condensed Regular
-- AvenirNextCondensedUltraLight:       Avenir Next Condensed Ultra Light
-- AvenirNextCondensedUltraLightItalic: Avenir Next Condensed Ultra Light Italic
-- AvenirNextDemiBold:                  Avenir Next Demi Bold
-- AvenirNextDemiBoldItalic:            Avenir Next Demi Bold Italic
-- AvenirNextHeavy:                     Avenir Next Heavy
-- AvenirNextItalic:                    Avenir Next Italic
-- AvenirNextMedium:                    Avenir Next Medium
-- AvenirNextMediumItalic:              Avenir Next Medium Italic
-- AvenirNextRegular:                   Avenir Next Regular
-- AvenirNextUltraLight:                Avenir Next Ultra Light
-- AvenirNextUltraLightItalic:          Avenir Next Ultra Light Italic
-- AvenirOblique:                       Avenir Oblique
-- AvenirRoman:                         Avenir Roman
-- Baskerville:                         Baskerville
-- BaskervilleBold:                     Baskerville Bold
-- BaskervilleBoldItalic:               Baskerville Bold Italic
-- BaskervilleItalic:                   Baskerville Italic
-- BaskervilleSemiBold:                 Baskerville Semi Bold
-- BaskervilleSemiBoldItalic:           Baskerville Semi Bold Italic
-- BodoniOrnamentsITCTT:                Bodoni Ornaments ITCTT
-- BodoniSvtyTwoITCTTBold:              Bodoni Svty Two ITCTT Bold
-- BodoniSvtyTwoITCTTBook:              Bodoni Svty Two ITCTT Book
-- BodoniSvtyTwoITCTTBookIta:           Bodoni Svty Two ITCTT Book Ita
-- BodoniSvtyTwoOSITCTTBold:            Bodoni Svty Two OS ITCTT Bold
-- BodoniSvtyTwoOSITCTTBook:            Bodoni Svty Two OS ITCTT Book
-- BodoniSvtyTwoOSITCTTBookIt:          Bodoni Svty Two OS ITCTT Book It
-- BodoniSvtyTwoSCITCTTBook:            Bodoni Svty Two SC ITCTT Book
-- BradleyHandITCTTBold:                Bradley Hand ITCTT Bold
-- ChalkboardSEBold:                    Chalkboard SE Bold
-- ChalkboardSELight:                   Chalkboard SE Light
-- ChalkboardSERegular:                 Chalkboard SE Regular
-- Chalkduster:                         Chalkduster
-- Cochin:                              Cochin
-- CochinBold:                          Cochin Bold
-- CochinBoldItalic:                    Cochin Bold Italic
-- CochinItalic:                        Cochin Italic
-- Copperplate:                         Copperplate
-- CopperplateBold:                     Copperplate Bold
-- CopperplateLight:                    Copperplate Light
-- Courier:                             Courier
-- CourierBold:                         Courier Bold
-- CourierBoldOblique:                  Courier Bold Oblique
-- CourierNewPSBoldItalicMT:            Courier New PS Bold Italic MT
-- CourierNewPSBoldMT:                  Courier New PS Bold MT
-- CourierNewPSItalicMT:                Courier New PS Italic MT
-- CourierNewPSMT:                      Courier New PS MT
-- CourierOblique:                      Courier Oblique
-- Damascus:                            Damascus
-- DamascusBold:                        Damascus Bold
-- DamascusMedium:                      Damascus Medium
-- DamascusSemiBold:                    Damascus Semi Bold
-- DevanagariSangamMN:                  Devanagari Sangam MN
-- DevanagariSangamMNBold:              Devanagari Sangam MN Bold
-- Didot:                               Didot
-- DidotBold:                           Didot Bold
-- DidotItalic:                         Didot Italic
-- DiwanMishafi:                        Diwan Mishafi
-- EuphemiaUCAS:                        Euphemia UCAS
-- EuphemiaUCASBold:                    Euphemia UCAS Bold
-- EuphemiaUCASItalic:                  Euphemia UCAS Italic
-- Farah:                               Farah
-- FuturaCondensedExtraBold:            Futura Condensed Extra Bold
-- FuturaCondensedMedium:               Futura Condensed Medium
-- FuturaMedium:                        Futura Medium
-- FuturaMediumItalicm:                 Futura Medium Italicm
-- GeezaPro:                            Geeza Pro
-- GeezaProBold:                        Geeza Pro Bold
-- GeezaProLight:                       Geeza Pro Light
-- Georgia:                             Georgia
-- GeorgiaBold:                         Georgia Bold
-- GeorgiaBoldItalic:                   Georgia Bold Italic
-- GeorgiaItalic:                       Georgia Italic
-- GillSans:                            Gill Sans
-- GillSansBold:                        Gill Sans Bold
-- GillSansBoldItalic:                  Gill Sans Bold Italic
-- GillSansItalic:                      Gill Sans Italic
-- GillSansLight:                       Gill Sans Light
-- GillSansLightItalic:                 Gill Sans Light Italic
-- GujaratiSangamMN:                    Gujarati Sangam MN
-- GujaratiSangamMNBold:                Gujarati Sangam MN Bold
-- GurmukhiMN:                          Gurmukhi MN
-- GurmukhiMNBold:                      Gurmukhi MN Bold
-- Helvetica:                           Helvetica
-- HelveticaBold:                       Helvetica Bold
-- HelveticaBoldOblique:                Helvetica Bold Oblique
-- HelveticaLight:                      Helvetica Light
-- HelveticaLightOblique:               Helvetica Light Oblique
-- HelveticaNeue:                       Helvetica Neue
-- HelveticaNeueBold:                   Helvetica Neue Bold
-- HelveticaNeueBoldItalic:             Helvetica Neue Bold Italic
-- HelveticaNeueCondensedBlack:         Helvetica Neue Condensed Black
-- HelveticaNeueCondensedBold:          Helvetica Neue Condensed Bold
-- HelveticaNeueItalic:                 Helvetica Neue Italic
-- HelveticaNeueLight:                  Helvetica Neue Light
-- HelveticaNeueMedium:                 Helvetica Neue Medium
-- HelveticaNeueMediumItalic:           Helvetica Neue Medium Italic
-- HelveticaNeueThin:                   Helvetica Neue Thin
-- HelveticaNeueThinItalic:             Helvetica Neue Thin Italic
-- HelveticaNeueUltraLight:             Helvetica Neue Ultra Light
-- HelveticaNeueUltraLightItalic:       Helvetica Neue Ultra Light Italic
-- HelveticaOblique:                    Helvetica Oblique
-- HiraKakuProNW3:                      HiraKaku Pro NW 3
-- HiraKakuProNW6:                      HiraKaku Pro NW 6
-- HiraMinProNW3:                       Hira Min Pro NW 3
-- HiraMinProNW6:                       Hira Min Pro NW 6
-- HoeflerTextBlack:                    Hoefler Text Black
-- HoeflerTextBlackItalic:              Hoefler Text Black Italic
-- HoeflerTextItalic:                   Hoefler Text Italic
-- HoeflerTextRegular:                  Hoefler Text Regular
-- Kailasa:                             Kailasa
-- KailasaBold:                         Kailasa Bold
-- KannadaSangamMN:                     Kannada Sangam MN
-- KannadaSangamMNBold:                 Kannada Sangam MN Bold
-- MalayalamSangamMN:                   Malayalam Sangam MN
-- MalayalamSangamMNBold:               Malayalam Sangam MN Bold
-- MarkerFeltThin:                      Marker Felt Thin
-- MarkerFeltWide:                      Marker Felt Wide
-- MenloBold:                           Menlo Bold
-- MenloBoldItalic:                     Menlo Bold Italic
-- MenloItalic:                         Menlo Italic
-- MenloRegular:                        Menlo Regular
-- NoteworthyBold:                      Noteworthy Bold
-- NoteworthyLight:                     Noteworthy Light
-- OptimaBold:                          Optima Bold
-- OptimaBoldItalic:                    Optima Bold Italic
-- OptimaExtraBlack:                    Optima Extra Black
-- OptimaItalic:                        Optima Italic
-- OptimaRegular:                       Optima Regular
-- OriyaSangamMN:                       Oriya Sangam MN
-- OriyaSangamMNBold:                   Oriya Sangam MN Bold
-- PalatinoBold:                        Palatino Bold
-- PalatinoBoldItalic:                  Palatino Bold Italic
-- PalatinoItalic:                      Palatino Italic
-- PalatinoRoman:                       Palatino Roman
-- Papyrus:                             Papyrus
-- PapyrusCondensed:                    Papyrus Condensed
-- PartyLetPlain:                       Party Let Plain
-- SavoyeLetPlain:                      Savoye Let Plain
-- SinhalaSangamMN:                     Sinhala Sangam MN
-- SinhalaSangamMNBold:                 Sinhala Sangam MN Bold
-- SnellRoundhand:                      Snell Roundhand
-- SnellRoundhandBlack:                 Snell Roundhand Black
-- SnellRoundhandBold:                  Snell Roundhand Bold
-- STHeitiSCLight:                      ST Heiti SC Light
-- STHeitiSCMedium:                     ST Heiti SC Medium
-- STHeitiTCLight:                      ST Heiti TC Light
-- STHeitiTCMedium:                     ST Heiti TC Medium
-- Symbol:                              Symbol
-- TamilSangamMN:                       Tamil Sangam MN
-- TamilSangamMNBold:                   Tamil Sangam MN Bold
-- TeluguSangamMN:                      Telugu Sangam MN
-- TeluguSangamMNBold:                  Telugu Sangam MN Bold
-- Thonburi:                            Thonburi
-- ThonburiBold:                        Thonburi Bold
-- ThonburiLight:                       Thonburi Light
-- TimesNewRomanPSBoldItalicMT:         Times New Roman PS Bold Italic MT
-- TimesNewRomanPSBoldMT:               Times New Roman PS Bold MT
-- TimesNewRomanPSItalicMT:             Times New Roman PS Italic MT
-- TimesNewRomanPSMT:                   Times New Roman PS MT
-- TrebuchetBoldItalic:                 Trebuchet Bold Italic
-- TrebuchetMS:                         Trebuchet MS
-- TrebuchetMSBold:                     Trebuchet MS Bold
-- TrebuchetMSItalic:                   Trebuchet MS Italic
-- Verdana:                             Verdana
-- VerdanaBold:                         Verdana Bold
-- VerdanaBoldItalic:                   Verdana Bold Italic
-- VerdanaItalic:                       Verdana Italic
-*/
+ - AcademyEngravedLetPlain:             Academy Engraved Let Plain
+ - AlNile:                              Al Nile
+ - AlNileBold:                          Al Nile Bold
+ - AmericanTypewriter:                  American Typewriter
+ - AmericanTypewriterBold:              American Typewriter Bold
+ - AmericanTypewriterCondensed:         American Typewriter Condensed
+ - AmericanTypewriterCondensedBold:     American Typewriter Condensed Bold
+ - AmericanTypewriterCondensedLight:    American Typewriter Condensed Light
+ - AmericanTypewriterLight:             American Typewriter Light
+ - AppleColorEmoji:                     Apple Color Emoji
+ - AppleSDGothicNeoBold:                Apple SD Gothic Neo Bold
+ - AppleSDGothicNeoLight:               Apple SD Gothic Neo Light
+ - AppleSDGothicNeoMedium:              Apple SD Gothic Neo Medium
+ - AppleSDGothicNeoRegular:             Apple SD Gothic Neo Regular
+ - AppleSDGothicNeoSemiBold:            Apple SD Gothic Neo Semi Bold
+ - AppleSDGothicNeoThin:                Apple SD Gothic Neo Thin
+ - ArialBoldItalicMT:                   Arial Bold Italic MT
+ - ArialBoldMT:                         Arial Bold MT
+ - ArialHebrew:                         Arial Hebrew
+ - ArialHebrewBold:                     Arial Hebrew Bold
+ - ArialHebrewLight:                    Arial Hebrew Light
+ - ArialItalicMT:                       Arial Italic MT
+ - ArialMT:                             Arial MT
+ - ArialRoundedMTBold:                  Arial Rounded MT Bold
+ - ASTHeitiLight:                       AST Heiti Light
+ - ASTHeitiMedium:                      AST Heiti Medium
+ - AvenirBlack:                         Avenir Black
+ - AvenirBlackOblique:                  Avenir Black Oblique
+ - AvenirBook:                          Avenir Book
+ - AvenirBookOblique:                   Avenir Book Oblique
+ - AvenirHeavyOblique:                  Avenir Heavy Oblique
+ - AvenirHeavy:                         Avenir Heavy
+ - AvenirLight:                         Avenir Light
+ - AvenirLightOblique:                  Avenir Light Oblique
+ - AvenirMedium:                        Avenir Medium
+ - AvenirMediumOblique:                 Avenir Medium Oblique
+ - AvenirNextBold:                      Avenir Next Bold
+ - AvenirNextBoldItalic:                Avenir Next Bold Italic
+ - AvenirNextCondensedBold:             Avenir Next Condensed Bold
+ - AvenirNextCondensedBoldItalic:       Avenir Next Condensed Bold Italic
+ - AvenirNextCondensedDemiBold:         Avenir Next Condensed Demi Bold
+ - AvenirNextCondensedDemiBoldItalic:   Avenir Next Condensed Demi Bold Italic
+ - AvenirNextCondensedHeavy:            Avenir Next Condensed Heavy
+ - AvenirNextCondensedHeavyItalic:      Avenir Next Condensed Heavy Italic
+ - AvenirNextCondensedItalic:           Avenir Next Condensed Italic
+ - AvenirNextCondensedMedium:           Avenir Next Condensed Medium
+ - AvenirNextCondensedMediumItalic:     Avenir Next Condensed Medium Italic
+ - AvenirNextCondensedRegular:          Avenir Next Condensed Regular
+ - AvenirNextCondensedUltraLight:       Avenir Next Condensed Ultra Light
+ - AvenirNextCondensedUltraLightItalic: Avenir Next Condensed Ultra Light Italic
+ - AvenirNextDemiBold:                  Avenir Next Demi Bold
+ - AvenirNextDemiBoldItalic:            Avenir Next Demi Bold Italic
+ - AvenirNextHeavy:                     Avenir Next Heavy
+ - AvenirNextItalic:                    Avenir Next Italic
+ - AvenirNextMedium:                    Avenir Next Medium
+ - AvenirNextMediumItalic:              Avenir Next Medium Italic
+ - AvenirNextRegular:                   Avenir Next Regular
+ - AvenirNextUltraLight:                Avenir Next Ultra Light
+ - AvenirNextUltraLightItalic:          Avenir Next Ultra Light Italic
+ - AvenirOblique:                       Avenir Oblique
+ - AvenirRoman:                         Avenir Roman
+ - Baskerville:                         Baskerville
+ - BaskervilleBold:                     Baskerville Bold
+ - BaskervilleBoldItalic:               Baskerville Bold Italic
+ - BaskervilleItalic:                   Baskerville Italic
+ - BaskervilleSemiBold:                 Baskerville Semi Bold
+ - BaskervilleSemiBoldItalic:           Baskerville Semi Bold Italic
+ - BodoniOrnamentsITCTT:                Bodoni Ornaments ITCTT
+ - BodoniSvtyTwoITCTTBold:              Bodoni Svty Two ITCTT Bold
+ - BodoniSvtyTwoITCTTBook:              Bodoni Svty Two ITCTT Book
+ - BodoniSvtyTwoITCTTBookIta:           Bodoni Svty Two ITCTT Book Ita
+ - BodoniSvtyTwoOSITCTTBold:            Bodoni Svty Two OS ITCTT Bold
+ - BodoniSvtyTwoOSITCTTBook:            Bodoni Svty Two OS ITCTT Book
+ - BodoniSvtyTwoOSITCTTBookIt:          Bodoni Svty Two OS ITCTT Book It
+ - BodoniSvtyTwoSCITCTTBook:            Bodoni Svty Two SC ITCTT Book
+ - BradleyHandITCTTBold:                Bradley Hand ITCTT Bold
+ - ChalkboardSEBold:                    Chalkboard SE Bold
+ - ChalkboardSELight:                   Chalkboard SE Light
+ - ChalkboardSERegular:                 Chalkboard SE Regular
+ - Chalkduster:                         Chalkduster
+ - Cochin:                              Cochin
+ - CochinBold:                          Cochin Bold
+ - CochinBoldItalic:                    Cochin Bold Italic
+ - CochinItalic:                        Cochin Italic
+ - Copperplate:                         Copperplate
+ - CopperplateBold:                     Copperplate Bold
+ - CopperplateLight:                    Copperplate Light
+ - Courier:                             Courier
+ - CourierBold:                         Courier Bold
+ - CourierBoldOblique:                  Courier Bold Oblique
+ - CourierNewPSBoldItalicMT:            Courier New PS Bold Italic MT
+ - CourierNewPSBoldMT:                  Courier New PS Bold MT
+ - CourierNewPSItalicMT:                Courier New PS Italic MT
+ - CourierNewPSMT:                      Courier New PS MT
+ - CourierOblique:                      Courier Oblique
+ - Damascus:                            Damascus
+ - DamascusBold:                        Damascus Bold
+ - DamascusMedium:                      Damascus Medium
+ - DamascusSemiBold:                    Damascus Semi Bold
+ - DevanagariSangamMN:                  Devanagari Sangam MN
+ - DevanagariSangamMNBold:              Devanagari Sangam MN Bold
+ - Didot:                               Didot
+ - DidotBold:                           Didot Bold
+ - DidotItalic:                         Didot Italic
+ - DiwanMishafi:                        Diwan Mishafi
+ - EuphemiaUCAS:                        Euphemia UCAS
+ - EuphemiaUCASBold:                    Euphemia UCAS Bold
+ - EuphemiaUCASItalic:                  Euphemia UCAS Italic
+ - Farah:                               Farah
+ - FuturaCondensedExtraBold:            Futura Condensed Extra Bold
+ - FuturaCondensedMedium:               Futura Condensed Medium
+ - FuturaMedium:                        Futura Medium
+ - FuturaMediumItalicm:                 Futura Medium Italicm
+ - GeezaPro:                            Geeza Pro
+ - GeezaProBold:                        Geeza Pro Bold
+ - GeezaProLight:                       Geeza Pro Light
+ - Georgia:                             Georgia
+ - GeorgiaBold:                         Georgia Bold
+ - GeorgiaBoldItalic:                   Georgia Bold Italic
+ - GeorgiaItalic:                       Georgia Italic
+ - GillSans:                            Gill Sans
+ - GillSansBold:                        Gill Sans Bold
+ - GillSansBoldItalic:                  Gill Sans Bold Italic
+ - GillSansItalic:                      Gill Sans Italic
+ - GillSansLight:                       Gill Sans Light
+ - GillSansLightItalic:                 Gill Sans Light Italic
+ - GujaratiSangamMN:                    Gujarati Sangam MN
+ - GujaratiSangamMNBold:                Gujarati Sangam MN Bold
+ - GurmukhiMN:                          Gurmukhi MN
+ - GurmukhiMNBold:                      Gurmukhi MN Bold
+ - Helvetica:                           Helvetica
+ - HelveticaBold:                       Helvetica Bold
+ - HelveticaBoldOblique:                Helvetica Bold Oblique
+ - HelveticaLight:                      Helvetica Light
+ - HelveticaLightOblique:               Helvetica Light Oblique
+ - HelveticaNeue:                       Helvetica Neue
+ - HelveticaNeueBold:                   Helvetica Neue Bold
+ - HelveticaNeueBoldItalic:             Helvetica Neue Bold Italic
+ - HelveticaNeueCondensedBlack:         Helvetica Neue Condensed Black
+ - HelveticaNeueCondensedBold:          Helvetica Neue Condensed Bold
+ - HelveticaNeueItalic:                 Helvetica Neue Italic
+ - HelveticaNeueLight:                  Helvetica Neue Light
+ - HelveticaNeueMedium:                 Helvetica Neue Medium
+ - HelveticaNeueMediumItalic:           Helvetica Neue Medium Italic
+ - HelveticaNeueThin:                   Helvetica Neue Thin
+ - HelveticaNeueThinItalic:             Helvetica Neue Thin Italic
+ - HelveticaNeueUltraLight:             Helvetica Neue Ultra Light
+ - HelveticaNeueUltraLightItalic:       Helvetica Neue Ultra Light Italic
+ - HelveticaOblique:                    Helvetica Oblique
+ - HiraKakuProNW3:                      HiraKaku Pro NW 3
+ - HiraKakuProNW6:                      HiraKaku Pro NW 6
+ - HiraMinProNW3:                       Hira Min Pro NW 3
+ - HiraMinProNW6:                       Hira Min Pro NW 6
+ - HoeflerTextBlack:                    Hoefler Text Black
+ - HoeflerTextBlackItalic:              Hoefler Text Black Italic
+ - HoeflerTextItalic:                   Hoefler Text Italic
+ - HoeflerTextRegular:                  Hoefler Text Regular
+ - Kailasa:                             Kailasa
+ - KailasaBold:                         Kailasa Bold
+ - KannadaSangamMN:                     Kannada Sangam MN
+ - KannadaSangamMNBold:                 Kannada Sangam MN Bold
+ - MalayalamSangamMN:                   Malayalam Sangam MN
+ - MalayalamSangamMNBold:               Malayalam Sangam MN Bold
+ - MarkerFeltThin:                      Marker Felt Thin
+ - MarkerFeltWide:                      Marker Felt Wide
+ - MenloBold:                           Menlo Bold
+ - MenloBoldItalic:                     Menlo Bold Italic
+ - MenloItalic:                         Menlo Italic
+ - MenloRegular:                        Menlo Regular
+ - NoteworthyBold:                      Noteworthy Bold
+ - NoteworthyLight:                     Noteworthy Light
+ - OptimaBold:                          Optima Bold
+ - OptimaBoldItalic:                    Optima Bold Italic
+ - OptimaExtraBlack:                    Optima Extra Black
+ - OptimaItalic:                        Optima Italic
+ - OptimaRegular:                       Optima Regular
+ - OriyaSangamMN:                       Oriya Sangam MN
+ - OriyaSangamMNBold:                   Oriya Sangam MN Bold
+ - PalatinoBold:                        Palatino Bold
+ - PalatinoBoldItalic:                  Palatino Bold Italic
+ - PalatinoItalic:                      Palatino Italic
+ - PalatinoRoman:                       Palatino Roman
+ - Papyrus:                             Papyrus
+ - PapyrusCondensed:                    Papyrus Condensed
+ - PartyLetPlain:                       Party Let Plain
+ - SavoyeLetPlain:                      Savoye Let Plain
+ - SinhalaSangamMN:                     Sinhala Sangam MN
+ - SinhalaSangamMNBold:                 Sinhala Sangam MN Bold
+ - SnellRoundhand:                      Snell Roundhand
+ - SnellRoundhandBlack:                 Snell Roundhand Black
+ - SnellRoundhandBold:                  Snell Roundhand Bold
+ - STHeitiSCLight:                      ST Heiti SC Light
+ - STHeitiSCMedium:                     ST Heiti SC Medium
+ - STHeitiTCLight:                      ST Heiti TC Light
+ - STHeitiTCMedium:                     ST Heiti TC Medium
+ - Symbol:                              Symbol
+ - TamilSangamMN:                       Tamil Sangam MN
+ - TamilSangamMNBold:                   Tamil Sangam MN Bold
+ - TeluguSangamMN:                      Telugu Sangam MN
+ - TeluguSangamMNBold:                  Telugu Sangam MN Bold
+ - Thonburi:                            Thonburi
+ - ThonburiBold:                        Thonburi Bold
+ - ThonburiLight:                       Thonburi Light
+ - TimesNewRomanPSBoldItalicMT:         Times New Roman PS Bold Italic MT
+ - TimesNewRomanPSBoldMT:               Times New Roman PS Bold MT
+ - TimesNewRomanPSItalicMT:             Times New Roman PS Italic MT
+ - TimesNewRomanPSMT:                   Times New Roman PS MT
+ - TrebuchetBoldItalic:                 Trebuchet Bold Italic
+ - TrebuchetMS:                         Trebuchet MS
+ - TrebuchetMSBold:                     Trebuchet MS Bold
+ - TrebuchetMSItalic:                   Trebuchet MS Italic
+ - Verdana:                             Verdana
+ - VerdanaBold:                         Verdana Bold
+ - VerdanaBoldItalic:                   Verdana Bold Italic
+ - VerdanaItalic:                       Verdana Italic
+ */
 public enum FontName : String
 {
     case AcademyEngravedLetPlain = "AcademyEngravedLetPlain"
@@ -542,74 +542,74 @@ public extension UIFont
     // MARK: - Enums -
     
     /**
-    All font family names available from iOS 7.0 to iOS 9.0
+     All font family names available from iOS 7.0 to iOS 9.0
     
-    - AcademyEngravedLET:     Academy Engraved LET
-    - AlNile:                 Al Nile
-    - AmericanTypewriter:     American Typewriter
-    - AppleColorEmoji:        Apple Color Emoji
-    - AppleSDGothicNeo:       Apple SD Gothic Neo
-    - Arial:                  Arial
-    - ArialHebrew:            Arial Hebrew
-    - ArialRoundedMTBold:     Arial Rounded MT Bold
-    - Avenir:                 Avenir
-    - AvenirNext:             Avenir Next
-    - AvenirNextCondensed:    Avenir Next Condensed
-    - Baskerville:            Baskerville
-    - Bodoni72:               Bodoni 72
-    - Bodoni72Oldstyle:       Bodoni 72 Oldstyle
-    - Bodoni72Smallcaps:      Bodoni 72 Smallcaps
-    - BodoniOrnaments:        Bodoni Ornaments
-    - BradleyHand:            Bradley Hand
-    - ChalkboardSE:           Chalkboard SE
-    - Chalkduster:            Chalkduster
-    - Cochin:                 Cochin
-    - Copperplate:            Copperplate
-    - Courier:                Courier
-    - CourierNew:             Courier New
-    - Damascus:               Damascus
-    - DevanagariSangamMN:     Devanagari Sangam MN
-    - Didot:                  Didot
-    - EuphemiaUCAS:           Euphemia UCAS
-    - Farah:                  Farah
-    - Futura:                 Futura
-    - GeezaPro:               Geeza Pro
-    - Georgia:                Georgia
-    - GillSans:               Gill Sans
-    - GujaratiSangamMN:       Gujarati Sangam MN
-    - GurmukhiMN:             Gurmukhi MN
-    - HeitiSC:                Heiti SC
-    - HeitiTC:                Heiti TC
-    - Helvetica:              Helvetica
-    - HelveticaNeue:          Helvetica Neue
-    - HiraginoKakuGothicProN: Hiragino Kaku Gothic Pro N
-    - HiraginoMinchoProN:     Hiragino Mincho Pro N
-    - HoeflerText:            Hoefler Text
-    - Kailasa:                Kailasa
-    - KannadaSangamMN:        Kannada Sangam MN
-    - MalayalamSangamMN:      Malayalam Sangam MN
-    - MarkerFelt:             Marker Felt
-    - Menlo:                  Menlo
-    - Mishafi:                Mishafi
-    - Noteworthy:             Noteworthy
-    - Optima:                 Optima
-    - OriyaSangamMN:          Oriya Sangam MN
-    - Palatino:               Palatino
-    - Papyrus:                Papyrus
-    - PartyLET:               Party LET
-    - SavoyeLET:              Savoye LET
-    - SinhalaSangamMN:        Sinhala Sangam MN
-    - SnellRoundhand:         Snell Roundhand
-    - Symbol:                 Symbol
-    - TamilSangamMN:          Tamil Sangam MN
-    - TeluguSangamMN:         Telugu Sangam MN
-    - Thonburi:               Thonburi
-    - TimesNewRoman:          Times New Roman
-    - TrebuchetMS:            Trebuchet MS
-    - Verdana:                Verdana
-    - ZapfDingbats:           Zapf Dingbats
-    - Zapfino:                Zapfino
-    */
+     - AcademyEngravedLET:     Academy Engraved LET
+     - AlNile:                 Al Nile
+     - AmericanTypewriter:     American Typewriter
+     - AppleColorEmoji:        Apple Color Emoji
+     - AppleSDGothicNeo:       Apple SD Gothic Neo
+     - Arial:                  Arial
+     - ArialHebrew:            Arial Hebrew
+     - ArialRoundedMTBold:     Arial Rounded MT Bold
+     - Avenir:                 Avenir
+     - AvenirNext:             Avenir Next
+     - AvenirNextCondensed:    Avenir Next Condensed
+     - Baskerville:            Baskerville
+     - Bodoni72:               Bodoni 72
+     - Bodoni72Oldstyle:       Bodoni 72 Oldstyle
+     - Bodoni72Smallcaps:      Bodoni 72 Smallcaps
+     - BodoniOrnaments:        Bodoni Ornaments
+     - BradleyHand:            Bradley Hand
+     - ChalkboardSE:           Chalkboard SE
+     - Chalkduster:            Chalkduster
+     - Cochin:                 Cochin
+     - Copperplate:            Copperplate
+     - Courier:                Courier
+     - CourierNew:             Courier New
+     - Damascus:               Damascus
+     - DevanagariSangamMN:     Devanagari Sangam MN
+     - Didot:                  Didot
+     - EuphemiaUCAS:           Euphemia UCAS
+     - Farah:                  Farah
+     - Futura:                 Futura
+     - GeezaPro:               Geeza Pro
+     - Georgia:                Georgia
+     - GillSans:               Gill Sans
+     - GujaratiSangamMN:       Gujarati Sangam MN
+     - GurmukhiMN:             Gurmukhi MN
+     - HeitiSC:                Heiti SC
+     - HeitiTC:                Heiti TC
+     - Helvetica:              Helvetica
+     - HelveticaNeue:          Helvetica Neue
+     - HiraginoKakuGothicProN: Hiragino Kaku Gothic Pro N
+     - HiraginoMinchoProN:     Hiragino Mincho Pro N
+     - HoeflerText:            Hoefler Text
+     - Kailasa:                Kailasa
+     - KannadaSangamMN:        Kannada Sangam MN
+     - MalayalamSangamMN:      Malayalam Sangam MN
+     - MarkerFelt:             Marker Felt
+     - Menlo:                  Menlo
+     - Mishafi:                Mishafi
+     - Noteworthy:             Noteworthy
+     - Optima:                 Optima
+     - OriyaSangamMN:          Oriya Sangam MN
+     - Palatino:               Palatino
+     - Papyrus:                Papyrus
+     - PartyLET:               Party LET
+     - SavoyeLET:              Savoye LET
+     - SinhalaSangamMN:        Sinhala Sangam MN
+     - SnellRoundhand:         Snell Roundhand
+     - Symbol:                 Symbol
+     - TamilSangamMN:          Tamil Sangam MN
+     - TeluguSangamMN:         Telugu Sangam MN
+     - Thonburi:               Thonburi
+     - TimesNewRoman:          Times New Roman
+     - TrebuchetMS:            Trebuchet MS
+     - Verdana:                Verdana
+     - ZapfDingbats:           Zapf Dingbats
+     - Zapfino:                Zapfino
+     */
     public enum FamilyFontName : String
     {
         case AcademyEngravedLET = "Academy Engraved LET"
@@ -692,13 +692,13 @@ public extension UIFont
     // MARK: - Init functions -
     
     /**
-    Create an UIFont object from the given font name and size
+     Create an UIFont object from the given font name and size
     
-    :param: fontName Font name
-    :param: size     Size of the font
+     - parameter fontName: Font name
+     - parameter size:     Size of the font
     
-    :returns: Returns an UIFont from the given font name and size
-    */
+     - returns: Returns an UIFont from the given font name and size
+     */
     public convenience init?(fontName: FontName, size: CGFloat)
     {
         self.init(name: fontName.rawValue, size: size)
@@ -707,10 +707,10 @@ public extension UIFont
     // MARK: - Class functions -
     
     /**
-    Print in console all family and font names
+     Print in console all family and font names
     
-    :returns: Returns all the font family names
-    */
+     - returns: Returns all the font family names
+     */
     public static func allFamilyAndFonts() -> Dictionary<String, Array<AnyObject>>
     {
         var fontFamilies: NSMutableArray = NSMutableArray(array: UIFont.familyNames() as NSArray)
@@ -731,12 +731,12 @@ public extension UIFont
     }
     
     /**
-    Print in console all font names for a given family
+     Print in console all font names for a given family
     
-    :param: familyFontName Family to print the fonts
+     - parameter familyFontName: Family to print the fonts
     
-    :returns: Returns all the fonts for the given family
-    */
+     - returns: Returns all the fonts for the given family
+     */
     public static func fontsNameForFamilyName(familyFontName: FamilyFontName) -> Array<AnyObject>
     {
         let fontNames: Array = UIFont.fontNamesForFamilyName(familyFontName.rawValue)

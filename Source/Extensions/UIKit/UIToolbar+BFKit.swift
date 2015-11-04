@@ -33,10 +33,10 @@ public extension UIToolbar
     // MARK: - Instance functions -
     
     /**
-    Set the UIToolbar transparent or not
+     Set the UIToolbar transparent or not
     
-    :param: transparent true to set it transparent, false to not
-    */
+     - parameter transparent: true to set it transparent, false to not
+     */
     public func setTransparent(transparent: Bool)
     {
         if transparent

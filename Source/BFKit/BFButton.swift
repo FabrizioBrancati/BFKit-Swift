@@ -79,15 +79,15 @@ public class BFButton: UIButton
     // MARK: - Init functions -
     
     /**
-    Create an UIButton with a fade animation from image to highlightedImage on touch
+     Create an UIButton with a fade animation from image to highlightedImage on touch
     
-    :param: frame            Button's frame
-    :param: image            Button's image
-    :param: highlightedImage Button's highlighted image
-    :param: fadeDuration     Fade duration
+     - parameter frame:            Button's frame
+     - parameter image:            Button's image
+     - parameter highlightedImage: Button's highlighted image
+     - parameter fadeDuration:     Fade duration
     
-    :returns: Returns the created BFButton, subclass of UIButton
-    */
+     - returns: Returns the created BFButton, subclass of UIButton
+     */
     public init(frame: CGRect, image: UIImage, highlightedImage: UIImage, fadeDuration: Float)
     {
         self.fadeDuration = fadeDuration
@@ -103,14 +103,14 @@ public class BFButton: UIButton
     }
 
     /**
-    Required init function
+     Required init function
     
-    :param: aDecoder NSCoder
-    
-    :returns: The initialized instance
-    */
-    public required init(coder aDecoder: NSCoder)
+     - parameter aDecoder: NSCoder
+     
+     - returns: The initialized instance
+     */
+    public required init?(coder aDecoder: NSCoder)
     {
-        super.init(coder: aDecoder)!
+        super.init(coder: aDecoder)
     }
 }

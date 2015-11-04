@@ -28,25 +28,25 @@ import Foundation
 import LocalAuthentication
 
 /// This class adds some useful functions to use TouchID
-@available(*, introduced=8.0)
+@available(iOS 8, *)
 public class BFTouchID
 {
     // MARK: - Enums -
     
     /**
-    Touch result enum
+     Touch result enum
     
-    - Success:              Success
-    - Error:                Error
-    - AuthenticationFailed: Authentication Failed
-    - UserCancel:           User Cancel
-    - UserFallback:         User Fallback
-    - SystemCancel:         System Cancel
-    - PasscodeNotSet:       Passcode Not Set
-    - NotAvailable:         Not Available
-    - NotEnrolled:          Not Enrolled
-    */
-    @available(*, introduced=8.0)
+     - Success:              Success
+     - Error:                Error
+     - AuthenticationFailed: Authentication Failed
+     - UserCancel:           User Cancel
+     - UserFallback:         User Fallback
+     - SystemCancel:         System Cancel
+     - PasscodeNotSet:       Passcode Not Set
+     - NotAvailable:         Not Available
+     - NotEnrolled:          Not Enrolled
+     */
+    @available(iOS 8, *)
     public enum TouchIDResult : Int
     {
         case Success
@@ -63,12 +63,12 @@ public class BFTouchID
     // MARK: - Class functions -
     
     /**
-    Shows the TouchID alert
+     Shows the TouchID alert
     
-    :param: reason        Text to show in the alert
-    :param: fallbackTitle Default title "Enter Password" is used when this property is left nil. If set to empty string, the button will be hidden
-    :param: completion    Completion handler. It returns the TouchID result, from the TouchIDResult enum
-    */
+     - parameter reason:        Text to show in the alert
+     - parameter fallbackTitle: Default title "Enter Password" is used when this property is left nil. If set to empty string, the button will be hidden
+     - parameter completion:    Completion handler. It returns the TouchID result, from the TouchIDResult enum
+     */
     public static func showTouchIDAuthenticationWithReason(reason: String, fallbackTitle: String? = nil, completion: (result: TouchIDResult) -> ())
     {
         let context: LAContext = LAContext()
