@@ -8,60 +8,49 @@
 
 import UIKit
 
-class UserInterfaceViewController: UITableViewController
-{
+class UserInterfaceViewController: UITableViewController {
     let CellIdentifier = "UIKitCell"
     let CellIdentifierSubtitle = "UIKitCellSubtitle"
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let infoButton: UIButton = UIButton.buttonWithType(.InfoLight) as! UIButton
+        let infoButton: UIButton = UIButton(type: .InfoLight)
         infoButton.addTarget(self, action: "showInfo:", forControlEvents: .TouchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: infoButton)
     }
 
-    override func didReceiveMemoryWarning()
-    {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func showInfo(sender: UIButton)
-    {
+    func showInfo(sender: UIButton) {
         self.performSegueWithIdentifier(InfoViewControllerSegueID, sender: self.navigationItem.rightBarButtonItem)
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int
-    {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String?
-    {
+    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return "By \(BFKIT_AUTHOR) - BFKit v\(APP_VERSION) (\(APP_BUILD))"
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return UIKitArray.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
-    {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell
         
-        if UIKitArray[indexPath.row] == "UIToolbar"
-        {
-            cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifierSubtitle) as! UITableViewCell
+        if UIKitArray[indexPath.row] == "UIToolbar" {
+            cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifierSubtitle)!
             
             cell.detailTextLabel?.text = "+ UIBarButtonItem"
-        }
-        else
-        {
-            cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as! UITableViewCell
+        } else {
+            cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier)!
         }
         
         cell.textLabel?.text = UIKitArray[indexPath.row]
@@ -70,10 +59,8 @@ class UserInterfaceViewController: UITableViewController
         return cell
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
-    {
-        if segue.destinationViewController.isKindOfClass(DetailViewController)
-        {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.destinationViewController.isKindOfClass(DetailViewController) {
             let detailViewController: DetailViewController = segue.destinationViewController as! DetailViewController
 
             detailViewController.prepareForDetail(UIKitArray[sender!.tag!])

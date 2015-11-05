@@ -28,24 +28,19 @@ import Foundation
 import UIKit
 
 /// This extesion adds some useful functions to UIToolbar
-public extension UIToolbar
-{
+public extension UIToolbar {
     // MARK: - Instance functions -
     
     /**
-    Set the UIToolbar transparent or not
+     Set the UIToolbar transparent or not
     
-    :param: transparent true to set it transparent, false to not
-    */
-    public func setTransparent(transparent: Bool)
-    {
-        if transparent
-        {
+     - parameter transparent: true to set it transparent, false to not
+     */
+    public func setTransparent(transparent: Bool) {
+        if transparent {
             self.setBackgroundImage(UIImage(), forToolbarPosition: .Any, barMetrics: .Default)
             self.setShadowImage(UIImage(), forToolbarPosition: .Any)
-        }
-        else
-        {
+        } else {
             self.setBackgroundImage(nil, forToolbarPosition: .Any, barMetrics: .Default)
             self.setShadowImage(nil, forToolbarPosition: .Any)
         }

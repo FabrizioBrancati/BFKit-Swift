@@ -36,96 +36,87 @@ public let NO = false
 // MARK: - Global functions -
 
 /**
-Degrees to radians conversion
+ Degrees to radians conversion
 
-:param: degrees Degrees to be converted
+ - parameter degrees: Degrees to be converted
 
-:returns: Returns the convertion result
-*/
-public func DegreesToRadians(degrees: Float) -> Float
-{
+ - returns: Returns the convertion result
+ */
+public func DegreesToRadians(degrees: Float) -> Float {
     return Float(Double(degrees) * M_PI / 180)
 }
 
 /**
-Radians to degrees conversion
+ Radians to degrees conversion
 
-:param: radians Radians to be converted
+ - parameter radians: Radians to be converted
 
-:returns: Returns the convertion result
-*/
-public func RadiansToDegrees(radians: Float) -> Float
-{
+ - returns: Returns the convertion result
+ */
+public func RadiansToDegrees(radians: Float) -> Float {
     return Float(Double(radians) * 180 / M_PI)
 }
 
 /// This extension adds some useful functions to NSNumber
-public extension NSNumber
-{
+public extension NSNumber {
     // MARK: - Class functions -
     
     /**
-    Create a random integer between the given range
+     Create a random integer between the given range
     
-    :param: minValue Mininum random value
-    :param: maxValue Maxinum random value
+     - parameter minValue: Mininum random value
+     - parameter maxValue: Maxinum random value
     
-    :returns: Returns the created random integer
-    */
-    public static func randomIntBetweenMin(minValue: Int, andMax maxValue: Int) -> Int
-    {
+     - returns: Returns the created random integer
+     */
+    public static func randomIntBetweenMin(minValue: Int, andMax maxValue: Int) -> Int {
         return minValue + Int(self.randomFloat()) * (maxValue - minValue)
     }
     
     /**
-    Create a random float
+     Create a random float
     
-    :returns: Returns the created random float
-    */
-    public static func randomFloat() -> Float
-    {
+     - returns: Returns the created random float
+     */
+    public static func randomFloat() -> Float {
         return Float(arc4random() / UINT32_MAX)
     }
     
     /**
-    Create a random float between the given range
+     Create a random float between the given range
     
-    :param: minValue Mininum random value
-    :param: maxValue Maxinum random value
+     - parameter minValue: Mininum random value
+     - parameter maxValue: Maxinum random value
     
-    :returns: Returns the created random float
-    */
-    public static func randomFloatBetweenMin(minValue: Float, andMax maxValue: Float) -> Float
-    {
+     - returns: Returns the created random float
+     */
+    public static func randomFloatBetweenMin(minValue: Float, andMax maxValue: Float) -> Float {
         return Float(arc4random()) / Float(UINT32_MAX) * abs(minValue - maxValue) + min(minValue, maxValue)
     }
     
     /**
-    Get the next power of two
+     Get the next power of two
     
-    :param: number Number to be powered
+     - parameter number: Number to be powered
     
-    :returns: Returns the number powered
-    */
-    public static func nextPowerOfTwo(number: Int) -> Int
-    {
+     - returns: Returns the number powered
+     */
+    public static func nextPowerOfTwo(number: Int) -> Int {
         var result = 1
-        while result < number
-        {
+        while result < number {
             result *= 2
         }
         return result
     }
     
     /**
-    Returns if the number is a power of two
+     Returns if the number is a power of two
     
-    :param: number Number to check
+     - parameter number: Number to check
     
-    :returns: Returns if the number is a power of two
-    */
-    public static func isPowerOfTwo(number: Int) -> Bool
-    {
+     - returns: Returns if the number is a power of two
+     */
+    public static func isPowerOfTwo(number: Int) -> Bool {
         return (number != 0) && Bool((number & (number - 1)))
     }
 }

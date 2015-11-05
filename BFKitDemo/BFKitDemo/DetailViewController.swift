@@ -8,14 +8,12 @@
 
 import UIKit
 
-class DetailViewController: UIViewController
-{
+class DetailViewController: UIViewController {
     @IBOutlet var scrollView: UIScrollView!
     
     var detailType: DetailType = .UIButton
     
-    enum DetailType : String
-    {
+    enum DetailType : String {
         case BFApp = "BFApp"
         case BFButton = "BFButton"
         case BFDataStructures = "BFDataStructures"
@@ -56,10 +54,8 @@ class DetailViewController: UIViewController
         case String = "String"
     }
     
-    override func viewDidLoad()
-    {
-        switch detailType
-        {
+    override func viewDidLoad() {
+        switch detailType {
         case .BFApp:
             scrollView.removeFromSuperview()
             
@@ -72,12 +68,9 @@ class DetailViewController: UIViewController
             BFLog("Localized string from BFKit: \(openString)")
             
             BFApp.onFirstStart({ (isFirstStart) -> () in
-                if isFirstStart
-                {
+                if isFirstStart {
                     BFLog("Is first start!")
-                }
-                else
-                {
+                } else {
                     BFLog("Is not first start!")
                 }
             })
@@ -169,11 +162,9 @@ class DetailViewController: UIViewController
             let normalLabel: UILabel = UILabel(frame: CGRectMake(20, 20, SCREEN_WIDTH - 40, 50), text: "Waiting for Touch ID...", font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Center, lines: 2)
             scrollView.addSubview(normalLabel)
             
-            if SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO("8.0")
-            {
+            if #available(iOS 8.0, *) {
                 BFTouchID.showTouchIDAuthenticationWithReason(BFLocalizedString("AUTHENTICATION"), completion: { (result) -> () in
-                    switch result
-                    {
+                    switch result {
                     case .Success:
                         runOnMainThread({
                             normalLabel.text = BFLocalizedString("AUTHORIZED")
@@ -189,9 +180,7 @@ class DetailViewController: UIViewController
                         })
                     }
                 })
-            }
-            else
-            {
+            } else {
                 normalLabel.text = "BFTouchID is available on iOS 8 or later"
             }
         case .UIButton:
@@ -244,20 +233,13 @@ class DetailViewController: UIViewController
             
             var deviceInfoString: String = ""
             
-            if UIDevice.isiPhone()
-            {
+            if UIDevice.isiPhone() {
                 deviceInfoString += "Device: iPhone\n"
-            }
-            else if UIDevice.isiPad()
-            {
+            } else if UIDevice.isiPad() {
                 deviceInfoString += "Device: iPad\n"
-            }
-            else if UIDevice.isiPod()
-            {
+            } else if UIDevice.isiPod() {
                 deviceInfoString += "Device: iPod\n"
-            }
-            else if UIDevice.isSimulator()
-            {
+            } else if UIDevice.isSimulator() {
                 deviceInfoString += "Device: Simulator\n"
             }
             
@@ -372,21 +354,15 @@ class DetailViewController: UIViewController
             
             var screenInfoString: String = ""
             
-            if UIScreen.isRetina()
-            {
+            if UIScreen.isRetina() {
                 screenInfoString += "Retina: Yes\n"
-            }
-            else
-            {
+            } else {
                 screenInfoString += "Retina: No\n"
             }
             
-            if UIScreen.isRetinaHD()
-            {
+            if UIScreen.isRetinaHD() {
                 screenInfoString += "Retina HD: Yes\n"
-            }
-            else
-            {
+            } else {
                 screenInfoString += "Retina HD: No\n"
             }
             
@@ -473,7 +449,7 @@ class DetailViewController: UIViewController
             
             BFLog("Normal Array: \(array)")
             BFLog("Reversed Array: \(array.reversedArray())")
-            BFLog("Array to JSON: \(array.arrayToJSON())")
+            BFLog("Array to JSON: \(try! array.arrayToJSON())")
             
             let textView: UITextView = UITextView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), text: BFLogString, font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Left, dataDetectorTypes: .All, editable: false, selectable: false, returnType: .Default, keyboardType: .Default, secure: false, autoCapitalization: .None, keyboardAppearance: .Default, enablesReturnKeyAutomatically: true, autoCorrectionType: .Default, delegate: nil)
             self.view.addSubview(textView)
@@ -487,7 +463,7 @@ class DetailViewController: UIViewController
             let dictionary: Dictionary<String, AnyObject> = ["Today" : today.description, "Description of today" : NSDate.dateInformationDescriptionWithInformation(today.dateInformation()) ,"array" : [1, 2, 3, 4, 5]]
             
             BFLog("Normal Dictionary: \(dictionary)")
-            BFLog("Dictionary to JSON: \(dictionary.dictionaryToJSON())")
+            BFLog("Dictionary to JSON: \(try! dictionary.dictionaryToJSON())")
             
             let textView: UITextView = UITextView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), text: BFLogString, font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Left, dataDetectorTypes: .All, editable: false, selectable: false, returnType: .Default, keyboardType: .Default, secure: false, autoCapitalization: .None, keyboardAppearance: .Default, enablesReturnKeyAutomatically: true, autoCorrectionType: .Default, delegate: nil)
             self.view.addSubview(textView)
@@ -500,7 +476,7 @@ class DetailViewController: UIViewController
             
             BFLog("Normal Array: \(array)")
             BFLog("Reversed Array: \(array.reversedArray())")
-            BFLog("Array to JSON: \(array.arrayToJSON())")
+            BFLog("Array to JSON: \(try! array.arrayToJSON())")
             
             let textView: UITextView = UITextView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), text: BFLogString, font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Left, dataDetectorTypes: .All, editable: false, selectable: false, returnType: .Default, keyboardType: .Default, secure: false, autoCapitalization: .None, keyboardAppearance: .Default, enablesReturnKeyAutomatically: true, autoCorrectionType: .Default, delegate: nil)
             self.view.addSubview(textView)
@@ -528,7 +504,7 @@ class DetailViewController: UIViewController
             let dictionary: NSDictionary = ["Today" : today.description, "Description of today" : NSDate.dateInformationDescriptionWithInformation(today.dateInformation()) ,"array" : [1, 2, 3, 4, 5]]
             
             BFLog("Normal Dictionary: \(dictionary)")
-            BFLog("Dictionary to JSON: \(dictionary.dictionaryToJSON())")
+            BFLog("Dictionary to JSON: \(try! dictionary.dictionaryToJSON())")
             
             let textView: UITextView = UITextView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), text: BFLogString, font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Left, dataDetectorTypes: .All, editable: false, selectable: false, returnType: .Default, keyboardType: .Default, secure: false, autoCapitalization: .None, keyboardAppearance: .Default, enablesReturnKeyAutomatically: true, autoCorrectionType: .Default, delegate: nil)
             self.view.addSubview(textView)
@@ -541,7 +517,7 @@ class DetailViewController: UIViewController
             
             let saving: String = NSFileManager.saveArrayToPath(.Documents, filename: "temp", array: array) ? "Save array: Yes" : "Save array: No"
             let directory: String = NSFileManager.getDocumentsDirectoryForFile("temp.plist")
-            let deleting: String = NSFileManager.deleteFile("temp.plist", fromDirectory: .Documents) ? "Delete file: Yes" : "Delete file: No"
+            let deleting: String = try! NSFileManager.deleteFile("temp.plist", fromDirectory: .Documents) ? "Delete file: Yes" : "Delete file: No"
             
             BFLog("\(saving)")
             BFLog("Directory: \(directory)")
@@ -567,7 +543,7 @@ class DetailViewController: UIViewController
             
             BFLogClear()
             
-            var dictionary: NSMutableDictionary = NSMutableDictionary()
+            let dictionary: NSMutableDictionary = NSMutableDictionary()
             
             dictionary.safeSetObject(UIImage(), forKey: "Image")
             BFLog("Dictionary: \(dictionary)")
@@ -625,6 +601,16 @@ class DetailViewController: UIViewController
             BFLog("SHA512 (currently doesn't work): -")
             BFLog("\(isEmail)")
             
+            let testHEX: NSString = "68 65 6c 6c 6f"
+            var testString: NSString = "hello"
+            BFLog("String: \(testString) - To HEX: \(testString.stringToHEX())")
+            BFLog("HEX: \(testHEX) - To String: \(testHEX.HEXToString())")
+            
+            testString = "This    is    a     test"
+            BFLog("\(testString)")
+            testString = testString.removeExtraSpaces()
+            BFLog("\(testString)")
+            
             let textView: UITextView = UITextView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), text: BFLogString, font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Left, dataDetectorTypes: .All, editable: false, selectable: false, returnType: .Default, keyboardType: .Default, secure: false, autoCapitalization: .None, keyboardAppearance: .Default, enablesReturnKeyAutomatically: true, autoCorrectionType: .Default, delegate: nil)
             self.view.addSubview(textView)
         case .NSThread:
@@ -649,20 +635,19 @@ class DetailViewController: UIViewController
             BFLog("SHA256 (currently doesn't work): -")
             BFLog("SHA512 (currently doesn't work): -")
             BFLog("\(isEmail)")
+            BFLog("Lenght: \(string.length)")
+            BFLog("Char at index 5: \(string.characterAtIndex(5))")
+            BFLog("Substring with range: \(string.substringWithRange(0...5))")
             
             let textView: UITextView = UITextView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), text: BFLogString, font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Left, dataDetectorTypes: .All, editable: false, selectable: false, returnType: .Default, keyboardType: .Default, secure: false, autoCapitalization: .None, keyboardAppearance: .Default, enablesReturnKeyAutomatically: true, autoCorrectionType: .Default, delegate: nil)
             self.view.addSubview(textView)
-        default:
-            break
         }
     }
     
-    override func viewWillDisappear(animated: Bool)
-    {
+    override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        switch detailType
-        {
+        switch detailType {
         case .UINavigationBar:
             self.navigationController?.navigationBar.setTransparent(false)
         case .UIWindow:
@@ -672,25 +657,21 @@ class DetailViewController: UIViewController
         }
     }
     
-    func prepareForDetail(detailTypeString: String)
-    {
+    func prepareForDetail(detailTypeString: String) {
         detailType = DetailType(rawValue: detailTypeString)!
         
         self.title = detailTypeString
     }
     
-    func shakeButtonAction(button: UIButton)
-    {
+    func shakeButtonAction(button: UIButton) {
         button.shakeView()
     }
     
-    func barButtonItemsAction(button: UIBarButtonItem)
-    {
+    func barButtonItemsAction(button: UIBarButtonItem) {
         BFLog("Bar button pressed")
     }
     
-    func threadFunciton()
-    {
+    func threadFunciton() {
         BFLog("Background: \(NSThread.currentThread())")
         
         runOnMainThread {

@@ -29,11 +29,9 @@ import Foundation
 // MARK: - Stack class -
 
 /// Primitive Stack implementation
-public class Stack: Printable
-{
+public class Stack: CustomStringConvertible {
     /// Describe the Stack
-    public var description: String
-    {
+    public var description: String {
         return "\(stack)"
     }
     
@@ -41,32 +39,29 @@ public class Stack: Printable
     private var stack: Array<AnyObject> = Array<AnyObject>()
     
     /**
-    Returns if the Stack is empty or not
+     Returns if the Stack is empty or not
     
-    :returns: Returns true if the Stack is empty, otherwise false
-    */
-    public func empty() -> Bool
-    {
+     - returns: Returns true if the Stack is empty, otherwise false
+     */
+    public func empty() -> Bool {
         return stack.isEmpty
     }
     
     /**
-    Adds an element on top of the Stack
+     Adds an element on top of the Stack
     
-    :param: object The element to add
-    */
-    public func push(object: AnyObject)
-    {
+     - parameter object: The element to add
+     */
+    public func push(object: AnyObject) {
         stack.append(object)
     }
     
     /**
-    Removes an element on top of the Stack
+     Removes an element on top of the Stack
     
-    :returns: Returns the removed element
-    */
-    public func pop() -> AnyObject
-    {
+     - returns: Returns the removed element
+     */
+    public func pop() -> AnyObject {
         let popped: AnyObject = stack[stack.count - 1]
         stack.removeAtIndex(stack.count - 1)
         
@@ -77,11 +72,9 @@ public class Stack: Printable
 // MARK: - List class -
 
 /// Primitive List implementation. In order to work, the List must contain only objects that is subclass of NSObject
-public class List: Printable
-{
+public class List: CustomStringConvertible {
     /// Describe the List
-    public var description: String
-    {
+    public var description: String {
         return "\(list)"
     }
     
@@ -89,25 +82,19 @@ public class List: Printable
     private var list: Array<AnyObject> = Array<AnyObject>()
     
     /**
-    Search an element and returns the index
+     Search an element and returns the index
     
-    :param: object The element to search
+     - parameter object: The element to search
     
-    :returns: Returns the index of the searched element
-    */
-    public func search(object: AnyObject) -> Int?
-    {
-        for var i = 0; i < list.count; i++
-        {
-            if object is NSObject
-            {
-                if list[i] as! NSObject == object as! NSObject
-                {
+     - returns: Returns the index of the searched element
+     */
+    public func search(object: AnyObject) -> Int? {
+        for var i = 0; i < list.count; i++ {
+            if object is NSObject {
+                if list[i] as! NSObject == object as! NSObject {
                     return i
                 }
-            }
-            else
-            {
+            } else {
                 return nil
             }
         }
@@ -116,42 +103,36 @@ public class List: Printable
     }
     
     /**
-    Search for an index and returns the element
+     Search for an index and returns the element
     
-    :param: index The index
+     - parameter index: The index
     
-    :returns: Returns the element of the searched index
-    */
-    public func search(index: Int) -> AnyObject?
-    {
+     - returns: Returns the element of the searched index
+     */
+    public func search(index: Int) -> AnyObject? {
         return list.safeObjectAtIndex(index)
     }
     
     /**
-    Insert an element in the List
+     Insert an element in the List
     
-    :param: object The element to insert in the List
-    */
-    public func insert(object: AnyObject)
-    {
+     - parameter object: The element to insert in the List
+     */
+    public func insert(object: AnyObject) {
         list.append(object)
     }
     
     /**
-    Delete an element in the List
+     Delete an element in the List
     
-    :param: object The object to be deleted
-    */
-    public func delete(object: AnyObject)
-    {
+     - parameter object: The object to be deleted
+     */
+    public func delete(object: AnyObject) {
         var index: Int = -1
         
-        for var i = 0; i < list.count; i++
-        {
-            if object is NSObject
-            {
-                if list[i] as! NSObject == object as! NSObject
-                {
+        for var i = 0; i < list.count; i++ {
+            if object is NSObject {
+                if list[i] as! NSObject == object as! NSObject {
                     index = i
                     break
                 }
@@ -162,12 +143,11 @@ public class List: Printable
     }
     
     /**
-    Delete an element at the given index
+     Delete an element at the given index
     
-    :param: index The index to delete
-    */
-    public func delete(index: Int)
-    {
+     - parameter index: The index to delete
+     */
+    public func delete(index: Int) {
         list.removeAtIndex(index)
     }
 }
@@ -175,11 +155,9 @@ public class List: Printable
 // MARK: - Queue class -
 
 /// Primitive Queue implementation
-public class Queue: Printable
-{
+public class Queue: CustomStringConvertible {
     /// Describe the Queue
-    public var description: String
-    {
+    public var description: String {
         return "\(queue)"
     }
     
@@ -187,38 +165,34 @@ public class Queue: Printable
     private var queue: Array<AnyObject> = Array<AnyObject>()
     
     /**
-    Adds an element to the Queue
+     Adds an element to the Queue
     
-    :param: object The element to add
-    */
-    public func enqueue(object: AnyObject)
-    {
+     - parameter object: The element to add
+     */
+    public func enqueue(object: AnyObject) {
         queue.append(object)
     }
     
     /**
-    Dequeue the first element
-    */
-    public func dequeue()
-    {
+     Dequeue the first element
+     */
+    public func dequeue() {
         queue.removeAtIndex(0)
     }
     
     /**
-    Returns the element on the top of the Queue
+     Returns the element on the top of the Queue
     
-    :returns: Returns the element on the top of the Queue
-    */
-    public func top() -> AnyObject?
-    {
+     - returns: Returns the element on the top of the Queue
+     */
+    public func top() -> AnyObject? {
         return queue.first
     }
     
     /**
-    Remove all the elements in the Queue
-    */
-    public func emptyQueue()
-    {
+     Remove all the elements in the Queue
+     */
+    public func emptyQueue() {
         queue.removeAll(keepCapacity: false)
     }
 }

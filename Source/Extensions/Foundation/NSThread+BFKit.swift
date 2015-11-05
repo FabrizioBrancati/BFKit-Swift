@@ -29,56 +29,51 @@ import Foundation
 // MARK: - Global functions -
 
 /**
-Runs a block in the main thread
+ Runs a block in the main thread
 
-:param: block Block to be executed
-*/
-public func runOnMainThread(block: () -> ())
-{
+ - parameter block: Block to be executed
+ */
+public func runOnMainThread(block: () -> ()) {
     dispatch_async(dispatch_get_main_queue(), {
         block()
     })
 }
 
 /**
-Runs a block in background
+ Runs a block in background
 
-:param: block Block to be executed
-*/
-public func runInBackground(block: () -> ())
-{
+ - parameter: block Block to be executed
+ */
+public func runInBackground(block: () -> ()) {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
         block()
     }
 }
 
 /// This extesion adds some useful functions to NSThread
-public extension NSThread
-{
+public extension NSThread {
     /**
-    Exectute a selector asyncronously after a delay
+     Exectute a selector asyncronously after a delay
     
-    :param: selector Selector to be executed
-    :param: target   Target (Usually "self")
-    :param: delay    Delay to excute the selector
+     - parameter selector: Selector to be executed
+     - parameter target:   Target (Usually "self")
+     - parameter delay:    Delay to excute the selector
     
-    :returns: Return an NSTimer who handle the execution of the selector
-    */
-    public static func callSelectorAsync(selector: Selector, target: AnyObject, delay: NSTimeInterval = 0.0) -> NSTimer
-    {
+     - returns: Return an NSTimer who handle the execution of the selector
+     */
+    public static func callSelectorAsync(selector: Selector, target: AnyObject, delay: NSTimeInterval = 0.0) -> NSTimer {
         return NSTimer.scheduledTimerWithTimeInterval(delay, target: target, selector: selector, userInfo: nil, repeats: false)
     }
     
     /**
-    Exetute a selector
+     Exetute a selector
     
-    :param: selector Selector to be executed
-    :param: target   Target (Usually "self")
-    :param: object   Object to pass to the selector
-    :param: delay    Delay to excute the selector
-    */
-    public static func callSelector(selector: Selector, target: AnyObject, object: AnyObject? = nil, delay: NSTimeInterval = 0.0)
-    {
+     - parameter selector: Selector to be executed
+     - parameter target:   Target (Usually "self")
+     - parameter object:   Object to pass to the selector
+     - parameter delay:    Delay to excute the selector
+     */
+    public static func callSelector(selector: Selector, target: AnyObject, object: AnyObject? = nil, delay: NSTimeInterval = 0.0) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
             NSThread.detachNewThreadSelector(selector, toTarget: target, withObject: object)
         })

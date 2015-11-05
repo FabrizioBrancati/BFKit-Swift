@@ -28,27 +28,25 @@ import Foundation
 import LocalAuthentication
 
 /// This class adds some useful functions to use TouchID
-@availability(*, introduced=8.0)
-public class BFTouchID
-{
+@available(iOS 8, *)
+public class BFTouchID {
     // MARK: - Enums -
     
     /**
-    Touch result enum
+     Touch result enum
     
-    - Success:              Success
-    - Error:                Error
-    - AuthenticationFailed: Authentication Failed
-    - UserCancel:           User Cancel
-    - UserFallback:         User Fallback
-    - SystemCancel:         System Cancel
-    - PasscodeNotSet:       Passcode Not Set
-    - NotAvailable:         Not Available
-    - NotEnrolled:          Not Enrolled
-    */
-    @availability(*, introduced=8.0)
-    public enum TouchIDResult : Int
-    {
+     - Success:              Success
+     - Error:                Error
+     - AuthenticationFailed: Authentication Failed
+     - UserCancel:           User Cancel
+     - UserFallback:         User Fallback
+     - SystemCancel:         System Cancel
+     - PasscodeNotSet:       Passcode Not Set
+     - NotAvailable:         Not Available
+     - NotEnrolled:          Not Enrolled
+     */
+    @available(iOS 8, *)
+    public enum TouchIDResult : Int {
         case Success
         case Error
         case AuthenticationFailed
@@ -63,30 +61,25 @@ public class BFTouchID
     // MARK: - Class functions -
     
     /**
-    Shows the TouchID alert
+     Shows the TouchID alert
     
-    :param: reason        Text to show in the alert
-    :param: fallbackTitle Default title "Enter Password" is used when this property is left nil. If set to empty string, the button will be hidden
-    :param: completion    Completion handler. It returns the TouchID result, from the TouchIDResult enum
-    */
-    public static func showTouchIDAuthenticationWithReason(reason: String, fallbackTitle: String? = nil, completion: (result: TouchIDResult) -> ())
-    {
+     - parameter reason:        Text to show in the alert
+     - parameter fallbackTitle: Default title "Enter Password" is used when this property is left nil. If set to empty string, the button will be hidden
+     - parameter completion:    Completion handler. It returns the TouchID result, from the TouchIDResult enum
+     */
+    public static func showTouchIDAuthenticationWithReason(reason: String, fallbackTitle: String? = nil, completion: (result: TouchIDResult) -> ()) {
+        
         let context: LAContext = LAContext()
         
         context.localizedFallbackTitle = fallbackTitle
         
         var error: NSError?
-        if context.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: &error)
-        {
-            context.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reason, reply: { (success: Bool, error: NSError!) -> Void in
-                if success
-                {
+        if context.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: &error) {
+            context.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reason, reply: { (success: Bool, error: NSError?) -> Void in
+                if success {
                     completion(result: .Success)
-                }
-                else
-                {
-                    switch error.code
-                    {
+                } else {
+                    switch error!.code {
                     case LAError.AuthenticationFailed.rawValue:
                         completion(result: .AuthenticationFailed)
                     case LAError.UserCancel.rawValue:
@@ -103,8 +96,7 @@ public class BFTouchID
         }
         else
         {
-            switch error!.code
-            {
+            switch error!.code {
             case LAError.PasscodeNotSet.rawValue:
                 completion(result: .PasscodeNotSet)
             case LAError.TouchIDNotAvailable.rawValue:

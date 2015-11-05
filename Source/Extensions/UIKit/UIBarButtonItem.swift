@@ -28,30 +28,24 @@ import Foundation
 import UIKit
 
 /// This extesion adds some useful functions to UIBarButtonItem
-public extension UIBarButtonItem
-{
+public extension UIBarButtonItem {
     //  MARK: - Init functions -
     
     /**
-    Create an UIBarButtonItem with type setted to FlexibleSpace or FixedSpace
+     Create an UIBarButtonItem with type setted to FlexibleSpace or FixedSpace
     
-    :param: space Must be FlexibleSpace or FixedSpace, otherwise a FlexibleSpace UIBarButtonItem will be created
-    :param: width To use only if space is setted to FixedSpace, and it will be the width of it
+     - parameter space: Must be FlexibleSpace or FixedSpace, otherwise a FlexibleSpace UIBarButtonItem will be created
+     - parameter width: To use only if space is setted to FixedSpace, and it will be the width of it
     
-    :returns: Returns the created UIBarButtonItem
-    */
-    public convenience init(barButtonSpaceType space: UIBarButtonSystemItem, width: CGFloat = 0.0)
-    {
-        if space == .FixedSpace || space == .FlexibleSpace
-        {
+     - returns: Returns the created UIBarButtonItem
+     */
+    public convenience init(barButtonSpaceType space: UIBarButtonSystemItem, width: CGFloat = 0.0) {
+        if space == .FixedSpace || space == .FlexibleSpace {
             self.init(barButtonSystemItem: space, target: nil, action: "")
-            if space == .FixedSpace
-            {
+            if space == .FixedSpace {
                 self.width = width
             }
-        }
-        else
-        {
+        } else {
             self.init(barButtonSystemItem: .FlexibleSpace, target: nil, action: "")
         }
     }

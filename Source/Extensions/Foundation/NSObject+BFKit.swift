@@ -27,17 +27,15 @@
 import Foundation
 
 /// This extension adds some useful functions to NSObject
-public extension NSObject
-{
+public extension NSObject {
     // MARK: - Instance functions -
     
     /**
-    Check if the object is valid (not nil or null)
+     Check if the object is valid (not nil or null)
     
-    :returns: Returns if the object is valid
-    */
-    public func isValid() -> Bool
-    {
+     - returns: Returns if the object is valid
+     */
+    public func isValid() -> Bool {
         return !self.isKindOfClass(NSNull)
     }
 }

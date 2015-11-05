@@ -27,47 +27,37 @@
 import Foundation
 
 /// This extension adds some useful functions to NSDictionary
-extension Dictionary
+public extension Dictionary
 {
     // MARK: - Instance functions -
     
     /**
-    Convert self to JSON as String
+     Convert self to JSON as String
     
-    :returns: Returns the JSON as String or nil if error while parsing
-    */
-    func dictionaryToJSON() -> String
-    {
-        return Dictionary.dictionaryToJSON(self as! AnyObject)
+     - returns: Returns the JSON as String or nil if error while parsing
+     */
+    func dictionaryToJSON() throws -> String {
+        return try Dictionary.dictionaryToJSON(self as! AnyObject)
     }
     
     // MARK: - Class functions -
     
     /**
-    Convert the given dictionary to JSON as String
+     Convert the given dictionary to JSON as String
     
-    :param: dictionary The dictionary to be converted
+     - parameter dictionary: The dictionary to be converted
     
-    :returns: Returns the JSON as String or nil if error while parsing
-    */
-    static func dictionaryToJSON(dictionary: AnyObject) -> String
-    {
+     - returns: Returns the JSON as String or nil if error while parsing
+     */
+    static func dictionaryToJSON(dictionary: AnyObject) throws -> String {
         var json: NSString
-        var error: NSError?
-        let jsonData: NSData = NSJSONSerialization.dataWithJSONObject(dictionary, options: .PrettyPrinted, error: &error)!
+        let jsonData: NSData = try NSJSONSerialization.dataWithJSONObject(dictionary, options: .PrettyPrinted)
         
-        if jsonData == false
-        {
+        if jsonData == false {
             return "{}"
-        }
-        else if error == nil
-        {
+        } else {
             json = NSString(data: jsonData, encoding: NSUTF8StringEncoding)!
             return json as String
-        }
-        else
-        {
-            return error!.localizedDescription
         }
     }
 }

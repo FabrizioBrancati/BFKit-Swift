@@ -35,73 +35,59 @@ public var BFLogActive: Bool = true
 // MARK: - Global functions -
 
 /**
-Exented NSLog
+ Exented NSLog
 
-:param: message  Console message
-:param: filename File
-:param: function Function name
-:param: line     Line number
-*/
-public func BFLog(var message: String, filename: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__)
-{
-    if BFLogActive
-    {
-        if message.hasSuffix("\n") == false
-        {
+ - parameter message:  Console message
+ - parameter filename: File
+ - parameter function: Function name
+ - parameter line:     Line number
+ */
+public func BFLog(var message: String, filename: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__) {
+    if BFLogActive {
+        if message.hasSuffix("\n") == false {
             message += "\n"
         }
         
         BFLogClass.logString += message
         
-        let filenameNoExt = NSString(UTF8String: filename)!.lastPathComponent.stringByDeletingPathExtension
+        let filenameNoExt = NSURL(string: NSString(UTF8String: filename)! as String)!.URLByDeletingPathExtension!
         let log = "(\(function)) (\(filenameNoExt):\(line) \(message)"
         let timestamp = NSDate.dateInformationDescriptionWithInformation(NSDate().dateInformation(), dateSeparator: "-", usFormat: true, nanosecond: true)
-        print("\(timestamp) \(filenameNoExt):\(line) \(function): \(message)")
+        print("\(timestamp) \(filenameNoExt):\(line) \(function): \(message)", terminator: "")
         
         BFLogClass.detailedLogString += log
     }
 }
 
 /// Get the log string
-public var BFLogString: String
-{
-    if BFLogActive
-    {
+public var BFLogString: String {
+    if BFLogActive {
         return BFLogClass.logString
-    }
-    else
-    {
+    } else {
         return ""
     }
 }
 
 /// Get the detailed log string
-public var BFDetailedLogString: String
-{
-    if BFLogActive
-    {
+public var BFDetailedLogString: String {
+    if BFLogActive {
         return BFLogClass.detailedLogString
-    }
-    else
-    {
+    } else {
         return ""
     }
 }
 
 /**
-Clear the log string
-*/
-public func BFLogClear()
-{
-    if BFLogActive
-    {
+ Clear the log string
+ */
+public func BFLogClear() {
+    if BFLogActive {
         BFLogClass.clearLog()
     }
 }
 
 /// The private BFLogClass created to manage the log strings
-private class BFLogClass
-{
+private class BFLogClass {
     // MARK: - Variables -
     
     /// The log string
@@ -112,10 +98,9 @@ private class BFLogClass
     // MARK: - Class functions -
     
     /**
-    Private, clear the log string
-    */
-    private static func clearLog()
-    {
+     Private, clear the log string
+     */
+    private static func clearLog() {
         logString = ""
         detailedLogString = ""
     }

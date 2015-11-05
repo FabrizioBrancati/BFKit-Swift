@@ -27,71 +27,58 @@
 import Foundation
 
 /// This extension adds some useful functions to NSDictionary
-public extension NSDictionary
-{
+public extension NSDictionary {
     // MARK: - Instance functions -
     
     /**
-    Convert self to JSON as String
+     Convert self to JSON as String
     
-    :returns: Returns the JSON as String or nil if error while parsing
-    */
-    @availability(*, deprecated=1.3.0, message="Use dictionaryToJSON()")
-    public func dictionaryToJson() -> String
-    {
-        return self.dictionaryToJSON()
+     - returns: Returns the JSON as String or nil if error while parsing
+     */
+    @available(*, deprecated=1.3.0, message="Use dictionaryToJSON()")
+    public func dictionaryToJson()  throws-> String {
+        return try self.dictionaryToJSON()
     }
     
     /**
-    Convert self to JSON as String
+     Convert self to JSON as String
     
-    :returns: Returns the JSON as String or nil if error while parsing
-    */
-    public func dictionaryToJSON() -> String
-    {
-        return NSDictionary.dictionaryToJSON(self)
+     - returns: Returns the JSON as String or nil if error while parsing
+     */
+    public func dictionaryToJSON() throws -> String {
+        return try NSDictionary.dictionaryToJSON(self)
     }
     
     // MARK: - Class functions -
     
     /**
-    Convert the given dictionary to JSON as String
+     Convert the given dictionary to JSON as String
     
-    :param: dictionary The dictionary to be converted
+     - parameter dictionary: The dictionary to be converted
     
-    :returns: Returns the JSON as String or nil if error while parsing
-    */
-    @availability(*, deprecated=1.3.0, message="Use dictionaryToJSON(_ )")
-    public static func dictionaryToJson(dictionary: NSDictionary) -> String
-    {
-        return self.dictionaryToJSON(dictionary)
+     - returns: Returns the JSON as String or nil if error while parsing
+     */
+    @available(*, deprecated=1.3.0, message="Use dictionaryToJSON(_ )")
+    public static func dictionaryToJson(dictionary: NSDictionary) throws -> String {
+        return try self.dictionaryToJSON(dictionary)
     }
     
     /**
-    Convert the given dictionary to JSON as String
+     Convert the given dictionary to JSON as String
     
-    :param: dictionary The dictionary to be converted
+     - parameter dictionary: The dictionary to be converted
     
-    :returns: Returns the JSON as String or nil if error while parsing
-    */
-    public static func dictionaryToJSON(dictionary: NSDictionary) -> String
-    {
+     - returns: Returns the JSON as String or nil if error while parsing
+     */
+    public static func dictionaryToJSON(dictionary: NSDictionary) throws -> String {
         var json: NSString
-        var error: NSError?
-        let jsonData: NSData = NSJSONSerialization.dataWithJSONObject(dictionary, options: .PrettyPrinted, error: &error)!
+        let jsonData: NSData = try NSJSONSerialization.dataWithJSONObject(dictionary, options: .PrettyPrinted)
         
-        if(jsonData == false)
-        {
+        if jsonData == false {
             return "{}"
-        }
-        else if(error == nil)
-        {
+        } else {
             json = NSString(data: jsonData, encoding: NSUTF8StringEncoding)!
             return json as String
-        }
-        else
-        {
-            return error!.localizedDescription
         }
     }
 }

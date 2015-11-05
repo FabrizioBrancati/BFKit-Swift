@@ -28,35 +28,33 @@ import Foundation
 import UIKit
 
 /// This extesion adds some useful functions to UITextView
-public extension UITextView
-{
+public extension UITextView {
     // MARK: - Init functions -
     
     /**
-    Create an UITextView and set some parameters
+     Create an UITextView and set some parameters
     
-    :param: frame                         TextView's frame
-    :param: text                          TextView's text
-    :param: font                          TextView's text font
-    :param: size                          TextView's text size
-    :param: color                         TextView's text color
-    :param: alignment                     TextView's text alignment
-    :param: dataDetectorTypes             TextView's data detector types
-    :param: editable                      Set if TextView is editable
-    :param: selectable                    Set if TextView is selectable
-    :param: returnType                    TextField's return key type
-    :param: keyboardType                  TextField's keyboard type
-    :param: secure                        Set if the TextField is secure or not
-    :param: autoCapitalization            TextField's text capitalization
-    :param: keyboardAppearance            TextField's keyboard appearence
-    :param: enablesReturnKeyAutomatically Set if the TextField has to automatically enables the return key
-    :param: autoCorrectionType            TextField's auto correction type
-    :param: delegate                      TextField's delegate. Set nil if it has no delegate
+     - parameter frame:                         TextView's frame
+     - parameter text:                          TextView's text
+     - parameter font:                          TextView's text font
+     - parameter size:                          TextView's text size
+     - parameter color:                         TextView's text color
+     - parameter alignment:                     TextView's text alignment
+     - parameter dataDetectorTypes:             TextView's data detector types
+     - parameter editable:                      Set if TextView is editable
+     - parameter selectable:                    Set if TextView is selectable
+     - parameter returnType:                    TextField's return key type
+     - parameter keyboardType:                  TextField's keyboard type
+     - parameter secure:                        Set if the TextField is secure or not
+     - parameter autoCapitalization:            TextField's text capitalization
+     - parameter keyboardAppearance:            TextField's keyboard appearence
+     - parameter enablesReturnKeyAutomatically: Set if the TextField has to automatically enables the return key
+     - parameter autoCorrectionType:            TextField's auto correction type
+     - parameter delegate:                      TextField's delegate. Set nil if it has no delegate
     
-    :returns: Returns the created UITextView
-    */
-    public convenience init(frame: CGRect, text: String, font: FontName, size: CGFloat, color: UIColor, alignment: NSTextAlignment, dataDetectorTypes: UIDataDetectorTypes, editable: Bool, selectable: Bool, returnType: UIReturnKeyType, keyboardType: UIKeyboardType, secure: Bool, autoCapitalization: UITextAutocapitalizationType, keyboardAppearance: UIKeyboardAppearance, enablesReturnKeyAutomatically: Bool, autoCorrectionType: UITextAutocorrectionType, delegate: UITextViewDelegate?)
-    {
+     - returns: Returns the created UITextView
+     */
+    public convenience init(frame: CGRect, text: String, font: FontName, size: CGFloat, color: UIColor, alignment: NSTextAlignment, dataDetectorTypes: UIDataDetectorTypes, editable: Bool, selectable: Bool, returnType: UIReturnKeyType, keyboardType: UIKeyboardType, secure: Bool, autoCapitalization: UITextAutocapitalizationType, keyboardAppearance: UIKeyboardAppearance, enablesReturnKeyAutomatically: Bool, autoCorrectionType: UITextAutocorrectionType, delegate: UITextViewDelegate?) {
         self.init(frame: frame)
         self.text = text
         self.autocorrectionType = autoCorrectionType

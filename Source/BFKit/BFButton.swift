@@ -28,17 +28,13 @@ import Foundation
 import UIKit
 
 /// This class adds some useful functions to UIButton that cannot be in an extension
-public class BFButton: UIButton
-{
+public class BFButton: UIButton {
     // MARK: - Variables -
     
     /// The overlay image
-    private var overlayImgView: UIImageView!
-    {
-        didSet(newOverlayImgView)
-        {
-            if(self.overlayImgView != newOverlayImgView && newOverlayImgView != nil)
-            {
+    private var overlayImgView: UIImageView! {
+        didSet(newOverlayImgView) {
+            if self.overlayImgView != newOverlayImgView && newOverlayImgView != nil {
                 self.overlayImgView = newOverlayImgView
             }
             
@@ -49,26 +45,20 @@ public class BFButton: UIButton
     private var fadeDuration: Float!
     
     /// The animation on highlighted status
-    public override var highlighted: Bool
-    {
-        didSet(highlighted)
-        {
-            if highlighted == false
-            {
+    public override var highlighted: Bool {
+        didSet(highlighted) {
+            if highlighted == false {
                 self.addSubview(self.overlayImgView)
                 self.overlayImgView.alpha = 0
                 
                 UIView.animateWithDuration(NSTimeInterval(self.fadeDuration), animations: {
                     self.overlayImgView.alpha = 1
                 })
-            }
-            else
-            {
+            } else {
                 UIView.animateWithDuration(NSTimeInterval(self.fadeDuration), animations: {
                     self.overlayImgView.alpha = 0
                 }, completion: { (completed) in
-                    if completed
-                    {
+                    if completed {
                         self.overlayImgView.removeFromSuperview()
                     }
                 })
@@ -79,17 +69,16 @@ public class BFButton: UIButton
     // MARK: - Init functions -
     
     /**
-    Create an UIButton with a fade animation from image to highlightedImage on touch
+     Create an UIButton with a fade animation from image to highlightedImage on touch
     
-    :param: frame            Button's frame
-    :param: image            Button's image
-    :param: highlightedImage Button's highlighted image
-    :param: fadeDuration     Fade duration
+     - parameter frame:            Button's frame
+     - parameter image:            Button's image
+     - parameter highlightedImage: Button's highlighted image
+     - parameter fadeDuration:     Fade duration
     
-    :returns: Returns the created BFButton, subclass of UIButton
-    */
-    public init(frame: CGRect, image: UIImage, highlightedImage: UIImage, fadeDuration: Float)
-    {
+     - returns: Returns the created BFButton, subclass of UIButton
+     */
+    public init(frame: CGRect, image: UIImage, highlightedImage: UIImage, fadeDuration: Float) {
         self.fadeDuration = fadeDuration
         
         super.init(frame: frame)
@@ -103,14 +92,13 @@ public class BFButton: UIButton
     }
 
     /**
-    Required init function
+     Required init function
     
-    :param: aDecoder NSCoder
-    
-    :returns: The initialized instance
-    */
-    public required init(coder aDecoder: NSCoder)
-    {
+     - parameter aDecoder: NSCoder
+     
+     - returns: The initialized instance
+     */
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 }

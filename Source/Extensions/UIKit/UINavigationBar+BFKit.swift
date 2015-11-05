@@ -28,26 +28,21 @@ import Foundation
 import UIKit
 
 /// This extesion adds some useful functions to UINavigationBar
-public extension UINavigationBar
-{
+public extension UINavigationBar {
     // MARK: - Instance functions -
     
     /**
-    Set the UINavigationBar to transparent or not
+     Set the UINavigationBar to transparent or not
     
-    :param: transparent true to set it transparent, false to not
-    :param: translucent A Boolean value indicating whether the navigation bar is translucent or not
-    */
-    public func setTransparent(transparent: Bool, translucent: Bool = true)
-    {
-        if transparent
-        {
+     - parameter transparent: true to set it transparent, false to not
+     - parameter translucent: A Boolean value indicating whether the navigation bar is translucent or not
+     */
+    public func setTransparent(transparent: Bool, translucent: Bool = true) {
+        if transparent {
             self.setBackgroundImage(UIImage(), forBarMetrics: .Default)
             self.shadowImage = UIImage()
             self.translucent = translucent
-        }
-        else
-        {
+        } else {
             self.setBackgroundImage(nil, forBarMetrics: .Default)
             self.shadowImage = nil
             self.translucent = translucent
