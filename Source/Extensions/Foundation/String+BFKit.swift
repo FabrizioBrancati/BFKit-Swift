@@ -552,4 +552,15 @@ public extension String {
     public func stringToHEX() -> String {
         return self.NS.stringToHEX() as String
     }
+    
+    /**
+     Used to create an UUID as String
+     
+     - returns: Returns the created UUID string
+     */
+    public static func generateUUID() -> String {
+        let theUUID: CFUUIDRef? = CFUUIDCreate(kCFAllocatorDefault)
+        let string: CFStringRef? = CFUUIDCreateString(kCFAllocatorDefault, theUUID)
+        return string! as String
+    }
 }

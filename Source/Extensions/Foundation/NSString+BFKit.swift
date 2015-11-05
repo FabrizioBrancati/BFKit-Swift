@@ -364,4 +364,15 @@ public extension NSString {
         
         return hexString
     }
+    
+    /**
+     Used to create an UUID as String
+     
+     - returns: Returns the created UUID string
+     */
+    public static func generateUUID() -> NSString {
+        let theUUID: CFUUIDRef? = CFUUIDCreate(kCFAllocatorDefault)
+        let string: CFStringRef? = CFUUIDCreateString(kCFAllocatorDefault, theUUID)
+        return string!
+    }
 }
