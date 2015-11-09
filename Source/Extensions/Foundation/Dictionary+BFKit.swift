@@ -27,8 +27,7 @@
 import Foundation
 
 /// This extension adds some useful functions to NSDictionary
-public extension Dictionary
-{
+public extension Dictionary {
     // MARK: - Instance functions -
     
     /**

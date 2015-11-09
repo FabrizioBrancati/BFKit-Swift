@@ -424,7 +424,7 @@ class DetailViewController: UIViewController {
             scrollView.removeFromSuperview()
             
             let webView: UIWebView = UIWebView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
-            webView.loadWebsite("http://www.google.com")
+            webView.loadWebsite("https://www.google.com")
             webView.removeShadow()
             self.view.addSubview(webView)
         case .UIWindow:

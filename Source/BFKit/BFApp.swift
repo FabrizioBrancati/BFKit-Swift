@@ -89,7 +89,7 @@ public class BFApp {
             defaults.synchronize()
         }
         
-       block(isFirstStartForCurrentVersion: !hasBeenOpenedForCurrentVersion)
+        block(isFirstStartForCurrentVersion: !hasBeenOpenedForCurrentVersion)
     }
     
     /**
