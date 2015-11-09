@@ -194,22 +194,27 @@ public extension NSString {
      - returns: Returns the substring
      */
     public static func searchInString(string: NSString, charStart: NSString, charEnd: NSString) -> NSString {
-        var start = 0, stop = 0
+        var start = 0, end = 0
         
         for var i = 0; i < string.length; i++ {
             if string.characterAtIndex(i) == charStart.characterAtIndex(0) {
                 start = i+1
                 i += 1
+                continue
             }
             if string.characterAtIndex(i) == charEnd.characterAtIndex(0) {
-                stop = i
+                end = i
                 break
             }
         }
         
-        stop -= start
+        end -= start
         
-        return string.substringFromIndex(start).substringToIndex(stop)
+        if end < 0 {
+            end = 0
+        }
+        
+        return string.substringFromIndex(start).substringToIndex(end)
     }
     
     /**
