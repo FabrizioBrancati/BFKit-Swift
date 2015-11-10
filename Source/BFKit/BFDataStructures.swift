@@ -61,9 +61,12 @@ public class Stack: CustomStringConvertible {
     
      - returns: Returns the removed element
      */
-    public func pop() -> AnyObject {
-        let popped: AnyObject = stack[stack.count - 1]
-        stack.removeAtIndex(stack.count - 1)
+    public func pop() -> AnyObject? {
+        var popped: AnyObject? = nil
+        if !self.empty() {
+            popped = stack[stack.count - 1]
+            stack.removeAtIndex(stack.count - 1)
+        }
         
         return popped
     }
@@ -124,22 +127,20 @@ public class List: CustomStringConvertible {
     
     /**
      Delete an element in the List
-    
+     
      - parameter object: The object to be deleted
+     
+     - returns: Retruns true if removed, otherwise false
      */
-    public func delete(object: AnyObject) {
-        var index: Int = -1
+    public func delete(object: AnyObject) -> Bool {
+        let search = self.search(object)
         
-        for var i = 0; i < list.count; i++ {
-            if object is NSObject {
-                if list[i] as! NSObject == object as! NSObject {
-                    index = i
-                    break
-                }
-            }
+        if search != nil {
+            list.removeAtIndex(search!)
+            return true
+        } else {
+            return false
         }
-        
-        list.removeAtIndex(index)
     }
     
     /**
@@ -175,9 +176,16 @@ public class Queue: CustomStringConvertible {
     
     /**
      Dequeue the first element
+     
+     - returns: Retruns true if removed, otherwise false
      */
-    public func dequeue() {
-        queue.removeAtIndex(0)
+    public func dequeue() -> Bool {
+        if queue.count > 0 {
+            queue.removeAtIndex(0)
+            return true
+        } else {
+            return false
+        }
     }
     
     /**
