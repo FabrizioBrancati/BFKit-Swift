@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 1.x Releases
-- `1.5.x` Releases - [1.5.0](#150)
+- `1.5.x` Releases - [1.5.0](#150) | [1.5.1](#151)
 - `1.4.x` Releases - [1.4.0](#140) | [1.4.1](#141)
 - `1.3.x` Releases - [1.3.0](#130) | [1.3.1](#131)
 - `1.2.x` Releases - [1.2.0](#120)
@@ -18,6 +18,18 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+## [1.5.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.5.1)
+#### Added
+- Added more stronger check on BFDataStructures
+
+#### Improved
+- Now support Swift 2.1 and Xcode 7.1
+
+#### Fixed
+- Fixed a bug in `searchInString(_:charStart:charEnd)` that may cause a crash
+
+
+
 ## [1.5.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.5.0)
 #### Added
 - Added support for Swift 2.0
@@ -25,6 +37,8 @@ All notable changes to this project will be documented in this file.<br>
 - Added HEX functions in NSString and String extensions
 - Added String functions like URL functions
 - Added a `NS` function to String extension that convert it to a NSString
+- Added `flipImageHorizontally` & `flipImageVertically` functions in UIImage extension
+- Added missing devices
 
 #### Improved
 - Now `Array` and `Dictionary` extensions are declared as public
