@@ -10,7 +10,7 @@
 ---
 
 <p align="center">
-    <a href="#objective-c-">BFKit</a> &bull;
+    <a href="#objective-c-">Objective-C Version</a> &bull;
     <a href="#what-does-it-do-question">What does it do</a> &bull;
     <a href="#language-support-it">Language support</a> &bull;
     <a href="#requirements-iphone">Requirements</a> &bull;
@@ -27,7 +27,7 @@
 
 ---
 
-Objective-C <img src="http://github.fabriziobrancati.com/bfkit/resources/objc-icon.png" height="25" width="25">
+Objective-C Version <img src="http://github.fabriziobrancati.com/bfkit/resources/objc-icon.png" height="25" width="25">
 ===========
 If you are looking for Objective-C version check it out here: **[BFKit](https://github.com/FabrizioBrancati/BFKit)**
 
