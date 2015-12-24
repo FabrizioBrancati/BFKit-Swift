@@ -74,6 +74,29 @@ public extension NSNumber {
     }
     
     /**
+     Create a random integer between the given range.
+     Example: NSNumber.randomInt(-500...100)
+     
+     - parameter range: Range random value
+     
+     - returns: Returns the created random integer
+     */
+    static func randomInt(range: Range<Int>) -> Int
+    {
+        var offset = 0
+        
+        if range.startIndex < 0
+        {
+            offset = abs(range.startIndex)
+        }
+        
+        let min = UInt32(range.startIndex + offset)
+        let max = UInt32(range.endIndex   + offset)
+        
+        return Int(min + arc4random_uniform(max - min)) - offset
+    }
+    
+    /**
      Create a random float
     
      - returns: Returns the created random float
