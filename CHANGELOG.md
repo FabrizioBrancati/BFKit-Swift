@@ -25,6 +25,11 @@ All notable changes to this project will be documented in this file.<br>
 - Added `brightness` directly to UIScreen extension
 - Added `randomInt` with range support in NSNumber extension
 
+#### Fixed
+- Fixed a bug in `randomColor(_)` that may cause a crash
+
+Thanks to [@Ewg777](https://github.com/Ewg777) for this release
+
 
 
 ## [1.5.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.5.1) - 10 Nov 2015
