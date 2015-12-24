@@ -89,4 +89,14 @@ public extension UIScreen {
         
         return screenSize
     }
+    
+    /// 0.0 to 1.0, where 1.0 is maximum brightness
+    public static var brightness: Float {
+        get {
+            return Float(self.mainScreen().brightness())
+        }
+        set(newValue) {
+            self.mainScreen().setBrightness(CGFloat(newValue))
+        }
+    }
 }
