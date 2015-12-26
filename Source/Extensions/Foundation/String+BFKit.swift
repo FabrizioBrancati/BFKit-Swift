@@ -249,35 +249,35 @@ public extension String {
     }
     
     /// Returns the last path component
-    var lastPathComponent: String {
+    public var lastPathComponent: String {
         get {
             return (self as NSString).lastPathComponent
         }
     }
     
     /// Returns the path extension
-    var pathExtension: String {
+    public var pathExtension: String {
         get {
             return (self as NSString).pathExtension
         }
     }
     
     /// Delete the last path component
-    var stringByDeletingLastPathComponent: String {
+    public var stringByDeletingLastPathComponent: String {
         get {
             return (self as NSString).stringByDeletingLastPathComponent
         }
     }
     
     /// Delete the path extension
-    var stringByDeletingPathExtension: String {
+    public var stringByDeletingPathExtension: String {
         get {
             return (self as NSString).stringByDeletingPathExtension
         }
     }
     
     /// Returns an array of path components
-    var pathComponents: [String] {
+    public var pathComponents: [String] {
         get {
             return (self as NSString).pathComponents
         }
@@ -290,7 +290,7 @@ public extension String {
      
      - returns: Returns all the string
      */
-    func stringByAppendingPathComponent(path: String) -> String {
+    public func stringByAppendingPathComponent(path: String) -> String {
         let string = self as NSString
         
         return string.stringByAppendingPathComponent(path)
@@ -303,14 +303,14 @@ public extension String {
      
      - returns: returns all the string
      */
-    func stringByAppendingPathExtension(ext: String) -> String? {
+    public func stringByAppendingPathExtension(ext: String) -> String? {
         let nsSt = self as NSString
         
         return nsSt.stringByAppendingPathExtension(ext)
     }
     
     /// Converts self to a NSString
-    var NS: NSString {
+    public var NS: NSString {
         return (self as NSString)
     }
     
