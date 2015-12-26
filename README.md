@@ -209,7 +209,7 @@ Todo :ballot_box_with_check:
 - :heavy_minus_sign: Create great tests and add Coveralls badge
 - :heavy_minus_sign: Add support to watchOS, tvOS and MacOS
 - :heavy_minus_sign: Add CPU App usage function in NSProcessInfo extension
-- :heavy_minus_sign: Add Hashing functions (MD5, SHA1, SHA256, SHA512) in String and NSString extension
+- :heavy_minus_sign: Add Hashing functions (MD5, SHA1, SHA256, SHA512, AES128 & AES256) in String and NSString extension, without using CommonCrypto from Objective-C
 - :heavy_minus_sign: Create a new DEMO App that shows all the functionalities of BFKit Swift
 - :heavy_check_mark: Add Carthage support
 - :heavy_check_mark: Add to CocoaPods
