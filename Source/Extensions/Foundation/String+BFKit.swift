@@ -314,43 +314,6 @@ public extension String {
         return (self as NSString)
     }
     
-    // TODO: Missing hash functions
-    /**
-     Create a MD5 string from self
-    
-     - returns: Returns the MD5 NSString from self
-     */
-    private func MD5() -> String {
-        return ""
-    }
-    
-    /**
-     Create a SHA1 string from self
-    
-     - returns: Returns the SHA1 NSString from self
-     */
-    private func SHA1() -> String {
-        return ""
-    }
-    
-    /**
-     Create a SHA256 string from self
-    
-     - returns: Returns the SHA256 NSString from self
-     */
-    private func SHA256() -> String {
-        return ""
-    }
-    
-    /**
-     Create a SHA512 string from self
-    
-     - returns: Returns the SHA512 NSString from self
-     */
-    private func SHA512() -> String {
-        return ""
-    }
-    
     // MARK: - Subscript functions -
     
     /**
