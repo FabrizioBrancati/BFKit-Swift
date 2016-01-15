@@ -26,7 +26,7 @@ All notable changes to this project will be documented in this file.<br>
 - Added `randomInt` with range support in NSNumber extension
 
 #### Fixed
-- Fixed a bug in `randomColor(_)` that may cause a crash
+- Fixed a bug in `randomColor(_)` that may cause a crash [#8](https://github.com/FabrizioBrancati/BFKit-Swift/pull/8)
 
 Thanks to [@Ewg777](https://github.com/Ewg777) for this release
 
