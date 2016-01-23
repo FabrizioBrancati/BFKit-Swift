@@ -12,7 +12,7 @@
 		49ABFB781B53D58800D47D7A /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ABFB751B53D58800D47D7A /* UIBarButtonItem.swift */; };
 		49ABFB791B53D58800D47D7A /* UINavigationBar+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ABFB761B53D58800D47D7A /* UINavigationBar+BFKit.swift */; };
 		49ABFB7A1B53D58800D47D7A /* UIToolbar+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ABFB771B53D58800D47D7A /* UIToolbar+BFKit.swift */; };
-		49B1F9EA1B41BAD1003FC78E /* BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 49B1F9E91B41BAD1003FC78E /* BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49B1F9EA1B41BAD1003FC78E /* BFKit_Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 49B1F9E91B41BAD1003FC78E /* BFKit_Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49B1F9F01B41BAD1003FC78E /* BFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B1F9E41B41BAD1003FC78E /* BFKit.framework */; };
 		49B1F9F71B41BAD1003FC78E /* BFKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9F61B41BAD1003FC78E /* BFKitTests.swift */; };
 		49B1FA311B41BAEE003FC78E /* BFApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1FA011B41BAEE003FC78E /* BFApp.swift */; };
@@ -64,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		493CFF101C53DE9500272396 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/BFKit.strings"; sourceTree = "<group>"; };
 		49ABFB691B5187A300D47D7A /* UIScreen+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+BFKit.swift"; sourceTree = "<group>"; };
 		49ABFB731B53D58200D47D7A /* BFDataStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFDataStructures.swift; sourceTree = "<group>"; };
 		49ABFB751B53D58800D47D7A /* UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
@@ -71,7 +72,7 @@
 		49ABFB771B53D58800D47D7A /* UIToolbar+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIToolbar+BFKit.swift"; sourceTree = "<group>"; };
 		49B1F9E41B41BAD1003FC78E /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B1F9E81B41BAD1003FC78E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49B1F9E91B41BAD1003FC78E /* BFKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFKit.h; sourceTree = "<group>"; };
+		49B1F9E91B41BAD1003FC78E /* BFKit_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFKit_Header.h; sourceTree = "<group>"; };
 		49B1F9EF1B41BAD1003FC78E /* BFKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BFKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B1F9F51B41BAD1003FC78E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49B1F9F61B41BAD1003FC78E /* BFKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFKitTests.swift; sourceTree = "<group>"; };
@@ -160,7 +161,7 @@
 		49B1F9E61B41BAD1003FC78E /* BFKit */ = {
 			isa = PBXGroup;
 			children = (
-				49B1F9E91B41BAD1003FC78E /* BFKit.h */,
+				49B1F9E91B41BAD1003FC78E /* BFKit_Header.h */,
 				49B1FA071B41BAEE003FC78E /* BFKit.swift */,
 				49B1FA001B41BAEE003FC78E /* BFKit */,
 				49B1FA081B41BAEE003FC78E /* Extensions */,
@@ -282,7 +283,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49B1F9EA1B41BAD1003FC78E /* BFKit.h in Headers */,
+				49B1F9EA1B41BAD1003FC78E /* BFKit_Header.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +357,7 @@
 				vi,
 				"zh-Hans",
 				"zh-Hant",
+				"pt-BR",
 			);
 			mainGroup = 49B1F9DA1B41BAD1003FC78E;
 			productRefGroup = 49B1F9E51B41BAD1003FC78E /* Products */;
@@ -464,6 +466,7 @@
 				49B1FA2E1B41BAEE003FC78E /* vi */,
 				49B1FA2F1B41BAEE003FC78E /* zh-Hans */,
 				49B1FA301B41BAEE003FC78E /* zh-Hant */,
+				493CFF101C53DE9500272396 /* pt-BR */,
 			);
 			name = BFKit.strings;
 			sourceTree = "<group>";

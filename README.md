@@ -86,6 +86,7 @@ It also adds some useful method to some classes like:
 
 Language support :it:
 =====================
+- Brazilian Portuguese (pt-Br)
 - English (en)
 - Indonesian (id)
 - Italian (it)

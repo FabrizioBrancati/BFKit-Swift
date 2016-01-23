@@ -24,11 +24,12 @@ All notable changes to this project will be documented in this file.<br>
 - Added [CONTRIBUTING.md](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/CONTRIBUTING.md) file
 - Added `brightness` directly to UIScreen extension
 - Added `randomInt` with range support in NSNumber extension
+- Added Brazilian Portuguese [#20](https://github.com/FabrizioBrancati/BFKit/pull/20) & [#22](https://github.com/FabrizioBrancati/BFKit/pull/22)
 
 #### Fixed
 - Fixed a bug in `randomColor(_)` that may cause a crash [#8](https://github.com/FabrizioBrancati/BFKit-Swift/pull/8)
 
-Thanks to [@Ewg777](https://github.com/Ewg777) for this release
+Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.com/emersonbroga) & [@liushixiang](https://github.com/liushixiang) for this release
 
 
 

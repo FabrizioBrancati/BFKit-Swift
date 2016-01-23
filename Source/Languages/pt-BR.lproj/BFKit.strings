@@ -1,9 +1,10 @@
 //
+//  BFKit.strings
 //  BFKit
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 Fabrizio Brancati. All rights reserved.
+//  Copyright (c) 2014 - 2016 Fabrizio Brancati. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -23,12 +24,51 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import <UIKit/UIKit.h>
+// Generals
+"OK" = "Ok";
+"CONTINUE" = "Continuar";
+"CANCEL" = "Cancelar";
+"DONE" = "Concluído";
+"ERROR" = "Erro";
+"WARNING" = "Aviso";
+"CLOSE" = "Fechar";
+"OPEN" = "Abrir";
+"YES" = "Sim";
+"NO" = "Não";
 
-//! Project version number for BFKit.
-FOUNDATION_EXPORT double BFKitVersionNumber;
+// Days
+"TODAY" = "Hoje";
+"TOMORROW" = "Amanhã";
+"SUNDAY" = "Domingo";
+"MONDAY"= "Segunda";
+"TUESDAY" = "Terça";
+"WEDNESDAY" = "Quarta";
+"THURSDAY" = "Quinta";
+"FRIDAY" = "Sexta";
+"SATURDAY" = "Sábado";
 
-//! Project version string for BFKit.
-FOUNDATION_EXPORT const unsigned char BFKitVersionString[];
+// Months
+"JANUARY" = "Janeiro";
+"FEBRUARY" = "Fevereiro";
+"MARCH" = "Março";
+"APRIL" = "Abril";
+"MAY" = "Maio";
+"JUNE" = "Junho";
+"JULY" = "Julho";
+"AUGUST" = "Agosto";
+"SEPTEMBER" = "Setembro";
+"OCTOBER" = "Outubro";
+"NOVEMBER" = "Novembro";
+"DECEMBER" = "Dezembro";
 
-// In this header, you should import all the public headers of your framework using statements like #import <BFKit/PublicHeader.h>
+// Time zones
+"NIGHT" = "Noite";
+"MORNING" = "Manha";
+"AFTERNOON" = "Tarde";
+"EVENING" = "Noite";
+
+// Authorization
+"AUTHENTICATION" = "Autenticação";
+"AUTHORIZATION" = "Autorização";
+"AUTHORIZED" = "Autorizado";
+"NOT_OWNER" = "Não proprietário";
