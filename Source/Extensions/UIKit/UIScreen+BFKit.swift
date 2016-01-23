@@ -43,6 +43,29 @@ public var SCREEN_HEIGHT: CGFloat {
     }
 }
 
+/// Get the maximum screen length
+public var SCREEN_MAX_LENGTH: CGFloat {
+    get {
+        return max(SCREEN_WIDTH, SCREEN_HEIGHT)
+    }
+}
+/// Get the minimum screen length
+public var SCREEN_MIN_LENGTH: CGFloat {
+    get {
+        return min(SCREEN_WIDTH, SCREEN_HEIGHT)
+    }
+}
+
+struct SCREENSIZE {
+    static let IS_IPHONE_4_OR_LESS = UIDevice.currentDevice().userInterfaceIdiom == .Phone && SCREEN_MAX_LENGTH < 568.0
+    static let IS_IPHONE_5 = UIDevice.currentDevice().userInterfaceIdiom == .Phone && SCREEN_MAX_LENGTH == 568.0
+    static let IS_IPHONE_6 = UIDevice.currentDevice().userInterfaceIdiom == .Phone && SCREEN_MAX_LENGTH == 667.0
+    static let IS_IPHONE_6P = UIDevice.currentDevice().userInterfaceIdiom == .Phone && SCREEN_MAX_LENGTH == 736.0
+    static let IS_IPAD = UIDevice.currentDevice().userInterfaceIdiom == .Pad && SCREEN_MAX_LENGTH == 1024.0
+    @available(iOS 9.0, *)
+    static let IS_TV = UIDevice.currentDevice().userInterfaceIdiom == .TV && SCREEN_MAX_LENGTH == 1920.0
+}
+
 /// This extesion adds some useful functions to UIScreen
 public extension UIScreen {
     // MARK: - Class functions -
