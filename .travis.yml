@@ -1,8 +1,19 @@
 language: objective-c
 osx_image: xcode7.3
+
+env:
+  matrix:
+      - DESTINATION="OS=9.1,name=iPad 2"
+      - DESTINATION="OS=9.1,name=iPad Air"
+      - DESTINATION="OS=9.1,name=iPhone 5"
+      - DESTINATION="OS=9.1,name=iPhone 6s"
+      - DESTINATION="OS=8.4,name=iPhone 6"
+      - DESTINATION="OS=8.4,name=iPad Air"
+
 script:
-  - xctool -project BFKitDemo/BFKitDemo.xcodeproj -scheme BFKitDemo -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO
-  - xctool -project BFKit/BFKit.xcodeproj -scheme BFKit -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO
-  - brew update
-  - brew upgrade carthage
+  - xctool -project BFKitDemo/BFKitDemo.xcodeproj -scheme BFKitDemo -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - xctool -project BFKit/BFKit.xcodeproj -scheme BFKit -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - git clone https://github.com/FabrizioBrancati/BFKit-Swift.git github
+  - cd github
+  - git checkout master
   - carthage update
