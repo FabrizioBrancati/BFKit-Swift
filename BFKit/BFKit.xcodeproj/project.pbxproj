@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		49ABFB6A1B5187A300D47D7A /* UIScreen+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ABFB691B5187A300D47D7A /* UIScreen+BFKit.swift */; };
 		49ABFB741B53D58200D47D7A /* BFDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ABFB731B53D58200D47D7A /* BFDataStructures.swift */; };
-		49ABFB781B53D58800D47D7A /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ABFB751B53D58800D47D7A /* UIBarButtonItem.swift */; };
+		49ABFB781B53D58800D47D7A /* UIBarButtonItem+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ABFB751B53D58800D47D7A /* UIBarButtonItem+BFKit.swift */; };
 		49ABFB791B53D58800D47D7A /* UINavigationBar+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ABFB761B53D58800D47D7A /* UINavigationBar+BFKit.swift */; };
 		49ABFB7A1B53D58800D47D7A /* UIToolbar+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ABFB771B53D58800D47D7A /* UIToolbar+BFKit.swift */; };
 		49B1F9EA1B41BAD1003FC78E /* BFKit_Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 49B1F9E91B41BAD1003FC78E /* BFKit_Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -67,7 +67,7 @@
 		493CFF101C53DE9500272396 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/BFKit.strings"; sourceTree = "<group>"; };
 		49ABFB691B5187A300D47D7A /* UIScreen+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+BFKit.swift"; sourceTree = "<group>"; };
 		49ABFB731B53D58200D47D7A /* BFDataStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFDataStructures.swift; sourceTree = "<group>"; };
-		49ABFB751B53D58800D47D7A /* UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
+		49ABFB751B53D58800D47D7A /* UIBarButtonItem+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+BFKit.swift"; sourceTree = "<group>"; };
 		49ABFB761B53D58800D47D7A /* UINavigationBar+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+BFKit.swift"; sourceTree = "<group>"; };
 		49ABFB771B53D58800D47D7A /* UIToolbar+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIToolbar+BFKit.swift"; sourceTree = "<group>"; };
 		49B1F9E41B41BAD1003FC78E /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,8 +245,8 @@
 		49B1FA181B41BAEE003FC78E /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				49ABFB751B53D58800D47D7A /* UIBarButtonItem+BFKit.swift */,
 				49B1FA191B41BAEE003FC78E /* UIButton+BFKit.swift */,
-				49ABFB751B53D58800D47D7A /* UIBarButtonItem.swift */,
 				49B1FA1A1B41BAEE003FC78E /* UIColor+BFKit.swift */,
 				49B1FA1B1B41BAEE003FC78E /* UIDevice+BFKit.swift */,
 				49B1FA1C1B41BAEE003FC78E /* UIFont+BFKit.swift */,
@@ -403,7 +403,7 @@
 				49B1FA4A1B41BAEE003FC78E /* UIImage+BFKit.swift in Sources */,
 				49B1FA421B41BAEE003FC78E /* NSProcessInfo+BFKit.swift in Sources */,
 				49B1FA311B41BAEE003FC78E /* BFApp.swift in Sources */,
-				49ABFB781B53D58800D47D7A /* UIBarButtonItem.swift in Sources */,
+				49ABFB781B53D58800D47D7A /* UIBarButtonItem+BFKit.swift in Sources */,
 				49B1FA501B41BAEE003FC78E /* UITextView+BFKit.swift in Sources */,
 				49B1FA321B41BAEE003FC78E /* BFButton.swift in Sources */,
 				49B1FA471B41BAEE003FC78E /* UIColor+BFKit.swift in Sources */,
