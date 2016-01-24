@@ -19,7 +19,7 @@
 		49ABFB681B51834700D47D7A /* UIScreen+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ABFB671B51834700D47D7A /* UIScreen+BFKit.swift */; };
 		49ABFB6E1B52D00D00D47D7A /* UINavigationBar+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ABFB6D1B52D00D00D47D7A /* UINavigationBar+BFKit.swift */; };
 		49ABFB701B52D2FB00D47D7A /* UIToolbar+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ABFB6F1B52D2FB00D47D7A /* UIToolbar+BFKit.swift */; };
-		49ABFB721B53312600D47D7A /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ABFB711B53312600D47D7A /* UIBarButtonItem.swift */; };
+		49ABFB721B53312600D47D7A /* UIBarButtonItem+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ABFB711B53312600D47D7A /* UIBarButtonItem+BFKit.swift */; };
 		49B1F9B61B41BA8E003FC78E /* BFApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9861B41BA8E003FC78E /* BFApp.swift */; };
 		49B1F9B71B41BA8E003FC78E /* BFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9871B41BA8E003FC78E /* BFButton.swift */; };
 		49B1F9B81B41BA8E003FC78E /* BFLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9881B41BA8E003FC78E /* BFLog.swift */; };
@@ -74,7 +74,7 @@
 		49ABFB671B51834700D47D7A /* UIScreen+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "UIScreen+BFKit.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		49ABFB6D1B52D00D00D47D7A /* UINavigationBar+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "UINavigationBar+BFKit.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		49ABFB6F1B52D2FB00D47D7A /* UIToolbar+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "UIToolbar+BFKit.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		49ABFB711B53312600D47D7A /* UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = UIBarButtonItem.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		49ABFB711B53312600D47D7A /* UIBarButtonItem+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "UIBarButtonItem+BFKit.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		49B1F9861B41BA8E003FC78E /* BFApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BFApp.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		49B1F9871B41BA8E003FC78E /* BFButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BFButton.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		49B1F9881B41BA8E003FC78E /* BFLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BFLog.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -231,7 +231,7 @@
 		49B1F99D1B41BA8E003FC78E /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				49ABFB711B53312600D47D7A /* UIBarButtonItem.swift */,
+				49ABFB711B53312600D47D7A /* UIBarButtonItem+BFKit.swift */,
 				49B1F99E1B41BA8E003FC78E /* UIButton+BFKit.swift */,
 				49B1F99F1B41BA8E003FC78E /* UIColor+BFKit.swift */,
 				49B1F9A01B41BA8E003FC78E /* UIDevice+BFKit.swift */,
@@ -356,7 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49ABFB721B53312600D47D7A /* UIBarButtonItem.swift in Sources */,
+				49ABFB721B53312600D47D7A /* UIBarButtonItem+BFKit.swift in Sources */,
 				49B1F9D41B41BA8E003FC78E /* UITextField+BFKit.swift in Sources */,
 				4974E2591AED3DD50090F642 /* UserInterfaceViewController.swift in Sources */,
 				49354AE71B3AF99600C05AED /* BFKitViewController.swift in Sources */,
