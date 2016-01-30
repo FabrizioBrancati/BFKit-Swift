@@ -19,7 +19,8 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## 1.6.0 - XX Jan 2016
+## 1.6.0
+### XX Jan 2016
 #### Added
 - Added [CONTRIBUTING.md](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/CONTRIBUTING.md) file
 - Added `brightness` directly to UIScreen extension
@@ -33,7 +34,8 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 
 
 
-## [1.5.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.5.1) - 10 Nov 2015
+## [1.5.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.5.1)
+### 10 Nov 2015
 #### Added
 - Added more stronger check on BFDataStructures
 
@@ -45,7 +47,8 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 
 
 
-## [1.5.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.5.0) - 5 Nov 2015
+## [1.5.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.5.0)
+### 5 Nov 2015
 #### Added
 - Added support for Swift 2.0
 - Added `onFirstStartForVersion` and `isFirstStartForVersion` functions and `isFirstStart` and `isFirstStartForCurrentVersion` variables in BFApp class
@@ -65,7 +68,8 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 
 
 
-## [1.4.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.4.1) - 20 Jul 2015
+## [1.4.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.4.1)
+### 20 Jul 2015
 #### Added
 - Added support for iPod Touch 6G
 
@@ -74,7 +78,8 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 
 
 
-## [1.4.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.4.0) - 13 Jul 2015
+## [1.4.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.4.0)
+### 13 Jul 2015
 #### Added
 - Added `APP_DELEGATE` global variable
 - Added UINavigationBar extension
@@ -93,7 +98,8 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 
 
 
-## [1.3.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.3.1) - 9 Jul 2915
+## [1.3.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.3.1)
+### 9 Jul 2915
 #### Added
 - Added `onFirstStart` and `onFirstStartForCurrentVersion` in BFApp class
 - Added `stringByReplacingWithRegex:withString:` in NSString and String extensions
@@ -105,7 +111,8 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 
 
 
-## [1.3.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.3.0) - 7 Jul 2015
+## [1.3.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.3.0)
+### 7 Jul 2015
 #### Added
 - Added a DEMO App
 - Added `init(imageAsTemplate:, tintColor:)` to create UIImageView with a template image
@@ -133,7 +140,8 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 
 
 
-## [1.2.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.2.0) - 5 Jul 2015
+## [1.2.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.2.0)
+### 5 Jul 2015
 #### Added
 - Added comments to all classes and extensions
 - Added the documentation with [CocoaDocs](http://cocoadocs.org/docsets/BFKit-Swift/)
@@ -144,7 +152,8 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 
 
 
-## [1.1.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.1.0) - 2 Jul 2015
+## [1.1.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.1.0)
+### 2 Jul 2015
 #### Added
 - Added Carthage support
 - Added all IDs in BFSystemSound class
@@ -161,5 +170,6 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 
 
 
-## [1.0.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.0.0) 30 Jun 2015
+## [1.0.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.0.0)
+### 30 Jun 2015
 - Initial release
