@@ -37,6 +37,8 @@ BFKit is a collection of useful classes to **develop Apps faster**.
 
 For example you can use every iOS font with just an enum!
 
+To better use of the framework I recommend you to use [FuzzyAutocomplete](https://github.com/FuzzyAutocomplete/FuzzyAutocompletePlugin) Xcode plugin to better find functions while coding.
+
 It also adds some useful method to some classes like:
 
 ### BFKit:
@@ -112,12 +114,7 @@ Communication :speaker:
 
 Contributing :octocat:
 ======================
-I'd love to see your ideas for improving this library.
-
-The best way to contribute is by submitting a pull request.
-I'll do my best to respond to you as soon as possible.
-
-Please make sure to follow my general coding style for new features!
+See [CONTRIBUTING.md](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/CONTRIBUTING.md) file.
 
 Installing and Usage :computer:
 ===============================
