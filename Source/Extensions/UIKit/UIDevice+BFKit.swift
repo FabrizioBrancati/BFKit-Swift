@@ -31,6 +31,7 @@ import UIKit
 
 /// Used to store the BFUniqueIdentifier in defaults
 private let BFUniqueIdentifierDefaultsKey = "BFUniqueIdentifier"
+private let BFUserUniqueIdentifierDefaultsKey = "BFUserUniqueIdentifier"
 
 // MARK: - Global functions -
 
@@ -449,18 +450,54 @@ public extension UIDevice {
      - returns: Returns a unique identifier as a String
      */
     public static func uniqueIdentifier() -> String {
-        var uuid: String?
+        var UUID: String?
         if UIDevice.currentDevice().respondsToSelector("identifierForVendor") {
-            uuid = UIDevice.currentDevice().identifierForVendor!.UUIDString
+            UUID = UIDevice.currentDevice().identifierForVendor!.UUIDString
         } else {
             let defaults = NSUserDefaults.standardUserDefaults()
-            uuid = defaults.objectForKey(BFUniqueIdentifierDefaultsKey) as? String
-            if uuid == nil {
-                uuid = String.generateUUID()
-                defaults.setObject(uuid, forKey: BFUniqueIdentifierDefaultsKey)
+            UUID = defaults.objectForKey(BFUniqueIdentifierDefaultsKey) as? String
+            if UUID == nil {
+                UUID = String.generateUUID()
+                defaults.setObject(UUID, forKey: BFUniqueIdentifierDefaultsKey)
                 defaults.synchronize()
             }
         }
-        return uuid!
+        return UUID!
+    }
+    
+    /**
+     Save the unique identifier or update it if there is and it is changed.
+     Is useful for push notification to know if the unique identifier has changed and needs to be send to server
+     
+     - parameter uniqueIdentifier: The unique identifier to save or update if needed. (Must be NSData or NSString)
+     - parameter block:            The execution block that know if the unique identifier is valid and has to be updated. You have to handle the case if it is valid and the update is needed or not
+     */
+    public static func updateUniqueIdentifier(uniqueIdentifier: NSObject, block: (isValid: Bool, hasToUpdateUniqueIdentifier: Bool, oldUUID: String?) -> ()) {
+        var userUUID: String = ""
+        var savedUUID: String? = nil
+        var isValid = false, hasToUpdate = false
+        
+        if uniqueIdentifier.isKindOfClass(NSData) {
+            let data: NSData = uniqueIdentifier as! NSData
+            userUUID = data.convertToUTF8String()
+        } else if uniqueIdentifier.isKindOfClass(NSString) {
+            let string: NSString = uniqueIdentifier as! NSString
+            userUUID = string.convertToAPNSUUID() as String
+        }
+        
+        isValid = userUUID.isUUIDForAPNS()
+        
+        if isValid {
+            let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+            savedUUID = defaults.stringForKey(BFUserUniqueIdentifierDefaultsKey)
+            if savedUUID == nil || savedUUID != userUUID {
+                defaults.setObject(userUUID, forKey: BFUserUniqueIdentifierDefaultsKey)
+                defaults.synchronize()
+                
+                hasToUpdate = true
+            }
+        }
+        
+        block(isValid: isValid, hasToUpdateUniqueIdentifier: hasToUpdate, oldUUID: userUUID)
     }
 }
