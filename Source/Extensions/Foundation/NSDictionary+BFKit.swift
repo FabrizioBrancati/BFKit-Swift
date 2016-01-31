@@ -49,6 +49,21 @@ public extension NSDictionary {
         return try NSDictionary.dictionaryToJSON(self)
     }
     
+    /**
+     Returns an object if key exists or nil if not
+     
+     - parameter key: Key to get value of
+     
+     - returns: Value for the key Or nil
+     */
+    public func safeObjectForKey(key: String) -> AnyObject? {
+        if let value = self[key] {
+            return value
+        } else {
+            return nil
+        }
+    }
+    
     // MARK: - Class functions -
     
     /**
