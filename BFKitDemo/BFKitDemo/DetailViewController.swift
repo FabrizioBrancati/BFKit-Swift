@@ -20,6 +20,7 @@ class DetailViewController: UIViewController {
         case BFLog = "BFLog"
         case BFPassword = "BFPassword"
         case BFSystemSound = "BFSystemSound"
+        case BFTextField = "BFTextField"
         case BFTouchID = "BFTouchID"
         case UIButton = "UIButton"
         case UIColor = "UIColor"
@@ -41,6 +42,7 @@ class DetailViewController: UIViewController {
         case Array = "Array"
         case Dictionary = "Dictionary"
         case NSArray = "NSArray"
+        case NSData = "NSData"
         case NSDate = "NSDate"
         case NSDictionary = "NSDictionary"
         case NSFileManager = "NSFileManager"
@@ -156,6 +158,14 @@ class DetailViewController: UIViewController {
             
             let textView: UITextView = UITextView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), text: BFLogString, font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Left, dataDetectorTypes: .All, editable: false, selectable: false, returnType: .Default, keyboardType: .Default, secure: false, autoCapitalization: .None, keyboardAppearance: .Default, enablesReturnKeyAutomatically: true, autoCorrectionType: .Default, delegate: nil)
             self.view.addSubview(textView)
+        case .BFTextField:
+            scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)
+            
+            let textField: BFTextField = BFTextField(frame: CGRectMake(20, 20, SCREEN_WIDTH - 40, 25))
+            textField.borderStyle = .Bezel
+            textField.maxNumberOfCharacters = 5
+            
+            scrollView.addSubview(textField)
         case .BFTouchID:
             scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 120)
             
@@ -480,6 +490,22 @@ class DetailViewController: UIViewController {
             
             let textView: UITextView = UITextView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), text: BFLogString, font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Left, dataDetectorTypes: .All, editable: false, selectable: false, returnType: .Default, keyboardType: .Default, secure: false, autoCapitalization: .None, keyboardAppearance: .Default, enablesReturnKeyAutomatically: true, autoCorrectionType: .Default, delegate: nil)
             self.view.addSubview(textView)
+        case .NSData:
+            scrollView.removeFromSuperview()
+            
+            BFLogClear()
+            
+            var string = "This is a test"
+            BFLog("String: \(string)")
+            
+            let data = string.convertToNSData()
+            BFLog("Converted to NSData: \(data)")
+            
+            string = data.convertToUTF8String()
+            BFLog("NSData converted to NSString: \(string)");
+            
+            let textView: UITextView = UITextView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), text: BFLogString, font: .HelveticaNeue, size: 16, color: UIColor.blackColor(), alignment: .Left, dataDetectorTypes: .All, editable: false, selectable: false, returnType: .Default, keyboardType: .Default, secure: false, autoCapitalization: .None, keyboardAppearance: .Default, enablesReturnKeyAutomatically: true, autoCorrectionType: .Default, delegate: nil)
+            self.view.addSubview(textView)
         case .NSDate:
             scrollView.removeFromSuperview()
             
@@ -595,10 +621,6 @@ class DetailViewController: UIViewController {
             let search: NSString = string.searchCharStart("a", charEnd: "s")
             let isEmail: NSString = string.isEmail() ? "Is email: Yes" : "Is email: No"
             BFLog("Search: \(search)")
-            BFLog("MD5 (currently doesn't work): -")
-            BFLog("SHA1 (currently doesn't work): -")
-            BFLog("SHA256 (currently doesn't work): -")
-            BFLog("SHA512 (currently doesn't work): -")
             BFLog("\(isEmail)")
             
             let testHEX: NSString = "68 65 6c 6c 6f"
@@ -630,10 +652,6 @@ class DetailViewController: UIViewController {
             let search: String = string.searchCharStart("a", charEnd: "s")
             let isEmail: String = string.isEmail() ? "Is email: Yes" : "Is email: No"
             BFLog("Search: \(search)")
-            BFLog("MD5 (currently doesn't work): -")
-            BFLog("SHA1 (currently doesn't work): -")
-            BFLog("SHA256 (currently doesn't work): -")
-            BFLog("SHA512 (currently doesn't work): -")
             BFLog("\(isEmail)")
             BFLog("Lenght: \(string.length)")
             BFLog("Char at index 5: \(string.characterAtIndex(5))")
