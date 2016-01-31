@@ -25,6 +25,7 @@
 //  SOFTWARE.
 
 import Foundation
+import UIKit
 
 /// This extesion adds some useful functions to String
 public extension String {
@@ -192,6 +193,15 @@ public extension String {
     }
     
     /**
+     Convert self to a NSData
+     
+     - returns: Returns self as NSData
+     */
+    public func convertToNSData() -> NSData {
+        return NSString.convertToNSData(self)
+    }
+    
+    /**
      Conver self to a capitalized string.
      Example: "This is a Test" will return "This is a test" and "this is a test" will return "This is a test"
     
@@ -312,6 +322,62 @@ public extension String {
     /// Converts self to a NSString
     public var NS: NSString {
         return (self as NSString)
+    }
+    
+    /**
+     Returns if self is a valid UUID or not
+     
+     - returns: Returns if self is a valid UUID or not
+     */
+    public func isUUID() -> Bool {
+        do {
+            let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", options: .CaseInsensitive)
+            let matches: Int = regex.numberOfMatchesInString(self as String, options: .ReportCompletion, range: NSMakeRange(0, self.length))
+            return matches == 1
+        } catch {
+            return false
+        }
+    }
+    
+    /**
+     Returns if self is a valid UUID for APNS (Apple Push Notification System) or not
+     
+     - returns: Returns if self is a valid UUID for APNS (Apple Push Notification System) or not
+     */
+    public func isUUIDForAPNS() -> Bool {
+        do {
+            let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{32}$", options: .CaseInsensitive)
+            let matches: Int = regex.numberOfMatchesInString(self as String, options: .ReportCompletion, range: NSMakeRange(0, self.length))
+            return matches == 1
+        } catch {
+            return false
+        }
+    }
+    
+    /**
+     Converts self to an UUID APNS valid (No "<>" or "-" or spaces)
+     
+     - returns: Converts self to an UUID APNS valid (No "<>" or "-" or spaces)
+     */
+    public func convertToAPNSUUID() -> NSString {
+        return self.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: "<>")).stringByReplacingOccurrencesOfString(" ", withString: "").stringByReplacingOccurrencesOfString("-", withString: "") as NSString
+    }
+    
+    /**
+     Used to calculate text height for max width and font
+     
+     - parameter width: Max width to fit text
+     - parameter font:  Font used in text
+     
+     - returns: Returns the calculated height of string within width using given font
+     */
+    public func heightForWidth(width: CGFloat, font: UIFont) -> CGFloat {
+        var size: CGSize = CGSizeZero
+        if self.length > 0 {
+            let frame: CGRect = self.boundingRectWithSize(CGSizeMake(width, 999999), options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName : font], context: nil)
+            size = CGSizeMake(frame.size.width, frame.size.height + 1)
+        }
+        return size.height
     }
     
     // MARK: - Subscript functions -
