@@ -404,6 +404,15 @@ public extension UIView {
         return image
     }
     
+    /**
+     Removes all subviews from current view
+     */
+    public func removeAllSubviews() {
+        self.subviews.forEach { (subview) -> () in
+            subview.removeFromSuperview()
+        }
+    }
+    
     // MARK: - Init functions -
     
     /**
