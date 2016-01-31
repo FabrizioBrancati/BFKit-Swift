@@ -263,6 +263,18 @@ public extension NSDate {
         return dateFormatter.stringFromDate(self)
     }
     
+    /**
+     Returns date with the year, month and day only.
+     
+     - returns: Date after removing all components but not year, month and day
+     */
+    public func shortData() -> NSDate {
+        let calendar = NSCalendar.autoupdatingCurrentCalendar()
+        let comp = calendar.components([.Year, .Month, .Day], fromDate:self)
+        
+        return calendar.dateFromComponents(comp)!
+    }
+    
     // MARK: - Class functions -
     
     /**
