@@ -73,4 +73,30 @@ public extension UILabel {
         self.numberOfLines = lines
         self.shadowColor = shadowColor
     }
+    
+    // MARK: - Instance functions -
+    
+    /**
+    Calculates height based on text, width and font
+    
+    - returns: Returns calculated height
+    */
+    public func calculatedHeight() -> CGFloat {
+        let text: String = self.text!
+        return text.heightForWidth(self.frame.size.width, font: self.font)
+    }
+    
+    /**
+     Sets a custom font from a character at an index to character at another index
+     
+     - parameter font:      New font to be setted
+     - parameter fromIndex: The start index
+     - parameter toIndex:   The end index
+     */
+    public func setFont(font: UIFont, fromIndex: Int, toIndex: Int) {
+        let string = NSMutableAttributedString(string: self.text!)
+        string.addAttribute(NSFontAttributeName, value: font, range: NSMakeRange(fromIndex, toIndex - fromIndex))
+        
+        self.attributedText = string;
+    }
 }
