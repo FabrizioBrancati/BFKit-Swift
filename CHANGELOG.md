@@ -20,12 +20,24 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ## 1.6.0
-### XX Jan 2016
+### 01 Feb 2016
 #### Added
 - Added [CONTRIBUTING.md](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/CONTRIBUTING.md) file
 - Added `brightness` directly to UIScreen extension
-- Added `randomInt` with range support in NSNumber extension
+- Added `randomInt()` function with range support in NSNumber extension
 - Added Brazilian Portuguese [#20](https://github.com/FabrizioBrancati/BFKit/pull/20) & [#22](https://github.com/FabrizioBrancati/BFKit/pull/22)
+- Added a screen size structure in UIScreen extension to check the device's screen size [#9](https://github.com/FabrizioBrancati/BFKit-Swift/pull/9)
+- Added NSData extension
+- Added `shortDate()` function to NSDate extension
+- Added `safeObjectForKey()` in NSDictionary extension
+- Added BFTextField subclass of UITextField to limit the max characters
+- Added some functions to NSString & String extensions
+- Added `updateUniqueIdentifier(_: _:)` in UIDevice extension
+- Added `removeAllSubviews()` in UIView extension
+- Added `calculatedHeight()` & `setFont(_, fromIndex:, toIndex:)`
+
+#### Improved
+- Minor enhancements & bug fix
 
 #### Fixed
 - Fixed a bug in `randomColor(_)` that may cause a crash [#8](https://github.com/FabrizioBrancati/BFKit-Swift/pull/8)
