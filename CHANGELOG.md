@@ -19,7 +19,7 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## 1.6.0
+## [1.6.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.6.0)
 ### 01 Feb 2016
 #### Added
 - Added [CONTRIBUTING.md](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/CONTRIBUTING.md) file
