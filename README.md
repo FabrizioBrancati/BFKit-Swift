@@ -123,7 +123,7 @@ Installing and Usage :computer:
 
 ### Swift 1.2, 2.0 or 2.1
 If you need support for Swift 1.2 use BFKit Swift 1.4.1 or previous.<br>
-From 1.6.0 BFKit Swift supports Swift 2.0 and 2.1.<br>
+From 1.5.0 BFKit Swift supports Swift 2.0 and 2.1.<br>
 More info here: [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements-iphone)
 
 ---
