@@ -103,7 +103,7 @@ Requirements :iphone:
 - iOS SDK **7.0** if you copy the Framework files (Source folder)
 - iOS SDK **8.0** if you use it as a Framework
 - **Swift 1.2** and **Xcode 6.3** or later, for version **1.4.1** or previous
-- **Swift 2.0** or **2.1** and **Xcode 7.0**, **7.1** or later, for version **1.6.0** or later
+- **Swift 2.0** or **2.1** and **Xcode 7.0**, **7.1** or later, for version **1.5.0** or later
 
 Communication :speaker:
 =======================
