@@ -42,18 +42,19 @@ public var BFLogActive: Bool = true
  - parameter function: Function name
  - parameter line:     Line number
  */
-public func BFLog(var message: String, filename: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__) {
+public func BFLog(message: String, filename: String = #file, function: String = #function, line: Int = #line) {
     if BFLogActive {
-        if message.hasSuffix("\n") == false {
-            message += "\n"
+        var _message = message
+        if _message.hasSuffix("\n") == false {
+            _message += "\n"
         }
         
-        BFLogClass.logString += message
+        BFLogClass.logString += _message
         
         let filenameNoExt = NSURL(string: NSString(UTF8String: filename)! as String)!.URLByDeletingPathExtension!
-        let log = "(\(function)) (\(filenameNoExt):\(line) \(message)"
+        let log = "(\(function)) (\(filenameNoExt):\(line) \(_message)"
         let timestamp = NSDate.dateInformationDescriptionWithInformation(NSDate().dateInformation(), dateSeparator: "-", usFormat: true, nanosecond: true)
-        print("\(timestamp) \(filenameNoExt):\(line) \(function): \(message)", terminator: "")
+        print("\(timestamp) \(filenameNoExt):\(line) \(function): \(_message)", terminator: "")
         
         BFLogClass.detailedLogString += log
     }

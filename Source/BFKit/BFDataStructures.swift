@@ -92,7 +92,7 @@ public class List: CustomStringConvertible {
      - returns: Returns the index of the searched element
      */
     public func search(object: AnyObject) -> Int? {
-        for var i = 0; i < list.count; i++ {
+        for i in 0 ..< list.count {
             if object is NSObject {
                 if list[i] as! NSObject == object as! NSObject {
                     return i

@@ -32,7 +32,7 @@ class InfoViewController : UIViewController {
         let siteButton: UIButton = UIButton(frame: CGRectMake(0, workLabel.frame.origin.y + workLabel.frame.size.height + 35, SCREEN_WIDTH, 44), title: "www.fabriziobrancati.com")
         siteButton.setTitleColor(UIColor ( red: 0.8934, green: 0.3935, blue: 0.0746, alpha: 1.0 ))
         siteButton.setTitleFont(.HelveticaNeueMedium, size: 20)
-        siteButton.addTarget(self, action: "openWebsite", forControlEvents: .TouchDown)
+        siteButton.addTarget(self, action: #selector(InfoViewController.openWebsite), forControlEvents: .TouchDown)
         scrollView.addSubview(siteButton)
         
         scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, profileImage.frame.origin.y + profileImage.frame.size.height + 50 + nameLabel.frame.size.height + 40 + workLabel.frame.size.height + 35 + siteButton.frame.size.height + 20)

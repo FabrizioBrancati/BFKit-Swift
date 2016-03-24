@@ -451,7 +451,7 @@ public extension UIDevice {
      */
     public static func uniqueIdentifier() -> String {
         var UUID: String?
-        if UIDevice.currentDevice().respondsToSelector("identifierForVendor") {
+        if UIDevice.currentDevice().respondsToSelector(Selector("identifierForVendor")) {
             UUID = UIDevice.currentDevice().identifierForVendor!.UUIDString
         } else {
             let defaults = NSUserDefaults.standardUserDefaults()

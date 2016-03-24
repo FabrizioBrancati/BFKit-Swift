@@ -41,12 +41,19 @@ public extension UIBarButtonItem {
      */
     public convenience init(barButtonSpaceType space: UIBarButtonSystemItem, width: CGFloat = 0.0) {
         if space == .FixedSpace || space == .FlexibleSpace {
-            self.init(barButtonSystemItem: space, target: nil, action: "")
+            self.init(barButtonSystemItem: space, target: nil, action: #selector(UIBarButtonItem.nothing))
             if space == .FixedSpace {
                 self.width = width
             }
         } else {
-            self.init(barButtonSystemItem: .FlexibleSpace, target: nil, action: "")
+            self.init(barButtonSystemItem: .FlexibleSpace, target: nil, action: #selector(UIBarButtonItem.nothing))
         }
+    }
+    
+    /**
+     Private, is just a placeholder to remove warning messages to "init(barButtonSpaceType space:, width:)"
+     */
+    @objc private func nothing() {
+        
     }
 }

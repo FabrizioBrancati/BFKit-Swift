@@ -171,7 +171,7 @@ public extension UIView {
         gradient.frame = self.bounds
         
         let mutableColors: NSMutableArray = NSMutableArray(array: colors)
-        for var i = 0; i < colors.count; i++ {
+        for i in 0 ..< colors.count {
             let currentColor: UIColor = colors[i]
             mutableColors.replaceObjectAtIndex(i, withObject: currentColor.CGColor)
         }

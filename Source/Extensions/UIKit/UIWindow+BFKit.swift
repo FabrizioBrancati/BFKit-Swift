@@ -104,7 +104,7 @@ public extension UIWindow {
             }
         }
         
-        if self.respondsToSelector("drawViewHierarchyInRect:afterScreenUpdates:") {
+        if self.respondsToSelector(#selector(UIView.drawViewHierarchyInRect(_:afterScreenUpdates:))) {
             self.drawViewHierarchyInRect(self.bounds, afterScreenUpdates: false)
         } else {
             self.layer.renderInContext(UIGraphicsGetCurrentContext()!)
@@ -142,8 +142,8 @@ public extension UIWindow {
             return
         }
         
-        let sendEvent = class_getInstanceMethod(object_getClass(self), "sendEvent:")
-        let exchangedSendEvent = class_getInstanceMethod(object_getClass(self), "exchangedSendEvent:")
+        let sendEvent = class_getInstanceMethod(object_getClass(self), #selector(UIApplication.sendEvent(_:)))
+        let exchangedSendEvent = class_getInstanceMethod(object_getClass(self), #selector(UIWindow.exchangedSendEvent(_:)))
         method_exchangeImplementations(sendEvent, exchangedSendEvent)
         
         sendEventExchanged = true
@@ -157,8 +157,8 @@ public extension UIWindow {
             return
         }
         
-        let sendEvent = class_getInstanceMethod(object_getClass(self), "sendEvent:")
-        let exchangedSendEvent = class_getInstanceMethod(object_getClass(self), "exchangedSendEvent:")
+        let sendEvent = class_getInstanceMethod(object_getClass(self), #selector(UIApplication.sendEvent(_:)))
+        let exchangedSendEvent = class_getInstanceMethod(object_getClass(self), #selector(UIWindow.exchangedSendEvent(_:)))
         method_exchangeImplementations(exchangedSendEvent, sendEvent)
         
         sendEventExchanged = false

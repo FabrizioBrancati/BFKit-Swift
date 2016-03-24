@@ -82,16 +82,17 @@ public extension NSArray {
     
      - returns: Returns the right index
      */
-    private func superCircle(var index: Int, size maxSize: Int) -> Int{
-        if index < 0 {
-            index = index % maxSize
-            index += maxSize
+    private func superCircle(index: Int, size maxSize: Int) -> Int{
+        var _index = index
+        if _index < 0 {
+            _index = _index % maxSize
+            _index += maxSize
         }
-        if index >= maxSize {
-            index = index % maxSize
+        if _index >= maxSize {
+            _index = _index % maxSize
         }
         
-        return index
+        return _index
     }
     
     // MARK: - Class functions -

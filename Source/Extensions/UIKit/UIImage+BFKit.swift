@@ -704,7 +704,7 @@ public extension UIImage {
                 let inputRadius = blurRadius * UIScreen.mainScreen().scale
                 var radius = UInt32(floor(inputRadius * 3.0 * CGFloat(sqrt(2 * M_PI)) / 4 + 0.5))
                 if radius % 2 != 1 {
-                    ++radius
+                    radius += 1
                 }
                 
                 let imageEdgeExtendFlags = vImage_Flags(kvImageEdgeExtend)

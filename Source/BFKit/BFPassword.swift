@@ -165,10 +165,10 @@ public class BFPassword {
      */
     private static func countLowercaseLetters(password: String) -> Int {
         var countChar = 0
-        for var i = 0; i < password.length; i++ {
+        for i in 0 ..< password.length {
             let isLowercase = NSCharacterSet.lowercaseLetterCharacterSet().characterIsMember((String(password) as NSString).characterAtIndex(i))
             if isLowercase {
-                countChar++
+                countChar += 1
             }
         }
         
@@ -184,10 +184,10 @@ public class BFPassword {
      */
     private static func countUppercaseLetters(password: String) -> Int {
         var countChar = 0
-        for var i = 0; i < password.length; i++ {
+        for i in 0 ..< password.length {
             let isUppercase = NSCharacterSet.lowercaseLetterCharacterSet().characterIsMember((String(password) as NSString).characterAtIndex(i))
             if isUppercase {
-                countChar++
+                countChar += 1
             }
         }
         
@@ -203,10 +203,10 @@ public class BFPassword {
      */
     private static func countNumbers(password: String) -> Int {
         var countNumber = 0
-        for var i = 0; i < password.length; i++ {
+        for i in 0 ..< password.length {
             let isNumber = NSCharacterSet(charactersInString: "0123456789").characterIsMember((String(password) as NSString).characterAtIndex(i))
             if isNumber {
-                countNumber++
+                countNumber += 1
             }
         }
         
@@ -222,10 +222,10 @@ public class BFPassword {
      */
     private static func countSymbols(password: String) -> Int {
         var countSymbol = 0
-        for var i = 0; i < password.length; i++ {
+        for i in 0 ..< password.length {
             let isSymbol = NSCharacterSet(charactersInString: "`~!?@#$€£¥§%^&*()_+-={}[]:\";.,<>'•\\|/").characterIsMember((String(password) as NSString).characterAtIndex(i))
             if isSymbol {
-                countSymbol++
+                countSymbol += 1
             }
         }
         

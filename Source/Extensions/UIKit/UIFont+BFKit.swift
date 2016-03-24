@@ -704,7 +704,7 @@ public extension UIFont {
         
         var fontFamilyDic: Dictionary<String, Array<AnyObject>> = Dictionary()
         
-        for var i = 0; i < fontFamilies.count; i++ {
+        for i in 0 ..< fontFamilies.count {
             let fontFamily: String = fontFamilies.objectAtIndex(i) as! String
             let fontNames: Array = UIFont.fontNamesForFamilyName(fontFamily)
             fontFamilyDic[fontFamily] = fontNames

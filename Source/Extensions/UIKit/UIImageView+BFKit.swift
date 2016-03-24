@@ -112,9 +112,10 @@ public extension UIImageView {
     
      - returns: Returns the created UIImageView
      */
-    public convenience init(var imageAsTemplate: UIImage, tintColor: UIColor) {
-        self.init(image: imageAsTemplate)
-        imageAsTemplate = imageAsTemplate.imageWithRenderingMode(.AlwaysTemplate)
+    public convenience init(imageAsTemplate: UIImage, tintColor: UIColor) {
+        var _imageAsTemplate = imageAsTemplate
+        self.init(image: _imageAsTemplate)
+        _imageAsTemplate = _imageAsTemplate.imageWithRenderingMode(.AlwaysTemplate)
         self.tintColor = tintColor
     }
 }

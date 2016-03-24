@@ -224,7 +224,7 @@ public extension NSString {
     public static func searchInString(string: NSString, charStart: NSString, charEnd: NSString) -> NSString {
         var start = 0, end = 0
         
-        for var i = 0; i < string.length; i++ {
+        for var i in 0 ..< string.length {
             if string.characterAtIndex(i) == charStart.characterAtIndex(0) {
                 start = i+1
                 i += 1
@@ -401,7 +401,7 @@ public extension NSString {
         
         let hexString: NSMutableString = NSMutableString()
         
-        for var i = 0; i < len; i++ {
+        for i in 0 ..< len {
             hexString.appendFormat("%02x", chars[i])
         }
         free(chars)

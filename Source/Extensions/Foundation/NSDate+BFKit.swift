@@ -284,7 +284,7 @@ public extension NSDate {
      */
     public static func yesterday() -> NSDate {
         var inf: BFDateInformation = NSDate().dateInformation()
-        inf.day--
+        inf.day -= 1
         return self.dateFromDateInformation(inf)
     }
     

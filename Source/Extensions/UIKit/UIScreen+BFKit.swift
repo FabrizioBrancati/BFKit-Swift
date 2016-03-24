@@ -77,7 +77,7 @@ public extension UIScreen {
      - returns: Returns true if it has a Retina display, false if not
      */
     public static func isRetina() -> Bool {
-        if UIScreen.mainScreen().respondsToSelector("displayLinkWithTarget:selector:") && (UIScreen.mainScreen().scale == 2.0 || UIScreen.mainScreen().scale == 3.0) {
+        if UIScreen.mainScreen().respondsToSelector(#selector(UIScreen.displayLinkWithTarget(_:selector:))) && (UIScreen.mainScreen().scale == 2.0 || UIScreen.mainScreen().scale == 3.0) {
             return true
         } else {
             return false
@@ -90,7 +90,7 @@ public extension UIScreen {
      - returns: Returns true if it has a Retina HD display, false if not
      */
     public static func isRetinaHD() -> Bool {
-        if UIScreen.mainScreen().respondsToSelector("displayLinkWithTarget:selector:") && UIScreen.mainScreen().scale == 3.0 {
+        if UIScreen.mainScreen().respondsToSelector(#selector(UIScreen.displayLinkWithTarget(_:selector:))) && UIScreen.mainScreen().scale == 3.0 {
             return true
         } else {
             return false

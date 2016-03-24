@@ -424,7 +424,7 @@ public extension String {
      - returns: Returns the string from a given range
      */
     public subscript(range: Range<Int>) -> String {
-        return substringWithRange(Range(start: startIndex.advancedBy(range.startIndex), end: startIndex.advancedBy(range.endIndex)))
+        return substringWithRange(range)
     }
     
     // MARK: - Class functions -
@@ -442,7 +442,7 @@ public extension String {
     public static func searchInString(string: String, charStart: Character, charEnd: Character) -> String {
         var start = 0, stop = 0
         
-        for var i = 0; i < string.length; i++ {
+        for var i in 0 ..< string.length {
             if string.characterAtIndex(i) == charStart {
                 start = i+1
                 i += 1

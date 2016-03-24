@@ -16,7 +16,7 @@ class FoundationViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         let infoButton: UIButton = UIButton(type: .InfoLight)
-        infoButton.addTarget(self, action: "showInfo:", forControlEvents: .TouchUpInside)
+        infoButton.addTarget(self, action: #selector(FoundationViewController.showInfo(_:)), forControlEvents: .TouchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: infoButton)
     }
     

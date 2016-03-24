@@ -402,7 +402,7 @@ class DetailViewController: UIViewController {
             scrollView.removeFromSuperview()
             
             let toolbar: UIToolbar = UIToolbar(frame: CGRectMake(0, SCREEN_HEIGHT - 50 - 44, SCREEN_WIDTH, 44))
-            toolbar.setItems([UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: "barButtonItemsAction:"), UIBarButtonItem(barButtonSpaceType: .FlexibleSpace), UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "barButtonItemsAction:")], animated: true)
+            toolbar.setItems([UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(DetailViewController.barButtonItemsAction(_:))), UIBarButtonItem(barButtonSpaceType: .FlexibleSpace), UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(DetailViewController.barButtonItemsAction(_:)))], animated: true)
             toolbar.setTransparent(true)
             self.view.addSubview(toolbar)
         case .UIView:
@@ -422,7 +422,7 @@ class DetailViewController: UIViewController {
             
             let shakeButton: UIButton = UIButton(frame: CGRectMake(20, 180, SCREEN_WIDTH - 40, 44), title: "Touch me!", color: UIColor ( red: 0.9218, green: 0.565, blue: 0.139, alpha: 1.0 ), highlightedColor: UIColor ( red: 0.8934, green: 0.3935, blue: 0.0746, alpha: 1.0 ))
             shakeButton.setTitleColor(UIColor.whiteColor(), highlightedColor: UIColor.whiteColor())
-            shakeButton.addTarget(self, action: "shakeButtonAction:", forControlEvents: .TouchUpInside)
+            shakeButton.addTarget(self, action: #selector(DetailViewController.shakeButtonAction(_:)), forControlEvents: .TouchUpInside)
             scrollView.addSubview(shakeButton)
             
             let gradientView: UIView = UIView(frame: CGRectMake(20, 260, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40))
