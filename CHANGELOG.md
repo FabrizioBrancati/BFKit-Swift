@@ -19,11 +19,13 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## 1.6.1
-### XX Feb 2016
+## [1.6.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.6.1)
+### 25 Mar 2016
 #### Added
 - Added [Package.swift](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/Package.swift) file to add support to Swift Package Manager
+- Added support to Swift 2.2 and Xcode 7.3 [#10](https://github.com/FabrizioBrancati/BFKit-Swift/pull/10)
 
+Thanks to [@lucasmpaim](https://github.com/lucasmpaim) for this release
 
 
 ## [1.6.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.6.0)
