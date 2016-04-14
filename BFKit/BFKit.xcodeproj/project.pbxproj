@@ -66,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1638EF691CBFE4E1007369FA /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/BFKit.strings; sourceTree = "<group>"; };
 		493CFF101C53DE9500272396 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/BFKit.strings"; sourceTree = "<group>"; };
 		49ABFB691B5187A300D47D7A /* UIScreen+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+BFKit.swift"; sourceTree = "<group>"; };
 		49ABFB731B53D58200D47D7A /* BFDataStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFDataStructures.swift; sourceTree = "<group>"; };
@@ -364,6 +365,7 @@
 				"zh-Hans",
 				"zh-Hant",
 				"pt-BR",
+				sv,
 			);
 			mainGroup = 49B1F9DA1B41BAD1003FC78E;
 			productRefGroup = 49B1F9E51B41BAD1003FC78E /* Products */;
@@ -475,6 +477,7 @@
 				49B1FA2F1B41BAEE003FC78E /* zh-Hans */,
 				49B1FA301B41BAEE003FC78E /* zh-Hant */,
 				493CFF101C53DE9500272396 /* pt-BR */,
+				1638EF691CBFE4E1007369FA /* sv */,
 			);
 			name = BFKit.strings;
 			sourceTree = "<group>";
