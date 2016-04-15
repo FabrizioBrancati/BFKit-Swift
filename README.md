@@ -94,6 +94,7 @@ Language support :it:
 - Italian (it)
 - Russian (ru)
 - Simplified Chinese (zh-Hans)
+- Swedish (sv)
 - Traditional Chinese (zh-Hant)
 - Ukrainian (uk)
 - Vietnamese (vi)
