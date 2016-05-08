@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 1.x Releases
-- `1.6.x` Releases - [1.6.0](#160) | [1.6.1](#161)
+- `1.6.x` Releases - [1.6.0](#160) | [1.6.1](#161) | [1.6.2](#162)
 - `1.5.x` Releases - [1.5.0](#150) | [1.5.1](#151)
 - `1.4.x` Releases - [1.4.0](#140) | [1.4.1](#141)
 - `1.3.x` Releases - [1.3.0](#130) | [1.3.1](#131)
@@ -18,6 +18,18 @@ All notable changes to this project will be documented in this file.<br>
 - `1.0.x` Releases - [1.0.0](#100)
 
 ---
+
+## [1.6.2](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.6.2)
+### 08 May 2016
+#### Added
+- Added missing devices
+- Added Swedish translation [#11](https://github.com/FabrizioBrancati/BFKit/pull/11) & [#12](https://github.com/FabrizioBrancati/BFKit/pull/12)
+
+#### Improved
+- Minor enhancements & bug fix
+
+Thanks to [@pontus-andersson](https://github.com/pontus-andersson) for this release
+
 
 ## [1.6.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.6.1)
 ### 25 Mar 2016
