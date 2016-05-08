@@ -391,15 +391,15 @@ public extension UIImage {
      - returns: Returns the filled image
      */
     public func fillAlphaWithColor(color: UIColor) -> UIImage {
-        let im_r: CGRect = CGRect(origin: CGPointZero, size: self.size)
+        let imageRect: CGRect = CGRect(origin: CGPointZero, size: self.size)
         
         let cgColor: CGColorRef = color.CGColor
         
         UIGraphicsBeginImageContextWithOptions(self.size, false, UIScreen.mainScreen().scale)
         let context: CGContextRef = UIGraphicsGetCurrentContext()!
         CGContextSetFillColorWithColor(context, cgColor)
-        CGContextFillRect(context,im_r)
-        self.drawInRect(im_r)
+        CGContextFillRect(context,imageRect)
+        self.drawInRect(imageRect)
         
         let returnImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -418,9 +418,7 @@ public extension UIImage {
         
         if clrMod == CGColorSpaceModel.Monochrome {
             return true
-        }
-        else
-        {
+        } else {
             return false
         }
     }
