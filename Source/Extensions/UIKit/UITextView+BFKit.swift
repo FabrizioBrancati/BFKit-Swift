@@ -72,4 +72,24 @@ public extension UITextView {
         self.editable = editable
         self.selectable = selectable
     }
+    
+    // MARK: - Instance functions -
+    
+    /**
+     Paste the pasteboard text to UITextField
+     */
+    public func pasteFromPasteboard() {
+        self.text = UIPasteboard.stringFromPasteboard()
+    }
+    
+    /**
+     Copy UITextField text to pasteboard
+     */
+    public func copyToPasteboard() {
+        guard let textToCopy = self.text else {
+            return
+        }
+        
+        UIPasteboard.copyToPasteboard(textToCopy)
+    }
 }
