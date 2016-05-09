@@ -52,6 +52,35 @@ public extension NSDate {
         var second = 0
         /// Nanosecond of the second
         var nanosecond = 0
+        
+        //  MARK: - Init functions -
+        
+        /**
+         Create a BFDateInformation to access date components easily
+         
+         - parameter year:       Year
+         - parameter month:      Month
+         - parameter day:        Day
+         - parameter weekday:    Weekday
+         - parameter hour:       Hour
+         - parameter minute:     Minute
+         - parameter second:     Second
+         - parameter nanosecond: Nanosecond
+         
+         - returns: Returns the BFDateInformation instance
+         */
+        public init(year: Int = 0, month: Int = 0, day: Int = 0, weekday: Int = 0, hour: Int = 0, minute: Int = 0, second: Int = 0, nanosecond: Int = 0) {
+            var info = BFDateInformation()
+            
+            info.year = year
+            info.month = month
+            info.day = day
+            info.weekday = weekday
+            info.hour = hour
+            info.minute = minute
+            info.second = second
+            info.nanosecond = nanosecond
+        }
     }
     
     // MARK: - Instance functions -
@@ -64,24 +93,11 @@ public extension NSDate {
      - returns: Return self as a BFDateInformation structure with a given time zone
      */
     public func dateInformation(timeZone: NSTimeZone = NSTimeZone.systemTimeZone()) -> BFDateInformation {
-        var info = BFDateInformation()
-        
         let calendar = NSCalendar.autoupdatingCurrentCalendar()
         calendar.timeZone = timeZone
         let comp = calendar.components(NSCalendarUnit(rawValue: UInt.max), fromDate: self)
         
-        info.day = comp.day
-        info.month = comp.month
-        info.year = comp.year
-        
-        info.hour = comp.hour
-        info.minute = comp.minute
-        info.second = comp.second
-        info.nanosecond = comp.nanosecond
-        
-        info.weekday = comp.weekday
-        
-        return info
+        return BFDateInformation(year: comp.year, month: comp.month, day: comp.day, weekday: comp.weekday, hour: comp.hour, minute: comp.minute, second: comp.second, nanosecond: comp.nanosecond)
     }
     
     /**
@@ -283,9 +299,9 @@ public extension NSDate {
      - returns: Returns a NSDate with the yesterday date
      */
     public static func yesterday() -> NSDate {
-        var inf: BFDateInformation = NSDate().dateInformation()
-        inf.day -= 1
-        return self.dateFromDateInformation(inf)
+        var info: BFDateInformation = NSDate().dateInformation()
+        info.day -= 1
+        return self.dateFromDateInformation(info)
     }
     
     /**
