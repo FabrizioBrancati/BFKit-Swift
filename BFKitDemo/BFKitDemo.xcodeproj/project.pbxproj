@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		492F54101CE0FE3D00A08D99 /* UIPasteboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492F540F1CE0FE3D00A08D99 /* UIPasteboard.swift */; };
 		49354AE31B3AEC6B00C05AED /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49354AE21B3AEC6B00C05AED /* DetailViewController.swift */; };
 		49354AE51B3AF8BF00C05AED /* FoundationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49354AE41B3AF8BF00C05AED /* FoundationViewController.swift */; };
 		49354AE71B3AF99600C05AED /* BFKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49354AE61B3AF99600C05AED /* BFKitViewController.swift */; };
@@ -61,6 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		492F540F1CE0FE3D00A08D99 /* UIPasteboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPasteboard.swift; sourceTree = "<group>"; };
 		49354AE21B3AEC6B00C05AED /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		49354AE41B3AF8BF00C05AED /* FoundationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationViewController.swift; sourceTree = "<group>"; };
 		49354AE61B3AF99600C05AED /* BFKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFKitViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				49B1F9A31B41BA8E003FC78E /* UIImageView+BFKit.swift */,
 				49B1F9A41B41BA8E003FC78E /* UILabel+BFKit.swift */,
 				49ABFB6D1B52D00D00D47D7A /* UINavigationBar+BFKit.swift */,
+				492F540F1CE0FE3D00A08D99 /* UIPasteboard.swift */,
 				49ABFB671B51834700D47D7A /* UIScreen+BFKit.swift */,
 				49B1F9A51B41BA8E003FC78E /* UIScrollView+BFKit.swift */,
 				49B1F9A61B41BA8E003FC78E /* UITableView+BFKit.swift */,
@@ -410,6 +413,7 @@
 				49B1F9B71B41BA8E003FC78E /* BFButton.swift in Sources */,
 				49B1F9B61B41BA8E003FC78E /* BFApp.swift in Sources */,
 				4974E2571AED3DD50090F642 /* AppDelegate.swift in Sources */,
+				492F54101CE0FE3D00A08D99 /* UIPasteboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
