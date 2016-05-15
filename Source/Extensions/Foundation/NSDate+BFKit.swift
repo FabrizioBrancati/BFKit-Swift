@@ -70,16 +70,14 @@ public extension NSDate {
          - returns: Returns the BFDateInformation instance
          */
         public init(year: Int = 0, month: Int = 0, day: Int = 0, weekday: Int = 0, hour: Int = 0, minute: Int = 0, second: Int = 0, nanosecond: Int = 0) {
-            var info = BFDateInformation()
-            
-            info.year = year
-            info.month = month
-            info.day = day
-            info.weekday = weekday
-            info.hour = hour
-            info.minute = minute
-            info.second = second
-            info.nanosecond = nanosecond
+            self.year = year
+            self.month = month
+            self.day = day
+            self.weekday = weekday
+            self.hour = hour
+            self.minute = minute
+            self.second = second
+            self.nanosecond = nanosecond
         }
     }
     
