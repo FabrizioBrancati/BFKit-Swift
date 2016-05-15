@@ -45,7 +45,7 @@ It also adds some useful method to some classes like:
 - [BFApp](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Classes/BFApp.html)
 - [BFButton](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Classes/BFButton.html)
 - BFDataStructures ([List](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Classes/List.html) - [Queue](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Classes/Queue.html) - [Stack](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Classes/Stack.html))
-- [BFLog](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Functions.html#/)
+- [BFLog](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Functions.html#/) - [See this post on how to properly use it](http://stackoverflow.com/a/26891797/4032046)
 - [BFPassword](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Classes/BFPassword.html)
 - [BFSystemSound](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Classes/BFSystemSound.html)
 - [BFTouchID](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Classes/BFTouchID.html) (iOS 8 or later)

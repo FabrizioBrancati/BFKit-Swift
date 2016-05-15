@@ -27,11 +27,6 @@
 import Foundation
 import UIKit
 
-// MARK: - Global variables -
-
-/// Use this variable to activate or deactivate the BFLog function
-public var BFLogActive: Bool = true
-
 // MARK: - Global functions -
 
 /**
@@ -43,7 +38,7 @@ public var BFLogActive: Bool = true
  - parameter line:     Line number
  */
 public func BFLog(message: String, filename: String = #file, function: String = #function, line: Int = #line) {
-    if BFLogActive {
+    #if DEBUG
         var _message = message
         if _message.hasSuffix("\n") == false {
             _message += "\n"
@@ -57,34 +52,34 @@ public func BFLog(message: String, filename: String = #file, function: String = 
         print("\(timestamp) \(filenameNoExt):\(line) \(function): \(_message)", terminator: "")
         
         BFLogClass.detailedLogString += log
-    }
+    #endif
 }
 
 /// Get the log string
 public var BFLogString: String {
-    if BFLogActive {
+    #if DEBUG
         return BFLogClass.logString
-    } else {
+    #else
         return ""
-    }
+    #endif
 }
 
 /// Get the detailed log string
 public var BFDetailedLogString: String {
-    if BFLogActive {
+    #if DEBUG
         return BFLogClass.detailedLogString
-    } else {
+    #else
         return ""
-    }
+    #endif
 }
 
 /**
  Clear the log string
  */
 public func BFLogClear() {
-    if BFLogActive {
+    #if DEBUG
         BFLogClass.clearLog()
-    }
+    #endif
 }
 
 /// The private BFLogClass created to manage the log strings
