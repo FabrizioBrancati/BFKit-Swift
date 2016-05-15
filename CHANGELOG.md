@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 1.x Releases
-- `1.6.x` Releases - [1.6.0](#160) | [1.6.1](#161) | [1.6.2](#162)
+- `1.6.x` Releases - [1.6.0](#160) | [1.6.1](#161) | [1.6.2](#162) | [1.6.3](#163)
 - `1.5.x` Releases - [1.5.0](#150) | [1.5.1](#151)
 - `1.4.x` Releases - [1.4.0](#140) | [1.4.1](#141)
 - `1.3.x` Releases - [1.3.0](#130) | [1.3.1](#131)
@@ -18,6 +18,12 @@ All notable changes to this project will be documented in this file.<br>
 - `1.0.x` Releases - [1.0.0](#100)
 
 ---
+
+## [1.6.3](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.6.3)
+### 15 May 2016
+#### Fixed
+- Fixed crash on BFDateInformation struct initializer
+
 
 ## [1.6.2](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.6.2)
 ### 08 May 2016

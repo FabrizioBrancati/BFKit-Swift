@@ -42,49 +42,49 @@ To better use of the framework I recommend you to use [FuzzyAutocomplete](https:
 It also adds some useful method to some classes like:
 
 ### BFKit:
-- [BFApp](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Classes/BFApp.html)
-- [BFButton](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Classes/BFButton.html)
-- BFDataStructures ([List](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Classes/List.html) - [Queue](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Classes/Queue.html) - [Stack](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Classes/Stack.html))
-- [BFLog](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Functions.html#/)
-- [BFPassword](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Classes/BFPassword.html)
-- [BFSystemSound](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Classes/BFSystemSound.html)
-- [BFTouchID](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Classes/BFTouchID.html) (iOS 8 or later)
+- [BFApp](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Classes/BFApp.html)
+- [BFButton](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Classes/BFButton.html)
+- BFDataStructures ([List](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Classes/List.html) - [Queue](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Classes/Queue.html) - [Stack](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Classes/Stack.html))
+- [BFLog](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Functions.html#/)
+- [BFPassword](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Classes/BFPassword.html)
+- [BFSystemSound](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Classes/BFSystemSound.html)
+- [BFTouchID](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Classes/BFTouchID.html) (iOS 8 or later)
 
 ### Foundation:
-- [Array](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions.html#/s:Sa)
-- [Dictionary](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions.html#/s:VSs10Dictionary)
-- [NSArray](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/NSArray.html)
-- [NSDate](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/NSDate.html)
-- [NSDictionary](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/NSDictionary.html)
-- [NSFileManager](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/NSFileManager.html)
-- [NSMutableArray](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/NSMutableArray.html)
-- [NSMutableDictionary](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/NSMutableDictionary.html)
-- [NSNumber](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/NSNumber.html)
-- [NSObject](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/NSObject.html)
-- [NSProcessInfo](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions.html#/)
-- [NSString](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/NSString.html)
-- [NSThread](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/NSThread.html)
-- [String](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/String.html)
+- [Array](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions.html#/s:Sa)
+- [Dictionary](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions.html#/s:VSs10Dictionary)
+- [NSArray](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/NSArray.html)
+- [NSDate](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/NSDate.html)
+- [NSDictionary](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/NSDictionary.html)
+- [NSFileManager](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/NSFileManager.html)
+- [NSMutableArray](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/NSMutableArray.html)
+- [NSMutableDictionary](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/NSMutableDictionary.html)
+- [NSNumber](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/NSNumber.html)
+- [NSObject](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/NSObject.html)
+- [NSProcessInfo](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions.html#/)
+- [NSString](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/NSString.html)
+- [NSThread](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/NSThread.html)
+- [String](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/String.html)
 
 ### UIKit:
-- [UIBarButtonItem](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/UIBarButtonItem.html)
-- [UIButton](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/UIButton.html)
-- [UIColor](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/UIColor.html)
-- [UIDevice](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/UIDevice.html)
-- [UIFont](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/UIFont.html)
-- [UIImage](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/UIImage.html)
-- [UIImageView](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/UIImageView.html)
-- [UILabel](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/UILabel.html)
-- [UINavigationBar](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/UINavigationBar.html)
-- [UIScreen](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/UIScreen.html)
-- [UIScrollView](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/UIScrollView.html)
-- [UITableView](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/UITableView.html)
-- [UITextField](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/UITextField.html)
-- [UITextView](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/UITextView.html)
-- [UIToolbar](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/UIToolbar.html)
-- [UIView](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/UIView.html)
-- [UIWebView](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/UIWebView.html)
-- [UIWindow](http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/Extensions/UIWindow.html)
+- [UIBarButtonItem](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/UIBarButtonItem.html)
+- [UIButton](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/UIButton.html)
+- [UIColor](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/UIColor.html)
+- [UIDevice](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/UIDevice.html)
+- [UIFont](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/UIFont.html)
+- [UIImage](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/UIImage.html)
+- [UIImageView](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/UIImageView.html)
+- [UILabel](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/UILabel.html)
+- [UINavigationBar](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/UINavigationBar.html)
+- [UIScreen](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/UIScreen.html)
+- [UIScrollView](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/UIScrollView.html)
+- [UITableView](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/UITableView.html)
+- [UITextField](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/UITextField.html)
+- [UITextView](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/UITextView.html)
+- [UIToolbar](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/UIToolbar.html)
+- [UIView](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/UIView.html)
+- [UIWebView](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/UIWebView.html)
+- [UIWindow](http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/Extensions/UIWindow.html)
 
 Language support :it:
 =====================
@@ -105,7 +105,7 @@ Requirements :iphone:
 - iOS SDK **8.0** if you use it as a Framework
 - **Swift 1.2** and **Xcode 6.3** or later, for version **1.4.1** or previous
 - **Swift 2.0** or **2.1** and **Xcode 7.0** or later, for version **1.5.0** or later
-- **Swift 2.2** and **Xcode 7.3** or later, for version **1.6.2** or later
+- **Swift 2.2** and **Xcode 7.3** or later, for version **1.6.3** or later
 
 Communication :speaker:
 =======================
@@ -126,7 +126,7 @@ Installing and Usage :computer:
 ### Swift 1.2, 2.0, 2.1 or 2.2
 If you need support for Swift 1.2 use BFKit Swift 1.4.1 or previous.<br>
 From 1.5.0 BFKit Swift supports Swift 2.0 and 2.1.<br>
-From 1.6.2 BFKit Swift supports Swift 2.2.<br>
+From 1.6.3 BFKit Swift supports Swift 2.2.<br>
 More info here: [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements-iphone)
 
 ---
@@ -228,4 +228,4 @@ License :scroll:
 ================
 BFKit-Swift is available under the MIT license. See the **[LICENSE](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)** file for more info.
 
-[CocoaDocs]: http://cocoadocs.org/docsets/BFKit-Swift/1.6.2/
+[CocoaDocs]: http://cocoadocs.org/docsets/BFKit-Swift/1.6.3/
