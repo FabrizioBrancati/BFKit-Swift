@@ -63,7 +63,7 @@
 
 // Time zones
 "NIGHT" = "Noite";
-"MORNING" = "Manha";
+"MORNING" = "Manhã";
 "AFTERNOON" = "Tarde";
 "EVENING" = "Noite";
 
