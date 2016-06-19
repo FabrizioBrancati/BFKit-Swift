@@ -257,6 +257,35 @@ public extension UIColor {
     }
     
     /**
+     Convert UIColor to HEX string
+     
+     - returns: Returns the HEX string from the given UIColor
+     */
+    public func hexString() -> String {
+        var r:CGFloat = 0
+        var g:CGFloat = 0
+        var b:CGFloat = 0
+        var a:CGFloat = 0
+        
+        getRed(&r, green: &g, blue: &b, alpha: &a)
+        
+        let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
+        
+        return String(format:"#%06x", rgb)
+    }
+    
+    /**
+     Shortcut for colorWithAlphaComponent function
+     
+     - parameter alpha: Alpha component to be changed
+     
+     - returns: Returns the UIColor with the custom alpha
+     */
+    public func alpha(alpha: CGFloat) -> UIColor {
+        return self.colorWithAlphaComponent(alpha)
+    }
+    
+    /**
      Private, get the hue, saturation, brightness and alpha
     
      - parameter hue:        Hue var
