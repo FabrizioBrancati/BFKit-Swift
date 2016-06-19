@@ -1,6 +1,6 @@
 <p align="center"><img src="http://github.fabriziobrancati.com/bfkit/resources/banner-swift.png" alt="BFKit Swift Banner"></p>
 
-[![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit-Swift.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit-Swift)
+[![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit-Swift.svg?branch=swift3.0)](https://travis-ci.org/FabrizioBrancati/BFKit-Swift)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/BFKit-Swift.svg?style=flat)][CocoaDocs]
 [![Language](https://img.shields.io/badge/language-Swift%201.2%20/%202.0%20/%202.1%20/%202.2%20/%203.0-orange.svg)](https://developer.apple.com/swift/)
