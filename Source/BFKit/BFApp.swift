@@ -27,6 +27,8 @@
 import Foundation
 import UIKit
 
+// MARK: - Variables -
+
 /// Used to store the BFHasBeenOpened in defaults
 private let BFHasBeenOpened = "BFHasBeenOpened"
 /// Used to store the BFHasBeenOpenedForCurrentVersion in defaults
@@ -41,6 +43,8 @@ public let APP_BUILD: String = NSBundle(forClass: BFApp.self).infoDictionary!["C
 /// Get App version
 public let APP_VERSION: String = NSBundle(forClass: BFApp.self).infoDictionary!["CFBundleShortVersionString"] as! String
 
+// MARK: - Global functions -
+
 /**
  Use BFLocalizedString to use the string translated by BFKit
  
@@ -53,11 +57,35 @@ public func BFLocalizedString(key: String, _ comment: String? = nil) -> String {
     return NSBundle(forClass: BFApp.self).localizedStringForKey(key, value: key, table: "BFKit")
 }
 
+/**
+ NSLocalizedString without comment parameter
+ 
+ - parameter key: The key of the localized string
+ 
+ - returns: Returns a localized string
+ */
+public func NSLocalizedString(key: String) -> String {
+    return NSLocalizedString(key, comment: "")
+}
+
 /// Get AppDelegate (To use it, cast to AppDelegate with "as! AppDelegate")
 let APP_DELEGATE: UIApplicationDelegate? = UIApplication.sharedApplication().delegate
 
 /// This class adds some useful functions for the App
 public class BFApp {
+    // MARK: - Class functions -
+    
+    /**
+     Executes a block only if in DEBUG mode
+     
+     - parameter block: The block to be executed
+     */
+    public static func debugBlock(block: () -> ()) {
+        #if DEBUG
+            block()
+        #endif
+    }
+    
     /**
      Executes a block on first start of the App.
      Remember to execute UI instuctions on main thread
