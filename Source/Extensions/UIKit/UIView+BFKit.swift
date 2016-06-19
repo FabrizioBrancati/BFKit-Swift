@@ -127,6 +127,20 @@ public extension UIView {
     }
     
     /**
+     Set the corner radius of UIView only at the given corner
+     
+     - parameter corners: Corners to apply radius
+     - parameter radius: Radius value
+     */
+    public func cornerRadius(corners corners: UIRectCorner, radius: CGFloat) {
+        let rectShape = CAShapeLayer()
+        rectShape.bounds = self.frame
+        rectShape.position = self.center
+        rectShape.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius)).CGPath
+        self.layer.mask = rectShape
+    }
+    
+    /**
      Create a shadow on the UIView
     
      - parameter offset:  Shadow's offset
