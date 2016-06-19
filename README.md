@@ -27,6 +27,8 @@
 
 ---
 
+### If you need support for Swift 3 please switch to ```swift3.0``` branch
+
 Objective-C Version <img src="http://github.fabriziobrancati.com/bfkit/resources/objc-icon.png" height="25" width="25">
 ===================
 If you are looking for Objective-C version check it out here: **[BFKit](https://github.com/FabrizioBrancati/BFKit)**
