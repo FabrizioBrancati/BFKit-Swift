@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "BFKit-Swift"
   s.module_name      = "BFKit"
-  s.version          = "1.6.3"
+  s.version          = "2.0.0"
   s.summary          = "BFKit Swift is a collection of useful classes to develop Apps faster"
   s.homepage         = "https://github.com/FabrizioBrancati/BFKit-Swift"
   s.screenshots      = "http://github.fabriziobrancati.com/bfkit/resources/screenshot-swift.png"
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.platform         = :ios, "8.0"
   s.source           = {
                           :git => "https://github.com/FabrizioBrancati/BFKit-Swift.git",
-                          :tag => "v1.6.3"
+                          :tag => "v2.0.0"
                        }
   s.source_files     = "Source/**/*.{swift}"
   s.resources        = "Source/Languages/**"
