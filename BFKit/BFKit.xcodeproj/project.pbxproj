@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		492F54121CE1024900A08D99 /* UIPasteboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492F54111CE1024900A08D99 /* UIPasteboard.swift */; };
+		4978B2531D170DD80053DCCD /* BFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4978B2521D170DD80053DCCD /* BFView.swift */; };
 		49ABFB6A1B5187A300D47D7A /* UIScreen+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ABFB691B5187A300D47D7A /* UIScreen+BFKit.swift */; };
 		49ABFB741B53D58200D47D7A /* BFDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ABFB731B53D58200D47D7A /* BFDataStructures.swift */; };
 		49ABFB781B53D58800D47D7A /* UIBarButtonItem+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ABFB751B53D58800D47D7A /* UIBarButtonItem+BFKit.swift */; };
@@ -70,6 +71,7 @@
 		1638EF691CBFE4E1007369FA /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/BFKit.strings; sourceTree = "<group>"; };
 		492F54111CE1024900A08D99 /* UIPasteboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPasteboard.swift; sourceTree = "<group>"; };
 		493CFF101C53DE9500272396 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/BFKit.strings"; sourceTree = "<group>"; };
+		4978B2521D170DD80053DCCD /* BFView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFView.swift; sourceTree = "<group>"; };
 		49ABFB691B5187A300D47D7A /* UIScreen+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+BFKit.swift"; sourceTree = "<group>"; };
 		49ABFB731B53D58200D47D7A /* BFDataStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFDataStructures.swift; sourceTree = "<group>"; };
 		49ABFB751B53D58800D47D7A /* UIBarButtonItem+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+BFKit.swift"; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				49B1FA051B41BAEE003FC78E /* BFSystemSound.swift */,
 				49C5FF321C5ED75F0066115A /* BFTextField.swift */,
 				49B1FA061B41BAEE003FC78E /* BFTouchID.swift */,
+				4978B2521D170DD80053DCCD /* BFView.swift */,
 			);
 			name = BFKit;
 			path = ../../Source/BFKit;
@@ -414,6 +417,7 @@
 				49B1FA411B41BAEE003FC78E /* NSObject+BFKit.swift in Sources */,
 				49B1FA3C1B41BAEE003FC78E /* NSDictionary+BFKit.swift in Sources */,
 				49B1FA4A1B41BAEE003FC78E /* UIImage+BFKit.swift in Sources */,
+				4978B2531D170DD80053DCCD /* BFView.swift in Sources */,
 				49B1FA421B41BAEE003FC78E /* NSProcessInfo+BFKit.swift in Sources */,
 				49B1FA311B41BAEE003FC78E /* BFApp.swift in Sources */,
 				49ABFB781B53D58800D47D7A /* UIBarButtonItem+BFKit.swift in Sources */,
