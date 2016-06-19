@@ -289,6 +289,46 @@ public extension NSDate {
         return calendar.dateFromComponents(comp)!
     }
     
+    /**
+     Check if the given date is less than self
+     
+     - parameter dateToCompare: Date to compare
+     
+     - returns: Returns a true if self is greater than the given one, otherwise false
+     */
+    public func isGreaterThanDate(dateToCompare: NSDate) -> Bool {
+        //Declare Variables
+        var isGreater = false
+        
+        //Compare Values
+        if self.compare(dateToCompare) == NSComparisonResult.OrderedDescending {
+            isGreater = true
+        }
+        
+        //Return Result
+        return isGreater
+    }
+    
+    /**
+     Check if the given date is greater than self
+     
+     - parameter dateToCompare: Date to compare
+     
+     - returns: Returns a true if self is less than the given one, otherwise false
+     */
+    public func isLessThanDate(dateToCompare: NSDate) -> Bool {
+        //Declare Variables
+        var isLess = false
+        
+        //Compare Values
+        if self.compare(dateToCompare) == NSComparisonResult.OrderedAscending {
+            isLess = true
+        }
+        
+        //Return Result
+        return isLess
+    }
+    
     // MARK: - Class functions -
     
     /**
@@ -440,4 +480,14 @@ public extension NSDate {
         
         return description
     }
+}
+
+// MARK: - Operators -
+
+public func >(left: NSDate, right: NSDate) -> Bool {
+    return left.isGreaterThanDate(right)
+}
+
+public func <(left: NSDate, right: NSDate) -> Bool {
+    return left.isLessThanDate(right)
 }
