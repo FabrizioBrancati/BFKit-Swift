@@ -2,5 +2,6 @@ language: objective-c
 osx_image: xcode7.3
 
 script:
+  - swift -version
   - xctool -project BFKitDemo/BFKitDemo.xcodeproj -scheme BFKitDemo -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO
   - xctool -project BFKit/BFKit.xcodeproj -scheme BFKit -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO
