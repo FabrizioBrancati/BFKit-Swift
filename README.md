@@ -28,7 +28,7 @@
 ---
 
 # This branch is currently under development
-### It supports Swift 3.0 and will include a big refactoring of the entire framework
+### It supports Swift 3 and will include a big refactoring of the entire framework
 
 Objective-C Version <img src="http://github.fabriziobrancati.com/bfkit/resources/objc-icon.png" height="25" width="25">
 ===================

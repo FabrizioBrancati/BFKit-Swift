@@ -3,6 +3,5 @@ osx_image: xcode8
 
 script:
   - swift -version
-  - xcrun launch-with-toolchain /Library/Developer/Toolchains/XcodeDefault.xctoolchain/
   - xctool -project BFKitDemo/BFKitDemo.xcodeproj -scheme BFKitDemo -sdk iphonesimulator10.0 ONLY_ACTIVE_ARCH=NO
   - xctool -project BFKit/BFKit.xcodeproj -scheme BFKit -sdk iphonesimulator10.0 ONLY_ACTIVE_ARCH=NO

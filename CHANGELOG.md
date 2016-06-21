@@ -23,7 +23,7 @@ All notable changes to this project will be documented in this file.<br>
 ## 2.0.0 - A new beginning
 ### XX XXX 2016
 #### Added
-- BFKit Swift now supports Swift 3.0
+- BFKit Swift now supports Swift 3
 
 
 ## [1.6.4](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.6.4)
