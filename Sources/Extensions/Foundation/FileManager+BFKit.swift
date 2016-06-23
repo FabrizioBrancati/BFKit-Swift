@@ -438,7 +438,7 @@ public extension FileManager {
      - returns: Returns true if the operation was successful, otherwise false
      */
     public static func setAppSettingsForObject(_ object: AnyObject, forKey objKey: String) -> Bool {
-        return self.setSettings(APP_NAME, object: object, forKey: objKey)
+        return self.setSettings(AppName, object: object, forKey: objKey)
     }
     
     /**
@@ -449,6 +449,6 @@ public extension FileManager {
      - returns: Returns the object for the given key
      */
     public static func getAppSettingsForObjectWithKey(_ objKey: String) -> AnyObject? {
-        return self.getSettings(APP_NAME, objectForKey: objKey)
+        return self.getSettings(AppName, objectForKey: objKey)
     }
 }
