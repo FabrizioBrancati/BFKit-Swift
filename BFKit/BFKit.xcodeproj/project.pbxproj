@@ -52,9 +52,9 @@
 		493412D11D170D3A0027721B /* UIWebView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493412991D170D3A0027721B /* UIWebView+BFKit.swift */; };
 		493412D21D170D3A0027721B /* UIWindow+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4934129A1D170D3A0027721B /* UIWindow+BFKit.swift */; };
 		493412D31D170D3A0027721B /* BFKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4934129C1D170D3A0027721B /* BFKit.strings */; };
+		493CCB791D2015D800401CD6 /* BFAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493CCB781D2015D800401CD6 /* BFAppTests.swift */; };
 		49B1F9EA1B41BAD1003FC78E /* BFKit_Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 49B1F9E91B41BAD1003FC78E /* BFKit_Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49B1F9F01B41BAD1003FC78E /* BFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B1F9E41B41BAD1003FC78E /* BFKit.framework */; };
-		49B1F9F71B41BAD1003FC78E /* BFKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F9F61B41BAD1003FC78E /* BFKitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,12 +122,12 @@
 		493412A41D170D3A0027721B /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/BFKit.strings; sourceTree = "<group>"; };
 		493412A51D170D3A0027721B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BFKit.strings"; sourceTree = "<group>"; };
 		493412A61D170D3A0027721B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/BFKit.strings"; sourceTree = "<group>"; };
+		493CCB781D2015D800401CD6 /* BFAppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFAppTests.swift; sourceTree = "<group>"; };
 		49B1F9E41B41BAD1003FC78E /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B1F9E81B41BAD1003FC78E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49B1F9E91B41BAD1003FC78E /* BFKit_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFKit_Header.h; sourceTree = "<group>"; };
 		49B1F9EF1B41BAD1003FC78E /* BFKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BFKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B1F9F51B41BAD1003FC78E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49B1F9F61B41BAD1003FC78E /* BFKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFKitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,7 +275,7 @@
 		49B1F9F31B41BAD1003FC78E /* BFKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				49B1F9F61B41BAD1003FC78E /* BFKitTests.swift */,
+				493CCB781D2015D800401CD6 /* BFAppTests.swift */,
 				49B1F9F41B41BAD1003FC78E /* Supporting Files */,
 			);
 			path = BFKitTests;
@@ -356,6 +356,7 @@
 					49B1F9EE1B41BAD1003FC78E = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -460,7 +461,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49B1F9F71B41BAD1003FC78E /* BFKitTests.swift in Sources */,
+				493CCB791D2015D800401CD6 /* BFAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,6 +601,8 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "";
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.FabrizioBrancati.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -621,6 +624,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.FabrizioBrancati.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -632,6 +636,7 @@
 		49B1F9FE1B41BAD1003FC78E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -648,6 +653,7 @@
 		49B1F9FF1B41BAD1003FC78E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = BFKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
