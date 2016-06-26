@@ -106,9 +106,8 @@ public class BFApp {
         let hasBeenOpened: Bool = defaults.bool(forKey: key)
         if hasBeenOpened != true {
             return true
-        } else {
-            return false
         }
+        return false
     }
     
     /**
