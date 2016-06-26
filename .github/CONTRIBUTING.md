@@ -18,3 +18,7 @@ I recommend you to use [VVDocumenter](https://github.com/onevcat/VVDocumenter-Xc
 
 #### Writing code
 Please follow my coding style.
+
+Sort alphabetically the functions and variables separating each other by type.
+Use ```MARK``` to separate each section type.
+Example: Global variables, Global functions, Class variables, Instance variables, Class functions, Instance functions & Init functions.
