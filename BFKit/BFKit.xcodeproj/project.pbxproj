@@ -53,6 +53,7 @@
 		493412D21D170D3A0027721B /* UIWindow+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4934129A1D170D3A0027721B /* UIWindow+BFKit.swift */; };
 		493412D31D170D3A0027721B /* BFKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4934129C1D170D3A0027721B /* BFKit.strings */; };
 		493CCB791D2015D800401CD6 /* BFAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493CCB781D2015D800401CD6 /* BFAppTests.swift */; };
+		497185231D2325AC0032A98E /* BFButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497185221D2325AC0032A98E /* BFButtonTests.swift */; };
 		49B1F9EA1B41BAD1003FC78E /* BFKit_Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 49B1F9E91B41BAD1003FC78E /* BFKit_Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49B1F9F01B41BAD1003FC78E /* BFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B1F9E41B41BAD1003FC78E /* BFKit.framework */; };
 /* End PBXBuildFile section */
@@ -123,6 +124,7 @@
 		493412A51D170D3A0027721B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BFKit.strings"; sourceTree = "<group>"; };
 		493412A61D170D3A0027721B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/BFKit.strings"; sourceTree = "<group>"; };
 		493CCB781D2015D800401CD6 /* BFAppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFAppTests.swift; sourceTree = "<group>"; };
+		497185221D2325AC0032A98E /* BFButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFButtonTests.swift; sourceTree = "<group>"; };
 		49B1F9E41B41BAD1003FC78E /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B1F9E81B41BAD1003FC78E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49B1F9E91B41BAD1003FC78E /* BFKit_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFKit_Header.h; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				493CCB781D2015D800401CD6 /* BFAppTests.swift */,
+				497185221D2325AC0032A98E /* BFButtonTests.swift */,
 				49B1F9F41B41BAD1003FC78E /* Supporting Files */,
 			);
 			path = BFKitTests;
@@ -462,6 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				493CCB791D2015D800401CD6 /* BFAppTests.swift in Sources */,
+				497185231D2325AC0032A98E /* BFButtonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
