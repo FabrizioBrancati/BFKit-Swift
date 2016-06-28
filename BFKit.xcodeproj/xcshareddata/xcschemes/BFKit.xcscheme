@@ -7,14 +7,14 @@
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
-            buildForTesting = "NO"
+            buildForTesting = "YES"
             buildForRunning = "YES"
             buildForProfiling = "YES"
             buildForArchiving = "YES"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "49B1F9E31B41BAD1003FC78E"
+               BlueprintIdentifier = "497186401D2339040032A98E"
                BuildableName = "BFKit.framework"
                BlueprintName = "BFKit"
                ReferencedContainer = "container:BFKit.xcodeproj">
@@ -26,13 +26,24 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4971864A1D2339040032A98E"
+               BuildableName = "BFKitTests.xctest"
+               BlueprintName = "BFKitTests"
+               ReferencedContainer = "container:BFKit.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "49B1F9E31B41BAD1003FC78E"
+            BlueprintIdentifier = "497186401D2339040032A98E"
             BuildableName = "BFKit.framework"
             BlueprintName = "BFKit"
             ReferencedContainer = "container:BFKit.xcodeproj">
@@ -54,7 +65,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "49B1F9E31B41BAD1003FC78E"
+            BlueprintIdentifier = "497186401D2339040032A98E"
             BuildableName = "BFKit.framework"
             BlueprintName = "BFKit"
             ReferencedContainer = "container:BFKit.xcodeproj">
@@ -72,7 +83,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "49B1F9E31B41BAD1003FC78E"
+            BlueprintIdentifier = "497186401D2339040032A98E"
             BuildableName = "BFKit.framework"
             BlueprintName = "BFKit"
             ReferencedContainer = "container:BFKit.xcodeproj">

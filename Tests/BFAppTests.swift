@@ -14,7 +14,7 @@ class BFAppTests: XCTestCase {
     override func setUp() {
         super.setUp()
     }
-    
+
     override func tearDown() {
         super.tearDown()
     }
@@ -22,32 +22,32 @@ class BFAppTests: XCTestCase {
     func testBFLocalizedString() {
         XCTAssert(BFLocalizedString("BFKit") == "BFKit")
     }
-    
+
     func testNSLocalizedString() {
         XCTAssert(NSLocalizedString("") == "")
     }
-    
+
     func testDebug() {
-        BFApp.debug { 
+        BFApp.debug {
             XCTAssert(true)
         }
     }
-    
+
     func testIsFirstStart() {
         let isFirstStart = BFApp.isFirstStart()
         XCTAssert(isFirstStart == true || isFirstStart == false)
     }
-    
+
     func testIsFirstStartVersion() {
         XCTAssert(BFApp.isFirstStart(version: AppVersion) == false)
     }
-    
+
     func testOnFirstStart() {
         BFApp.onFirstStart { (isFirstStart) in
             XCTAssert(isFirstStart == true || isFirstStart == false)
         }
     }
-    
+
     func testOnFirstStartVersion() {
         BFApp.onFirstStart(version: AppVersion) { (isFirstStart) in
             XCTAssert(isFirstStart == false)
