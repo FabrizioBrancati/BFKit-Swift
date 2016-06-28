@@ -10,7 +10,6 @@ import XCTest
 import BFKit
 
 class BFAppTests: XCTestCase {
-
     override func setUp() {
         super.setUp()
     }

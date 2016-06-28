@@ -4,8 +4,7 @@ included:
 disabled_rules:
   - line_length
   - force_cast
-  - trailing_whitespace
-
+  
 opt_in_rules:
    - empty_count
    - missing_docs
