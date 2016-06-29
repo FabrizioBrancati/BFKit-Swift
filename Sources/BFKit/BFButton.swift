@@ -37,32 +37,33 @@ public class BFButton: UIButton {
     public override var isHighlighted: Bool {
         didSet(highlighted) {
             if highlighted == false {
-                self.addSubview(self.overlayImgView)
-                self.overlayImgView.alpha = 0
+                self.addSubview(self.overlayImageView)
+                self.overlayImageView.alpha = 0
                 
                 UIView.animate(withDuration: TimeInterval(self.fadeDuration), animations: {
-                    self.overlayImgView.alpha = 1
+                    self.overlayImageView.alpha = 1
                 })
             } else {
                 UIView.animate(withDuration: TimeInterval(self.fadeDuration), animations: {
-                    self.overlayImgView.alpha = 0
+                    self.overlayImageView.alpha = 0
                     }, completion: { (completed) in
                         if completed {
-                            self.overlayImgView.removeFromSuperview()
+                            self.overlayImageView.removeFromSuperview()
                         }
-                })
+                    }
+                )
             }
         }
     }
     
     /// The overlay image
-    private var overlayImgView: UIImageView! {
-        didSet(newOverlayImgView) {
-            if self.overlayImgView != newOverlayImgView && newOverlayImgView != nil {
-                self.overlayImgView = newOverlayImgView
+    internal var overlayImageView: UIImageView! {
+        didSet(newOverlayImageView) {
+            if self.overlayImageView != newOverlayImageView && newOverlayImageView != nil {
+                self.overlayImageView = newOverlayImageView
             }
             
-            self.overlayImgView.alpha = 0
+            self.overlayImageView.alpha = 0
         }
     }
     
@@ -95,9 +96,9 @@ public class BFButton: UIButton {
         super.init(frame: frame)
         
         self.setImage(image, for: UIControlState())
-        self.overlayImgView = UIImageView(image: highlightedImage)
-        self.overlayImgView.frame = self.imageView!.frame
-        self.overlayImgView.bounds = self.imageView!.bounds
+        self.overlayImageView = UIImageView(image: highlightedImage)
+        self.overlayImageView.frame = self.imageView!.frame
+        self.overlayImageView.bounds = self.imageView!.bounds
         
         self.adjustsImageWhenHighlighted = false
     }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		49419AE81D233DF1006CABE6 /* BFAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186C81D2339290032A98E /* BFAppTests.swift */; };
-		49419AE91D233DF1006CABE6 /* BFButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186C91D2339290032A98E /* BFButtonTests.swift */; };
+		49419AEB1D245961006CABE6 /* BFButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186C91D2339290032A98E /* BFButtonTests.swift */; };
 		4971864C1D2339040032A98E /* BFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 497186411D2339040032A98E /* BFKit.framework */; };
 		497186991D2339210032A98E /* BFApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971865C1D2339210032A98E /* BFApp.swift */; };
 		4971869A1D2339210032A98E /* BFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971865D1D2339210032A98E /* BFButton.swift */; };
@@ -470,7 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49419AE81D233DF1006CABE6 /* BFAppTests.swift in Sources */,
-				49419AE91D233DF1006CABE6 /* BFButtonTests.swift in Sources */,
+				49419AEB1D245961006CABE6 /* BFButtonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
