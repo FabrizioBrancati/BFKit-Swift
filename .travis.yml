@@ -4,11 +4,15 @@ osx_image: xcode8
 before_install:
   - gem install xcpretty
 
+install:
+  - ./install_swiftlint.sh
+
 script:
   - set -o pipefail
   - swift -version
   - xcodebuild -version
   - xcodebuild -showsdks
+  - swiftlint
   - xcodebuild clean build test -project BFKit.xcodeproj -scheme BFKit -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6" -configuration Release GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES ONLY_ACTIVE_ARCH=NO | xcpretty -c
 
 after_success:
