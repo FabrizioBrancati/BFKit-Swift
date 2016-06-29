@@ -26,103 +26,34 @@
 
 import Foundation
 
-// MARK: - Stack class -
-
-/// Primitive Stack implementation
-public class Stack: CustomStringConvertible {
-    /// Describe the Stack
-    public var description: String {
-        return "\(stack)"
-    }
-    
-    /// Private, the array behind Stack
-    private var stack: Array<AnyObject> = Array<AnyObject>()
-    
-    /**
-     Returns if the Stack is empty or not
-    
-     - returns: Returns true if the Stack is empty, otherwise false
-     */
-    public func empty() -> Bool {
-        return stack.isEmpty
-    }
-    
-    /**
-     Adds an element on top of the Stack
-    
-     - parameter object: The element to add
-     */
-    public func push(_ object: AnyObject) {
-        stack.append(object)
-    }
-    
-    /**
-     Removes an element on top of the Stack
-    
-     - returns: Returns the removed element
-     */
-    public func pop() -> AnyObject? {
-        var popped: AnyObject? = nil
-        if !self.empty() {
-            popped = stack[stack.count - 1]
-            stack.remove(at: stack.count - 1)
-        }
-        
-        return popped
-    }
-}
-
-// MARK: - List class -
+// MARK: - List struct -
 
 /// Primitive List implementation. In order to work, the List must contain only objects that is subclass of NSObject
-public class List: CustomStringConvertible {
+public struct List<Element>: CustomStringConvertible {
+    // MARK: - Instance variables
+    
+    /// Count of the elements in list
+    public var count: Int {
+        return list.count
+    }
+    
     /// Describe the List
     public var description: String {
         return "\(list)"
     }
     
-    /// Private, the array behind the List
-    private var list: Array<AnyObject> = Array<AnyObject>()
+    /// The array behind the List
+    private var list = [Element]()
+    
+    // MARK: - Instance functions
     
     /**
-     Search an element and returns the index
-    
-     - parameter object: The element to search
-    
-     - returns: Returns the index of the searched element
+     Delete an element at the given index
+     
+     - parameter index: The index to delete
      */
-    public func search(_ object: AnyObject) -> Int? {
-        for i in 0 ..< list.count {
-            if object is NSObject {
-                if list[i] as! NSObject == object as! NSObject {
-                    return i
-                }
-            } else {
-                return nil
-            }
-        }
-        
-        return nil
-    }
-    
-    /**
-     Search for an index and returns the element
-    
-     - parameter index: The index
-    
-     - returns: Returns the element of the searched index
-     */
-    public func search(_ index: Int) -> AnyObject? {
-        return list.safeObjectAtIndex(index)
-    }
-    
-    /**
-     Insert an element in the List
-    
-     - parameter object: The element to insert in the List
-     */
-    public func insert(_ object: AnyObject) {
-        list.append(object)
+    public mutating func delete(at index: Int) {
+        list.remove(at: index)
     }
     
     /**
@@ -132,54 +63,80 @@ public class List: CustomStringConvertible {
      
      - returns: Retruns true if removed, otherwise false
      */
-    public func delete(_ object: AnyObject) -> Bool {
-        let search = self.search(object)
-        
-        if search != nil {
-            list.remove(at: search!)
-            return true
-        } else {
+    public mutating func delete(_ element: Element) -> Bool {
+        guard let search = self.search(element) else {
             return false
         }
+        
+        list.remove(at: search)
+        return true
     }
     
     /**
-     Delete an element at the given index
-    
-     - parameter index: The index to delete
+     Insert an element in the List
+     
+     - parameter object: The element to insert in the List
      */
-    public func delete(_ index: Int) {
-        list.remove(at: index)
+    public mutating func insert(_ element: Element) {
+        list.append(element)
+    }
+    
+    /**
+     Search for an index and returns the element
+     
+     - parameter index: The index
+     
+     - returns: Returns the element of the searched index
+     */
+    public func search(at index: Int) -> Element? {
+        return list.safeObjectAtIndex(index)
+    }
+    
+    /**
+     Search an element and returns the index
+     
+     - parameter object: The element to search
+     
+     - returns: Returns the index of the searched element
+     */
+    public func search(_ element: Element) -> Int? {
+        for i in 0 ..< list.count {
+            //if list[i] == element {
+                return i
+            //}
+        }
+        
+        return nil
     }
 }
 
-// MARK: - Queue class -
+// MARK: - Queue struct -
 
 /// Primitive Queue implementation
-public class Queue: CustomStringConvertible {
+public struct Queue<Element>: CustomStringConvertible {
+    // MARK: - Instance variables
+    
+    /// Count of the elements in list
+    public var count: Int {
+        return queue.count
+    }
+    
     /// Describe the Queue
     public var description: String {
         return "\(queue)"
     }
     
-    /// Private, the array behind the Queue
-    private var queue: Array<AnyObject> = Array<AnyObject>()
+    /// The array behind the Queue
+    private var queue = [Element]()
     
-    /**
-     Adds an element to the Queue
-    
-     - parameter object: The element to add
-     */
-    public func enqueue(_ object: AnyObject) {
-        queue.append(object)
-    }
+    // MARK: - Instance functions
     
     /**
      Dequeue the first element
      
      - returns: Retruns true if removed, otherwise false
      */
-    public func dequeue() -> Bool {
+    public mutating func dequeue() -> Bool {
         if queue.count > 0 {
             queue.remove(at: 0)
             return true
@@ -189,18 +146,82 @@ public class Queue: CustomStringConvertible {
     }
     
     /**
+     Remove all the elements in the Queue
+     */
+    public mutating func emptyQueue() {
+        queue.removeAll(keepingCapacity: false)
+    }
+    
+    /**
+     Adds an element to the Queue
+    
+     - parameter object: The element to add
+     */
+    public mutating func enqueue(_ element: Element) {
+        queue.append(element)
+    }
+    
+    /**
      Returns the element on the top of the Queue
     
      - returns: Returns the element on the top of the Queue
      */
-    public func top() -> AnyObject? {
+    public func top() -> Element? {
         return queue.first
+    }
+}
+
+// MARK: - Stack struct -
+
+/// Primitive Stack implementation
+public struct Stack<Element>: CustomStringConvertible {
+    // MARK: - Instance variables
+    
+    /// Count of the elements in list
+    public var count: Int {
+        return stack.count
+    }
+    
+    /// Describe the Stack
+    public var description: String {
+        return "\(stack)"
+    }
+    
+    /// The array behind Stack
+    private var stack = [Element]()
+    
+    // MARK: - Instance functions
+    
+    /**
+     Returns if the Stack is empty or not
+     
+     - returns: Returns true if the Stack is empty, otherwise false
+     */
+    public func empty() -> Bool {
+        return stack.isEmpty
     }
     
     /**
-     Remove all the elements in the Queue
+     Removes an element on top of the Stack
+     
+     - returns: Returns the removed element
      */
-    public func emptyQueue() {
-        queue.removeAll(keepingCapacity: false)
+    public mutating func pop() -> Element? {
+        var element: Element? = nil
+        if !self.empty() {
+            element = stack[stack.count - 1]
+            stack.remove(at: stack.count - 1)
+        }
+        
+        return element
+    }
+    
+    /**
+     Adds an element on top of the Stack
+     
+     - parameter object: The element to add
+     */
+    public mutating func push(_ element: Element) {
+        stack.append(element)
     }
 }
