@@ -22,10 +22,10 @@ class BFButtonTests: XCTestCase {
     
     func testIsHighlighted() {
         button.isHighlighted = true
-        XCTAssert(button.isHighlighted)
+        XCTAssert(button.isHighlighted, "isHighlighted is not true")
         
         button.isHighlighted = false
-        XCTAssert(!button.isHighlighted)
+        XCTAssert(!button.isHighlighted, "isHighlighted is not false")
     }
     
     func testOverlayImageView() {
