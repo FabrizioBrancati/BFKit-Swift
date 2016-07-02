@@ -28,8 +28,8 @@ import Foundation
 
 // MARK: - List struct -
 
-/// Primitive List implementation. In order to work, the List must contain only objects that is subclass of NSObject
-public struct List<Element>: CustomStringConvertible {
+/// Primitive List implementation
+public struct List<Element: Equatable>: CustomStringConvertible {
     // MARK: - Instance variables
     
     /// Count of the elements in list
@@ -101,9 +101,9 @@ public struct List<Element>: CustomStringConvertible {
      */
     public func search(_ element: Element) -> Int? {
         for i in 0 ..< list.count {
-            //if list[i] == element {
+            if list[i] == element {
                 return i
-            //}
+            }
         }
         
         return nil
@@ -113,7 +113,7 @@ public struct List<Element>: CustomStringConvertible {
 // MARK: - Queue struct -
 
 /// Primitive Queue implementation
-public struct Queue<Element>: CustomStringConvertible {
+public struct Queue<Element: Equatable>: CustomStringConvertible {
     // MARK: - Instance variables
     
     /// Count of the elements in list
@@ -174,7 +174,7 @@ public struct Queue<Element>: CustomStringConvertible {
 // MARK: - Stack struct -
 
 /// Primitive Stack implementation
-public struct Stack<Element>: CustomStringConvertible {
+public struct Stack<Element: Equatable>: CustomStringConvertible {
     // MARK: - Instance variables
     
     /// Count of the elements in list

@@ -39,7 +39,7 @@ class BFDataStructuresTests: XCTestCase {
     }
     
     func testListDeleteElement() {
-        XCTAssert(list.delete(0), "Element delete error")
+        XCTAssert(list.delete(1), "Element delete error")
         XCTAssert(list.count == 2, "List hasn't 2 elements")
         XCTAssert(list.search(at: 0) == 2, "Element 0 of the list is not 2")
         XCTAssert(list.search(at: 1) == 3, "Element 1 of the list is not 3")
@@ -56,6 +56,6 @@ class BFDataStructuresTests: XCTestCase {
     }
     
     func testListSearchElement() {
-        XCTAssert(list.search(0) == 0)
+        XCTAssert(list.search(1) == 0)
     }
 }
