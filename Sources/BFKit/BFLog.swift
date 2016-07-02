@@ -27,15 +27,11 @@
 import Foundation
 import UIKit
 
-// MARK: - Global variables -
-
-/// Use this variable to activate or deactivate the BFLog function. No longer used, see http://stackoverflow.com/a/26891797/4032046 on how to use it now
-public var BFLogActive: Bool = false
-
 // MARK: - Global functions -
 
 /**
- Exented NSLog
+ Exented NSLog.
+ See http://stackoverflow.com/a/26891797/4032046 how to set DEBUG build variable
 
  - parameter message:  Console message
  - parameter filename: File
@@ -88,7 +84,7 @@ public func BFLogClear() {
 }
 
 /// The private BFLogClass created to manage the log strings
-private class BFLogClass {
+private struct BFLogClass {
     // MARK: - Variables -
     
     /// The log string
