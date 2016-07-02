@@ -32,6 +32,12 @@ class BFAppTests: XCTestCase {
         }
     }
     
+    func testRelease() {
+        BFApp.release {
+            XCTAssert(true)
+        }
+    }
+    
     func testIsFirstStart() {
         let isFirstStart = BFApp.isFirstStart()
         BFApp.debug { 
