@@ -87,6 +87,17 @@ public class BFApp {
     }
     
     /**
+     Executes a block only if NOT in DEBUG mode
+     
+     - parameter block: The block to be executed
+     */
+    public static func release(_ block: () -> ()) {
+        #if !DEBUG
+            block()
+        #endif
+    }
+    
+    /**
      If version is set returns if is first start for that version,
      otherwise returns if is first start of the App
      
