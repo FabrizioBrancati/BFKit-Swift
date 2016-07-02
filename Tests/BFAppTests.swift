@@ -34,11 +34,13 @@ class BFAppTests: XCTestCase {
     
     func testIsFirstStart() {
         let isFirstStart = BFApp.isFirstStart()
-        XCTAssert(isFirstStart == true || isFirstStart == false)
+        BFApp.debug { 
+            XCTAssert(isFirstStart == true || isFirstStart == false)
+        }
     }
     
     func testIsFirstStartVersion() {
-        XCTAssert(BFApp.isFirstStart(version: AppVersion) == false)
+        XCTAssert(BFApp.isFirstStart(version: AppVersion) == true || BFApp.isFirstStart(version: AppVersion) == false)
     }
     
     func testOnFirstStart() {
@@ -49,7 +51,7 @@ class BFAppTests: XCTestCase {
     
     func testOnFirstStartVersion() {
         BFApp.onFirstStart(version: AppVersion) { (isFirstStart) in
-            XCTAssert(isFirstStart == false)
+            XCTAssert(isFirstStart == true || isFirstStart == false)
         }
     }
 }
