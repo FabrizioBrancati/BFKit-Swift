@@ -14,7 +14,7 @@ script:
   - xcodebuild -showsdks
   - swiftlint
   - xcodebuild clean build -project BFKit.xcodeproj -scheme BFKit -sdk iphonesimulator -configuration Release ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES | xcpretty -c
-  - xcodebuild test -project BFKit.xcodeproj -scheme BFKit -sdk iphonesimulator -configuration Release GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES | xcpretty -c
+  - xcodebuild test -project BFKit.xcodeproj -scheme BFKit -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6" -configuration Release GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES ONLY_ACTIVE_ARCH=YES ENABLE_TESTABILITY=YES | xcpretty -c
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
