@@ -11,6 +11,7 @@ import XCTest
 
 class BFDataStructuresTests: XCTestCase {
     var list = List<Int>()
+    var queue = Queue<Int>()
     
     override func setUp() {
         super.setUp()
@@ -18,13 +19,17 @@ class BFDataStructuresTests: XCTestCase {
         list.insert(1)
         list.insert(2)
         list.insert(3)
+        
+        queue.enqueue(1)
+        queue.enqueue(2)
+        queue.enqueue(3)
     }
     
     override func tearDown() {
         super.tearDown()
     }
     
-    // MARK: List tests
+    // MARK: - List tests -
     
     func testListDescription() {
         XCTAssert(list.description != "")
@@ -57,5 +62,28 @@ class BFDataStructuresTests: XCTestCase {
     
     func testListSearchElement() {
         XCTAssert(list.search(1) == 0)
+    }
+    
+    // MARK: - Queue tests -
+    
+    func testDequeue() {
+        XCTAssert(queue.dequeue())
+        XCTAssert(queue.dequeue())
+        XCTAssert(queue.dequeue())
+        XCTAssertFalse(queue.dequeue())
+    }
+    
+    func testEmptyQueue() {
+        queue.emptyQueue()
+        XCTAssertFalse(queue.dequeue())
+    }
+    
+    func testEnqueue() {
+        queue.enqueue(4)
+        XCTAssert(queue.count == 4)
+    }
+    
+    func testTop() {
+        XCTAssert(queue.top() == 1)
     }
 }
