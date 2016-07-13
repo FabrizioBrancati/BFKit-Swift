@@ -20,7 +20,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ## [1.6.4](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.6.4)
-### XX XXX 2016
+### 14 Jul 2016
 #### Added
 - Added debugBlock and NSLocalizedString(key:) in global scope
 - Added BFView as subclass of UIView
@@ -31,7 +31,10 @@ All notable changes to this project will be documented in this file.<br>
 #### Improved
 - Improved BFLog - [See this post on how to properly use it](http://stackoverflow.com/a/26891797/4032046)
 - Adjusting pt-BR typo [#13](https://github.com/FabrizioBrancati/BFKit/pull/13)
-- Minor enhancements & bug fix
+- Minor enhancements
+
+#### Fixed
+- Fixed a bug with Carthage
 
 Thanks to [@gabrielPeart](https://github.com/gabrielPeart) for this release
 
