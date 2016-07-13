@@ -86,4 +86,8 @@ class BFDataStructuresTests: XCTestCase {
     func testTop() {
         XCTAssert(queue.top() == 1)
     }
+    
+    // MARK: - Stack tests -
+    
+    
 }
