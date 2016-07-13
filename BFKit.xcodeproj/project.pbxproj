@@ -57,6 +57,7 @@
 		497186C41D2339210032A98E /* UIWebView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971868A1D2339210032A98E /* UIWebView+BFKit.swift */; };
 		497186C51D2339210032A98E /* UIWindow+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971868B1D2339210032A98E /* UIWindow+BFKit.swift */; };
 		497186C71D2339210032A98E /* BFKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4971868E1D2339210032A98E /* BFKit.strings */; };
+		498738111D2838530052B70A /* BFLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498738101D2838530052B70A /* BFLogTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		497186C81D2339290032A98E /* BFAppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFAppTests.swift; path = Tests/BFAppTests.swift; sourceTree = SOURCE_ROOT; };
 		497186C91D2339290032A98E /* BFButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFButtonTests.swift; path = Tests/BFButtonTests.swift; sourceTree = SOURCE_ROOT; };
 		497186CA1D2339290032A98E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = SOURCE_ROOT; };
+		498738101D2838530052B70A /* BFLogTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFLogTests.swift; path = Tests/BFLogTests.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 				497186C81D2339290032A98E /* BFAppTests.swift */,
 				497186C91D2339290032A98E /* BFButtonTests.swift */,
 				49419AEF1D2467FC006CABE6 /* BFDataStructuresTests.swift */,
+				498738101D2838530052B70A /* BFLogTests.swift */,
 				497186CA1D2339290032A98E /* Info.plist */,
 			);
 			path = BFKitTests;
@@ -472,6 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				498738111D2838530052B70A /* BFLogTests.swift in Sources */,
 				49419AE81D233DF1006CABE6 /* BFAppTests.swift in Sources */,
 				49419AF01D2467FC006CABE6 /* BFDataStructuresTests.swift in Sources */,
 				49419AEB1D245961006CABE6 /* BFButtonTests.swift in Sources */,
