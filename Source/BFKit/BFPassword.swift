@@ -185,7 +185,7 @@ public class BFPassword {
     private static func countUppercaseLetters(password: String) -> Int {
         var countChar = 0
         for i in 0 ..< password.length {
-            let isUppercase = NSCharacterSet.lowercaseLetterCharacterSet().characterIsMember((String(password) as NSString).characterAtIndex(i))
+            let isUppercase = NSCharacterSet.uppercaseLetterCharacterSet().characterIsMember((String(password) as NSString).characterAtIndex(i))
             if isUppercase {
                 countChar += 1
             }
