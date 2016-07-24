@@ -56,7 +56,7 @@ public extension FileManager {
      - returns: Returns the content of the file a String
      */
     public static func readTextFile(_ file: String, ofType: String) throws -> String? {
-        return try String(contentsOfFile: Bundle.main().pathForResource(file, ofType: ofType)!, encoding: String.Encoding.utf8)
+        return try String(contentsOfFile: Bundle.main.pathForResource(file, ofType: ofType)!, encoding: String.Encoding.utf8)
     }
     
     /**
@@ -119,7 +119,7 @@ public extension FileManager {
      */
     public static func getBundlePathForFile(_ file: String) -> String {
         let fileExtension = file.pathExtension
-        return Bundle.main().pathForResource(file.replacingOccurrences(of: String(format: ".%@", file), with: ""), ofType: fileExtension)!
+        return Bundle.main.pathForResource(file.replacingOccurrences(of: String(format: ".%@", file), with: ""), ofType: fileExtension)!
     }
     
     /**
@@ -181,8 +181,8 @@ public extension FileManager {
                 path = self.getCacheDirectoryForFile(file)
             }
             
-            if FileManager.default().fileExists(atPath: path) {
-                let fileAttributes: NSDictionary? = try FileManager.default().attributesOfItem(atPath: file)
+            if FileManager.default.fileExists(atPath: path) {
+                let fileAttributes: NSDictionary? = try FileManager.default.attributesOfItem(atPath: file)
                 if let _fileAttributes = fileAttributes {
                     return NSNumber(value: _fileAttributes.fileSize())
                 }
@@ -215,9 +215,9 @@ public extension FileManager {
                 path = self.getCacheDirectoryForFile(file)
             }
             
-            if FileManager.default().fileExists(atPath: path) {
+            if FileManager.default.fileExists(atPath: path) {
                 do {
-                    try FileManager.default().removeItem(atPath: path)
+                    try FileManager.default.removeItem(atPath: path)
                     return true
                 } catch {
                     return false
@@ -272,15 +272,15 @@ public extension FileManager {
         
         if folderName != nil {
             let folderPath: String = String(format: "%@/%@", destinationPath, folderName!)
-            if !FileManager.default().fileExists(atPath: originPath) {
-                try FileManager.default().createDirectory(atPath: folderPath, withIntermediateDirectories: false, attributes: nil)
+            if !FileManager.default.fileExists(atPath: originPath) {
+                try FileManager.default.createDirectory(atPath: folderPath, withIntermediateDirectories: false, attributes: nil)
             }
         }
         
         var copied: Bool = false, deleted: Bool = false
-        if FileManager.default().fileExists(atPath: originPath) {
+        if FileManager.default.fileExists(atPath: originPath) {
             do {
-                try FileManager.default().copyItem(atPath: originPath, toPath: destinationPath)
+                try FileManager.default.copyItem(atPath: originPath, toPath: destinationPath)
                 copied = true
             } catch {
                 copied = false
@@ -288,9 +288,9 @@ public extension FileManager {
         }
         
         if destination != .mainBundle {
-            if FileManager.default().fileExists(atPath: originPath) {
+            if FileManager.default.fileExists(atPath: originPath) {
                 do {
-                    try FileManager.default().removeItem(atPath: originPath)
+                    try FileManager.default.removeItem(atPath: originPath)
                     deleted = true
                 } catch {
                     deleted = false
@@ -328,9 +328,9 @@ public extension FileManager {
      - returns: Returns true if the operation was successful, otherwise false
      */
     public static func duplicateFileAtPath(_ origin: String, toNewPath destination: String) -> Bool {
-        if FileManager.default().fileExists(atPath: origin) {
+        if FileManager.default.fileExists(atPath: origin) {
             do {
-                try FileManager.default().copyItem(atPath: origin, toPath: destination)
+                try FileManager.default.copyItem(atPath: origin, toPath: destination)
                 return true
             } catch {
                 return false
@@ -363,12 +363,12 @@ public extension FileManager {
             originPath = self.getCacheDirectoryForFile(path)
         }
         
-        if FileManager.default().fileExists(atPath: originPath) {
+        if FileManager.default.fileExists(atPath: originPath) {
             let newNamePath: String = originPath.replacingOccurrences(of: oldName, with: newName)
             do {
-                try FileManager.default().copyItem(atPath: originPath, toPath: newNamePath)
+                try FileManager.default.copyItem(atPath: originPath, toPath: newNamePath)
                 do {
-                    try FileManager.default().removeItem(atPath: originPath)
+                    try FileManager.default.removeItem(atPath: originPath)
                     return true
                 } catch {
                     return false
@@ -394,7 +394,7 @@ public extension FileManager {
         path = path + "\(settings)-Settings.plist"
         
         var loadedPlist: NSMutableDictionary
-        if FileManager.default().fileExists(atPath: path) {
+        if FileManager.default.fileExists(atPath: path) {
             loadedPlist = NSMutableDictionary(contentsOfFile: path)!
         } else {
             return nil
@@ -418,7 +418,7 @@ public extension FileManager {
         path = path + "\(settings)-Settings.plist"
         
         var loadedPlist: NSMutableDictionary
-        if FileManager.default().fileExists(atPath: path) {
+        if FileManager.default.fileExists(atPath: path) {
             loadedPlist = NSMutableDictionary(contentsOfFile: path)!
         } else {
             loadedPlist = NSMutableDictionary()

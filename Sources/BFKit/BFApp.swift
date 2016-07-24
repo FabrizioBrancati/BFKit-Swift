@@ -113,7 +113,7 @@ public class BFApp {
             key = BFAppHasBeenOpened + "\(version)"
         }
         
-        let defaults = UserDefaults.standard()
+        let defaults = UserDefaults.standard
         let hasBeenOpened: Bool = defaults.bool(forKey: key)
         if hasBeenOpened != true {
             return true
@@ -136,7 +136,7 @@ public class BFApp {
             key = BFAppHasBeenOpened + "\(version)"
         }
         
-        let defaults = UserDefaults.standard()
+        let defaults = UserDefaults.standard
         let hasBeenOpened: Bool = defaults.bool(forKey: key)
         if hasBeenOpened != true {
             defaults.set(true, forKey: key)

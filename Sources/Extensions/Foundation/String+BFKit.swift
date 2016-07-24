@@ -526,7 +526,7 @@ public extension String {
      */
     public static func encodeToBase64(_ string: String) -> String {
         let data: Data = string.data(using: String.Encoding.utf8)!
-        return data.base64EncodedString(NSData.Base64EncodingOptions(rawValue: 0))
+        return data.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
     }
     
     /**
@@ -537,7 +537,7 @@ public extension String {
      - returns: Returns the decoded string
      */
     public static func decodeBase64(_ string: String) -> String {
-        let data: Data = Data(base64Encoded: string as String, options: NSData.Base64EncodingOptions(rawValue: 0))!
+        let data: Data = Data(base64Encoded: string as String, options: .ignoreUnknownCharacters)!
         return NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
     }
     

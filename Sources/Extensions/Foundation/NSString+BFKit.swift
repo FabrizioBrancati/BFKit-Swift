@@ -313,7 +313,7 @@ public extension NSString {
      */
     public static func encodeToBase64(_ string: NSString) -> NSString {
         let data: Data = string.convertToNSData()
-        return data.base64EncodedString(NSData.Base64EncodingOptions(rawValue: 0))
+        return data.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
     }
     
     /**
@@ -324,7 +324,7 @@ public extension NSString {
      - returns: Returns the decoded string
      */
     public static func decodeBase64(_ string: NSString) -> NSString {
-        let data: Data = Data(base64Encoded: string as String, options: NSData.Base64EncodingOptions(rawValue: 0))!
+        let data: Data = Data(base64Encoded: string as String, options: .ignoreUnknownCharacters)!
         return data.convertToUTF8String()
     }
     
@@ -345,7 +345,7 @@ public extension NSString {
      - returns: String without additional spaces
      */
     public func removeExtraSpaces() -> NSString {
-        let squashed = self.replacingOccurrences(of: "[ ]+", with: " ", options: .regularExpressionSearch, range: NSMakeRange(0, self.length))
+        let squashed = self.replacingOccurrences(of: "[ ]+", with: " ", options: .regularExpression, range: NSMakeRange(0, self.length))
         return squashed.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
     
@@ -396,7 +396,7 @@ public extension NSString {
      */
     public func stringToHEX() -> NSString {
         let len: Int = self.length
-        let chars: UnsafeMutablePointer<unichar> = UnsafeMutablePointer<unichar>(malloc(len * sizeof(unichar)));
+        let chars: UnsafeMutablePointer<unichar> = UnsafeMutablePointer<unichar>(malloc(len * sizeof(unichar.self)));
         self.getCharacters(UnsafeMutablePointer<unichar>(chars))
         
         let hexString: NSMutableString = NSMutableString()

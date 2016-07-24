@@ -52,7 +52,7 @@ public func IOS_VERSION() -> String {
  - returns: Returns a Bool
  */
 public func SYSTEM_VERSION_EQUAL_TO(_ v: String) -> Bool {
-    return UIDevice.current().systemVersion.compare(v, options: .numericSearch) == .orderedSame
+    return UIDevice.current().systemVersion.compare(v, options: .numeric) == .orderedSame
 }
 
 /**
@@ -63,7 +63,7 @@ public func SYSTEM_VERSION_EQUAL_TO(_ v: String) -> Bool {
  - returns: Returns a Bool
  */
 public func SYSTEM_VERSION_GREATER_THAN(_ v: String) -> Bool {
-    return UIDevice.current().systemVersion.compare(v, options: .numericSearch) == .orderedDescending
+    return UIDevice.current().systemVersion.compare(v, options: .numeric) == .orderedDescending
 }
 
 /**
@@ -74,7 +74,7 @@ public func SYSTEM_VERSION_GREATER_THAN(_ v: String) -> Bool {
  - returns: Returns a Bool
  */
 public func SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(_ v: String) -> Bool {
-    return UIDevice.current().systemVersion.compare(v, options: .numericSearch) != .orderedAscending
+    return UIDevice.current().systemVersion.compare(v, options: .numeric) != .orderedAscending
 }
 
 /**
@@ -85,7 +85,7 @@ public func SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(_ v: String) -> Bool {
  - returns: Returns a Bool
  */
 public func SYSTEM_VERSION_LESS_THAN(_ v: String) -> Bool {
-    return UIDevice.current().systemVersion.compare(v, options: .numericSearch) == .orderedAscending
+    return UIDevice.current().systemVersion.compare(v, options: .numeric) == .orderedAscending
 }
 
 /**
@@ -96,7 +96,7 @@ public func SYSTEM_VERSION_LESS_THAN(_ v: String) -> Bool {
  - returns: Returns a Bool
  */
 public func SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(_ v: String) -> Bool {
-    return UIDevice.current().systemVersion.compare(v, options: .numericSearch) != .orderedDescending
+    return UIDevice.current().systemVersion.compare(v, options: .numeric) != .orderedDescending
 }
 
 /**
@@ -434,7 +434,7 @@ public extension UIDevice {
      - returns: Returns the current device total disk space
      */
     public static func totalDiskSpace() throws -> AnyObject {
-        let attributes: NSDictionary = try FileManager.default().attributesOfFileSystem(forPath: NSHomeDirectory())
+        let attributes: NSDictionary = try FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
         return attributes.object(forKey: FileAttributeKey.systemSize)!
     }
     
@@ -444,7 +444,7 @@ public extension UIDevice {
      - returns: Returns the current device free disk space
      */
     public static func freeDiskSpace() throws -> AnyObject {
-        let attributes: NSDictionary = try FileManager.default().attributesOfFileSystem(forPath: NSHomeDirectory())
+        let attributes: NSDictionary = try FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
         return attributes.object(forKey: FileAttributeKey.systemFreeSize)!
     }
     
@@ -458,7 +458,7 @@ public extension UIDevice {
         if UIDevice.current().responds(to: #selector(getter: UIDevice.identifierForVendor)) {
             UUID = UIDevice.current().identifierForVendor!.uuidString
         } else {
-            let defaults = UserDefaults.standard()
+            let defaults = UserDefaults.standard
             UUID = defaults.object(forKey: BFUniqueIdentifierDefaultsKey) as? String
             if UUID == nil {
                 UUID = String.generateUUID()
@@ -492,7 +492,7 @@ public extension UIDevice {
         isValid = userUUID.isUUIDForAPNS()
         
         if isValid {
-            let defaults: UserDefaults = UserDefaults.standard()
+            let defaults: UserDefaults = UserDefaults.standard
             savedUUID = defaults.string(forKey: BFUserUniqueIdentifierDefaultsKey)
             if savedUUID == nil || savedUUID != userUUID {
                 defaults.set(userUUID, forKey: BFUserUniqueIdentifierDefaultsKey)

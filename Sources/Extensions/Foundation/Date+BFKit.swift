@@ -90,8 +90,8 @@ public extension Date {
     
      - returns: Return self as a BFDateInformation structure with a given time zone
      */
-    public func dateInformation(_ timeZone: TimeZone = TimeZone.system()) -> BFDateInformation {
-        let calendar = Calendar.autoupdatingCurrent()
+    public func dateInformation(_ timeZone: TimeZone = TimeZone.system) -> BFDateInformation {
+        let calendar = Calendar.autoupdatingCurrent
         calendar.timeZone = timeZone
         let comp = calendar.components(Calendar.Unit(rawValue: UInt.max), from: self)
         
@@ -104,7 +104,7 @@ public extension Date {
      - returns: Return the month
      */
     public func month() -> Date {
-        let calendar = Calendar.autoupdatingCurrent()
+        let calendar = Calendar.autoupdatingCurrent
         let comp = calendar.components([.year, .month], from: self)
         
         (comp as NSDateComponents).setValue(1, forComponent: .day)
@@ -125,7 +125,7 @@ public extension Date {
      - returns: Return weekday number
      */
     public func weekday() -> Int {
-        let calendar = Calendar.autoupdatingCurrent()
+        let calendar = Calendar.autoupdatingCurrent
         let comp = calendar.components([.year, .month, .day, .weekday], from: self)
         
         return comp.weekday!
@@ -170,7 +170,7 @@ public extension Date {
      - returns: Return the date with time informations
      */
     private func timelessDate() -> Date {
-        let calendar = Calendar.autoupdatingCurrent()
+        let calendar = Calendar.autoupdatingCurrent
         let comp = calendar.components([.year, .month, .day], from: self)
         
         return calendar.date(from: comp)!
@@ -182,7 +182,7 @@ public extension Date {
      - returns: Return the date with time informations
      */
     private func monthlessDate() -> Date {
-        let calendar = Calendar.autoupdatingCurrent()
+        let calendar = Calendar.autoupdatingCurrent
         let comp = calendar.components([.year, .month, .day, .weekday], from: self)
         
         return calendar.date(from: comp)!
@@ -196,7 +196,7 @@ public extension Date {
      - returns: Returns true if is same day, false if not
      */
     public func isSameDay(_ anotherDate: Date) -> Bool {
-        let calendar = Calendar.autoupdatingCurrent()
+        let calendar = Calendar.autoupdatingCurrent
         let components1 = calendar.components([.year, .month, .day], from: self)
         let components2 = calendar.components([.year, .month, .day], from: anotherDate)
         
@@ -211,7 +211,7 @@ public extension Date {
      - returns: Returns the months between the two dates
      */
     public func monthsBetweenDate(_ toDate: Date) -> Int {
-        let calendar = Calendar.autoupdatingCurrent()
+        let calendar = Calendar.autoupdatingCurrent
         let components = calendar.components(.month, from: self.monthlessDate(), to: toDate.monthlessDate(), options: Calendar.Options.wrapComponents)
         
         return abs(components.month!)
@@ -279,7 +279,7 @@ public extension Date {
      - returns: Date after removing all components but not year, month and day
      */
     public func shortData() -> Date {
-        let calendar = Calendar.autoupdatingCurrent()
+        let calendar = Calendar.autoupdatingCurrent
         let comp = calendar.components([.year, .month, .day], from:self)
         
         return calendar.date(from: comp)!
@@ -355,8 +355,8 @@ public extension Date {
     
      - returns: Returns a NSDate from a given BFDateInformation structure with a given time zone
      */
-    public static func dateFromDateInformation(_ info: BFDateInformation, timeZone: TimeZone = TimeZone.system()) -> Date {
-        let calendar = Calendar.autoupdatingCurrent()
+    public static func dateFromDateInformation(_ info: BFDateInformation, timeZone: TimeZone = TimeZone.system) -> Date {
+        let calendar = Calendar.autoupdatingCurrent
         let comp = calendar.components([.year, .month], from:Date())
         
         (comp as NSDateComponents).setValue(info.day, forComponent:.day)

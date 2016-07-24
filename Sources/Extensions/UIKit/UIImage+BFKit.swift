@@ -675,7 +675,7 @@ public extension UIImage {
             return nil
         }
         
-        if let maskImage = maskImage where maskImage.cgImage == nil {
+        if let maskImage = maskImage, maskImage.cgImage == nil {
             BFLog("maskImage must be backed by a CGImage: \(maskImage)")
             return nil
         }

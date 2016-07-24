@@ -39,7 +39,7 @@ public class BFTextField: UITextField {
         super.init(frame: frame)
         
         self.maxNumberOfCharacters = 0
-        NotificationCenter.default().addObserver(self, selector: #selector(BFTextField.textFieldDidChange(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: self)
+        NotificationCenter.default.addObserver(self, selector: #selector(BFTextField.textFieldDidChange(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: self)
     }
     
     /**
@@ -53,7 +53,7 @@ public class BFTextField: UITextField {
         super.init(coder: aDecoder)
         
         self.maxNumberOfCharacters = Int(aDecoder.decodeInteger(forKey: "MaxNumberOfCharacters"))
-        NotificationCenter.default().addObserver(self, selector: #selector(BFTextField.textFieldDidChange(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: self)
+        NotificationCenter.default.addObserver(self, selector: #selector(BFTextField.textFieldDidChange(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: self)
     }
     
     public override func encode(with aCoder: NSCoder) {
@@ -69,6 +69,6 @@ public class BFTextField: UITextField {
     }
     
     deinit {
-        NotificationCenter.default().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 }
