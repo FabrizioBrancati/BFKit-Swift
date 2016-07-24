@@ -272,7 +272,7 @@ class DetailViewController: UIViewController {
             let otherFontLabel: UILabel = UILabel(frame: CGRectMake(20, 60, SCREEN_WIDTH - 40, 25), text: "It's awesome!", font: .SuperclarendonBold, size: 16, color: UIColor.blackColor(), alignment: .Left, lines: 1)
             scrollView.addSubview(otherFontLabel)
         case .UIImage:
-            scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, ((SCREEN_WIDTH - 40) * 10) + (20 * 11))
+            scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, ((SCREEN_WIDTH - 40) * 11) + (20 * 12))
             
             let blendOverlayImage: UIImage = UIImage(named: "Logo")!.blendOverlay()
             let blendOverlayImageView: UIImageView = UIImageView(frame: CGRectMake(20, 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40), image: blendOverlayImage)
@@ -333,6 +333,18 @@ class DetailViewController: UIViewController {
             let dummyLabel: UILabel = UILabel(frame: CGRectMake(0, 20, SCREEN_WIDTH - 40, 25), text: "Dummy Image", font: .HelveticaNeue, size: 16, color: UIColor.whiteColor(), alignment: .Center, lines: 1, shadowColor: UIColor.blackColor())
             dummyImageView.addSubview(dummyLabel)
             scrollView.addSubview(dummyImageView)
+            
+            let bwImage: UIImage = UIImage(named: "Logo")!.imageToBlackAndWhite()
+            let bwImageView: UIImageView = UIImageView(frame: CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20 + invertedImageView.frame.size.height + 20 + blurredImageView.frame.size.height + 20 + bumpedImageView.frame.size.height + 20 + sepiaImageView.frame.size.height + 20 + colorImageView.frame.size.height + 20 + dummyImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40), image: bwImage)
+            let bwLabel: UILabel = UILabel(frame: CGRectMake(0, 20, SCREEN_WIDTH - 40, 25), text: "Black and White Image", font: .HelveticaNeue, size: 16, color: UIColor.whiteColor(), alignment: .Center, lines: 1, shadowColor: UIColor.blackColor())
+            bwImageView.addSubview(bwLabel)
+            scrollView.addSubview(bwImageView)
+            
+            let grayscaleImage: UIImage = UIImage(named: "Logo")!.imageToGrayscale()
+            let grayscaleImageView: UIImageView = UIImageView(frame: CGRectMake(20, 20 + blendOverlayImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20 + invertedImageView.frame.size.height + 20 + blurredImageView.frame.size.height + 20 + bumpedImageView.frame.size.height + 20 + sepiaImageView.frame.size.height + 20 + colorImageView.frame.size.height + 20 + dummyImageView.frame.size.height + 20 + bwImageView.frame.size.height + 20, SCREEN_WIDTH - 40, SCREEN_WIDTH - 40), image: grayscaleImage)
+            let grayscaleLabel: UILabel = UILabel(frame: CGRectMake(0, 20, SCREEN_WIDTH - 40, 25), text: "Black and White Image", font: .HelveticaNeue, size: 16, color: UIColor.whiteColor(), alignment: .Center, lines: 1, shadowColor: UIColor.blackColor())
+            grayscaleImageView.addSubview(grayscaleLabel)
+            scrollView.addSubview(grayscaleImageView)
         case .UIImageView:
             scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, ((SCREEN_WIDTH - 40) * 2) + (20 * 3))
             
