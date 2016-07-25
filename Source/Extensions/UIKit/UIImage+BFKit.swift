@@ -432,7 +432,7 @@ public extension UIImage {
         let rect: CGRect = CGRectMake(0.0, 0.0, size.width, size.height)
         
         let colorSpace: CGColorSpaceRef = CGColorSpaceCreateDeviceGray()!
-        let context: CGContextRef = CGBitmapContextCreate(nil, Int(self.size.width), Int(self.size.height), 8, 0, colorSpace, CGImageGetBitmapInfo(self.CGImage).rawValue)!
+        let context: CGContextRef = CGBitmapContextCreate(nil, Int(self.size.width), Int(self.size.height), 8, 0, colorSpace, .allZeros)!
 
         CGContextDrawImage(context, rect, self.CGImage)
         let grayscale: CGImageRef = CGBitmapContextCreateImage(context)!
@@ -448,7 +448,7 @@ public extension UIImage {
      */
     public func imageToBlackAndWhite() -> UIImage {
         let colorSpace: CGColorSpaceRef = CGColorSpaceCreateDeviceGray()!
-        let context: CGContextRef = CGBitmapContextCreate(nil, Int(self.size.width), Int(self.size.height), 8, 0, colorSpace, CGImageGetBitmapInfo(self.CGImage).rawValue)!
+        let context: CGContextRef = CGBitmapContextCreate(nil, Int(self.size.width), Int(self.size.height), 8, 0, colorSpace, .allZeros)!
         CGContextSetInterpolationQuality(context, .High)
         CGContextSetShouldAntialias(context, false)
         CGContextDrawImage(context, CGRectMake(0, 0, self.size.width, self.size.height), self.CGImage)
