@@ -41,7 +41,7 @@ private let BFUserUniqueIdentifierDefaultsKey = "BFUserUniqueIdentifier"
  - returns: Get the iOS version string
  */
 public func IOS_VERSION() -> String {
-    return UIDevice.current().systemVersion
+    return UIDevice.current.systemVersion
 }
 
 /**
@@ -52,7 +52,7 @@ public func IOS_VERSION() -> String {
  - returns: Returns a Bool
  */
 public func SYSTEM_VERSION_EQUAL_TO(_ v: String) -> Bool {
-    return UIDevice.current().systemVersion.compare(v, options: .numeric) == .orderedSame
+    return UIDevice.current.systemVersion.compare(v, options: .numeric) == .orderedSame
 }
 
 /**
@@ -63,7 +63,7 @@ public func SYSTEM_VERSION_EQUAL_TO(_ v: String) -> Bool {
  - returns: Returns a Bool
  */
 public func SYSTEM_VERSION_GREATER_THAN(_ v: String) -> Bool {
-    return UIDevice.current().systemVersion.compare(v, options: .numeric) == .orderedDescending
+    return UIDevice.current.systemVersion.compare(v, options: .numeric) == .orderedDescending
 }
 
 /**
@@ -74,7 +74,7 @@ public func SYSTEM_VERSION_GREATER_THAN(_ v: String) -> Bool {
  - returns: Returns a Bool
  */
 public func SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(_ v: String) -> Bool {
-    return UIDevice.current().systemVersion.compare(v, options: .numeric) != .orderedAscending
+    return UIDevice.current.systemVersion.compare(v, options: .numeric) != .orderedAscending
 }
 
 /**
@@ -85,7 +85,7 @@ public func SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(_ v: String) -> Bool {
  - returns: Returns a Bool
  */
 public func SYSTEM_VERSION_LESS_THAN(_ v: String) -> Bool {
-    return UIDevice.current().systemVersion.compare(v, options: .numeric) == .orderedAscending
+    return UIDevice.current.systemVersion.compare(v, options: .numeric) == .orderedAscending
 }
 
 /**
@@ -96,7 +96,7 @@ public func SYSTEM_VERSION_LESS_THAN(_ v: String) -> Bool {
  - returns: Returns a Bool
  */
 public func SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(_ v: String) -> Bool {
-    return UIDevice.current().systemVersion.compare(v, options: .numeric) != .orderedDescending
+    return UIDevice.current.systemVersion.compare(v, options: .numeric) != .orderedDescending
 }
 
 /**
@@ -105,7 +105,7 @@ public func SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(_ v: String) -> Bool {
  - returns: Returns if the iOS version is greater or equal to choosed one
  */
 public func IS_IOS_5_OR_LATER() -> Bool {
-    return UIDevice.current().systemVersion.floatValue >= 5.0
+    return UIDevice.current.systemVersion.floatValue >= 5.0
 }
 
 /**
@@ -114,7 +114,7 @@ public func IS_IOS_5_OR_LATER() -> Bool {
  - returns: Returns if the iOS version is greater or equal to choosed one
  */
 public func IS_IOS_6_OR_LATER() -> Bool {
-    return UIDevice.current().systemVersion.floatValue >= 6.0
+    return UIDevice.current.systemVersion.floatValue >= 6.0
 }
 
 /**
@@ -123,7 +123,7 @@ public func IS_IOS_6_OR_LATER() -> Bool {
  - returns: Returns if the iOS version is greater or equal to choosed one
  */
 public func IS_IOS_7_OR_LATER() -> Bool {
-    return UIDevice.current().systemVersion.floatValue >= 7.0
+    return UIDevice.current.systemVersion.floatValue >= 7.0
 }
 
 /**
@@ -132,7 +132,7 @@ public func IS_IOS_7_OR_LATER() -> Bool {
  - returns: Returns if the iOS version is greater or equal to choosed one
  */
 public func IS_IOS_8_OR_LATER() -> Bool {
-    return UIDevice.current().systemVersion.floatValue >= 8.0
+    return UIDevice.current.systemVersion.floatValue >= 8.0
 }
 
 /**
@@ -141,7 +141,7 @@ public func IS_IOS_8_OR_LATER() -> Bool {
  - returns: Returns if the iOS version is greater or equal to choosed one
  */
 public func IS_IOS_9_OR_LATER() -> Bool {
-    return UIDevice.current().systemVersion.floatValue >= 9.0
+    return UIDevice.current.systemVersion.floatValue >= 9.0
 }
 
 /// This extesion adds some useful functions to UIDevice
@@ -354,7 +354,7 @@ public extension UIDevice {
      - returns: Returns the iOS version
      */
     public static func iOSVersion() -> Int {
-        return Int(UIDevice.current().systemVersion.substringToCharacter(".")!)!
+        return Int(UIDevice.current.systemVersion.substringToCharacter(".")!)!
     }
     
     /**
@@ -455,8 +455,8 @@ public extension UIDevice {
      */
     public static func uniqueIdentifier() -> String {
         var UUID: String?
-        if UIDevice.current().responds(to: #selector(getter: UIDevice.identifierForVendor)) {
-            UUID = UIDevice.current().identifierForVendor!.uuidString
+        if UIDevice.current.responds(to: #selector(getter: UIDevice.identifierForVendor)) {
+            UUID = UIDevice.current.identifierForVendor!.uuidString
         } else {
             let defaults = UserDefaults.standard
             UUID = defaults.object(forKey: BFUniqueIdentifierDefaultsKey) as? String

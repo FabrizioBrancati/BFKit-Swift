@@ -56,7 +56,7 @@ public extension FileManager {
      - returns: Returns the content of the file a String
      */
     public static func readTextFile(_ file: String, ofType: String) throws -> String? {
-        return try String(contentsOfFile: Bundle.main.pathForResource(file, ofType: ofType)!, encoding: String.Encoding.utf8)
+        return try String(contentsOfFile: Bundle.main.path(forResource: file, ofType: ofType)!, encoding: String.Encoding.utf8)
     }
     
     /**
@@ -119,7 +119,7 @@ public extension FileManager {
      */
     public static func getBundlePathForFile(_ file: String) -> String {
         let fileExtension = file.pathExtension
-        return Bundle.main.pathForResource(file.replacingOccurrences(of: String(format: ".%@", file), with: ""), ofType: fileExtension)!
+        return Bundle.main.path(forResource: file.replacingOccurrences(of: String(format: ".%@", file), with: ""), ofType: fileExtension)!
     }
     
     /**

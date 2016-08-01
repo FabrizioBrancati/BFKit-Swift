@@ -37,7 +37,7 @@ public extension UIPasteboard {
      - parameter text: The text to be copy to
      */
     public static func copyToPasteboard(_ text: String) {
-        UIPasteboard.general().string = text
+        UIPasteboard.general.string = text
     }
     
     /**
@@ -46,7 +46,7 @@ public extension UIPasteboard {
      - returns: Returns the last copied string from pasteboard
      */
     public static func stringFromPasteboard() -> String {
-        guard let pasteboard = UIPasteboard.general().string else {
+        guard let pasteboard = UIPasteboard.general.string else {
             return ""
         }
         

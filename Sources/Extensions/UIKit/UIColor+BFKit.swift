@@ -61,25 +61,25 @@ public extension UIColor {
     // MARK: - Variables -
     
     /// RGB properties: red
-    public var red: CGFloat {
+    public var redComponent: CGFloat {
         get {
             if self.canProvideRGBComponents() {
-                let c = self.cgColor.components
+                let c = self.cgColor.__unsafeComponents
                 
                 return c![0]
             }
             
             return 0.0
         } set(newValue) {
-            self.red = newValue
+            self.redComponent = newValue
         }
     }
     
     /// RGB properties: green
-    public var green: CGFloat {
+    public var greenComponent: CGFloat {
         get {
             if self.canProvideRGBComponents() {
-                let c = self.cgColor.components
+                let c = self.cgColor.__unsafeComponents
                 
                 if self.cgColor.colorSpace?.model == CGColorSpaceModel.monochrome {
                     return c![0]
@@ -90,15 +90,15 @@ public extension UIColor {
             return 0.0
         }
         set(newValue) {
-            self.green = newValue
+            self.greenComponent = newValue
         }
     }
     
     /// RGB properties: blue
-    public var blue: CGFloat {
+    public var blueComponent: CGFloat {
         get {
             if self.canProvideRGBComponents() {
-                let c = self.cgColor.components
+                let c = self.cgColor.__unsafeComponents
                 
                 if self.cgColor.colorSpace?.model == CGColorSpaceModel.monochrome {
                     return c![0]
@@ -109,15 +109,15 @@ public extension UIColor {
             return 0.0
         }
         set(newValue) {
-            self.blue = newValue
+            self.blueComponent = newValue
         }
     }
     
     /// RGB properties: white
-    public var white: CGFloat {
+    public var whiteComponent: CGFloat {
         get {
             if self.cgColor.colorSpace?.model == CGColorSpaceModel.monochrome {
-                let c = self.cgColor.components
+                let c = self.cgColor.__unsafeComponents
             
                 return c![0]
             }
@@ -125,7 +125,7 @@ public extension UIColor {
             return 0.0
         }
         set(newValue) {
-            self.white = newValue
+            self.whiteComponent = newValue
         }
     }
     
@@ -220,7 +220,7 @@ public extension UIColor {
      - returns: Returns the color
      */
     public func contrastingColor() -> UIColor {
-        return self.luminance > 0.5 ? UIColor.black() : UIColor.white()
+        return self.luminance > 0.5 ? UIColor.black : UIColor.white
     }
     
     /**
@@ -323,7 +323,7 @@ public extension UIColor {
      - returns: Return true or false
      */
     private func getRGBA(_ red: inout CGFloat, _ green: inout CGFloat, _ blue: inout CGFloat, _ alpha: inout CGFloat) -> Bool {
-        let components = self.cgColor.components
+        let components = self.cgColor.__unsafeComponents
         
         var r, g, b, a: CGFloat
         
@@ -491,7 +491,7 @@ public extension UIColor {
      */
     public static func colorForColorString(_ colorString: String?) -> UIColor {
         if colorString == nil {
-            return UIColor.lightGray()
+            return UIColor.lightGray
         }
         
         if UIColor.responds(to: Selector(colorString!.lowercased() + "Color")) {
@@ -511,37 +511,37 @@ public extension UIColor {
     private static func getColorFromColorString(_ color: String) -> UIColor {
         switch color {
         case "black":
-            return UIColor.black()
+            return UIColor.black
         case "darkgray":
-            return UIColor.darkGray()
+            return UIColor.darkGray
         case "lightgray":
-            return UIColor.lightGray()
+            return UIColor.lightGray
         case "white":
-            return UIColor.white()
+            return UIColor.white
         case "gray":
-            return UIColor.gray()
+            return UIColor.gray
         case "red":
-            return UIColor.red()
+            return UIColor.red
         case "green":
-            return UIColor.green()
+            return UIColor.green
         case "blue":
-            return UIColor.blue()
+            return UIColor.blue
         case "cyan":
-            return UIColor.cyan()
+            return UIColor.cyan
         case "yellow":
-            return UIColor.yellow()
+            return UIColor.yellow
         case "magenta":
-            return UIColor.magenta()
+            return UIColor.magenta
         case "orange":
-            return UIColor.orange()
+            return UIColor.orange
         case "purple":
-            return UIColor.purple()
+            return UIColor.purple
         case "brown":
-            return UIColor.brown()
+            return UIColor.brown
         case "clear":
-            return UIColor.clear()
+            return UIColor.clear
         default:
-            return UIColor.black()
+            return UIColor.black
         }
     }
     

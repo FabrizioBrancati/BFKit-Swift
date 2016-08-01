@@ -68,7 +68,7 @@ public func NSLocalizedString(_ key: String) -> String {
 
 #if os(iOS)
     /// Get AppDelegate. To use it, cast to AppDelegate with "as! AppDelegate"
-    let appDelegate: UIApplicationDelegate? = UIApplication.shared().delegate
+    let appDelegate: UIApplicationDelegate? = UIApplication.shared.delegate
 #endif
 
 /// This class adds some useful functions for the App

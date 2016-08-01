@@ -36,13 +36,13 @@ import UIKit
     /// Inspectable border size
     @IBInspectable public var borderSize: CGFloat = 0
     /// Inspectable border color
-    @IBInspectable public var borderColor: UIColor = UIColor.black()
+    @IBInspectable public var borderColor: UIColor = UIColor.black
     /// Inspectable border alpha
     @IBInspectable public var borderAlpha: CGFloat = 1.0
     /// Inspectable shadow, only shadow or only corner size
     @IBInspectable public var shadow: Bool = false
     /// Inspectable shadow color
-    @IBInspectable public var shadowColor: UIColor = UIColor.black()
+    @IBInspectable public var shadowColor: UIColor = UIColor.black
     /// Inspectable shadow opacity
     @IBInspectable public var shadowOpacity: Float = 1.0
     /// Inspectable shadow offset x

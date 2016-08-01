@@ -90,10 +90,10 @@ public extension Date {
     
      - returns: Return self as a BFDateInformation structure with a given time zone
      */
-    public func dateInformation(_ timeZone: TimeZone = TimeZone.system) -> BFDateInformation {
-        let calendar = Calendar.autoupdatingCurrent
+    public func dateInformation(_ timeZone: TimeZone = TimeZone.ReferenceType.system) -> BFDateInformation {
+        var calendar = Calendar.autoupdatingCurrent
         calendar.timeZone = timeZone
-        let comp = calendar.components(Calendar.Unit(rawValue: UInt.max), from: self)
+        let comp = calendar.dateComponents([.year, .month, .day, .weekday, .hour, .minute, .second, .nanosecond], from: self)
         
         return BFDateInformation(year: comp.year!, month: comp.month!, day: comp.day!, weekday: comp.weekday!, hour: comp.hour!, minute: comp.minute!, second: comp.second!, nanosecond: comp.nanosecond!)
     }
@@ -105,7 +105,7 @@ public extension Date {
      */
     public func month() -> Date {
         let calendar = Calendar.autoupdatingCurrent
-        let comp = calendar.components([.year, .month], from: self)
+        let comp = calendar.dateComponents([.year, .month], from: self)
         
         (comp as NSDateComponents).setValue(1, forComponent: .day)
         
@@ -126,7 +126,7 @@ public extension Date {
      */
     public func weekday() -> Int {
         let calendar = Calendar.autoupdatingCurrent
-        let comp = calendar.components([.year, .month, .day, .weekday], from: self)
+        let comp = calendar.dateComponents([.year, .month, .day, .weekday], from: self)
         
         return comp.weekday!
     }
@@ -171,7 +171,7 @@ public extension Date {
      */
     private func timelessDate() -> Date {
         let calendar = Calendar.autoupdatingCurrent
-        let comp = calendar.components([.year, .month, .day], from: self)
+        let comp = calendar.dateComponents([.year, .month, .day], from: self)
         
         return calendar.date(from: comp)!
     }
@@ -183,7 +183,7 @@ public extension Date {
      */
     private func monthlessDate() -> Date {
         let calendar = Calendar.autoupdatingCurrent
-        let comp = calendar.components([.year, .month, .day, .weekday], from: self)
+        let comp = calendar.dateComponents([.year, .month, .day, .weekday], from: self)
         
         return calendar.date(from: comp)!
     }
@@ -197,8 +197,8 @@ public extension Date {
      */
     public func isSameDay(_ anotherDate: Date) -> Bool {
         let calendar = Calendar.autoupdatingCurrent
-        let components1 = calendar.components([.year, .month, .day], from: self)
-        let components2 = calendar.components([.year, .month, .day], from: anotherDate)
+        let components1 = calendar.dateComponents([.year, .month, .day], from: self)
+        let components2 = calendar.dateComponents([.year, .month, .day], from: anotherDate)
         
         return components1.year == components2.year && components1.month == components2.month && components1.day == components2.day
     }
@@ -212,7 +212,7 @@ public extension Date {
      */
     public func monthsBetweenDate(_ toDate: Date) -> Int {
         let calendar = Calendar.autoupdatingCurrent
-        let components = calendar.components(.month, from: self.monthlessDate(), to: toDate.monthlessDate(), options: Calendar.Options.wrapComponents)
+        let components = calendar.dateComponents([.month], from: self.monthlessDate(), to: toDate.monthlessDate())
         
         return abs(components.month!)
     }
@@ -280,7 +280,7 @@ public extension Date {
      */
     public func shortData() -> Date {
         let calendar = Calendar.autoupdatingCurrent
-        let comp = calendar.components([.year, .month, .day], from:self)
+        let comp = calendar.dateComponents([.year, .month, .day], from:self)
         
         return calendar.date(from: comp)!
     }
@@ -355,9 +355,9 @@ public extension Date {
     
      - returns: Returns a NSDate from a given BFDateInformation structure with a given time zone
      */
-    public static func dateFromDateInformation(_ info: BFDateInformation, timeZone: TimeZone = TimeZone.system) -> Date {
+    public static func dateFromDateInformation(_ info: BFDateInformation, timeZone: TimeZone = TimeZone.ReferenceType.system) -> Date {
         let calendar = Calendar.autoupdatingCurrent
-        let comp = calendar.components([.year, .month], from:Date())
+        let comp = calendar.dateComponents([.year, .month], from:Date())
         
         (comp as NSDateComponents).setValue(info.day, forComponent:.day)
         (comp as NSDateComponents).setValue(info.month, forComponent:.month)

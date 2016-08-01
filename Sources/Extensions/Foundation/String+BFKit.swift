@@ -245,8 +245,8 @@ public extension String {
      - returns: Returns a new string containing matching regular expressions replaced with the template string
      */
     public func stringByReplacingWithRegex(_ regexString: NSString, withString replacement: NSString) throws -> NSString {
-        let regex: RegularExpression = try RegularExpression(pattern: regexString as String, options: .caseInsensitive)
-        return regex.stringByReplacingMatches(in: self, options: RegularExpression.MatchingOptions(rawValue: 0), range:NSMakeRange(0, self.length), withTemplate: "")
+        let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString as String, options: .caseInsensitive)
+        return regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range:NSMakeRange(0, self.length), withTemplate: "")
     }
     
     /**
@@ -331,7 +331,7 @@ public extension String {
      */
     public func isUUID() -> Bool {
         do {
-            let regex: RegularExpression = try RegularExpression(pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", options: .caseInsensitive)
+            let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", options: .caseInsensitive)
             let matches: Int = regex.numberOfMatches(in: self as String, options: .reportCompletion, range: NSMakeRange(0, self.length))
             return matches == 1
         } catch {
@@ -346,7 +346,7 @@ public extension String {
      */
     public func isUUIDForAPNS() -> Bool {
         do {
-            let regex: RegularExpression = try RegularExpression(pattern: "^[0-9a-f]{32}$", options: .caseInsensitive)
+            let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{32}$", options: .caseInsensitive)
             let matches: Int = regex.numberOfMatches(in: self as String, options: .reportCompletion, range: NSMakeRange(0, self.length))
             return matches == 1
         } catch {
@@ -468,7 +468,7 @@ public extension String {
     public static func isEmail(_ email: String) -> Bool {
         let emailRegEx: String = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
         
-        let regExPredicate: Predicate = Predicate(format: "SELF MATCHES %@", emailRegEx)
+        let regExPredicate: NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return regExPredicate.evaluate(with: email.lowercased())
     }
     

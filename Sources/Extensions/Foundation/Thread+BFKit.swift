@@ -45,7 +45,7 @@ public func runOnMainThread(_ block: () -> ()) {
  - parameter: block Block to be executed
  */
 public func runInBackground(_ block: () -> ()) {
-    DispatchQueue.global(attributes: DispatchQueue.GlobalAttributes.qosDefault).async {
+    DispatchQueue.global().async {
         block()
     }
 }
@@ -74,7 +74,7 @@ public extension Thread {
      - parameter delay:    Delay to excute the selector
      */
     public static func callSelector(_ selector: Selector, target: AnyObject, object: AnyObject? = nil, delay: TimeInterval = 0.0) {
-        DispatchQueue.main.after(when: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
             Thread.detachNewThreadSelector(selector, toTarget: target, with: object)
         })
     }

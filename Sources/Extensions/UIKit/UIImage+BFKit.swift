@@ -45,7 +45,7 @@ public extension UIImage {
      - returns: Returns the image
      */
     public func blendMode(_ blendMode: CGBlendMode) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: self.size.width, height: self.size.height), false, UIScreen.main().scale)
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: self.size.width, height: self.size.height), false, UIScreen.main.scale)
         self.draw(in: CGRect(x: 0.0, y: 0.0, width: self.size.width, height: self.size.height), blendMode: blendMode, alpha: 1)
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
@@ -121,7 +121,7 @@ public extension UIImage {
             }
         }
         
-        UIGraphicsBeginImageContextWithOptions(newTargetSize, false, UIScreen.main().scale)
+        UIGraphicsBeginImageContextWithOptions(newTargetSize, false, UIScreen.main.scale)
         var thumbnailRect: CGRect = CGRect.zero
         thumbnailRect.origin = thumbnailPoint
         thumbnailRect.size.width  = scaledWidth
@@ -155,7 +155,7 @@ public extension UIImage {
             let newHeight: CGFloat = (self.size.height * factor)/100
             
             let newSize: CGSize = CGSize(width: newWidth, height: newHeight)
-            UIGraphicsBeginImageContextWithOptions(newSize, false, UIScreen.main().scale)
+            UIGraphicsBeginImageContextWithOptions(newSize, false, UIScreen.main.scale)
             self.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
         } else if (self.size.height > newTargetSize.height || newTargetSize.width == newTargetSize.height) && self.size.width < self.size.height {
             let factor: CGFloat = (newTargetSize.width * 100)/self.size.height
@@ -163,18 +163,18 @@ public extension UIImage {
             let newHeight: CGFloat = (self.size.height * factor)/100
             
             let newSize: CGSize = CGSize(width: newWidth, height: newHeight)
-            UIGraphicsBeginImageContextWithOptions(newSize, false, UIScreen.main().scale)
+            UIGraphicsBeginImageContextWithOptions(newSize, false, UIScreen.main.scale)
             self.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
         } else if (self.size.height > newTargetSize.height || self.size.width > newTargetSize.width ) && self.size.width == self.size.height {
             let factor: CGFloat = (newTargetSize.height * 100) / self.size.height
             let newDimension: CGFloat = (self.size.height * factor) / 100
             
             let newSize: CGSize = CGSize(width: newDimension, height: newDimension)
-            UIGraphicsBeginImageContextWithOptions(newSize, false, UIScreen.main().scale)
+            UIGraphicsBeginImageContextWithOptions(newSize, false, UIScreen.main.scale)
             self.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
         } else {
             let newSize: CGSize = CGSize(width: self.size.width, height: self.size.height)
-            UIGraphicsBeginImageContextWithOptions(newSize, false, UIScreen.main().scale)
+            UIGraphicsBeginImageContextWithOptions(newSize, false, UIScreen.main.scale)
             self.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
         }
         
@@ -229,7 +229,7 @@ public extension UIImage {
             }
         }
         
-        UIGraphicsBeginImageContextWithOptions(newTargetSize, false, UIScreen.main().scale)
+        UIGraphicsBeginImageContextWithOptions(newTargetSize, false, UIScreen.main.scale)
         
         var thumbnailRect: CGRect = CGRect.zero
         thumbnailRect.origin = thumbnailPoint
@@ -267,7 +267,7 @@ public extension UIImage {
         
         let thumbnailPoint: CGPoint = CGPoint(x: 0.0, y: 0.0)
         
-        UIGraphicsBeginImageContextWithOptions(targetSize, false, UIScreen.main().scale)
+        UIGraphicsBeginImageContextWithOptions(targetSize, false, UIScreen.main.scale)
         
         var thumbnailRect: CGRect = CGRect.zero
         thumbnailRect.origin = thumbnailPoint
@@ -310,14 +310,14 @@ public extension UIImage {
         rotatedViewBox.transform = t
         let rotatedSize: CGSize = rotatedViewBox.frame.size
         
-        UIGraphicsBeginImageContextWithOptions(rotatedSize, false, UIScreen.main().scale)
+        UIGraphicsBeginImageContextWithOptions(rotatedSize, false, UIScreen.main.scale)
         let bitmap: CGContext = UIGraphicsGetCurrentContext()!
         
-        bitmap.translate(x: rotatedSize.width / 2, y: rotatedSize.height / 2)
+        bitmap.translateBy(x: rotatedSize.width / 2, y: rotatedSize.height / 2)
         
-        bitmap.rotate(byAngle: CGFloat(DegreesToRadians(Float(degrees))))
+        bitmap.rotate(by: CGFloat(DegreesToRadians(Float(degrees))))
         
-        bitmap.scale(x: 1.0, y: -1.0)
+        bitmap.scaleBy(x: 1.0, y: -1.0)
         bitmap.draw(in: CGRect(x: -self.size.width / 2, y: -self.size.height / 2, width: self.size.width, height: self.size.height), image: self.cgImage!)
         
         let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
@@ -380,7 +380,7 @@ public extension UIImage {
      - returns: Returns the filled image
      */
     public func fillAlpha() -> UIImage {
-        return self.fillAlphaWithColor(UIColor.white())
+        return self.fillAlphaWithColor(UIColor.white)
     }
     
     /**
@@ -395,7 +395,7 @@ public extension UIImage {
         
         let cgColor: CGColor = color.cgColor
         
-        UIGraphicsBeginImageContextWithOptions(self.size, false, UIScreen.main().scale)
+        UIGraphicsBeginImageContextWithOptions(self.size, false, UIScreen.main.scale)
         let context: CGContext = UIGraphicsGetCurrentContext()!
         context.setFillColor(cgColor)
         context.fill(imageRect)
@@ -466,11 +466,11 @@ public extension UIImage {
      - returns: Returns the transformed image
      */
     public func invertColors() -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(self.size, false, UIScreen .main().scale)
+        UIGraphicsBeginImageContextWithOptions(self.size, false, UIScreen.main.scale)
         UIGraphicsGetCurrentContext()?.setBlendMode(.copy)
         self.draw(in: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
         UIGraphicsGetCurrentContext()?.setBlendMode(.difference)
-        UIGraphicsGetCurrentContext()?.setFillColor(UIColor.white().cgColor)
+        UIGraphicsGetCurrentContext()?.setFillColor(UIColor.white.cgColor)
         UIGraphicsGetCurrentContext()?.fill(CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
         
         let returnImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
@@ -687,20 +687,21 @@ public extension UIImage {
         let hasSaturationChange = Float(abs(saturationDeltaFactor - 1)) > FLT_EPSILON
         
         if hasBlur || hasSaturationChange {
-            UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main().scale)
+            UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
             let effectInContext = UIGraphicsGetCurrentContext()
-            effectInContext?.scale(x: 1, y: -1)
-            effectInContext?.translate(x: 0, y: -size.height)
+            effectInContext?.scaleBy(x: 1, y: -1)
+            effectInContext?.translateBy(x: 0, y: -size.height)
             effectInContext?.draw(in: imageRect, image: cgImage!)
             var effectInBuffer = vImage_Buffer(data: effectInContext?.data, height: UInt((effectInContext?.height)!), width: UInt((effectInContext?.width)!), rowBytes: (effectInContext?.bytesPerRow)!)
             
-            UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main().scale)
+            UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
             let effectOutContext = UIGraphicsGetCurrentContext()
             var effectOutBuffer = vImage_Buffer(data: effectOutContext?.data, height: UInt((effectOutContext?.height)!), width: UInt((effectOutContext?.width)!), rowBytes: (effectOutContext?.bytesPerRow)!)
             
             if hasBlur {
-                let inputRadius = blurRadius * UIScreen.main().scale
-                var radius = UInt32(floor(inputRadius * 3.0 * CGFloat(sqrt(2 * M_PI)) / 4 + 0.5))
+                let inputRadius = blurRadius * UIScreen.main.scale
+                let temp = inputRadius * 3.0 * CGFloat(sqrt(2 * M_PI)) / 4 + 0.5
+                var radius = UInt32(floor(temp))
                 if radius % 2 != 1 {
                     radius += 1
                 }
@@ -745,17 +746,17 @@ public extension UIImage {
             UIGraphicsEndImageContext()
         }
         
-        UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main().scale)
+        UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
         let outputContext = UIGraphicsGetCurrentContext()
-        outputContext?.scale(x: 1, y: -1)
-        outputContext?.translate(x: 0, y: -size.height)
+        outputContext?.scaleBy(x: 1, y: -1)
+        outputContext?.translateBy(x: 0, y: -size.height)
         
         outputContext?.draw(in: imageRect, image: cgImage!)
 
         if hasBlur {
             outputContext?.saveGState()
             if let image = maskImage {
-                outputContext?.clipToMask(imageRect, mask: image.cgImage!)
+                outputContext?.clip(to: imageRect, mask: image.cgImage!)
             }
             outputContext?.draw(in: imageRect, image: effectImage.cgImage!)
             outputContext?.restoreGState()
@@ -802,7 +803,7 @@ public extension UIImage {
      - returns: Returns the created dummy image
      */
     public convenience init?(dummyImageWithSizeAndColor dummy: String) {
-        var size: CGSize = CGSize.zero, color: UIColor = UIColor.lightGray()
+        var size: CGSize = CGSize.zero, color: UIColor = UIColor.lightGray
         
         let array: Array = dummy.components(separatedBy: ".")
         if array.count > 0 {
@@ -815,7 +816,7 @@ public extension UIImage {
             size = UIImage.sizeForSizeString(sizeString)
         }
         
-        UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main().scale)
+        UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
         let context: CGContext = UIGraphicsGetCurrentContext()!
         
         let rect: CGRect = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
@@ -824,7 +825,7 @@ public extension UIImage {
         context.fill(rect)
         
         let sizeString: String = "\(Int(size.width)) x \(Int(size.height))"
-        let style: NSMutableParagraphStyle = NSParagraphStyle.default().mutableCopy() as! NSMutableParagraphStyle
+        let style: NSMutableParagraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         style.alignment = .center
         style.minimumLineHeight = size.height / 2
         let attributes: Dictionary = [NSParagraphStyleAttributeName : style]
@@ -848,7 +849,7 @@ public extension UIImage {
      - returns: Returns the created UIImage
      */
     public convenience init?(fromText text: String, font: FontName, fontSize: CGFloat, imageSize: CGSize) {
-        UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.main().scale)
+        UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.main.scale)
         
         text.draw(at: CGPoint(x: 0.0, y: 0.0), withAttributes: [NSFontAttributeName : UIFont(fontName: font, size:fontSize)!])
         
@@ -876,7 +877,7 @@ public extension UIImage {
         
         let textSize: CGSize = maskedText.size(attributes: textAttributes)
         
-        UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.main().scale)
+        UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.main.scale)
         let ctx: CGContext = UIGraphicsGetCurrentContext()!
         
         ctx.setFillColor(backgroundColor.cgColor)

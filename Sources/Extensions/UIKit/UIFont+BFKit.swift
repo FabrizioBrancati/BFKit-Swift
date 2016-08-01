@@ -699,7 +699,7 @@ public extension UIFont {
      - returns: Returns all the font family names
      */
     public static func allFamilyAndFonts() -> Dictionary<String, Array<AnyObject>> {
-        var fontFamilies: NSMutableArray = NSMutableArray(array: UIFont.familyNames() as NSArray)
+        var fontFamilies: NSMutableArray = NSMutableArray(array: UIFont.familyNames as NSArray)
         fontFamilies = NSMutableArray.sortArrayByKey("", array: fontFamilies, ascending: true)
         
         var fontFamilyDic: Dictionary<String, Array<AnyObject>> = Dictionary()

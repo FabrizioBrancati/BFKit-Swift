@@ -46,7 +46,7 @@ public extension UILabel {
      */
     @available(*, obsoleted:1.2.0, message:"Use UILabel(_, text:, font:, size:, color:, alignment:, lines:, shadowColor:)")
     public convenience init(frame: CGRect, text: String, font: FontName, size: CGFloat, color: UIColor, alignment: NSTextAlignment, lines: Int) {
-        self.init(frame: frame, text: text, font: font, size: size, color: color, alignment: alignment, lines: lines, shadowColor: UIColor.clear())
+        self.init(frame: frame, text: text, font: font, size: size, color: color, alignment: alignment, lines: lines, shadowColor: UIColor.clear)
     }
     
     /**
@@ -63,11 +63,11 @@ public extension UILabel {
     
      - returns: Returns the created UILabel
      */
-    public convenience init(frame: CGRect, text: String, font: FontName, size: CGFloat, color: UIColor, alignment: NSTextAlignment, lines: Int, shadowColor: UIColor = UIColor.clear()) {
+    public convenience init(frame: CGRect, text: String, font: FontName, size: CGFloat, color: UIColor, alignment: NSTextAlignment, lines: Int, shadowColor: UIColor = UIColor.clear) {
         self.init(frame: frame)
         self.font = UIFont(fontName: font, size: size)
         self.text = text
-        self.backgroundColor = UIColor.clear()
+        self.backgroundColor = UIColor.clear
         self.textColor = color
         self.textAlignment = alignment
         self.numberOfLines = lines

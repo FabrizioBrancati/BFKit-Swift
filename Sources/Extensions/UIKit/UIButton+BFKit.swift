@@ -86,7 +86,7 @@ public extension UIButton {
      - returns: Returns the UIButton instance
      */
     public convenience init(frame: CGRect, title: String, color: UIColor) {
-        let components: UnsafePointer<CGFloat> = color.cgColor.components!
+        let components: UnsafePointer<CGFloat> = color.cgColor.__unsafeComponents!
         self.init(frame: frame, title: title, backgroundImage: UIImage(color: color), highlightedBackgroundImage: UIImage(color: UIColor(red: components[0]-0.1, green: components[1]-0.1, blue: components[2]-0.1, alpha: 1)))
     }
     

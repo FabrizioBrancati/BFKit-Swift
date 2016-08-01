@@ -73,7 +73,7 @@ public extension NSMutableArray {
         var tempArray: NSMutableArray = NSMutableArray()
         tempArray.addObjects(from: array as [AnyObject])
         
-        let descriptor: SortDescriptor = SortDescriptor(key: key, ascending: ascending)
+        let descriptor: NSSortDescriptor = NSSortDescriptor(key: key, ascending: ascending)
         let sortedArray: NSArray = tempArray.sortedArray(using: [descriptor])
         
         tempArray.removeAllObjects()

@@ -111,7 +111,7 @@ public extension UIView {
      Remove the shadow around the UIView
      */
     public func removeShadow() {
-        self.layer.shadowColor = UIColor.clear().cgColor
+        self.layer.shadowColor = UIColor.clear.cgColor
         self.layer.shadowOpacity = 0.0
         self.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
     }
@@ -148,7 +148,7 @@ public extension UIView {
      - parameter radius:  Shadow's radius
      */
     public func createRectShadowWithOffset(_ offset: CGSize, opacity: Float, radius: CGFloat) {
-        self.layer.shadowColor = UIColor.black().cgColor
+        self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOpacity = opacity
         self.layer.shadowOffset = offset
         self.layer.shadowRadius = radius
@@ -164,7 +164,7 @@ public extension UIView {
      - parameter radius:       Shadow's radius
      */
     public func createCornerRadiusShadowWithCornerRadius(_ cornerRadius: CGFloat, offset: CGSize, opacity: Float, radius: CGFloat) {
-        self.layer.shadowColor = UIColor.black().cgColor
+        self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOpacity = opacity
         self.layer.shadowOffset = offset
         self.layer.shadowRadius = radius
@@ -393,7 +393,7 @@ public extension UIView {
      - returns: Returns screenshot as UIImage
      */
     public func screenshot() -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main().scale)
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
         
         self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
         
