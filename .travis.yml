@@ -2,18 +2,14 @@ language: objective-c
 osx_image: xcode8
 
 before_install:
-  - gem install xcpretty
-
-install:
+  - gem install xcpretty -N --no-ri --no-rdoc
   - ./install_swiftlint.sh
 
 script:
-  - set -o pipefail
-  - swift -version
-  - xcodebuild -version
-  - xcodebuild -showsdks
-  - swiftlint
-  - xcodebuild clean test -project BFKit.xcodeproj -scheme BFKit -destination "platform=iOS Simulator,name=iPhone 6 Plus" -enableCodeCoverage YES | xcpretty
+- |
+    swiftlint
+    set -o pipefail
+    xcodebuild clean test -project BFKit.xcodeproj -scheme BFKit -destination "platform=iOS Simulator,name=iPhone 6 Plus" -enableCodeCoverage YES | xcpretty
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
