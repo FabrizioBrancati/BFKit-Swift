@@ -106,10 +106,10 @@ public extension NSString {
         if self.length == 0 {
             return ""
         }
-        let uppercase: NSString = self.substring(to: 1).uppercased()
-        let lowercase: NSString = self.substring(from: 1).lowercased()
+        let uppercase: NSString = self.substring(to: 1).uppercased() as NSString
+        let lowercase: NSString = self.substring(from: 1).lowercased() as NSString
         
-        return uppercase.appending(lowercase as String)
+        return uppercase.appending(lowercase as String) as NSString
     }
     
     /**
@@ -118,17 +118,17 @@ public extension NSString {
      - returns: Returns a human legible string from a timestamp
      */
     public func dateFromTimestamp() -> NSString {
-        let year: NSString = self.substring(to: 4)
-        var month: NSString = self.substring(from: 5)
-            month = month.substring(to: 4)
-        var day: NSString = self.substring(from: 8)
-            day = day.substring(to: 2)
-        var hours: NSString = self.substring(from: 11)
-            hours = hours.substring(to: 2)
-        var minutes: NSString = self.substring(from: 14)
-            minutes = minutes.substring(to: 2)
+        let year: NSString = self.substring(to: 4) as NSString
+        var month: NSString = self.substring(from: 5) as NSString
+            month = month.substring(to: 4) as NSString
+        var day: NSString = self.substring(from: 8) as NSString
+            day = day.substring(to: 2) as NSString
+        var hours: NSString = self.substring(from: 11) as NSString
+            hours = hours.substring(to: 2) as NSString
+        var minutes: NSString = self.substring(from: 14) as NSString
+            minutes = minutes.substring(to: 2) as NSString
         
-        return "\(day)/\(month)/\(year) \(hours):\(minutes)"
+        return "\(day)/\(month)/\(year) \(hours):\(minutes)" as NSString
     }
     
     /**
@@ -137,7 +137,7 @@ public extension NSString {
      - returns: Returns the encoded NSString
      */
     public func URLEncode() -> NSString {
-        return self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)!
+        return self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)! as NSString
     }
     
     /**
@@ -150,7 +150,7 @@ public extension NSString {
      */
     public func stringByReplacingWithRegex(_ regexString: NSString, withString replacement: NSString) throws -> NSString {
         let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString as String, options: .caseInsensitive)
-        return regex.stringByReplacingMatches(in: self as String, options: NSRegularExpression.MatchingOptions(rawValue: 0), range:NSMakeRange(0, self.length), withTemplate: "")
+        return regex.stringByReplacingMatches(in: self as String, options: NSRegularExpression.MatchingOptions(rawValue: 0), range:NSMakeRange(0, self.length), withTemplate: "") as NSString
     }
     
     /**
@@ -242,7 +242,7 @@ public extension NSString {
             end = 0
         }
         
-        return string.substring(from: start).substringToIndex(end)
+        return string.substring(from: start).substringToIndex(end) as NSString
     }
     
     /**
@@ -301,7 +301,7 @@ public extension NSString {
             .replacingOccurrences(of: "%c3%bb".capitalized, with: "û")
             .replacingOccurrences(of: "%c3%bc".capitalized, with: "ü")
             .replacingOccurrences(of: "%c3%bf".capitalized, with: "ÿ")
-            .replacingOccurrences(of: "%20", with: " ")
+            .replacingOccurrences(of: "%20", with: " ") as NSString
     }
     
     /**
@@ -313,7 +313,7 @@ public extension NSString {
      */
     public static func encodeToBase64(_ string: NSString) -> NSString {
         let data: Data = string.convertToNSData()
-        return data.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
+        return data.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0)) as NSString
     }
     
     /**
@@ -325,7 +325,7 @@ public extension NSString {
      */
     public static func decodeBase64(_ string: NSString) -> NSString {
         let data: Data = Data(base64Encoded: string as String, options: .ignoreUnknownCharacters)!
-        return data.convertToUTF8String()
+        return data.convertToUTF8String() as NSString as NSString
     }
     
     /**
@@ -346,7 +346,7 @@ public extension NSString {
      */
     public func removeExtraSpaces() -> NSString {
         let squashed = self.replacingOccurrences(of: "[ ]+", with: " ", options: .regularExpression, range: NSMakeRange(0, self.length))
-        return squashed.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        return squashed.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) as NSString
     }
     
     /**
@@ -360,7 +360,7 @@ public extension NSString {
     public func stringByReplacingWithRegex(_ regexString: NSString, replacement: NSString) -> NSString? {
         do {
             let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString as String, options: .caseInsensitive)
-            return regex.stringByReplacingMatches(in: self as String, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.length), withTemplate: "")
+            return regex.stringByReplacingMatches(in: self as String, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.length), withTemplate: "") as NSString
         } catch {
             
         }
@@ -385,7 +385,7 @@ public extension NSString {
             Scanner(string: c).scanHexInt32(&ch)
             s = s + String(format: "%c", ch)
         }
-        return s
+        return s as NSString
     }
     
     /**
@@ -395,16 +395,13 @@ public extension NSString {
      - returns: HEX string
      */
     public func stringToHEX() -> NSString {
-        let len: Int = self.length
-        let chars: UnsafeMutablePointer<unichar> = UnsafeMutablePointer<unichar>(malloc(len * sizeof(unichar.self)));
-        self.getCharacters(UnsafeMutablePointer<unichar>(chars))
+        let selfString = self as String
         
         let hexString: NSMutableString = NSMutableString()
         
-        for i in 0 ..< len {
-            hexString.appendFormat("%02x", chars[i])
+        for i in 0 ..< self.length {
+            hexString.appendFormat("%02x", selfString[i ..< i+1])
         }
-        free(chars)
         
         return hexString
     }

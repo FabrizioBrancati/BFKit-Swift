@@ -47,7 +47,7 @@ public extension NSMutableArray {
      */
     public func moveObjectFromIndex(_ from: Int, toIndex to: Int) {
         if to != from {
-            let obj: AnyObject? = self.safeObjectAtIndex(from)
+            let obj: Any? = self.safeObjectAtIndex(from)
             self.removeObject(at: from)
             
             if to >= self.count {
@@ -74,7 +74,7 @@ public extension NSMutableArray {
         tempArray.addObjects(from: array as [AnyObject])
         
         let descriptor: NSSortDescriptor = NSSortDescriptor(key: key, ascending: ascending)
-        let sortedArray: NSArray = tempArray.sortedArray(using: [descriptor])
+        let sortedArray = tempArray.sortedArray(using: [descriptor])
         
         tempArray.removeAllObjects()
         tempArray = NSMutableArray(array: sortedArray)

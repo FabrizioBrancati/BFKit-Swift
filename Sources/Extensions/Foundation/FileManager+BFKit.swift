@@ -93,7 +93,7 @@ public extension FileManager {
     
      - returns: Returns the loaded array
      */
-    public static func loadArrayFromPath(_ directory: DirectoryType, filename: String) -> AnyObject? {
+    public static func loadArrayFromPath(_ directory: DirectoryType, filename: String) -> Any? {
         var finalPath: String
         
         switch directory {
@@ -182,10 +182,8 @@ public extension FileManager {
             }
             
             if FileManager.default.fileExists(atPath: path) {
-                let fileAttributes: NSDictionary? = try FileManager.default.attributesOfItem(atPath: file)
-                if let _fileAttributes = fileAttributes {
-                    return NSNumber(value: _fileAttributes.fileSize())
-                }
+                let fileAttributes = try FileManager.default.attributesOfItem(atPath: file)
+                return fileAttributes[FileAttributeKey.size] as? NSNumber
             }
         }
         
@@ -388,7 +386,7 @@ public extension FileManager {
     
      - returns: Returns the object for the given key
      */
-    public static func getSettings(_ settings: String, objectForKey: String) -> AnyObject? {
+    public static func getSettings(_ settings: String, objectForKey: String) -> Any? {
         var path: String = self.getLibraryDirectoryForFile("")
         path = path + "/Preferences/"
         path = path + "\(settings)-Settings.plist"
@@ -400,7 +398,7 @@ public extension FileManager {
             return nil
         }
         
-        return loadedPlist[objectForKey]
+        return loadedPlist.object(forKey: objectForKey)
     }
     
     /**
@@ -448,7 +446,7 @@ public extension FileManager {
     
      - returns: Returns the object for the given key
      */
-    public static func getAppSettingsForObjectWithKey(_ objKey: String) -> AnyObject? {
+    public static func getAppSettingsForObjectWithKey(_ objKey: String) -> Any? {
         return self.getSettings(AppName, objectForKey: objKey)
     }
 }

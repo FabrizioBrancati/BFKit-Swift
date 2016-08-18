@@ -143,7 +143,7 @@ public extension Date {
      
      - returns: Return weekday as a localized string
      */
-    public func dayFromWeekday() -> NSString {
+    public func dayFromWeekday() -> String {
         switch self.weekday() {
         case 1:
             return BFLocalizedString("SUNDAY")

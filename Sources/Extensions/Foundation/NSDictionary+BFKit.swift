@@ -56,7 +56,7 @@ public extension NSDictionary {
      
      - returns: Value for the key Or nil
      */
-    public func safeObjectForKey(_ key: String) -> AnyObject? {
+    public func safeObjectForKey(_ key: String) -> Any? {
         if let value = self[key] {
             return value
         } else {

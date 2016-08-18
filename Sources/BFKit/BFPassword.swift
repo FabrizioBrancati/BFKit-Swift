@@ -166,7 +166,7 @@ public class BFPassword {
     private static func countLowercaseLetters(_ password: String) -> Int {
         var countChar = 0
         for i in 0 ..< password.length {
-            let isLowercase = CharacterSet.lowercaseLetters.contains(UnicodeScalar((String(password) as NSString).character(at: i)))
+            let isLowercase = CharacterSet.lowercaseLetters.contains(UnicodeScalar(((String(password) as NSString)).character(at: i))!)
             if isLowercase {
                 countChar += 1
             }
@@ -185,7 +185,7 @@ public class BFPassword {
     private static func countUppercaseLetters(_ password: String) -> Int {
         var countChar = 0
         for i in 0 ..< password.length {
-            let isUppercase = CharacterSet.lowercaseLetters.contains(UnicodeScalar((String(password) as NSString).character(at: i)))
+            let isUppercase = CharacterSet.lowercaseLetters.contains(UnicodeScalar((((String(password) as NSString))).character(at: i))!)
             if isUppercase {
                 countChar += 1
             }
@@ -204,7 +204,7 @@ public class BFPassword {
     private static func countNumbers(_ password: String) -> Int {
         var countNumber = 0
         for i in 0 ..< password.length {
-            let isNumber = CharacterSet(charactersIn: "0123456789").contains(UnicodeScalar((String(password) as NSString).character(at: i)))
+            let isNumber = CharacterSet(charactersIn: "0123456789").contains(UnicodeScalar(((String(password) as NSString)).character(at: i))!)
             if isNumber {
                 countNumber += 1
             }
@@ -223,7 +223,7 @@ public class BFPassword {
     private static func countSymbols(_ password: String) -> Int {
         var countSymbol = 0
         for i in 0 ..< password.length {
-            let isSymbol = CharacterSet(charactersIn: "`~!?@#$€£¥§%^&*()_+-={}[]:\";.,<>'•\\|/").contains(UnicodeScalar((String(password) as NSString).character(at: i)))
+            let isSymbol = CharacterSet(charactersIn: "`~!?@#$€£¥§%^&*()_+-={}[]:\";.,<>'•\\|/").contains(UnicodeScalar(((String(password) as NSString)).character(at: i))!)
             if isSymbol {
                 countSymbol += 1
             }

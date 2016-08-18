@@ -74,9 +74,7 @@ public var BFDetailedLogString: String {
     #endif
 }
 
-/**
- Clear the log string
- */
+/// Clear the log string
 public func BFLogClear() {
     #if DEBUG
         BFLogClass.clearLog()
@@ -88,16 +86,14 @@ private struct BFLogClass {
     // MARK: - Variables -
     
     /// The log string
-    private static var logString: String = ""
+    public static var logString: String = ""
     /// The detailed log string
-    private static var detailedLogString: String = ""
+    public static var detailedLogString: String = ""
     
     // MARK: - Class functions -
     
-    /**
-     Private, clear the log string
-     */
-    private static func clearLog() {
+    /// Private, clear the log string
+    public static func clearLog() {
         logString = ""
         detailedLogString = ""
     }

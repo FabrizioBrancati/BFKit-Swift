@@ -128,7 +128,7 @@ public class BFApp {
      - parameter version: Version to be checked, you can use the global varialble AppVersion to pass the current App version
      - parameter block:   The block to execute, returns isFirstStart
      */
-    public static func onFirstStart(version: String = "", block: (isFirstStart: Bool) -> ()) {
+    public static func onFirstStart(version: String = "", block: (_ isFirstStart: Bool) -> ()) {
         let key: String
         if version == "" {
             key = BFAppHasBeenOpened
@@ -143,6 +143,6 @@ public class BFApp {
             defaults.synchronize()
         }
         
-        block(isFirstStart: !hasBeenOpened)
+        block(!hasBeenOpened)
     }
 }

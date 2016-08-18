@@ -1,3 +1,4 @@
+
 //
 //  BFTouchID.swift
 //  BFKit
@@ -67,7 +68,7 @@ public class BFTouchID {
      - parameter fallbackTitle: Default title "Enter Password" is used when this property is left nil. If set to empty string, the button will be hidden
      - parameter completion:    Completion handler. It returns the TouchID result, from the TouchIDResult enum
      */
-    public static func showTouchIDAuthenticationWithReason(_ reason: String, fallbackTitle: String? = nil, completion: (result: TouchIDResult) -> ()) {
+    public static func showTouchIDAuthenticationWithReason(_ reason: String, fallbackTitle: String? = nil, completion: @escaping (_ result: TouchIDResult) -> ()) {
         
         let context: LAContext = LAContext()
         
@@ -77,19 +78,19 @@ public class BFTouchID {
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason, reply: { (success: Bool, error: Error?) -> Void in
                 if success {
-                    completion(result: .success)
+                    completion(.success)
                 } else {
                     switch error! {
                     case LAError.authenticationFailed:
-                        completion(result: .authenticationFailed)
+                        completion(.authenticationFailed)
                     case LAError.userCancel:
-                        completion(result: .userCancel)
+                        completion(.userCancel)
                     case LAError.userFallback:
-                        completion(result: .userFallback)
+                        completion(.userFallback)
                     case LAError.systemCancel:
-                        completion(result: .systemCancel)
+                        completion(.systemCancel)
                     default:
-                        completion(result: .error)
+                        completion(.error)
                     }
                 }
             })
@@ -98,13 +99,13 @@ public class BFTouchID {
         {
             switch error!.code {
             case LAError.passcodeNotSet.rawValue:
-                completion(result: .passcodeNotSet)
+                completion(.passcodeNotSet)
             case LAError.touchIDNotAvailable.rawValue:
-                completion(result: .notAvailable)
+                completion(.notAvailable)
             case LAError.touchIDNotEnrolled.rawValue:
-                completion(result: .notEnrolled)
+                completion(.notEnrolled)
             default:
-                completion(result: .error)
+                completion(.error)
             }
         }
     }

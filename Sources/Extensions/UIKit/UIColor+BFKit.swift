@@ -250,7 +250,7 @@ public extension UIColor {
      */
     public func canProvideRGBComponents() -> Bool {
         switch self.cgColor.colorSpace!.model {
-        case CGColorSpaceModel.RGB:
+        case CGColorSpaceModel.rgb:
             return true
         case CGColorSpaceModel.monochrome:
             return true
@@ -333,7 +333,7 @@ public extension UIColor {
             g = (components?[0])!
             b = (components?[0])!
             a = (components?[1])!
-        case CGColorSpaceModel.RGB:
+        case CGColorSpaceModel.rgb:
             r = (components?[0])!
             g = (components?[1])!
             b = (components?[2])!
@@ -435,8 +435,7 @@ public extension UIColor {
      - returns: Returns the color component from the string
      */
     private static func colorComponentFrom(_ string: String, start: Int, lenght: Int) -> CGFloat {
-        var substring: NSString = string as NSString
-        substring = substring.substring(with: NSMakeRange(start, lenght))
+        let substring: String = string.substringWithRange(Range(start...lenght))
         let fullHex = lenght == 2 ? substring as String : "\(substring)\(substring)"
         var hexComponent: CUnsignedInt = 0
         Scanner(string: fullHex).scanHexInt32(&hexComponent)

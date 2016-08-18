@@ -140,6 +140,6 @@ public extension NSNumber {
      - returns: Returns if the number is a power of two
      */
     public static func isPowerOfTwo(_ number: Int) -> Bool {
-        return (number != 0) && Bool((number & (number - 1)))
+        return (number != 0) && (number & (number - 1) >= 1 ? true : false)
     }
 }

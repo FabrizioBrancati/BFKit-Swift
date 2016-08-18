@@ -51,7 +51,7 @@ public extension Array {
      - returns: Returns the JSON as String or nil if error while parsing
      */
     func arrayToJSON() throws -> String {
-        return try Array.arrayToJSON(self as! AnyObject)
+        return try Array.arrayToJSON(self as AnyObject)
     }
     
     /**

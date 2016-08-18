@@ -318,7 +318,7 @@ public extension UIImage {
         bitmap.rotate(by: CGFloat(DegreesToRadians(Float(degrees))))
         
         bitmap.scaleBy(x: 1.0, y: -1.0)
-        bitmap.draw(in: CGRect(x: -self.size.width / 2, y: -self.size.height / 2, width: self.size.width, height: self.size.height), image: self.cgImage!)
+        bitmap.draw(self.cgImage!, in: CGRect(x: -self.size.width / 2, y: -self.size.height / 2, width: self.size.width, height: self.size.height))
         
         let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
@@ -367,7 +367,7 @@ public extension UIImage {
         let colorSpace: CGColorSpace = CGColorSpaceCreateDeviceRGB()
         let mainViewContentContext: CGContext = CGContext(data: nil, width: Int(self.size.width), height: Int(self.size.height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: self.cgImage!.bitmapInfo.rawValue)!
         
-        mainViewContentContext.draw(in: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height), image: self.cgImage!)
+        mainViewContentContext.draw(self.cgImage!, in: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
         let mainViewContentBitmapContext: CGImage = mainViewContentContext.makeImage()!
         let returnImage: UIImage = UIImage(cgImage: mainViewContentBitmapContext)
         
@@ -434,7 +434,7 @@ public extension UIImage {
         let colorSpace: CGColorSpace = CGColorSpaceCreateDeviceGray()
         let context: CGContext = CGContext(data: nil, width: Int(self.size.width), height: Int(self.size.height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: self.cgImage!.bitmapInfo.rawValue)!
 
-        context.draw(in: rect, image: self.cgImage!)
+        context.draw(self.cgImage!, in: rect)
         let grayscale: CGImage = context.makeImage()!
         let returnImage: UIImage = UIImage(cgImage: grayscale)
         
@@ -451,7 +451,7 @@ public extension UIImage {
         let context: CGContext = CGContext(data: nil, width: Int(self.size.width), height: Int(self.size.height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: self.cgImage!.bitmapInfo.rawValue)!
         context.interpolationQuality = .high
         context.setShouldAntialias(false)
-        context.draw(in: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height), image: self.cgImage!)
+        context.draw(self.cgImage!, in: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
         
         let bwImage: CGImage = context.makeImage()!
         
@@ -691,7 +691,7 @@ public extension UIImage {
             let effectInContext = UIGraphicsGetCurrentContext()
             effectInContext?.scaleBy(x: 1, y: -1)
             effectInContext?.translateBy(x: 0, y: -size.height)
-            effectInContext?.draw(in: imageRect, image: cgImage!)
+            effectInContext?.draw(cgImage!, in: imageRect)
             var effectInBuffer = vImage_Buffer(data: effectInContext?.data, height: UInt((effectInContext?.height)!), width: UInt((effectInContext?.width)!), rowBytes: (effectInContext?.bytesPerRow)!)
             
             UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
@@ -751,14 +751,14 @@ public extension UIImage {
         outputContext?.scaleBy(x: 1, y: -1)
         outputContext?.translateBy(x: 0, y: -size.height)
         
-        outputContext?.draw(in: imageRect, image: cgImage!)
+        outputContext?.draw(cgImage!, in: imageRect)
 
         if hasBlur {
             outputContext?.saveGState()
             if let image = maskImage {
                 outputContext?.clip(to: imageRect, mask: image.cgImage!)
             }
-            outputContext?.draw(in: imageRect, image: effectImage.cgImage!)
+            outputContext?.draw(effectImage.cgImage!, in: imageRect)
             outputContext?.restoreGState()
         }
         

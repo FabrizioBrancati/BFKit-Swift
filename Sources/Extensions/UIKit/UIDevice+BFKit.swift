@@ -433,9 +433,9 @@ public extension UIDevice {
     
      - returns: Returns the current device total disk space
      */
-    public static func totalDiskSpace() throws -> AnyObject {
-        let attributes: NSDictionary = try FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
-        return attributes.object(forKey: FileAttributeKey.systemSize)!
+    public static func totalDiskSpace() throws -> Any {
+        let attributes = try FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
+        return attributes[FileAttributeKey.systemSize]
     }
     
     /**
@@ -443,9 +443,9 @@ public extension UIDevice {
     
      - returns: Returns the current device free disk space
      */
-    public static func freeDiskSpace() throws -> AnyObject {
-        let attributes: NSDictionary = try FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
-        return attributes.object(forKey: FileAttributeKey.systemFreeSize)!
+    public static func freeDiskSpace() throws -> Any {
+        let attributes = try FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
+        return attributes[FileAttributeKey.systemFreeSize]
     }
     
     /**
@@ -476,7 +476,7 @@ public extension UIDevice {
      - parameter uniqueIdentifier: The unique identifier to save or update if needed. (Must be NSData or NSString)
      - parameter block:            The execution block that know if the unique identifier is valid and has to be updated. You have to handle the case if it is valid and the update is needed or not
      */
-    public static func updateUniqueIdentifier(_ uniqueIdentifier: NSObject, block: (isValid: Bool, hasToUpdateUniqueIdentifier: Bool, oldUUID: String?) -> ()) {
+    public static func updateUniqueIdentifier(_ uniqueIdentifier: NSObject, block: (_ isValid: Bool, _ hasToUpdateUniqueIdentifier: Bool, _ oldUUID: String?) -> ()) {
         var userUUID: String = ""
         var savedUUID: String? = nil
         var isValid = false, hasToUpdate = false
@@ -502,6 +502,6 @@ public extension UIDevice {
             }
         }
         
-        block(isValid: isValid, hasToUpdateUniqueIdentifier: hasToUpdate, oldUUID: userUUID)
+        block(isValid, hasToUpdate, userUUID)
     }
 }

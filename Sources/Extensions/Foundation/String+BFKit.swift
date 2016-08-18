@@ -102,7 +102,8 @@ public extension String {
      - returns: Returns the substring from character
      */
     public func substringFromCharacter(_ character: Character) -> String? {
-        if let index: Int = self.indexOfCharacter(character) {
+        let index: Int = self.indexOfCharacter(character)
+        if index > -1 {
             return substringFromIndex(index)
         }
         return nil
@@ -116,7 +117,8 @@ public extension String {
      - returns: Returns the substring to character
      */
     public func substringToCharacter(_ character: Character) -> String? {
-        if let index: Int = self.indexOfCharacter(character) {
+        let index: Int = self.indexOfCharacter(character)
+        if index > -1 {
             return substringToIndex(index)
         }
         return nil
@@ -198,7 +200,7 @@ public extension String {
      - returns: Returns self as NSData
      */
     public func convertToNSData() -> Data {
-        return NSString.convertToNSData(self)
+        return NSString.convertToNSData(self as NSString)
     }
     
     /**
@@ -208,7 +210,7 @@ public extension String {
      - returns: Returns the capitalized sentence string
      */
     public func sentenceCapitalizedString() -> String {
-        if self.length == 0 {
+        guard self.length > 0 else {
             return ""
         }
         let uppercase: String = self.substringToIndex(1).uppercased()
@@ -246,7 +248,7 @@ public extension String {
      */
     public func stringByReplacingWithRegex(_ regexString: NSString, withString replacement: NSString) throws -> NSString {
         let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString as String, options: .caseInsensitive)
-        return regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range:NSMakeRange(0, self.length), withTemplate: "")
+        return regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range:NSMakeRange(0, self.length), withTemplate: "") as NSString
     }
     
     /**
@@ -559,7 +561,7 @@ public extension String {
      - returns: Returns a new string containing matching regular expressions replaced with the template string
      */
     public func stringByReplacingWithRegex(_ regexString: String, replacement: String) -> String? {
-        return self.NS.stringByReplacingWithRegex(regexString, replacement: replacement) as? String
+        return self.NS.stringByReplacingWithRegex(regexString as NSString, replacement: replacement as NSString) as? String
     }
     
     /**

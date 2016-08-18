@@ -128,16 +128,16 @@ public extension UIWindow {
      - parameter save:       true to save, false to don't save
      - parameter completion: Completion handler with the UIImage
      */
-    public func takeScreenshotWithDelay(_ delay: Double, save: Bool, completion: (screeshot: UIImage) -> ()) {
+    public func takeScreenshotWithDelay(_ delay: Double, save: Bool, completion: @escaping (_ screeshot: UIImage) -> ()) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
-            completion(screeshot: self.takeScreenshot(save: save))
+            completion(self.takeScreenshot(save: save))
         })
     }
     
     /**
      Private, show touch on screen
      */
-    private func activateTouch() {
+    public func activateTouch() {
         if sendEventExchanged {
             return
         }
@@ -152,7 +152,7 @@ public extension UIWindow {
     /**
      Private, hide touch on screen
      */
-    private func deactivateTouch() {
+    public func deactivateTouch() {
         if !sendEventExchanged {
             return
         }
