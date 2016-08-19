@@ -29,7 +29,6 @@ import Foundation
 import LocalAuthentication
 
 /// This class adds some useful functions to use TouchID
-@available(iOS 8, *)
 public class BFTouchID {
     // MARK: - Enums -
     
@@ -46,7 +45,6 @@ public class BFTouchID {
      - NotAvailable:         Not Available
      - NotEnrolled:          Not Enrolled
      */
-    @available(iOS 8, *)
     public enum TouchIDResult : Int {
         case success
         case error

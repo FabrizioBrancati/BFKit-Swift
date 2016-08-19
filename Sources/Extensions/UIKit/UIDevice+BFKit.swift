@@ -328,26 +328,6 @@ public extension UIDevice {
     }
     
     /**
-     Check if the current device has a Retina display
-    
-     - returns: Returns true if it has a Retina display, false if not
-     */
-    @available(*, deprecated:1.4.0, message:"Use isRetina() in UIScreen class")
-    public static func isRetina() -> Bool {
-        return UIScreen.isRetina()
-    }
-    
-    /**
-     Check if the current device has a Retina HD display
-    
-     - returns: Returns true if it has a Retina HD display, false if not
-     */
-    @available(*, deprecated:1.4.0, message:"Use isRetinaHD() in UIScreen class")
-    public static func isRetinaHD() -> Bool {
-        return UIScreen.isRetinaHD()
-    }
-    
-    /**
      Returns the iOS version without the subversion
      Example: 7
     

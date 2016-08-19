@@ -32,24 +32,6 @@ public extension UILabel {
     // MARK: - Init functions -
     
     /**
-     Create an UILabel with the given parameters, with clearColor for the shadow
-    
-     - parameter frame:     Label's frame
-     - parameter text:      Label's text
-     - parameter font:      Label's font name, FontName enum is declared in UIFont+BFKit
-     - parameter size:      Label's font size
-     - parameter color:     Label's text color
-     - parameter alignment: Label's text alignment
-     - parameter lines:     Label's text lines
-    
-     - returns: Returns the created UILabel
-     */
-    @available(*, obsoleted:1.2.0, message:"Use UILabel(_, text:, font:, size:, color:, alignment:, lines:, shadowColor:)")
-    public convenience init(frame: CGRect, text: String, font: FontName, size: CGFloat, color: UIColor, alignment: NSTextAlignment, lines: Int) {
-        self.init(frame: frame, text: text, font: font, size: size, color: color, alignment: alignment, lines: lines, shadowColor: UIColor.clear)
-    }
-    
-    /**
      Create an UILabel with the given parameters
     
      - parameter frame:       Label's frame

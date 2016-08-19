@@ -56,16 +56,6 @@ public extension UIWindow {
     // MARK: - Instance functions -
     
     /**
-     Take a screenshot of current window, without saving it
-    
-     - returns: Returns the screenshot as an UIImage
-     */
-    @available(*, obsoleted:1.2.0, message:"Use takeScreenshot(_)")
-    public func takeScreenshot() -> UIImage {
-        return takeScreenshot(save: false)
-    }
-    
-    /**
      Take a screenshot of current window and choose if save it or not
     
      - parameter save: true to save, false to don't save

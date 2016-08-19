@@ -444,31 +444,6 @@ public extension UIColor {
     }
     
     /**
-     Create a color from HEX with alpha
-    
-     - parameter hex: HEX value
-    
-     - returns: Returns the UIColor instance
-     */
-    @available(*, obsoleted:1.2.0, message:"Use colorWithHex(_, alpha:)")
-    public static func colorWithHex(_ hex: Int) -> UIColor {
-        return UIColor(hex: hex)
-    }
-    
-    /**
-     Create a color from HEX with alpha
-    
-     - parameter hex:   HEX value
-     - parameter alpha: Alpha value
-    
-     - returns: Returns the UIColor instance
-     */
-    @available(*, deprecated:1.3.0, message:"Use colorWithHex(_, alpha:)")
-    public static func colorWithHex(_ hex: Int, alpha: CGFloat = 1.0) -> UIColor {
-        return UIColor(hex: hex, alpha: alpha)
-    }
-    
-    /**
      Create a random color
     
      - returns: Returns the UIColor instance

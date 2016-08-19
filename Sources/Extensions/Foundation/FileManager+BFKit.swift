@@ -302,21 +302,6 @@ public extension FileManager {
         return false
     }
     
-    
-    /**
-     Move a file from a directory to another
-    
-     - parameter file:        Filename to move
-     - parameter origin:      Origin directory of the file
-     - parameter destination: Destination directory of the file
-    
-     - returns: Returns true if the operation was successful, otherwise false
-     */
-    @available(*, obsoleted:1.2.0, message:"Use moveLocalFile(_, fromDirectory:, toDirectory:, withFolderName:)")
-    public static func moveLocalFile(_ file: String, fromDirectory origin: DirectoryType, toDirectory destination: DirectoryType) throws -> Bool {
-        return try self.moveLocalFile(file, fromDirectory: origin, toDirectory: destination, withFolderName: nil)
-    }
-    
     /**
      Duplicate a file into another directory
     

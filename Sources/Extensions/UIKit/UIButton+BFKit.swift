@@ -30,33 +30,7 @@ import UIKit
 /// This extesion adds some useful functions to UIButton
 public extension UIButton {
     // MARK: - Init functions -
-    
-    /**
-     Create an UIButton in a frame with a title and a clear color
-    
-     - parameter frame: Button's frame
-     - parameter title: Button's title, the title color will be white
-    
-     - returns: Returns the UIButton instance
-     */
-    @available(*, obsoleted:1.2.0, message:"Use UIButton(_, title:, backgroundImage:, highlightedBackgroundImage:)")
-    public convenience init(frame: CGRect, title: String) {
-        self.init(frame: frame, title: title, backgroundImage: nil, highlightedBackgroundImage: nil)
-    }
-    
-    /**
-     Create an UIButton in a frame with a title and a background image
-    
-     - parameter frame:           Button's frame
-     - parameter title:           Button's title
-     - parameter backgroundImage: Button's background image
-    
-     - returns: Returns the UIButton instance
-     */
-    @available(*, obsoleted:1.2.0, message:"Use UIButton(_, title:, backgroundImage:, highlightedBackgroundImage:)")
-    public convenience init(frame: CGRect, title: String, backgroundImage: UIImage?) {
-        self.init(frame: frame, title: title, backgroundImage: backgroundImage, highlightedBackgroundImage: nil)
-    }
+
     
     /**
      Create an UIButton in a frame with a title, a background image and highlighted background image
@@ -102,19 +76,6 @@ public extension UIButton {
      */
     public convenience init(frame: CGRect, title: String, color: UIColor, highlightedColor: UIColor) {
         self.init(frame: frame, title: title, backgroundImage: UIImage(color: color), highlightedBackgroundImage: UIImage(color: highlightedColor))
-    }
-    
-    /**
-     Create an UIButton in a frame with an image
-    
-     - parameter frame: Button's frame
-     - parameter image: Button's image
-    
-     - returns: Returns the UIButton instance
-     */
-    @available(*, obsoleted:1.2.0, message:"Use UIButton(_, image:, highlightedImage:)")
-    public convenience init(frame: CGRect, image: UIImage) {
-        self.init(frame: frame, image: image, highlightedImage: nil)
     }
     
     /**
