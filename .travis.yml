@@ -12,6 +12,7 @@ script:
   - xcodebuild -version
   - xcodebuild -showsdks
   - swiftlint
+  - sleep 5
   - set -o pipefail
   - xcodebuild clean test -project BFKit.xcodeproj -scheme BFKit -destination "platform=iOS Simulator,name=iPhone 6 Plus" -enableCodeCoverage YES | xcpretty
 
