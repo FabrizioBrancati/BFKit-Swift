@@ -361,8 +361,74 @@ public extension String {
      
      - returns: Converts self to an UUID APNS valid (No "<>" or "-" or spaces)
      */
-    public func convertToAPNSUUID() -> NSString {
-        return self.trimmingCharacters(in: CharacterSet(charactersIn: "<>")).replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "-", with: "") as NSString
+    public func convertToAPNSUUID() -> String {
+        return self.trimmingCharacters(in: CharacterSet(charactersIn: "<>")).replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "-", with: "")
+    }
+    
+    /// Returns string with the first character uppercased.
+    ///
+    /// - returns: Returns string with the first character uppercased.
+    public func uppercaseFirst() -> String {
+        return String(self.characters.prefix(1)).uppercased() + String(self.characters.dropFirst())
+    }
+    
+    /// Returns string with the first character lowercased.
+    ///
+    /// - returns: Returns string with the first character lowercased.
+    public func lowercaseFirst() -> String {
+        return String(self.characters.prefix(1)).lowercased() + String(self.characters.dropFirst())
+    }
+    
+    /// Returns the reversed String.
+    ///
+    /// - parameter preserveFormat: If set to true preserve the String format. The default value is false.
+    ///                             **Example:**
+    ///                                 "Let's try this function. Or no?" -> "?on Ro .noitcnuf siht yrt S'tel"
+    ///
+    /// - returns: Returns the reversed String.
+    public func reversed(preserveFormat: Bool = false) -> String {
+        var reversed = self.removeExtraSpaces()
+        
+        if !preserveFormat {
+            return String(reversed.characters.reversed())
+        }
+        
+        reversed = String(reversed.characters.reversed())
+        
+        let words = reversed.components(separatedBy: " ").filter { $0 != "" }
+        
+        reversed.removeAll()
+        for word in words {
+            if word.hasUppercaseCharacter() {
+                reversed += word.lowercased().uppercaseFirst() + " "
+            } else {
+                reversed += word.lowercased() + " "
+            }
+        }
+        
+        return reversed
+    }
+    
+    
+    /// Returns true if the String has at least one uppercase chatacter, otherwise false.
+    ///
+    /// - returns: Returns true if the String has at least one uppercase chatacter, otherwise false.
+    public func hasUppercaseCharacter() -> Bool {
+        if CharacterSet.uppercaseLetters.contains(self.unicodeScalars.last!) {
+            return true
+        }
+        return false
+    }
+    
+    
+    /// Returns true if the String has at least one lowercase chatacter, otherwise false.
+    ///
+    /// - returns: Returns true if the String has at least one lowercase chatacter, otherwise false.
+    public func hasLowercaseCharacter() -> Bool {
+        if CharacterSet.lowercaseLetters.contains(self.unicodeScalars.last!) {
+            return true
+        }
+        return false
     }
     
     /**
@@ -543,11 +609,9 @@ public extension String {
         return NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
     }
     
-    /**
-     Remove double or more duplicated spaces
-     
-     - returns: String without additional spaces
-     */
+    /// Remove double or more duplicated spaces.
+    ///
+    /// - returns: Remove double or more duplicated spaces.
     public func removeExtraSpaces() -> String {
         return self.NS.removeExtraSpaces() as String
     }
