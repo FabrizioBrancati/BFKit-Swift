@@ -37,7 +37,7 @@ public extension Array {
     
      - returns: Returns the object at a given index in safe mode (nil if self is empty or out of range)
       */
-    func safeObjectAtIndex(_ index: Int) -> Element? {
+    public func safeObjectAtIndex(_ index: Int) -> Element? {
         if self.count > 0 && self.count > index {
             return self[index]
         } else {
@@ -50,7 +50,7 @@ public extension Array {
     
      - returns: Returns the JSON as String or nil if error while parsing
      */
-    func arrayToJSON() throws -> String {
+    public func arrayToJSON() throws -> String {
         return try Array.arrayToJSON(self as AnyObject)
     }
     
@@ -61,7 +61,7 @@ public extension Array {
     
      - returns: Returns the object at a given index
      */
-    func objectAtCircleIndex(_ index: Int) -> Element {
+    public func objectAtCircleIndex(_ index: Int) -> Element {
         return self[self.superCircle(index, size: self.count)]
     }
     
@@ -73,7 +73,7 @@ public extension Array {
     
      - returns: Returns the right index
      */
-    func superCircle(_ index: Int, size maxSize: Int) -> Int {
+    public func superCircle(_ index: Int, size maxSize: Int) -> Int {
         var _index = index
         if _index < 0 {
             _index = _index % maxSize
@@ -92,7 +92,7 @@ public extension Array {
      - parameter from: The start index
      - parameter to:   The end index
      */
-    mutating func moveObjectFromIndex(_ from: Int, toIndex to: Int) {
+    public mutating func moveObjectFromIndex(_ from: Int, toIndex to: Int) {
         if to != from {
             let obj: Element = self.safeObjectAtIndex(from)!
             self.remove(at: from)
@@ -110,7 +110,7 @@ public extension Array {
     
      - returns: Returns the reversed array
      */
-    func reversedArray() -> Array {
+    public func reversedArray() -> Array {
         return Array.reversedArray(self)
     }
     
@@ -123,7 +123,7 @@ public extension Array {
     
      - returns: Returns the reversed array
      */
-    static func reversedArray(_ array: Array) -> Array {
+    public static func reversedArray(_ array: Array) -> Array {
         return array.reversed()
     }
     
@@ -134,7 +134,7 @@ public extension Array {
     
      - returns: Returns the JSON as String or nil if error while parsing
      */
-    static func arrayToJSON(_ array: AnyObject) throws -> String {
+    public static func arrayToJSON(_ array: AnyObject) throws -> String {
         let data = try JSONSerialization.data(withJSONObject: array, options: JSONSerialization.WritingOptions())
         return NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
     }
