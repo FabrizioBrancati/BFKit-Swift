@@ -39,7 +39,7 @@ import UIKit
 
  - returns: Returns the created UIColor
  */
-public func RGBA(r: Int, g: Int, b: Int, a: Float) -> UIColor {
+public func RGBA(r: Int, _ g: Int, _ b: Int, _ a: Float) -> UIColor {
     return UIColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: CGFloat(a))
 }
 
@@ -52,7 +52,7 @@ public func RGBA(r: Int, g: Int, b: Int, a: Float) -> UIColor {
 
  - returns: Returns the created UIColor
  */
-public func RGB(r: Int, g: Int, b: Int) -> UIColor {
+public func RGB(r: Int, _ g: Int, _ b: Int) -> UIColor {
     return UIColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: 1.0)
 }
 
