@@ -32,16 +32,7 @@ import UIKit
 /// Used to store the BFHasBeenOpened in defaults
 private let BFHasBeenOpened = "BFHasBeenOpened"
 /// Used to store the BFHasBeenOpenedForCurrentVersion in defaults
-private let BFHasBeenOpenedForCurrentVersion = "\(BFHasBeenOpened)\(APP_VERSION)"
-
-/// Get App name
-public let APP_NAME: String = NSBundle(forClass: BFApp.self).infoDictionary!["CFBundleDisplayName"] as! String
-
-/// Get App build
-public let APP_BUILD: String = NSBundle(forClass: BFApp.self).infoDictionary!["CFBundleVersion"] as! String
-
-/// Get App version
-public let APP_VERSION: String = NSBundle(forClass: BFApp.self).infoDictionary!["CFBundleShortVersionString"] as! String
+private let BFHasBeenOpenedForCurrentVersion = "\(BFHasBeenOpened)\(BFApp.version)"
 
 // MARK: - Global functions -
 
@@ -177,3 +168,20 @@ public class BFApp {
         }
     }
 }
+
+public extension BFApp {
+    
+    public static var name: String = { return BFApp.string(forKey: "CFBundleDisplayName") }()
+    public static var version: String = { return BFApp.string(forKey: "CFBundleShortVersionString") }()
+    public static var build: String = { return BFApp.string(forKey: "CFBundleVersion") }()
+    public static var executable: String = { return BFApp.string(forKey: "CFBundleExecutable") }()
+    public static var bundle: String = { return BFApp.string(forKey: "CFBundleIdentifier") }()
+    
+    private static func string(forKey key: String) -> String {
+        guard let infoDictionary = NSBundle.mainBundle().infoDictionary,
+            value = infoDictionary[key] as? String else { return "" }
+        
+        return value
+    }
+}
+
