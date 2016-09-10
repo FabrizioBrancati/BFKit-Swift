@@ -35,7 +35,7 @@ class UserInterfaceViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return "By \(BFKIT_AUTHOR) - BFKit v\(APP_VERSION) (\(APP_BUILD))"
+        return "By \(BFKIT_AUTHOR) - BFKit v\(BFApp.version) (\(BFApp.build))"
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

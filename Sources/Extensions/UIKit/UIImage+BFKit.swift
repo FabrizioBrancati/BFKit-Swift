@@ -432,7 +432,7 @@ public extension UIImage {
         let rect: CGRect = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
         
         let colorSpace: CGColorSpace = CGColorSpaceCreateDeviceGray()
-        let context: CGContext = CGContext(data: nil, width: Int(self.size.width), height: Int(self.size.height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: self.cgImage!.bitmapInfo.rawValue)!
+        let context: CGContext = CGContext(data: nil, width: Int(self.size.width), height: Int(self.size.height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: .allZeros)!
 
         context.draw(self.cgImage!, in: rect)
         let grayscale: CGImage = context.makeImage()!
@@ -448,7 +448,7 @@ public extension UIImage {
      */
     public func imageToBlackAndWhite() -> UIImage {
         let colorSpace: CGColorSpace = CGColorSpaceCreateDeviceGray()
-        let context: CGContext = CGContext(data: nil, width: Int(self.size.width), height: Int(self.size.height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: self.cgImage!.bitmapInfo.rawValue)!
+        let context: CGContext = CGContext(data: nil, width: Int(self.size.width), height: Int(self.size.height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: .allZeros)!
         context.interpolationQuality = .high
         context.setShouldAntialias(false)
         context.draw(self.cgImage!, in: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))

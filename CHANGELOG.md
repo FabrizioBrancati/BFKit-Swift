@@ -26,19 +26,22 @@ All notable changes to this project will be documented in this file.<br>
 - BFKit Swift now supports Swift 3
 
 
-## [1.6.4](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.6.4)
-### XX XXX 2016
+## [1.7.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.7.0)
+### 14 Jul 2016
 #### Added
-- Added debugBlock and NSLocalizedString(key:) in global scope
+- Added `debugBlock` and `NSLocalizedString(key:)` in global scope
 - Added BFView as subclass of UIView
-- Added < and > to compare two NSDate
-- Added hexString() and alpha() to UIColor extension
-- Added cornerRadius(corners:, radius:) to UIView extension
+- Added `<` and `>` to compare two NSDate
+- Added `hexString()` and `alpha()` to UIColor extension
+- Added `cornerRadius(corners:, radius:)` to UIView extension
 
 #### Improved
-- Improved BFLog - [See this post on how to properly use it](http://stackoverflow.com/a/26891797/4032046)
+- Improved BFLog class - [See this post on how to properly use it](http://stackoverflow.com/a/26891797/4032046)
 - Adjusting pt-BR typo [#13](https://github.com/FabrizioBrancati/BFKit/pull/13)
-- Minor enhancements & bug fix
+- Minor enhancements
+
+#### Fixed
+- Fixed a bug with Carthage
 
 Thanks to [@gabrielPeart](https://github.com/gabrielPeart) for this release
 

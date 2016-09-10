@@ -63,9 +63,9 @@ class DetailViewController: UIViewController {
             
             BFLogClear()
             
-            BFLog("App name: \(APP_NAME)")
-            BFLog("App build: \(APP_BUILD)")
-            BFLog("App version: \(APP_VERSION)")
+            BFLog("App name: \(BFApp.name)")
+            BFLog("App build: \(BFApp.build)")
+            BFLog("App version: \(BFApp.version)")
             let openString = BFLocalizedString("OPEN")
             BFLog("Localized string from BFKit: \(openString)")
             

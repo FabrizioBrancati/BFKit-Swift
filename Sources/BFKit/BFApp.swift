@@ -32,15 +32,6 @@ import UIKit
 /// Used to store the BFHasBeenOpened in defaults
 private let BFAppHasBeenOpened = "BFAppHasBeenOpened"
 
-/// Get App name
-public let AppName: String = Bundle(for: BFApp.self).infoDictionary!["CFBundleDisplayName"] as! String
-
-/// Get App build
-public let AppBuild: String = Bundle(for: BFApp.self).infoDictionary!["CFBundleVersion"] as! String
-
-/// Get App version
-public let AppVersion: String = Bundle(for: BFApp.self).infoDictionary!["CFBundleShortVersionString"] as! String
-
 // MARK: - Global functions -
 
 /**
@@ -144,5 +135,46 @@ public class BFApp {
         }
         
         block(!hasBeenOpened)
+    }
+    
+    
+    /// Return the App name
+    public static var name: String = {
+        return BFApp.stringFromInfoDictionary(forKey: "CFBundleDisplayName")
+    }()
+    
+    
+    /// Returns the App version
+    public static var version: String = {
+        return BFApp.stringFromInfoDictionary(forKey: "CFBundleShortVersionString")
+    }()
+    
+    /// Returns the App build
+    public static var build: String = {
+        return BFApp.stringFromInfoDictionary(forKey: "CFBundleVersion")
+    }()
+    
+    /// Returns the App executable
+    public static var executable: String = {
+        return BFApp.stringFromInfoDictionary(forKey: "CFBundleExecutable")
+    }()
+    
+    /// Returns the App bundle
+    public static var bundle: String = {
+        return BFApp.stringFromInfoDictionary(forKey: "CFBundleIdentifier")
+    }()
+    
+    
+    /// Returns a String from the Info dictionary of the App
+    ///
+    /// - parameter key: Key to search
+    ///
+    /// - returns: Returns a String from the Info dictionary of the App
+    private static func stringFromInfoDictionary(forKey key: String) -> String {
+        guard let infoDictionary = Bundle.main.infoDictionary, let value = infoDictionary[key] as? String else {
+            return ""
+        }
+        
+        return value
     }
 }
