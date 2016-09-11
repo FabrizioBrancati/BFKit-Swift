@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  NSObject+BFKit.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,8 +24,18 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import Foundation
 
-let package = Package(
-  name: "BFKit"
-)
+/// This extension adds some useful functions to NSObject
+public extension NSObject {
+    // MARK: - Instance functions -
+    
+    /**
+     Check if the object is valid (not nil or null)
+    
+     - returns: Returns if the object is valid
+     */
+    public func isValid() -> Bool {
+        return !self.isKindOfClass(NSNull)
+    }
+}

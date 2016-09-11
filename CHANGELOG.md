@@ -9,9 +9,9 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 1.x Releases
-- `2.0.0` Releases - [2.0.0](#200)
+- `1.8.x` Releases - [1.8.0](#180)
 - `1.7.x` Releases - [1.7.0](#170)
-- `1.6.x` Releases - [1.6.0](#160) | [1.6.1](#161) | [1.6.2](#162) | [1.6.3](#163) | [1.6.4](#164)
+- `1.6.x` Releases - [1.6.0](#160) | [1.6.1](#161) | [1.6.2](#162) | [1.6.3](#163)
 - `1.5.x` Releases - [1.5.0](#150) | [1.5.1](#151)
 - `1.4.x` Releases - [1.4.0](#140) | [1.4.1](#141)
 - `1.3.x` Releases - [1.3.0](#130) | [1.3.1](#131)
@@ -21,10 +21,20 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## 2.0.0 - A new beginning
-### XX XXX 2016
+## [1.8.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.8.0)
+### 19 Sep 2016
 #### Added
-- BFKit Swift now supports Swift 3
+- Added Swift 2.3 support
+- Added Application info in BFApp class [#17](https://github.com/FabrizioBrancati/BFKit/pull/17)
+
+#### Improved
+- Simplified color usage in UIColor extension [#16](https://github.com/FabrizioBrancati/BFKit/pull/16)
+
+#### Fixed
+- Fixed crashes on `imageToGrayscale()` and `imageToBlackAndWhite()` in UIImage extension [#15](https://github.com/FabrizioBrancati/BFKit/pull/15)
+- Fixed `countUppercaseLetters` function in BFPassword class [#14](https://github.com/FabrizioBrancati/BFKit/pull/14)
+
+Thanks to [@sairamkotha](https://github.com/sairamkotha), [@ttyh061](https://github.com/ttyh061) & [@astrokin](https://github.com/astrokin) for this release
 
 
 ## [1.7.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.7.0)
