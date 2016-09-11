@@ -111,7 +111,7 @@ public extension UIWindow {
         }
         
         CGContextRestoreGState(context)
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
         if save {

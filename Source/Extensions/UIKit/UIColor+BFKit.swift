@@ -81,7 +81,7 @@ public extension UIColor {
             if self.canProvideRGBComponents() {
                 let c = CGColorGetComponents(self.CGColor)
                 
-                if CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)) == .Monochrome {
+                if CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)!) == .Monochrome {
                     return c[0]
                 }
                 return c[1]
@@ -100,7 +100,7 @@ public extension UIColor {
             if self.canProvideRGBComponents() {
                 let c = CGColorGetComponents(self.CGColor)
                 
-                if CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)) == .Monochrome {
+                if CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)!) == .Monochrome {
                     return c[0]
                 }
                 return c[2]
@@ -116,7 +116,7 @@ public extension UIColor {
     /// RGB properties: white
     public var white: CGFloat {
         get {
-            if CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)) == .Monochrome {
+            if CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)!) == .Monochrome {
                 let c = CGColorGetComponents(self.CGColor)
                 
                 return c[0]
@@ -246,7 +246,7 @@ public extension UIColor {
      - returns: Returns if the color is in RGB format
      */
     public func canProvideRGBComponents() -> Bool {
-        switch CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)) {
+        switch CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)!) {
         case CGColorSpaceModel.RGB:
             return true
         case CGColorSpaceModel.Monochrome:
@@ -324,7 +324,7 @@ public extension UIColor {
         
         var r, g, b, a: CGFloat
         
-        switch CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)) {
+        switch CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)!) {
         case CGColorSpaceModel.Monochrome:
             r = components[0]
             g = components[0]

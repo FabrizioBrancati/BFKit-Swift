@@ -106,13 +106,9 @@ public extension NSDate {
     public func month() -> NSDate {
         let calendar = NSCalendar.autoupdatingCurrentCalendar()
         let comp = calendar.components([.Year, .Month], fromDate: self)
+
+        comp.setValue(1, forComponent: .Day)
         
-        if #available(iOS 8.0, *)
-        {
-            comp.setValue(1, forComponent: .Day)
-        } else {
-            return calendar.dateFromComponents(comp)!
-        }
         return calendar.dateFromComponents(comp)!
     }
     
@@ -363,20 +359,16 @@ public extension NSDate {
         let calendar = NSCalendar.autoupdatingCurrentCalendar()
         let comp = calendar.components([.Year, .Month], fromDate:NSDate())
         
-        if #available(iOS 8.0, *) {
-            comp.setValue(info.day, forComponent:.Day)
-            comp.setValue(info.month, forComponent:.Month)
-            comp.setValue(info.year, forComponent:.Year)
-            
-            comp.setValue(info.hour, forComponent:.Hour)
-            comp.setValue(info.minute, forComponent:.Minute)
-            comp.setValue(info.second, forComponent:.Second)
-            comp.setValue(info.nanosecond, forComponent:.Nanosecond)
-            
-            comp.setValue(0, forComponent:.TimeZone)
-        } else {
-            return calendar.dateFromComponents(comp)!
-        }
+        comp.setValue(info.day, forComponent:.Day)
+        comp.setValue(info.month, forComponent:.Month)
+        comp.setValue(info.year, forComponent:.Year)
+        
+        comp.setValue(info.hour, forComponent:.Hour)
+        comp.setValue(info.minute, forComponent:.Minute)
+        comp.setValue(info.second, forComponent:.Second)
+        comp.setValue(info.nanosecond, forComponent:.Nanosecond)
+        
+        comp.setValue(0, forComponent:.TimeZone)
         
         return calendar.dateFromComponents(comp)!
     }
