@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  BFKit.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,8 +24,10 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import Foundation
 
-let package = Package(
-  name: "BFKit"
-)
+/// BFKit version string
+public let BFKIT_VERSION = "1.6.3"
+
+/// BFKit author string
+public let BFKIT_AUTHOR = "Fabrizio Brancati"
