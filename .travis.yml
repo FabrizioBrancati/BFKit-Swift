@@ -14,7 +14,7 @@ script:
   - swiftlint
   - sleep 5
   - set -o pipefail
-  - xcodebuild clean test -project BFKit.xcodeproj -scheme BFKit -destination "platform=iOS Simulator,name=iPhone 6 Plus" -enableCodeCoverage YES | xcpretty
+  - xcodebuild clean test -project BFKit.xcodeproj -scheme BFKit -destination "platform=iOS Simulator,name=iPhone 7 Plus" -enableCodeCoverage YES | xcpretty
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
