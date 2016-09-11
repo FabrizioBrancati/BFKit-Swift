@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit-Swift.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit-Swift)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/BFKit-Swift.svg?style=flat)][CocoaDocs]
-[![Language](https://img.shields.io/badge/language-Swift%201.2%20/%202.0%20/%202.1%20/%202.2-orange.svg)](https://developer.apple.com/swift/)
+[![Language](https://img.shields.io/badge/language-Swift%201.2%20/%202.0%20/%202.1%20/%202.2%20/%202.3-orange.svg)](https://developer.apple.com/swift/)
 [![Platform](https://img.shields.io/badge/platform-iOS-ffc713.svg)][CocoaDocs]
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/FabrizioBrancati/BBFKit-Swift/blob/master/LICENSE)
 
@@ -108,6 +108,7 @@ Requirements :iphone:
 - **Swift 1.2** and **Xcode 6.3** or later, for version **1.4.1** or previous
 - **Swift 2.0** or **2.1** and **Xcode 7.0** or later, for version **1.5.0** or later
 - **Swift 2.2** and **Xcode 7.3** or later, for version **1.6.3** or later
+- **Swift 2.3** and **Xcode 8.0** or later, for version **1.8.0** or later
 
 Communication :speaker:
 =======================
@@ -125,15 +126,16 @@ Installing and Usage :computer:
 
 ---
 
-### Swift 1.2, 2.0, 2.1 or 2.2
+### Swift 1.2, 2.0, 2.1, 2.2 or 2.3
 If you need support for Swift 1.2 use BFKit Swift 1.4.1 or previous.<br>
 From 1.5.0 BFKit Swift supports Swift 2.0 and 2.1.<br>
 From 1.6.3 BFKit Swift supports Swift 2.2.<br>
+From 1.8.0 BFKit Swift supports Swift 2.3.<br>
 More info here: [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements-iphone)
 
 ---
 
-### iOS 7 or later compatible
+### iOS 7 or later compatible (Only for 1.7.0 or previous)
 #### Manual
 - Copy the **Source** folder to the project
 - Enjoy!
