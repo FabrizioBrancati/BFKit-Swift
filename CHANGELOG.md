@@ -24,7 +24,7 @@ All notable changes to this project will be documented in this file.<br>
 ## [1.8.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.8.0)
 ### 19 Sep 2016
 #### Added
-- Added support for Swift 2.3
+- Added Swift 2.3 support
 - Added Application info in BFApp class [#17](https://github.com/FabrizioBrancati/BFKit/pull/17)
 
 #### Improved
