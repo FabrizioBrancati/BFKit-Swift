@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  UINavigationBar+BFKit.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,13 +24,28 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import Foundation
+import UIKit
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit",
-        "Sources/Extensions/UIKit",
-        "Sources/Languages"
-    ]
-)
+/// This extesion adds some useful functions to UINavigationBar
+public extension UINavigationBar {
+    // MARK: - Instance functions -
+    
+    /**
+     Set the UINavigationBar to transparent or not
+    
+     - parameter transparent: true to set it transparent, false to not
+     - parameter translucent: A Boolean value indicating whether the navigation bar is translucent or not
+     */
+    public func setTransparent(_ transparent: Bool, translucent: Bool = true) {
+        if transparent {
+            self.setBackgroundImage(UIImage(), for: .default)
+            self.shadowImage = UIImage()
+            self.isTranslucent = translucent
+        } else {
+            self.setBackgroundImage(nil, for: .default)
+            self.shadowImage = nil
+            self.isTranslucent = translucent
+        }
+    }
+}

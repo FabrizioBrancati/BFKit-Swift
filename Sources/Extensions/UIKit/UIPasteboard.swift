@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  UIPasteboard+BFKit.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,13 +24,32 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import Foundation
+import UIKit
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit",
-        "Sources/Extensions/UIKit",
-        "Sources/Languages"
-    ]
-)
+/// This extesion adds some useful functions to UIPasteboard
+public extension UIPasteboard {
+    // MARK: - Class functions -
+    
+    /**
+     Copy a text to the pasteboard
+     
+     - parameter text: The text to be copy to
+     */
+    public static func copyToPasteboard(_ text: String) {
+        UIPasteboard.general.string = text
+    }
+    
+    /**
+     Returns the last copied string from pasteboard
+     
+     - returns: Returns the last copied string from pasteboard
+     */
+    public static func stringFromPasteboard() -> String {
+        guard let pasteboard = UIPasteboard.general.string else {
+            return ""
+        }
+        
+        return pasteboard
+    }
+}

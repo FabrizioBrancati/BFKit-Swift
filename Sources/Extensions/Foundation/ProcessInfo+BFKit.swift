@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  ProcessInfo+BFKit.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,13 +24,19 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import Foundation
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit",
-        "Sources/Extensions/UIKit",
-        "Sources/Languages"
-    ]
-)
+/// This extension adds some useful functions to NSProcessInfo
+private extension ProcessInfo {
+    // MARK: - Class functions -
+    
+    /**
+     Returns the CPU usage by the current App
+    
+     - returns: Returns the CPU usage by the current App
+     */
+    private static func currentAppCPUUsage() -> Float {
+        // TODO: Get CPU usage
+        return 0.0
+    }
+}

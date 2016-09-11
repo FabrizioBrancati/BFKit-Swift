@@ -1,10 +1,10 @@
 //
-//  Package.swift
+//  BFKit.strings
 //  BFKit
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 - 2016 Fabrizio Brancati. All rights reserved.
+//  Copyright (c) 2014 - 2016 Fabrizio Brancati. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,13 +24,55 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+// BFKit
+"BFKit" = "BFKit";
+"BFKitAuthor" = "Fabrizio Brancati";
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit",
-        "Sources/Extensions/UIKit",
-        "Sources/Languages"
-    ]
-)
+// Generals
+"OK" = "Ok";
+"CONTINUE" = "Fortsätt";
+"CANCEL" = "Avbryt";
+"DONE" = "Klart";
+"ERROR" = "Fel";
+"WARNING" = "Varning";
+"CLOSE" = "Stäng";
+"OPEN" = "Öppna";
+"YES" = "Ja";
+"NO" = "Nej";
+
+// Days
+"TODAY" = "Idag";
+"TOMORROW" = "Imorgon";
+"SUNDAY" = "Söndag";
+"MONDAY"= "Måndag";
+"TUESDAY" = "Tisdag";
+"WEDNESDAY" = "Onsdag";
+"THURSDAY" = "Torsdag";
+"FRIDAY" = "Fredag";
+"SATURDAY" = "Lördag";
+
+// Months
+"JANUARY" = "Januari";
+"FEBRUARY" = "Februari";
+"MARCH" = "Mars";
+"APRIL" = "April";
+"MAY" = "Maj";
+"JUNE" = "Juni";
+"JULY" = "Juli";
+"AUGUST" = "Augusti";
+"SEPTEMBER" = "September";
+"OCTOBER" = "Oktober";
+"NOVEMBER" = "November";
+"DECEMBER" = "December";
+
+// Time zones
+"NIGHT" = "Natt";
+"MORNING" = "Morgon";
+"AFTERNOON" = "Eftermiddag";
+"EVENING" = "Kväll";
+
+// Authorization
+"AUTHENTICATION" = "Autentisering";
+"AUTHORIZATION" = "Auktorisering";
+"AUTHORIZED" = "Auktoriserad";
+"NOT_OWNER" = "Ej ägare";
