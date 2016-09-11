@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 1.x Releases
-- `1.7.x` Releases - [1.7.0](#170)
+- `1.7.x` Releases - [1.7.0](#170) | [1.7.1](#171)
 - `1.6.x` Releases - [1.6.0](#160) | [1.6.1](#161) | [1.6.2](#162) | [1.6.3](#163)
 - `1.5.x` Releases - [1.5.0](#150) | [1.5.1](#151)
 - `1.4.x` Releases - [1.4.0](#140) | [1.4.1](#141)
@@ -19,6 +19,21 @@ All notable changes to this project will be documented in this file.<br>
 - `1.0.x` Releases - [1.0.0](#100)
 
 ---
+
+## [1.7.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.7.1)
+### 19 Sep 2016
+#### Added
+- Added Application info in BFApp class [#17](https://github.com/FabrizioBrancati/BFKit/pull/17)
+
+#### Improved
+- Simplified color usage in UIColor extension [#16](https://github.com/FabrizioBrancati/BFKit/pull/16)
+
+#### Fixed
+- Fixed crashes on `imageToGrayscale()` and `imageToBlackAndWhite()` in UIImage extension [#15](https://github.com/FabrizioBrancati/BFKit/pull/15)
+- Fixed `countUppercaseLetters` function in BFPassword class [#14](https://github.com/FabrizioBrancati/BFKit/pull/14)
+
+Thanks to [@sairamkotha](https://github.com/sairamkotha), [@ttyh061](https://github.com/ttyh061) & [@astrokin](https://github.com/astrokin) for this release
+
 
 ## [1.7.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.7.0)
 ### 14 Jul 2016
