@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  Dictionary+BFKit.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,13 +24,35 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import Foundation
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit",
-        "Sources/Extensions/UIKit",
-        "Sources/Languages"
-    ]
-)
+/// This extension adds some useful functions to NSDictionary
+public extension Dictionary {
+    // MARK: - Instance functions -
+    
+    /**
+     Convert self to JSON as String
+    
+     - returns: Returns the JSON as String or nil if error while parsing
+     */
+    public func dictionaryToJSON() throws -> String {
+        return try Dictionary.dictionaryToJSON(self as AnyObject)
+    }
+    
+    // MARK: - Class functions -
+    
+    /**
+     Convert the given dictionary to JSON as String
+    
+     - parameter dictionary: The dictionary to be converted
+    
+     - returns: Returns the JSON as String or nil if error while parsing
+     */
+    public static func dictionaryToJSON(_ dictionary: AnyObject) throws -> String {
+        var json: NSString
+        let jsonData: Data = try JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted)
+        
+        json = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)!
+        return json as String
+    }
+}

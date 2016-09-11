@@ -8,10 +8,13 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+### 2.X Releases
+- `2.0.0` Releases - [2.0.0](#200)
+
 ### 1.x Releases
 - `1.8.x` Releases - [1.8.0](#180)
 - `1.7.x` Releases - [1.7.0](#170)
-- `1.6.x` Releases - [1.6.0](#160) | [1.6.1](#161) | [1.6.2](#162) | [1.6.3](#163)
+- `1.6.x` Releases - [1.6.0](#160) | [1.6.1](#161) | [1.6.2](#162) | [1.6.3](#163) | [1.6.4](#164)
 - `1.5.x` Releases - [1.5.0](#150) | [1.5.1](#151)
 - `1.4.x` Releases - [1.4.0](#140) | [1.4.1](#141)
 - `1.3.x` Releases - [1.3.0](#130) | [1.3.1](#131)
@@ -20,6 +23,17 @@ All notable changes to this project will be documented in this file.<br>
 - `1.0.x` Releases - [1.0.0](#100)
 
 ---
+
+## 2.0.0 - A new beginning
+### XX XXX 2016
+#### Added
+- Added Swift 3.0 support
+- Added full Unit Tests
+- Adopt the new [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)
+- Use of Swiftlint
+- Builds on Linux (Only Foundation Extensions)
+- Builds on macOS / tvOS and watchOS
+
 
 ## [1.8.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.8.0)
 ### 19 Sep 2016

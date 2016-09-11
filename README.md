@@ -1,9 +1,11 @@
 <p align="center"><img src="http://github.fabriziobrancati.com/bfkit/resources/banner-swift.png" alt="BFKit Swift Banner"></p>
 
-[![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit-Swift.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit-Swift)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit-Swift.svg?branch=swift3.0)](https://travis-ci.org/FabrizioBrancati/BFKit-Swift)
+[![Codecov](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift/branch/swift3.0/graph/badge.svg)](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift)
+[![Codebeat Badge](https://codebeat.co/badges/ba18628d-f16b-4cd4-81f7-f75e81d97b38)](https://codebeat.co/projects/github-com-fabriziobrancati-bfkit-swift)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/BFKit-Swift.svg?style=flat)][CocoaDocs]
-[![Language](https://img.shields.io/badge/language-Swift%201.2%20/%202.0%20/%202.1%20/%202.2%20/%202.3-orange.svg)](https://developer.apple.com/swift/)
+[![Language](https://img.shields.io/badge/language-Swift%203.0-orange.svg)](https://developer.apple.com/swift/)
 [![Platform](https://img.shields.io/badge/platform-iOS-ffc713.svg)][CocoaDocs]
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/FabrizioBrancati/BBFKit-Swift/blob/master/LICENSE)
 
@@ -27,7 +29,8 @@
 
 ---
 
-### If you need support for Swift 3 please switch to ```swift3.0``` branch
+# This branch is currently under development
+### It supports Swift 3 and will include a big refactoring of the entire framework
 
 Objective-C Version <img src="http://github.fabriziobrancati.com/bfkit/resources/objc-icon.png" height="25" width="25">
 ===================
@@ -103,12 +106,17 @@ Language support :it:
 
 Requirements :iphone:
 =====================
+### I you need support for iOS 7
 - iOS SDK **7.0** if you copy the Framework files (Source folder)
 - iOS SDK **8.0** if you use it as a Framework
+
 - **Swift 1.2** and **Xcode 6.3** or later, for version **1.4.1** or previous
 - **Swift 2.0** or **2.1** and **Xcode 7.0** or later, for version **1.5.0** or later
 - **Swift 2.2** and **Xcode 7.3** or later, for version **1.6.3** or later
+
+### I you need support for iOS 8
 - **Swift 2.3** and **Xcode 8.0** or later, for version **1.8.0** or later
+- **Swift 3.0** and **Xcode 8.0** or later, for version **2.0.0** or later
 
 Communication :speaker:
 =======================
@@ -126,22 +134,16 @@ Installing and Usage :computer:
 
 ---
 
-### Swift 1.2, 2.0, 2.1, 2.2 or 2.3
+### Swift 1.2, 2.0, 2.1, 2.2 or 3.0
 If you need support for Swift 1.2 use BFKit Swift 1.4.1 or previous.<br>
 From 1.5.0 BFKit Swift supports Swift 2.0 and 2.1.<br>
 From 1.6.3 BFKit Swift supports Swift 2.2.<br>
 From 1.8.0 BFKit Swift supports Swift 2.3.<br>
+From 2.0.0 BFKit Swift supports Swift 3.0.<br>
 More info here: [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements-iphone)
 
 ---
 
-### iOS 7 or later compatible (Only for 1.7.0 or previous)
-#### Manual
-- Copy the **Source** folder to the project
-- Enjoy!
-- N.B.: You will no longer need to import BFKit since you are not actually loading a framework
-
-### iOS 8 or later compatible
 #### Manual
 - Open the **BFKit** folder and build the Framework from the project
 - Import BFKit.framework into your project
@@ -149,12 +151,12 @@ More info here: [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#r
 - Enjoy!
 
 #### CocoaPods
-##### Pro version
+##### Short version
 - ```pod 'BFKit-Swift'```
 - Import the Framework with ```import BFKit```
 - Enjoy!
 
-##### Newbie version
+##### Long version
 - Create a **Podfile** in your **project directory**
 - Write:
 ```ruby
@@ -170,12 +172,12 @@ More info here: [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#r
 - Enjoy!
 
 #### Carthage
-##### Pro version
+##### Short version
 - ```github "FabrizioBrancati/BFKit-Swift"```
 - Import the Framework with ```import BFKit```
 - Enjoy!
 
-##### Newbie version
+##### Long version
 - Create a **Cartfile** in your **project directory**
 - Write:
 ```ruby
@@ -211,14 +213,14 @@ Open and run the BFKitDemo project in Xcode and see BFKit in action!
 
 Todo :ballot_box_with_check:
 ============================
-- :heavy_minus_sign: Create great tests and add Coveralls badge
-- :heavy_minus_sign: Add support to watchOS, tvOS and MacOS
-- :heavy_minus_sign: Add CPU App usage function in NSProcessInfo extension
-- :heavy_minus_sign: Add Hashing functions (MD5, SHA1, SHA256, SHA512, AES128 & AES256) in String and NSString extension, without using CommonCrypto from Objective-C
-- :heavy_minus_sign: Create a new DEMO App that shows all the functionalities of BFKit Swift
-- :heavy_check_mark: Add Carthage support
-- :heavy_check_mark: Add to CocoaPods
-- :heavy_check_mark: Create a great documentation
+- [ ] Create great tests and add Coveralls badge
+- [ ] Add support to watchOS, tvOS and MacOS
+- [ ] Add CPU App usage function in NSProcessInfo extension
+- [ ] Add Hashing functions (MD5, SHA1, SHA256, SHA512, AES128 & AES256) in String and NSString extension, without using CommonCrypto from Objective-C
+- [ ] Create a new DEMO App that shows all the functionalities of BFKit Swift
+- [x] Add Carthage support
+- [x] Add to CocoaPods
+- [x] Create a great documentation
 
 Author :neckbeard:
 ==================
