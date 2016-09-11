@@ -1,5 +1,5 @@
 //
-//  NSThread+BFKit.swift
+//  Thread+BFKit.swift
 //  BFKit
 //
 //  The MIT License (MIT)

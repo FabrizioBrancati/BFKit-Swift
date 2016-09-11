@@ -709,6 +709,23 @@ public extension UIFont {
     }
     
     /**
+     Used to calculate text height for max width and font
+     
+     - parameter width: Max width to fit text
+     - parameter font:  Font used in text
+     
+     - returns: Returns the calculated height of string within width using given font
+     */
+    public static func heightForWidth(_ width: CGFloat, font: UIFont, text: String) -> CGFloat {
+        var size: CGSize = CGSize.zero
+        if text.length > 0 {
+            let frame: CGRect = text.boundingRect(with: CGSize(width: width, height: 999999), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName : font], context: nil)
+            size = CGSize(width: frame.size.width, height: frame.size.height + 1)
+        }
+        return size.height
+    }
+    
+    /**
      Print in console all font names for a given family
     
      - parameter familyFontName: Family to print the fonts

@@ -1,5 +1,5 @@
 //
-//  NSData+BFKit.swift
+//  Data+BFKit.swift
 //  BFKit
 //
 //  The MIT License (MIT)

@@ -25,7 +25,6 @@
 //  SOFTWARE.
 
 import Foundation
-import UIKit
 
 /// This extesion adds some useful functions to String
 public extension String {
@@ -433,23 +432,6 @@ public extension String {
             return true
         }
         return false
-    }
-
-    /**
-     Used to calculate text height for max width and font
-
-     - parameter width: Max width to fit text
-     - parameter font:  Font used in text
-
-     - returns: Returns the calculated height of string within width using given font
-     */
-    public func heightForWidth(_ width: CGFloat, font: UIFont) -> CGFloat {
-        var size: CGSize = CGSize.zero
-        if self.length > 0 {
-            let frame: CGRect = self.boundingRect(with: CGSize(width: width, height: 999999), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName : font], context: nil)
-            size = CGSize(width: frame.size.width, height: frame.size.height + 1)
-        }
-        return size.height
     }
 
     // MARK: - Subscript functions -

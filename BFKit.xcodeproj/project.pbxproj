@@ -21,7 +21,6 @@
 		497186A01D2339210032A98E /* BFTouchID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186631D2339210032A98E /* BFTouchID.swift */; };
 		497186A11D2339210032A98E /* BFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186641D2339210032A98E /* BFView.swift */; };
 		497186A21D2339210032A98E /* BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 497186651D2339210032A98E /* BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		497186A31D2339210032A98E /* BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186661D2339210032A98E /* BFKit.swift */; };
 		497186A41D2339210032A98E /* Array+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186691D2339210032A98E /* Array+BFKit.swift */; };
 		497186A51D2339210032A98E /* Data+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971866A1D2339210032A98E /* Data+BFKit.swift */; };
 		497186A61D2339210032A98E /* Date+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971866B1D2339210032A98E /* Date+BFKit.swift */; };
@@ -58,6 +57,8 @@
 		497186C51D2339210032A98E /* UIWindow+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971868B1D2339210032A98E /* UIWindow+BFKit.swift */; };
 		497186C71D2339210032A98E /* BFKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4971868E1D2339210032A98E /* BFKit.strings */; };
 		498738111D2838530052B70A /* BFLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498738101D2838530052B70A /* BFLogTests.swift */; };
+		498BEE691D84DA0400FDC0E4 /* BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BEE681D84DA0400FDC0E4 /* BFKit.swift */; };
+		498BEE6B1D84E19C00FDC0E4 /* BFDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BEE6A1D84E19C00FDC0E4 /* BFDate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +85,6 @@
 		497186631D2339210032A98E /* BFTouchID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFTouchID.swift; sourceTree = "<group>"; };
 		497186641D2339210032A98E /* BFView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFView.swift; sourceTree = "<group>"; };
 		497186651D2339210032A98E /* BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BFKit.h; path = Sources/BFKit.h; sourceTree = SOURCE_ROOT; };
-		497186661D2339210032A98E /* BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFKit.swift; path = Sources/BFKit.swift; sourceTree = SOURCE_ROOT; };
 		497186691D2339210032A98E /* Array+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+BFKit.swift"; sourceTree = "<group>"; };
 		4971866A1D2339210032A98E /* Data+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+BFKit.swift"; sourceTree = "<group>"; };
 		4971866B1D2339210032A98E /* Date+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+BFKit.swift"; sourceTree = "<group>"; };
@@ -134,6 +134,8 @@
 		497186C91D2339290032A98E /* BFButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFButtonTests.swift; path = Tests/BFButtonTests.swift; sourceTree = SOURCE_ROOT; };
 		497186CA1D2339290032A98E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = SOURCE_ROOT; };
 		498738101D2838530052B70A /* BFLogTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFLogTests.swift; path = Tests/BFLogTests.swift; sourceTree = SOURCE_ROOT; };
+		498BEE681D84DA0400FDC0E4 /* BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFKit.swift; sourceTree = "<group>"; };
+		498BEE6A1D84E19C00FDC0E4 /* BFDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFDate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				497186651D2339210032A98E /* BFKit.h */,
-				497186661D2339210032A98E /* BFKit.swift */,
 				4971865B1D2339210032A98E /* BFKit */,
 				497186671D2339210032A98E /* Extensions */,
 				4971868D1D2339210032A98E /* Languages */,
@@ -204,6 +205,8 @@
 				4971865C1D2339210032A98E /* BFApp.swift */,
 				4971865D1D2339210032A98E /* BFButton.swift */,
 				4971865E1D2339210032A98E /* BFDataStructures.swift */,
+				498BEE6A1D84E19C00FDC0E4 /* BFDate.swift */,
+				498BEE681D84DA0400FDC0E4 /* BFKit.swift */,
 				4971865F1D2339210032A98E /* BFLog.swift */,
 				497186601D2339210032A98E /* BFPassword.swift */,
 				497186611D2339210032A98E /* BFSystemSound.swift */,
@@ -432,6 +435,7 @@
 				497186BA1D2339210032A98E /* UILabel+BFKit.swift in Sources */,
 				497186A51D2339210032A98E /* Data+BFKit.swift in Sources */,
 				497186B41D2339210032A98E /* UIButton+BFKit.swift in Sources */,
+				498BEE6B1D84E19C00FDC0E4 /* BFDate.swift in Sources */,
 				497186B51D2339210032A98E /* UIColor+BFKit.swift in Sources */,
 				497186B61D2339210032A98E /* UIDevice+BFKit.swift in Sources */,
 				497186AB1D2339210032A98E /* NSMutableArray+BFKit.swift in Sources */,
@@ -449,7 +453,6 @@
 				497186BB1D2339210032A98E /* UINavigationBar+BFKit.swift in Sources */,
 				497186A41D2339210032A98E /* Array+BFKit.swift in Sources */,
 				497186AE1D2339210032A98E /* NSObject+BFKit.swift in Sources */,
-				497186A31D2339210032A98E /* BFKit.swift in Sources */,
 				497186C01D2339210032A98E /* UITextField+BFKit.swift in Sources */,
 				497186A11D2339210032A98E /* BFView.swift in Sources */,
 				497186C31D2339210032A98E /* UIView+BFKit.swift in Sources */,
@@ -467,6 +470,7 @@
 				4971869D1D2339210032A98E /* BFPassword.swift in Sources */,
 				4971869F1D2339210032A98E /* BFTextField.swift in Sources */,
 				497186C41D2339210032A98E /* UIWebView+BFKit.swift in Sources */,
+				498BEE691D84DA0400FDC0E4 /* BFKit.swift in Sources */,
 				497186B71D2339210032A98E /* UIFont+BFKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

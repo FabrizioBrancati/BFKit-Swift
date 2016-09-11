@@ -1,5 +1,5 @@
 //
-//  NSDate+BFKit.swift
+//  Date+BFKit.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -129,39 +129,6 @@ public extension Date {
         let comp = calendar.dateComponents([.year, .month, .day, .weekday], from: self)
         
         return comp.weekday!
-    }
-    
-    /**
-     Get the weekday as a localized string from self
-     - 1 - Sunday
-     - 2 - Monday
-     - 3 - Tuerday
-     - 4 - Wednesday
-     - 5 - Thursday
-     - 6 - Friday
-     - 7 - Saturday
-     
-     - returns: Return weekday as a localized string
-     */
-    public func dayFromWeekday() -> String {
-        switch self.weekday() {
-        case 1:
-            return BFLocalizedString("SUNDAY")
-        case 2:
-            return BFLocalizedString("MONDAY")
-        case 3:
-            return BFLocalizedString("TUESDAY")
-        case 4:
-            return BFLocalizedString("WEDNESDAY")
-        case 5:
-            return BFLocalizedString("THURSDAY")
-        case 6:
-            return BFLocalizedString("FRIDAY")
-        case 7:
-            return BFLocalizedString("SATURDAY")
-        default:
-            return ""
-        }
     }
     
     /**
@@ -395,56 +362,6 @@ public extension Date {
         let dateTime = String(format: "%@ %@", datePortion, timePortion)
         
         return dateFormatter.date(from: dateTime)!
-    }
-    
-    /**
-     Get the month as a localized string from the given month number
-     - 1 - January
-     - 2 - February
-     - 3 - March
-     - 4 - April
-     - 5 - May
-     - 6 - June
-     - 7 - July
-     - 8 - August
-     - 9 - September
-     - 10 - October
-     - 11 - November
-     - 12 - December
-     
-     - parameter month: The month to be converted in string
-    
-     - returns: Returns the given month as a localized string
-     */
-    public static func monthStringWithMonthNumber(_ month: Int) -> String {
-        switch month {
-        case 1:
-            return BFLocalizedString("JANUARY")
-        case 2:
-            return BFLocalizedString("FEBRUARY")
-        case 3:
-            return BFLocalizedString("MARCH")
-        case 4:
-            return BFLocalizedString("APRIL")
-        case 5:
-            return BFLocalizedString("MAY")
-        case 6:
-            return BFLocalizedString("JUNE")
-        case 7:
-            return BFLocalizedString("JULY")
-        case 8:
-            return BFLocalizedString("AUGUST")
-        case 9:
-            return BFLocalizedString("SEPTEMBER")
-        case 10:
-            return BFLocalizedString("OCTOBER")
-        case 11:
-            return BFLocalizedString("NOVEMBER")
-        case 12:
-            return BFLocalizedString("DECEMBER")
-        default:
-            return ""
-        }
     }
     
     /**

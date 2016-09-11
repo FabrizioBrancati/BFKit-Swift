@@ -1,5 +1,5 @@
 //
-//  NSFileManager+BFKit.swift
+//  FileManager+BFKit.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -410,28 +410,5 @@ public extension FileManager {
         loadedPlist[objKey] = object
         
         return loadedPlist.write(toFile: path, atomically: true)
-    }
-    
-    /**
-     Set the App settings for a given object and key. The file will be saved in the Library directory
-    
-     - parameter object: Object to set
-     - parameter objKey: Key to set the object
-    
-     - returns: Returns true if the operation was successful, otherwise false
-     */
-    public static func setAppSettingsForObject(_ object: AnyObject, forKey objKey: String) -> Bool {
-        return self.setSettings(BFApp.name, object: object, forKey: objKey)
-    }
-    
-    /**
-     Get the App settings for a given key
-    
-     - parameter objKey: Key to get the object
-    
-     - returns: Returns the object for the given key
-     */
-    public static func getAppSettingsForObjectWithKey(_ objKey: String) -> Any? {
-        return self.getSettings(BFApp.name, objectForKey: objKey)
     }
 }

@@ -42,7 +42,7 @@ private let BFAppHasBeenOpened = "BFAppHasBeenOpened"
  
  - returns: Returns the localized string
  */
-public func BFLocalizedString(_ key: String, _ comment: String? = nil) -> String {
+public func BFLocalizedString(_ key: String, _ comment: String = "") -> String {
     return Bundle(for: BFApp.self).localizedString(forKey: key, value: key, table: "BFKit")
 }
 
@@ -137,6 +137,28 @@ public class BFApp {
         block(!hasBeenOpened)
     }
     
+    /**
+     Set the App settings for a given object and key. The file will be saved in the Library directory
+     
+     - parameter object: Object to set
+     - parameter objKey: Key to set the object
+     
+     - returns: Returns true if the operation was successful, otherwise false
+     */
+    public static func setAppSettingsForObject(_ object: AnyObject, forKey objKey: String) -> Bool {
+        return FileManager.setSettings(BFApp.name, object: object, forKey: objKey)
+    }
+    
+    /**
+     Get the App settings for a given key
+     
+     - parameter objKey: Key to get the object
+     
+     - returns: Returns the object for the given key
+     */
+    public static func getAppSettingsForObjectWithKey(_ objKey: String) -> Any? {
+        return FileManager.getSettings(BFApp.name, objectForKey: objKey)
+    }
     
     /// Return the App name
     public static var name: String = {
@@ -163,7 +185,6 @@ public class BFApp {
     public static var bundle: String = {
         return BFApp.stringFromInfoDictionary(forKey: "CFBundleIdentifier")
     }()
-    
     
     /// Returns a String from the Info dictionary of the App
     ///

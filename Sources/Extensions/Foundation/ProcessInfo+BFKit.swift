@@ -1,5 +1,5 @@
 //
-//  NSProcessInfo+BFKit.swift
+//  ProcessInfo+BFKit.swift
 //  BFKit
 //
 //  The MIT License (MIT)
