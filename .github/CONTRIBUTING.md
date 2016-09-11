@@ -14,7 +14,6 @@ Please make sure to follow my general coding style for new features.
 
 #### Comment everything
 Every function or variable (outside of a function) has to be commented.<br>
-I recommend you to use [VVDocumenter](https://github.com/onevcat/VVDocumenter-Xcode) Xcode plugin to do it easier and better.
 
 #### Writing code
 Please follow my coding style.
