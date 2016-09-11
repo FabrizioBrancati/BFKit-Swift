@@ -11,4 +11,4 @@ script:
   - xcodebuild -showsdks
   - sleep 5
   - set -o pipefail
-  - xcodebuild clean build -project BFKit.xcodeproj -scheme BFKit -destination "platform=iOS Simulator,name=iPhone 6 Plus" | xcpretty
+  - xcodebuild clean build -project BFKit/BFKit.xcodeproj -scheme BFKit -destination "platform=iOS Simulator,name=iPhone 7 Plus" | xcpretty
