@@ -1,4 +1,4 @@
-<p align="center"><img src="http://github.fabriziobrancati.com/bfkit/resources/banner-swift.png" alt="BFKit Swift Banner"></p>
+<p align="center"><img src="https://github.fabriziobrancati.com/bfkit/resources/banner-swift.png" alt="BFKit Swift Banner"></p>
 
 [![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit-Swift.svg?branch=swift3.0)](https://travis-ci.org/FabrizioBrancati/BFKit-Swift)
 [![Codecov](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift/branch/swift3.0/graph/badge.svg)](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift)
