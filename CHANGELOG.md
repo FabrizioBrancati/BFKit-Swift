@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file.<br>
 
 ### 1.x Releases
 - `2.0.0` Releases - [2.0.0](#200)
+- `1.7.x` Releases - [1.7.0](#170)
 - `1.6.x` Releases - [1.6.0](#160) | [1.6.1](#161) | [1.6.2](#162) | [1.6.3](#163) | [1.6.4](#164)
 - `1.5.x` Releases - [1.5.0](#150) | [1.5.1](#151)
 - `1.4.x` Releases - [1.4.0](#140) | [1.4.1](#141)
