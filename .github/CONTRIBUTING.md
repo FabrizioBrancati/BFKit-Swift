@@ -21,3 +21,7 @@ Please follow my coding style.
 Sort alphabetically the functions and variables separating each other by type.
 Use ```MARK``` to separate each section type.
 Example: Global variables, Global functions, Class variables, Instance variables, Class functions, Instance functions & Init functions.
+
+#### Test everything
+Add tests for every added functions.<br>
+The aim is to have 100% test coverage.
