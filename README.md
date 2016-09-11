@@ -7,7 +7,7 @@
 [![Version](https://img.shields.io/cocoapods/v/BFKit-Swift.svg?style=flat)][CocoaDocs]
 [![Language](https://img.shields.io/badge/language-Swift%203.0-orange.svg)](https://developer.apple.com/swift/)
 [![Platform](https://img.shields.io/badge/platform-iOS-ffc713.svg)][CocoaDocs]
-[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/FabrizioBrancati/BBFKit-Swift/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)
 
 ---
 
@@ -34,7 +34,7 @@
 
 Objective-C Version <img src="http://github.fabriziobrancati.com/bfkit/resources/objc-icon.png" height="25" width="25">
 ===================
-If you are looking for Objective-C version check it out here: **[BFKit](https://github.com/FabrizioBrancati/BFKit)**
+If you are looking for Objective-C version check it out here: **[BFKit](https://github.com/FabrizioBrancati/BFKit)**.
 
 What does it do
 ===============
@@ -105,16 +105,16 @@ Language support
 Requirements
 ============
 ### I you need support for iOS 7
-- iOS SDK **7.0** if you copy the Framework files (Source folder)
-- iOS SDK **8.0** if you use it as a Framework
+- iOS SDK **7.0** if you copy the Framework files (Source folder).
+- iOS SDK **8.0** if you use it as a Framework.
 
-- **Swift 1.2** and **Xcode 6.3** or later, for version **1.4.1** or previous
-- **Swift 2.0** or **2.1** and **Xcode 7.0** or later, for version **1.5.0** or later
-- **Swift 2.2** and **Xcode 7.3** or later, for version **1.6.3** or later
+- **Swift 1.2** and **Xcode 6.3** or later, for version **1.4.1** or previous.
+- **Swift 2.0** or **2.1** and **Xcode 7.0** or later, for version **1.5.0** or later.
+- **Swift 2.2** and **Xcode 7.3** or later, for version **1.6.3** or later.
 
 ### I you need support for iOS 8
-- **Swift 2.3** and **Xcode 8.0** or later, for version **1.8.0** or later
-- **Swift 3.0** and **Xcode 8.0** or later, for version **2.0.0** or later
+- **Swift 2.3** and **Xcode 8.0** or later, for version **1.8.0** or later.
+- **Swift 3.0** and **Xcode 8.0** or later, for version **2.0.0** or later.
 
 Communication
 =============
@@ -138,7 +138,7 @@ From 1.5.0 BFKit Swift supports Swift 2.0 and 2.1.<br>
 From 1.6.3 BFKit Swift supports Swift 2.2.<br>
 From 1.8.0 BFKit Swift supports Swift 2.3.<br>
 From 2.0.0 BFKit Swift supports Swift 3.0.<br>
-More info here: [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
+More info here: [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements).
 
 ---
 
@@ -203,7 +203,7 @@ Documentation
 
 Changelog
 =========
-To see what has changed in recent version of BFKit Swift, see the **[CHANGELOG](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/CHANGELOG.md)**
+To see what has changed in recent version of BFKit Swift, see the **[CHANGELOG](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/CHANGELOG.md)**.
 
 Demo
 ====
@@ -211,10 +211,10 @@ Open and run the BFKitDemo project in Xcode and see BFKit in action!
 
 Todo
 ====
-- [ ] Create great tests and add Coveralls badge
-- [ ] Add support to watchOS, tvOS and MacOS
+- [ ] Create great tests and add Codecov badge
+- [ ] Add watchOS, tvOS and MacOS support
+- [X] Add Linux support (Only Foundation Extensions)
 - [ ] Add CPU App usage function in NSProcessInfo extension
-- [ ] Add Hashing functions (MD5, SHA1, SHA256, SHA512, AES128 & AES256) in String and NSString extension, without using CommonCrypto from Objective-C
 - [ ] Create a new DEMO App that shows all the functionalities of BFKit Swift
 - [x] Add Carthage support
 - [x] Add to CocoaPods
