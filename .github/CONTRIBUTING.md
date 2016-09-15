@@ -1,5 +1,5 @@
-Contributing :octocat:
-======================
+Contributing
+============
 I'd love to see your ideas for improving this library.
 
 ## Pull requests
