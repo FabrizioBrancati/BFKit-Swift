@@ -13,7 +13,7 @@ If you find a bug or you have a suggestion create an issue.
 Please make sure to follow my general coding style for new features.
 
 #### Comment everything
-Every function or variable (outside of a function) has to be commented.<br>
+Every function or variable (outside of a function) has to be commented.
 
 #### Writing code
 Please follow my coding style.
