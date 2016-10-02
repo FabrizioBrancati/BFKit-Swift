@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
                           :git => "https://github.com/FabrizioBrancati/BFKit-Swift.git",
                           :tag => s.version
                        }
-  s.source_files     = "Source/**/*.{swift}"
-  s.resources        = "Source/Languages/**"
+  s.source_files     = "Sources/**/*.{swift}"
+  s.resources        = "Sources/Languages/**"
   s.requires_arc     = true
 end
