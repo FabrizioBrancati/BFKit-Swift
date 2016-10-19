@@ -27,75 +27,69 @@
 import Foundation
 import UIKit
 
-// MARK: - Global variables -
+// MARK: - Global functions
 
-/// Used to store the BFHasBeenOpened in defaults
-private let BFAppHasBeenOpened = "BFAppHasBeenOpened"
+/// Get AppDelegate. To use it, cast to AppDelegate with "as! AppDelegate".
+public let appDelegate: UIApplicationDelegate? = UIApplication.shared.delegate
 
-// MARK: - Global functions -
-
-/**
- Use BFLocalizedString to use the string translated by BFKit
- 
- - parameter key:     The key string
- - parameter comment: An optional comment
- 
- - returns: Returns the localized string
- */
+/// Use BFLocalizedString to use the string translated by BFKit.
+///
+/// - parameter key:     The key string.
+/// - parameter comment: An optional comment.
+///
+/// - returns: Returns the localized string.
 public func BFLocalizedString(_ key: String, _ comment: String = "") -> String {
     return Bundle(for: BFApp.self).localizedString(forKey: key, value: key, table: "BFKit")
 }
 
-/**
- NSLocalizedString without comment parameter
- 
- - parameter key: The key of the localized string
- 
- - returns: Returns a localized string
- */
+/// NSLocalizedString without comment parameter.
+///
+/// - parameter key: The key of the localized string.
+///
+/// - returns: Returns a localized string.
 public func NSLocalizedString(_ key: String) -> String {
     return NSLocalizedString(key, comment: "")
 }
 
-#if os(iOS)
-    /// Get AppDelegate. To use it, cast to AppDelegate with "as! AppDelegate"
-    let appDelegate: UIApplicationDelegate? = UIApplication.shared.delegate
-#endif
+/// Executes a block only if in DEBUG mode.
+///
+/// More info on how to use it [here](http://stackoverflow.com/questions/26890537/disabling-nslog-for-production-in-swift-project/26891797#26891797).
+///
+/// - parameter block: The block to be executed.
+public func debug(_ block: () -> ()) {
+    #if DEBUG
+        block()
+    #endif
+}
 
-/// This class adds some useful functions for the App
-public class BFApp {
-    // MARK: - Class functions -
+/// Executes a block only if NOT in DEBUG mode.
+///
+/// More info on how to use it [here](http://stackoverflow.com/questions/26890537/disabling-nslog-for-production-in-swift-project/26891797#26891797).
+///
+/// - parameter block: The block to be executed.
+public func release(_ block: () -> ()) {
+    #if !DEBUG
+        block()
+    #endif
+}
+
+// MARK: - BFApp class
+
+/// This class adds some useful functions for the App.
+open class BFApp {
+    // MARK: - Variables
     
-    /**
-     Executes a block only if in DEBUG mode
-     
-     - parameter block: The block to be executed
-     */
-    public static func debug(_ block: () -> ()) {
-        #if DEBUG
-            block()
-        #endif
-    }
+    /// Used to store the BFHasBeenOpened in defaults.
+    private static let BFAppHasBeenOpened = "BFAppHasBeenOpened"
     
-    /**
-     Executes a block only if NOT in DEBUG mode
-     
-     - parameter block: The block to be executed
-     */
-    public static func release(_ block: () -> ()) {
-        #if !DEBUG
-            block()
-        #endif
-    }
+    // MARK: - Functions
     
-    /**
-     If version is set returns if is first start for that version,
-     otherwise returns if is first start of the App
-     
-     - parameter version: Version to be checked, you can use the global varialble AppVersion to pass the current App version
-     
-     - returns: Returns if is first start of the App or for custom version
-     */
+    /// If version is set returns if is first start for that version,
+    /// otherwise returns if is first start of the App.
+    ///
+    /// - parameter version: Version to be checked, you can use the global varialble AppVersion to pass the current App version.
+    ///
+    /// - returns: eturns if is first start of the App or for custom version.
     public static func isFirstStart(version: String = "") -> Bool {
         let key: String
         if version == "" {
@@ -112,13 +106,12 @@ public class BFApp {
         return false
     }
     
-    /**
-     Executes a block on first start of the App, if version is set it will be for given version.
-     Remember to execute UI instuctions on main thread
-     
-     - parameter version: Version to be checked, you can use the global varialble AppVersion to pass the current App version
-     - parameter block:   The block to execute, returns isFirstStart
-     */
+    /// Executes a block on first start of the App, if version is set it will be for given version.
+    ///
+    /// Remember to execute UI instuctions on main thread.
+    ///
+    /// - parameter version: Version to be checked, you can use the global varialble AppVersion to pass the current App version.
+    /// - parameter block:   The block to execute, returns isFirstStart.
     public static func onFirstStart(version: String = "", block: (_ isFirstStart: Bool) -> ()) {
         let key: String
         if version == "" {
@@ -137,60 +130,65 @@ public class BFApp {
         block(!hasBeenOpened)
     }
     
-    /**
-     Set the App settings for a given object and key. The file will be saved in the Library directory
-     
-     - parameter object: Object to set
-     - parameter objKey: Key to set the object
-     
-     - returns: Returns true if the operation was successful, otherwise false
-     */
+    /// Set the App settings for a given object and key. The file will be saved in the Library directory.
+    ///
+    /// - parameter object: Object to set.
+    /// - parameter objKey: Key to set the object.
+    ///
+    /// - returns: Returns true if the operation was successful, otherwise false.
     public static func setAppSettingsForObject(_ object: AnyObject, forKey objKey: String) -> Bool {
         return FileManager.setSettings(BFApp.name, object: object, forKey: objKey)
     }
     
-    /**
-     Get the App settings for a given key
-     
-     - parameter objKey: Key to get the object
-     
-     - returns: Returns the object for the given key
-     */
+    /// Get the App settings for a given key.
+    ///
+    /// - parameter objKey: Key to get the object.
+    ///
+    /// - returns: Returns the object for the given key.
     public static func getAppSettingsForObjectWithKey(_ objKey: String) -> Any? {
         return FileManager.getSettings(BFApp.name, objectForKey: objKey)
     }
+}
+
+
+// MARK: - BFApp extension
+
+/// Extends BFApp with project infos.
+public extension BFApp {
+    // MARK: - Variables
     
-    /// Return the App name
+    /// Return the App name.
     public static var name: String = {
         return BFApp.stringFromInfoDictionary(forKey: "CFBundleDisplayName")
     }()
     
-    
-    /// Returns the App version
+    /// Returns the App version.
     public static var version: String = {
         return BFApp.stringFromInfoDictionary(forKey: "CFBundleShortVersionString")
     }()
     
-    /// Returns the App build
+    /// Returns the App build.
     public static var build: String = {
         return BFApp.stringFromInfoDictionary(forKey: "CFBundleVersion")
     }()
     
-    /// Returns the App executable
+    /// Returns the App executable.
     public static var executable: String = {
         return BFApp.stringFromInfoDictionary(forKey: "CFBundleExecutable")
     }()
     
-    /// Returns the App bundle
+    /// Returns the App bundle.
     public static var bundle: String = {
         return BFApp.stringFromInfoDictionary(forKey: "CFBundleIdentifier")
     }()
     
-    /// Returns a String from the Info dictionary of the App
+    // MARK: - Functions
+    
+    /// Returns a String from the Info dictionary of the App.
     ///
-    /// - parameter key: Key to search
+    /// - parameter key: Key to search.
     ///
-    /// - returns: Returns a String from the Info dictionary of the App
+    /// - returns: Returns a String from the Info dictionary of the App.
     private static func stringFromInfoDictionary(forKey key: String) -> String {
         guard let infoDictionary = Bundle.main.infoDictionary, let value = infoDictionary[key] as? String else {
             return ""
