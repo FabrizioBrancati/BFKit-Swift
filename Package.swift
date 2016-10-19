@@ -29,8 +29,8 @@ import PackageDescription
 let package = Package(
     name: "BFKit",
     exclude: [
-        "Sources/BFKit",
-        "Sources/Extensions/UIKit",
+        "Sources/BFKit/BFKit",
+        "Sources/BFKit/UIKit",
         "Sources/Languages"
     ]
 )

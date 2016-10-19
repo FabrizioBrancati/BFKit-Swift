@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 2.X Releases
-- `2.0.0` Releases - [2.0.0](#200)
+- `2.0.x` Releases - [2.0.0](#200)
 
 ### 1.x Releases
 - `1.8.x` Releases - [1.8.0](#180)

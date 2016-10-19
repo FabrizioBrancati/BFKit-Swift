@@ -7,58 +7,58 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		490D79D31DB81A7F00E07C65 /* BFApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79A41DB81A7F00E07C65 /* BFApp.swift */; };
+		490D79D41DB81A7F00E07C65 /* BFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79A51DB81A7F00E07C65 /* BFButton.swift */; };
+		490D79D51DB81A7F00E07C65 /* BFDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79A61DB81A7F00E07C65 /* BFDataStructures.swift */; };
+		490D79D61DB81A7F00E07C65 /* BFDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79A71DB81A7F00E07C65 /* BFDate.swift */; };
+		490D79D71DB81A7F00E07C65 /* BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79A81DB81A7F00E07C65 /* BFKit.swift */; };
+		490D79D81DB81A7F00E07C65 /* BFLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79A91DB81A7F00E07C65 /* BFLog.swift */; };
+		490D79D91DB81A7F00E07C65 /* BFPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79AA1DB81A7F00E07C65 /* BFPassword.swift */; };
+		490D79DA1DB81A7F00E07C65 /* BFSystemSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79AB1DB81A7F00E07C65 /* BFSystemSound.swift */; };
+		490D79DB1DB81A7F00E07C65 /* BFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79AC1DB81A7F00E07C65 /* BFTextField.swift */; };
+		490D79DC1DB81A7F00E07C65 /* BFTouchID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79AD1DB81A7F00E07C65 /* BFTouchID.swift */; };
+		490D79DD1DB81A7F00E07C65 /* BFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79AE1DB81A7F00E07C65 /* BFView.swift */; };
+		490D79DE1DB81A7F00E07C65 /* Array+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79B01DB81A7F00E07C65 /* Array+BFKit.swift */; };
+		490D79DF1DB81A7F00E07C65 /* Data+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79B11DB81A7F00E07C65 /* Data+BFKit.swift */; };
+		490D79E01DB81A7F00E07C65 /* Date+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79B21DB81A7F00E07C65 /* Date+BFKit.swift */; };
+		490D79E11DB81A7F00E07C65 /* Dictionary+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79B31DB81A7F00E07C65 /* Dictionary+BFKit.swift */; };
+		490D79E21DB81A7F00E07C65 /* FileManager+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79B41DB81A7F00E07C65 /* FileManager+BFKit.swift */; };
+		490D79E31DB81A7F00E07C65 /* NSArray+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79B51DB81A7F00E07C65 /* NSArray+BFKit.swift */; };
+		490D79E41DB81A7F00E07C65 /* NSDictionary+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79B61DB81A7F00E07C65 /* NSDictionary+BFKit.swift */; };
+		490D79E51DB81A7F00E07C65 /* NSMutableArray+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79B71DB81A7F00E07C65 /* NSMutableArray+BFKit.swift */; };
+		490D79E61DB81A7F00E07C65 /* NSMutableDictionary+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79B81DB81A7F00E07C65 /* NSMutableDictionary+BFKit.swift */; };
+		490D79E71DB81A7F00E07C65 /* NSNumber+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79B91DB81A7F00E07C65 /* NSNumber+BFKit.swift */; };
+		490D79E81DB81A7F00E07C65 /* NSObject+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79BA1DB81A7F00E07C65 /* NSObject+BFKit.swift */; };
+		490D79E91DB81A7F00E07C65 /* NSString+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79BB1DB81A7F00E07C65 /* NSString+BFKit.swift */; };
+		490D79EA1DB81A7F00E07C65 /* ProcessInfo+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79BC1DB81A7F00E07C65 /* ProcessInfo+BFKit.swift */; };
+		490D79EB1DB81A7F00E07C65 /* String+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79BD1DB81A7F00E07C65 /* String+BFKit.swift */; };
+		490D79EC1DB81A7F00E07C65 /* Thread+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79BE1DB81A7F00E07C65 /* Thread+BFKit.swift */; };
+		490D79ED1DB81A7F00E07C65 /* UIBarButtonItem+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79C01DB81A7F00E07C65 /* UIBarButtonItem+BFKit.swift */; };
+		490D79EE1DB81A7F00E07C65 /* UIButton+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79C11DB81A7F00E07C65 /* UIButton+BFKit.swift */; };
+		490D79EF1DB81A7F00E07C65 /* UIColor+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79C21DB81A7F00E07C65 /* UIColor+BFKit.swift */; };
+		490D79F01DB81A7F00E07C65 /* UIDevice+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79C31DB81A7F00E07C65 /* UIDevice+BFKit.swift */; };
+		490D79F11DB81A7F00E07C65 /* UIFont+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79C41DB81A7F00E07C65 /* UIFont+BFKit.swift */; };
+		490D79F21DB81A7F00E07C65 /* UIImage+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79C51DB81A7F00E07C65 /* UIImage+BFKit.swift */; };
+		490D79F31DB81A7F00E07C65 /* UIImageView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79C61DB81A7F00E07C65 /* UIImageView+BFKit.swift */; };
+		490D79F41DB81A8000E07C65 /* UILabel+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79C71DB81A7F00E07C65 /* UILabel+BFKit.swift */; };
+		490D79F51DB81A8000E07C65 /* UINavigationBar+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79C81DB81A7F00E07C65 /* UINavigationBar+BFKit.swift */; };
+		490D79F61DB81A8000E07C65 /* UIPasteboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79C91DB81A7F00E07C65 /* UIPasteboard.swift */; };
+		490D79F71DB81A8000E07C65 /* UIScreen+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79CA1DB81A7F00E07C65 /* UIScreen+BFKit.swift */; };
+		490D79F81DB81A8000E07C65 /* UIScrollView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79CB1DB81A7F00E07C65 /* UIScrollView+BFKit.swift */; };
+		490D79F91DB81A8000E07C65 /* UITableView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79CC1DB81A7F00E07C65 /* UITableView+BFKit.swift */; };
+		490D79FA1DB81A8000E07C65 /* UITextField+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79CD1DB81A7F00E07C65 /* UITextField+BFKit.swift */; };
+		490D79FB1DB81A8000E07C65 /* UITextView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79CE1DB81A7F00E07C65 /* UITextView+BFKit.swift */; };
+		490D79FC1DB81A8000E07C65 /* UIToolbar+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79CF1DB81A7F00E07C65 /* UIToolbar+BFKit.swift */; };
+		490D79FD1DB81A8000E07C65 /* UIView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79D01DB81A7F00E07C65 /* UIView+BFKit.swift */; };
+		490D79FE1DB81A8000E07C65 /* UIWebView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79D11DB81A7F00E07C65 /* UIWebView+BFKit.swift */; };
+		490D79FF1DB81A8000E07C65 /* UIWindow+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79D21DB81A7F00E07C65 /* UIWindow+BFKit.swift */; };
 		49419AE81D233DF1006CABE6 /* BFAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186C81D2339290032A98E /* BFAppTests.swift */; };
 		49419AEB1D245961006CABE6 /* BFButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186C91D2339290032A98E /* BFButtonTests.swift */; };
 		49419AF01D2467FC006CABE6 /* BFDataStructuresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49419AEF1D2467FC006CABE6 /* BFDataStructuresTests.swift */; };
 		4971864C1D2339040032A98E /* BFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 497186411D2339040032A98E /* BFKit.framework */; };
-		497186991D2339210032A98E /* BFApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971865C1D2339210032A98E /* BFApp.swift */; };
-		4971869A1D2339210032A98E /* BFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971865D1D2339210032A98E /* BFButton.swift */; };
-		4971869B1D2339210032A98E /* BFDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971865E1D2339210032A98E /* BFDataStructures.swift */; };
-		4971869C1D2339210032A98E /* BFLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971865F1D2339210032A98E /* BFLog.swift */; };
-		4971869D1D2339210032A98E /* BFPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186601D2339210032A98E /* BFPassword.swift */; };
-		4971869E1D2339210032A98E /* BFSystemSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186611D2339210032A98E /* BFSystemSound.swift */; };
-		4971869F1D2339210032A98E /* BFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186621D2339210032A98E /* BFTextField.swift */; };
-		497186A01D2339210032A98E /* BFTouchID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186631D2339210032A98E /* BFTouchID.swift */; };
-		497186A11D2339210032A98E /* BFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186641D2339210032A98E /* BFView.swift */; };
 		497186A21D2339210032A98E /* BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 497186651D2339210032A98E /* BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		497186A41D2339210032A98E /* Array+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186691D2339210032A98E /* Array+BFKit.swift */; };
-		497186A51D2339210032A98E /* Data+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971866A1D2339210032A98E /* Data+BFKit.swift */; };
-		497186A61D2339210032A98E /* Date+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971866B1D2339210032A98E /* Date+BFKit.swift */; };
-		497186A71D2339210032A98E /* Dictionary+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971866C1D2339210032A98E /* Dictionary+BFKit.swift */; };
-		497186A81D2339210032A98E /* FileManager+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971866D1D2339210032A98E /* FileManager+BFKit.swift */; };
-		497186A91D2339210032A98E /* NSArray+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971866E1D2339210032A98E /* NSArray+BFKit.swift */; };
-		497186AA1D2339210032A98E /* NSDictionary+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971866F1D2339210032A98E /* NSDictionary+BFKit.swift */; };
-		497186AB1D2339210032A98E /* NSMutableArray+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186701D2339210032A98E /* NSMutableArray+BFKit.swift */; };
-		497186AC1D2339210032A98E /* NSMutableDictionary+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186711D2339210032A98E /* NSMutableDictionary+BFKit.swift */; };
-		497186AD1D2339210032A98E /* NSNumber+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186721D2339210032A98E /* NSNumber+BFKit.swift */; };
-		497186AE1D2339210032A98E /* NSObject+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186731D2339210032A98E /* NSObject+BFKit.swift */; };
-		497186AF1D2339210032A98E /* NSString+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186741D2339210032A98E /* NSString+BFKit.swift */; };
-		497186B01D2339210032A98E /* ProcessInfo+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186751D2339210032A98E /* ProcessInfo+BFKit.swift */; };
-		497186B11D2339210032A98E /* String+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186761D2339210032A98E /* String+BFKit.swift */; };
-		497186B21D2339210032A98E /* Thread+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186771D2339210032A98E /* Thread+BFKit.swift */; };
-		497186B31D2339210032A98E /* UIBarButtonItem+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186791D2339210032A98E /* UIBarButtonItem+BFKit.swift */; };
-		497186B41D2339210032A98E /* UIButton+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971867A1D2339210032A98E /* UIButton+BFKit.swift */; };
-		497186B51D2339210032A98E /* UIColor+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971867B1D2339210032A98E /* UIColor+BFKit.swift */; };
-		497186B61D2339210032A98E /* UIDevice+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971867C1D2339210032A98E /* UIDevice+BFKit.swift */; };
-		497186B71D2339210032A98E /* UIFont+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971867D1D2339210032A98E /* UIFont+BFKit.swift */; };
-		497186B81D2339210032A98E /* UIImage+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971867E1D2339210032A98E /* UIImage+BFKit.swift */; };
-		497186B91D2339210032A98E /* UIImageView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971867F1D2339210032A98E /* UIImageView+BFKit.swift */; };
-		497186BA1D2339210032A98E /* UILabel+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186801D2339210032A98E /* UILabel+BFKit.swift */; };
-		497186BB1D2339210032A98E /* UINavigationBar+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186811D2339210032A98E /* UINavigationBar+BFKit.swift */; };
-		497186BC1D2339210032A98E /* UIPasteboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186821D2339210032A98E /* UIPasteboard.swift */; };
-		497186BD1D2339210032A98E /* UIScreen+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186831D2339210032A98E /* UIScreen+BFKit.swift */; };
-		497186BE1D2339210032A98E /* UIScrollView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186841D2339210032A98E /* UIScrollView+BFKit.swift */; };
-		497186BF1D2339210032A98E /* UITableView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186851D2339210032A98E /* UITableView+BFKit.swift */; };
-		497186C01D2339210032A98E /* UITextField+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186861D2339210032A98E /* UITextField+BFKit.swift */; };
-		497186C11D2339210032A98E /* UITextView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186871D2339210032A98E /* UITextView+BFKit.swift */; };
-		497186C21D2339210032A98E /* UIToolbar+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186881D2339210032A98E /* UIToolbar+BFKit.swift */; };
-		497186C31D2339210032A98E /* UIView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186891D2339210032A98E /* UIView+BFKit.swift */; };
-		497186C41D2339210032A98E /* UIWebView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971868A1D2339210032A98E /* UIWebView+BFKit.swift */; };
-		497186C51D2339210032A98E /* UIWindow+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971868B1D2339210032A98E /* UIWindow+BFKit.swift */; };
 		497186C71D2339210032A98E /* BFKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4971868E1D2339210032A98E /* BFKit.strings */; };
 		498738111D2838530052B70A /* BFLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498738101D2838530052B70A /* BFLogTests.swift */; };
-		498BEE691D84DA0400FDC0E4 /* BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BEE681D84DA0400FDC0E4 /* BFKit.swift */; };
-		498BEE6B1D84E19C00FDC0E4 /* BFDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BEE6A1D84E19C00FDC0E4 /* BFDate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,53 +72,55 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		490D79A41DB81A7F00E07C65 /* BFApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFApp.swift; sourceTree = "<group>"; };
+		490D79A51DB81A7F00E07C65 /* BFButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFButton.swift; sourceTree = "<group>"; };
+		490D79A61DB81A7F00E07C65 /* BFDataStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFDataStructures.swift; sourceTree = "<group>"; };
+		490D79A71DB81A7F00E07C65 /* BFDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFDate.swift; sourceTree = "<group>"; };
+		490D79A81DB81A7F00E07C65 /* BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFKit.swift; sourceTree = "<group>"; };
+		490D79A91DB81A7F00E07C65 /* BFLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFLog.swift; sourceTree = "<group>"; };
+		490D79AA1DB81A7F00E07C65 /* BFPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFPassword.swift; sourceTree = "<group>"; };
+		490D79AB1DB81A7F00E07C65 /* BFSystemSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFSystemSound.swift; sourceTree = "<group>"; };
+		490D79AC1DB81A7F00E07C65 /* BFTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFTextField.swift; sourceTree = "<group>"; };
+		490D79AD1DB81A7F00E07C65 /* BFTouchID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFTouchID.swift; sourceTree = "<group>"; };
+		490D79AE1DB81A7F00E07C65 /* BFView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFView.swift; sourceTree = "<group>"; };
+		490D79B01DB81A7F00E07C65 /* Array+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+BFKit.swift"; sourceTree = "<group>"; };
+		490D79B11DB81A7F00E07C65 /* Data+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+BFKit.swift"; sourceTree = "<group>"; };
+		490D79B21DB81A7F00E07C65 /* Date+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+BFKit.swift"; sourceTree = "<group>"; };
+		490D79B31DB81A7F00E07C65 /* Dictionary+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+BFKit.swift"; sourceTree = "<group>"; };
+		490D79B41DB81A7F00E07C65 /* FileManager+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+BFKit.swift"; sourceTree = "<group>"; };
+		490D79B51DB81A7F00E07C65 /* NSArray+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSArray+BFKit.swift"; sourceTree = "<group>"; };
+		490D79B61DB81A7F00E07C65 /* NSDictionary+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDictionary+BFKit.swift"; sourceTree = "<group>"; };
+		490D79B71DB81A7F00E07C65 /* NSMutableArray+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableArray+BFKit.swift"; sourceTree = "<group>"; };
+		490D79B81DB81A7F00E07C65 /* NSMutableDictionary+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableDictionary+BFKit.swift"; sourceTree = "<group>"; };
+		490D79B91DB81A7F00E07C65 /* NSNumber+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumber+BFKit.swift"; sourceTree = "<group>"; };
+		490D79BA1DB81A7F00E07C65 /* NSObject+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+BFKit.swift"; sourceTree = "<group>"; };
+		490D79BB1DB81A7F00E07C65 /* NSString+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+BFKit.swift"; sourceTree = "<group>"; };
+		490D79BC1DB81A7F00E07C65 /* ProcessInfo+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+BFKit.swift"; sourceTree = "<group>"; };
+		490D79BD1DB81A7F00E07C65 /* String+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+BFKit.swift"; sourceTree = "<group>"; };
+		490D79BE1DB81A7F00E07C65 /* Thread+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Thread+BFKit.swift"; sourceTree = "<group>"; };
+		490D79C01DB81A7F00E07C65 /* UIBarButtonItem+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+BFKit.swift"; sourceTree = "<group>"; };
+		490D79C11DB81A7F00E07C65 /* UIButton+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+BFKit.swift"; sourceTree = "<group>"; };
+		490D79C21DB81A7F00E07C65 /* UIColor+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+BFKit.swift"; sourceTree = "<group>"; };
+		490D79C31DB81A7F00E07C65 /* UIDevice+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+BFKit.swift"; sourceTree = "<group>"; };
+		490D79C41DB81A7F00E07C65 /* UIFont+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+BFKit.swift"; sourceTree = "<group>"; };
+		490D79C51DB81A7F00E07C65 /* UIImage+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+BFKit.swift"; sourceTree = "<group>"; };
+		490D79C61DB81A7F00E07C65 /* UIImageView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+BFKit.swift"; sourceTree = "<group>"; };
+		490D79C71DB81A7F00E07C65 /* UILabel+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+BFKit.swift"; sourceTree = "<group>"; };
+		490D79C81DB81A7F00E07C65 /* UINavigationBar+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+BFKit.swift"; sourceTree = "<group>"; };
+		490D79C91DB81A7F00E07C65 /* UIPasteboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPasteboard.swift; sourceTree = "<group>"; };
+		490D79CA1DB81A7F00E07C65 /* UIScreen+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+BFKit.swift"; sourceTree = "<group>"; };
+		490D79CB1DB81A7F00E07C65 /* UIScrollView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+BFKit.swift"; sourceTree = "<group>"; };
+		490D79CC1DB81A7F00E07C65 /* UITableView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+BFKit.swift"; sourceTree = "<group>"; };
+		490D79CD1DB81A7F00E07C65 /* UITextField+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+BFKit.swift"; sourceTree = "<group>"; };
+		490D79CE1DB81A7F00E07C65 /* UITextView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+BFKit.swift"; sourceTree = "<group>"; };
+		490D79CF1DB81A7F00E07C65 /* UIToolbar+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIToolbar+BFKit.swift"; sourceTree = "<group>"; };
+		490D79D01DB81A7F00E07C65 /* UIView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+BFKit.swift"; sourceTree = "<group>"; };
+		490D79D11DB81A7F00E07C65 /* UIWebView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWebView+BFKit.swift"; sourceTree = "<group>"; };
+		490D79D21DB81A7F00E07C65 /* UIWindow+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+BFKit.swift"; sourceTree = "<group>"; };
 		49419AEF1D2467FC006CABE6 /* BFDataStructuresTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFDataStructuresTests.swift; path = Tests/BFDataStructuresTests.swift; sourceTree = SOURCE_ROOT; };
 		497186411D2339040032A98E /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4971864B1D2339040032A98E /* BFKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BFKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4971865C1D2339210032A98E /* BFApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFApp.swift; sourceTree = "<group>"; };
-		4971865D1D2339210032A98E /* BFButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFButton.swift; sourceTree = "<group>"; };
-		4971865E1D2339210032A98E /* BFDataStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFDataStructures.swift; sourceTree = "<group>"; };
-		4971865F1D2339210032A98E /* BFLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFLog.swift; sourceTree = "<group>"; };
-		497186601D2339210032A98E /* BFPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFPassword.swift; sourceTree = "<group>"; };
-		497186611D2339210032A98E /* BFSystemSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFSystemSound.swift; sourceTree = "<group>"; };
-		497186621D2339210032A98E /* BFTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFTextField.swift; sourceTree = "<group>"; };
-		497186631D2339210032A98E /* BFTouchID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFTouchID.swift; sourceTree = "<group>"; };
-		497186641D2339210032A98E /* BFView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFView.swift; sourceTree = "<group>"; };
 		497186651D2339210032A98E /* BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BFKit.h; path = Sources/BFKit.h; sourceTree = SOURCE_ROOT; };
-		497186691D2339210032A98E /* Array+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+BFKit.swift"; sourceTree = "<group>"; };
-		4971866A1D2339210032A98E /* Data+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+BFKit.swift"; sourceTree = "<group>"; };
-		4971866B1D2339210032A98E /* Date+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+BFKit.swift"; sourceTree = "<group>"; };
-		4971866C1D2339210032A98E /* Dictionary+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+BFKit.swift"; sourceTree = "<group>"; };
-		4971866D1D2339210032A98E /* FileManager+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+BFKit.swift"; sourceTree = "<group>"; };
-		4971866E1D2339210032A98E /* NSArray+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSArray+BFKit.swift"; sourceTree = "<group>"; };
-		4971866F1D2339210032A98E /* NSDictionary+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDictionary+BFKit.swift"; sourceTree = "<group>"; };
-		497186701D2339210032A98E /* NSMutableArray+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableArray+BFKit.swift"; sourceTree = "<group>"; };
-		497186711D2339210032A98E /* NSMutableDictionary+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableDictionary+BFKit.swift"; sourceTree = "<group>"; };
-		497186721D2339210032A98E /* NSNumber+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumber+BFKit.swift"; sourceTree = "<group>"; };
-		497186731D2339210032A98E /* NSObject+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+BFKit.swift"; sourceTree = "<group>"; };
-		497186741D2339210032A98E /* NSString+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+BFKit.swift"; sourceTree = "<group>"; };
-		497186751D2339210032A98E /* ProcessInfo+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+BFKit.swift"; sourceTree = "<group>"; };
-		497186761D2339210032A98E /* String+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+BFKit.swift"; sourceTree = "<group>"; };
-		497186771D2339210032A98E /* Thread+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Thread+BFKit.swift"; sourceTree = "<group>"; };
-		497186791D2339210032A98E /* UIBarButtonItem+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+BFKit.swift"; sourceTree = "<group>"; };
-		4971867A1D2339210032A98E /* UIButton+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+BFKit.swift"; sourceTree = "<group>"; };
-		4971867B1D2339210032A98E /* UIColor+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+BFKit.swift"; sourceTree = "<group>"; };
-		4971867C1D2339210032A98E /* UIDevice+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+BFKit.swift"; sourceTree = "<group>"; };
-		4971867D1D2339210032A98E /* UIFont+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+BFKit.swift"; sourceTree = "<group>"; };
-		4971867E1D2339210032A98E /* UIImage+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+BFKit.swift"; sourceTree = "<group>"; };
-		4971867F1D2339210032A98E /* UIImageView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+BFKit.swift"; sourceTree = "<group>"; };
-		497186801D2339210032A98E /* UILabel+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+BFKit.swift"; sourceTree = "<group>"; };
-		497186811D2339210032A98E /* UINavigationBar+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+BFKit.swift"; sourceTree = "<group>"; };
-		497186821D2339210032A98E /* UIPasteboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPasteboard.swift; sourceTree = "<group>"; };
-		497186831D2339210032A98E /* UIScreen+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+BFKit.swift"; sourceTree = "<group>"; };
-		497186841D2339210032A98E /* UIScrollView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+BFKit.swift"; sourceTree = "<group>"; };
-		497186851D2339210032A98E /* UITableView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+BFKit.swift"; sourceTree = "<group>"; };
-		497186861D2339210032A98E /* UITextField+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+BFKit.swift"; sourceTree = "<group>"; };
-		497186871D2339210032A98E /* UITextView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+BFKit.swift"; sourceTree = "<group>"; };
-		497186881D2339210032A98E /* UIToolbar+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIToolbar+BFKit.swift"; sourceTree = "<group>"; };
-		497186891D2339210032A98E /* UIView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+BFKit.swift"; sourceTree = "<group>"; };
-		4971868A1D2339210032A98E /* UIWebView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWebView+BFKit.swift"; sourceTree = "<group>"; };
-		4971868B1D2339210032A98E /* UIWindow+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+BFKit.swift"; sourceTree = "<group>"; };
 		4971868C1D2339210032A98E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = SOURCE_ROOT; };
 		4971868F1D2339210032A98E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BFKit.strings; sourceTree = "<group>"; };
 		497186901D2339210032A98E /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/BFKit.strings; sourceTree = "<group>"; };
@@ -134,8 +136,6 @@
 		497186C91D2339290032A98E /* BFButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFButtonTests.swift; path = Tests/BFButtonTests.swift; sourceTree = SOURCE_ROOT; };
 		497186CA1D2339290032A98E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = SOURCE_ROOT; };
 		498738101D2838530052B70A /* BFLogTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFLogTests.swift; path = Tests/BFLogTests.swift; sourceTree = SOURCE_ROOT; };
-		498BEE681D84DA0400FDC0E4 /* BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFKit.swift; sourceTree = "<group>"; };
-		498BEE6A1D84E19C00FDC0E4 /* BFDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFDate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +157,83 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		490D79A21DB81A7F00E07C65 /* BFKit */ = {
+			isa = PBXGroup;
+			children = (
+				490D79A31DB81A7F00E07C65 /* BFKit */,
+				490D79AF1DB81A7F00E07C65 /* Foundation */,
+				490D79BF1DB81A7F00E07C65 /* UIKit */,
+			);
+			name = BFKit;
+			path = Sources/BFKit;
+			sourceTree = SOURCE_ROOT;
+		};
+		490D79A31DB81A7F00E07C65 /* BFKit */ = {
+			isa = PBXGroup;
+			children = (
+				490D79A41DB81A7F00E07C65 /* BFApp.swift */,
+				490D79A51DB81A7F00E07C65 /* BFButton.swift */,
+				490D79A61DB81A7F00E07C65 /* BFDataStructures.swift */,
+				490D79A71DB81A7F00E07C65 /* BFDate.swift */,
+				490D79A81DB81A7F00E07C65 /* BFKit.swift */,
+				490D79A91DB81A7F00E07C65 /* BFLog.swift */,
+				490D79AA1DB81A7F00E07C65 /* BFPassword.swift */,
+				490D79AB1DB81A7F00E07C65 /* BFSystemSound.swift */,
+				490D79AC1DB81A7F00E07C65 /* BFTextField.swift */,
+				490D79AD1DB81A7F00E07C65 /* BFTouchID.swift */,
+				490D79AE1DB81A7F00E07C65 /* BFView.swift */,
+			);
+			path = BFKit;
+			sourceTree = "<group>";
+		};
+		490D79AF1DB81A7F00E07C65 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				490D79B01DB81A7F00E07C65 /* Array+BFKit.swift */,
+				490D79B11DB81A7F00E07C65 /* Data+BFKit.swift */,
+				490D79B21DB81A7F00E07C65 /* Date+BFKit.swift */,
+				490D79B31DB81A7F00E07C65 /* Dictionary+BFKit.swift */,
+				490D79B41DB81A7F00E07C65 /* FileManager+BFKit.swift */,
+				490D79B51DB81A7F00E07C65 /* NSArray+BFKit.swift */,
+				490D79B61DB81A7F00E07C65 /* NSDictionary+BFKit.swift */,
+				490D79B71DB81A7F00E07C65 /* NSMutableArray+BFKit.swift */,
+				490D79B81DB81A7F00E07C65 /* NSMutableDictionary+BFKit.swift */,
+				490D79B91DB81A7F00E07C65 /* NSNumber+BFKit.swift */,
+				490D79BA1DB81A7F00E07C65 /* NSObject+BFKit.swift */,
+				490D79BB1DB81A7F00E07C65 /* NSString+BFKit.swift */,
+				490D79BC1DB81A7F00E07C65 /* ProcessInfo+BFKit.swift */,
+				490D79BD1DB81A7F00E07C65 /* String+BFKit.swift */,
+				490D79BE1DB81A7F00E07C65 /* Thread+BFKit.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		490D79BF1DB81A7F00E07C65 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				490D79C01DB81A7F00E07C65 /* UIBarButtonItem+BFKit.swift */,
+				490D79C11DB81A7F00E07C65 /* UIButton+BFKit.swift */,
+				490D79C21DB81A7F00E07C65 /* UIColor+BFKit.swift */,
+				490D79C31DB81A7F00E07C65 /* UIDevice+BFKit.swift */,
+				490D79C41DB81A7F00E07C65 /* UIFont+BFKit.swift */,
+				490D79C51DB81A7F00E07C65 /* UIImage+BFKit.swift */,
+				490D79C61DB81A7F00E07C65 /* UIImageView+BFKit.swift */,
+				490D79C71DB81A7F00E07C65 /* UILabel+BFKit.swift */,
+				490D79C81DB81A7F00E07C65 /* UINavigationBar+BFKit.swift */,
+				490D79C91DB81A7F00E07C65 /* UIPasteboard.swift */,
+				490D79CA1DB81A7F00E07C65 /* UIScreen+BFKit.swift */,
+				490D79CB1DB81A7F00E07C65 /* UIScrollView+BFKit.swift */,
+				490D79CC1DB81A7F00E07C65 /* UITableView+BFKit.swift */,
+				490D79CD1DB81A7F00E07C65 /* UITextField+BFKit.swift */,
+				490D79CE1DB81A7F00E07C65 /* UITextView+BFKit.swift */,
+				490D79CF1DB81A7F00E07C65 /* UIToolbar+BFKit.swift */,
+				490D79D01DB81A7F00E07C65 /* UIView+BFKit.swift */,
+				490D79D11DB81A7F00E07C65 /* UIWebView+BFKit.swift */,
+				490D79D21DB81A7F00E07C65 /* UIWindow+BFKit.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		497186371D2339040032A98E = {
 			isa = PBXGroup;
 			children = (
@@ -179,8 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				497186651D2339210032A98E /* BFKit.h */,
-				4971865B1D2339210032A98E /* BFKit */,
-				497186671D2339210032A98E /* Extensions */,
+				490D79A21DB81A7F00E07C65 /* BFKit */,
 				4971868D1D2339210032A98E /* Languages */,
 				4971868C1D2339210032A98E /* Info.plist */,
 			);
@@ -197,83 +273,6 @@
 				497186CA1D2339290032A98E /* Info.plist */,
 			);
 			path = BFKitTests;
-			sourceTree = "<group>";
-		};
-		4971865B1D2339210032A98E /* BFKit */ = {
-			isa = PBXGroup;
-			children = (
-				4971865C1D2339210032A98E /* BFApp.swift */,
-				4971865D1D2339210032A98E /* BFButton.swift */,
-				4971865E1D2339210032A98E /* BFDataStructures.swift */,
-				498BEE6A1D84E19C00FDC0E4 /* BFDate.swift */,
-				498BEE681D84DA0400FDC0E4 /* BFKit.swift */,
-				4971865F1D2339210032A98E /* BFLog.swift */,
-				497186601D2339210032A98E /* BFPassword.swift */,
-				497186611D2339210032A98E /* BFSystemSound.swift */,
-				497186621D2339210032A98E /* BFTextField.swift */,
-				497186631D2339210032A98E /* BFTouchID.swift */,
-				497186641D2339210032A98E /* BFView.swift */,
-			);
-			name = BFKit;
-			path = Sources/BFKit;
-			sourceTree = SOURCE_ROOT;
-		};
-		497186671D2339210032A98E /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				497186681D2339210032A98E /* Foundation */,
-				497186781D2339210032A98E /* UIKit */,
-			);
-			name = Extensions;
-			path = Sources/Extensions;
-			sourceTree = SOURCE_ROOT;
-		};
-		497186681D2339210032A98E /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-				497186691D2339210032A98E /* Array+BFKit.swift */,
-				4971866A1D2339210032A98E /* Data+BFKit.swift */,
-				4971866B1D2339210032A98E /* Date+BFKit.swift */,
-				4971866C1D2339210032A98E /* Dictionary+BFKit.swift */,
-				4971866D1D2339210032A98E /* FileManager+BFKit.swift */,
-				4971866E1D2339210032A98E /* NSArray+BFKit.swift */,
-				4971866F1D2339210032A98E /* NSDictionary+BFKit.swift */,
-				497186701D2339210032A98E /* NSMutableArray+BFKit.swift */,
-				497186711D2339210032A98E /* NSMutableDictionary+BFKit.swift */,
-				497186721D2339210032A98E /* NSNumber+BFKit.swift */,
-				497186731D2339210032A98E /* NSObject+BFKit.swift */,
-				497186741D2339210032A98E /* NSString+BFKit.swift */,
-				497186751D2339210032A98E /* ProcessInfo+BFKit.swift */,
-				497186761D2339210032A98E /* String+BFKit.swift */,
-				497186771D2339210032A98E /* Thread+BFKit.swift */,
-			);
-			path = Foundation;
-			sourceTree = "<group>";
-		};
-		497186781D2339210032A98E /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				497186791D2339210032A98E /* UIBarButtonItem+BFKit.swift */,
-				4971867A1D2339210032A98E /* UIButton+BFKit.swift */,
-				4971867B1D2339210032A98E /* UIColor+BFKit.swift */,
-				4971867C1D2339210032A98E /* UIDevice+BFKit.swift */,
-				4971867D1D2339210032A98E /* UIFont+BFKit.swift */,
-				4971867E1D2339210032A98E /* UIImage+BFKit.swift */,
-				4971867F1D2339210032A98E /* UIImageView+BFKit.swift */,
-				497186801D2339210032A98E /* UILabel+BFKit.swift */,
-				497186811D2339210032A98E /* UINavigationBar+BFKit.swift */,
-				497186821D2339210032A98E /* UIPasteboard.swift */,
-				497186831D2339210032A98E /* UIScreen+BFKit.swift */,
-				497186841D2339210032A98E /* UIScrollView+BFKit.swift */,
-				497186851D2339210032A98E /* UITableView+BFKit.swift */,
-				497186861D2339210032A98E /* UITextField+BFKit.swift */,
-				497186871D2339210032A98E /* UITextView+BFKit.swift */,
-				497186881D2339210032A98E /* UIToolbar+BFKit.swift */,
-				497186891D2339210032A98E /* UIView+BFKit.swift */,
-				4971868A1D2339210032A98E /* UIWebView+BFKit.swift */,
-				4971868B1D2339210032A98E /* UIWindow+BFKit.swift */,
-			);
-			path = UIKit;
 			sourceTree = "<group>";
 		};
 		4971868D1D2339210032A98E /* Languages */ = {
@@ -427,51 +426,51 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				497186B21D2339210032A98E /* Thread+BFKit.swift in Sources */,
-				497186B01D2339210032A98E /* ProcessInfo+BFKit.swift in Sources */,
-				497186C11D2339210032A98E /* UITextView+BFKit.swift in Sources */,
-				497186AD1D2339210032A98E /* NSNumber+BFKit.swift in Sources */,
-				497186A61D2339210032A98E /* Date+BFKit.swift in Sources */,
-				497186BA1D2339210032A98E /* UILabel+BFKit.swift in Sources */,
-				497186A51D2339210032A98E /* Data+BFKit.swift in Sources */,
-				497186B41D2339210032A98E /* UIButton+BFKit.swift in Sources */,
-				498BEE6B1D84E19C00FDC0E4 /* BFDate.swift in Sources */,
-				497186B51D2339210032A98E /* UIColor+BFKit.swift in Sources */,
-				497186B61D2339210032A98E /* UIDevice+BFKit.swift in Sources */,
-				497186AB1D2339210032A98E /* NSMutableArray+BFKit.swift in Sources */,
-				497186B91D2339210032A98E /* UIImageView+BFKit.swift in Sources */,
-				497186C21D2339210032A98E /* UIToolbar+BFKit.swift in Sources */,
-				4971869C1D2339210032A98E /* BFLog.swift in Sources */,
-				497186B31D2339210032A98E /* UIBarButtonItem+BFKit.swift in Sources */,
-				497186AA1D2339210032A98E /* NSDictionary+BFKit.swift in Sources */,
-				497186C51D2339210032A98E /* UIWindow+BFKit.swift in Sources */,
-				497186B81D2339210032A98E /* UIImage+BFKit.swift in Sources */,
-				497186B11D2339210032A98E /* String+BFKit.swift in Sources */,
-				497186BD1D2339210032A98E /* UIScreen+BFKit.swift in Sources */,
-				497186A81D2339210032A98E /* FileManager+BFKit.swift in Sources */,
-				497186991D2339210032A98E /* BFApp.swift in Sources */,
-				497186BB1D2339210032A98E /* UINavigationBar+BFKit.swift in Sources */,
-				497186A41D2339210032A98E /* Array+BFKit.swift in Sources */,
-				497186AE1D2339210032A98E /* NSObject+BFKit.swift in Sources */,
-				497186C01D2339210032A98E /* UITextField+BFKit.swift in Sources */,
-				497186A11D2339210032A98E /* BFView.swift in Sources */,
-				497186C31D2339210032A98E /* UIView+BFKit.swift in Sources */,
-				497186BF1D2339210032A98E /* UITableView+BFKit.swift in Sources */,
-				497186A01D2339210032A98E /* BFTouchID.swift in Sources */,
-				497186A91D2339210032A98E /* NSArray+BFKit.swift in Sources */,
-				497186AF1D2339210032A98E /* NSString+BFKit.swift in Sources */,
-				4971869E1D2339210032A98E /* BFSystemSound.swift in Sources */,
-				497186BE1D2339210032A98E /* UIScrollView+BFKit.swift in Sources */,
-				497186BC1D2339210032A98E /* UIPasteboard.swift in Sources */,
-				4971869A1D2339210032A98E /* BFButton.swift in Sources */,
-				497186A71D2339210032A98E /* Dictionary+BFKit.swift in Sources */,
-				4971869B1D2339210032A98E /* BFDataStructures.swift in Sources */,
-				497186AC1D2339210032A98E /* NSMutableDictionary+BFKit.swift in Sources */,
-				4971869D1D2339210032A98E /* BFPassword.swift in Sources */,
-				4971869F1D2339210032A98E /* BFTextField.swift in Sources */,
-				497186C41D2339210032A98E /* UIWebView+BFKit.swift in Sources */,
-				498BEE691D84DA0400FDC0E4 /* BFKit.swift in Sources */,
-				497186B71D2339210032A98E /* UIFont+BFKit.swift in Sources */,
+				490D79D31DB81A7F00E07C65 /* BFApp.swift in Sources */,
+				490D79D61DB81A7F00E07C65 /* BFDate.swift in Sources */,
+				490D79E11DB81A7F00E07C65 /* Dictionary+BFKit.swift in Sources */,
+				490D79D81DB81A7F00E07C65 /* BFLog.swift in Sources */,
+				490D79FA1DB81A8000E07C65 /* UITextField+BFKit.swift in Sources */,
+				490D79EB1DB81A7F00E07C65 /* String+BFKit.swift in Sources */,
+				490D79D71DB81A7F00E07C65 /* BFKit.swift in Sources */,
+				490D79F11DB81A7F00E07C65 /* UIFont+BFKit.swift in Sources */,
+				490D79E01DB81A7F00E07C65 /* Date+BFKit.swift in Sources */,
+				490D79DA1DB81A7F00E07C65 /* BFSystemSound.swift in Sources */,
+				490D79F41DB81A8000E07C65 /* UILabel+BFKit.swift in Sources */,
+				490D79E41DB81A7F00E07C65 /* NSDictionary+BFKit.swift in Sources */,
+				490D79F21DB81A7F00E07C65 /* UIImage+BFKit.swift in Sources */,
+				490D79F61DB81A8000E07C65 /* UIPasteboard.swift in Sources */,
+				490D79EA1DB81A7F00E07C65 /* ProcessInfo+BFKit.swift in Sources */,
+				490D79DB1DB81A7F00E07C65 /* BFTextField.swift in Sources */,
+				490D79F91DB81A8000E07C65 /* UITableView+BFKit.swift in Sources */,
+				490D79E31DB81A7F00E07C65 /* NSArray+BFKit.swift in Sources */,
+				490D79FE1DB81A8000E07C65 /* UIWebView+BFKit.swift in Sources */,
+				490D79E61DB81A7F00E07C65 /* NSMutableDictionary+BFKit.swift in Sources */,
+				490D79E21DB81A7F00E07C65 /* FileManager+BFKit.swift in Sources */,
+				490D79F81DB81A8000E07C65 /* UIScrollView+BFKit.swift in Sources */,
+				490D79F01DB81A7F00E07C65 /* UIDevice+BFKit.swift in Sources */,
+				490D79DF1DB81A7F00E07C65 /* Data+BFKit.swift in Sources */,
+				490D79DE1DB81A7F00E07C65 /* Array+BFKit.swift in Sources */,
+				490D79D41DB81A7F00E07C65 /* BFButton.swift in Sources */,
+				490D79E51DB81A7F00E07C65 /* NSMutableArray+BFKit.swift in Sources */,
+				490D79EF1DB81A7F00E07C65 /* UIColor+BFKit.swift in Sources */,
+				490D79F71DB81A8000E07C65 /* UIScreen+BFKit.swift in Sources */,
+				490D79FF1DB81A8000E07C65 /* UIWindow+BFKit.swift in Sources */,
+				490D79F51DB81A8000E07C65 /* UINavigationBar+BFKit.swift in Sources */,
+				490D79EC1DB81A7F00E07C65 /* Thread+BFKit.swift in Sources */,
+				490D79FD1DB81A8000E07C65 /* UIView+BFKit.swift in Sources */,
+				490D79F31DB81A7F00E07C65 /* UIImageView+BFKit.swift in Sources */,
+				490D79E81DB81A7F00E07C65 /* NSObject+BFKit.swift in Sources */,
+				490D79FC1DB81A8000E07C65 /* UIToolbar+BFKit.swift in Sources */,
+				490D79EE1DB81A7F00E07C65 /* UIButton+BFKit.swift in Sources */,
+				490D79D51DB81A7F00E07C65 /* BFDataStructures.swift in Sources */,
+				490D79ED1DB81A7F00E07C65 /* UIBarButtonItem+BFKit.swift in Sources */,
+				490D79DC1DB81A7F00E07C65 /* BFTouchID.swift in Sources */,
+				490D79E91DB81A7F00E07C65 /* NSString+BFKit.swift in Sources */,
+				490D79D91DB81A7F00E07C65 /* BFPassword.swift in Sources */,
+				490D79DD1DB81A7F00E07C65 /* BFView.swift in Sources */,
+				490D79E71DB81A7F00E07C65 /* NSNumber+BFKit.swift in Sources */,
+				490D79FB1DB81A8000E07C65 /* UITextView+BFKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,6 +655,7 @@
 		497186591D2339040032A98E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FabrizioBrancati.BFKitTests;
@@ -667,6 +667,7 @@
 		4971865A1D2339040032A98E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FabrizioBrancati.BFKitTests;
