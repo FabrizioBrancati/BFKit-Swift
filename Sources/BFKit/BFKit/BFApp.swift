@@ -51,28 +51,6 @@ public func NSLocalizedString(_ key: String) -> String {
     return NSLocalizedString(key, comment: "")
 }
 
-/// Executes a block only if in DEBUG mode.
-///
-/// More info on how to use it [here](http://stackoverflow.com/questions/26890537/disabling-nslog-for-production-in-swift-project/26891797#26891797).
-///
-/// - parameter block: The block to be executed.
-public func debug(_ block: () -> ()) {
-    #if DEBUG
-        block()
-    #endif
-}
-
-/// Executes a block only if NOT in DEBUG mode.
-///
-/// More info on how to use it [here](http://stackoverflow.com/questions/26890537/disabling-nslog-for-production-in-swift-project/26891797#26891797).
-///
-/// - parameter block: The block to be executed.
-public func release(_ block: () -> ()) {
-    #if !DEBUG
-        block()
-    #endif
-}
-
 // MARK: - BFApp class
 
 /// This class adds some useful functions for the App.
@@ -83,6 +61,28 @@ open class BFApp {
     private static let BFAppHasBeenOpened = "BFAppHasBeenOpened"
     
     // MARK: - Functions
+    
+    /// Executes a block only if in DEBUG mode.
+    ///
+    /// More info on how to use it [here](http://stackoverflow.com/questions/26890537/disabling-nslog-for-production-in-swift-project/26891797#26891797).
+    ///
+    /// - parameter block: The block to be executed.
+    public func debug(_ block: () -> ()) {
+        #if DEBUG
+            block()
+        #endif
+    }
+
+    /// Executes a block only if NOT in DEBUG mode.
+    ///
+    /// More info on how to use it [here](http://stackoverflow.com/questions/26890537/disabling-nslog-for-production-in-swift-project/26891797#26891797).
+    ///
+    /// - parameter block: The block to be executed.
+    public func release(_ block: () -> ()) {
+        #if !DEBUG
+            block()
+        #endif
+    }
     
     /// If version is set returns if is first start for that version,
     /// otherwise returns if is first start of the App.
