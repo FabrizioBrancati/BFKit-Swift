@@ -40,7 +40,7 @@ class BFAppTests: XCTestCase {
     
     func testIsFirstStart() {
         let isFirstStart = BFApp.isFirstStart()
-        debug { 
+        BFApp.debug {
             XCTAssert(isFirstStart == true || isFirstStart == false)
         }
     }
