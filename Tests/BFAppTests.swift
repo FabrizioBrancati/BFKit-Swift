@@ -27,13 +27,13 @@ class BFAppTests: XCTestCase {
     }
     
     func testDebug() {
-        debug {
+        BFApp.debug {
             XCTAssert(true)
         }
     }
     
     func testRelease() {
-        release {
+        BFApp.release {
             XCTAssert(true)
         }
     }
