@@ -52,6 +52,7 @@
 		490D79FD1DB81A8000E07C65 /* UIView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79D01DB81A7F00E07C65 /* UIView+BFKit.swift */; };
 		490D79FE1DB81A8000E07C65 /* UIWebView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79D11DB81A7F00E07C65 /* UIWebView+BFKit.swift */; };
 		490D79FF1DB81A8000E07C65 /* UIWindow+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79D21DB81A7F00E07C65 /* UIWindow+BFKit.swift */; };
+		490D7A011DBAC85F00E07C65 /* BFDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D7A001DBAC85F00E07C65 /* BFDateTests.swift */; };
 		49419AE81D233DF1006CABE6 /* BFAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186C81D2339290032A98E /* BFAppTests.swift */; };
 		49419AEB1D245961006CABE6 /* BFButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186C91D2339290032A98E /* BFButtonTests.swift */; };
 		49419AF01D2467FC006CABE6 /* BFDataStructuresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49419AEF1D2467FC006CABE6 /* BFDataStructuresTests.swift */; };
@@ -117,6 +118,7 @@
 		490D79D01DB81A7F00E07C65 /* UIView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+BFKit.swift"; sourceTree = "<group>"; };
 		490D79D11DB81A7F00E07C65 /* UIWebView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWebView+BFKit.swift"; sourceTree = "<group>"; };
 		490D79D21DB81A7F00E07C65 /* UIWindow+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+BFKit.swift"; sourceTree = "<group>"; };
+		490D7A001DBAC85F00E07C65 /* BFDateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFDateTests.swift; path = Tests/BFDateTests.swift; sourceTree = SOURCE_ROOT; };
 		49419AEF1D2467FC006CABE6 /* BFDataStructuresTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFDataStructuresTests.swift; path = Tests/BFDataStructuresTests.swift; sourceTree = SOURCE_ROOT; };
 		497186411D2339040032A98E /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4971864B1D2339040032A98E /* BFKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BFKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -269,6 +271,7 @@
 				497186C81D2339290032A98E /* BFAppTests.swift */,
 				497186C91D2339290032A98E /* BFButtonTests.swift */,
 				49419AEF1D2467FC006CABE6 /* BFDataStructuresTests.swift */,
+				490D7A001DBAC85F00E07C65 /* BFDateTests.swift */,
 				498738101D2838530052B70A /* BFLogTests.swift */,
 				497186CA1D2339290032A98E /* Info.plist */,
 			);
@@ -482,6 +485,7 @@
 				49419AE81D233DF1006CABE6 /* BFAppTests.swift in Sources */,
 				49419AF01D2467FC006CABE6 /* BFDataStructuresTests.swift in Sources */,
 				49419AEB1D245961006CABE6 /* BFButtonTests.swift in Sources */,
+				490D7A011DBAC85F00E07C65 /* BFDateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

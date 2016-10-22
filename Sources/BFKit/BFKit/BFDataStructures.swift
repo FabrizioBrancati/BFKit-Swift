@@ -26,43 +26,39 @@
 
 import Foundation
 
-// MARK: - List struct -
+// MARK: - List struct
 
-/// Primitive List implementation
+/// Primitive List implementation.
 public struct List<Element: Equatable>: CustomStringConvertible {
-    // MARK: - Instance variables
+    // MARK: - Variables
     
-    /// Count of the elements in list
+    /// Count of the elements in list.
     public var count: Int {
         return list.count
     }
     
-    /// Describe the List
+    /// Describe the List.
     public var description: String {
         return "\(list)"
     }
     
-    /// The array behind the List
+    /// The array behind the List.
     private var list = [Element]()
     
-    // MARK: - Instance functions
+    // MARK: - Functions
     
-    /**
-     Delete an element at the given index
-     
-     - parameter index: The index to delete
-     */
+    /// Delete an element at the given index.
+    ///
+    /// - parameter index: The index to delete.
     public mutating func delete(at index: Int) {
         list.remove(at: index)
     }
     
-    /**
-     Delete an element in the List
-     
-     - parameter object: The object to be deleted
-     
-     - returns: Retruns true if removed, otherwise false
-     */
+    /// Delete an element in the List.
+    ///
+    /// - parameter element: The object to be deleted.
+    ///
+    /// - returns: Retruns true if removed, otherwise false.
     public mutating func delete(_ element: Element) -> Bool {
         guard let search = self.search(element) else {
             return false
@@ -72,33 +68,27 @@ public struct List<Element: Equatable>: CustomStringConvertible {
         return true
     }
     
-    /**
-     Insert an element in the List
-     
-     - parameter object: The element to insert in the List
-     */
+    /// Insert an element in the List.
+    ///
+    /// - parameter element: The element to insert in the List.
     public mutating func insert(_ element: Element) {
         list.append(element)
     }
     
-    /**
-     Search for an index and returns the element
-     
-     - parameter index: The index
-     
-     - returns: Returns the element of the searched index
-     */
+    /// Search for an index and returns the element.
+    ///
+    /// - parameter index: The index.
+    ///
+    /// - returns: Returns the element of the searched index.
     public func search(at index: Int) -> Element? {
         return list.safeObjectAtIndex(index)
     }
     
-    /**
-     Search an element and returns the index
-     
-     - parameter object: The element to search
-     
-     - returns: Returns the index of the searched element
-     */
+    /// Search an element and returns the index.
+    ///
+    /// - parameter element: The element to search.
+    ///
+    /// - returns: Returns the index of the searched element.
     public func search(_ element: Element) -> Int? {
         for i in 0 ..< list.count {
             if list[i] == element {
@@ -110,32 +100,30 @@ public struct List<Element: Equatable>: CustomStringConvertible {
     }
 }
 
-// MARK: - Queue struct -
+// MARK: - Queue struct
 
-/// Primitive Queue implementation
+/// Primitive Queue implementation.
 public struct Queue<Element: Equatable>: CustomStringConvertible {
-    // MARK: - Instance variables
+    // MARK: - Variables
     
-    /// Count of the elements in list
+    /// Count of the elements in list.
     public var count: Int {
         return queue.count
     }
     
-    /// Describe the Queue
+    /// Describe the Queue.
     public var description: String {
         return "\(queue)"
     }
     
-    /// The array behind the Queue
+    /// The array behind the Queue.
     private var queue = [Element]()
     
-    // MARK: - Instance functions
+    // MARK: - Functions
     
-    /**
-     Dequeue the first element
-     
-     - returns: Retruns true if removed, otherwise false
-     */
+    /// Dequeue the first element.
+    ///
+    /// - returns: Retruns true if removed, otherwise false.
     public mutating func dequeue() -> Bool {
         if queue.count > 0 {
             queue.remove(at: 0)
@@ -145,67 +133,57 @@ public struct Queue<Element: Equatable>: CustomStringConvertible {
         }
     }
     
-    /**
-     Remove all the elements in the Queue
-     */
-    public mutating func emptyQueue() {
+    /// Remove all the elements in the Queue.
+    public mutating func empty() {
         queue.removeAll(keepingCapacity: false)
     }
     
-    /**
-     Adds an element to the Queue
-    
-     - parameter object: The element to add
-     */
+    /// Adds an element to the Queue.
+    ///
+    /// - parameter element: The element to add.
     public mutating func enqueue(_ element: Element) {
         queue.append(element)
     }
     
-    /**
-     Returns the element on the top of the Queue
-    
-     - returns: Returns the element on the top of the Queue
-     */
+    /// Returns the Queue's top element.
+    ///
+    /// - returns: Returns the Queue's top element.
     public func top() -> Element? {
         return queue.first
     }
 }
 
-// MARK: - Stack struct -
+// MARK: - Stack struct
 
-/// Primitive Stack implementation
+/// Primitive Stack implementation.
 public struct Stack<Element: Equatable>: CustomStringConvertible {
-    // MARK: - Instance variables
+    // MARK: - Variables
     
-    /// Count of the elements in list
+    /// Count of the elements in list.
     public var count: Int {
         return stack.count
     }
     
-    /// Describe the Stack
+    /// Describe the Stack.
     public var description: String {
         return "\(stack)"
     }
     
-    /// The array behind Stack
+    /// The array behind Stack.
     private var stack = [Element]()
     
-    // MARK: - Instance functions
+    // MARK: - Functions
     
-    /**
-     Returns if the Stack is empty or not
-     
-     - returns: Returns true if the Stack is empty, otherwise false
-     */
+    /// Returns if the Stack is empty or not.
+    ///
+    /// - returns: Returns true if the Stack is empty, otherwise false.
     public func empty() -> Bool {
         return stack.isEmpty
     }
     
-    /**
-     Removes an element on top of the Stack
-     
-     - returns: Returns the removed element
-     */
+    /// Removes an element on top of the Stack.
+    ///
+    /// - returns: Returns the removed element.
     public mutating func pop() -> Element? {
         var element: Element? = nil
         if !self.empty() {
@@ -216,11 +194,9 @@ public struct Stack<Element: Equatable>: CustomStringConvertible {
         return element
     }
     
-    /**
-     Adds an element on top of the Stack
-     
-     - parameter object: The element to add
-     */
+    /// Adds an element on top of the Stack.
+    ///
+    /// - parameter element: The element to add.
     public mutating func push(_ element: Element) {
         stack.append(element)
     }

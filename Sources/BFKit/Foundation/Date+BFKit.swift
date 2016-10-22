@@ -81,7 +81,45 @@ public extension Date {
         }
     }
     
-    // MARK: - Instance functions -
+    // MARK: - Variables
+    
+    
+    /// Returns current month.
+    public var month: Int {
+        get {
+            let calendar = Calendar.autoupdatingCurrent
+            let component = calendar.dateComponents([.month], from: self)
+            
+            guard let month = component.month else {
+                return 0
+            }
+            
+            return month
+        }
+    }
+    
+    /// Get the weekday number from self
+    /// - 1 - Sunday
+    /// - 2 - Monday
+    /// - 3 - Tuerday
+    /// - 4 - Wednesday
+    /// - 5 - Thursday
+    /// - 6 - Friday
+    /// - 7 - Saturday
+    public var weekday: Int {
+        get {
+            let calendar = Calendar.autoupdatingCurrent
+            let component = calendar.dateComponents([.weekday], from: self)
+            
+            guard let weekday = component.weekday else {
+                return 0
+            }
+            
+            return weekday
+        }
+    }
+    
+    // MARK: - Functions -
     
     /**
      Get self as a BFDateInformation structure with a given time zone
@@ -96,39 +134,6 @@ public extension Date {
         let comp = calendar.dateComponents([.year, .month, .day, .weekday, .hour, .minute, .second, .nanosecond], from: self)
         
         return BFDateInformation(year: comp.year!, month: comp.month!, day: comp.day!, weekday: comp.weekday!, hour: comp.hour!, minute: comp.minute!, second: comp.second!, nanosecond: comp.nanosecond!)
-    }
-    
-    /**
-     Get the month from today
-    
-     - returns: Return the month
-     */
-    public func month() -> Date {
-        let calendar = Calendar.autoupdatingCurrent
-        let comp = calendar.dateComponents([.year, .month], from: self)
-        
-        (comp as NSDateComponents).setValue(1, forComponent: .day)
-        
-        return calendar.date(from: comp)!
-    }
-    
-    /**
-     Get the weekday number from self
-     - 1 - Sunday
-     - 2 - Monday
-     - 3 - Tuerday
-     - 4 - Wednesday
-     - 5 - Thursday
-     - 6 - Friday
-     - 7 - Saturday
-     
-     - returns: Return weekday number
-     */
-    public func weekday() -> Int {
-        let calendar = Calendar.autoupdatingCurrent
-        let comp = calendar.dateComponents([.year, .month, .day, .weekday], from: self)
-        
-        return comp.weekday!
     }
     
     /**
@@ -303,15 +308,6 @@ public extension Date {
         var info: BFDateInformation = Date().dateInformation()
         info.day -= 1
         return self.dateFromDateInformation(info)
-    }
-    
-    /**
-     Get the month from today
-    
-     - returns: Returns the month
-     */
-    public static func month() -> Date {
-        return Date().month()
     }
     
     /**

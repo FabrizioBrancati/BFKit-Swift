@@ -12,6 +12,7 @@ import XCTest
 class BFDataStructuresTests: XCTestCase {
     var list = List<Int>()
     var queue = Queue<Int>()
+    var stack = Stack<Int>()
     
     override func setUp() {
         super.setUp()
@@ -23,13 +24,17 @@ class BFDataStructuresTests: XCTestCase {
         queue.enqueue(1)
         queue.enqueue(2)
         queue.enqueue(3)
+        
+        stack.push(1)
+        stack.push(2)
+        stack.push(3)
     }
     
     override func tearDown() {
         super.tearDown()
     }
     
-    // MARK: - List tests -
+    // MARK: - List tests
     
     func testListDescription() {
         XCTAssert(list.description != "")
@@ -64,30 +69,53 @@ class BFDataStructuresTests: XCTestCase {
         XCTAssert(list.search(1) == 0)
     }
     
-    // MARK: - Queue tests -
+    // MARK: - Queue tests
     
-    func testDequeue() {
+    func testQueueDescription() {
+        XCTAssert(queue.description != "")
+    }
+    
+    func testQueueDequeue() {
         XCTAssert(queue.dequeue())
         XCTAssert(queue.dequeue())
         XCTAssert(queue.dequeue())
         XCTAssertFalse(queue.dequeue())
     }
     
-    func testEmptyQueue() {
-        queue.emptyQueue()
+    func testQueueEmpty() {
+        queue.empty()
         XCTAssertFalse(queue.dequeue())
     }
     
-    func testEnqueue() {
+    func testQueueEnqueue() {
         queue.enqueue(4)
         XCTAssert(queue.count == 4)
     }
     
-    func testTop() {
+    func testQueueTop() {
         XCTAssert(queue.top() == 1)
     }
     
-    // MARK: - Stack tests -
+    // MARK: - Stack tests
     
+    func testStackDescription() {
+        XCTAssert(stack.description != "")
+    }
     
+    func testStackEmpty() {
+        XCTAssert(stack.empty() == false)
+    }
+    
+    func testStackPop() {
+        let element = stack.pop()
+        
+        XCTAssert(stack.count == 2)
+        XCTAssert(element == 3)
+    }
+    
+    func testStackPush() {
+        stack.push(4)
+        
+        XCTAssert(stack.count == 4)
+    }
 }

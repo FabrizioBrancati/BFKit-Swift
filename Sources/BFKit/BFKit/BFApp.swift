@@ -27,10 +27,12 @@
 import Foundation
 import UIKit
 
-// MARK: - Global functions
+// MARK: - Global variables
 
 /// Get AppDelegate. To use it, cast to AppDelegate with "as! AppDelegate".
 public let appDelegate: UIApplicationDelegate? = UIApplication.shared.delegate
+
+// MARK: - Global functions
 
 /// Use BFLocalizedString to use the string translated by BFKit.
 ///

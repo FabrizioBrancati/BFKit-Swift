@@ -27,73 +27,74 @@
 import Foundation
 import UIKit
 
-// MARK: - Global functions -
+// MARK: - Global functions
 
-/**
- Exented NSLog.
- See http://stackoverflow.com/a/26891797/4032046 how to set DEBUG build variable
-
- - parameter message:  Console message
- - parameter filename: File
- - parameter function: Function name
- - parameter line:     Line number
- */
-public func BFLog(_ message: String, filename: String = #file, function: String = #function, line: Int = #line) {
+/// Exented NSLog.
+///
+/// See [here](http://stackoverflow.com/a/26891797/4032046) on how to set DEBUG build variable.
+///
+/// - parameter message:  Console message.
+/// - parameter filename: File.
+/// - parameter function: Function name.
+/// - parameter line:     Line number.
+public func BFLog(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
     #if DEBUG
         var _message = message
         if _message.hasSuffix("\n") == false {
             _message += "\n"
         }
         
-        BFLogClass.logString += _message
+        BFLogInternal.logString += _message
         
-        let filenameNoExt = NSURL(string: NSString(utf8String: filename)! as String)!.deletingPathExtension!.lastPathComponent
-        let log = "(\(function)) (\(filenameNoExt):\(line) \(_message)"
+        let filenameWithoutExtension = NSURL(string: NSString(utf8String: filename)! as String)!.deletingPathExtension!.lastPathComponent
+        let log = "(\(filenameWithoutExtension):\(line) (\(function)) \(_message)"
         let timestamp = Date.dateInformationDescriptionWithInformation(Date().dateInformation(), dateSeparator: "-", usFormat: true, nanosecond: true)
-        print("\(timestamp) \(filenameNoExt):\(line) \(function): \(_message)", terminator: "")
+        print("\(timestamp) \(filenameWithoutExtension):\(line) \(function): \(_message)", terminator: "")
         
-        BFLogClass.detailedLogString += log
+        BFLogInternal.detailedLogString += log
     #endif
 }
 
-/// Get the log string
+/// Get the log string.
 public var BFLogString: String {
     #if DEBUG
-        return BFLogClass.logString
+        return BFLogInternal.logString
     #else
         return ""
     #endif
 }
 
-/// Get the detailed log string
-public var BFDetailedLogString: String {
+/// Get the detailed log string.
+public var BFLogDetailedString: String {
     #if DEBUG
-        return BFLogClass.detailedLogString
+        return BFLogInternal.detailedLogString
     #else
         return ""
     #endif
 }
 
-/// Clear the log string
+/// Clear the log string.
 public func BFLogClear() {
     #if DEBUG
-        BFLogClass.clearLog()
+        BFLogInternal.clearLog()
     #endif
 }
 
-/// The private BFLogClass created to manage the log strings
-private struct BFLogClass {
-    // MARK: - Variables -
+// MARK: - BFLogInternal class
+
+/// The private BFLogClass created to manage the log strings.
+private struct BFLogInternal {
+    // MARK: - Variables
     
-    /// The log string
-    public static var logString: String = ""
-    /// The detailed log string
-    public static var detailedLogString: String = ""
+    /// The log string.
+    fileprivate static var logString: String = ""
+    /// The detailed log string.
+    fileprivate static var detailedLogString: String = ""
     
-    // MARK: - Class functions -
+    // MARK: - Functions
     
-    /// Private, clear the log string
-    public static func clearLog() {
+    /// Private, clear the log string.
+    fileprivate static func clearLog() {
         logString = ""
         detailedLogString = ""
     }
