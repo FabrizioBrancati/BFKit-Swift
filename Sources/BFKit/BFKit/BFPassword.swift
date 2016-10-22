@@ -26,21 +26,21 @@
 
 import Foundation
 
-/// This class adds some useful functions to manage passwords
-public class BFPassword {
-    // MARK: - Enums -
+// MARK: - BFPassword struct
+
+/// This struct adds some useful functions to manage passwords.
+public struct BFPassword {
+    // MARK: - Enums
     
-    /**
-     Password strength level enum, from 0 (min) to 6 (max)
-    
-     - VeryWeak:   Password strength very weak
-     - Weak:       Password strength weak
-     - Average:    Password strength average
-     - Strong:     Password strength strong
-     - VeryStrong: Password strength very strong
-     - Secure:     Password strength secure
-     - VerySecure: Password strength very secure
-     */
+    /// Password strength level enum, from 0 (min) to 6 (max).
+    ///
+    /// - veryWeak:   Password strength very weak.
+    /// - weak:       Password strength weak.
+    /// - average:    Password strength average.
+    /// - strong:     Password strength strong.
+    /// - veryStrong: Password strength very strong.
+    /// - secure:     Password strength secure.
+    /// - verySecure: Password strength very secure.
     public enum PasswordStrengthLevel : Int {
         case veryWeak
         case weak
@@ -51,31 +51,29 @@ public class BFPassword {
         case verySecure
     }
     
-    // MARK: - Class functions -
+    // MARK: - Functions
     
-    /**
-     Check the password strength level
-    
-     - parameter password: Password string
-    
-     - returns: Returns the password strength level with value from enum PasswordStrengthLevel
-     */
-    public static func checkPasswordStrength(_ password: String) -> PasswordStrengthLevel {
+    /// Check the password strength level.
+    ///
+    /// - parameter password: Password string.
+    ///
+    /// - returns: Returns the password strength level with value from enum PasswordStrengthLevel.
+    public static func strength(_ password: String) -> PasswordStrengthLevel {
         let lenght = password.length
-        let lowercase = self.countLowercaseLetters(password)
-        let uppercase = self.countUppercaseLetters(password)
-        let numbers = self.countNumbers(password)
-        let symbols = self.countSymbols(password)
+        let lowercase = password.countLowercaseLetters(password)
+        let uppercase = password.countUppercaseLetters(password)
+        let numbers = password.countNumbers(password)
+        let symbols = password.countSymbols(password)
         
         var score = 0
         
-        if lenght < 5 {
+        if lenght <= 4 {
             score += 5
         } else {
-            if lenght > 4 && lenght < 8 {
+            if lenght > 4 && lenght <= 8 {
                 score += 10
             } else {
-                if lenght > 7 {
+                if lenght > 8 {
                     score += 20
                 }
             }
@@ -94,25 +92,25 @@ public class BFPassword {
         }
         
         if symbols == 1 {
-            score += 10
+            score += 15
         } else {
             if symbols == 2 {
-                score += 15
+                score += 20
             } else {
                 if symbols > 2 {
-                    score += 20
+                    score += 25
                 }
             }
         }
         
         if lowercase == 1 {
-            score += 10
+            score += 5
         } else {
             if lowercase == 2 {
-                score += 15
+                score += 7
             } else {
                 if lowercase > 2 {
-                    score += 20
+                    score += 10
                 }
             }
         }
@@ -129,7 +127,7 @@ public class BFPassword {
             }
         }
         
-        if score == 100 {
+        if score >= 100 {
             return .verySecure
         } else {
             if score >= 90 {
@@ -154,81 +152,5 @@ public class BFPassword {
                 }
             }
         }
-    }
-    
-    /**
-     Private, count the number of lowercase letters
-    
-     - parameter password: Password string
-    
-     - returns: Number of lowercase letters
-     */
-    private static func countLowercaseLetters(_ password: String) -> Int {
-        var countChar = 0
-        for i in 0 ..< password.length {
-            let isLowercase = CharacterSet.lowercaseLetters.contains(UnicodeScalar(((String(password) as NSString)).character(at: i))!)
-            if isLowercase {
-                countChar += 1
-            }
-        }
-        
-        return countChar
-    }
-    
-    /**
-     Private, count the number of uppercase letters
-    
-     - parameter password: Password string
-    
-     - returns: Number of uppercase letters
-     */
-    private static func countUppercaseLetters(_ password: String) -> Int {
-        var countChar = 0
-        for i in 0 ..< password.length {
-            let isUppercase = CharacterSet.uppercaseLetters.contains(UnicodeScalar((((String(password) as NSString))).character(at: i))!)
-            if isUppercase {
-                countChar += 1
-            }
-        }
-        
-        return countChar
-    }
-    
-    /**
-     Private, count the number of numbers
-    
-     - parameter password: Password string
-    
-     - returns: Number of numbers
-     */
-    private static func countNumbers(_ password: String) -> Int {
-        var countNumber = 0
-        for i in 0 ..< password.length {
-            let isNumber = CharacterSet(charactersIn: "0123456789").contains(UnicodeScalar(((String(password) as NSString)).character(at: i))!)
-            if isNumber {
-                countNumber += 1
-            }
-        }
-        
-        return countNumber
-    }
-    
-    /**
-     Private, count the number of symbols
-    
-     - parameter password: Password string
-    
-     - returns: Number of symbols
-     */
-    private static func countSymbols(_ password: String) -> Int {
-        var countSymbol = 0
-        for i in 0 ..< password.length {
-            let isSymbol = CharacterSet(charactersIn: "`~!?@#$€£¥§%^&*()_+-={}[]:\";.,<>'•\\|/").contains(UnicodeScalar(((String(password) as NSString)).character(at: i))!)
-            if isSymbol {
-                countSymbol += 1
-            }
-        }
-        
-        return countSymbol
     }
 }

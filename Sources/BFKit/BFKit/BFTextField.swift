@@ -27,14 +27,26 @@
 import Foundation
 import UIKit
 
-/// This class adds some useful functions to UITextField that cannot be in an extension
-public class BFTextField: UITextField {
+// MARK: - BFTextField - UITextField subclass
+
+/// This class adds some useful functions to UITextField that cannot be in an extension.
+open class BFTextField: UITextField {
+    // MARK: - Variables
+    
+    /// Max number of characters allowed by TextField.
     @IBInspectable public var maxNumberOfCharacters: Int = 0 {
         didSet {
             
         }
     }
     
+    // MARK: - Functions
+    
+    /// Override init with frame.
+    ///
+    /// - parameter frame: TextField's frame.
+    ///
+    /// - returns: Returns the BFTextField instance.
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -42,13 +54,11 @@ public class BFTextField: UITextField {
         NotificationCenter.default.addObserver(self, selector: #selector(BFTextField.textFieldDidChange(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: self)
     }
     
-    /**
-     Required init function
-     
-     - parameter aDecoder: NSCoder
-     
-     - returns: The initialized instance
-     */
+    /// Required init function.
+    ///
+    /// - parameter aDecoder: NSCoder.
+    ///
+    /// - returns: The initialized instance.
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -56,18 +66,29 @@ public class BFTextField: UITextField {
         NotificationCenter.default.addObserver(self, selector: #selector(BFTextField.textFieldDidChange(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: self)
     }
     
-    public override func encode(with aCoder: NSCoder) {
+    
+    /// Encodes added variables.
+    ///
+    /// - parameter aCoder: NSCoder.
+    open override func encode(with aCoder: NSCoder) {
         super.encode(with: aCoder)
         
         aCoder.encode(Int32(maxNumberOfCharacters), forKey: "MaxNumberOfCharacters")
     }
     
+    
+    /// Text field did change function.
+    ///
+    /// Called by observer.
+    ///
+    /// - parameter notification: Notification object.
     public func textFieldDidChange(_ notification: Notification) {
         if self.maxNumberOfCharacters != 0 && self.text!.length >= self.maxNumberOfCharacters {
             self.text = self.text?.substringToIndex(self.maxNumberOfCharacters)
         }
     }
     
+    /// Deinit function.
     deinit {
         NotificationCenter.default.removeObserver(self)
     }

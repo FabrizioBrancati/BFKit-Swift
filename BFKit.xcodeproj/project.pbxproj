@@ -53,6 +53,8 @@
 		490D79FE1DB81A8000E07C65 /* UIWebView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79D11DB81A7F00E07C65 /* UIWebView+BFKit.swift */; };
 		490D79FF1DB81A8000E07C65 /* UIWindow+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D79D21DB81A7F00E07C65 /* UIWindow+BFKit.swift */; };
 		490D7A011DBAC85F00E07C65 /* BFDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D7A001DBAC85F00E07C65 /* BFDateTests.swift */; };
+		490D7A031DBBEE5500E07C65 /* BFPasswordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D7A021DBBEE5500E07C65 /* BFPasswordTests.swift */; };
+		490D7A051DBBFADE00E07C65 /* BFSystemSoundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D7A041DBBFADD00E07C65 /* BFSystemSoundTests.swift */; };
 		49419AE81D233DF1006CABE6 /* BFAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186C81D2339290032A98E /* BFAppTests.swift */; };
 		49419AEB1D245961006CABE6 /* BFButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497186C91D2339290032A98E /* BFButtonTests.swift */; };
 		49419AF01D2467FC006CABE6 /* BFDataStructuresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49419AEF1D2467FC006CABE6 /* BFDataStructuresTests.swift */; };
@@ -60,6 +62,7 @@
 		497186A21D2339210032A98E /* BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 497186651D2339210032A98E /* BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		497186C71D2339210032A98E /* BFKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4971868E1D2339210032A98E /* BFKit.strings */; };
 		498738111D2838530052B70A /* BFLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498738101D2838530052B70A /* BFLogTests.swift */; };
+		49F0DBD71DBC006200C9AE18 /* BFTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DBD61DBC006200C9AE18 /* BFTextFieldTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +122,8 @@
 		490D79D11DB81A7F00E07C65 /* UIWebView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWebView+BFKit.swift"; sourceTree = "<group>"; };
 		490D79D21DB81A7F00E07C65 /* UIWindow+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+BFKit.swift"; sourceTree = "<group>"; };
 		490D7A001DBAC85F00E07C65 /* BFDateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFDateTests.swift; path = Tests/BFDateTests.swift; sourceTree = SOURCE_ROOT; };
+		490D7A021DBBEE5500E07C65 /* BFPasswordTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFPasswordTests.swift; path = Tests/BFPasswordTests.swift; sourceTree = SOURCE_ROOT; };
+		490D7A041DBBFADD00E07C65 /* BFSystemSoundTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFSystemSoundTests.swift; path = Tests/BFSystemSoundTests.swift; sourceTree = SOURCE_ROOT; };
 		49419AEF1D2467FC006CABE6 /* BFDataStructuresTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFDataStructuresTests.swift; path = Tests/BFDataStructuresTests.swift; sourceTree = SOURCE_ROOT; };
 		497186411D2339040032A98E /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4971864B1D2339040032A98E /* BFKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BFKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +143,7 @@
 		497186C91D2339290032A98E /* BFButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFButtonTests.swift; path = Tests/BFButtonTests.swift; sourceTree = SOURCE_ROOT; };
 		497186CA1D2339290032A98E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = SOURCE_ROOT; };
 		498738101D2838530052B70A /* BFLogTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFLogTests.swift; path = Tests/BFLogTests.swift; sourceTree = SOURCE_ROOT; };
+		49F0DBD61DBC006200C9AE18 /* BFTextFieldTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFTextFieldTests.swift; path = Tests/BFTextFieldTests.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +279,9 @@
 				49419AEF1D2467FC006CABE6 /* BFDataStructuresTests.swift */,
 				490D7A001DBAC85F00E07C65 /* BFDateTests.swift */,
 				498738101D2838530052B70A /* BFLogTests.swift */,
+				490D7A021DBBEE5500E07C65 /* BFPasswordTests.swift */,
+				490D7A041DBBFADD00E07C65 /* BFSystemSoundTests.swift */,
+				49F0DBD61DBC006200C9AE18 /* BFTextFieldTests.swift */,
 				497186CA1D2339290032A98E /* Info.plist */,
 			);
 			path = BFKitTests;
@@ -483,9 +492,12 @@
 			files = (
 				498738111D2838530052B70A /* BFLogTests.swift in Sources */,
 				49419AE81D233DF1006CABE6 /* BFAppTests.swift in Sources */,
+				490D7A031DBBEE5500E07C65 /* BFPasswordTests.swift in Sources */,
 				49419AF01D2467FC006CABE6 /* BFDataStructuresTests.swift in Sources */,
 				49419AEB1D245961006CABE6 /* BFButtonTests.swift in Sources */,
+				49F0DBD71DBC006200C9AE18 /* BFTextFieldTests.swift in Sources */,
 				490D7A011DBAC85F00E07C65 /* BFDateTests.swift in Sources */,
+				490D7A051DBBFADE00E07C65 /* BFSystemSoundTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

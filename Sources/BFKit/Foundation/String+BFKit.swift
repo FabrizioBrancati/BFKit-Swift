@@ -613,6 +613,82 @@ public extension String {
     public func stringByReplacingWithRegex(_ regexString: String, replacement: String) -> String? {
         return self.NS.stringByReplacingWithRegex(regexString as NSString, replacement: replacement as NSString) as? String
     }
+    
+    /**
+     Private, count the number of lowercase letters
+     
+     - parameter password: Password string
+     
+     - returns: Number of lowercase letters
+     */
+    public func countLowercaseLetters(_ password: String) -> Int {
+        var countChar = 0
+        for i in 0 ..< password.length {
+            let isLowercase = CharacterSet.lowercaseLetters.contains(UnicodeScalar(((String(password) as NSString)).character(at: i))!)
+            if isLowercase {
+                countChar += 1
+            }
+        }
+        
+        return countChar
+    }
+    
+    /**
+     Private, count the number of uppercase letters
+     
+     - parameter password: Password string
+     
+     - returns: Number of uppercase letters
+     */
+    public func countUppercaseLetters(_ password: String) -> Int {
+        var countChar = 0
+        for i in 0 ..< password.length {
+            let isUppercase = CharacterSet.uppercaseLetters.contains(UnicodeScalar((((String(password) as NSString))).character(at: i))!)
+            if isUppercase {
+                countChar += 1
+            }
+        }
+        
+        return countChar
+    }
+    
+    /**
+     Private, count the number of numbers
+     
+     - parameter password: Password string
+     
+     - returns: Number of numbers
+     */
+    public func countNumbers(_ password: String) -> Int {
+        var countNumber = 0
+        for i in 0 ..< password.length {
+            let isNumber = CharacterSet(charactersIn: "0123456789").contains(UnicodeScalar(((String(password) as NSString)).character(at: i))!)
+            if isNumber {
+                countNumber += 1
+            }
+        }
+        
+        return countNumber
+    }
+    
+    /**
+     Private, count the number of symbols
+     
+     - parameter password: Password string
+     
+     - returns: Number of symbols
+     */
+    public func countSymbols(_ password: String) -> Int {
+        var countSymbol = 0
+        for i in 0 ..< password.length {
+            let isSymbol = CharacterSet(charactersIn: "`~!?@#$€£¥§%^&*()_+-={}[]:\";.,<>'•\\|/").contains(UnicodeScalar(((String(password) as NSString)).character(at: i))!)
+            if isSymbol {
+                countSymbol += 1
+            }
+        }
+        
+        return countSymbol
+    }
 
     /**
      Convert HEX string (separated by space) to "usual" characters string.
