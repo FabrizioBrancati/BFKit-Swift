@@ -55,16 +55,16 @@
 		49F0DC9E1DBD15B400C9AE18 /* ProcessInfo+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC8F1DBD15B400C9AE18 /* ProcessInfo+BFKit.swift */; };
 		49F0DC9F1DBD15B400C9AE18 /* String+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC901DBD15B400C9AE18 /* String+BFKit.swift */; };
 		49F0DCA01DBD15B400C9AE18 /* Thread+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC911DBD15B400C9AE18 /* Thread+BFKit.swift */; };
-		49F0DCAB1DBD15CF00C9AE18 /* BFAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCA21DBD15CF00C9AE18 /* BFAppTests.swift */; };
-		49F0DCAC1DBD15CF00C9AE18 /* BFButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCA31DBD15CF00C9AE18 /* BFButtonTests.swift */; };
-		49F0DCAD1DBD15CF00C9AE18 /* BFDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCA41DBD15CF00C9AE18 /* BFDateTests.swift */; };
-		49F0DCAE1DBD15CF00C9AE18 /* BFLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCA51DBD15CF00C9AE18 /* BFLogTests.swift */; };
-		49F0DCAF1DBD15CF00C9AE18 /* BFPasswordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCA61DBD15CF00C9AE18 /* BFPasswordTests.swift */; };
-		49F0DCB01DBD15CF00C9AE18 /* BFSystemSoundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCA71DBD15CF00C9AE18 /* BFSystemSoundTests.swift */; };
-		49F0DCB11DBD15CF00C9AE18 /* BFTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCA81DBD15CF00C9AE18 /* BFTextFieldTests.swift */; };
-		49F0DCB21DBD15CF00C9AE18 /* BFTouchIDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCA91DBD15CF00C9AE18 /* BFTouchIDTests.swift */; };
-		49F0DCB31DBD15CF00C9AE18 /* BFViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCAA1DBD15CF00C9AE18 /* BFViewTests.swift */; };
-		49F0DCB51DBD15DB00C9AE18 /* BFDataStructuresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCB41DBD15DB00C9AE18 /* BFDataStructuresTests.swift */; };
+		49F0DCB81DBD171F00C9AE18 /* BFAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCA21DBD15CF00C9AE18 /* BFAppTests.swift */; };
+		49F0DCB91DBD172300C9AE18 /* BFButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCA31DBD15CF00C9AE18 /* BFButtonTests.swift */; };
+		49F0DCBA1DBD172300C9AE18 /* BFDataStructuresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCB41DBD15DB00C9AE18 /* BFDataStructuresTests.swift */; };
+		49F0DCBB1DBD172300C9AE18 /* BFDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCA41DBD15CF00C9AE18 /* BFDateTests.swift */; };
+		49F0DCBC1DBD172300C9AE18 /* BFLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCA51DBD15CF00C9AE18 /* BFLogTests.swift */; };
+		49F0DCBD1DBD172300C9AE18 /* BFPasswordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCA61DBD15CF00C9AE18 /* BFPasswordTests.swift */; };
+		49F0DCBE1DBD172300C9AE18 /* BFSystemSoundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCA71DBD15CF00C9AE18 /* BFSystemSoundTests.swift */; };
+		49F0DCBF1DBD172300C9AE18 /* BFTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCA81DBD15CF00C9AE18 /* BFTextFieldTests.swift */; };
+		49F0DCC01DBD172300C9AE18 /* BFTouchIDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCA91DBD15CF00C9AE18 /* BFTouchIDTests.swift */; };
+		49F0DCC11DBD172300C9AE18 /* BFViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCAA1DBD15CF00C9AE18 /* BFViewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -479,7 +479,6 @@
 				49F0DC4F1DBD158F00C9AE18 /* BFApp.swift in Sources */,
 				49F0DC801DBD15AC00C9AE18 /* UIWebView+BFKit.swift in Sources */,
 				49F0DC531DBD158F00C9AE18 /* BFLog.swift in Sources */,
-				49F0DCAD1DBD15CF00C9AE18 /* BFDateTests.swift in Sources */,
 				49F0DCA01DBD15B400C9AE18 /* Thread+BFKit.swift in Sources */,
 				49F0DC581DBD158F00C9AE18 /* BFView.swift in Sources */,
 				49F0DC951DBD15B400C9AE18 /* Dictionary+BFKit.swift in Sources */,
@@ -487,25 +486,19 @@
 				49F0DC6F1DBD15AC00C9AE18 /* UIBarButtonItem+BFKit.swift in Sources */,
 				49F0DC9A1DBD15B400C9AE18 /* NSMutableDictionary+BFKit.swift in Sources */,
 				49F0DC701DBD15AC00C9AE18 /* UIButton+BFKit.swift in Sources */,
-				49F0DCAC1DBD15CF00C9AE18 /* BFButtonTests.swift in Sources */,
-				49F0DCB31DBD15CF00C9AE18 /* BFViewTests.swift in Sources */,
 				49F0DC7B1DBD15AC00C9AE18 /* UITableView+BFKit.swift in Sources */,
 				49F0DC781DBD15AC00C9AE18 /* UIPasteboard.swift in Sources */,
-				49F0DCB21DBD15CF00C9AE18 /* BFTouchIDTests.swift in Sources */,
 				49F0DC541DBD158F00C9AE18 /* BFPassword.swift in Sources */,
 				49F0DC7C1DBD15AC00C9AE18 /* UITextField+BFKit.swift in Sources */,
 				49F0DC961DBD15B400C9AE18 /* FileManager+BFKit.swift in Sources */,
 				49F0DC991DBD15B400C9AE18 /* NSMutableArray+BFKit.swift in Sources */,
-				49F0DCB01DBD15CF00C9AE18 /* BFSystemSoundTests.swift in Sources */,
 				49F0DC941DBD15B400C9AE18 /* Date+BFKit.swift in Sources */,
-				49F0DCAE1DBD15CF00C9AE18 /* BFLogTests.swift in Sources */,
 				49F0DC791DBD15AC00C9AE18 /* UIScreen+BFKit.swift in Sources */,
 				49F0DC921DBD15B400C9AE18 /* Array+BFKit.swift in Sources */,
 				49F0DC971DBD15B400C9AE18 /* NSArray+BFKit.swift in Sources */,
 				49F0DC9B1DBD15B400C9AE18 /* NSNumber+BFKit.swift in Sources */,
 				49F0DC711DBD15AC00C9AE18 /* UIColor+BFKit.swift in Sources */,
 				49F0DC771DBD15AC00C9AE18 /* UINavigationBar+BFKit.swift in Sources */,
-				49F0DCB11DBD15CF00C9AE18 /* BFTextFieldTests.swift in Sources */,
 				49F0DC811DBD15AC00C9AE18 /* UIWindow+BFKit.swift in Sources */,
 				49F0DC7F1DBD15AC00C9AE18 /* UIView+BFKit.swift in Sources */,
 				49F0DC571DBD158F00C9AE18 /* BFTouchID.swift in Sources */,
@@ -516,16 +509,13 @@
 				49F0DC7E1DBD15AC00C9AE18 /* UIToolbar+BFKit.swift in Sources */,
 				49F0DC561DBD158F00C9AE18 /* BFTextField.swift in Sources */,
 				49F0DC511DBD158F00C9AE18 /* BFDate.swift in Sources */,
-				49F0DCAF1DBD15CF00C9AE18 /* BFPasswordTests.swift in Sources */,
 				49F0DC5A1DBD159D00C9AE18 /* BFDataStructures.swift in Sources */,
 				49F0DC9C1DBD15B400C9AE18 /* NSObject+BFKit.swift in Sources */,
 				49F0DC7A1DBD15AC00C9AE18 /* UIScrollView+BFKit.swift in Sources */,
 				49F0DC761DBD15AC00C9AE18 /* UILabel+BFKit.swift in Sources */,
 				49F0DC7D1DBD15AC00C9AE18 /* UITextView+BFKit.swift in Sources */,
 				49F0DC981DBD15B400C9AE18 /* NSDictionary+BFKit.swift in Sources */,
-				49F0DCAB1DBD15CF00C9AE18 /* BFAppTests.swift in Sources */,
 				49F0DC9D1DBD15B400C9AE18 /* NSString+BFKit.swift in Sources */,
-				49F0DCB51DBD15DB00C9AE18 /* BFDataStructuresTests.swift in Sources */,
 				49F0DC731DBD15AC00C9AE18 /* UIFont+BFKit.swift in Sources */,
 				49F0DC551DBD158F00C9AE18 /* BFSystemSound.swift in Sources */,
 				49F0DC721DBD15AC00C9AE18 /* UIDevice+BFKit.swift in Sources */,
@@ -536,6 +526,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49F0DCB81DBD171F00C9AE18 /* BFAppTests.swift in Sources */,
+				49F0DCBB1DBD172300C9AE18 /* BFDateTests.swift in Sources */,
+				49F0DCC11DBD172300C9AE18 /* BFViewTests.swift in Sources */,
+				49F0DCC01DBD172300C9AE18 /* BFTouchIDTests.swift in Sources */,
+				49F0DCBD1DBD172300C9AE18 /* BFPasswordTests.swift in Sources */,
+				49F0DCBA1DBD172300C9AE18 /* BFDataStructuresTests.swift in Sources */,
+				49F0DCB91DBD172300C9AE18 /* BFButtonTests.swift in Sources */,
+				49F0DCBF1DBD172300C9AE18 /* BFTextFieldTests.swift in Sources */,
+				49F0DCBC1DBD172300C9AE18 /* BFLogTests.swift in Sources */,
+				49F0DCBE1DBD172300C9AE18 /* BFSystemSoundTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
