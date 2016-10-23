@@ -117,16 +117,6 @@ public extension UIView {
     }
     
     /**
-     Set the corner radius of UIView
-    
-     - parameter radius: Radius value
-     */
-    public func setCornerRadius(_ radius: CGFloat) {
-        self.layer.cornerRadius = radius
-        self.layer.masksToBounds = true
-    }
-    
-    /**
      Set the corner radius of UIView only at the given corner
      
      - parameter corners: Corners to apply radius
@@ -440,5 +430,126 @@ public extension UIView {
     public convenience init(frame: CGRect, backgroundColor: UIColor) {
         self.init(frame: frame)
         self.backgroundColor = backgroundColor
+    }
+}
+
+
+// MARK: - UIView extension
+
+/// Extends UIView with inspectable variables.
+extension UIView {
+    // MARK: - Variables
+    
+    /// Inspectable border size.
+    @IBInspectable public var borderWidth: CGFloat {
+        get {
+            return self.layer.borderWidth
+        }
+        set {
+            self.layer.borderWidth = newValue
+        }
+    }
+    
+    /// Inspectable border color.
+    @IBInspectable public var borderColor: UIColor {
+        get {
+            guard let borderColor = self.layer.borderColor else {
+                return UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+            }
+            return UIColor(cgColor: borderColor)
+        }
+        set {
+            self.layer.borderColor = newValue.cgColor
+        }
+    }
+    
+    
+    /// Inspectable mask to bounds.
+    ///
+    /// Set it to true if you want to enable corner radius.
+    ///
+    /// Set it to false if you want to enable shadow.
+    @IBInspectable public var maskToBounds: Bool {
+        get {
+            return self.layer.masksToBounds
+        }
+        set {
+            self.layer.masksToBounds = newValue
+        }
+    }
+    
+    /// Inspectable corners size.
+    ///
+    /// Remeber to set maskToBounds to true.
+    @IBInspectable public var cornerRadius: CGFloat {
+        get {
+            return self.layer.cornerRadius
+        }
+        set {
+            self.layer.cornerRadius = newValue
+        }
+    }
+    
+    /// Inspectable shadow color.
+    ///
+    /// Remeber to set maskToBounds to false.
+    @IBInspectable public var shadowColor: UIColor {
+        get {
+            guard let shadowColor = self.layer.shadowColor else {
+                return UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+            }
+            return UIColor(cgColor: shadowColor)
+        }
+        set {
+            self.layer.shadowColor = newValue.cgColor
+        }
+    }
+    
+    /// Inspectable shadow opacity.
+    ///
+    /// Remeber to set maskToBounds to false.
+    @IBInspectable public var shadowOpacity: Float {
+        get {
+            return self.layer.shadowOpacity
+        }
+        set {
+            self.layer.shadowOpacity = newValue
+        }
+    }
+    
+    /// Inspectable shadow offset X.
+    ///
+    /// Remeber to set maskToBounds to false.
+    @IBInspectable public var shadowOffsetX: CGFloat {
+        get {
+            return self.layer.shadowOffset.width
+        }
+        set {
+            self.layer.shadowOffset = CGSize(width: self.shadowOffsetX, height: self.layer.shadowOffset.height)
+        }
+    }
+    
+    /// Inspectable shadow offset Y.
+    ///
+    /// Remeber to set maskToBounds to false.
+    @IBInspectable public var shadowOffsetY: CGFloat {
+        get {
+            return self.layer.shadowOffset.height
+        }
+        set {
+            self.layer.shadowOffset = CGSize(width: self.layer.shadowOffset.width, height: self.shadowOffsetY)
+        }
+    }
+    
+    /// Inspectable shadow radius.
+    ///
+    /// Remeber to set maskToBounds to false.
+    @IBInspectable public var shadowRadius: CGFloat {
+        get {
+            return self.layer.shadowRadius
+        }
+        set {
+            self.layer.shadowRadius = newValue
+        }
     }
 }
