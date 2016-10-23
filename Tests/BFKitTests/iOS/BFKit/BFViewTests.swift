@@ -1,5 +1,5 @@
 //
-//  BFTouchIDTests.swift
+//  BFViewTests.swift
 //  BFKit
 //
 //  Created by Fabrizio on 23/10/16.
@@ -7,9 +7,8 @@
 //
 
 import XCTest
-@testable import BFKit
 
-class BFTouchIDTests: XCTestCase {
+class BFViewTests: XCTestCase {
     override func setUp() {
         super.setUp()
     }

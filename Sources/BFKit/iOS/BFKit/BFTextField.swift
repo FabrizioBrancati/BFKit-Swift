@@ -56,7 +56,7 @@ open class BFTextField: UITextField {
     open override func encode(with aCoder: NSCoder) {
         super.encode(with: aCoder)
         
-        aCoder.encode(maxNumberOfCharacters, forKey: "MaxNumberOfCharacters")
+        aCoder.encode(self.maxNumberOfCharacters, forKey: "MaxNumberOfCharacters")
     }
     
     /// Override init with frame.

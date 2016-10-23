@@ -27,40 +27,40 @@
 import Foundation
 import UIKit
 
-/// This class adds some useful functions to UIView that cannot be in an extension
+// MARK: - BFView - UIView subclass
+
+/// This class adds some useful functions to UIView that cannot be in an extension.
 @IBDesignable public class BFView: UIView {
-    // MARK: - Variables -
+    // MARK: - Variables
     
-    /// Inspectable corners size
+    /// Inspectable corners size.
     @IBInspectable public var cornerSize: CGFloat = 0
-    /// Inspectable border size
+    /// Inspectable border size.
     @IBInspectable public var borderSize: CGFloat = 0
-    /// Inspectable border color
+    /// Inspectable border color.
     @IBInspectable public var borderColor: UIColor = UIColor.black
-    /// Inspectable border alpha
+    /// Inspectable border alpha.
     @IBInspectable public var borderAlpha: CGFloat = 1.0
-    /// Inspectable shadow, only shadow or only corner size
-    @IBInspectable public var shadow: Bool = false
-    /// Inspectable shadow color
+    /// Inspectable shadow, only shadow or only corner size.
+    @IBInspectable public var hasShadow: Bool = false
+    /// Inspectable shadow color.
     @IBInspectable public var shadowColor: UIColor = UIColor.black
-    /// Inspectable shadow opacity
+    /// Inspectable shadow opacity.
     @IBInspectable public var shadowOpacity: Float = 1.0
-    /// Inspectable shadow offset x
+    /// Inspectable shadow offset x.
     @IBInspectable public var shadowOffsetX: CGFloat = 0.0
-    /// Inspectable shadow offset y
+    /// Inspectable shadow offset y.
     @IBInspectable public var shadowOffsetY: CGFloat = 0.0
-    /// Inspectable shadow radius
+    /// Inspectable shadow radius.
     @IBInspectable public var shadowRadius: CGFloat = 0.0
     
-    // MARK: - Draw functions -
+    // MARK: - Functions
     
-    /**
-     Draw rect function
-     
-     - parameter rect: The rect to be drawn
-     */
+    /// Draw rect function.
+    ///
+    /// - parameter rect: The rect to be drawn.
     override public func draw(_ rect: CGRect) {
-        if !shadow {
+        if !hasShadow {
             self.layer.cornerRadius = cornerSize
             self.layer.masksToBounds = true
         }
@@ -68,7 +68,7 @@ import UIKit
         self.layer.borderColor = borderColor.withAlphaComponent(borderAlpha).cgColor
         self.layer.borderWidth = borderSize
         
-        if shadow {
+        if hasShadow {
             self.layer.shadowColor = shadowColor.cgColor
             self.layer.shadowOpacity = shadowOpacity
             self.layer.shadowOffset = CGSize(width: shadowOffsetX, height:shadowOffsetY)
@@ -77,27 +77,50 @@ import UIKit
         }
     }
     
-    // MARK: - Init functions -
-    
-    /**
-     Init function
-     
-     - parameter frame: The frame to be drawn
-     
-     - returns: Returns self
-     */
+    /// Init function.
+    ///
+    /// - parameter frame: The frame to be drawn.
+    ///
+    /// - returns: Returns the created view.
     override public init(frame: CGRect) {
         super.init(frame: frame)
     }
     
-    /**
-     Required init function
-     
-     - parameter aDecoder: NSCoder
-     
-     - returns: The initialized instance
-     */
+    /// Required init function.
+    ///
+    /// - parameter aDecoder: NSCoder.
+    ///
+    /// - returns: The initialized instance.
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
+        self.cornerSize = CGFloat(aDecoder.decodeFloat(forKey: "CornerSize"))
+        self.borderSize = CGFloat(aDecoder.decodeFloat(forKey: "BorderSize"))
+        self.borderColor = aDecoder.decodeObject(forKey: "BorderColor") as! UIColor
+        self.borderAlpha = CGFloat(aDecoder.decodeFloat(forKey: "BorderAlpha"))
+        self.hasShadow = aDecoder.decodeBool(forKey: "HasShadow")
+        self.shadowColor = aDecoder.decodeObject(forKey: "ShadowColor") as! UIColor
+        self.shadowOpacity = aDecoder.decodeFloat(forKey: "ShadowOpacity")
+        self.shadowOffsetX = CGFloat(aDecoder.decodeFloat(forKey: "ShadowOffsetX"))
+        self.shadowOffsetY = CGFloat(aDecoder.decodeFloat(forKey: "ShadowOffsetY"))
+        self.shadowRadius = CGFloat(aDecoder.decodeFloat(forKey: "ShadowRadius"))
+    }
+    
+    /// Encodes added variables.
+    ///
+    /// - parameter aCoder: NSCoder.
+    open override func encode(with aCoder: NSCoder) {
+        super.encode(with: aCoder)
+        
+        aCoder.encode(self.cornerSize, forKey: "CornerSize")
+        aCoder.encode(self.borderSize, forKey: "BorderSize")
+        aCoder.encode(self.borderColor, forKey: "BorderColor")
+        aCoder.encode(self.borderAlpha, forKey: "BorderAlpha")
+        aCoder.encode(self.hasShadow, forKey: "HasShadow")
+        aCoder.encode(self.shadowColor, forKey: "ShadowColor")
+        aCoder.encode(self.shadowOpacity, forKey: "ShadowOpacity")
+        aCoder.encode(self.shadowOffsetX, forKey: "ShadowOffsetX")
+        aCoder.encode(self.shadowOffsetY, forKey: "ShadowOffsetY")
+        aCoder.encode(self.shadowRadius, forKey: "ShadowRadius")
     }
 }

@@ -30,7 +30,7 @@ import LocalAuthentication
 
 // MARK: - BFTouchID struct
 
-/// This struct adds some useful functions to use TouchID
+/// This struct adds some useful functions to use TouchID.
 public struct BFTouchID {
     // MARK: - Enums
     
@@ -50,7 +50,6 @@ public struct BFTouchID {
     /// - invalidContext:       Invalid Context.
     public enum TouchIDResult : Int {
         case success
-        case error
         case authenticationFailed
         case userCancel
         case userFallback
@@ -61,6 +60,7 @@ public struct BFTouchID {
         case lockout
         case appCancel
         case invalidContext
+        case error
     }
     
     // MARK: - Functions
@@ -83,6 +83,14 @@ public struct BFTouchID {
                 } else {
                     if #available(iOS 9.0, *) {
                         switch error! {
+                        case LAError.authenticationFailed:
+                            completion(.authenticationFailed)
+                        case LAError.userCancel:
+                            completion(.userCancel)
+                        case LAError.userFallback:
+                            completion(.userFallback)
+                        case LAError.systemCancel:
+                            completion(.systemCancel)
                         case LAError.touchIDLockout:
                             completion(.lockout)
                         case LAError.appCancel:
@@ -92,25 +100,33 @@ public struct BFTouchID {
                         default:
                             completion(.error)
                         }
-                    }
-                    
-                    switch error! {
-                    case LAError.authenticationFailed:
-                        completion(.authenticationFailed)
-                    case LAError.userCancel:
-                        completion(.userCancel)
-                    case LAError.userFallback:
-                        completion(.userFallback)
-                    case LAError.systemCancel:
-                        completion(.systemCancel)
-                    default:
-                        completion(.error)
+                    } else {
+                        switch error! {
+                        case LAError.authenticationFailed:
+                            completion(.authenticationFailed)
+                        case LAError.userCancel:
+                            completion(.userCancel)
+                        case LAError.userFallback:
+                            completion(.userFallback)
+                        case LAError.systemCancel:
+                            completion(.systemCancel)
+                        default:
+                            completion(.error)
+                        }
                     }
                 }
             })
         } else {
             if #available(iOS 9.0, *) {
                 switch error! {
+                case LAError.authenticationFailed:
+                    completion(.authenticationFailed)
+                case LAError.userCancel:
+                    completion(.userCancel)
+                case LAError.userFallback:
+                    completion(.userFallback)
+                case LAError.systemCancel:
+                    completion(.systemCancel)
                 case LAError.touchIDLockout:
                     completion(.lockout)
                 case LAError.appCancel:
@@ -120,17 +136,17 @@ public struct BFTouchID {
                 default:
                     completion(.error)
                 }
-            }
-            
-            switch error!.code {
-            case LAError.passcodeNotSet.rawValue:
-                completion(.passcodeNotSet)
-            case LAError.touchIDNotAvailable.rawValue:
-                completion(.notAvailable)
-            case LAError.touchIDNotEnrolled.rawValue:
-                completion(.notEnrolled)
-            default:
-                completion(.error)
+            } else {
+                switch error!.code {
+                case LAError.passcodeNotSet.rawValue:
+                    completion(.passcodeNotSet)
+                case LAError.touchIDNotAvailable.rawValue:
+                    completion(.notAvailable)
+                case LAError.touchIDNotEnrolled.rawValue:
+                    completion(.notEnrolled)
+                default:
+                    completion(.error)
+                }
             }
         }
     }
