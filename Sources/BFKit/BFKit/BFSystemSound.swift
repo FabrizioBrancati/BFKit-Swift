@@ -289,7 +289,7 @@ public class BFSystemSound {
     /// Play a system sound from the ID.
     ///
     /// - parameter audioID: ID of system audio from the AudioID enum.
-    public static func playSystemSound(_ audioID: AudioID) {
+    public static func playSystemSound(audioID: AudioID) {
         AudioServicesPlaySystemSound(SystemSoundID(audioID.rawValue))
     }
     
@@ -303,7 +303,7 @@ public class BFSystemSound {
     /// - parameter soundURL: Sound URL.
     ///
     /// - returns: Returns the SystemSoundID.
-    public static func playSound(_ soundURL: URL) -> SystemSoundID {
+    public static func playSound(soundURL: URL) -> SystemSoundID {
         var soundID: SystemSoundID = 0
         
         let error: OSStatus = AudioServicesCreateSystemSoundID(soundURL as CFURL, &soundID)
@@ -318,7 +318,7 @@ public class BFSystemSound {
     /// - parameter soundID: SystemSoundID.
     ///
     /// - returns: Returns true if has been disposed, otherwise false.
-    public static func disposeSound(_ soundID: SystemSoundID) -> Bool {
+    public static func disposeSound(soundID: SystemSoundID) -> Bool {
         let error: OSStatus = AudioServicesDisposeSystemSoundID(soundID)
         if error != Int32(kAudioServicesNoError) {
             BFLog("Error while disposing sound \(soundID)")

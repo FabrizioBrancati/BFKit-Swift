@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
                           :file => "LICENSE"
                        }
   s.author           = { "Fabrizio Brancati" => "fabrizio.brancati@gmail.com" }
-  s.social_media_url = "https://linkedin.com/in/fabriziobrancati"
+  s.social_media_url = "https://twitter.com/infinity4all"
   s.platform         = :ios, "8.0"
   s.source           = {
                           :git => "https://github.com/FabrizioBrancati/BFKit-Swift.git",

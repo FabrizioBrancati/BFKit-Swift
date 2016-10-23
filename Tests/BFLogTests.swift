@@ -11,15 +11,15 @@ import XCTest
 
 class BFLogTests: XCTestCase {
     override func setUp() {
-        BFLog("Test")
-        
         super.setUp()
+        
+        BFLog("Test")
     }
     
     override func tearDown() {
-        BFLogClear()
-        
         super.tearDown()
+        
+        BFLogClear()
     }
     
     func testBFLog() {

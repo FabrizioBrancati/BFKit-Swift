@@ -19,7 +19,7 @@ class BFSystemSoundTests: XCTestCase {
     }
     
     func testPlaySystemSound() {
-        BFSystemSound.playSystemSound(.alarm)
+        BFSystemSound.playSystemSound(audioID: .alarm)
         
         XCTAssert(true)
     }

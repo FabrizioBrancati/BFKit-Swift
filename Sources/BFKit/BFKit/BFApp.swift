@@ -132,22 +132,22 @@ open class BFApp {
         block(!hasBeenOpened)
     }
     
-    /// Set the App settings for a given object and key. The file will be saved in the Library directory.
+    /// Set the App setting for a given object and key. The file will be saved in the Library directory.
     ///
     /// - parameter object: Object to set.
     /// - parameter objKey: Key to set the object.
     ///
     /// - returns: Returns true if the operation was successful, otherwise false.
-    public static func setAppSettingsForObject(_ object: AnyObject, forKey objKey: String) -> Bool {
+    public static func setAppSetting(object: AnyObject, forKey objKey: String) -> Bool {
         return FileManager.setSettings(BFApp.name, object: object, forKey: objKey)
     }
     
-    /// Get the App settings for a given key.
+    /// Get the App setting for a given key.
     ///
     /// - parameter objKey: Key to get the object.
     ///
     /// - returns: Returns the object for the given key.
-    public static func getAppSettingsForObjectWithKey(_ objKey: String) -> Any? {
+    public static func getAppSetting(objKey: String) -> Any? {
         return FileManager.getSettings(BFApp.name, objectForKey: objKey)
     }
 }

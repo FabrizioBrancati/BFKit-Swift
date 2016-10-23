@@ -20,7 +20,7 @@ class BFPasswordTests: XCTestCase {
     
     func testStrength() {
         let password = "TestPassword92"
-        let strength = BFPassword.strength(password)
+        let strength = BFPassword.strength(password: password)
         
         XCTAssert(strength == .average)
     }

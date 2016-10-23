@@ -34,11 +34,15 @@ class BFButtonTests: XCTestCase {
         XCTAssert(button.overlayImageView.image != nil)
     }
     
-    /*func testInitCoder() {
+    /*func testDecode() {
         
     }*/
     
-    func testInit() {
+    /*func testEncode() {
+ 
+    }*/
+    
+    func testInitFrame() {
         XCTAssert(!button.isHighlighted)
     }
 }

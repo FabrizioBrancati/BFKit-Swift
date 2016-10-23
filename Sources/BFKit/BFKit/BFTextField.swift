@@ -34,13 +34,30 @@ open class BFTextField: UITextField {
     // MARK: - Variables
     
     /// Max number of characters allowed by TextField.
-    @IBInspectable public var maxNumberOfCharacters: Int = 0 {
-        didSet {
-            
-        }
-    }
+    @IBInspectable public var maxNumberOfCharacters: Int = 0
     
     // MARK: - Functions
+    
+    /// Required init function.
+    ///
+    /// - parameter aDecoder: NSCoder.
+    ///
+    /// - returns: The initialized instance.
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.maxNumberOfCharacters = aDecoder.decodeInteger(forKey: "MaxNumberOfCharacters")
+        NotificationCenter.default.addObserver(self, selector: #selector(BFTextField.textFieldDidChange(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: self)
+    }
+    
+    /// Encodes added variables.
+    ///
+    /// - parameter aCoder: NSCoder.
+    open override func encode(with aCoder: NSCoder) {
+        super.encode(with: aCoder)
+        
+        aCoder.encode(maxNumberOfCharacters, forKey: "MaxNumberOfCharacters")
+    }
     
     /// Override init with frame.
     ///
@@ -54,35 +71,12 @@ open class BFTextField: UITextField {
         NotificationCenter.default.addObserver(self, selector: #selector(BFTextField.textFieldDidChange(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: self)
     }
     
-    /// Required init function.
-    ///
-    /// - parameter aDecoder: NSCoder.
-    ///
-    /// - returns: The initialized instance.
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        self.maxNumberOfCharacters = Int(aDecoder.decodeInteger(forKey: "MaxNumberOfCharacters"))
-        NotificationCenter.default.addObserver(self, selector: #selector(BFTextField.textFieldDidChange(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: self)
-    }
-    
-    
-    /// Encodes added variables.
-    ///
-    /// - parameter aCoder: NSCoder.
-    open override func encode(with aCoder: NSCoder) {
-        super.encode(with: aCoder)
-        
-        aCoder.encode(Int32(maxNumberOfCharacters), forKey: "MaxNumberOfCharacters")
-    }
-    
-    
     /// Text field did change function.
     ///
     /// Called by observer.
     ///
     /// - parameter notification: Notification object.
-    public func textFieldDidChange(_ notification: Notification) {
+    @objc private func textFieldDidChange(_ notification: Notification) {
         if self.maxNumberOfCharacters != 0 && self.text!.length >= self.maxNumberOfCharacters {
             self.text = self.text?.substringToIndex(self.maxNumberOfCharacters)
         }

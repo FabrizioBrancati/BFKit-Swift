@@ -26,10 +26,8 @@
 
 import Foundation
 
-public struct BFKit {
-    /// BFKit version string.
-    public let version = "2.0.0"
-    
-    /// BFKit author string.
-    public let author = "Fabrizio Brancati"
-}
+/// BFKit version string.
+public let BFKitVersion = "2.0.0"
+
+/// BFKit author string.
+public let BFKitAuthor = "Fabrizio Brancati"

@@ -28,23 +28,26 @@
 import Foundation
 import LocalAuthentication
 
-/// This class adds some useful functions to use TouchID
-public class BFTouchID {
-    // MARK: - Enums -
+// MARK: - BFTouchID struct
+
+/// This struct adds some useful functions to use TouchID
+public struct BFTouchID {
+    // MARK: - Enums
     
-    /**
-     Touch result enum
-    
-     - Success:              Success
-     - Error:                Error
-     - AuthenticationFailed: Authentication Failed
-     - UserCancel:           User Cancel
-     - UserFallback:         User Fallback
-     - SystemCancel:         System Cancel
-     - PasscodeNotSet:       Passcode Not Set
-     - NotAvailable:         Not Available
-     - NotEnrolled:          Not Enrolled
-     */
+    /// Touch result enum:
+    ///
+    /// - success:              Success.
+    /// - error:                Error.
+    /// - authenticationFailed: Authentication Failed.
+    /// - userCancel:           User Cancel.
+    /// - userFallback:         User Fallback.
+    /// - systemCancel:         System Cancel.
+    /// - passcodeNotSet:       Passcode Not Set.
+    /// - notAvailable:         Touch IDNot Available.
+    /// - notEnrolled:          Touch ID Not Enrolled.
+    /// - lockout:              Touch ID Lockout.
+    /// - appCancel:            App Cancel.
+    /// - invalidContext:       Invalid Context.
     public enum TouchIDResult : Int {
         case success
         case error
@@ -55,19 +58,19 @@ public class BFTouchID {
         case passcodeNotSet
         case notAvailable
         case notEnrolled
+        case lockout
+        case appCancel
+        case invalidContext
     }
     
-    // MARK: - Class functions -
+    // MARK: - Functions
     
-    /**
-     Shows the TouchID alert
-    
-     - parameter reason:        Text to show in the alert
-     - parameter fallbackTitle: Default title "Enter Password" is used when this property is left nil. If set to empty string, the button will be hidden
-     - parameter completion:    Completion handler. It returns the TouchID result, from the TouchIDResult enum
-     */
-    public static func showTouchIDAuthenticationWithReason(_ reason: String, fallbackTitle: String? = nil, completion: @escaping (_ result: TouchIDResult) -> ()) {
-        
+    /// Shows the TouchID authentication.
+    ///
+    /// - parameter reason:        Text to show in the alert.
+    /// - parameter fallbackTitle: Default title "Enter Password" is used when this property is left nil. If set to empty string, the button will be hidden.
+    /// - parameter completion:     Completion handler. It returns the TouchID result, from the TouchIDResult enum.
+    public static func showTouchID(reason: String, fallbackTitle: String? = nil, completion: @escaping (_ result: TouchIDResult) -> ()) {
         let context: LAContext = LAContext()
         
         context.localizedFallbackTitle = fallbackTitle
@@ -78,6 +81,19 @@ public class BFTouchID {
                 if success {
                     completion(.success)
                 } else {
+                    if #available(iOS 9.0, *) {
+                        switch error! {
+                        case LAError.touchIDLockout:
+                            completion(.lockout)
+                        case LAError.appCancel:
+                            completion(.appCancel)
+                        case LAError.invalidContext:
+                            completion(.invalidContext)
+                        default:
+                            completion(.error)
+                        }
+                    }
+                    
                     switch error! {
                     case LAError.authenticationFailed:
                         completion(.authenticationFailed)
@@ -92,9 +108,20 @@ public class BFTouchID {
                     }
                 }
             })
-        }
-        else
-        {
+        } else {
+            if #available(iOS 9.0, *) {
+                switch error! {
+                case LAError.touchIDLockout:
+                    completion(.lockout)
+                case LAError.appCancel:
+                    completion(.appCancel)
+                case LAError.invalidContext:
+                    completion(.invalidContext)
+                default:
+                    completion(.error)
+                }
+            }
+            
             switch error!.code {
             case LAError.passcodeNotSet.rawValue:
                 completion(.passcodeNotSet)

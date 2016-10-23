@@ -60,4 +60,12 @@ class BFAppTests: XCTestCase {
             XCTAssert(isFirstStart == true || isFirstStart == false)
         }
     }
+    
+    /*func testSetAppSetting() {
+        
+    }*/
+    
+    /*func testGetAppSetting() {
+        
+    }*/
 }

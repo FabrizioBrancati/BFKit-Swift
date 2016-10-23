@@ -81,6 +81,23 @@ open class BFButton: UIButton {
     ///
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
+        self.fadeDuration = aDecoder.decodeFloat(forKey: "FadeDuration")
+        self.overlayImageView = aDecoder.decodeObject(forKey: "OverlayImageView") as! UIImageView!
+        self.overlayImageView.frame = self.imageView!.frame
+        self.overlayImageView.bounds = self.imageView!.bounds
+        
+        self.adjustsImageWhenHighlighted = false
+    }
+    
+    /// Encodes added variables.
+    ///
+    /// - parameter aCoder: NSCoder.
+    open override func encode(with aCoder: NSCoder) {
+        super.encode(with: aCoder)
+        
+        aCoder.encode(self.fadeDuration, forKey: "FadeDuration")
+        aCoder.encode(self.overlayImageView, forKey: "OverlayImageView")
     }
     
     /// Create an UIButton with a fade animation from image to highlightedImage on touch.
