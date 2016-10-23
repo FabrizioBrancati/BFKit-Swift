@@ -1,5 +1,5 @@
 //
-//  UIBarButtonItem+BFKit.swift
+//  UIBarButtonItemExtension.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -27,18 +27,18 @@
 import Foundation
 import UIKit
 
-/// This extesion adds some useful functions to UIBarButtonItem
+// MARK: - UIBarButtonItem extension
+
+/// This extesion adds some useful functions to UIBarButtonItem.
 public extension UIBarButtonItem {
-    //  MARK: - Init functions -
-    
-    /**
-     Create an UIBarButtonItem with type setted to FlexibleSpace or FixedSpace
-    
-     - parameter space: Must be FlexibleSpace or FixedSpace, otherwise a FlexibleSpace UIBarButtonItem will be created
-     - parameter width: To use only if space is setted to FixedSpace, and it will be the width of it
-    
-     - returns: Returns the created UIBarButtonItem
-     */
+    //  MARK: - Functions
+
+    /// Create an UIBarButtonItem with type setted to FlexibleSpace or FixedSpace.
+    ///
+    /// - parameter space: Must be FlexibleSpace or FixedSpace, otherwise a FlexibleSpace UIBarButtonItem will be created.
+    /// - parameter width: To use only if space is setted to FixedSpace, and it will be the width of it.
+    ///
+    /// - returns: Returns the created UIBarButtonItem.
     public convenience init(barButtonSpaceType space: UIBarButtonSystemItem, width: CGFloat = 0.0) {
         if space == .fixedSpace || space == .flexibleSpace {
             self.init(barButtonSystemItem: space, target: nil, action: #selector(UIBarButtonItem.nothing))
@@ -50,10 +50,6 @@ public extension UIBarButtonItem {
         }
     }
     
-    /**
-     Private, is just a placeholder to remove warning messages to "init(barButtonSpaceType space:, width:)"
-     */
-    @objc private func nothing() {
-        
-    }
+    /// Private, is just a placeholder to remove warning messages.
+    @objc private func nothing() {}
 }

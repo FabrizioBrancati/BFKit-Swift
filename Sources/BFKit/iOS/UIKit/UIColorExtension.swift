@@ -1,0 +1,525 @@
+//
+//  UIColor+BFKit.swift
+//  BFKit
+//
+//  The MIT License (MIT)
+//
+//  Copyright (c) 2015 - 2016 Fabrizio Brancati. All rights reserved.
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+
+import Foundation
+import UIKit
+
+// MARK: - Global functions
+
+/// Create an UIColor in format RGBA.
+///
+/// - parameter r: Red value.
+/// - parameter g: Green value.
+/// - parameter b: Blue value.
+/// - parameter a: Alpha value.
+///
+/// - returns: Returns the created UIColor.
+public func RGBA(_ red: Int, _ green: Int, _ blue: Int, _ alpha: Float) -> UIColor {
+    return UIColor(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: CGFloat(alpha))
+}
+
+/// Create an UIColor in format ARGB.
+///
+/// - parameter a: Alpha value.
+/// - parameter r: Red value.
+/// - parameter g: Green value.
+/// - parameter b: Blue value.
+///
+/// - returns: Returns the created UIColor.
+public func ARGB( _ alpha: Float, _ red: Int, _ green: Int, _ blue: Int) -> UIColor {
+    return RGBA(red, green, blue, alpha)
+}
+
+/// Create an UIColor in format RGB.
+///
+/// - parameter r: Red value.
+/// - parameter g: Green value.
+/// - parameter b: Blue value.
+///
+/// - returns: Returns the created UIColor.
+public func RGB(_ r: Int, _ g: Int, _ b: Int) -> UIColor {
+    return UIColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: 1.0)
+}
+
+// MARK: - UIColor extension
+
+/// This extesion adds some useful functions to UIColor.
+public extension UIColor {
+    // MARK: - Variables
+    
+    /// RGB properties: red.
+    public var redComponent: CGFloat {
+        get {
+            if self.canProvideRGBComponents() {
+                let component = self.cgColor.__unsafeComponents
+                
+                return component![0]
+            }
+            return 0.0
+        }
+    }
+    
+    /// RGB properties: green.
+    public var greenComponent: CGFloat {
+        get {
+            if self.canProvideRGBComponents() {
+                let component = self.cgColor.__unsafeComponents
+                
+                if self.cgColor.colorSpace?.model == CGColorSpaceModel.monochrome {
+                    return component![0]
+                }
+                return component![1]
+            }
+            return 0.0
+        }
+    }
+    
+    /// RGB properties: blue.
+    public var blueComponent: CGFloat {
+        get {
+            if self.canProvideRGBComponents() {
+                let component = self.cgColor.__unsafeComponents
+                
+                if self.cgColor.colorSpace?.model == CGColorSpaceModel.monochrome {
+                    return component![0]
+                }
+                return component![2]
+            }
+            return 0.0
+        }
+    }
+    
+    /// RGB properties: white.
+    public var whiteComponent: CGFloat {
+        get {
+            if self.cgColor.colorSpace?.model == CGColorSpaceModel.monochrome {
+                let component = self.cgColor.__unsafeComponents
+            
+                return component![0]
+            }
+            return 0.0
+        }
+    }
+    
+    /// HSB properties: hue.
+    public var hue: CGFloat {
+        get {
+            if self.canProvideRGBComponents() {
+                var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
+                
+                if self.getHSBA(&hue, &saturation, &brightness, &alpha) {
+                    return hue
+                }
+            }
+            return 0.0
+        }
+    }
+    
+    /// HSB properties: saturation.
+    public var saturation: CGFloat {
+        get {
+            if self.canProvideRGBComponents() {
+                var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
+                
+                if self.getHSBA(&hue, &saturation, &brightness, &alpha) {
+                    return saturation
+                }
+            }
+            return 0.0
+        }
+    }
+    
+    /// HSB properties: brightness.
+    public var brightness: CGFloat {
+        get {
+            if self.canProvideRGBComponents() {
+                var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
+                
+                if self.getHSBA(&hue, &saturation, &brightness, &alpha) {
+                    return brightness
+                }
+            }
+            return 0.0
+        }
+    }
+    
+    /// RGBA properties: alpha.
+    public var alpha: CGFloat {
+        get {
+            return self.cgColor.alpha
+        }
+    }
+    
+    /// RGB properties: luminance.
+    public var luminance: CGFloat {
+        get {
+            if self.canProvideRGBComponents() {
+                var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0, alpha: CGFloat = 0.0
+                
+                if !self.getRGBA(&red, &green, &blue, &alpha) {
+                    return 0.0
+                }
+                return red * 0.2126 + green * 0.7152 + blue * 0.0722
+            }
+            return 0.0
+        }
+    }
+    
+    // MARK: - Functions
+    
+    /// Create a color from HEX with alpha.
+    ///
+    /// - parameter hex:   HEX value.
+    /// - parameter alpha: Alpha value.
+    ///
+    /// - returns: Returns the UIColor instance.
+    public convenience init(hex: Int, alpha: CGFloat = 1.0) {
+        self.init(red: CGFloat(((hex & 0xFF0000) >> 16)) / 255.0, green: CGFloat(((hex & 0xFF00) >> 8)) / 255.0, blue: CGFloat((hex & 0xFF)) / 255.0, alpha: alpha)
+    }
+    
+    /// Create a color from a HEX string.
+    /// It supports the following type:
+    /// - #ARGB, ARGB if irstIsAlpha is true. #RGBA, RGBA if firstIsAlpha is false.
+    /// - #ARGB.
+    /// - #RRGGBB.
+    /// - #AARRGGBB, AARRGGBB if irstIsAlpha is true. #RRGGBBAA, RRGGBBAA if firstIsAlpha is false.
+    ///
+    /// - parameter hexString: HEX string.
+    ///
+    /// - returns: Returns the UIColor instance.
+    public convenience init(hex: String, alphaFirst: Bool = false) {
+        let colorString: String = hex.replacingOccurrences(of: "#", with: "").uppercased()
+        var alpha: CGFloat = 1.0, red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0
+        switch colorString.length {
+        case 3: /// #RGB, RGB
+            alpha = 1.0
+            red = UIColor.colorComponent(fromString: colorString, start: 0, lenght: 1)
+            green = UIColor.colorComponent(fromString: colorString, start: 1, lenght: 1)
+            blue = UIColor.colorComponent(fromString: colorString, start: 2, lenght: 1)
+        case 4: /// #ARGB, ARGB if irstIsAlpha is true. #RGBA, RGBA if firstIsAlpha is false.
+            if alphaFirst {
+                alpha = UIColor.colorComponent(fromString: colorString, start: 0, lenght: 1)
+                red = UIColor.colorComponent(fromString: colorString, start: 1, lenght: 1)
+                green = UIColor.colorComponent(fromString: colorString, start: 2, lenght: 1)
+                blue = UIColor.colorComponent(fromString: colorString, start: 3, lenght: 1)
+            } else {
+                red = UIColor.colorComponent(fromString: colorString, start: 0, lenght: 1)
+                green = UIColor.colorComponent(fromString: colorString, start: 1, lenght: 1)
+                blue = UIColor.colorComponent(fromString: colorString, start: 2, lenght: 1)
+                alpha = UIColor.colorComponent(fromString: colorString, start: 3, lenght: 1)
+            }
+        case 6: /// #RRGGBB, RRGGBB
+            alpha = 1.0
+            red = UIColor.colorComponent(fromString: colorString, start: 0, lenght: 2)
+            green = UIColor.colorComponent(fromString: colorString, start: 2, lenght: 2)
+            blue = UIColor.colorComponent(fromString: colorString, start: 4, lenght: 2)
+        case 8: /// #AARRGGBB, AARRGGBB if irstIsAlpha is true. #RRGGBBAA, RRGGBBAA if firstIsAlpha is false.
+            if alphaFirst {
+                alpha = UIColor.colorComponent(fromString: colorString, start: 0, lenght: 2)
+                red = UIColor.colorComponent(fromString: colorString, start: 2, lenght: 2)
+                green = UIColor.colorComponent(fromString: colorString, start: 4, lenght: 2)
+                blue = UIColor.colorComponent(fromString: colorString, start: 6, lenght: 2)
+            } else {
+                red = UIColor.colorComponent(fromString: colorString, start: 0, lenght: 2)
+                green = UIColor.colorComponent(fromString: colorString, start: 2, lenght: 2)
+                blue = UIColor.colorComponent(fromString: colorString, start: 4, lenght: 2)
+                alpha = UIColor.colorComponent(fromString: colorString, start: 6, lenght: 2)
+            }
+        default:
+            break
+        }
+        
+        self.init(red:red, green:green, blue:blue, alpha:alpha)
+    }
+    
+    /// A good contrasting color, it will be either black or white.
+    ///
+    /// - returns: Returns the color.
+    public func contrasting() -> UIColor {
+        return self.luminance > 0.5 ? UIColor.black : UIColor.white
+    }
+    
+    /// A complementary color that should look good.
+    ///
+    /// - returns: Returns the color.
+    public func complementary() -> UIColor? {
+        var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
+        
+        if !self.getHSBA(&hue, &saturation, &brightness, &alpha) {
+            return nil
+        }
+        
+        hue += 180
+        if hue > 360 {
+            hue -= 360
+        }
+        
+        return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: alpha)
+    }
+    
+    /// Check if the color is in RGB format.
+    ///
+    /// - returns: Returns if the color is in RGB format.
+    public func canProvideRGBComponents() -> Bool {
+        switch self.cgColor.colorSpace!.model {
+        case CGColorSpaceModel.rgb:
+            return true
+        case CGColorSpaceModel.monochrome:
+            return true
+        default:
+            return false
+        }
+    }
+    
+    /// Convert UIColor to HEX string.
+    ///
+    /// - returns: Returns the HEX string from the given UIColor.
+    public func hex() -> String {
+        var red:CGFloat = 0
+        var green:CGFloat = 0
+        var blue:CGFloat = 0
+        var alpha:CGFloat = 0
+        
+        getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        
+        let rgb:Int = (Int)(red * 255) << 16 | (Int)(green * 255) << 8 | (Int)(blue * 255) << 0
+        
+        return String(format:"#%06x", rgb)
+    }
+    
+    /// Get the hue, saturation, brightness and alpha.
+    ///
+    /// - parameter hue:        Hue value.
+    /// - parameter saturation: Saturation value.
+    /// - parameter brightness: Brightness value.
+    /// - parameter alpha:      Alpha value.
+    ///
+    /// - returns: Return true or false.
+    private func getHSBA(_ hue: inout CGFloat, _ saturation: inout CGFloat, _ brightness: inout CGFloat, _ alpha: inout CGFloat) -> Bool {
+        var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0, _alpha: CGFloat = 0.0
+        
+        if !self.getRGBA(&red, &green, &blue, &_alpha) {
+            return false
+        }
+        
+        UIColor.getAll(&red, &green, &blue, &hue, &saturation, &brightness)
+        
+        alpha = _alpha
+        
+        return true
+    }
+    
+    /// Get the red, green, blue and alpha.
+    ///
+    /// - parameter red:   Red value.
+    /// - parameter green: Green value.
+    /// - parameter blue:  Blue value.
+    /// - parameter alpha: Alpha value.
+    ///
+    /// - returns: Return true or false.
+    private func getRGBA(_ red: inout CGFloat, _ green: inout CGFloat, _ blue: inout CGFloat, _ alpha: inout CGFloat) -> Bool {
+        let components = self.cgColor.__unsafeComponents
+        
+        var _red, _green, _blue, _alpha: CGFloat
+        
+        switch self.cgColor.colorSpace!.model {
+        case CGColorSpaceModel.monochrome:
+            _red = (components?[0])!
+            _green = (components?[0])!
+            _blue = (components?[0])!
+            _alpha = (components?[1])!
+        case CGColorSpaceModel.rgb:
+            _red = (components?[0])!
+            _green = (components?[1])!
+            _blue = (components?[2])!
+            _alpha = (components?[3])!
+        default:
+            return false
+        }
+        
+        red = _red
+        green = _green
+        blue = _blue
+        alpha = _alpha
+        
+        return true
+    }
+    
+    /// Returns the color component from the string.
+    ///
+    /// - parameter fromString: String to convert.
+    /// - parameter start:      Component start index.
+    /// - parameter lenght:     Component lenght.
+    ///
+    /// - returns: Returns the color component from the string.
+    private static func colorComponent(fromString string: String, start: Int, lenght: Int) -> CGFloat {
+        let substring: String = string.substringWithRange(Range(start...lenght))
+        let fullHex = lenght == 2 ? substring as String : "\(substring)\(substring)"
+        var hexComponent: CUnsignedInt = 0
+        Scanner(string: fullHex).scanHexInt32(&hexComponent)
+        
+        return CGFloat(hexComponent) / 255.0
+    }
+    
+    /// Create a random color.
+    ///
+    /// - parameter alpha: Alpha value.
+    ///
+    /// - returns: Returns the UIColor instance.
+    public static func random(alpha: CGFloat = 1.0) -> UIColor {
+        let red: UInt32 = arc4random_uniform(255)
+        let green: UInt32 = arc4random_uniform(255)
+        let blue: UInt32 = arc4random_uniform(255)
+        
+        return UIColor(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: alpha)
+    }
+    
+    /// Create an UIColor from a given string ("blue" or hex string).
+    ///
+    /// - parameter color: String with color.
+    ///
+    /// - returns: Returns the created UIColor.
+    public static func colorString(_ color: String) -> UIColor {
+        if color.length >= 3 {
+            if UIColor.responds(to: Selector(color.lowercased() + "Color")) {
+                return self.getColor(fromString: color)
+            } else {
+                return UIColor(hex: color)
+            }
+        } else {
+            return UIColor.black
+        }
+    }
+    
+    /// Create an UIColor from a given string ("blue" or hex string).
+    ///
+    /// - parameter color: String with color.
+    ///
+    /// - returns: Returns the created UIColor.
+    public convenience init(fromString color: String) {
+        if UIColor.responds(to: Selector(color.lowercased() + "Color")) {
+            self.init(cgColor: UIColor.getColor(fromString: color).cgColor)
+        } else {
+            self.init(hex: color)
+        }
+    }
+    
+    /// Used the retrive the color from the string color ("blue" or "red").
+    ///
+    /// - parameter color: String with the color.
+    ///
+    /// - returns: Returns the created UIColor.
+    private static func getColor(fromString color: String) -> UIColor {
+        switch color {
+        case "black":
+            return UIColor.black
+        case "darkgray":
+            return UIColor.darkGray
+        case "lightgray":
+            return UIColor.lightGray
+        case "white":
+            return UIColor.white
+        case "gray":
+            return UIColor.gray
+        case "red":
+            return UIColor.red
+        case "green":
+            return UIColor.green
+        case "blue":
+            return UIColor.blue
+        case "cyan":
+            return UIColor.cyan
+        case "yellow":
+            return UIColor.yellow
+        case "magenta":
+            return UIColor.magenta
+        case "orange":
+            return UIColor.orange
+        case "purple":
+            return UIColor.purple
+        case "brown":
+            return UIColor.brown
+        case "clear":
+            return UIColor.clear
+        default:
+            return UIColor.black
+        }
+    }
+    
+    /// Creates and returns a color object that has the same color space and component values as the given color, but has the specified alpha component.
+    ///
+    /// - parameter color: UIColor value.
+    /// - parameter alpha: Alpha value.
+    ///
+    /// - returns: Returns an UIColor instance.
+    public static func color(withColor color: UIColor, alpha: CGFloat) -> UIColor {
+        return color.withAlphaComponent(alpha)
+    }
+    
+    /// Get all the components.
+    ///
+    /// - parameter red:        Red value.
+    /// - parameter green:      Green value.
+    /// - parameter blue:       Blue value.
+    /// - parameter hue:        Hue value.
+    /// - parameter saturation: Saturation value.
+    /// - parameter brightness: Brightness value.
+    private static func getAll(_ red: inout CGFloat, _ green:inout CGFloat, _ blue: inout CGFloat, _ hue: inout CGFloat, _ saturation: inout CGFloat, _ brightness: inout CGFloat) {
+        var _hue: CGFloat = 0.0, _saturation: CGFloat = 0.0, _brightness: CGFloat = 0.0
+        
+        let maxValue: CGFloat = max(red, max(green, blue))
+        let minValue: CGFloat = max(red, max(green, blue))
+        
+        brightness = maxValue
+        
+        saturation = (maxValue != 0.0) ? ((maxValue - minValue) / maxValue) : 0.0
+        
+        if saturation == 0.0 {
+            hue = 0.0
+        } else {
+            let redComponent: CGFloat = (maxValue - red) / (maxValue - minValue)
+            let greenComponent: CGFloat = (maxValue - green) / (maxValue - minValue)
+            let blueComponent: CGFloat = (maxValue - blue) / (maxValue - minValue)
+            
+            if red == maxValue {
+                _hue = blueComponent - greenComponent
+            } else if green == maxValue {
+                _hue = 2 + redComponent - blueComponent
+            } else {
+                _hue = 4 + greenComponent - redComponent
+            }
+            
+            _hue *= 60.0
+            if _hue < 0.0 {
+                _hue += 360.0
+            }
+        }
+        
+        hue = _hue
+        saturation = _saturation
+        brightness = _brightness
+    }
+}

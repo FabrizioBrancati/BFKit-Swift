@@ -20,12 +20,6 @@ class BFTextFieldTests: XCTestCase {
         super.tearDown()
     }
     
-    func testMaxNumberOfCharacters() {
-        textField!.maxNumberOfCharacters = 10
-        
-        XCTAssert(textField!.maxNumberOfCharacters == 10)
-    }
-    
     /*func testDecode() {
     
     }*/

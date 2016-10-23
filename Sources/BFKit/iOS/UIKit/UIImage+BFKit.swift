@@ -810,7 +810,7 @@ public extension UIImage {
             let sizeString: String = array[0]
             
             if array.count >= 2 {
-                color = UIColor.colorForColorString(array[1])
+                color = UIColor.colorString(array[1])
             }
             
             size = UIImage.sizeForSizeString(sizeString)
