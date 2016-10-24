@@ -48,7 +48,7 @@
 		49F0DC981DBD15B400C9AE18 /* NSDictionary+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC891DBD15B400C9AE18 /* NSDictionary+BFKit.swift */; };
 		49F0DC991DBD15B400C9AE18 /* NSMutableArray+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC8A1DBD15B400C9AE18 /* NSMutableArray+BFKit.swift */; };
 		49F0DC9A1DBD15B400C9AE18 /* NSMutableDictionary+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC8B1DBD15B400C9AE18 /* NSMutableDictionary+BFKit.swift */; };
-		49F0DC9B1DBD15B400C9AE18 /* NSNumber+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC8C1DBD15B400C9AE18 /* NSNumber+BFKit.swift */; };
+		49F0DC9B1DBD15B400C9AE18 /* NumberExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC8C1DBD15B400C9AE18 /* NumberExtension.swift */; };
 		49F0DC9C1DBD15B400C9AE18 /* NSObject+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC8D1DBD15B400C9AE18 /* NSObject+BFKit.swift */; };
 		49F0DC9D1DBD15B400C9AE18 /* NSString+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC8E1DBD15B400C9AE18 /* NSString+BFKit.swift */; };
 		49F0DC9E1DBD15B400C9AE18 /* ProcessInfo+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC8F1DBD15B400C9AE18 /* ProcessInfo+BFKit.swift */; };
@@ -65,6 +65,7 @@
 		49F0DCC01DBD172300C9AE18 /* BFTouchIDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCA91DBD15CF00C9AE18 /* BFTouchIDTests.swift */; };
 		49F0DCC31DBD278100C9AE18 /* UIBarButtonItemExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCC21DBD278100C9AE18 /* UIBarButtonItemExtensionTests.swift */; };
 		49F0DCC51DBD301E00C9AE18 /* UIButtonExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCC41DBD301E00C9AE18 /* UIButtonExtensionTests.swift */; };
+		49F0DCC71DBEA59400C9AE18 /* UIColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCC61DBEA59400C9AE18 /* UIColorExtensionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,7 +132,7 @@
 		49F0DC891DBD15B400C9AE18 /* NSDictionary+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDictionary+BFKit.swift"; sourceTree = "<group>"; };
 		49F0DC8A1DBD15B400C9AE18 /* NSMutableArray+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableArray+BFKit.swift"; sourceTree = "<group>"; };
 		49F0DC8B1DBD15B400C9AE18 /* NSMutableDictionary+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableDictionary+BFKit.swift"; sourceTree = "<group>"; };
-		49F0DC8C1DBD15B400C9AE18 /* NSNumber+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumber+BFKit.swift"; sourceTree = "<group>"; };
+		49F0DC8C1DBD15B400C9AE18 /* NumberExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberExtension.swift; sourceTree = "<group>"; };
 		49F0DC8D1DBD15B400C9AE18 /* NSObject+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+BFKit.swift"; sourceTree = "<group>"; };
 		49F0DC8E1DBD15B400C9AE18 /* NSString+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+BFKit.swift"; sourceTree = "<group>"; };
 		49F0DC8F1DBD15B400C9AE18 /* ProcessInfo+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+BFKit.swift"; sourceTree = "<group>"; };
@@ -148,6 +149,7 @@
 		49F0DCB41DBD15DB00C9AE18 /* BFDataStructuresTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFDataStructuresTests.swift; path = Tests/BFKitTests/Linux/BFKit/BFDataStructuresTests.swift; sourceTree = SOURCE_ROOT; };
 		49F0DCC21DBD278100C9AE18 /* UIBarButtonItemExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemExtensionTests.swift; sourceTree = "<group>"; };
 		49F0DCC41DBD301E00C9AE18 /* UIButtonExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtensionTests.swift; sourceTree = "<group>"; };
+		49F0DCC61DBEA59400C9AE18 /* UIColorExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,7 +288,7 @@
 				49F0DC891DBD15B400C9AE18 /* NSDictionary+BFKit.swift */,
 				49F0DC8A1DBD15B400C9AE18 /* NSMutableArray+BFKit.swift */,
 				49F0DC8B1DBD15B400C9AE18 /* NSMutableDictionary+BFKit.swift */,
-				49F0DC8C1DBD15B400C9AE18 /* NSNumber+BFKit.swift */,
+				49F0DC8C1DBD15B400C9AE18 /* NumberExtension.swift */,
 				49F0DC8D1DBD15B400C9AE18 /* NSObject+BFKit.swift */,
 				49F0DC8E1DBD15B400C9AE18 /* NSString+BFKit.swift */,
 				49F0DC8F1DBD15B400C9AE18 /* ProcessInfo+BFKit.swift */,
@@ -327,6 +329,7 @@
 			children = (
 				49F0DCC21DBD278100C9AE18 /* UIBarButtonItemExtensionTests.swift */,
 				49F0DCC41DBD301E00C9AE18 /* UIButtonExtensionTests.swift */,
+				49F0DCC61DBEA59400C9AE18 /* UIColorExtensionTests.swift */,
 			);
 			name = UIKit;
 			path = Tests/BFKitTests/iOS/UIKit;
@@ -495,7 +498,7 @@
 				49F0DC791DBD15AC00C9AE18 /* UIScreen+BFKit.swift in Sources */,
 				49F0DC921DBD15B400C9AE18 /* Array+BFKit.swift in Sources */,
 				49F0DC971DBD15B400C9AE18 /* NSArray+BFKit.swift in Sources */,
-				49F0DC9B1DBD15B400C9AE18 /* NSNumber+BFKit.swift in Sources */,
+				49F0DC9B1DBD15B400C9AE18 /* NumberExtension.swift in Sources */,
 				49F0DC711DBD15AC00C9AE18 /* UIColorExtension.swift in Sources */,
 				49F0DC771DBD15AC00C9AE18 /* UINavigationBar+BFKit.swift in Sources */,
 				49F0DC811DBD15AC00C9AE18 /* UIWindow+BFKit.swift in Sources */,
@@ -532,6 +535,7 @@
 				49F0DCC01DBD172300C9AE18 /* BFTouchIDTests.swift in Sources */,
 				49F0DCBD1DBD172300C9AE18 /* BFPasswordTests.swift in Sources */,
 				49F0DCBA1DBD172300C9AE18 /* BFDataStructuresTests.swift in Sources */,
+				49F0DCC71DBEA59400C9AE18 /* UIColorExtensionTests.swift in Sources */,
 				49F0DCB91DBD172300C9AE18 /* BFButtonTests.swift in Sources */,
 				49F0DCBF1DBD172300C9AE18 /* BFTextFieldTests.swift in Sources */,
 				49F0DCBC1DBD172300C9AE18 /* BFLogTests.swift in Sources */,

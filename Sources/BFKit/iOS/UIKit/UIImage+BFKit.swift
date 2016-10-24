@@ -294,7 +294,7 @@ public extension UIImage {
      - returns: Returns the rotated image
      */
     public func imageRotatedByRadians(_ radians: CGFloat) -> UIImage {
-        return self.imageRotatedByDegrees(CGFloat(RadiansToDegrees(Float(radians))))
+        return self.imageRotatedByDegrees(CGFloat(radiansToDegrees(Float(radians))))
     }
     
     /**
@@ -306,7 +306,7 @@ public extension UIImage {
      */
     public func imageRotatedByDegrees(_ degrees: CGFloat) -> UIImage {
         let rotatedViewBox: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
-        let t: CGAffineTransform = CGAffineTransform(rotationAngle: CGFloat(DegreesToRadians(Float(degrees))))
+        let t: CGAffineTransform = CGAffineTransform(rotationAngle: CGFloat(degreesToRadians(Float(degrees))))
         rotatedViewBox.transform = t
         let rotatedSize: CGSize = rotatedViewBox.frame.size
         
@@ -315,7 +315,7 @@ public extension UIImage {
         
         bitmap.translateBy(x: rotatedSize.width / 2, y: rotatedSize.height / 2)
         
-        bitmap.rotate(by: CGFloat(DegreesToRadians(Float(degrees))))
+        bitmap.rotate(by: CGFloat(degreesToRadians(Float(degrees))))
         
         bitmap.scaleBy(x: 1.0, y: -1.0)
         bitmap.draw(self.cgImage!, in: CGRect(x: -self.size.width / 2, y: -self.size.height / 2, width: self.size.width, height: self.size.height))
@@ -810,7 +810,7 @@ public extension UIImage {
             let sizeString: String = array[0]
             
             if array.count >= 2 {
-                color = UIColor.colorString(array[1])
+                color = UIColor.color(string: array[1])
             }
             
             size = UIImage.sizeForSizeString(sizeString)

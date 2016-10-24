@@ -130,7 +130,7 @@ public extension UIColor {
             if self.canProvideRGBComponents() {
                 var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
                 
-                if self.getHSBA(&hue, &saturation, &brightness, &alpha) {
+                if self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
                     return hue
                 }
             }
@@ -144,7 +144,7 @@ public extension UIColor {
             if self.canProvideRGBComponents() {
                 var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
                 
-                if self.getHSBA(&hue, &saturation, &brightness, &alpha) {
+                if self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
                     return saturation
                 }
             }
@@ -158,7 +158,7 @@ public extension UIColor {
             if self.canProvideRGBComponents() {
                 var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
                 
-                if self.getHSBA(&hue, &saturation, &brightness, &alpha) {
+                if self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
                     return brightness
                 }
             }
@@ -179,7 +179,7 @@ public extension UIColor {
             if self.canProvideRGBComponents() {
                 var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0, alpha: CGFloat = 0.0
                 
-                if !self.getRGBA(&red, &green, &blue, &alpha) {
+                if !self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
                     return 0.0
                 }
                 return red * 0.2126 + green * 0.7152 + blue * 0.0722
@@ -207,7 +207,8 @@ public extension UIColor {
     /// - #RRGGBB.
     /// - #AARRGGBB, AARRGGBB if irstIsAlpha is true. #RRGGBBAA, RRGGBBAA if firstIsAlpha is false.
     ///
-    /// - parameter hexString: HEX string.
+    /// - parameter hexString:  HEX string.
+    /// - parameter alphaFirst: Set it to true if alpha value is the first in the HEX string. If alpha value is the last one, set it to false. Default is false.
     ///
     /// - returns: Returns the UIColor instance.
     public convenience init(hex: String, alphaFirst: Bool = false) {
@@ -216,37 +217,37 @@ public extension UIColor {
         switch colorString.length {
         case 3: /// #RGB, RGB
             alpha = 1.0
-            red = UIColor.colorComponent(fromString: colorString, start: 0, lenght: 1)
-            green = UIColor.colorComponent(fromString: colorString, start: 1, lenght: 1)
-            blue = UIColor.colorComponent(fromString: colorString, start: 2, lenght: 1)
+            red = UIColor.colorComponent(fromString: colorString, range: 0..<1)
+            green = UIColor.colorComponent(fromString: colorString, range: 1..<2)
+            blue = UIColor.colorComponent(fromString: colorString, range: 2..<3)
         case 4: /// #ARGB, ARGB if irstIsAlpha is true. #RGBA, RGBA if firstIsAlpha is false.
             if alphaFirst {
-                alpha = UIColor.colorComponent(fromString: colorString, start: 0, lenght: 1)
-                red = UIColor.colorComponent(fromString: colorString, start: 1, lenght: 1)
-                green = UIColor.colorComponent(fromString: colorString, start: 2, lenght: 1)
-                blue = UIColor.colorComponent(fromString: colorString, start: 3, lenght: 1)
+                alpha = UIColor.colorComponent(fromString: colorString, range: 0..<1)
+                red = UIColor.colorComponent(fromString: colorString, range: 1..<2)
+                green = UIColor.colorComponent(fromString: colorString, range: 2..<3)
+                blue = UIColor.colorComponent(fromString: colorString, range: 3..<4)
             } else {
-                red = UIColor.colorComponent(fromString: colorString, start: 0, lenght: 1)
-                green = UIColor.colorComponent(fromString: colorString, start: 1, lenght: 1)
-                blue = UIColor.colorComponent(fromString: colorString, start: 2, lenght: 1)
-                alpha = UIColor.colorComponent(fromString: colorString, start: 3, lenght: 1)
+                red = UIColor.colorComponent(fromString: colorString, range: 0..<1)
+                green = UIColor.colorComponent(fromString: colorString, range: 1..<2)
+                blue = UIColor.colorComponent(fromString: colorString, range: 2..<3)
+                alpha = UIColor.colorComponent(fromString: colorString, range: 3..<4)
             }
         case 6: /// #RRGGBB, RRGGBB
             alpha = 1.0
-            red = UIColor.colorComponent(fromString: colorString, start: 0, lenght: 2)
-            green = UIColor.colorComponent(fromString: colorString, start: 2, lenght: 2)
-            blue = UIColor.colorComponent(fromString: colorString, start: 4, lenght: 2)
+            red = UIColor.colorComponent(fromString: colorString, range: 0..<2)
+            green = UIColor.colorComponent(fromString: colorString, range: 2..<4)
+            blue = UIColor.colorComponent(fromString: colorString, range: 4..<6)
         case 8: /// #AARRGGBB, AARRGGBB if irstIsAlpha is true. #RRGGBBAA, RRGGBBAA if firstIsAlpha is false.
             if alphaFirst {
-                alpha = UIColor.colorComponent(fromString: colorString, start: 0, lenght: 2)
-                red = UIColor.colorComponent(fromString: colorString, start: 2, lenght: 2)
-                green = UIColor.colorComponent(fromString: colorString, start: 4, lenght: 2)
-                blue = UIColor.colorComponent(fromString: colorString, start: 6, lenght: 2)
+                alpha = UIColor.colorComponent(fromString: colorString, range: 0..<2)
+                red = UIColor.colorComponent(fromString: colorString, range: 2..<4)
+                green = UIColor.colorComponent(fromString: colorString, range: 4..<6)
+                blue = UIColor.colorComponent(fromString: colorString, range: 6..<8)
             } else {
-                red = UIColor.colorComponent(fromString: colorString, start: 0, lenght: 2)
-                green = UIColor.colorComponent(fromString: colorString, start: 2, lenght: 2)
-                blue = UIColor.colorComponent(fromString: colorString, start: 4, lenght: 2)
-                alpha = UIColor.colorComponent(fromString: colorString, start: 6, lenght: 2)
+                red = UIColor.colorComponent(fromString: colorString, range: 0..<2)
+                green = UIColor.colorComponent(fromString: colorString, range: 2..<4)
+                blue = UIColor.colorComponent(fromString: colorString, range: 4..<6)
+                alpha = UIColor.colorComponent(fromString: colorString, range: 6..<8)
             }
         default:
             break
@@ -268,7 +269,7 @@ public extension UIColor {
     public func complementary() -> UIColor? {
         var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
         
-        if !self.getHSBA(&hue, &saturation, &brightness, &alpha) {
+        if !self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
             return nil
         }
         
@@ -310,64 +311,6 @@ public extension UIColor {
         return String(format:"#%06x", rgb)
     }
     
-    /// Get the hue, saturation, brightness and alpha.
-    ///
-    /// - parameter hue:        Hue value.
-    /// - parameter saturation: Saturation value.
-    /// - parameter brightness: Brightness value.
-    /// - parameter alpha:      Alpha value.
-    ///
-    /// - returns: Return true or false.
-    private func getHSBA(_ hue: inout CGFloat, _ saturation: inout CGFloat, _ brightness: inout CGFloat, _ alpha: inout CGFloat) -> Bool {
-        var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0, _alpha: CGFloat = 0.0
-        
-        if !self.getRGBA(&red, &green, &blue, &_alpha) {
-            return false
-        }
-        
-        UIColor.getAll(&red, &green, &blue, &hue, &saturation, &brightness)
-        
-        alpha = _alpha
-        
-        return true
-    }
-    
-    /// Get the red, green, blue and alpha.
-    ///
-    /// - parameter red:   Red value.
-    /// - parameter green: Green value.
-    /// - parameter blue:  Blue value.
-    /// - parameter alpha: Alpha value.
-    ///
-    /// - returns: Return true or false.
-    private func getRGBA(_ red: inout CGFloat, _ green: inout CGFloat, _ blue: inout CGFloat, _ alpha: inout CGFloat) -> Bool {
-        let components = self.cgColor.__unsafeComponents
-        
-        var _red, _green, _blue, _alpha: CGFloat
-        
-        switch self.cgColor.colorSpace!.model {
-        case CGColorSpaceModel.monochrome:
-            _red = (components?[0])!
-            _green = (components?[0])!
-            _blue = (components?[0])!
-            _alpha = (components?[1])!
-        case CGColorSpaceModel.rgb:
-            _red = (components?[0])!
-            _green = (components?[1])!
-            _blue = (components?[2])!
-            _alpha = (components?[3])!
-        default:
-            return false
-        }
-        
-        red = _red
-        green = _green
-        blue = _blue
-        alpha = _alpha
-        
-        return true
-    }
-    
     /// Returns the color component from the string.
     ///
     /// - parameter fromString: String to convert.
@@ -375,9 +318,9 @@ public extension UIColor {
     /// - parameter lenght:     Component lenght.
     ///
     /// - returns: Returns the color component from the string.
-    private static func colorComponent(fromString string: String, start: Int, lenght: Int) -> CGFloat {
-        let substring: String = string.substringWithRange(Range(start...lenght))
-        let fullHex = lenght == 2 ? substring as String : "\(substring)\(substring)"
+    private static func colorComponent(fromString string: String, range: Range<Int>) -> CGFloat {
+        let substring: String = string.substringWithRange(range)
+        let fullHex = (range.upperBound - range.lowerBound) == 2 ? substring as String : "\(substring)\(substring)"
         var hexComponent: CUnsignedInt = 0
         Scanner(string: fullHex).scanHexInt32(&hexComponent)
         
@@ -402,10 +345,10 @@ public extension UIColor {
     /// - parameter color: String with color.
     ///
     /// - returns: Returns the created UIColor.
-    public static func colorString(_ color: String) -> UIColor {
+    public static func color(string color: String) -> UIColor {
         if color.length >= 3 {
             if UIColor.responds(to: Selector(color.lowercased() + "Color")) {
-                return self.getColor(fromString: color)
+                return self.convertColor(string: color)
             } else {
                 return UIColor(hex: color)
             }
@@ -414,14 +357,14 @@ public extension UIColor {
         }
     }
     
-    /// Create an UIColor from a given string ("blue" or hex string).
+    /// Create an UIColor from a given string like "blue" or an hex string.
     ///
     /// - parameter color: String with color.
     ///
     /// - returns: Returns the created UIColor.
-    public convenience init(fromString color: String) {
+    public convenience init(string color: String) {
         if UIColor.responds(to: Selector(color.lowercased() + "Color")) {
-            self.init(cgColor: UIColor.getColor(fromString: color).cgColor)
+            self.init(cgColor: UIColor.convertColor(string: color).cgColor)
         } else {
             self.init(hex: color)
         }
@@ -432,7 +375,7 @@ public extension UIColor {
     /// - parameter color: String with the color.
     ///
     /// - returns: Returns the created UIColor.
-    private static func getColor(fromString color: String) -> UIColor {
+    private static func convertColor(string color: String) -> UIColor {
         switch color {
         case "black":
             return UIColor.black
@@ -475,51 +418,7 @@ public extension UIColor {
     /// - parameter alpha: Alpha value.
     ///
     /// - returns: Returns an UIColor instance.
-    public static func color(withColor color: UIColor, alpha: CGFloat) -> UIColor {
+    public static func color(color: UIColor, alpha: CGFloat) -> UIColor {
         return color.withAlphaComponent(alpha)
-    }
-    
-    /// Get all the components.
-    ///
-    /// - parameter red:        Red value.
-    /// - parameter green:      Green value.
-    /// - parameter blue:       Blue value.
-    /// - parameter hue:        Hue value.
-    /// - parameter saturation: Saturation value.
-    /// - parameter brightness: Brightness value.
-    private static func getAll(_ red: inout CGFloat, _ green:inout CGFloat, _ blue: inout CGFloat, _ hue: inout CGFloat, _ saturation: inout CGFloat, _ brightness: inout CGFloat) {
-        var _hue: CGFloat = 0.0, _saturation: CGFloat = 0.0, _brightness: CGFloat = 0.0
-        
-        let maxValue: CGFloat = max(red, max(green, blue))
-        let minValue: CGFloat = max(red, max(green, blue))
-        
-        brightness = maxValue
-        
-        saturation = (maxValue != 0.0) ? ((maxValue - minValue) / maxValue) : 0.0
-        
-        if saturation == 0.0 {
-            hue = 0.0
-        } else {
-            let redComponent: CGFloat = (maxValue - red) / (maxValue - minValue)
-            let greenComponent: CGFloat = (maxValue - green) / (maxValue - minValue)
-            let blueComponent: CGFloat = (maxValue - blue) / (maxValue - minValue)
-            
-            if red == maxValue {
-                _hue = blueComponent - greenComponent
-            } else if green == maxValue {
-                _hue = 2 + redComponent - blueComponent
-            } else {
-                _hue = 4 + greenComponent - redComponent
-            }
-            
-            _hue *= 60.0
-            if _hue < 0.0 {
-                _hue += 360.0
-            }
-        }
-        
-        hue = _hue
-        saturation = _saturation
-        brightness = _brightness
     }
 }
