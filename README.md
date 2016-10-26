@@ -93,6 +93,7 @@ Language support
 ================
 - Brazilian Portuguese (pt-Br)
 - English (en)
+- French (fr)
 - Indonesian (id)
 - Italian (it)
 - Russian (ru)

@@ -79,6 +79,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49582C6C1DC1617C0039C213 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/BFKit.strings; sourceTree = "<group>"; };
 		497186411D2339040032A98E /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4971864B1D2339040032A98E /* BFKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BFKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		497186651D2339210032A98E /* BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BFKit.h; path = Sources/BFKit.h; sourceTree = SOURCE_ROOT; };
@@ -426,6 +427,7 @@
 				vi,
 				"zh-Hans",
 				"zh-Hant",
+				fr,
 			);
 			mainGroup = 497186371D2339040032A98E;
 			productRefGroup = 497186421D2339040032A98E /* Products */;
@@ -567,6 +569,7 @@
 				497186961D2339210032A98E /* vi */,
 				497186971D2339210032A98E /* zh-Hans */,
 				497186981D2339210032A98E /* zh-Hant */,
+				49582C6C1DC1617C0039C213 /* fr */,
 			);
 			name = BFKit.strings;
 			sourceTree = "<group>";
