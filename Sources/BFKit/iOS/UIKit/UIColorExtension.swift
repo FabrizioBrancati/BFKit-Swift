@@ -124,6 +124,28 @@ public extension UIColor {
         }
     }
     
+    /// RGB properties: luminance.
+    public var luminance: CGFloat {
+        get {
+            if self.canProvideRGBComponents() {
+                var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0, alpha: CGFloat = 0.0
+                
+                if !self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
+                    return 0.0
+                }
+                return red * 0.2126 + green * 0.7152 + blue * 0.0722
+            }
+            return 0.0
+        }
+    }
+    
+    /// RGBA properties: alpha.
+    public var alpha: CGFloat {
+        get {
+            return self.cgColor.alpha
+        }
+    }
+    
     /// HSB properties: hue.
     public var hue: CGFloat {
         get {
@@ -166,25 +188,19 @@ public extension UIColor {
         }
     }
     
-    /// RGBA properties: alpha.
-    public var alpha: CGFloat {
+    /// Returns the HEX string from UIColor.
+    public var hex: String {
         get {
-            return self.cgColor.alpha
-        }
-    }
-    
-    /// RGB properties: luminance.
-    public var luminance: CGFloat {
-        get {
-            if self.canProvideRGBComponents() {
-                var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0, alpha: CGFloat = 0.0
-                
-                if !self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
-                    return 0.0
-                }
-                return red * 0.2126 + green * 0.7152 + blue * 0.0722
-            }
-            return 0.0
+            var red:CGFloat = 0
+            var green:CGFloat = 0
+            var blue:CGFloat = 0
+            var alpha:CGFloat = 0
+            
+            getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+            
+            let rgb:Int = (Int)(red * 255) << 16 | (Int)(green * 255) << 8 | (Int)(blue * 255) << 0
+            
+            return String(format:"#%06x", rgb)
         }
     }
     
@@ -285,30 +301,15 @@ public extension UIColor {
     ///
     /// - returns: Returns if the color is in RGB format.
     public func canProvideRGBComponents() -> Bool {
-        switch self.cgColor.colorSpace!.model {
-        case CGColorSpaceModel.rgb:
-            return true
-        case CGColorSpaceModel.monochrome:
+        guard let colorSpace = self.cgColor.colorSpace else {
+            return false
+        }
+        switch colorSpace.model {
+        case CGColorSpaceModel.rgb, CGColorSpaceModel.monochrome:
             return true
         default:
             return false
         }
-    }
-    
-    /// Convert UIColor to HEX string.
-    ///
-    /// - returns: Returns the HEX string from the given UIColor.
-    public func hex() -> String {
-        var red:CGFloat = 0
-        var green:CGFloat = 0
-        var blue:CGFloat = 0
-        var alpha:CGFloat = 0
-        
-        getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-        
-        let rgb:Int = (Int)(red * 255) << 16 | (Int)(green * 255) << 8 | (Int)(blue * 255) << 0
-        
-        return String(format:"#%06x", rgb)
     }
     
     /// Returns the color component from the string.

@@ -60,6 +60,20 @@ class UIColorExtensionTests: XCTestCase {
         XCTAssert(color.whiteComponent == 0.5)
     }
     
+    func testLuminance() {
+        let colorLight = UIColor.green
+        let colorDark = UIColor.black
+        
+        XCTAssert(colorLight.luminance > 0.5)
+        XCTAssert(colorDark.luminance < 0.5)
+    }
+    
+    func testAlpha() {
+        let color = UIColor.color(color: UIColor.red, alpha: 0.5)
+        
+        XCTAssert(color.cgColor.alpha == 0.5)
+    }
+    
     func testHue() {
         let color = UIColor.cyan
         
@@ -78,17 +92,63 @@ class UIColorExtensionTests: XCTestCase {
         XCTAssert(color.brightness == 0.6)
     }
     
-    func testAlpha() {
-        let color = UIColor.color(color: UIColor.red, alpha: 0.5)
+    func testHex() {
+        let color = UIColor.magenta
         
-        XCTAssert(color.cgColor.alpha == 0.5)
+        XCTAssert(color.hex == "#FF00FF".lowercased())
     }
     
-    func testLuminance() {
-        let colorGreen = UIColor.green
-        let colorBlack = UIColor.black
+    func testInitHexAlpha() {
+        let color = UIColor(hex: 0xFFFF00)
         
-        XCTAssert(colorGreen.luminance > 0.5)
-        XCTAssert(colorBlack.luminance < 0.5)
+        XCTAssert(color == UIColor.yellow)
+    }
+    
+    func testInitHexAlphaFirst() {
+        let color = UIColor(hex: "#00FFFFFF", alphaFirst: false)
+        
+        XCTAssert(color == UIColor.cyan)
+    }
+    
+    func testContrasting() {
+        let colorDark = UIColor.brown
+        
+        XCTAssert(colorDark.contrasting() == UIColor.white)
+    }
+    
+    func testComplementary() {
+        let color = UIColor.orange
+        
+        XCTAssert(color.hex == "#FF7F00".lowercased()) /// Dark orange
+    }
+    
+    func testCanProvideRGBComponents() {
+        let rgbColor = UIColor.orange
+        
+        XCTAssert(rgbColor.canProvideRGBComponents())
+    }
+    
+    func testRandomAlpha() {
+        let randomColor = UIColor.random(alpha: 1)
+        
+        XCTAssert(randomColor.canProvideRGBComponents())
+    }
+    
+    func testColorString() {
+        let color = UIColor.color(string: "cyan")
+        
+        XCTAssert(color == UIColor.cyan)
+    }
+    
+    func testInitString() {
+        let color = UIColor(string: "blue")
+        
+        XCTAssert(color == UIColor.blue)
+    }
+    
+    func testColorAlpha() {
+        let color = UIColor.color(color: UIColor.red, alpha: 0.5)
+        
+        XCTAssert(color.alpha == 0.5)
     }
 }
