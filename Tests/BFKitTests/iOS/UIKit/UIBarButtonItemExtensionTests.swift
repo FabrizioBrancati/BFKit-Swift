@@ -20,14 +20,12 @@ class UIBarButtonItemExtensionTests: XCTestCase {
     
     func testInitBarButtonSpaceTypeWidth() {
         let barButtonItemFlexible = UIBarButtonItem(barButtonSpaceType: .flexibleSpace)
+        let barButtonItemFixed = UIBarButtonItem(barButtonSpaceType: .fixedSpace, width: 100)
+        let barButtonItemDone = UIBarButtonItem(barButtonSpaceType: .done, width: 100)
         
         XCTAssert(barButtonItemFlexible.width == 0)
         
-        let barButtonItemFixed = UIBarButtonItem(barButtonSpaceType: .fixedSpace, width: 100)
-        
         XCTAssert(barButtonItemFixed.width == 100)
-        
-        let barButtonItemDone = UIBarButtonItem(barButtonSpaceType: .done, width: 100)
         
         XCTAssert(barButtonItemDone.width == 0)
     }
