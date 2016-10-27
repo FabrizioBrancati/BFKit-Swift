@@ -30,10 +30,7 @@ import UIKit
 // MARK: - Global variables
 
 /// Used to store  BFUniqueIdentifier in defaults
-private let BFUniqueIdentifierDefaultsKey = "BFUniqueIdentifier"
-
-/// Used to store  BFUniqueIdentifier in defaults
-private let BFUserUniqueIdentifierDefaultsKey = "BFUserUniqueIdentifier"
+private let BFAPNSIdentifierDefaultsKey = "BFAPNSIdentifier"
 
 /// Get OS version string.
 public var osVersion: String {
@@ -343,81 +340,43 @@ public extension UIDevice {
         return results
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /// Generate an unique identifier and store it into standardUserDefaults.
+    /// Save the unique identifier or update it if there is and it is changed.
+    /// Is useful for push notification to know if the unique identifier has changed and needs to be sent to server.
     ///
-    /// - returns: Returns an unique identifier as a String.
-    public static func uniqueIdentifier() -> String {
-        var UUID: String?
-        if UIDevice.current.responds(to: #selector(getter: UIDevice.identifierForVendor)) {
-            UUID = UIDevice.current.identifierForVendor!.uuidString
-        } else {
-            let defaults = UserDefaults.standard
-            UUID = defaults.object(forKey: BFUniqueIdentifierDefaultsKey) as? String
-            if UUID == nil {
-                UUID = String.generateUUID()
-                defaults.set(UUID, forKey: BFUniqueIdentifierDefaultsKey)
-                defaults.synchronize()
-            }
-        }
-        return UUID!
-    }
-    
-    public static func generateIdentifier() -> String {
-        let defaults = UserDefaults.standard
-        var UUID = defaults.object(forKey: BFUniqueIdentifierDefaultsKey) as? String
-        if UUID == nil {
-            UUID = String.generateUUID()
-            defaults.set(UUID, forKey: BFUniqueIdentifierDefaultsKey)
-            defaults.synchronize()
-        }
-        return UUID!
-    }
-    
-    /**
-     Save the unique identifier or update it if there is and it is changed.
-     Is useful for push notification to know if the unique identifier has changed and needs to be send to server
-     
-     - parameter uniqueIdentifier: The unique identifier to save or update if needed. (Must be NSData or NSString)
-     - parameter block:            The execution block that know if the unique identifier is valid and has to be updated. You have to handle the case if it is valid and the update is needed or not
-     */
-    public static func saveUniqueIdentifier(_ uniqueIdentifier: NSObject, block: (_ isValid: Bool, _ hasToUpdateUniqueIdentifier: Bool, _ oldUUID: String?) -> ()) {
+    /// - parameter uniqueIdentifier: The unique identifier to save or update if needed. Must be Data or String type.
+    /// - parameter block:            The execution block that know if the unique identifier is valid and has to be updated.
+    ///                               You have to handle the case if it is valid and the update is needed or not.
+    ///
+    /// - parameter isValid:          Returns if the APNS token is valid.
+    /// - parameter needsUpdate:      Returns if the APNS token needsAnUpdate.
+    /// - parameter oldUUID:          Returns the old UUID, if present. May be nil.
+    /// - parameter newUUID:          Returns the new UUID.
+    public static func saveAPNSIdentifier(_ uniqueIdentifier: Any, block: (_ isValid: Bool, _ needsUpdate: Bool, _ oldUUID: String?, _ newUUID: String) -> ()) {
         var userUUID: String = ""
         var savedUUID: String? = nil
-        var isValid = false, hasToUpdate = false
+        var isValid = false, needsUpdate = false
         
         if uniqueIdentifier is Data {
             let data: Data = uniqueIdentifier as! Data
             userUUID = data.convertToUTF8String()
+            isValid = userUUID.isUUIDForAPNS()
         } else if uniqueIdentifier is NSString {
             let string: NSString = uniqueIdentifier as! NSString
             userUUID = string.convertToAPNSUUID() as String
+            isValid = userUUID.isUUIDForAPNS()
         }
-        
-        isValid = userUUID.isUUIDForAPNS()
         
         if isValid {
             let defaults: UserDefaults = UserDefaults.standard
-            savedUUID = defaults.string(forKey: BFUserUniqueIdentifierDefaultsKey)
+            savedUUID = defaults.string(forKey: BFAPNSIdentifierDefaultsKey)
             if savedUUID == nil || savedUUID != userUUID {
-                defaults.set(userUUID, forKey: BFUserUniqueIdentifierDefaultsKey)
+                defaults.set(userUUID, forKey: BFAPNSIdentifierDefaultsKey)
                 defaults.synchronize()
                 
-                hasToUpdate = true
+                needsUpdate = true
             }
         }
         
-        block(isValid, hasToUpdate, userUUID)
+        block(isValid, needsUpdate, savedUUID, userUUID)
     }
 }
