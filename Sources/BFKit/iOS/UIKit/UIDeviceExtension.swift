@@ -29,27 +29,8 @@ import UIKit
 
 // MARK: - Global variables
 
-/// Used to store  BFUniqueIdentifier in defaults
+/// Used to store BFAPNSIdentifier in defaults.
 private let BFAPNSIdentifierDefaultsKey = "BFAPNSIdentifier"
-
-/// Get OS version string.
-public var osVersion: String {
-    get {
-        return UIDevice.current.systemVersion
-    }
-}
-
-/// Returns OS version without subversions.
-///
-/// Example: 9.
-public var osMajorVersion: Int {
-    get {
-        guard let subVersion = UIDevice.current.systemVersion.substringToCharacter("."), let intSubVersion = Int(subVersion) else {
-            return 0
-        }
-        return intSubVersion
-    }
-}
 
 // MARK: - Global functions
 
@@ -103,6 +84,25 @@ public func osVersionLessOrEqual(_ version: String) -> Bool {
 /// This extesion adds some useful functions to UIDevice
 public extension UIDevice {
     // MARK: - Variables
+    
+    /// Get OS version string.
+    public static var osVersion: String {
+        get {
+            return UIDevice.current.systemVersion
+        }
+    }
+    
+    /// Returns OS version without subversions.
+    ///
+    /// Example: 9.
+    public static var osMajorVersion: Int {
+        get {
+            guard let subVersion = UIDevice.current.systemVersion.substringToCharacter("."), let intSubVersion = Int(subVersion) else {
+                return 0
+            }
+            return intSubVersion
+        }
+    }
     
     /// Returns device platform string.
     ///
@@ -310,9 +310,13 @@ public extension UIDevice {
     /// - throws: Throws FileManager.default.attributesOfFileSystem(forPath:) errors.
     ///
     /// - returns: Returns current device total disk space.
-    public static func totalDiskSpace() throws -> Any {
-        let attributes = try FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
-        return attributes[FileAttributeKey.systemSize]
+    public static func totalDiskSpace() throws -> NSNumber {
+        do {
+            let attributes = try FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
+            return attributes[.systemSize] as? NSNumber ?? NSNumber(value: 0.0)
+        } catch {
+            return NSNumber(value: 0.0)
+        }
     }
     
     /// Returns current device free disk space.
@@ -320,9 +324,13 @@ public extension UIDevice {
     /// - throws: Throws FileManager.default.attributesOfFileSystem(forPath:) errors.
     ///
     /// - returns: Returns current device free disk space.
-    public static func freeDiskSpace() throws -> Any {
-        let attributes = try FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
-        return attributes[FileAttributeKey.systemFreeSize]
+    public static func freeDiskSpace() throws -> NSNumber {
+        do {
+            let attributes = try FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
+            return attributes[.systemFreeSize] as? NSNumber ?? NSNumber(value: 0.0)
+        } catch {
+            return NSNumber(value: 0.0)
+        }
     }
     
     /// Used to the system info.
@@ -338,6 +346,19 @@ public extension UIDevice {
         sysctl(&name, 2, &results, &size, &name, 0)
         
         return results
+    }
+    
+    /// Used to create an UUID as String.
+    ///
+    /// - Returns: Returns the created UUID string.
+    public static func generateUniqueIdentifier() -> String {
+        guard let uuid = CFUUIDCreate(kCFAllocatorDefault) else {
+            return ""
+        }
+        guard let uuidString = CFUUIDCreateString(kCFAllocatorDefault, uuid) else {
+            return ""
+        }
+        return uuidString as String
     }
     
     /// Save the unique identifier or update it if there is and it is changed.
