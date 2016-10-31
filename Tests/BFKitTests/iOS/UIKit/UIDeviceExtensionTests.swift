@@ -30,3 +30,4 @@ class UIDeviceExtensionTests: XCTestCase {
         XCTAssert(osVersion == "10.0")
     }
 }
+
