@@ -237,8 +237,8 @@ public extension UIDevice {
         }
     }
     
-    /// Returns device CPU number.
-    public static var cpuNumber: Int {
+    /// Returns device CPUs number.
+    public static var cpusNumber: Int {
         get {
             return self.getSysInfo(HW_NCPU)
         }
