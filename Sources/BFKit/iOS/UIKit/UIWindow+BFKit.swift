@@ -63,7 +63,7 @@ public extension UIWindow {
      - returns: Returns the screenshot as an UIImage
      */
     public func takeScreenshot(save: Bool = false) -> UIImage {
-        let ignoreOrientation: Bool = osVersionGreaterOrEqual("8.0")
+        let ignoreOrientation: Bool = osVersionGreaterThanOrEqual("8.0")
         
         let orientation: UIInterfaceOrientation = UIApplication.shared.statusBarOrientation
         

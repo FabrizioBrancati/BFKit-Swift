@@ -76,6 +76,9 @@ public extension String {
      - returns: Returns the substring to index
      */
     public func substringToIndex(_ index: Int) -> String {
+        guard self.length > index else {
+            return ""
+        }
         return self.substring(to: self.characters.index(self.startIndex, offsetBy: index))
     }
 

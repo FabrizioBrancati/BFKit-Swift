@@ -48,7 +48,7 @@ public func osVersionEqual(_ version: String) -> Bool {
 /// - parameter version: Version, like "9.0".
 ///
 /// - returns: Returns true if greater, otherwise false.
-public func osVersionGreater(_ version: String) -> Bool {
+public func osVersionGreaterThan(_ version: String) -> Bool {
     return UIDevice.current.systemVersion.compare(version, options: .numeric) == .orderedDescending
 }
 
@@ -57,7 +57,7 @@ public func osVersionGreater(_ version: String) -> Bool {
 /// - parameter version: Version, like "9.0".
 ///
 /// - returns: Returns true if greater or equal, otherwise false.
-public func osVersionGreaterOrEqual(_ version: String) -> Bool {
+public func osVersionGreaterThanOrEqual(_ version: String) -> Bool {
     return UIDevice.current.systemVersion.compare(version, options: .numeric) != .orderedAscending
 }
 
@@ -66,7 +66,7 @@ public func osVersionGreaterOrEqual(_ version: String) -> Bool {
 /// - parameter version: Version, like "9.0".
 ///
 /// - returns: Returns true if less, otherwise false.
-public func osVersionLess(_ version: String) -> Bool {
+public func osVersionLessThan(_ version: String) -> Bool {
     return UIDevice.current.systemVersion.compare(version, options: .numeric) == .orderedAscending
 }
 
@@ -75,7 +75,7 @@ public func osVersionLess(_ version: String) -> Bool {
 /// - parameter version: Version, like "9.0".
 ///
 /// - returns: Returns true if less or equal, otherwise false.
-public func osVersionLessOrEqual(_ version: String) -> Bool {
+public func osVersionLessThanOrEqual(_ version: String) -> Bool {
     return UIDevice.current.systemVersion.compare(version, options: .numeric) != .orderedDescending
 }
 
@@ -310,7 +310,7 @@ public extension UIDevice {
     /// - throws: Throws FileManager.default.attributesOfFileSystem(forPath:) errors.
     ///
     /// - returns: Returns current device total disk space.
-    public static func totalDiskSpace() throws -> NSNumber {
+    public static func totalDiskSpace() -> NSNumber {
         do {
             let attributes = try FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
             return attributes[.systemSize] as? NSNumber ?? NSNumber(value: 0.0)
@@ -324,7 +324,7 @@ public extension UIDevice {
     /// - throws: Throws FileManager.default.attributesOfFileSystem(forPath:) errors.
     ///
     /// - returns: Returns current device free disk space.
-    public static func freeDiskSpace() throws -> NSNumber {
+    public static func freeDiskSpace() -> NSNumber {
         do {
             let attributes = try FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
             return attributes[.systemFreeSize] as? NSNumber ?? NSNumber(value: 0.0)
@@ -352,10 +352,7 @@ public extension UIDevice {
     ///
     /// - Returns: Returns the created UUID string.
     public static func generateUniqueIdentifier() -> String {
-        guard let uuid = CFUUIDCreate(kCFAllocatorDefault) else {
-            return ""
-        }
-        guard let uuidString = CFUUIDCreateString(kCFAllocatorDefault, uuid) else {
+        guard let uuid = CFUUIDCreate(kCFAllocatorDefault), let uuidString = CFUUIDCreateString(kCFAllocatorDefault, uuid) else {
             return ""
         }
         return uuidString as String
@@ -365,39 +362,43 @@ public extension UIDevice {
     /// Is useful for push notification to know if the unique identifier has changed and needs to be sent to server.
     ///
     /// - parameter uniqueIdentifier: The unique identifier to save or update if needed. Must be Data or String type.
-    /// - parameter block:            The execution block that know if the unique identifier is valid and has to be updated.
+    /// - parameter completion:       The execution block that know if the unique identifier is valid and has to be updated.
     ///                               You have to handle the case if it is valid and the update is needed or not.
     ///
     /// - parameter isValid:          Returns if the APNS token is valid.
     /// - parameter needsUpdate:      Returns if the APNS token needsAnUpdate.
     /// - parameter oldUUID:          Returns the old UUID, if present. May be nil.
     /// - parameter newUUID:          Returns the new UUID.
-    public static func saveAPNSIdentifier(_ uniqueIdentifier: Any, block: (_ isValid: Bool, _ needsUpdate: Bool, _ oldUUID: String?, _ newUUID: String) -> ()) {
-        var userUUID: String = ""
+    public static func saveAPNSIdentifier(_ uniqueIdentifier: Any, completion: @escaping (_ isValid: Bool, _ needsUpdate: Bool, _ savedUUID: String?, _ newUUID: String) -> ()) {
+        var newUUID: String = ""
         var savedUUID: String? = nil
         var isValid = false, needsUpdate = false
         
         if uniqueIdentifier is Data {
             let data: Data = uniqueIdentifier as! Data
-            userUUID = data.convertToUTF8String()
-            isValid = userUUID.isUUIDForAPNS()
+            newUUID = data.convertToUTF8String()
+            isValid = newUUID.isUUIDForAPNS()
         } else if uniqueIdentifier is NSString {
             let string: NSString = uniqueIdentifier as! NSString
-            userUUID = string.convertToAPNSUUID() as String
-            isValid = userUUID.isUUIDForAPNS()
+            newUUID = string.convertToAPNSUUID() as String
+            isValid = newUUID.isUUIDForAPNS()
+        } else if uniqueIdentifier is String {
+            let string: String = uniqueIdentifier as! String
+            newUUID = string.convertToAPNSUUID() as String
+            isValid = newUUID.isUUIDForAPNS()
         }
         
         if isValid {
             let defaults: UserDefaults = UserDefaults.standard
             savedUUID = defaults.string(forKey: BFAPNSIdentifierDefaultsKey)
-            if savedUUID == nil || savedUUID != userUUID {
-                defaults.set(userUUID, forKey: BFAPNSIdentifierDefaultsKey)
+            if savedUUID == nil || savedUUID != newUUID {
+                defaults.set(newUUID, forKey: BFAPNSIdentifierDefaultsKey)
                 defaults.synchronize()
                 
                 needsUpdate = true
             }
         }
         
-        block(isValid, needsUpdate, savedUUID, userUUID)
+        completion(isValid, needsUpdate, savedUUID, newUUID)
     }
 }

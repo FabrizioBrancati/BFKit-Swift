@@ -19,7 +19,7 @@ class BFTouchIDTests: XCTestCase {
     }
     
     func testShowTouchID() {
-        BFTouchID.showTouchID(reason: "Testing", fallbackTitle: "Password") { (result: BFTouchID.TouchIDResult) in
+        BFTouchID.showTouchID(reason: "Testing", fallbackTitle: "Password") { result in
             if result == .success {
                 XCTAssert(true)
             } else {
