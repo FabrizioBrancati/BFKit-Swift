@@ -67,10 +67,11 @@ public struct BFTouchID {
     
     /// Shows the TouchID authentication.
     ///
-    /// - parameter reason:        Text to show in the alert.
-    /// - parameter fallbackTitle: Default title "Enter Password" is used when this property is left nil. If set to empty string, the button will be hidden.
-    /// - parameter completion:     Completion handler.
-    /// - parameter result:         Returns the TouchID result, from the TouchIDResult enum.
+    /// - Parameters:
+    ///   - reason:        Text to show in the alert.
+    ///   - fallbackTitle: Default title "Enter Password" is used when this property is left nil. If set to empty string, the button will be hidden.
+    ///   - completion:     Completion handler.
+    ///   - result:         Returns the TouchID result, from the TouchIDResult enum.
     public static func showTouchID(reason: String, fallbackTitle: String? = nil, completion: @escaping (_ result: TouchIDResult) -> ()) {
         let context: LAContext = LAContext()
         

@@ -65,7 +65,7 @@ public extension UILabel {
     */
     public func calculatedHeight() -> CGFloat {
         let text: String = self.text!
-        return UIFont.heightForWidth(self.frame.size.width, font: self.font, text: text)
+        return UIFont.height(width: self.frame.size.width, font: self.font, text: text)
     }
     
     /**

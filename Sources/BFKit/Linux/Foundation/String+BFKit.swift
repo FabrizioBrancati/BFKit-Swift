@@ -618,7 +618,7 @@ public extension String {
     }
     
     /**
-     Private, count the number of lowercase letters
+     Count the number of lowercase letters
      
      - parameter password: Password string
      
@@ -637,7 +637,7 @@ public extension String {
     }
     
     /**
-     Private, count the number of uppercase letters
+     Count the number of uppercase letters
      
      - parameter password: Password string
      
@@ -656,7 +656,7 @@ public extension String {
     }
     
     /**
-     Private, count the number of numbers
+     Count the number of numbers
      
      - parameter password: Password string
      
@@ -675,7 +675,7 @@ public extension String {
     }
     
     /**
-     Private, count the number of symbols
+     Count the number of symbols
      
      - parameter password: Password string
      

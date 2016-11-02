@@ -29,10 +29,10 @@ import UIKit
 
 // MARK: - Private variables -
 
-/// Private, touch images dictionary
+/// Touch images dictionary
 private var touchImages: Dictionary<Int, UIImageView> = [:]
 
-/// Private, set if sendEvent: has been exchanged
+/// Tet if sendEvent: has been exchanged
 private var sendEventExchanged: Bool = false
 
 // MARK: - Global functions -
@@ -125,7 +125,7 @@ public extension UIWindow {
     }
     
     /**
-     Private, show touch on screen
+     Show touch on screen
      */
     public func activateTouch() {
         if sendEventExchanged {
@@ -140,7 +140,7 @@ public extension UIWindow {
     }
     
     /**
-     Private, hide touch on screen
+     Hide touch on screen
      */
     public func deactivateTouch() {
         if !sendEventExchanged {
@@ -167,7 +167,7 @@ public extension UIWindow {
     }
     
     /**
-     Private, is used to handle the event
+     Is used to handle the event
     
      - parameter event: UIEvent
      */
@@ -216,7 +216,7 @@ public extension UIWindow {
     }
     
     /**
-     Private, returns the Touch image
+     Returns the Touch image
     
      - returns: Returns the Touch image
      */

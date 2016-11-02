@@ -778,7 +778,7 @@ public extension UIImage {
     // MARK: - Class functions -
     
     /**
-     Private, create a CGSize with a given string (100x100)
+     Create a CGSize with a given string (100x100)
     
      - parameter sizeString: String with the size
     

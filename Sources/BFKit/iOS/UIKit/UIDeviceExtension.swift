@@ -1,5 +1,5 @@
 //
-//  UIDevice+BFKit.swift
+//  UIDeviceExtension.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -36,45 +36,40 @@ private let BFAPNSIdentifierDefaultsKey = "BFAPNSIdentifier"
 
 /// Compare OS versions.
 ///
-/// - parameter version: Version, like "9.0".
-///
-/// - returns: Returns true if equal, otherwise false.
+/// - Parameter version: Version, like "9.0".
+/// - Returns: Returns true if equal, otherwise false.
 public func osVersionEqual(_ version: String) -> Bool {
     return UIDevice.current.systemVersion.compare(version, options: .numeric) == .orderedSame
 }
 
 /// Compare OS versions.
 ///
-/// - parameter version: Version, like "9.0".
-///
-/// - returns: Returns true if greater, otherwise false.
+/// - Parameter version: Version, like "9.0".
+/// - Returns: Returns true if greater, otherwise false.
 public func osVersionGreaterThan(_ version: String) -> Bool {
     return UIDevice.current.systemVersion.compare(version, options: .numeric) == .orderedDescending
 }
 
 /// Compare OS versions.
 ///
-/// - parameter version: Version, like "9.0".
-///
-/// - returns: Returns true if greater or equal, otherwise false.
+/// - Parameter version: Version, like "9.0".
+/// - Returns: Returns true if greater or equal, otherwise false.
 public func osVersionGreaterThanOrEqual(_ version: String) -> Bool {
     return UIDevice.current.systemVersion.compare(version, options: .numeric) != .orderedAscending
 }
 
 /// Compare OS versions.
 ///
-/// - parameter version: Version, like "9.0".
-///
-/// - returns: Returns true if less, otherwise false.
+/// - Parameter version: Version, like "9.0".
+/// - Returns: Returns true if less, otherwise false.
 public func osVersionLessThan(_ version: String) -> Bool {
     return UIDevice.current.systemVersion.compare(version, options: .numeric) == .orderedAscending
 }
 
 /// Compare OS versions.
 ///
-/// - parameter version: Version, like "9.0".
-///
-/// - returns: Returns true if less or equal, otherwise false.
+/// - Parameter version: Version, like "9.0".
+/// - Returns: Returns true if less or equal, otherwise false.
 public func osVersionLessThanOrEqual(_ version: String) -> Bool {
     return UIDevice.current.systemVersion.compare(version, options: .numeric) != .orderedDescending
 }
@@ -108,7 +103,7 @@ public extension UIDevice {
     ///
     /// Example: "iPhone7,2".
     ///
-    /// - returns: Returns the device platform string.
+    /// - Returns: Returns the device platform string.
     public static var hardwareModel: String {
         get {
             var name: [Int32] = [CTL_HW, HW_MACHINE]
@@ -127,7 +122,7 @@ public extension UIDevice {
     ///
     /// Example: "iPad Air (Cellular)".
     ///
-    /// - returns: Returns the user-friendly device platform string.
+    /// - Returns: Returns the user-friendly device platform string.
     public static var detailedModel: String {
         get {
             let platform: String = self.hardwareModel
@@ -262,42 +257,42 @@ public extension UIDevice {
     
     /// Check if current device is an iPhone.
     ///
-    /// - returns: Returns true if it's an iPhone, otherwise false.
+    /// - Returns: Returns true if it's an iPhone, otherwise false.
     public static func isPhone() -> Bool {
         return self.hardwareModel.substringToIndex(6) == "iPhone"
     }
     
     /// Check if current device is an iPad.
     ///
-    /// - returns: Returns true if it's an iPad, otherwise false.
+    /// - Returns: Returns true if it's an iPad, otherwise false.
     public static func isPad() -> Bool {
         return self.hardwareModel.substringToIndex(4) == "iPad"
     }
     
     /// Check if current device is an iPod.
     ///
-    /// - returns: Returns true if it's an iPod, otherwise false.
+    /// - Returns: Returns true if it's an iPod, otherwise false.
     public static func isPod() -> Bool {
         return self.hardwareModel.substringToIndex(4) == "iPod"
     }
     
     /// Check if current device is an Apple TV.
     ///
-    /// - returns: Returns true if it's an Apple TV, otherwise false.
+    /// - Returns: Returns true if it's an Apple TV, otherwise false.
     public static func isTV() -> Bool {
         return self.hardwareModel.substringToIndex(7) == "AppleTV"
     }
     
     /// Check if current device is an Applw Watch.
     ///
-    /// - returns: Returns true if it's an Apple Watch, otherwise false.
+    /// - Returns: Returns true if it's an Apple Watch, otherwise false.
     public static func isWatch() -> Bool {
         return self.hardwareModel.substringToIndex(5) == "Watch"
     }
     
     /// Check if current device is a Simulator.
     ///
-    /// - returns: Returns true if it's a Simulator, otherwise false.
+    /// - Returns: Returns true if it's a Simulator, otherwise false.
     public static func isSimulator() -> Bool {
         if self.detailedModel == "Simulator" {
             return true
@@ -307,9 +302,7 @@ public extension UIDevice {
     
     /// Returns current device total disk space
     ///
-    /// - throws: Throws FileManager.default.attributesOfFileSystem(forPath:) errors.
-    ///
-    /// - returns: Returns current device total disk space.
+    /// - Returns: Returns current device total disk space.
     public static func totalDiskSpace() -> NSNumber {
         do {
             let attributes = try FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
@@ -321,9 +314,7 @@ public extension UIDevice {
     
     /// Returns current device free disk space.
     ///
-    /// - throws: Throws FileManager.default.attributesOfFileSystem(forPath:) errors.
-    ///
-    /// - returns: Returns current device free disk space.
+    /// - Returns: Returns current device free disk space.
     public static func freeDiskSpace() -> NSNumber {
         do {
             let attributes = try FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
@@ -335,9 +326,8 @@ public extension UIDevice {
     
     /// Used to the system info.
     ///
-    /// - parameter typeSpecifier: Type of system info.
-    ///
-    /// - returns: Return sysyem info.
+    /// - Parameter typeSpecifier: Type of system info.
+    /// - Returns: Return sysyem info.
     fileprivate static func getSysInfo(_ typeSpecifier: Int32) -> Int {
         var name: [Int32] = [CTL_HW, typeSpecifier]
         var size: Int = 2
@@ -361,14 +351,15 @@ public extension UIDevice {
     /// Save the unique identifier or update it if there is and it is changed.
     /// Is useful for push notification to know if the unique identifier has changed and needs to be sent to server.
     ///
-    /// - parameter uniqueIdentifier: The unique identifier to save or update if needed. Must be Data or String type.
-    /// - parameter completion:       The execution block that know if the unique identifier is valid and has to be updated.
+    /// - Parameters:
+    ///   - uniqueIdentifier: The unique identifier to save or update if needed. Must be Data or String type.
+    ///   - completion:       The execution block that know if the unique identifier is valid and has to be updated.
     ///                               You have to handle the case if it is valid and the update is needed or not.
     ///
-    /// - parameter isValid:          Returns if the APNS token is valid.
-    /// - parameter needsUpdate:      Returns if the APNS token needsAnUpdate.
-    /// - parameter oldUUID:          Returns the old UUID, if present. May be nil.
-    /// - parameter newUUID:          Returns the new UUID.
+    ///   - isValid:          Returns if the APNS token is valid.
+    ///   - needsUpdate:      Returns if the APNS token needsAnUpdate.
+    ///   - oldUUID:          Returns the old UUID, if present. May be nil.
+    ///   - newUUID:          Returns the new UUID.
     public static func saveAPNSIdentifier(_ uniqueIdentifier: Any, completion: @escaping (_ isValid: Bool, _ needsUpdate: Bool, _ savedUUID: String?, _ newUUID: String) -> ()) {
         var newUUID: String = ""
         var savedUUID: String? = nil

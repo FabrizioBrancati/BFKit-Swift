@@ -66,7 +66,7 @@ public extension Array {
     }
     
     /**
-     Private, to get the index as a circle
+     Get the index as a circle
     
      - parameter index:   The index
      - parameter maxSize: Max size of the array

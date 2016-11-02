@@ -75,10 +75,8 @@ open class BFButton: UIButton {
     
     /// Required init function.
     ///
-    /// - parameter aDecoder: NSCoder.
-    ///
-    /// - returns: The initialized instance.
-    ///
+    /// - Parameter aDecoder: NSCoder.
+    /// - Returns: The initialized instance.
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -92,7 +90,7 @@ open class BFButton: UIButton {
     
     /// Encodes added variables.
     ///
-    /// - parameter aCoder: NSCoder.
+    /// - Parameter aCoder: NSCoder.
     open override func encode(with aCoder: NSCoder) {
         super.encode(with: aCoder)
         
@@ -102,12 +100,11 @@ open class BFButton: UIButton {
     
     /// Create an UIButton with a fade animation from image to highlightedImage on touch.
     ///
-    /// - parameter frame:            Button's frame.
-    /// - parameter image:            Button's image.
-    /// - parameter highlightedImage: Button's highlighted image.
-    /// - parameter fadeDuration:     Fade duration.
-    ///
-    /// - returns: Returns the created BFButton, subclass of UIButton.
+    /// - Parameters:
+    ///   - frame: Button's frame.
+    ///   - image: Button's image.
+    ///   - highlightedImage: Button's highlighted image.
+    ///   - fadeDuration: Fade duration.
     public init(frame: CGRect, image: UIImage, highlightedImage: UIImage, fadeDuration: Float) {
         self.fadeDuration = fadeDuration
         

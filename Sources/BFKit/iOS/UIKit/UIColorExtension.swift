@@ -1,5 +1,5 @@
 //
-//  UIColor+BFKit.swift
+//  UIColorExtension.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -31,35 +31,35 @@ import UIKit
 
 /// Create an UIColor in format RGBA.
 ///
-/// - parameter r: Red value.
-/// - parameter g: Green value.
-/// - parameter b: Blue value.
-/// - parameter a: Alpha value.
-///
-/// - returns: Returns the created UIColor.
+/// - Parameters:
+///   - red: Red value.
+///   - green: Green value.
+///   - blue: Blue value.
+///   - alpha: Alpha value.
+/// - Returns: Returns the created UIColor.
 public func RGBA(_ red: Int, _ green: Int, _ blue: Int, _ alpha: Float) -> UIColor {
     return UIColor(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: CGFloat(alpha))
 }
 
 /// Create an UIColor in format ARGB.
 ///
-/// - parameter a: Alpha value.
-/// - parameter r: Red value.
-/// - parameter g: Green value.
-/// - parameter b: Blue value.
-///
-/// - returns: Returns the created UIColor.
+/// - Parameters:
+///   - alpha: Alpha value.
+///   - red: Red value.
+///   - green: Green value.
+///   - blue: Blue value.
+/// - Returns: Returns the created UIColor.
 public func ARGB( _ alpha: Float, _ red: Int, _ green: Int, _ blue: Int) -> UIColor {
     return RGBA(red, green, blue, alpha)
 }
 
 /// Create an UIColor in format RGB.
 ///
-/// - parameter r: Red value.
-/// - parameter g: Green value.
-/// - parameter b: Blue value.
-///
-/// - returns: Returns the created UIColor.
+/// - Parameters:
+///   - red: Red value.
+///   - green: Green value.
+///   - blue: Blue value.
+/// - Returns: Returns the created UIColor.
 public func RGB(_ r: Int, _ g: Int, _ b: Int) -> UIColor {
     return UIColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: 1.0)
 }
@@ -208,10 +208,9 @@ public extension UIColor {
     
     /// Create a color from HEX with alpha.
     ///
-    /// - parameter hex:   HEX value.
-    /// - parameter alpha: Alpha value.
-    ///
-    /// - returns: Returns the UIColor instance.
+    /// - Parameters:
+    ///   - hex: HEX value.
+    ///   - alpha: Alpha value.
     public convenience init(hex: Int, alpha: CGFloat = 1.0) {
         self.init(red: CGFloat(((hex & 0xFF0000) >> 16)) / 255.0, green: CGFloat(((hex & 0xFF00) >> 8)) / 255.0, blue: CGFloat((hex & 0xFF)) / 255.0, alpha: alpha)
     }
@@ -223,10 +222,9 @@ public extension UIColor {
     /// - #RRGGBB.
     /// - #AARRGGBB, AARRGGBB if irstIsAlpha is true. #RRGGBBAA, RRGGBBAA if firstIsAlpha is false.
     ///
-    /// - parameter hexString:  HEX string.
-    /// - parameter alphaFirst: Set it to true if alpha value is the first in the HEX string. If alpha value is the last one, set it to false. Default is false.
-    ///
-    /// - returns: Returns the UIColor instance.
+    /// - Parameters:
+    ///   - hexString: HEX string.
+    ///   - alphaFirst: Set it to true if alpha value is the first in the HEX string. If alpha value is the last one, set it to false. Default is false.
     public convenience init(hex: String, alphaFirst: Bool = false) {
         let colorString: String = hex.replacingOccurrences(of: "#", with: "").uppercased()
         var alpha: CGFloat = 1.0, red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0
@@ -274,14 +272,14 @@ public extension UIColor {
     
     /// A good contrasting color, it will be either black or white.
     ///
-    /// - returns: Returns the color.
+    /// - Returns: Returns the color.
     public func contrasting() -> UIColor {
         return self.luminance > 0.5 ? UIColor.black : UIColor.white
     }
     
     /// A complementary color that should look good.
     ///
-    /// - returns: Returns the color.
+    /// - Returns: Returns the color.
     public func complementary() -> UIColor? {
         var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
         
@@ -299,7 +297,7 @@ public extension UIColor {
     
     /// Check if the color is in RGB format.
     ///
-    /// - returns: Returns if the color is in RGB format.
+    /// - Returns: Returns if the color is in RGB format.
     public func canProvideRGBComponents() -> Bool {
         guard let colorSpace = self.cgColor.colorSpace else {
             return false
@@ -314,11 +312,11 @@ public extension UIColor {
     
     /// Returns the color component from the string.
     ///
-    /// - parameter fromString: String to convert.
-    /// - parameter start:      Component start index.
-    /// - parameter lenght:     Component lenght.
-    ///
-    /// - returns: Returns the color component from the string.
+    /// - Parameters:
+    ///   - fromString: String to convert.
+    ///   - start: Component start index.
+    ///   - lenght: Component lenght.
+    /// - Returns: Returns the color component from the string.
     private static func colorComponent(fromString string: String, range: Range<Int>) -> CGFloat {
         let substring: String = string.substringWithRange(range)
         let fullHex = (range.upperBound - range.lowerBound) == 2 ? substring as String : "\(substring)\(substring)"
@@ -330,9 +328,8 @@ public extension UIColor {
     
     /// Create a random color.
     ///
-    /// - parameter alpha: Alpha value.
-    ///
-    /// - returns: Returns the UIColor instance.
+    /// - Parameter alpha: Alpha value.
+    /// - Returns: Returns the UIColor instance.
     public static func random(alpha: CGFloat = 1.0) -> UIColor {
         let red: UInt32 = arc4random_uniform(255)
         let green: UInt32 = arc4random_uniform(255)
@@ -343,9 +340,8 @@ public extension UIColor {
     
     /// Create an UIColor from a given string ("blue" or hex string).
     ///
-    /// - parameter color: String with color.
-    ///
-    /// - returns: Returns the created UIColor.
+    /// - Parameter color: String with color.
+    /// - Returns: Returns the created UIColor.
     public static func color(string color: String) -> UIColor {
         if color.length >= 3 {
             if UIColor.responds(to: Selector(color.lowercased() + "Color")) {
@@ -360,9 +356,7 @@ public extension UIColor {
     
     /// Create an UIColor from a given string like "blue" or an hex string.
     ///
-    /// - parameter color: String with color.
-    ///
-    /// - returns: Returns the created UIColor.
+    /// - Parameter color: String with color.
     public convenience init(string color: String) {
         if UIColor.responds(to: Selector(color.lowercased() + "Color")) {
             self.init(cgColor: UIColor.convertColor(string: color).cgColor)
@@ -373,9 +367,8 @@ public extension UIColor {
     
     /// Used the retrive the color from the string color ("blue" or "red").
     ///
-    /// - parameter color: String with the color.
-    ///
-    /// - returns: Returns the created UIColor.
+    /// - Parameter color: String with the color.
+    /// - Returns: Returns the created UIColor.
     private static func convertColor(string color: String) -> UIColor {
         switch color {
         case "black":
@@ -415,10 +408,10 @@ public extension UIColor {
     
     /// Creates and returns a color object that has the same color space and component values as the given color, but has the specified alpha component.
     ///
-    /// - parameter color: UIColor value.
-    /// - parameter alpha: Alpha value.
-    ///
-    /// - returns: Returns an UIColor instance.
+    /// - Parameters:
+    ///   - color: UIColor value.
+    ///   - alpha: Alpha value.
+    /// - Returns: Returns an UIColor instance.
     public static func color(color: UIColor, alpha: CGFloat) -> UIColor {
         return color.withAlphaComponent(alpha)
     }

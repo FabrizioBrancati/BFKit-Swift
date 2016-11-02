@@ -49,16 +49,15 @@ public struct List<Element: Equatable>: CustomStringConvertible {
     
     /// Delete an element at the given index.
     ///
-    /// - parameter index: The index to delete.
+    /// - Parameter index: The index to delete.
     public mutating func delete(at index: Int) {
         list.remove(at: index)
     }
     
     /// Delete an element in the List.
     ///
-    /// - parameter element: The object to be deleted.
-    ///
-    /// - returns: Retruns true if removed, otherwise false.
+    /// - Parameter element: The object to be deleted.
+    /// - Returns: Retruns true if removed, otherwise false.
     public mutating func delete(_ element: Element) -> Bool {
         guard let search = self.search(element) else {
             return false
@@ -70,25 +69,23 @@ public struct List<Element: Equatable>: CustomStringConvertible {
     
     /// Insert an element in the List.
     ///
-    /// - parameter element: The element to insert in the List.
+    /// - Parameter element: The element to insert in the List.
     public mutating func insert(_ element: Element) {
         list.append(element)
     }
     
     /// Search for an index and returns the element.
     ///
-    /// - parameter index: The index.
-    ///
-    /// - returns: Returns the element of the searched index.
+    /// - Parameter index: The index.
+    /// - Returns: Returns the element of the searched index.
     public func search(at index: Int) -> Element? {
         return list.safeObjectAtIndex(index)
     }
     
     /// Search an element and returns the index.
     ///
-    /// - parameter element: The element to search.
-    ///
-    /// - returns: Returns the index of the searched element.
+    /// - Parameter element: The element to search.
+    /// - Returns: Returns the index of the searched element.
     public func search(_ element: Element) -> Int? {
         for i in 0 ..< list.count {
             if list[i] == element {
@@ -123,7 +120,7 @@ public struct Queue<Element: Equatable>: CustomStringConvertible {
     
     /// Dequeue the first element.
     ///
-    /// - returns: Retruns true if removed, otherwise false.
+    /// - Returns: Retruns true if removed, otherwise false.
     public mutating func dequeue() -> Bool {
         if queue.count > 0 {
             queue.remove(at: 0)
@@ -140,14 +137,14 @@ public struct Queue<Element: Equatable>: CustomStringConvertible {
     
     /// Adds an element to the Queue.
     ///
-    /// - parameter element: The element to add.
+    /// - Parameter element: The element to add.
     public mutating func enqueue(_ element: Element) {
         queue.append(element)
     }
     
     /// Returns the Queue's top element.
     ///
-    /// - returns: Returns the Queue's top element.
+    /// - Returns: Returns the Queue's top element.
     public func top() -> Element? {
         return queue.first
     }
@@ -176,14 +173,14 @@ public struct Stack<Element: Equatable>: CustomStringConvertible {
     
     /// Returns if the Stack is empty or not.
     ///
-    /// - returns: Returns true if the Stack is empty, otherwise false.
+    /// - Returns: Returns true if the Stack is empty, otherwise false.
     public func empty() -> Bool {
         return stack.isEmpty
     }
     
     /// Removes an element on top of the Stack.
     ///
-    /// - returns: Returns the removed element.
+    /// - Returns: Returns the removed element.
     public mutating func pop() -> Element? {
         var element: Element? = nil
         if !self.empty() {
@@ -196,7 +193,7 @@ public struct Stack<Element: Equatable>: CustomStringConvertible {
     
     /// Adds an element on top of the Stack.
     ///
-    /// - parameter element: The element to add.
+    /// - Parameter element: The element to add.
     public mutating func push(_ element: Element) {
         stack.append(element)
     }

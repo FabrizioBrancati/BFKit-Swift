@@ -137,7 +137,7 @@ public extension Date {
     }
     
     /**
-     Private, return the date with time informations
+     Return the date with time informations
     
      - returns: Return the date with time informations
      */
@@ -149,7 +149,7 @@ public extension Date {
     }
     
     /**
-     Private, return the date with time informations
+     Return the date with time informations
     
      - returns: Return the date with time informations
      */

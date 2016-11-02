@@ -33,10 +33,11 @@ import UIKit
 ///
 /// See [here](http://stackoverflow.com/a/26891797/4032046) on how to set DEBUG build variable.
 ///
-/// - parameter message:  Console message.
-/// - parameter filename: File.
-/// - parameter function: Function name.
-/// - parameter line:     Line number.
+/// - Parameters:
+///   - message: Console message.
+///   - filename: File.
+///   - function: Function name.
+///   - line: Line number.
 public func BFLog(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
     #if DEBUG
         var _message = message
@@ -93,7 +94,7 @@ private struct BFLogInternal {
     
     // MARK: - Functions
     
-    /// Private, clear the log string.
+    /// Clear the log string.
     fileprivate static func clearLog() {
         logString = ""
         detailedLogString = ""

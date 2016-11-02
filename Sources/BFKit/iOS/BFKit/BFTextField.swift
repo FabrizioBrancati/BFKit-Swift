@@ -40,9 +40,9 @@ open class BFTextField: UITextField {
     
     /// Required init function.
     ///
-    /// - parameter aDecoder: NSCoder.
+    /// - Parameter aDecoder: NSCoder.
     ///
-    /// - returns: The initialized instance.
+    /// - Returns: The initialized instance.
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -52,7 +52,7 @@ open class BFTextField: UITextField {
     
     /// Encodes added variables.
     ///
-    /// - parameter aCoder: NSCoder.
+    /// - Parameter aCoder: NSCoder.
     open override func encode(with aCoder: NSCoder) {
         super.encode(with: aCoder)
         
@@ -61,9 +61,7 @@ open class BFTextField: UITextField {
     
     /// Override init with frame.
     ///
-    /// - parameter frame: TextField's frame.
-    ///
-    /// - returns: Returns the BFTextField instance.
+    /// - Parameter frame: TextField's frame.
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -75,7 +73,7 @@ open class BFTextField: UITextField {
     ///
     /// Called by observer.
     ///
-    /// - parameter notification: Notification object.
+    /// - Parameter notification: Notification object.
     @objc private func textFieldDidChange(_ notification: Notification) {
         if self.maxNumberOfCharacters != 0 && self.text!.length >= self.maxNumberOfCharacters {
             self.text = self.text?.substringToIndex(self.maxNumberOfCharacters)

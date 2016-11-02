@@ -35,12 +35,11 @@ public extension UIButton {
     
     /// Create an UIButton in a frame with a title, a background image and highlighted background image.
     ///
-    /// - parameter frame:                      Button's frame.
-    /// - parameter title:                      Button's title.
-    /// - parameter backgroundImage:            Button's background image.
-    /// - parameter highlightedBackgroundImage: Button's highlighted background image.
-    ///
-    /// - returns: Returns the UIButton instance.
+    /// - Paramters:
+    ///   - frame: Button's frame.
+    ///   - title: Button's title.
+    ///   - backgroundImage: Button's background image.
+    ///   - highlightedBackgroundImage: Button's highlighted background image.
     public convenience init(frame: CGRect, title: String, backgroundImage: UIImage? = nil, highlightedBackgroundImage: UIImage? = nil) {
         self.init(frame: frame)
         self.frame = frame
@@ -51,11 +50,10 @@ public extension UIButton {
     
     /// Create an UIButton in a frame with a title and a color.
     ///
-    /// - parameter frame: Button's frame.
-    /// - parameter title: Button's title.
-    /// - parameter color: Button's color, the highlighted color will be automatically created.
-    ///
-    /// - returns: Returns the UIButton instance.
+    /// - Parameters:
+    ///   - frame: Button's frame.
+    ///   - title: Button's title.
+    ///   - color: Button's color, the highlighted color will be automatically created.
     public convenience init(frame: CGRect, title: String, color: UIColor) {
         let components: UnsafePointer<CGFloat> = color.cgColor.__unsafeComponents!
         self.init(frame: frame, title: title, backgroundImage: UIImage(color: color), highlightedBackgroundImage: UIImage(color: UIColor(red: components[0] - 0.1, green: components[1] - 0.1, blue: components[2] - 0.1, alpha: 1)))
@@ -63,23 +61,21 @@ public extension UIButton {
     
     /// Create an UIButton in a frame with a title, a color and highlighted color.
     ///
-    /// - parameter frame:            Button's frame.
-    /// - parameter title:            Button's title.
-    /// - parameter color:            Button's color.
-    /// - parameter highlightedColor: Button's highlighted color.
-    ///
-    /// - returns: Returns the UIButton instance.
+    /// - Parameters:
+    ///   - frame: Button's frame.
+    ///   - title: Button's title.
+    ///   - color: Button's color.
+    ///   - highlightedColor: Button's highlighted color.
     public convenience init(frame: CGRect, title: String, color: UIColor, highlightedColor: UIColor) {
         self.init(frame: frame, title: title, backgroundImage: UIImage(color: color), highlightedBackgroundImage: UIImage(color: highlightedColor))
     }
     
     /// Create an UIButton in a frame with an image
     ///
-    /// - parameter frame:            Button's frame
-    /// - parameter image:            Button's image
-    /// - parameter highlightedImage: Button's highlighted image
-    ///
-    /// - returns: Returns the UIButton instance
+    /// - Parameters:
+    ///   - frame: Button's frame
+    ///   - image: Button's image
+    ///   - highlightedImage: Button's highlighted image
     public convenience init(frame: CGRect, image: UIImage, highlightedImage: UIImage? = nil) {
         self.init(frame: frame)
         self.frame = frame
@@ -89,23 +85,25 @@ public extension UIButton {
     
     /// Set the title font with a size.
     ///
-    /// - parameter fontName: Font name from the FontName enum declared in UIFont+BFKit.
-    /// - parameter size:     Font size.
+    /// - Parameters:
+    ///   - fontName: Font name from the FontName enum declared in UIFont+BFKit.
+    ///   - size:Font size.
     public func setTitleFont(_ fontName: FontName, size: CGFloat) {
         self.titleLabel!.font = UIFont(fontName: fontName, size: size)
     }
     
     /// Set the title color.
     ///
-    /// - parameter color: Font color, the highlighted color will be automatically created.
+    /// - Parameter color: Font color, the highlighted color will be automatically created.
     public func setTitleColor(_ color: UIColor) {
         self.setTitleColor(color, highlightedColor: color.withAlphaComponent(0.4))
     }
     
     /// Set the title color and highlighted color
     ///
-    /// - parameter color:            Button's color
-    /// - parameter highlightedColor: Button's highlighted color
+    /// - Parameters:
+    ///   - color: Button's color
+    ///   - highlightedColor: Button's highlighted color
     public func setTitleColor(_ color: UIColor, highlightedColor: UIColor) {
         self.setTitleColor(color, for: .normal)
         self.setTitleColor(highlightedColor, for: .highlighted)

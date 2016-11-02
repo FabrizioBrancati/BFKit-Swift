@@ -33,17 +33,16 @@ public extension Date {
     // MARK: - Functions
     
     /// Get weekday as a localized string from given weekday number:
-    /// - 1 - Sunday
-    /// - 2 - Monday
-    /// - 3 - Tuerday
-    /// - 4 - Wednesday
-    /// - 5 - Thursday
-    /// - 6 - Friday
-    /// - 7 - Saturday
+    /// - 1 - Sunday.
+    /// - 2 - Monday.
+    /// - 3 - Tuerday.
+    /// - 4 - Wednesday.
+    /// - 5 - Thursday.
+    /// - 6 - Friday.
+    /// - 7 - Saturday.
     ///
-    /// - parameter weekday: The weekday to be converted in string.
-    ///
-    /// - returns: Return weekday as a localized string.
+    /// - Parameter weekday: The weekday to be converted in string.
+    /// - Returns: Return weekday as a localized string.
     public static func localizedWeekday(weekday: Int) -> String {
         switch weekday {
         case 1:
@@ -66,22 +65,21 @@ public extension Date {
     }
     
     /// Get month as a localized string from given month number:
-    /// - 1 - January
-    /// - 2 - February
-    /// - 3 - March
-    /// - 4 - April
-    /// - 5 - May
-    /// - 6 - June
-    /// - 7 - July
-    /// - 8 - August
-    /// - 9 - September
-    /// - 10 - October
-    /// - 11 - November
-    /// - 12 - December
+    /// - 1 - January.
+    /// - 2 - February.
+    /// - 3 - March.
+    /// - 4 - April.
+    /// - 5 - May.
+    /// - 6 - June.
+    /// - 7 - July.
+    /// - 8 - August.
+    /// - 9 - September.
+    /// - 10 - October.
+    /// - 11 - November.
+    /// - 12 - December.
     ///
-    /// - parameter month: The month to be converted in string.
-    ///
-    /// - returns: Returns the given month as a localized string.
+    /// - Parameter month: The month to be converted in string.
+    /// - Returns: Returns the given month as a localized string.
     public static func localizedMonth(month: Int) -> String {
         switch month {
         case 1:
@@ -114,34 +112,34 @@ public extension Date {
     }
     
     /// Get weekday as a localized string from current weekday number:
-    /// - 1 - Sunday
-    /// - 2 - Monday
-    /// - 3 - Tuerday
-    /// - 4 - Wednesday
-    /// - 5 - Thursday
-    /// - 6 - Friday
-    /// - 7 - Saturday
+    /// - 1 - Sunday.
+    /// - 2 - Monday.
+    /// - 3 - Tuerday.
+    /// - 4 - Wednesday.
+    /// - 5 - Thursday.
+    /// - 6 - Friday.
+    /// - 7 - Saturday.
     ///
-    /// - returns: Return weekday as a localized string.
+    /// - Returns: Return weekday as a localized string.
     public func localizedWeekday() -> String {
         return Date.localizedWeekday(weekday: self.weekday)
     }
     
     /// Get month as a localized string from current month:
-    /// - 1 - January
-    /// - 2 - February
-    /// - 3 - March
-    /// - 4 - April
-    /// - 5 - May
-    /// - 6 - June
-    /// - 7 - July
-    /// - 8 - August
-    /// - 9 - September
-    /// - 10 - October
-    /// - 11 - November
-    /// - 12 - December
+    /// - 1 - January.
+    /// - 2 - February.
+    /// - 3 - March.
+    /// - 4 - April.
+    /// - 5 - May.
+    /// - 6 - June.
+    /// - 7 - July.
+    /// - 8 - August.
+    /// - 9 - September.
+    /// - 10 - October.
+    /// - 11 - November.
+    /// - 12 - December.
     ///
-    /// - returns: Returns the given month as a localized string.
+    /// - Returns: Returns the given month as a localized string.
     public func localizedMonth() -> String {
         return Date.localizedMonth(month: self.month)
     }
