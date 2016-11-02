@@ -26,6 +26,24 @@ class BFAppTests: XCTestCase {
         XCTAssert(NSLocalizedString("") == "")
     }
     
+    func testLightFont() {
+        BFApp.lightFont = UIFont(fontName: .Helvetica, size: 20)!
+        
+        XCTAssert(BFApp.lightFont.fontName == FontName.Helvetica.rawValue)
+    }
+    
+    func testRegularFont() {
+        BFApp.regularFont = UIFont(fontName: .Helvetica, size: 20)!
+        
+        XCTAssert(BFApp.regularFont.fontName == FontName.Helvetica.rawValue)
+    }
+    
+    func testBoldFont() {
+        BFApp.boldFont = UIFont(fontName: .Helvetica, size: 20)!
+        
+        XCTAssert(BFApp.boldFont.fontName == FontName.Helvetica.rawValue)
+    }
+    
     func testDebug() {
         BFApp.debug {
             XCTAssert(true)
