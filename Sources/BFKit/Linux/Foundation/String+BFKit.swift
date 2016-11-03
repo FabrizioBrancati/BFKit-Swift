@@ -250,7 +250,7 @@ public extension String {
      */
     public func stringByReplacingWithRegex(_ regexString: NSString, withString replacement: NSString) throws -> NSString {
         let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString as String, options: .caseInsensitive)
-        return regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range:NSMakeRange(0, self.length), withTemplate: "") as NSString
+        return regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: self.length), withTemplate: "") as NSString
     }
 
     /**
@@ -336,7 +336,7 @@ public extension String {
     public func isUUID() -> Bool {
         do {
             let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", options: .caseInsensitive)
-            let matches: Int = regex.numberOfMatches(in: self as String, options: .reportCompletion, range: NSMakeRange(0, self.length))
+            let matches: Int = regex.numberOfMatches(in: self as String, options: .reportCompletion, range: NSRange(location: 0, length: self.length))
             return matches == 1
         } catch {
             return false
@@ -351,7 +351,7 @@ public extension String {
     public func isUUIDForAPNS() -> Bool {
         do {
             let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{32}$", options: .caseInsensitive)
-            let matches: Int = regex.numberOfMatches(in: self as String, options: .reportCompletion, range: NSMakeRange(0, self.length))
+            let matches: Int = regex.numberOfMatches(in: self as String, options: .reportCompletion, range: NSRange(location: 0, length: self.length))
             return matches == 1
         } catch {
             return false

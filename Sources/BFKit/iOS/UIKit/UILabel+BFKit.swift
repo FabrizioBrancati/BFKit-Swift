@@ -77,8 +77,8 @@ public extension UILabel {
      */
     public func setFont(_ font: UIFont, fromIndex: Int, toIndex: Int) {
         let string = NSMutableAttributedString(string: self.text!)
-        string.addAttribute(NSFontAttributeName, value: font, range: NSMakeRange(fromIndex, toIndex - fromIndex))
+        string.addAttribute(NSFontAttributeName, value: font, range: NSRange(location: fromIndex, length: toIndex - fromIndex))
         
-        self.attributedText = string;
+        self.attributedText = string
     }
 }

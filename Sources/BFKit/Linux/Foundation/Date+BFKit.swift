@@ -389,10 +389,10 @@ public extension Date {
 
 // MARK: - Operators -
 
-public func >(left: Date, right: Date) -> Bool {
+public func > (left: Date, right: Date) -> Bool {
     return left.isGreaterThanDate(right)
 }
 
-public func <(left: Date, right: Date) -> Bool {
+public func < (left: Date, right: Date) -> Bool {
     return left.isLessThanDate(right)
 }

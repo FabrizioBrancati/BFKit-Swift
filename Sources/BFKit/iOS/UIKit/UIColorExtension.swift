@@ -60,8 +60,8 @@ public func ARGB( _ alpha: Float, _ red: Int, _ green: Int, _ blue: Int) -> UICo
 ///   - green: Green value.
 ///   - blue: Blue value.
 /// - Returns: Returns the created UIColor.
-public func RGB(_ r: Int, _ g: Int, _ b: Int) -> UIColor {
-    return UIColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: 1.0)
+public func RGB(_ red: Int, _ green: Int, _ blue: Int) -> UIColor {
+    return UIColor(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
 }
 
 // MARK: - UIColor extension
@@ -191,14 +191,14 @@ public extension UIColor {
     /// Returns the HEX string from UIColor.
     public var hex: String {
         get {
-            var red:CGFloat = 0
-            var green:CGFloat = 0
-            var blue:CGFloat = 0
-            var alpha:CGFloat = 0
+            var red: CGFloat = 0
+            var green: CGFloat = 0
+            var blue: CGFloat = 0
+            var alpha: CGFloat = 0
             
             getRed(&red, green: &green, blue: &blue, alpha: &alpha)
             
-            let rgb:Int = (Int)(red * 255) << 16 | (Int)(green * 255) << 8 | (Int)(blue * 255) << 0
+            let rgb: Int = (Int)(red * 255) << 16 | (Int)(green * 255) << 8 | (Int)(blue * 255) << 0
             
             return String(format:"#%06x", rgb)
         }

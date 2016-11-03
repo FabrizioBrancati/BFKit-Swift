@@ -41,7 +41,7 @@ public struct BFPassword {
     /// - veryStrong: Password strength very strong.
     /// - secure:     Password strength secure.
     /// - verySecure: Password strength very secure.
-    public enum PasswordStrengthLevel : Int {
+    public enum PasswordStrengthLevel: Int {
         case veryWeak
         case weak
         case average

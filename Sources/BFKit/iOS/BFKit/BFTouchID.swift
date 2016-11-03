@@ -48,7 +48,7 @@ public struct BFTouchID {
     /// - lockout:              Touch ID Lockout.
     /// - appCancel:            App Cancel.
     /// - invalidContext:       Invalid Context.
-    public enum TouchIDResult : Int {
+    public enum TouchIDResult: Int {
         case success
         case authenticationFailed
         case userCancel
@@ -121,14 +121,12 @@ public struct BFTouchID {
         } else {
             if #available(iOS 9.0, *) {
                 switch error! {
-                case LAError.authenticationFailed:
-                    completion(.authenticationFailed)
-                case LAError.userCancel:
-                    completion(.userCancel)
-                case LAError.userFallback:
-                    completion(.userFallback)
-                case LAError.systemCancel:
-                    completion(.systemCancel)
+                case LAError.passcodeNotSet:
+                    completion(.passcodeNotSet)
+                case LAError.touchIDNotAvailable:
+                    completion(.notAvailable)
+                case LAError.touchIDNotEnrolled:
+                    completion(.notEnrolled)
                 case LAError.touchIDLockout:
                     completion(.lockout)
                 case LAError.appCancel:
@@ -139,12 +137,12 @@ public struct BFTouchID {
                     completion(.error)
                 }
             } else {
-                switch error!.code {
-                case LAError.passcodeNotSet.rawValue:
+                switch error! {
+                case LAError.passcodeNotSet:
                     completion(.passcodeNotSet)
-                case LAError.touchIDNotAvailable.rawValue:
+                case LAError.touchIDNotAvailable:
                     completion(.notAvailable)
-                case LAError.touchIDNotEnrolled.rawValue:
+                case LAError.touchIDNotEnrolled:
                     completion(.notEnrolled)
                 default:
                     completion(.error)

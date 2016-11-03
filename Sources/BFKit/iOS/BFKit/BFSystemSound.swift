@@ -159,7 +159,7 @@ public class BFSystemSound {
     /// - RingerVibeChanged:         Ringer Vibe Changed.
     /// - SilentVibeChanged:         Silent Vibe Changed.
     /// - Vibrate:                   Vibrate.
-    public enum AudioID : UInt32 {
+    public enum AudioID: UInt32 {
         case newMail = 1000
         case mailSent = 1001
         case voiceMail = 1002

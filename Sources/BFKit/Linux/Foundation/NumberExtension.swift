@@ -70,12 +70,10 @@ public func randomIntBetweenMin(_ minValue: Int, andMax maxValue: Int) -> Int {
  
  - returns: Returns the created random integer
  */
-public func randomInt(_ range: Range<Int>) -> Int
-{
+public func randomInt(_ range: Range<Int>) -> Int {
     var offset = 0
     
-    if range.lowerBound < 0
-    {
+    if range.lowerBound < 0 {
         offset = abs(range.lowerBound)
     }
     
@@ -132,7 +130,7 @@ public func isPowerOfTwo(_ number: Int) -> Bool {
     return (number != 0) && (number & (number - 1) >= 1 ? true : false)
 }
 
-public func ~(left: CGFloat, right: Double) -> Bool {
+public func ~ (left: CGFloat, right: Double) -> Bool {
     return round(Double(left)) == right
 }
 

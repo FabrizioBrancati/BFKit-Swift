@@ -40,7 +40,7 @@ public extension UIView {
      - FromRight:  Flip animation from right
      - FromBottom: Flip animation from bottom
      */
-    public enum UIViewAnimationFlipDirection : Int {
+    public enum UIViewAnimationFlipDirection: Int {
         case fromTop
         case fromLeft
         case fromRight
@@ -53,7 +53,7 @@ public extension UIView {
      - FromLeftToRight: Translation from left to right
      - FromRightToLeft: Translation from right to left
      */
-    public enum UIViewAnimationTranslationDirection : Int {
+    public enum UIViewAnimationTranslationDirection: Int {
         case fromLeftToRight
         case fromRightToLeft
     }
@@ -68,7 +68,7 @@ public extension UIView {
      - DiagonalFromRightToLeftAndTopToDown: Linear gradient from right to left and top to down
      - DiagonalFromRightToLeftAndDownToTop: Linear gradient from right to left and down to top
      */
-    public enum UIViewLinearGradientDirection : Int {
+    public enum UIViewLinearGradientDirection: Int {
         case vertical
         case horizontal
         case diagonalFromLeftToRightAndTopToDown
@@ -312,7 +312,7 @@ public extension UIView {
     public func flipWithDuration(_ duration: TimeInterval, direction: UIViewAnimationFlipDirection) {
         var subtype: String = ""
         
-        switch(direction) {
+        switch direction {
         case .fromTop:
             subtype = "fromTop"
         case .fromLeft:
@@ -347,7 +347,7 @@ public extension UIView {
      */
     public func translateAroundTheView(_ topView: UIView, duration: CGFloat, direction: UIViewAnimationTranslationDirection, repeatAnimation: Bool = true, startFromEdge: Bool = true) {
         var startPosition: CGFloat = self.center.x, endPosition: CGFloat
-        switch(direction) {
+        switch direction {
         case .fromLeftToRight:
             startPosition = self.frame.size.width / 2
             endPosition = -(self.frame.size.width / 2) + topView.frame.size.width

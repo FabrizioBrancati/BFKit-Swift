@@ -38,7 +38,7 @@ public extension FileManager {
      - Documents:  Documents directory
      - Cache:      Cache directory
      */
-    public enum DirectoryType : Int {
+    public enum DirectoryType: Int {
         case mainBundle
         case library
         case documents
