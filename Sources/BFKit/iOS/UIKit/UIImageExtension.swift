@@ -1,5 +1,5 @@
 //
-//  UIImage+BFKit.swift
+//  UIImageExtension.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -30,20 +30,137 @@ import CoreImage
 import CoreGraphics
 import Accelerate
 
-/// Due to a bug in Xcode (typecasting Fails only inside the extension block) I created this alias of CIImage
-typealias BFCIImage = CIImage
+// MARK: UIImage extension
 
-/// This extesion adds some useful functions to UIImage
+/// This extesion adds some useful functions to UIImage.
 public extension UIImage {
-    // MARK: - Instance functions -
+    // MARK: - Functions
     
-    /**
-     Apply the given Blend Mode
+    /// Create a dummy image.
+    ///
+    /// - Parameter dummy: This parameter must contain: "100x100", "100x100.#FFFFFF" or "100x100.blue" (if it's a color defined in UIColor class) if you want to define a color.
+    public convenience init?(dummyImage dummy: String) {
+        var size: CGSize = CGSize.zero, color: UIColor = UIColor.lightGray
+        
+        let array: Array = dummy.components(separatedBy: ".")
+        if !array.isEmpty {
+            let sizeString: String = array[0]
+            
+            if array.count >= 1 {
+                color = UIColor.color(string: array[1])
+            }
+            
+            size = UIImage.size(sizeString: sizeString)
+        }
+        
+        UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
+        let context: CGContext = UIGraphicsGetCurrentContext()!
+        
+        let rect: CGRect = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
+        
+        color.setFill()
+        context.fill(rect)
+        
+        let sizeString: String = "\(Int(size.width)) x \(Int(size.height))"
+        let style: NSMutableParagraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
+        style.alignment = .center
+        style.minimumLineHeight = size.height / 2
+        let attributes: Dictionary = [NSParagraphStyleAttributeName : style]
+        sizeString.draw(in: rect, withAttributes:attributes)
+        
+        let result: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        
+        UIGraphicsEndImageContext()
+        
+        self.init(cgImage: result.cgImage!)
+    }
+
+    /// Create an image from a given text.
+    ///
+    /// - Parameters:
+    ///   - text: Text.
+    ///   - font: Text's font name.
+    ///   - fontSize: Text's font size.
+    ///   - imageSize: Image's size.
+    public convenience init?(text: String, font: FontName, fontSize: CGFloat, imageSize: CGSize) {
+        UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.main.scale)
+        
+        text.draw(at: CGPoint(x: 0.0, y: 0.0), withAttributes: [NSFontAttributeName : UIFont(fontName: font, size:fontSize)!])
+        
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        
+        UIGraphicsEndImageContext()
+        
+        self.init(cgImage: image.cgImage!)
+    }
     
-     - parameter blendMode: The choosed Blend Mode
+    /// Create an image with a background color and with a text with a mask.
+    ///
+    /// - Parameters:
+    ///   - maskedText: Text to mask.
+    ///   - font: Text's font name.
+    ///   - fontSize: Text's font size.
+    ///   - imageSize: Image's size.
+    ///   - backgroundColor: Image's background color.
+    public convenience init?(maskedText: String, font: FontName, fontSize: CGFloat, imageSize: CGSize, backgroundColor: UIColor) {
+        let fontName: UIFont = UIFont(fontName: font, size: fontSize)!
+        let textAttributes = [NSFontAttributeName : fontName]
+        
+        let textSize: CGSize = maskedText.size(attributes: textAttributes)
+        
+        UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.main.scale)
+        let ctx: CGContext = UIGraphicsGetCurrentContext()!
+        
+        ctx.setFillColor(backgroundColor.cgColor)
+        
+        let path: UIBezierPath = UIBezierPath(rect: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
+        ctx.addPath(path.cgPath)
+        ctx.fillPath()
+        
+        ctx.setBlendMode(.destinationOut)
+        let center: CGPoint = CGPoint(x: imageSize.width / 2 - textSize.width / 2, y: imageSize.height / 2 - textSize.height / 2)
+        maskedText.draw(at: center, withAttributes: textAttributes)
+        
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        
+        UIGraphicsEndImageContext()
+        
+        self.init(cgImage: image.cgImage!)
+    }
     
-     - returns: Returns the image
-     */
+    /// Create an image from a given color.
+    ///
+    /// - Parameter color: Color value.
+    public convenience init?(color: UIColor) {
+        let rect: CGRect = CGRect(x: 0, y: 0, width: 1, height: 1)
+        UIGraphicsBeginImageContext(rect.size)
+        let context: CGContext = UIGraphicsGetCurrentContext()!
+        context.setFillColor(color.cgColor)
+        
+        context.fill(rect)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        self.init(cgImage: image.cgImage!)
+    }
+    
+    /// Create a CGSize with a given string (100x100).
+    ///
+    /// - Parameter sizeString: String with the size.
+    /// - Returns: Returns the created CGSize.
+    private static func size(sizeString: String) -> CGSize {
+        let array: Array = sizeString.components(separatedBy: "x")
+        if array.count < 3 {
+            return CGSize.zero
+        }
+        
+        return CGSize(width: CGFloat(array[0].floatValue), height: CGFloat(array[1].floatValue))
+    }
+    
+    /// Apply the given Blend Mode.
+    ///
+    /// - Parameter blendMode: Blend Mode.
+    /// - Returns: Returns the image.
     public func blendMode(_ blendMode: CGBlendMode) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: self.size.width, height: self.size.height), false, UIScreen.main.scale)
         self.draw(in: CGRect(x: 0.0, y: 0.0, width: self.size.width, height: self.size.height), blendMode: blendMode, alpha: 1)
@@ -53,37 +170,29 @@ public extension UIImage {
         return image
     }
     
-    /**
-     Apply the Blend Mode Overlay
-    
-     - returns: Returns the image
-     */
+    /// Apply the Blend Mode Overlay.
+    ///
+    /// - Returns: Returns the image.
     public func blendOverlay() -> UIImage {
         return self.blendMode(.overlay)
     }
     
-    /**
-     Create an image from a given rect of self
-    
-     - parameter rect: Rect to take the image
-    
-     - returns: Returns the image from a given rect
-     */
-    public func imageAtRect(_ rect: CGRect) -> UIImage {
+    /// Create an image from a given rect of self.
+    ///
+    /// - Parameter rect:  Rect to take the image.
+    /// - Returns: Returns the image from a given rect.
+    public func image(rect: CGRect) -> UIImage {
         let imageRef: CGImage = self.cgImage!.cropping(to: rect)!
         let subImage: UIImage = UIImage(cgImage: imageRef)
         
         return subImage
     }
     
-    /**
-     Scale the image to the minimum given size
-    
-     - parameter targetSize: The site to scale to
-    
-     - returns: Returns the scaled image
-     */
-    public func imageByScalingProportionallyToMinimumSize(_ targetSize: CGSize) -> UIImage? {
+    /// Scale the image to the minimum given size.
+    ///
+    /// - Parameter targetSize: The size to scale to.
+    /// - Returns: Returns the scaled image.
+    public func scaleProportionally(toMinimumSize targetSize: CGSize) -> UIImage? {
         let sourceImage: UIImage = self
         var newImage: UIImage? = nil
         let newTargetSize: CGSize = targetSize
@@ -132,21 +241,14 @@ public extension UIImage {
         newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        if newImage == nil {
-            BFLog("Could not scale image")
-        }
-        
         return newImage
     }
     
-    /**
-     Scale the image to the maxinum given size
-    
-     - parameter targetSize: The site to scale to
-    
-     - returns: Returns the scaled image
-     */
-    public func imageByScalingProportionallyToMaximumSize(_ targetSize: CGSize) -> UIImage {
+    /// Scale the image to the maxinum given size.
+    ///
+    /// - Parameter targetSize: The site to scale to.
+    /// - Returns: Returns the scaled image.
+    public func scaleProportionally(toMaximumSize targetSize: CGSize) -> UIImage {
         let newTargetSize: CGSize = targetSize
         
         if (self.size.width > newTargetSize.width || newTargetSize.width == newTargetSize.height) && self.size.width > self.size.height {
@@ -184,14 +286,11 @@ public extension UIImage {
         return returnImage
     }
     
-    /**
-     Scale the image proportionally to the given size
-    
-     - parameter targetSize: The site to scale to
-    
-     - returns: Returns the scaled image
-     */
-    public func imageByScalingProportionallyToSize(_ targetSize: CGSize) -> UIImage? {
+    /// Scale the image proportionally to the given size.
+    ///
+    /// - Parameter targetSize: The site to scale to.
+    /// - Returns: Returns the scaled image.
+    public func scaleProportionally(toSize targetSize: CGSize) -> UIImage? {
         let sourceImage: UIImage = self
         var newImage: UIImage? = nil
         let newTargetSize: CGSize = targetSize
@@ -241,21 +340,14 @@ public extension UIImage {
         newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        if newImage == nil {
-            BFLog("Could not scale image")
-        }
-        
         return newImage
     }
     
-    /**
-     Scele the iamge to the given size
-    
-     - parameter targetSize: The site to scale to
-    
-     - returns: Returns the scaled image
-     */
-    public func imageByScalingToSize(_ targetSize: CGSize) -> UIImage? {
+    /// Scele the image to the given size.
+    ///
+    /// - Parameter targetSize: The site to scale to.
+    /// - Returns: Returns the scaled image.
+    public func scale(toSize targetSize: CGSize) -> UIImage? {
         let sourceImage: UIImage = self
         var newImage: UIImage? = nil
         
@@ -279,32 +371,22 @@ public extension UIImage {
         newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        if newImage == nil {
-            BFLog("Could not scale image")
-        }
-        
         return newImage
     }
     
-    /**
-     Rotate the image to the given radians
-    
-     - parameter radians: Radians to rotate to
-    
-     - returns: Returns the rotated image
-     */
-    public func imageRotatedByRadians(_ radians: CGFloat) -> UIImage {
-        return self.imageRotatedByDegrees(CGFloat(radiansToDegrees(Float(radians))))
+    /// Rotate the image to the given radians.
+    ///
+    /// - Parameter radians: Radians to rotate to
+    /// - Returns: Returns the rotated image.
+    public func rotate(radians: CGFloat) -> UIImage {
+        return self.rotate(degrees: CGFloat(radiansToDegrees(Float(radians))))
     }
     
-    /**
-     Rotate the image to the given degrees
-    
-     - parameter degrees: Degrees to rotate to
-    
-     - returns: Returns the rotated image
-     */
-    public func imageRotatedByDegrees(_ degrees: CGFloat) -> UIImage {
+    /// Rotate the image to the given degrees.
+    ///
+    /// - Parameter degrees: Degrees to rotate to.
+    /// - Returns: Returns the rotated image.
+    public func rotate(degrees: CGFloat) -> UIImage {
         let rotatedViewBox: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
         let t: CGAffineTransform = CGAffineTransform(rotationAngle: CGFloat(degreesToRadians(Float(degrees))))
         rotatedViewBox.transform = t
@@ -326,41 +408,33 @@ public extension UIImage {
         return newImage
     }
     
-    /**
-     Flip the image horizontally
-     
-     - returns: Returns the flipped image
-     */
-    public func flipImageHorizontally() -> UIImage {
+    /// Flip the image horizontally.
+    ///
+    /// - Returns: Returns the flipped image.
+    public func flipHorizontally() -> UIImage {
         return UIImage(cgImage: self.cgImage!, scale: self.scale, orientation: .upMirrored)
     }
     
-    /**
-     Flip the image vertically
-     
-     - returns: Returns the flipped image
-     */
-    public func flipImageVertically() -> UIImage {
+    /// Flip the image vertically.
+    ///
+    /// - Returns: Returns the flipped image.
+    public func flipVertically() -> UIImage {
         return UIImage(cgImage: self.cgImage!, scale: self.scale, orientation: .leftMirrored)
     }
     
-    /**
-     Check if the image has alpha
-    
-     - returns: Returns true if has alpha, false if not
-     */
+    /// Check if the image has alpha.
+    ///
+    /// - Returns: Returns true if has alpha, otherwise false.
     public func hasAlpha() -> Bool {
         let alpha: CGImageAlphaInfo = self.cgImage!.alphaInfo
         return (alpha == .first || alpha == .last || alpha == .premultipliedFirst || alpha == .premultipliedLast)
     }
     
-    /**
-     Remove the alpha of the image
-    
-     - returns: Returns the image without alpha
-     */
-    public func removeAlpha() -> UIImage{
-        if !self.hasAlpha() {
+    /// Remove the alpha of the image.
+    ///
+    /// - Returns: Returns the image without alpha.
+    public func removeAlpha() -> UIImage {
+        guard self.hasAlpha() else {
             return self
         }
         
@@ -374,23 +448,13 @@ public extension UIImage {
         return returnImage
     }
     
-    /**
-     Fill the alpha with the white color
-    
-     - returns: Returns the filled image
-     */
-    public func fillAlpha() -> UIImage {
-        return self.fillAlphaWithColor(UIColor.white)
-    }
-    
-    /**
-     Fill the alpha with the given color
-    
-     - parameter color: Color to fill
-    
-     - returns: Returns the filled image
-     */
-    public func fillAlphaWithColor(_ color: UIColor) -> UIImage {
+    /// Fill the alpha with the given color.
+    ///
+    /// Default is white.
+    ///
+    /// - Parameter color: Color to fill.
+    /// - Returns: Returns the filled image.
+    public func fillAlpha(color: UIColor = UIColor.white) -> UIImage {
         let imageRect: CGRect = CGRect(origin: CGPoint.zero, size: self.size)
         
         let cgColor: CGColor = color.cgColor
@@ -407,28 +471,20 @@ public extension UIImage {
         return returnImage
     }
     
-    /**
-     Check if the image is in grayscale
-    
-     - returns: Returns true if is in grayscale, false if not
-     */
+    /// Check if the image is in grayscale.
+    ///
+    /// - Returns: Returns true if is in grayscale, false if not.
     public func isGrayscale() -> Bool {
         let imgRef: CGImage = self.cgImage!
-        let clrMod: CGColorSpaceModel = imgRef.colorSpace!.model
+        let model: CGColorSpaceModel = imgRef.colorSpace!.model
         
-        if clrMod == CGColorSpaceModel.monochrome {
-            return true
-        } else {
-            return false
-        }
+        return model == CGColorSpaceModel.monochrome
     }
     
-    /**
-     Transform the image to grayscale
-    
-     - returns: Returns the transformed image
-     */
-    public func imageToGrayscale() -> UIImage {
+    /// Transform the image to grayscale.
+    ///
+    /// - Returns: Returns the transformed image.
+    public func toGrayscale() -> UIImage {
         let rect: CGRect = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
         
         let colorSpace: CGColorSpace = CGColorSpaceCreateDeviceGray()
@@ -441,12 +497,10 @@ public extension UIImage {
         return returnImage
     }
     
-    /**
-     Transform the image to black and white
-    
-     - returns: Returns the transformed image
-     */
-    public func imageToBlackAndWhite() -> UIImage {
+    /// Transform the image to black and white.
+    ///
+    /// - Returns: Returns the transformed image.
+    public func toBlackAndWhite() -> UIImage {
         let colorSpace: CGColorSpace = CGColorSpaceCreateDeviceGray()
         let context: CGContext = CGContext(data: nil, width: Int(self.size.width), height: Int(self.size.height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: .allZeros)!
         context.interpolationQuality = .high
@@ -460,11 +514,9 @@ public extension UIImage {
         return returnImage
     }
     
-    /**
-     Invert the color of the image
-    
-     - returns: Returns the transformed image
-     */
+    /// Invert the color of the image.
+    ///
+    /// - Returns: Returns the transformed image.
     public func invertColors() -> UIImage {
         UIGraphicsBeginImageContextWithOptions(self.size, false, UIScreen.main.scale)
         UIGraphicsGetCurrentContext()?.setBlendMode(.copy)
@@ -491,7 +543,7 @@ public extension UIImage {
         let context: CIContext = CIContext(options: nil)
         let filter: CIFilter = CIFilter(name: "CIBloom")!
         
-        let ciimage: BFCIImage = BFCIImage(image: self)!
+        let ciimage: CIImage = CIImage(image: self)!
         
         filter.setValue(ciimage, forKey: kCIInputImageKey)
         filter.setValue(radius, forKey: kCIInputRadiusKey)
@@ -515,7 +567,7 @@ public extension UIImage {
         let context: CIContext = CIContext(options: nil)
         let filter: CIFilter = CIFilter(name: "CIBumpDistortion")!
         
-        let ciimage: BFCIImage = BFCIImage(image: self)!
+        let ciimage: CIImage = CIImage(image: self)!
         
         filter.setValue(ciimage, forKey: kCIInputImageKey)
         filter.setValue(center, forKey: kCIInputCenterKey)
@@ -541,7 +593,7 @@ public extension UIImage {
         let context: CIContext = CIContext(options: nil)
         let filter: CIFilter = CIFilter(name: "CIBumpDistortionLinear")!
         
-        let ciimage: BFCIImage = BFCIImage(image: self)!
+        let ciimage: CIImage = CIImage(image: self)!
         
         filter.setValue(ciimage, forKey: kCIInputImageKey)
         filter.setValue(center, forKey: kCIInputCenterKey)
@@ -566,7 +618,7 @@ public extension UIImage {
         let context: CIContext = CIContext(options: nil)
         let filter: CIFilter = CIFilter(name: "CICircleSplashDistortion")!
         
-        let ciimage: BFCIImage = BFCIImage(image: self)!
+        let ciimage: CIImage = CIImage(image: self)!
         
         filter.setValue(ciimage, forKey: kCIInputImageKey)
         filter.setValue(center, forKey: kCIInputCenterKey)
@@ -590,7 +642,7 @@ public extension UIImage {
         let context: CIContext = CIContext(options: nil)
         let filter: CIFilter = CIFilter(name: "CICircularWrap")!
         
-        let ciimage: BFCIImage = BFCIImage(image: self)!
+        let ciimage: CIImage = CIImage(image: self)!
         
         filter.setValue(ciimage, forKey: kCIInputImageKey)
         filter.setValue(center, forKey: kCIInputCenterKey)
@@ -618,7 +670,7 @@ public extension UIImage {
         let context: CIContext = CIContext(options: nil)
         let filter: CIFilter = CIFilter(name: "CICMYKHalftone")!
         
-        let ciimage: BFCIImage = BFCIImage(image: self)!
+        let ciimage: CIImage = CIImage(image: self)!
         
         filter.setValue(ciimage, forKey: kCIInputImageKey)
         filter.setValue(center, forKey: kCIInputCenterKey)
@@ -644,7 +696,7 @@ public extension UIImage {
         let context: CIContext = CIContext(options: nil)
         let filter: CIFilter = CIFilter(name: "CISepiaTone")!
         
-        let ciimage: BFCIImage = BFCIImage(image: self)!
+        let ciimage: CIImage = CIImage(image: self)!
         
         filter.setValue(ciimage, forKey: kCIInputImageKey)
         filter.setValue(intensity, forKey: kCIInputIntensityKey)
@@ -773,147 +825,5 @@ public extension UIImage {
         UIGraphicsEndImageContext()
         
         return outputImage
-    }
-    
-    // MARK: - Class functions -
-    
-    /**
-     Create a CGSize with a given string (100x100)
-    
-     - parameter sizeString: String with the size
-    
-     - returns: Returns the created CGSize
-     */
-    private static func sizeForSizeString(_ sizeString: String) -> CGSize {
-        let array: Array = sizeString.components(separatedBy: "x")
-        if array.count != 2 {
-            return CGSize.zero
-        }
-        
-        return CGSize(width: CGFloat(array[0].floatValue), height: CGFloat(array[1].floatValue))
-    }
-    
-    // MARK: - Init functions -
-    
-    /**
-     Create a dummy image
-    
-     - parameter dummy: To use it, name parameter must contain: "dummy.100x100" and "dummy.100x100.#FFFFFF" or "dummy.100x100.blue" (if it's a color defined in UIColor class) if you want to define a color
-    
-     - returns: Returns the created dummy image
-     */
-    public convenience init?(dummyImageWithSizeAndColor dummy: String) {
-        var size: CGSize = CGSize.zero, color: UIColor = UIColor.lightGray
-        
-        let array: Array = dummy.components(separatedBy: ".")
-        if array.count > 0 {
-            let sizeString: String = array[0]
-            
-            if array.count >= 2 {
-                color = UIColor.color(string: array[1])
-            }
-            
-            size = UIImage.sizeForSizeString(sizeString)
-        }
-        
-        UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
-        let context: CGContext = UIGraphicsGetCurrentContext()!
-        
-        let rect: CGRect = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
-        
-        color.setFill()
-        context.fill(rect)
-        
-        let sizeString: String = "\(Int(size.width)) x \(Int(size.height))"
-        let style: NSMutableParagraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
-        style.alignment = .center
-        style.minimumLineHeight = size.height / 2
-        let attributes: Dictionary = [NSParagraphStyleAttributeName : style]
-        sizeString.draw(in: rect, withAttributes:attributes)
-        
-        let result: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        
-        UIGraphicsEndImageContext()
-        
-        self.init(cgImage: result.cgImage!)
-    }
-    
-    /**
-     Create an image from a given text
-    
-     - parameter text:      Text
-     - parameter font:      Text's font name
-     - parameter fontSize:  Text's font size
-     - parameter imageSize: Image's size
-    
-     - returns: Returns the created UIImage
-     */
-    public convenience init?(fromText text: String, font: FontName, fontSize: CGFloat, imageSize: CGSize) {
-        UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.main.scale)
-        
-        text.draw(at: CGPoint(x: 0.0, y: 0.0), withAttributes: [NSFontAttributeName : UIFont(fontName: font, size:fontSize)!])
-        
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        
-        UIGraphicsEndImageContext()
-        
-        self.init(cgImage: image.cgImage!)
-    }
-    
-    /**
-     Create an image with a background color and with a text with a mask
-    
-     - parameter maskedText:      Text to mask
-     - parameter font:            Text's font name
-     - parameter fontSize:        Text's font size
-     - parameter imageSize:       Image's size
-     - parameter backgroundColor: Image's background color
-    
-     - returns: Returns the created UIImage
-     */
-    public convenience init?(maskedText: String, font: FontName, fontSize: CGFloat, imageSize: CGSize, backgroundColor: UIColor) {
-        let fontName: UIFont = UIFont(fontName: font, size: fontSize)!
-        let textAttributes = [NSFontAttributeName : fontName]
-        
-        let textSize: CGSize = maskedText.size(attributes: textAttributes)
-        
-        UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.main.scale)
-        let ctx: CGContext = UIGraphicsGetCurrentContext()!
-        
-        ctx.setFillColor(backgroundColor.cgColor)
-        
-        let path: UIBezierPath = UIBezierPath(rect: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
-        ctx.addPath(path.cgPath)
-        ctx.fillPath()
-        
-        ctx.setBlendMode(.destinationOut)
-        let center: CGPoint = CGPoint(x: imageSize.width / 2 - textSize.width / 2, y: imageSize.height / 2 - textSize.height / 2)
-        maskedText.draw(at: center, withAttributes: textAttributes)
-        
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        
-        UIGraphicsEndImageContext()
-        
-        self.init(cgImage: image.cgImage!)
-    }
-    
-    /**
-     Create an image from a given color
-    
-     - parameter color: Color value
-    
-     - returns: Returns the created UIImage
-     */
-    public convenience init?(color: UIColor) {
-        let rect: CGRect = CGRect(x: 0, y: 0, width: 1, height: 1)
-        UIGraphicsBeginImageContext(rect.size)
-        let context: CGContext = UIGraphicsGetCurrentContext()!
-        context.setFillColor(color.cgColor)
-        
-        context.fill(rect)
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        
-        self.init(cgImage: image.cgImage!)
     }
 }

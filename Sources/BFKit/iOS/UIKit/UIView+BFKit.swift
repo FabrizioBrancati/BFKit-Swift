@@ -434,7 +434,7 @@ public extension UIView {
 }
 
 
-// MARK: - UIView extension
+// MARK: - UIView inspectable extension
 
 /// Extends UIView with inspectable variables.
 extension UIView {

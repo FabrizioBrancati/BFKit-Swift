@@ -28,11 +28,13 @@ All notable changes to this project will be documented in this file.<br>
 ### XX XXX 2016
 #### Added
 - Added Swift 3.0 support
-- Added full Unit Tests
+- Added Full Unit Tests
 - Adopt the new [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)
-- Use of Swiftlint
+- Use of [Swiftlint](https://github.com/realm/SwiftLint)
 - Builds on Linux (Only Foundation Extensions)
-- Builds on macOS / tvOS and watchOS
+- Added French localization [#20](https://github.com/FabrizioBrancati/BFKit/pull/20
+
+Thanks to [@the0neyouseek](https://github.com/the0neyouseek) for this release
 
 
 ## [1.8.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.8.0)

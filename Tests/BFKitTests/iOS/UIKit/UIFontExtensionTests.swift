@@ -38,7 +38,7 @@ class UIFontExtensionTests: XCTestCase {
     }
     
     func testCalculateHeightWidthFontSizeText() {
-        let height = UIFont.calculateHeight(width: 320, font: .Helvetica, size: 12, text: "This is a test\nOn multiple\nLines.\n\nBye.")
+        let height = UIFont.calculateHeight(width: 320, font: .Helvetica, fontSize: 12, text: "This is a test\nOn multiple\nLines.\n\nBye.")
         
         XCTAssert(height > 0)
     }
@@ -46,6 +46,6 @@ class UIFontExtensionTests: XCTestCase {
     func testFontsNameFamily() {
         let fonts = UIFont.fontsName(family: .Helvetica)
         
-        XCTAssertFalse(fonts.count == 6)
+        XCTAssertFalse(fonts.isEmpty)
     }
 }
