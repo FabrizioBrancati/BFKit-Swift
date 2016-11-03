@@ -338,7 +338,7 @@ public extension UIColor {
         return UIColor(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: alpha)
     }
     
-    /// Create an UIColor from a given string ("blue" or hex string).
+    /// Create an UIColor from a given string. Example: "blue" or hex string.
     ///
     /// - Parameter color: String with color.
     /// - Returns: Returns the created UIColor.

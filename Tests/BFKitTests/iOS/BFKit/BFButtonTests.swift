@@ -10,7 +10,7 @@ import XCTest
 @testable import BFKit
 
 class BFButtonTests: XCTestCase {
-    var button: BFButton = BFButton(frame: CGRect(x: 0, y: 0, width: 100, height: 44), image: UIImage(color: #colorLiteral(red: 0.8862745166, green: 0.2039215714, blue: 0, alpha: 1))!, highlightedImage: UIImage(color: #colorLiteral(red: 0.8862745166, green: 0.2039215714, blue: 0, alpha: 1))!, fadeDuration: 1)
+    var button: BFButton = BFButton(frame: CGRect(x: 0, y: 0, width: 100, height: 44), image: UIImage(color: UIColor.red)!, highlightedImage: UIImage(color: UIColor.red)!, fadeDuration: 1)
     
     override func setUp() {
         super.setUp()
@@ -29,7 +29,7 @@ class BFButtonTests: XCTestCase {
     }
     
     func testOverlayImageView() {
-        button.overlayImageView = UIImageView(image: UIImage(color: #colorLiteral(red: 0.8862745166, green: 0.2039215714, blue: 0, alpha: 1)))
+        button.overlayImageView = UIImageView(image: UIImage(color: UIColor.red))
         
         XCTAssert(button.overlayImageView.image != nil)
     }

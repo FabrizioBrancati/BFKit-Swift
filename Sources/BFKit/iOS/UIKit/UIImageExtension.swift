@@ -38,7 +38,7 @@ public extension UIImage {
     
     /// Create a dummy image.
     ///
-    /// - Parameter dummy: This parameter must contain: "100x100", "100x100.#FFFFFF" or "100x100.blue" (if it's a color defined in UIColor class) if you want to define a color.
+    /// - Parameter dummy: This parameter must contain: "100x100", "100x100.#FFFFFF" or "100x100.blue" (if it's a color defined in UIColor class) if you want to define a color. Default color is lightGray.
     public convenience init?(dummyImage dummy: String) {
         var size: CGSize = CGSize.zero, color: UIColor = UIColor.lightGray
         
@@ -46,20 +46,19 @@ public extension UIImage {
         if !array.isEmpty {
             let sizeString: String = array[0]
             
-            if array.count >= 1 {
+            if array.count > 1 {
                 color = UIColor.color(string: array[1])
             }
             
             size = UIImage.size(sizeString: sizeString)
         }
         
-        UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
-        let context: CGContext = UIGraphicsGetCurrentContext()!
+        UIGraphicsBeginImageContextWithOptions(size, true, UIScreen.main.scale)
         
-        let rect: CGRect = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
+        let rect: CGRect = CGRect(origin: .zero, size: size)
         
         color.setFill()
-        context.fill(rect)
+        UIRectFill(rect)
         
         let sizeString: String = "\(Int(size.width)) x \(Int(size.height))"
         let style: NSMutableParagraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
@@ -68,11 +67,35 @@ public extension UIImage {
         let attributes: Dictionary = [NSParagraphStyleAttributeName : style]
         sizeString.draw(in: rect, withAttributes:attributes)
         
-        let result: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        
-        UIGraphicsEndImageContext()
-        
-        self.init(cgImage: result.cgImage!)
+        if let result = UIGraphicsGetImageFromCurrentImageContext() {
+            UIGraphicsEndImageContext()
+            
+            self.init(cgImage: result.cgImage!, scale: UIScreen.main.scale, orientation: .up)
+        } else {
+            UIGraphicsEndImageContext()
+            
+            self.init(color: color)
+        }
+    }
+    
+    /// Create a dummy image.
+    ///
+    /// - Parameters:
+    ///   - width: Width of dummy image.
+    ///   - height: Height of dummy image.
+    ///   - color: Color of dummy image. Can be HEX or color like "blue". Default color is lightGray.
+    public convenience init?(width: CGFloat, height: CGFloat, color: String = "lightGray") {
+        self.init(dummyImage: "\(Int(width))x\(Int(height)).\(color)")
+    }
+    
+    
+    /// Create a dummy image.
+    ///
+    /// - Parameters
+    ///   - size: Size of dummy image.
+    ///   - color: Color of dummy image. Can be HEX or color like "blue". Default color is lightGray.
+    public convenience init?(size: CGSize, color: String = "lightGray") {
+        self.init(width: size.height, height: size.width, color: color)
     }
     
     /// Create an image from a given text.
@@ -87,11 +110,13 @@ public extension UIImage {
         
         text.draw(at: CGPoint(x: 0.0, y: 0.0), withAttributes: [NSFontAttributeName : UIFont(fontName: font, size:fontSize)!])
         
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        guard let image: UIImage = UIGraphicsGetImageFromCurrentImageContext() else {
+            return nil
+        }
         
         UIGraphicsEndImageContext()
         
-        self.init(cgImage: image.cgImage!)
+        self.init(cgImage: image.cgImage!, scale: UIScreen.main.scale, orientation: .up)
     }
     
     /// Create an image with a background color and with a text with a mask.
@@ -109,7 +134,9 @@ public extension UIImage {
         let textSize: CGSize = maskedText.size(attributes: textAttributes)
         
         UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.main.scale)
-        let ctx: CGContext = UIGraphicsGetCurrentContext()!
+        guard let ctx: CGContext = UIGraphicsGetCurrentContext() else {
+            return nil
+        }
         
         ctx.setFillColor(backgroundColor.cgColor)
         
@@ -121,27 +148,31 @@ public extension UIImage {
         let center: CGPoint = CGPoint(x: imageSize.width / 2 - textSize.width / 2, y: imageSize.height / 2 - textSize.height / 2)
         maskedText.draw(at: center, withAttributes: textAttributes)
         
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        guard let image: UIImage = UIGraphicsGetImageFromCurrentImageContext() else {
+            return nil
+        }
         
         UIGraphicsEndImageContext()
         
-        self.init(cgImage: image.cgImage!)
+        self.init(cgImage: image.cgImage!, scale: UIScreen.main.scale, orientation: .up)
     }
     
     /// Create an image from a given color.
     ///
     /// - Parameter color: Color value.
     public convenience init?(color: UIColor) {
-        let rect: CGRect = CGRect(x: 0, y: 0, width: 1, height: 1)
+        let rect: CGRect = CGRect(x: 0, y: 0, width: 1 * UIScreen.main.scale, height: 1 * UIScreen.main.scale)
         UIGraphicsBeginImageContext(rect.size)
-        let context: CGContext = UIGraphicsGetCurrentContext()!
-        context.setFillColor(color.cgColor)
         
-        context.fill(rect)
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        color.setFill()
+        UIRectFill(rect)
+        
+        guard let image: UIImage = UIGraphicsGetImageFromCurrentImageContext() else {
+            return nil
+        }
         UIGraphicsEndImageContext()
         
-        self.init(cgImage: image.cgImage!)
+        self.init(cgImage: image.cgImage!, scale: UIScreen.main.scale, orientation: .up)
     }
     
     /// Create a CGSize with a given string (100x100).
@@ -150,7 +181,7 @@ public extension UIImage {
     /// - Returns: Returns the created CGSize.
     private static func size(sizeString: String) -> CGSize {
         let array: Array = sizeString.components(separatedBy: "x")
-        if array.count < 3 {
+        guard array.count >= 2 else {
             return CGSize.zero
         }
         
@@ -159,31 +190,39 @@ public extension UIImage {
     
     /// Apply the given Blend Mode.
     ///
-    /// - Parameter blendMode: Blend Mode.
+    /// - Parameters:
+    ///   - image: Image to be added to blend.
+    ///   - blendMode: Blend Mode.
     /// - Returns: Returns the image.
-    public func blendMode(_ blendMode: CGBlendMode) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: self.size.width, height: self.size.height), false, UIScreen.main.scale)
-        self.draw(in: CGRect(x: 0.0, y: 0.0, width: self.size.width, height: self.size.height), blendMode: blendMode, alpha: 1)
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+    public func blend(image: UIImage, blendMode: CGBlendMode) -> UIImage {
+        let rect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
+        
+        UIGraphicsBeginImageContextWithOptions(self.size, true, 0)
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return self
+        }
+        
+        context.setFillColor(UIColor.white.cgColor)
+        context.fill(rect)
+        
+        self.draw(in: rect, blendMode: .normal, alpha: 1)
+        image.draw(in: rect, blendMode: blendMode, alpha: 1)
+        
+        guard let result = UIGraphicsGetImageFromCurrentImageContext() else {
+            return self
+        }
         UIGraphicsEndImageContext()
         
-        return image
-    }
-    
-    /// Apply the Blend Mode Overlay.
-    ///
-    /// - Returns: Returns the image.
-    public func blendOverlay() -> UIImage {
-        return self.blendMode(.overlay)
+        return result
     }
     
     /// Create an image from a given rect of self.
     ///
     /// - Parameter rect:  Rect to take the image.
     /// - Returns: Returns the image from a given rect.
-    public func image(rect: CGRect) -> UIImage {
-        let imageRef: CGImage = self.cgImage!.cropping(to: rect)!
-        let subImage: UIImage = UIImage(cgImage: imageRef)
+    public func crop(in rect: CGRect) -> UIImage {
+        let imageRef: CGImage = self.cgImage!.cropping(to: CGRect(x: rect.origin.x * self.scale, y: rect.origin.y * self.scale, width: rect.size.width * self.scale, height: rect.size.height * self.scale))!
+        let subImage: UIImage = UIImage(cgImage: imageRef, scale: self.scale, orientation: self.imageOrientation)
         
         return subImage
     }
@@ -192,9 +231,8 @@ public extension UIImage {
     ///
     /// - Parameter targetSize: The size to scale to.
     /// - Returns: Returns the scaled image.
-    public func scaleProportionally(toMinimumSize targetSize: CGSize) -> UIImage? {
+    public func scaleProportionally(toMinimumSize targetSize: CGSize) -> UIImage {
         let sourceImage: UIImage = self
-        var newImage: UIImage? = nil
         let newTargetSize: CGSize = targetSize
         
         let imageSize: CGSize = sourceImage.size
@@ -214,11 +252,7 @@ public extension UIImage {
             let widthFactor: CGFloat = targetWidth / width
             let heightFactor: CGFloat = targetHeight / height
             
-            if widthFactor > heightFactor {
-                scaleFactor = widthFactor
-            } else {
-                scaleFactor = heightFactor
-            }
+            scaleFactor = widthFactor > heightFactor ? widthFactor : heightFactor
             
             scaledWidth = width * scaleFactor
             scaledHeight = height * scaleFactor
@@ -238,7 +272,9 @@ public extension UIImage {
         
         sourceImage.draw(in: thumbnailRect)
         
-        newImage = UIGraphicsGetImageFromCurrentImageContext()
+        guard let newImage = UIGraphicsGetImageFromCurrentImageContext() else {
+            return self
+        }
         UIGraphicsEndImageContext()
         
         return newImage
