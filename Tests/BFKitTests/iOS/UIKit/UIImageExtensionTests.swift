@@ -125,4 +125,241 @@ class UIImageExtensionTests: XCTestCase {
         XCTAssert(image.size.width == 100)
         XCTAssert(image.size.height == 50)
     }
+    
+    func testScaleProportionallyToSize() {
+        guard var image = UIImage(dummyImage: "200x100") else {
+            XCTAssert(false)
+            return
+        }
+        
+        image = image.scale(toSize: CGSize(width: 50, height: 50))
+        
+        XCTAssert(image.size.width == 50)
+        XCTAssert(image.size.height == 50)
+    }
+    
+    func testRotateRadians() {
+        guard var image = UIImage(dummyImage: "200x100") else {
+            XCTAssert(false)
+            return
+        }
+        
+        image = image.rotate(radians: Float(M_PI_2))
+        
+        XCTAssert(image.size.width == 100)
+        XCTAssert(image.size.height == 200)
+    }
+    
+    func testRotateDegrees() {
+        guard var image = UIImage(dummyImage: "200x100") else {
+            XCTAssert(false)
+            return
+        }
+        
+        image = image.rotate(degrees: 90)
+        
+        XCTAssert(image.size.width == 100)
+        XCTAssert(image.size.height == 200)
+    }
+    
+    func testFlipHorizontally() {
+        guard var image = UIImage(dummyImage: "200x100") else {
+            XCTAssert(false)
+            return
+        }
+        
+        image = image.flipHorizontally()
+        
+        XCTAssert(image.size.width == 200)
+        XCTAssert(image.size.height == 100)
+    }
+    
+    func testFlipVertically() {
+        guard var image = UIImage(dummyImage: "200x100") else {
+            XCTAssert(false)
+            return
+        }
+        
+        image = image.flipVertically()
+        
+        XCTAssert(image.size.width == 200)
+        XCTAssert(image.size.height == 100)
+    }
+    
+    func testHasAlpha() {
+        guard let image = UIImage(dummyImage: "200x100") else {
+            XCTAssert(false)
+            return
+        }
+        
+        XCTAssertFalse(image.hasAlpha())
+    }
+    
+    func testRemoveAlpha() {
+        guard var image = UIImage(dummyImage: "200x100") else {
+            XCTAssert(false)
+            return
+        }
+        
+        image = image.removeAlpha()
+        
+        XCTAssert(image.size.width == 200)
+        XCTAssert(image.size.height == 100)
+    }
+    
+    func testFillAlphaColor() {
+        guard var image = UIImage(dummyImage: "200x100") else {
+            XCTAssert(false)
+            return
+        }
+        
+        image = image.fillAlpha(color: UIColor.red)
+        
+        XCTAssert(image.size.width == 200)
+        XCTAssert(image.size.height == 100)
+    }
+    
+    func testToGrayscale() {
+        guard var image = UIImage(dummyImage: "200x100") else {
+            XCTAssert(false)
+            return
+        }
+        
+        image = image.toGrayscale()
+        
+        XCTAssert(image.size.width == 200)
+        XCTAssert(image.size.height == 100)
+    }
+    
+    func testToBlackAndWhite() {
+        guard var image = UIImage(dummyImage: "200x100") else {
+            XCTAssert(false)
+            return
+        }
+        
+        image = image.toBlackAndWhite()
+        
+        XCTAssert(image.size.width == 200)
+        XCTAssert(image.size.height == 100)
+    }
+    
+    func testInvertColors() {
+        guard var image = UIImage(dummyImage: "200x100") else {
+            XCTAssert(false)
+            return
+        }
+        
+        image = image.invertColors()
+        
+        XCTAssert(image.size.width == 200)
+        XCTAssert(image.size.height == 100)
+    }
+    
+    func testFilterNameParameters() {
+        guard var image = UIImage(dummyImage: "200x100") else {
+            XCTAssert(false)
+            return
+        }
+        
+        image = image.filter(name: "CIColorInvert", parameters: [:])
+        
+        XCTAssert(image.size.width == 200)
+        XCTAssert(image.size.height == 100)
+    }
+    
+    func testBloomRadiusIntensity() {
+        guard var image = UIImage(dummyImage: "200x100") else {
+            XCTAssert(false)
+            return
+        }
+        
+        image = image.bloom(radius: 1, intensity: 1)
+        
+        XCTAssert(image.size.width == 200)
+        XCTAssert(image.size.height == 100)
+    }
+    
+    func testBumpDistortionCenterRadiusScale() {
+        guard var image = UIImage(dummyImage: "200x100") else {
+            XCTAssert(false)
+            return
+        }
+        
+        image = image.bumpDistortion(center: CIVector(x: 50, y: 50), radius: 1, scale: 1)
+        
+        XCTAssert(image.size.width == 200)
+        XCTAssert(image.size.height == 100)
+    }
+    
+    func testBumpDistortionLinearCenterRadiusScaleAngle() {
+        guard var image = UIImage(dummyImage: "200x100") else {
+            XCTAssert(false)
+            return
+        }
+        
+        image = image.bumpDistortionLinear(center: CIVector(x: 50, y: 50), radius: 1, scale: 1, angle: 0)
+        
+        XCTAssert(image.size.width == 200)
+        XCTAssert(image.size.height == 100)
+    }
+    
+    func testCirleSplashDistortionCenterRadius() {
+        guard var image = UIImage(dummyImage: "200x100") else {
+            XCTAssert(false)
+            return
+        }
+        
+        image = image.circleSplashDistortion(center: CIVector(x: 50, y: 50), radius: 1)
+        
+        XCTAssert(image.size.width == 200)
+        XCTAssert(image.size.height == 100)
+    }
+    
+    func testCircularWrapCenterRadiusAngle() {
+        guard var image = UIImage(dummyImage: "200x100") else {
+            XCTAssert(false)
+            return
+        }
+        
+        image = image.circularWrap(center: CIVector(x: 50, y: 50), radius: 1, angle: 0)
+        
+        XCTAssert(image.size.width == 200)
+        XCTAssert(image.size.height == 100)
+    }
+    
+    func testCMYKHalftoneCenterWidthAngleSharpnessGCRUCR() {
+        guard var image = UIImage(dummyImage: "200x100") else {
+            XCTAssert(false)
+            return
+        }
+        
+        image = image.cmykHalftone(center: CIVector(x: 50, y: 50), width: 100, angle: 0, sharpness: 1, gcr: 1, ucr: 1)
+        
+        XCTAssert(image.size.width == 200)
+        XCTAssert(image.size.height == 100)
+    }
+    
+    func testSepiaToneIntensity() {
+        guard var image = UIImage(dummyImage: "200x100") else {
+            XCTAssert(false)
+            return
+        }
+        
+        image = image.sepiaTone(intensity: 1)
+        
+        XCTAssert(image.size.width == 200)
+        XCTAssert(image.size.height == 100)
+    }
+    
+    func testBlurRadiusTintColorSaturationMaskImage() {
+        guard var image = UIImage(dummyImage: "200x100") else {
+            XCTAssert(false)
+            return
+        }
+        
+        image = image.blur(radius: 4, saturation: 2)
+        
+        XCTAssert(image.size.width == 200)
+        XCTAssert(image.size.height == 100)
+    }
 }

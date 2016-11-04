@@ -30,9 +30,14 @@ import Foundation
 public extension String {
     // MARK: - Variables -
 
-    /// Return the float value
+    /// Returns the Float value
     public var floatValue: Float {
         return (self as NSString).floatValue
+    }
+    
+    /// Returns the Int value
+    public var intValue: Int {
+        return Int((self as NSString).intValue)
     }
 
     // MARK: - Instance functions -
