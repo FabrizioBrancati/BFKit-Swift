@@ -30,7 +30,7 @@ import CoreImage
 import CoreGraphics
 import Accelerate
 
-// MARK: UIImage extension
+// MARK: - UIImage extension
 
 /// This extesion adds some useful functions to UIImage.
 public extension UIImage {
@@ -633,6 +633,7 @@ public extension UIImage {
     
     
     /// Apply a filter to the image.
+    /// Full list of CIFilters [here](https://developer.apple.com/library/prerelease/content/documentation/GraphicsImaging/Reference/CoreImageFilterReference/).
     ///
     /// - Parameters:
     ///   - name: Filter name.
