@@ -1,5 +1,5 @@
 //
-//  UIScreen+BFKit.swift
+//  UIScreenExtension.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -27,55 +27,44 @@
 import Foundation
 import UIKit
 
-// MARK: - Global variables -
-
-/// Get the screen width
-public var SCREEN_WIDTH: CGFloat {
-    get {
-        return UIScreen.main.fixedScreenSize().width
-    }
-}
-
-/// Get the screen height
-public var SCREEN_HEIGHT: CGFloat {
-    get {
-        return UIScreen.main.fixedScreenSize().height
-    }
-}
-
-/// Get the maximum screen length
-public var SCREEN_MAX_LENGTH: CGFloat {
-    get {
-        return max(SCREEN_WIDTH, SCREEN_HEIGHT)
-    }
-}
-/// Get the minimum screen length
-public var SCREEN_MIN_LENGTH: CGFloat {
-    get {
-        return min(SCREEN_WIDTH, SCREEN_HEIGHT)
-    }
-}
-
-/**
- *  A structure of Bool to check the screen size
- */
-public struct SCREENSIZE {
-    public static let IS_IPHONE_4_OR_LESS = UIDevice.current.userInterfaceIdiom == .phone && SCREEN_MAX_LENGTH < 568.0
-    public static let IS_IPHONE_5 = UIDevice.current.userInterfaceIdiom == .phone && SCREEN_MAX_LENGTH == 568.0
-    public static let IS_IPHONE_6 = UIDevice.current.userInterfaceIdiom == .phone && SCREEN_MAX_LENGTH == 667.0
-    public static let IS_IPHONE_6P = UIDevice.current.userInterfaceIdiom == .phone && SCREEN_MAX_LENGTH == 736.0
-    public static let IS_IPAD = UIDevice.current.userInterfaceIdiom == .pad && SCREEN_MAX_LENGTH == 1024.0
-}
+// MARK: - UIScreen extension
 
 /// This extesion adds some useful functions to UIScreen
 public extension UIScreen {
-    // MARK: - Class functions -
+    // MARK: - Variables
     
-    /**
-     Check if the current device has a Retina display
+    /// Get the screen width
+    public var screenWidth: CGFloat {
+        get {
+            return UIScreen.main.fixedScreenSize().width
+        }
+    }
     
-     - returns: Returns true if it has a Retina display, false if not
-     */
+    /// Get the screen height
+    public var screenHeight: CGFloat {
+        get {
+            return UIScreen.main.fixedScreenSize().height
+        }
+    }
+    
+    /// Get the maximum screen length
+    public var maxScreenLength: CGFloat {
+        get {
+            return max(screenWidth, screenHeight)
+        }
+    }
+    /// Get the minimum screen length
+    public var minScreenLength: CGFloat {
+        get {
+            return min(screenWidth, screenHeight)
+        }
+    }
+    
+    // MARK: - Functions
+    
+    /// Check if current device has a Retina display.
+    ///
+    /// - Returns: Returns true if it has a Retina display, otherwise false.
     public static func isRetina() -> Bool {
         if UIScreen.main.responds(to: #selector(UIScreen.displayLink(withTarget:selector:))) && (UIScreen.main.scale == 2.0 || UIScreen.main.scale == 3.0) {
             return true
@@ -84,11 +73,9 @@ public extension UIScreen {
         }
     }
     
-    /**
-     Check if the current device has a Retina HD display
-    
-     - returns: Returns true if it has a Retina HD display, false if not
-     */
+    /// Check if current device has a Retina HD display.
+    ///
+    /// - Returns: Returns true if it has a Retina HD display, otherwise false.
     public static func isRetinaHD() -> Bool {
         if UIScreen.main.responds(to: #selector(UIScreen.displayLink(withTarget:selector:))) && UIScreen.main.scale == 3.0 {
             return true
@@ -97,13 +84,9 @@ public extension UIScreen {
         }
     }
     
-    // MARK: - Instance functions -
-    
-    /**
-     Returns the fixed screen size, based on device orientation
-    
-     - returns: Returns a GCSize with the fixed screen size
-     */
+    /// Returns fixed screen size, based on device orientation.
+    ///
+    /// - Returns: Returns a GCSize with the fixed screen size.
     public func fixedScreenSize() -> CGSize {
         let screenSize = self.bounds.size
         

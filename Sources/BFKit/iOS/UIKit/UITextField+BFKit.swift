@@ -75,7 +75,7 @@ public extension UITextField {
      Paste the pasteboard text to UITextField
      */
     public func pasteFromPasteboard() {
-        self.text = UIPasteboard.stringFromPasteboard()
+        self.text = UIPasteboard.getString()
     }
     
     /**
@@ -86,6 +86,6 @@ public extension UITextField {
             return
         }
         
-        UIPasteboard.copyToPasteboard(textToCopy)
+        UIPasteboard.copy(text: textToCopy)
     }
 }

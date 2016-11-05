@@ -79,7 +79,7 @@ public extension UITextView {
      Paste the pasteboard text to UITextField
      */
     public func pasteFromPasteboard() {
-        self.text = UIPasteboard.stringFromPasteboard()
+        self.text = UIPasteboard.getString()
     }
     
     /**
@@ -90,6 +90,6 @@ public extension UITextView {
             return
         }
         
-        UIPasteboard.copyToPasteboard(textToCopy)
+        UIPasteboard.copy(text: textToCopy)
     }
 }

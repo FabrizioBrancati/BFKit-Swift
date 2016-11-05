@@ -1,5 +1,5 @@
 //
-//  UINavigationBar+BFKit.swift
+//  UIPasteboardExtension.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -27,25 +27,27 @@
 import Foundation
 import UIKit
 
-/// This extesion adds some useful functions to UINavigationBar
-public extension UINavigationBar {
-    // MARK: - Instance functions -
+// MARK: - UIPasteboard extension
+
+/// This extesion adds some useful functions to UIPasteboard.
+public extension UIPasteboard {
+    // MARK: - Functions
     
-    /**
-     Set the UINavigationBar to transparent or not
+    /// Copy a text to the pasteboard.
+    ///
+    /// - Parameter text: The text to be copy to.
+    public static func copy(text: String) {
+        UIPasteboard.general.string = text
+    }
     
-     - parameter transparent: true to set it transparent, false to not
-     - parameter translucent: A Boolean value indicating whether the navigation bar is translucent or not
-     */
-    public func setTransparent(_ transparent: Bool, translucent: Bool = true) {
-        if transparent {
-            self.setBackgroundImage(UIImage(), for: .default)
-            self.shadowImage = UIImage()
-            self.isTranslucent = translucent
-        } else {
-            self.setBackgroundImage(nil, for: .default)
-            self.shadowImage = nil
-            self.isTranslucent = translucent
+    /// Returns the last copied string from pasteboard.
+    ///
+    /// - Returns: Returns the last copied string from pasteboard.
+    public static func getString() -> String {
+        guard let pasteboard = UIPasteboard.general.string else {
+            return ""
         }
+        
+        return pasteboard
     }
 }
