@@ -106,7 +106,7 @@ public extension UIImage {
     public convenience init?(text: String, font: FontName, fontSize: CGFloat, imageSize: CGSize) {
         UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.main.scale)
         
-        text.draw(at: CGPoint(x: 0.0, y: 0.0), withAttributes: [NSFontAttributeName : UIFont(fontName: font, size:fontSize)!])
+        text.draw(at: CGPoint(x: 0.0, y: 0.0), withAttributes: [NSFontAttributeName : UIFont(fontName: font, size:fontSize)])
         
         guard let image: UIImage = UIGraphicsGetImageFromCurrentImageContext() else {
             UIGraphicsEndImageContext()
@@ -127,7 +127,7 @@ public extension UIImage {
     ///   - imageSize: Image's size.
     ///   - backgroundColor: Image's background color.
     public convenience init?(maskedText: String, font: FontName, fontSize: CGFloat, imageSize: CGSize, backgroundColor: UIColor) {
-        let fontName: UIFont = UIFont(fontName: font, size: fontSize)!
+        let fontName: UIFont = UIFont(fontName: font, size: fontSize)
         let textAttributes = [NSFontAttributeName : fontName]
         
         let textSize: CGSize = maskedText.size(attributes: textAttributes)

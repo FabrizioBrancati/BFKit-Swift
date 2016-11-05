@@ -27,19 +27,19 @@ class BFAppTests: XCTestCase {
     }
     
     func testLightFont() {
-        BFApp.lightFont = UIFont(fontName: .Helvetica, size: 20)!
+        BFApp.lightFont = UIFont(fontName: .Helvetica, size: 20)
         
         XCTAssert(BFApp.lightFont.fontName == FontName.Helvetica.rawValue)
     }
     
     func testRegularFont() {
-        BFApp.regularFont = UIFont(fontName: .Helvetica, size: 20)!
+        BFApp.regularFont = UIFont(fontName: .Helvetica, size: 20)
         
         XCTAssert(BFApp.regularFont.fontName == FontName.Helvetica.rawValue)
     }
     
     func testBoldFont() {
-        BFApp.boldFont = UIFont(fontName: .Helvetica, size: 20)!
+        BFApp.boldFont = UIFont(fontName: .Helvetica, size: 20)
         
         XCTAssert(BFApp.boldFont.fontName == FontName.Helvetica.rawValue)
     }

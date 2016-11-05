@@ -64,17 +64,17 @@ open class BFApp {
     /// Static light font to use in App.
     ///
     /// Default is HelveticaNeueLight of size 12.
-    public static var lightFont: UIFont = UIFont(fontName: .HelveticaNeueLight, size: 12)!
+    public static var lightFont: UIFont = UIFont(fontName: .HelveticaNeueLight, size: 12)
     
     /// Static regular font to use in App.
     ///
     /// Default is HelveticaNeue of size 12.
-    public static var regularFont: UIFont = UIFont(fontName: .HelveticaNeue, size: 12)!
+    public static var regularFont: UIFont = UIFont(fontName: .HelveticaNeue, size: 12)
     
     /// Static bold font to use in App.
     ///
     /// Default is HelveticaNeueBold of size 12.
-    public static var boldFont: UIFont = UIFont(fontName: .HelveticaNeueBold, size: 12)!
+    public static var boldFont: UIFont = UIFont(fontName: .HelveticaNeueBold, size: 12)
     
     // MARK: - Functions
     

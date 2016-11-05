@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4920BB811DCE630B00A3FBA9 /* UILabelExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920BB801DCE630B00A3FBA9 /* UILabelExtensionTests.swift */; };
 		4971864C1D2339040032A98E /* BFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 497186411D2339040032A98E /* BFKit.framework */; };
 		497186A21D2339210032A98E /* BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 497186651D2339210032A98E /* BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		497186C71D2339210032A98E /* BFKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4971868E1D2339210032A98E /* BFKit.strings */; };
@@ -31,7 +32,7 @@
 		49F0DC731DBD15AC00C9AE18 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC601DBD15AC00C9AE18 /* UIFontExtension.swift */; };
 		49F0DC741DBD15AC00C9AE18 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC611DBD15AC00C9AE18 /* UIImageExtension.swift */; };
 		49F0DC751DBD15AC00C9AE18 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC621DBD15AC00C9AE18 /* UIImageViewExtension.swift */; };
-		49F0DC761DBD15AC00C9AE18 /* UILabel+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC631DBD15AC00C9AE18 /* UILabel+BFKit.swift */; };
+		49F0DC761DBD15AC00C9AE18 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC631DBD15AC00C9AE18 /* UILabelExtension.swift */; };
 		49F0DC771DBD15AC00C9AE18 /* UINavigationBar+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC641DBD15AC00C9AE18 /* UINavigationBar+BFKit.swift */; };
 		49F0DC781DBD15AC00C9AE18 /* UIPasteboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC651DBD15AC00C9AE18 /* UIPasteboard.swift */; };
 		49F0DC791DBD15AC00C9AE18 /* UIScreen+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC661DBD15AC00C9AE18 /* UIScreen+BFKit.swift */; };
@@ -83,6 +84,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4920BB801DCE630B00A3FBA9 /* UILabelExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtensionTests.swift; sourceTree = "<group>"; };
 		49582C6C1DC1617C0039C213 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/BFKit.strings; sourceTree = "<group>"; };
 		497186411D2339040032A98E /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4971864B1D2339040032A98E /* BFKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BFKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +122,7 @@
 		49F0DC601DBD15AC00C9AE18 /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		49F0DC611DBD15AC00C9AE18 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		49F0DC621DBD15AC00C9AE18 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
-		49F0DC631DBD15AC00C9AE18 /* UILabel+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+BFKit.swift"; sourceTree = "<group>"; };
+		49F0DC631DBD15AC00C9AE18 /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		49F0DC641DBD15AC00C9AE18 /* UINavigationBar+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+BFKit.swift"; sourceTree = "<group>"; };
 		49F0DC651DBD15AC00C9AE18 /* UIPasteboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPasteboard.swift; sourceTree = "<group>"; };
 		49F0DC661DBD15AC00C9AE18 /* UIScreen+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+BFKit.swift"; sourceTree = "<group>"; };
@@ -268,7 +270,7 @@
 				49F0DC601DBD15AC00C9AE18 /* UIFontExtension.swift */,
 				49F0DC611DBD15AC00C9AE18 /* UIImageExtension.swift */,
 				49F0DC621DBD15AC00C9AE18 /* UIImageViewExtension.swift */,
-				49F0DC631DBD15AC00C9AE18 /* UILabel+BFKit.swift */,
+				49F0DC631DBD15AC00C9AE18 /* UILabelExtension.swift */,
 				49F0DC641DBD15AC00C9AE18 /* UINavigationBar+BFKit.swift */,
 				49F0DC651DBD15AC00C9AE18 /* UIPasteboard.swift */,
 				49F0DC661DBD15AC00C9AE18 /* UIScreen+BFKit.swift */,
@@ -343,6 +345,7 @@
 				498432111DC952C20013A2D9 /* UIFontExtensionTests.swift */,
 				498432131DCA67130013A2D9 /* UIImageExtensionTests.swift */,
 				49D144F01DCD4EB700675367 /* UIImageViewExtensionTests.swift */,
+				4920BB801DCE630B00A3FBA9 /* UILabelExtensionTests.swift */,
 			);
 			name = UIKit;
 			path = Tests/BFKitTests/iOS/UIKit;
@@ -528,7 +531,7 @@
 				49F0DC5A1DBD159D00C9AE18 /* BFDataStructures.swift in Sources */,
 				49F0DC9C1DBD15B400C9AE18 /* NSObject+BFKit.swift in Sources */,
 				49F0DC7A1DBD15AC00C9AE18 /* UIScrollView+BFKit.swift in Sources */,
-				49F0DC761DBD15AC00C9AE18 /* UILabel+BFKit.swift in Sources */,
+				49F0DC761DBD15AC00C9AE18 /* UILabelExtension.swift in Sources */,
 				49F0DC7D1DBD15AC00C9AE18 /* UITextView+BFKit.swift in Sources */,
 				49F0DC981DBD15B400C9AE18 /* NSDictionary+BFKit.swift in Sources */,
 				49F0DC9D1DBD15B400C9AE18 /* NSString+BFKit.swift in Sources */,
@@ -544,6 +547,7 @@
 			files = (
 				498432121DC952C20013A2D9 /* UIFontExtensionTests.swift in Sources */,
 				49F0DCC31DBD278100C9AE18 /* UIBarButtonItemExtensionTests.swift in Sources */,
+				4920BB811DCE630B00A3FBA9 /* UILabelExtensionTests.swift in Sources */,
 				49F0DCC51DBD301E00C9AE18 /* UIButtonExtensionTests.swift in Sources */,
 				49F0DCB81DBD171F00C9AE18 /* BFAppTests.swift in Sources */,
 				498432141DCA67130013A2D9 /* UIImageExtensionTests.swift in Sources */,
