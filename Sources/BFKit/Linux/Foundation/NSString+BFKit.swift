@@ -62,7 +62,7 @@ public extension NSString {
     /**
      Check if self is an email
     
-     - returns: Returns true if it's an email, false if not
+     - returns: Returns true if it is an email, false if not
      */
     public func isEmail() -> Bool {
         return NSString.isEmail(self)
@@ -232,7 +232,7 @@ public extension NSString {
     
      - parameter email: The string to be checked
     
-     - returns: Returns true if it's an email, false if not
+     - returns: Returns true if it is an email, false if not
      */
     public static func isEmail(_ email: NSString) -> Bool {
         let emailRegEx: NSString = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"

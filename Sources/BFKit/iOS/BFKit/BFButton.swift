@@ -101,9 +101,9 @@ open class BFButton: UIButton {
     /// Create an UIButton with a fade animation from image to highlightedImage on touch.
     ///
     /// - Parameters:
-    ///   - frame: Button's frame.
-    ///   - image: Button's image.
-    ///   - highlightedImage: Button's highlighted image.
+    ///   - frame: Button frame.
+    ///   - image: Button image.
+    ///   - highlightedImage: Button highlighted image.
     ///   - fadeDuration: Fade duration.
     public init(frame: CGRect, image: UIImage, highlightedImage: UIImage, fadeDuration: Float) {
         self.fadeDuration = fadeDuration

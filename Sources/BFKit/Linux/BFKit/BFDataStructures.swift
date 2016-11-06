@@ -142,9 +142,9 @@ public struct Queue<Element: Equatable>: CustomStringConvertible {
         queue.append(element)
     }
     
-    /// Returns the Queue's top element.
+    /// Returns the Queue top element.
     ///
-    /// - Returns: Returns the Queue's top element.
+    /// - Returns: Returns the Queue top element.
     public func top() -> Element? {
         return queue.first
     }

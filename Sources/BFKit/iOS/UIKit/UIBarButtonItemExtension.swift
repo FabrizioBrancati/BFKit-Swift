@@ -49,6 +49,6 @@ public extension UIBarButtonItem {
         }
     }
     
-    /// It's just a placeholder to remove warning messages.
+    /// It is just a placeholder to remove warning messages.
     @objc private func nothing() {}
 }

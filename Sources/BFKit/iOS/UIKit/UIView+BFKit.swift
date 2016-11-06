@@ -82,9 +82,9 @@ public extension UIView {
     /**
      Create a border around the UIView
     
-     - parameter color:  Border's color
-     - parameter radius: Border's radius
-     - parameter width:  Border's width
+     - parameter color:  Border color
+     - parameter radius: Border radius
+     - parameter width:  Border width
      */
     public func createBordersWithColor(_ color: UIColor, radius: CGFloat, width: CGFloat) {
         self.layer.borderWidth = width
@@ -133,9 +133,9 @@ public extension UIView {
     /**
      Create a shadow on the UIView
     
-     - parameter offset:  Shadow's offset
-     - parameter opacity: Shadow's opacity
-     - parameter radius:  Shadow's radius
+     - parameter offset:  Shadow offset
+     - parameter opacity: Shadow opacity
+     - parameter radius:  Shadow radius
      */
     public func createRectShadowWithOffset(_ offset: CGSize, opacity: Float, radius: CGFloat) {
         self.layer.shadowColor = UIColor.black.cgColor
@@ -149,9 +149,9 @@ public extension UIView {
      Create a corner radius shadow on the UIView
     
      - parameter cornerRadius: Corner radius value
-     - parameter offset:       Shadow's offset
-     - parameter opacity:      Shadow's opacity
-     - parameter radius:       Shadow's radius
+     - parameter offset:       Shadow offset
+     - parameter opacity:      Shadow opacity
+     - parameter radius:       Shadow radius
      */
     public func createCornerRadiusShadowWithCornerRadius(_ cornerRadius: CGFloat, offset: CGSize, opacity: Float, radius: CGFloat) {
         self.layer.shadowColor = UIColor.black.cgColor
@@ -422,8 +422,8 @@ public extension UIView {
     /**
      Create an UIView with the given frame and background color
     
-     - parameter frame:           UIView's frame
-     - parameter backgroundColor: UIView's background color
+     - parameter frame:           UIView frame
+     - parameter backgroundColor: UIView background color
     
      - returns: Returns the created UIView
      */

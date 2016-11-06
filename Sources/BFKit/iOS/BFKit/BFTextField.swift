@@ -61,7 +61,7 @@ open class BFTextField: UITextField {
     
     /// Override init with frame.
     ///
-    /// - Parameter frame: TextField's frame.
+    /// - Parameter frame: TextField frame.
     public override init(frame: CGRect) {
         super.init(frame: frame)
         

@@ -38,7 +38,7 @@ public extension UIImage {
     
     /// Create a dummy image.
     ///
-    /// - Parameter dummy: This parameter must contain: "100x100", "100x100.#FFFFFF" or "100x100.blue" (if it's a color defined in UIColor class) if you want to define a color. Default color is lightGray.
+    /// - Parameter dummy: This parameter must contain: "100x100", "100x100.#FFFFFF" or "100x100.blue" (if it is a color defined in UIColor class) if you want to define a color. Default color is lightGray.
     public convenience init?(dummyImage dummy: String) {
         var size: CGSize = CGSize.zero, color: UIColor = UIColor.lightGray
         
@@ -100,9 +100,9 @@ public extension UIImage {
     ///
     /// - Parameters:
     ///   - text: Text.
-    ///   - font: Text's font name.
-    ///   - fontSize: Text's font size.
-    ///   - imageSize: Image's size.
+    ///   - font: Text font name.
+    ///   - fontSize: Text font size.
+    ///   - imageSize: Image size.
     public convenience init?(text: String, font: FontName, fontSize: CGFloat, imageSize: CGSize) {
         UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.main.scale)
         
@@ -122,10 +122,10 @@ public extension UIImage {
     ///
     /// - Parameters:
     ///   - maskedText: Text to mask.
-    ///   - font: Text's font name.
-    ///   - fontSize: Text's font size.
-    ///   - imageSize: Image's size.
-    ///   - backgroundColor: Image's background color.
+    ///   - font: Text font name.
+    ///   - fontSize: Text font size.
+    ///   - imageSize: Image size.
+    ///   - backgroundColor: Image background color.
     public convenience init?(maskedText: String, font: FontName, fontSize: CGFloat, imageSize: CGSize, backgroundColor: UIColor) {
         let fontName: UIFont = UIFont(fontName: font, size: fontSize)
         let textAttributes = [NSFontAttributeName : fontName]

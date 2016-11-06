@@ -237,42 +237,42 @@ public extension UIDevice {
     
     /// Check if current device is an iPhone.
     ///
-    /// - Returns: Returns true if it's an iPhone, otherwise false.
+    /// - Returns: Returns true if it is an iPhone, otherwise false.
     public static func isPhone() -> Bool {
         return self.hardwareModel.substringToIndex(6) == "iPhone"
     }
     
     /// Check if current device is an iPad.
     ///
-    /// - Returns: Returns true if it's an iPad, otherwise false.
+    /// - Returns: Returns true if it is an iPad, otherwise false.
     public static func isPad() -> Bool {
         return self.hardwareModel.substringToIndex(4) == "iPad"
     }
     
     /// Check if current device is an iPod.
     ///
-    /// - Returns: Returns true if it's an iPod, otherwise false.
+    /// - Returns: Returns true if it is an iPod, otherwise false.
     public static func isPod() -> Bool {
         return self.hardwareModel.substringToIndex(4) == "iPod"
     }
     
     /// Check if current device is an Apple TV.
     ///
-    /// - Returns: Returns true if it's an Apple TV, otherwise false.
+    /// - Returns: Returns true if it is an Apple TV, otherwise false.
     public static func isTV() -> Bool {
         return self.hardwareModel.substringToIndex(7) == "AppleTV"
     }
     
     /// Check if current device is an Applw Watch.
     ///
-    /// - Returns: Returns true if it's an Apple Watch, otherwise false.
+    /// - Returns: Returns true if it is an Apple Watch, otherwise false.
     public static func isWatch() -> Bool {
         return self.hardwareModel.substringToIndex(5) == "Watch"
     }
     
     /// Check if current device is a Simulator.
     ///
-    /// - Returns: Returns true if it's a Simulator, otherwise false.
+    /// - Returns: Returns true if it is a Simulator, otherwise false.
     public static func isSimulator() -> Bool {
         return self.detailedModel == "Simulator"
     }

@@ -63,7 +63,7 @@ public extension String {
     }
 
     /**
-     It's like substringFromIndex(index: String.Index), but it requires an Int as index
+     It is like substringFromIndex(index: String.Index), but it requires an Int as index
 
      - parameter index: The index
 
@@ -74,7 +74,7 @@ public extension String {
     }
 
     /**
-     It's like substringToIndex(index: String.Index), but it requires an Int as index
+     It is like substringToIndex(index: String.Index), but it requires an Int as index
 
      - parameter index: The index
 
@@ -177,7 +177,7 @@ public extension String {
     /**
      Check if self is an email
 
-     - returns: Returns true if it's an email, false if not
+     - returns: Returns true if it is an email, false if not
      */
     public func isEmail() -> Bool {
         return String.isEmail(self)
@@ -519,7 +519,7 @@ public extension String {
 
      - parameter email: The string to be checked
 
-     - returns: Returns true if it's an email, false if not
+     - returns: Returns true if it is an email, false if not
      */
     public static func isEmail(_ email: String) -> Bool {
         let emailRegEx: String = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
