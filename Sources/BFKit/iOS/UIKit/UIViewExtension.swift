@@ -82,7 +82,7 @@ public extension UIView {
     ///   - color: Border color.
     ///   - radius: Border radius.
     ///   - width: Border width.
-    public func borders(color: UIColor, radius: CGFloat, width: CGFloat) {
+    public func border(color: UIColor, radius: CGFloat, width: CGFloat) {
         self.layer.borderWidth = width
         self.layer.cornerRadius = radius
         self.layer.shouldRasterize = false
@@ -95,17 +95,11 @@ public extension UIView {
     }
     
     /// Removes border around the UIView.
-    public func removeBorder() {
+    public func removeBorder(maskToBounds: Bool = true) {
         self.layer.borderWidth = 0
         self.layer.cornerRadius = 0
         self.layer.borderColor = nil
-    }
-    
-    /// Removes shadow around the UIView.
-    public func removeShadow() {
-        self.layer.shadowColor = UIColor.clear.cgColor
-        self.layer.shadowOpacity = 0.0
-        self.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        self.layer.masksToBounds = maskToBounds
     }
     
     /// Set the corner radius of UIView only at the given corner.
@@ -127,30 +121,28 @@ public extension UIView {
     ///   - offset: Shadow offset.
     ///   - opacity: Shadow opacity.
     ///   - radius: Shadow radius.
-    public func rectShadow(offset: CGSize, opacity: Float, radius: CGFloat) {
-        self.layer.shadowColor = UIColor.black.cgColor
+    ///   - color: Shadow color. Default is black.
+    public func shadow(offset: CGSize, opacity: Float, radius: CGFloat, cornerRadius: CGFloat = 0, color: UIColor = UIColor.black) {
+        self.layer.shadowColor = color.cgColor
         self.layer.shadowOpacity = opacity
         self.layer.shadowOffset = offset
         self.layer.shadowRadius = radius
+        if cornerRadius != 0 {
+            self.layer.cornerRadius = cornerRadius
+            self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: cornerRadius).cgPath
+        }
         self.layer.masksToBounds = false
     }
     
-    /// Create a corner radius shadow on the UIView
-    ///
-    /// - Parameters:
-    ///   - cornerRadius: Corner radius value
-    ///   - offset: Shadow offset
-    ///   - opacity: Shadow opacity
-    ///   - radius: Shadow radius
-    public func cornerRadiusShadow(cornerRadius: CGFloat, offset: CGSize, opacity: Float, radius: CGFloat) {
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOpacity = opacity
-        self.layer.shadowOffset = offset
-        self.layer.shadowRadius = radius
-        self.layer.shouldRasterize = true
-        self.layer.cornerRadius = cornerRadius
-        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: cornerRadius).cgPath
-        self.layer.masksToBounds = false
+    /// Removes shadow around the UIView.
+    public func removeShadow(maskToBounds: Bool = true) {
+        self.layer.shadowColor = nil
+        self.layer.shadowOpacity = 0.0
+        self.layer.shadowOffset = CGSize(width: 0, height: 0)
+        self.layer.shadowRadius = 0
+        self.layer.cornerRadius = 0
+        self.layer.shadowPath = nil
+        self.layer.masksToBounds = maskToBounds
     }
     
     /// Create a linear gradient.
