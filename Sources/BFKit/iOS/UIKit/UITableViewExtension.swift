@@ -1,5 +1,5 @@
 //
-//  UITableView+BFKit.swift
+//  UITableViewExtension.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -27,19 +27,18 @@
 import Foundation
 import UIKit
 
-/// This extesion adds some useful functions to UITableView
+// MARK: - UITableView extension
+
+/// This extesion adds some useful functions to UITableView.
 public extension UITableView {
-    // MARK: - Instance functions -
+    // MARK: - Functions
     
-    /**
-     Retrive all the IndexPaths for the section
-    
-     - parameter section: The section
-    
-     - returns: Return an array with all the IndexPaths
-     */
-    public func getIndexPathsForSection(_ section: Int) -> Array<IndexPath> {
-        var indexPaths: Array<IndexPath> = Array()
+    /// Retrive all the IndexPaths for the section.
+    ///
+    /// - Parameter section: The section.
+    /// - Returns: Return an array with all the IndexPaths.
+    public func indexPaths(section: Int) -> [IndexPath] {
+        var indexPaths: [IndexPath] = []
         let rows: Int = self.numberOfRows(inSection: section)
         for i in 0 ..< rows {
             let indexPath: IndexPath = IndexPath(row: i, section: section)
@@ -49,46 +48,45 @@ public extension UITableView {
         return indexPaths
     }
     
-    /**
-     Retrive the next index path for the given row at section
-    
-     - parameter row:     Row of the index path
-     - parameter section: Section of the index path
-    
-     - returns: Returns the next index path
-     */
-    public func getNextIndexPath(_ row: Int, forSection section: Int) -> IndexPath {
-        let indexPath: Array<IndexPath> = self.getIndexPathsForSection(section)
+    /// Retrive the next index path for the given row at section.
+    ///
+    /// - Parameters:
+    ///   - row: Row of the index path.
+    ///   - section: Section of the index path
+    /// - Returns: Returns the next index path.
+    public func nextIndexPath(row: Int, forSection section: Int) -> IndexPath? {
+        let indexPath: [IndexPath] = self.indexPaths(section: section)
+        guard indexPath != [] else {
+            return nil
+        }
+        
         return indexPath[row + 1]
     }
     
-    /**
-     Retrive the previous index path for the given row at section
-    
-     - parameter row:     Row of the index path
-     - parameter section: Section of the index path
-    
-     - returns: Returns the previous index path
-     */
-    public func getPreviousIndexPath(_ row: Int, forSection section: Int) -> IndexPath {
-        let indexPath: Array<IndexPath> = self.getIndexPathsForSection(section)
+    /// Retrive the previous index path for the given row at section
+    ///
+    /// - Parameters:
+    ///   - row: Row of the index path.
+    ///   - section: Section of the index path.
+    /// - Returns: Returns the previous index path.
+    public func previousIndexPath(row: Int, forSection section: Int) -> IndexPath? {
+        let indexPath: [IndexPath] = self.indexPaths(section: section)
+        guard indexPath != [] else {
+            return nil
+        }
+        
         return indexPath[row - 1]
     }
-
-    // MARK: - Init functions -
     
-    /**
-     Create an UITableView and set some parameters
-    
-     - parameter frame:              TableView's frame
-     - parameter style:              TableView's style
-     - parameter cellSeparatorStyle: Cell separator style
-     - parameter separatorInset:     Cell separator inset
-     - parameter dataSource:         TableView's data source
-     - parameter delegate:           TableView's delegate
-    
-     - returns: Returns the created UITableView
-     */
+    /// Create an UITableView and set some parameters
+    ///
+    /// - Parameters:
+    ///   - frame: TableView frame.
+    ///   - style: TableView style.
+    ///   - cellSeparatorStyle: Cell separator style.
+    ///   - separatorInset: Cell separator inset.
+    ///   - dataSource: TableView data source.
+    ///   - delegate: TableView delegate.
     public convenience init(frame: CGRect, style: UITableViewStyle, cellSeparatorStyle: UITableViewCellSeparatorStyle, separatorInset: UIEdgeInsets, dataSource: UITableViewDataSource?, delegate: UITableViewDelegate?) {
         self.init(frame: frame)
         self.separatorStyle = cellSeparatorStyle

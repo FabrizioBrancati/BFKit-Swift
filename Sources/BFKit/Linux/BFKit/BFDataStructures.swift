@@ -122,7 +122,7 @@ public struct Queue<Element: Equatable>: CustomStringConvertible {
     ///
     /// - Returns: Retruns true if removed, otherwise false.
     public mutating func dequeue() -> Bool {
-        if queue.count > 0 {
+        if !queue.isEmpty {
             queue.remove(at: 0)
             return true
         } else {

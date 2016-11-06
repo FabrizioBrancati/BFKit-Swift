@@ -1,5 +1,5 @@
 //
-//  UIScrollView+BFKit.swift
+//  UIScrollViewExtension.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -27,29 +27,28 @@
 import Foundation
 import UIKit
 
-/// This extesion adds some useful functions to UIScrollView
+// MARK: - UIScrollView extension
+
+/// This extesion adds some useful functions to UIScrollView.
 public extension UIScrollView {
-    // MARK: - Init functions -
+    // MARK: - Functions
     
-    /**
-     Create an UIScrollView and set some parameters
-    
-     - parameter frame:                ScrollView's frame
-     - parameter contentSize:          ScrollView's content size
-     - parameter clipsToBounds:        Set if ScrollView has to clips to bounds
-     - parameter pagingEnabled:        Set if ScrollView has paging enabled
-     - parameter showScrollIndicators: Set if ScrollView has to show the scroll indicators, vertical and horizontal
-     - parameter delegate:             ScrollView's delegate
-    
-     - returns: Returns the created UIScrollView
-     */
+    /// Create an UIScrollView and set some parameters.
+    ///
+    /// - Parameters:
+    ///   - frame: ScrollView frame.
+    ///   - contentSize: ScrollView content size.
+    ///   - clipsToBounds: Set if ScrollView has to clips to bounds.
+    ///   - pagingEnabled: Set if ScrollView has paging enabled.
+    ///   - showScrollIndicators: Set if ScrollView has to show the scroll indicators, vertical and horizontal.
+    ///   - delegate: ScrollView delegate.
     public convenience init(frame: CGRect, contentSize: CGSize, clipsToBounds: Bool, pagingEnabled: Bool, showScrollIndicators: Bool, delegate: UIScrollViewDelegate?) {
         self.init(frame: frame)
         self.delegate = delegate
         self.isPagingEnabled = pagingEnabled
         self.clipsToBounds = clipsToBounds
-        self.showsVerticalScrollIndicator = false
-        self.showsHorizontalScrollIndicator = false
+        self.showsVerticalScrollIndicator = showScrollIndicators
+        self.showsHorizontalScrollIndicator = showScrollIndicators
         self.contentSize = contentSize
     }
 }

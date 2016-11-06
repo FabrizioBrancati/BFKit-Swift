@@ -29,35 +29,27 @@ import UIKit
 
 // MARK: - UIScreen extension
 
-/// This extesion adds some useful functions to UIScreen
+/// This extesion adds some useful functions to UIScreen.
 public extension UIScreen {
     // MARK: - Variables
     
-    /// Get the screen width
-    public var screenWidth: CGFloat {
-        get {
-            return UIScreen.main.fixedScreenSize().width
-        }
+    /// Get the screen width.
+    public static var screenWidth: CGFloat {
+        return UIScreen.fixedScreenSize().width
     }
     
-    /// Get the screen height
-    public var screenHeight: CGFloat {
-        get {
-            return UIScreen.main.fixedScreenSize().height
-        }
+    /// Get the screen height.
+    public static var screenHeight: CGFloat {
+        return UIScreen.fixedScreenSize().height
     }
     
-    /// Get the maximum screen length
-    public var maxScreenLength: CGFloat {
-        get {
-            return max(screenWidth, screenHeight)
-        }
+    /// Get the maximum screen length.
+    public static var maxScreenLength: CGFloat {
+        return max(screenWidth, screenHeight)
     }
-    /// Get the minimum screen length
-    public var minScreenLength: CGFloat {
-        get {
-            return min(screenWidth, screenHeight)
-        }
+    /// Get the minimum screen length.
+    public static var minScreenLength: CGFloat {
+        return min(screenWidth, screenHeight)
     }
     
     // MARK: - Functions
@@ -66,40 +58,20 @@ public extension UIScreen {
     ///
     /// - Returns: Returns true if it has a Retina display, otherwise false.
     public static func isRetina() -> Bool {
-        if UIScreen.main.responds(to: #selector(UIScreen.displayLink(withTarget:selector:))) && (UIScreen.main.scale == 2.0 || UIScreen.main.scale == 3.0) {
-            return true
-        } else {
-            return false
-        }
+        return UIScreen.main.responds(to: #selector(UIScreen.displayLink(withTarget:selector:))) && UIScreen.main.scale == 2.0
     }
     
     /// Check if current device has a Retina HD display.
     ///
     /// - Returns: Returns true if it has a Retina HD display, otherwise false.
     public static func isRetinaHD() -> Bool {
-        if UIScreen.main.responds(to: #selector(UIScreen.displayLink(withTarget:selector:))) && UIScreen.main.scale == 3.0 {
-            return true
-        } else {
-            return false
-        }
+        return UIScreen.main.responds(to: #selector(UIScreen.displayLink(withTarget:selector:))) && UIScreen.main.scale == 3.0
     }
     
     /// Returns fixed screen size, based on device orientation.
     ///
     /// - Returns: Returns a GCSize with the fixed screen size.
-    public func fixedScreenSize() -> CGSize {
-        let screenSize = self.bounds.size
-        
-        return screenSize
-    }
-    
-    /// 0.0 to 1.0, where 1.0 is maximum brightness
-    public static var brightness: Float {
-        get {
-            return Float(UIScreen.brightness)
-        }
-        set(newValue) {
-            UIScreen.brightness = newValue
-        }
+    public static func fixedScreenSize() -> CGSize {
+        return UIScreen.main.bounds.size
     }
 }

@@ -38,7 +38,7 @@ public extension Array {
      - returns: Returns the object at a given index in safe mode (nil if self is empty or out of range)
       */
     public func safeObjectAtIndex(_ index: Int) -> Element? {
-        if self.count > 0 && self.count > index {
+        if !self.isEmpty && self.count > index {
             return self[index]
         } else {
             return nil

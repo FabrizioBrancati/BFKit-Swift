@@ -10,6 +10,9 @@
 		4920BB811DCE630B00A3FBA9 /* UILabelExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920BB801DCE630B00A3FBA9 /* UILabelExtensionTests.swift */; };
 		4920BB831DCE69B600A3FBA9 /* UINavigationBarExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920BB821DCE69B600A3FBA9 /* UINavigationBarExtensionTests.swift */; };
 		4920BB851DCE786600A3FBA9 /* UIPasteboardExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920BB841DCE786600A3FBA9 /* UIPasteboardExtensionTests.swift */; };
+		4920BB871DCF6C6B00A3FBA9 /* UIScreenExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920BB861DCF6C6B00A3FBA9 /* UIScreenExtensionTests.swift */; };
+		4920BB891DCF7EE000A3FBA9 /* UIScrollViewExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920BB881DCF7EE000A3FBA9 /* UIScrollViewExtensionTests.swift */; };
+		4920BB8B1DCF80CC00A3FBA9 /* UITableViewExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920BB8A1DCF80CC00A3FBA9 /* UITableViewExtensionTests.swift */; };
 		4971864C1D2339040032A98E /* BFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 497186411D2339040032A98E /* BFKit.framework */; };
 		497186A21D2339210032A98E /* BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 497186651D2339210032A98E /* BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		497186C71D2339210032A98E /* BFKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4971868E1D2339210032A98E /* BFKit.strings */; };
@@ -38,8 +41,8 @@
 		49F0DC771DBD15AC00C9AE18 /* UINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC641DBD15AC00C9AE18 /* UINavigationBarExtension.swift */; };
 		49F0DC781DBD15AC00C9AE18 /* UIPasteboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC651DBD15AC00C9AE18 /* UIPasteboardExtension.swift */; };
 		49F0DC791DBD15AC00C9AE18 /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC661DBD15AC00C9AE18 /* UIScreenExtension.swift */; };
-		49F0DC7A1DBD15AC00C9AE18 /* UIScrollView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC671DBD15AC00C9AE18 /* UIScrollView+BFKit.swift */; };
-		49F0DC7B1DBD15AC00C9AE18 /* UITableView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC681DBD15AC00C9AE18 /* UITableView+BFKit.swift */; };
+		49F0DC7A1DBD15AC00C9AE18 /* UIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC671DBD15AC00C9AE18 /* UIScrollViewExtension.swift */; };
+		49F0DC7B1DBD15AC00C9AE18 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC681DBD15AC00C9AE18 /* UITableViewExtension.swift */; };
 		49F0DC7C1DBD15AC00C9AE18 /* UITextField+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC691DBD15AC00C9AE18 /* UITextField+BFKit.swift */; };
 		49F0DC7D1DBD15AC00C9AE18 /* UITextView+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC6A1DBD15AC00C9AE18 /* UITextView+BFKit.swift */; };
 		49F0DC7E1DBD15AC00C9AE18 /* UIToolbar+BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC6B1DBD15AC00C9AE18 /* UIToolbar+BFKit.swift */; };
@@ -89,6 +92,9 @@
 		4920BB801DCE630B00A3FBA9 /* UILabelExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtensionTests.swift; sourceTree = "<group>"; };
 		4920BB821DCE69B600A3FBA9 /* UINavigationBarExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtensionTests.swift; sourceTree = "<group>"; };
 		4920BB841DCE786600A3FBA9 /* UIPasteboardExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPasteboardExtensionTests.swift; sourceTree = "<group>"; };
+		4920BB861DCF6C6B00A3FBA9 /* UIScreenExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtensionTests.swift; sourceTree = "<group>"; };
+		4920BB881DCF7EE000A3FBA9 /* UIScrollViewExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtensionTests.swift; sourceTree = "<group>"; };
+		4920BB8A1DCF80CC00A3FBA9 /* UITableViewExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtensionTests.swift; sourceTree = "<group>"; };
 		49582C6C1DC1617C0039C213 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/BFKit.strings; sourceTree = "<group>"; };
 		497186411D2339040032A98E /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4971864B1D2339040032A98E /* BFKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BFKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,8 +136,8 @@
 		49F0DC641DBD15AC00C9AE18 /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtension.swift; sourceTree = "<group>"; };
 		49F0DC651DBD15AC00C9AE18 /* UIPasteboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPasteboardExtension.swift; sourceTree = "<group>"; };
 		49F0DC661DBD15AC00C9AE18 /* UIScreenExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
-		49F0DC671DBD15AC00C9AE18 /* UIScrollView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+BFKit.swift"; sourceTree = "<group>"; };
-		49F0DC681DBD15AC00C9AE18 /* UITableView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+BFKit.swift"; sourceTree = "<group>"; };
+		49F0DC671DBD15AC00C9AE18 /* UIScrollViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtension.swift; sourceTree = "<group>"; };
+		49F0DC681DBD15AC00C9AE18 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		49F0DC691DBD15AC00C9AE18 /* UITextField+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+BFKit.swift"; sourceTree = "<group>"; };
 		49F0DC6A1DBD15AC00C9AE18 /* UITextView+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+BFKit.swift"; sourceTree = "<group>"; };
 		49F0DC6B1DBD15AC00C9AE18 /* UIToolbar+BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIToolbar+BFKit.swift"; sourceTree = "<group>"; };
@@ -278,8 +284,8 @@
 				49F0DC641DBD15AC00C9AE18 /* UINavigationBarExtension.swift */,
 				49F0DC651DBD15AC00C9AE18 /* UIPasteboardExtension.swift */,
 				49F0DC661DBD15AC00C9AE18 /* UIScreenExtension.swift */,
-				49F0DC671DBD15AC00C9AE18 /* UIScrollView+BFKit.swift */,
-				49F0DC681DBD15AC00C9AE18 /* UITableView+BFKit.swift */,
+				49F0DC671DBD15AC00C9AE18 /* UIScrollViewExtension.swift */,
+				49F0DC681DBD15AC00C9AE18 /* UITableViewExtension.swift */,
 				49F0DC691DBD15AC00C9AE18 /* UITextField+BFKit.swift */,
 				49F0DC6A1DBD15AC00C9AE18 /* UITextView+BFKit.swift */,
 				49F0DC6B1DBD15AC00C9AE18 /* UIToolbar+BFKit.swift */,
@@ -352,6 +358,9 @@
 				4920BB801DCE630B00A3FBA9 /* UILabelExtensionTests.swift */,
 				4920BB821DCE69B600A3FBA9 /* UINavigationBarExtensionTests.swift */,
 				4920BB841DCE786600A3FBA9 /* UIPasteboardExtensionTests.swift */,
+				4920BB861DCF6C6B00A3FBA9 /* UIScreenExtensionTests.swift */,
+				4920BB881DCF7EE000A3FBA9 /* UIScrollViewExtensionTests.swift */,
+				4920BB8A1DCF80CC00A3FBA9 /* UITableViewExtensionTests.swift */,
 			);
 			name = UIKit;
 			path = Tests/BFKitTests/iOS/UIKit;
@@ -511,7 +520,7 @@
 				49F0DC6F1DBD15AC00C9AE18 /* UIBarButtonItemExtension.swift in Sources */,
 				49F0DC9A1DBD15B400C9AE18 /* NSMutableDictionary+BFKit.swift in Sources */,
 				49F0DC701DBD15AC00C9AE18 /* UIButtonExtension.swift in Sources */,
-				49F0DC7B1DBD15AC00C9AE18 /* UITableView+BFKit.swift in Sources */,
+				49F0DC7B1DBD15AC00C9AE18 /* UITableViewExtension.swift in Sources */,
 				49F0DC781DBD15AC00C9AE18 /* UIPasteboardExtension.swift in Sources */,
 				49F0DC541DBD158F00C9AE18 /* BFPassword.swift in Sources */,
 				49F0DC7C1DBD15AC00C9AE18 /* UITextField+BFKit.swift in Sources */,
@@ -536,7 +545,7 @@
 				49F0DC511DBD158F00C9AE18 /* BFDate.swift in Sources */,
 				49F0DC5A1DBD159D00C9AE18 /* BFDataStructures.swift in Sources */,
 				49F0DC9C1DBD15B400C9AE18 /* NSObject+BFKit.swift in Sources */,
-				49F0DC7A1DBD15AC00C9AE18 /* UIScrollView+BFKit.swift in Sources */,
+				49F0DC7A1DBD15AC00C9AE18 /* UIScrollViewExtension.swift in Sources */,
 				49F0DC761DBD15AC00C9AE18 /* UILabelExtension.swift in Sources */,
 				49F0DC7D1DBD15AC00C9AE18 /* UITextView+BFKit.swift in Sources */,
 				49F0DC981DBD15B400C9AE18 /* NSDictionary+BFKit.swift in Sources */,
@@ -552,6 +561,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				498432121DC952C20013A2D9 /* UIFontExtensionTests.swift in Sources */,
+				4920BB8B1DCF80CC00A3FBA9 /* UITableViewExtensionTests.swift in Sources */,
 				49F0DCC31DBD278100C9AE18 /* UIBarButtonItemExtensionTests.swift in Sources */,
 				4920BB851DCE786600A3FBA9 /* UIPasteboardExtensionTests.swift in Sources */,
 				4920BB811DCE630B00A3FBA9 /* UILabelExtensionTests.swift in Sources */,
@@ -560,6 +570,7 @@
 				49F0DCB81DBD171F00C9AE18 /* BFAppTests.swift in Sources */,
 				498432141DCA67130013A2D9 /* UIImageExtensionTests.swift in Sources */,
 				49F0DCBB1DBD172300C9AE18 /* BFDateTests.swift in Sources */,
+				4920BB871DCF6C6B00A3FBA9 /* UIScreenExtensionTests.swift in Sources */,
 				49D144F11DCD4EB700675367 /* UIImageViewExtensionTests.swift in Sources */,
 				49F0DCC01DBD172300C9AE18 /* BFTouchIDTests.swift in Sources */,
 				49F0DCBD1DBD172300C9AE18 /* BFPasswordTests.swift in Sources */,
@@ -570,6 +581,7 @@
 				49F0DCBF1DBD172300C9AE18 /* BFTextFieldTests.swift in Sources */,
 				49F0DCBC1DBD172300C9AE18 /* BFLogTests.swift in Sources */,
 				49F0DCBE1DBD172300C9AE18 /* BFSystemSoundTests.swift in Sources */,
+				4920BB891DCF7EE000A3FBA9 /* UIScrollViewExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

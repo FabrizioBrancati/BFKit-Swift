@@ -425,10 +425,7 @@ public extension String {
     ///
     /// - returns: Returns true if the String has at least one uppercase chatacter, otherwise false.
     public func hasUppercaseCharacter() -> Bool {
-        if CharacterSet.uppercaseLetters.contains(self.unicodeScalars.last!) {
-            return true
-        }
-        return false
+        return CharacterSet.uppercaseLetters.contains(self.unicodeScalars.last!)
     }
 
 
@@ -436,10 +433,7 @@ public extension String {
     ///
     /// - returns: Returns true if the String has at least one lowercase chatacter, otherwise false.
     public func hasLowercaseCharacter() -> Bool {
-        if CharacterSet.lowercaseLetters.contains(self.unicodeScalars.last!) {
-            return true
-        }
-        return false
+        return CharacterSet.lowercaseLetters.contains(self.unicodeScalars.last!)
     }
 
     // MARK: - Subscript functions -

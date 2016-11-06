@@ -51,7 +51,6 @@ class UIDeviceExtensionTests: XCTestCase {
     func testOsVersion() {
         let osVersion = UIDevice.osVersion
         
-        
         XCTAssert(osVersion == "10.0")
     }
     

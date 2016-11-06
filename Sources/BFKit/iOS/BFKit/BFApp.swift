@@ -115,10 +115,8 @@ open class BFApp {
         
         let defaults = UserDefaults.standard
         let hasBeenOpened: Bool = defaults.bool(forKey: key)
-        if hasBeenOpened != true {
-            return true
-        }
-        return false
+        
+        return !hasBeenOpened
     }
     
     /// Executes a block on first start of the App, if version is set it will be for given version.

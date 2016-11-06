@@ -72,136 +72,116 @@ public extension UIColor {
     
     /// RGB properties: red.
     public var redComponent: CGFloat {
-        get {
-            if self.canProvideRGBComponents() {
-                let component = self.cgColor.__unsafeComponents
-                
-                return component![0]
-            }
-            return 0.0
+        if self.canProvideRGBComponents() {
+            let component = self.cgColor.__unsafeComponents
+            
+            return component![0]
         }
+        return 0.0
     }
     
     /// RGB properties: green.
     public var greenComponent: CGFloat {
-        get {
-            if self.canProvideRGBComponents() {
-                let component = self.cgColor.__unsafeComponents
-                
-                if self.cgColor.colorSpace?.model == CGColorSpaceModel.monochrome {
-                    return component![0]
-                }
-                return component![1]
+        if self.canProvideRGBComponents() {
+            let component = self.cgColor.__unsafeComponents
+            
+            if self.cgColor.colorSpace?.model == CGColorSpaceModel.monochrome {
+                return component![0]
             }
-            return 0.0
+            return component![1]
         }
+        return 0.0
     }
     
     /// RGB properties: blue.
     public var blueComponent: CGFloat {
-        get {
-            if self.canProvideRGBComponents() {
-                let component = self.cgColor.__unsafeComponents
-                
-                if self.cgColor.colorSpace?.model == CGColorSpaceModel.monochrome {
-                    return component![0]
-                }
-                return component![2]
+        if self.canProvideRGBComponents() {
+            let component = self.cgColor.__unsafeComponents
+            
+            if self.cgColor.colorSpace?.model == CGColorSpaceModel.monochrome {
+                return component![0]
             }
-            return 0.0
+            return component![2]
         }
+        return 0.0
     }
     
     /// RGB properties: white.
     public var whiteComponent: CGFloat {
-        get {
-            if self.cgColor.colorSpace?.model == CGColorSpaceModel.monochrome {
-                let component = self.cgColor.__unsafeComponents
-            
-                return component![0]
-            }
-            return 0.0
+        if self.cgColor.colorSpace?.model == CGColorSpaceModel.monochrome {
+            let component = self.cgColor.__unsafeComponents
+        
+            return component![0]
         }
+        return 0.0
     }
     
     /// RGB properties: luminance.
     public var luminance: CGFloat {
-        get {
-            if self.canProvideRGBComponents() {
-                var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0, alpha: CGFloat = 0.0
-                
-                if !self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
-                    return 0.0
-                }
-                return red * 0.2126 + green * 0.7152 + blue * 0.0722
+        if self.canProvideRGBComponents() {
+            var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0, alpha: CGFloat = 0.0
+            
+            if !self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
+                return 0.0
             }
-            return 0.0
+            return red * 0.2126 + green * 0.7152 + blue * 0.0722
         }
+        return 0.0
     }
     
     /// RGBA properties: alpha.
     public var alpha: CGFloat {
-        get {
-            return self.cgColor.alpha
-        }
+        return self.cgColor.alpha
     }
     
     /// HSB properties: hue.
     public var hue: CGFloat {
-        get {
-            if self.canProvideRGBComponents() {
-                var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
-                
-                if self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
-                    return hue
-                }
+        if self.canProvideRGBComponents() {
+            var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
+            
+            if self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
+                return hue
             }
-            return 0.0
         }
+        return 0.0
     }
     
     /// HSB properties: saturation.
     public var saturation: CGFloat {
-        get {
-            if self.canProvideRGBComponents() {
-                var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
-                
-                if self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
-                    return saturation
-                }
+        if self.canProvideRGBComponents() {
+            var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
+            
+            if self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
+                return saturation
             }
-            return 0.0
         }
+        return 0.0
     }
     
     /// HSB properties: brightness.
     public var brightness: CGFloat {
-        get {
-            if self.canProvideRGBComponents() {
-                var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
-                
-                if self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
-                    return brightness
-                }
+        if self.canProvideRGBComponents() {
+            var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
+            
+            if self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
+                return brightness
             }
-            return 0.0
         }
+        return 0.0
     }
     
     /// Returns the HEX string from UIColor.
     public var hex: String {
-        get {
-            var red: CGFloat = 0
-            var green: CGFloat = 0
-            var blue: CGFloat = 0
-            var alpha: CGFloat = 0
-            
-            getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-            
-            let rgb: Int = (Int)(red * 255) << 16 | (Int)(green * 255) << 8 | (Int)(blue * 255) << 0
-            
-            return String(format:"#%06x", rgb)
-        }
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        
+        getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        
+        let rgb: Int = (Int)(red * 255) << 16 | (Int)(green * 255) << 8 | (Int)(blue * 255) << 0
+        
+        return String(format:"#%06x", rgb)
     }
     
     // MARK: - Functions

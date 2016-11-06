@@ -1,5 +1,6 @@
 included:
   - Tests
+  #- Sources
 
 disabled_rules:
   - line_length

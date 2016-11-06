@@ -167,7 +167,7 @@ public extension FileManager {
      - returns: Returns the file size
      */
     public static func fileSize(_ file: String, fromDirectory directory: DirectoryType) throws -> NSNumber? {
-        if file.characters.count != 0 {
+        if !file.characters.isEmpty {
             var path: String
             
             switch directory {
@@ -199,7 +199,7 @@ public extension FileManager {
      - returns: Returns true if the operation was successful, otherwise false
      */
     public static func deleteFile(_ file: String, fromDirectory directory: DirectoryType) throws -> Bool {
-        if file.characters.count != 0 {
+        if !file.characters.isEmpty {
             var path: String
             
             switch directory {
@@ -296,10 +296,7 @@ public extension FileManager {
             }
         }
         
-        if copied && deleted {
-            return true
-        }
-        return false
+        return copied && deleted
     }
     
     /**
