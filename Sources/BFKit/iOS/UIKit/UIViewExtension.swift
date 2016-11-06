@@ -1,5 +1,5 @@
 //
-//  UIView+BFKit.swift
+//  UIViewExtension.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -28,65 +28,61 @@ import Foundation
 import UIKit
 import QuartzCore
 
-/// This extesion adds some useful functions to UIView
+// MARK: - UIView extension
+
+/// This extesion adds some useful functions to UIView.
 public extension UIView {
-    // MARK: - Enums -
+    // MARK: - Variables
     
-    /**
-     Direction of flip animation
-    
-     - FromTop:    Flip animation from top
-     - FromLeft:   Flip animation from left
-     - FromRight:  Flip animation from right
-     - FromBottom: Flip animation from bottom
-     */
+    /// Direction of flip animation.
+    ///
+    /// - top: Flip animation from top.
+    /// - left: Flip animation from left.
+    /// - right: Flip animation from right.
+    /// - bottom: Flip animation from bottom.
     public enum UIViewAnimationFlipDirection: Int {
-        case fromTop
-        case fromLeft
-        case fromRight
-        case fromBottom
+        case top
+        case left
+        case right
+        case bottom
     }
     
-    /**
-     Direction of the translation
-    
-     - FromLeftToRight: Translation from left to right
-     - FromRightToLeft: Translation from right to left
-     */
+    /// Direction of the translation.
+    ///
+    /// - leftToRight: Translation from left to right.
+    /// - rightToLeft: Translation from right to left.
     public enum UIViewAnimationTranslationDirection: Int {
-        case fromLeftToRight
-        case fromRightToLeft
+        case leftToRight
+        case rightToLeft
     }
     
-    /**
-     Direction of the linear gradient
-    
-     - Vertical:                            Linear gradient vertical
-     - Horizontal:                          Linear gradient horizontal
-     - DiagonalFromLeftToRightAndTopToDown: Linear gradient from left to right and top to down
-     - DiagonalFromLeftToRightAndDownToTop: Linear gradient from left to right and down to top
-     - DiagonalFromRightToLeftAndTopToDown: Linear gradient from right to left and top to down
-     - DiagonalFromRightToLeftAndDownToTop: Linear gradient from right to left and down to top
-     */
-    public enum UIViewLinearGradientDirection: Int {
+    /// Direction of the linear gradient
+    ///
+    /// - vertical: Linear gradient vertical
+    /// - horizontal: Linear gradient horizontal
+    /// - diagonalLeftToRightAndTopToDown: Linear gradient from left to right and top to down
+    /// - diagonalLeftToRightAndDownToTop: Linear gradient from left to right and down to top
+    /// - diagonalRightToLeftAndTopToDown: Linear gradient from right to left and top to down
+    /// - diagonalRightToLeftAndDownToTop: Linear gradient from right to left and down to top
+    public enum UIViewLinearGradientDirection {
         case vertical
         case horizontal
-        case diagonalFromLeftToRightAndTopToDown
-        case diagonalFromLeftToRightAndDownToTop
-        case diagonalFromRightToLeftAndTopToDown
-        case diagonalFromRightToLeftAndDownToTop
+        case diagonalLeftToRightAndTopToDown
+        case diagonalLeftToRightAndDownToTop
+        case diagonalRightToLeftAndTopToDown
+        case diagonalRightToLeftAndDownToTop
+        case custom(startPoint: CGPoint, endPoint: CGPoint)
     }
     
-    // MARK: - Instance functions -
+    // MARK: - Functions
     
-    /**
-     Create a border around the UIView
-    
-     - parameter color:  Border color
-     - parameter radius: Border radius
-     - parameter width:  Border width
-     */
-    public func createBordersWithColor(_ color: UIColor, radius: CGFloat, width: CGFloat) {
+    /// Creates a border around the UIView.
+    ///
+    /// - Parameters:
+    ///   - color: Border color.
+    ///   - radius: Border radius.
+    ///   - width: Border width.
+    public func borders(color: UIColor, radius: CGFloat, width: CGFloat) {
         self.layer.borderWidth = width
         self.layer.cornerRadius = radius
         self.layer.shouldRasterize = false
@@ -98,30 +94,25 @@ public extension UIView {
         self.layer.borderColor = cgColor
     }
     
-    /**
-     Remove the borders around the UIView
-     */
-    public func removeBorders() {
+    /// Removes border around the UIView.
+    public func removeBorder() {
         self.layer.borderWidth = 0
         self.layer.cornerRadius = 0
         self.layer.borderColor = nil
     }
     
-    /**
-     Remove the shadow around the UIView
-     */
+    /// Removes shadow around the UIView.
     public func removeShadow() {
         self.layer.shadowColor = UIColor.clear.cgColor
         self.layer.shadowOpacity = 0.0
         self.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
     }
     
-    /**
-     Set the corner radius of UIView only at the given corner
-     
-     - parameter corners: Corners to apply radius
-     - parameter radius: Radius value
-     */
+    /// Set the corner radius of UIView only at the given corner.
+    ///
+    /// - Parameters:
+    ///   - corners: Corners to apply radius.
+    ///   - radius: Radius value.
     public func cornerRadius(corners: UIRectCorner, radius: CGFloat) {
         let rectShape = CAShapeLayer()
         rectShape.bounds = self.frame
@@ -130,14 +121,13 @@ public extension UIView {
         self.layer.mask = rectShape
     }
     
-    /**
-     Create a shadow on the UIView
-    
-     - parameter offset:  Shadow offset
-     - parameter opacity: Shadow opacity
-     - parameter radius:  Shadow radius
-     */
-    public func createRectShadowWithOffset(_ offset: CGSize, opacity: Float, radius: CGFloat) {
+    /// Create a shadow on the UIView.
+    ///
+    /// - Parameters:
+    ///   - offset: Shadow offset.
+    ///   - opacity: Shadow opacity.
+    ///   - radius: Shadow radius.
+    public func rectShadow(offset: CGSize, opacity: Float, radius: CGFloat) {
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOpacity = opacity
         self.layer.shadowOffset = offset
@@ -145,15 +135,14 @@ public extension UIView {
         self.layer.masksToBounds = false
     }
     
-    /**
-     Create a corner radius shadow on the UIView
-    
-     - parameter cornerRadius: Corner radius value
-     - parameter offset:       Shadow offset
-     - parameter opacity:      Shadow opacity
-     - parameter radius:       Shadow radius
-     */
-    public func createCornerRadiusShadowWithCornerRadius(_ cornerRadius: CGFloat, offset: CGSize, opacity: Float, radius: CGFloat) {
+    /// Create a corner radius shadow on the UIView
+    ///
+    /// - Parameters:
+    ///   - cornerRadius: Corner radius value
+    ///   - offset: Shadow offset
+    ///   - opacity: Shadow opacity
+    ///   - radius: Shadow radius
+    public func cornerRadiusShadow(cornerRadius: CGFloat, offset: CGSize, opacity: Float, radius: CGFloat) {
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOpacity = opacity
         self.layer.shadowOffset = offset
@@ -164,13 +153,12 @@ public extension UIView {
         self.layer.masksToBounds = false
     }
     
-    /**
-     Create a linear gradient
-    
-     - parameter colors:    Array of UIColor instances
-     - parameter direction: Direction of the gradient
-     */
-    public func createGradientWithColors(_ colors: Array<UIColor>, direction: UIViewLinearGradientDirection) {
+    /// Create a linear gradient.
+    ///
+    /// - Parameters:
+    ///   - colors: Array of UIColor instances.
+    ///   - direction: Direction of the gradient.
+    public func gradient(colors: [UIColor], direction: UIViewLinearGradientDirection) {
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
         
@@ -179,7 +167,7 @@ public extension UIView {
             let currentColor: UIColor = colors[i]
             mutableColors.replaceObject(at: i, with: currentColor.cgColor)
         }
-        gradient.colors = mutableColors as AnyObject as! Array<UIColor>
+        gradient.colors = mutableColors as AnyObject as! [UIColor]
         
         switch direction {
         case .vertical:
@@ -188,84 +176,64 @@ public extension UIView {
         case .horizontal:
             gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
             gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
-        case .diagonalFromLeftToRightAndTopToDown:
+        case .diagonalLeftToRightAndTopToDown:
             gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
             gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
-        case .diagonalFromLeftToRightAndDownToTop:
+        case .diagonalLeftToRightAndDownToTop:
             gradient.startPoint = CGPoint(x: 0.0, y: 1.0)
             gradient.endPoint = CGPoint(x: 1.0, y: 0.0)
-        case .diagonalFromRightToLeftAndTopToDown:
+        case .diagonalRightToLeftAndTopToDown:
             gradient.startPoint = CGPoint(x: 1.0, y: 0.0)
             gradient.endPoint = CGPoint(x: 0.0, y: 1.0)
-        case .diagonalFromRightToLeftAndDownToTop:
+        case .diagonalRightToLeftAndDownToTop:
             gradient.startPoint = CGPoint(x: 1.0, y: 1.0)
             gradient.endPoint = CGPoint(x: 0.0, y: 0.0)
+        case .custom(let startPoint, let endPoint):
+            gradient.startPoint = startPoint
+            gradient.endPoint = endPoint
         }
         self.layer.insertSublayer(gradient, at:0)
     }
     
-    /**
-     Create a shake effect on the UIView
-     */
-    public func shakeView() {
-        let shake: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform")
-        shake.values = [NSValue(caTransform3D: CATransform3DMakeTranslation(-5.0, 0.0, 0.0)), NSValue(caTransform3D: CATransform3DMakeTranslation(5.0, 0.0, 0.0))]
-        shake.autoreverses = true
-        shake.repeatCount = 2.0
-        shake.duration = 0.07
+    /// Create a shake effect on the UIView.
+    ///
+    /// - Parameters:
+    ///   - count: Shakes count.
+    ///   - duration: Shake duration.
+    ///   - translation: Shake translation.
+    func shake(count: Float = 2, duration: TimeInterval = 0.5, translation: Float = -5) {
+        let animation: CABasicAnimation = CABasicAnimation(keyPath: "transform.translation.x")
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        animation.repeatCount = count
+        animation.duration = (duration) / TimeInterval(animation.repeatCount)
+        animation.autoreverses = true
+        animation.byValue = translation
         
-        self.layer.add(shake, forKey:"shake")
+        self.layer.add(animation, forKey: "shake")
     }
     
-    /**
-     Create a pulse effect on th UIView
-    
-     - parameter duration: Seconds of animation
-     */
-    public func pulseViewWithDuration(_ duration: CGFloat) {
-        UIView.animate(withDuration: TimeInterval(duration / 6), animations: { () -> Void in
-            self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-        }) { (finished) -> Void in
-            if finished {
-                UIView.animate(withDuration: TimeInterval(duration / 6), animations: { () -> Void in
-                    self.transform = CGAffineTransform(scaleX: 0.96, y: 0.96)
-                }) { (finished: Bool) -> Void in
-                    if finished {
-                        UIView.animate(withDuration: TimeInterval(duration / 6), animations: { () -> Void in
-                            self.transform = CGAffineTransform(scaleX: 1.03, y: 1.03)
-                        }) { (finished: Bool) -> Void in
-                            if finished {
-                                UIView.animate(withDuration: TimeInterval(duration / 6), animations: { () -> Void in
-                                    self.transform = CGAffineTransform(scaleX: 0.985, y: 0.985)
-                                }) { (finished: Bool) -> Void in
-                                    if finished {
-                                        UIView.animate(withDuration: TimeInterval(duration / 6), animations: { () -> Void in
-                                            self.transform = CGAffineTransform(scaleX: 1.007, y: 1.007)
-                                        }) { (finished: Bool) -> Void in
-                                            if finished {
-                                                UIView.animate(withDuration: TimeInterval(duration / 6), animations: { () -> Void in
-                                                    self.transform = CGAffineTransform(scaleX: 1, y: 1)
-                                                })
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+    /// Create a pulse effect on th UIView.
+    ///
+    /// - Parameter duration: Seconds of animation.
+    public func pulse(count: Float, duration: TimeInterval = 1) {
+        let animation = CABasicAnimation(keyPath: "opacity")
+        animation.duration = duration
+        animation.fromValue = 0
+        animation.toValue = 1
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        animation.autoreverses = true
+        animation.repeatCount = count
+        
+        self.layer.add(animation, forKey: "pulse")
     }
     
-    /**
-     Create a heartbeat effect on the UIView
-    
-     - parameter duration: Seconds of animation
-     */
-    public func heartbeatViewWithDuration(_ duration: CGFloat) {
-        let maxSize: CGFloat = 1.4, durationPerBeat: CGFloat = 0.5
-        
+    /// Create a heartbeat effect on the UIView.
+    ///
+    /// - Parameters:
+    ///   - count: Seconds of animation.
+    ///   - maxSize: Maximum size of the object to animate.
+    ///   - durationPerBeat: Duration per beat.
+    public func heartbeat(count: Float = 1, maxSize: CGFloat = 1.4, durationPerBeat: CGFloat = 0.5) {
         let animation: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform")
         
         let scale1: CATransform3D = CATransform3DMakeScale(0.8, 0.8, 1)
@@ -273,23 +241,21 @@ public extension UIView {
         let scale3: CATransform3D = CATransform3DMakeScale(maxSize - 0.3, maxSize - 0.3, 1)
         let scale4: CATransform3D = CATransform3DMakeScale(1.0, 1.0, 1)
         
-        let frameValues: Array = [NSValue(caTransform3D: scale1), NSValue(caTransform3D: scale2), NSValue(caTransform3D: scale3), NSValue(caTransform3D: scale4)]
+        let frameValues = [NSValue(caTransform3D: scale1), NSValue(caTransform3D: scale2), NSValue(caTransform3D: scale3), NSValue(caTransform3D: scale4)]
         
         animation.values = frameValues
         
-        let frameTimes: Array = [NSNumber(value: 0.05), NSNumber(value: 0.2), NSNumber(value: 0.6), NSNumber(value: 1.0)]
+        let frameTimes = [NSNumber(value: 0.05), NSNumber(value: 0.2), NSNumber(value: 0.6), NSNumber(value: 1.0)]
         animation.keyTimes = frameTimes
         
         animation.fillMode = kCAFillModeForwards
         animation.duration = TimeInterval(durationPerBeat)
-        animation.repeatCount = Float(duration / durationPerBeat)
+        animation.repeatCount = count / Float(durationPerBeat)
         
         self.layer.add(animation, forKey: "heartbeat")
     }
     
-    /**
-     Adds a motion effect to the view
-     */
+    /// Adds a motion effect to the view.
     public func applyMotionEffects() {
         let horizontalEffect: UIInterpolatingMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
         horizontalEffect.minimumRelativeValue = -10.0
@@ -303,28 +269,26 @@ public extension UIView {
         self.addMotionEffect(motionEffectGroup)
     }
     
-    /**
-     Flip the view
-    
-     - parameter duration:  Seconds of animation
-     - parameter direction: Direction of the flip animation
-     */
-    public func flipWithDuration(_ duration: TimeInterval, direction: UIViewAnimationFlipDirection) {
+    /// Flip the view.
+    ///
+    /// - Parameters:
+    ///   - duration: Seconds of animation.
+    ///   - direction: Direction of the flip animation.
+    public func flip(duration: TimeInterval, direction: UIViewAnimationFlipDirection) {
         var subtype: String = ""
         
         switch direction {
-        case .fromTop:
+        case .top:
             subtype = "fromTop"
-        case .fromLeft:
+        case .left:
             subtype = "fromLeft"
-        case .fromBottom:
+        case .bottom:
             subtype = "fromBottom"
-        case .fromRight:
+        case .right:
             subtype = "fromRight"
         }
         
         let transition: CATransition = CATransition()
-        
         transition.startProgress = 0
         transition.endProgress = 1.0
         transition.type = "flip"
@@ -336,22 +300,21 @@ public extension UIView {
         self.layer.add(transition, forKey:"flip")
     }
     
-    /**
-     Translate the UIView around the topView
-    
-     - parameter topView:         Top view to translate to
-     - parameter duration:        Duration of the translation
-     - parameter direction:       Direction of the translation
-     - parameter repeatAnimation: If the animation must be repeat or no
-     - parameter startFromEdge:   If the animation must start from the edge
-     */
-    public func translateAroundTheView(_ topView: UIView, duration: CGFloat, direction: UIViewAnimationTranslationDirection, repeatAnimation: Bool = true, startFromEdge: Bool = true) {
+    /// Translate the UIView around the topView.
+    ///
+    /// - Parameters:
+    ///   - topView: Top view to translate to.
+    ///   - duration: Duration of the translation.
+    ///   - direction: Direction of the translation.
+    ///   - repeatAnimation: If the animation must be repeat or no.
+    ///   - startFromEdge: If the animation must start from the edge.
+    public func translateAround(topView: UIView, duration: CGFloat, direction: UIViewAnimationTranslationDirection, repeatAnimation: Bool = true, startFromEdge: Bool = true) {
         var startPosition: CGFloat = self.center.x, endPosition: CGFloat
         switch direction {
-        case .fromLeftToRight:
+        case .leftToRight:
             startPosition = self.frame.size.width / 2
             endPosition = -(self.frame.size.width / 2) + topView.frame.size.width
-        case .fromRightToLeft:
+        case .rightToLeft:
             startPosition = -(self.frame.size.width / 2) + topView.frame.size.width
             endPosition = self.frame.size.width / 2
         }
@@ -369,7 +332,7 @@ public extension UIView {
                 }) { (finished: Bool) -> Void in
                     if finished {
                         if repeatAnimation {
-                            self.translateAroundTheView(topView, duration: duration, direction: direction, repeatAnimation: repeatAnimation, startFromEdge: startFromEdge)
+                            self.translateAround(topView: topView, duration: duration, direction: direction, repeatAnimation: repeatAnimation, startFromEdge: startFromEdge)
                         }
                     }
                 }
@@ -377,12 +340,11 @@ public extension UIView {
         }
     }
     
-    /**
-     Take a screenshot of the current view
-    
-     - returns: Returns screenshot as UIImage
-     */
-    public func screenshot() -> UIImage {
+    /// Take a screenshot of the current view
+    ///
+    /// - Parameter save: Save the screenshot in user pictures. Default is false.
+    /// - Returns: Returns screenshot as UIImage
+    public func screenshot(save: Bool = false) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
         
         self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
@@ -393,40 +355,25 @@ public extension UIView {
         let imageData: Data = UIImagePNGRepresentation(image)!
         image = UIImage(data: imageData)!
         
-        return image
-    }
-    
-    /**
-     Take a screenshot of the current view an saving to the saved photos album
-    
-     - returns: Returns screenshot as UIImage
-     */
-    public func saveScreenshot() -> UIImage {
-        let image: UIImage = self.screenshot()
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        if save {
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        }
         
         return image
     }
     
-    /**
-     Removes all subviews from current view
-     */
+    /// Removes all subviews from current view
     public func removeAllSubviews() {
         self.subviews.forEach { (subview) -> () in
             subview.removeFromSuperview()
         }
     }
     
-    // MARK: - Init functions -
-    
-    /**
-     Create an UIView with the given frame and background color
-    
-     - parameter frame:           UIView frame
-     - parameter backgroundColor: UIView background color
-    
-     - returns: Returns the created UIView
-     */
+    /// Create an UIView with the given frame and background color.
+    ///
+    /// - Parameters:
+    ///   - frame: UIView frame.
+    ///   - backgroundColor: UIView background color.
     public convenience init(frame: CGRect, backgroundColor: UIColor) {
         self.init(frame: frame)
         self.backgroundColor = backgroundColor

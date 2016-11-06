@@ -26,6 +26,11 @@
 
 import Foundation
 
+public var π = 3.14159
+public var e = 2.71828
+public var φ = 1.61803398874
+public var λ = 1.30357
+
 // MARK: - Global functions
 
 /**
