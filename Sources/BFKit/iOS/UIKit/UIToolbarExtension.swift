@@ -1,5 +1,5 @@
 //
-//  UIToolbar+BFKit.swift
+//  UIToolbarExtension.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -27,22 +27,24 @@
 import Foundation
 import UIKit
 
-/// This extesion adds some useful functions to UIToolbar
+// MARK: - UIToolbar extension
+
+/// This extesion adds some useful functions to UIToolbar.
 public extension UIToolbar {
-    // MARK: - Instance functions -
+    // MARK: - Functions
     
-    /**
-     Set the UIToolbar transparent or not
-    
-     - parameter transparent: true to set it transparent, false to not
-     */
-    public func setTransparent(_ transparent: Bool) {
+    /// Set the UIToolbar transparent or not.
+    ///
+    /// - Parameter transparent: Set to true if trasparent, otherwise false.
+    public func setTransparent(_ transparent: Bool, translucent: Bool) {
         if transparent {
             self.setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
             self.setShadowImage(UIImage(), forToolbarPosition: .any)
+            self.isTranslucent = translucent
         } else {
             self.setBackgroundImage(nil, forToolbarPosition: .any, barMetrics: .default)
             self.setShadowImage(nil, forToolbarPosition: .any)
+            self.isTranslucent = translucent
         }
     }
 }
