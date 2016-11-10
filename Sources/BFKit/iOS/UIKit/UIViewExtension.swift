@@ -154,12 +154,12 @@ public extension UIView {
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
         
-        let mutableColors: NSMutableArray = NSMutableArray(array: colors)
+        var mutableColors: [Any] = colors
         for i in 0 ..< colors.count {
             let currentColor: UIColor = colors[i]
-            mutableColors.replaceObject(at: i, with: currentColor.cgColor)
+            mutableColors[i] = currentColor.cgColor
         }
-        gradient.colors = mutableColors as AnyObject as! [UIColor]
+        gradient.colors = mutableColors
         
         switch direction {
         case .vertical:
@@ -187,12 +187,12 @@ public extension UIView {
         self.layer.insertSublayer(gradient, at:0)
     }
     
-    /// Create a shake effect on the UIView.
+    /// Create a shake effect.
     ///
     /// - Parameters:
-    ///   - count: Shakes count.
-    ///   - duration: Shake duration.
-    ///   - translation: Shake translation.
+    ///   - count: Shakes count. Default is 2.
+    ///   - duration: Shake duration. Default is 0.5.
+    ///   - translation: Shake translation. Default is -5.
     func shake(count: Float = 2, duration: TimeInterval = 0.5, translation: Float = -5) {
         let animation: CABasicAnimation = CABasicAnimation(keyPath: "transform.translation.x")
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
@@ -204,10 +204,12 @@ public extension UIView {
         self.layer.add(animation, forKey: "shake")
     }
     
-    /// Create a pulse effect on th UIView.
+    /// Create a pulse effect.
     ///
-    /// - Parameter duration: Seconds of animation.
-    public func pulse(count: Float, duration: TimeInterval = 1) {
+    /// - Parameters:
+    ///   - count: Pulse count. Default is 1.
+    ///   - duration: Pulse duration. Default is 1.
+    public func pulse(count: Float = 1, duration: TimeInterval = 1) {
         let animation = CABasicAnimation(keyPath: "opacity")
         animation.duration = duration
         animation.fromValue = 0
@@ -219,13 +221,13 @@ public extension UIView {
         self.layer.add(animation, forKey: "pulse")
     }
     
-    /// Create a heartbeat effect on the UIView.
+    /// Create a heartbeat effect.
     ///
     /// - Parameters:
-    ///   - count: Seconds of animation.
-    ///   - maxSize: Maximum size of the object to animate.
-    ///   - durationPerBeat: Duration per beat.
-    public func heartbeat(count: Float = 1, maxSize: CGFloat = 1.4, durationPerBeat: CGFloat = 0.5) {
+    ///   - count: Seconds of animation. Default is 1.
+    ///   - maxSize: Maximum size of the object to animate. Default is 1.4.
+    ///   - durationPerBeat: Duration per beat. Default is 0.5.
+    public func heartbeat(count: Float = 1, maxSize: CGFloat = 1.4, durationPerBeat: TimeInterval = 0.5) {
         let animation: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform")
         
         let scale1: CATransform3D = CATransform3DMakeScale(0.8, 0.8, 1)
@@ -241,55 +243,39 @@ public extension UIView {
         animation.keyTimes = frameTimes
         
         animation.fillMode = kCAFillModeForwards
-        animation.duration = TimeInterval(durationPerBeat)
+        animation.duration = durationPerBeat
         animation.repeatCount = count / Float(durationPerBeat)
         
         self.layer.add(animation, forKey: "heartbeat")
     }
     
-    /// Adds a motion effect to the view.
-    public func applyMotionEffects() {
-        let horizontalEffect: UIInterpolatingMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
-        horizontalEffect.minimumRelativeValue = -10.0
-        horizontalEffect.maximumRelativeValue = 10.0
-        let verticalEffect: UIInterpolatingMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
-        verticalEffect.minimumRelativeValue = -10.0
-        verticalEffect.maximumRelativeValue = 10.0
-        let motionEffectGroup: UIMotionEffectGroup = UIMotionEffectGroup()
-        motionEffectGroup.motionEffects = [horizontalEffect, verticalEffect]
-        
-        self.addMotionEffect(motionEffectGroup)
-    }
-    
-    /// Flip the view.
+    /// Create a flip effect.
     ///
     /// - Parameters:
     ///   - duration: Seconds of animation.
     ///   - direction: Direction of the flip animation.
     public func flip(duration: TimeInterval, direction: UIViewAnimationFlipDirection) {
-        var subtype: String = ""
+        let transition: CATransition = CATransition()
         
         switch direction {
         case .top:
-            subtype = "fromTop"
+            transition.subtype = "fromTop"
         case .left:
-            subtype = "fromLeft"
+            transition.subtype = "fromLeft"
         case .bottom:
-            subtype = "fromBottom"
+            transition.subtype = "fromBottom"
         case .right:
-            subtype = "fromRight"
+            transition.subtype = "fromRight"
         }
         
-        let transition: CATransition = CATransition()
         transition.startProgress = 0
         transition.endProgress = 1.0
         transition.type = "flip"
-        transition.subtype = subtype
         transition.duration = duration
         transition.repeatCount = 1
         transition.autoreverses = true
         
-        self.layer.add(transition, forKey:"flip")
+        self.layer.add(transition, forKey: "flip")
     }
     
     /// Translate the UIView around the topView.
@@ -315,13 +301,13 @@ public extension UIView {
             self.center = CGPoint(x: startPosition, y: self.center.y)
         }
         
-        UIView.animate(withDuration: TimeInterval(duration / 2), delay: 1, options: UIViewAnimationOptions(), animations: { () -> Void in
+        UIView.animate(withDuration: TimeInterval(duration / 2), delay: 1, options: UIViewAnimationOptions(), animations: {
             self.center = CGPoint(x: endPosition, y: self.center.y)
-        }) { (finished: Bool) -> Void in
+        }) { finished in
             if finished {
-                UIView.animate(withDuration: TimeInterval(duration / 2), delay: 1, options: UIViewAnimationOptions(), animations: { () -> Void in
+                UIView.animate(withDuration: TimeInterval(duration / 2), delay: 1, options: UIViewAnimationOptions(), animations: {
                     self.center = CGPoint(x: startPosition, y: self.center.y)
-                }) { (finished: Bool) -> Void in
+                }) { finished in
                     if finished {
                         if repeatAnimation {
                             self.translateAround(topView: topView, duration: duration, direction: direction, repeatAnimation: repeatAnimation, startFromEdge: startFromEdge)
@@ -332,20 +318,38 @@ public extension UIView {
         }
     }
     
+    /// Adds a motion effect to the view.
+    public func applyMotionEffects() {
+        let horizontalEffect: UIInterpolatingMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
+        horizontalEffect.minimumRelativeValue = -10.0
+        horizontalEffect.maximumRelativeValue = 10.0
+        let verticalEffect: UIInterpolatingMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
+        verticalEffect.minimumRelativeValue = -10.0
+        verticalEffect.maximumRelativeValue = 10.0
+        let motionEffectGroup: UIMotionEffectGroup = UIMotionEffectGroup()
+        motionEffectGroup.motionEffects = [horizontalEffect, verticalEffect]
+        
+        self.addMotionEffect(motionEffectGroup)
+    }
+    
     /// Take a screenshot of the current view
     ///
     /// - Parameter save: Save the screenshot in user pictures. Default is false.
     /// - Returns: Returns screenshot as UIImage
-    public func screenshot(save: Bool = false) -> UIImage {
+    public func screenshot(save: Bool = false) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
         
-        self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return nil
+        }
         
-        var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        self.layer.render(in: context)
+        
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
+            return nil
+        }
+        
         UIGraphicsEndImageContext()
-        
-        let imageData: Data = UIImagePNGRepresentation(image)!
-        image = UIImage(data: imageData)!
         
         if save {
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
@@ -464,7 +468,7 @@ extension UIView {
             return self.layer.shadowOffset.width
         }
         set {
-            self.layer.shadowOffset = CGSize(width: self.shadowOffsetX, height: self.layer.shadowOffset.height)
+            self.layer.shadowOffset = CGSize(width: newValue, height: self.layer.shadowOffset.height)
         }
     }
     
@@ -476,7 +480,7 @@ extension UIView {
             return self.layer.shadowOffset.height
         }
         set {
-            self.layer.shadowOffset = CGSize(width: self.layer.shadowOffset.width, height: self.shadowOffsetY)
+            self.layer.shadowOffset = CGSize(width: self.layer.shadowOffset.width, height: newValue)
         }
     }
     
