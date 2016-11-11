@@ -33,7 +33,7 @@ import UIKit
 public extension UIWebView {
     // MARK: - Functions
     
-    /// Remove the background shadow of the UIWebView
+    /// Remove the background shadow of the UIWebView.
     public func removeBackgroundShadow() {
         for i in 0 ..< self.scrollView.subviews.count {
             let singleSubview: UIView = self.scrollView.subviews[i]

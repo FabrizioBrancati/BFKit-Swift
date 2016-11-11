@@ -177,7 +177,7 @@ class UIDeviceExtensionTests: XCTestCase {
         })
         
         waitForExpectations(timeout: 5, handler: { error in
-            XCTAssertNil(error, "Something went horribly wrong")
+            XCTAssertNil(error, "Something went horribly wrong.")
         })
     }
 }
