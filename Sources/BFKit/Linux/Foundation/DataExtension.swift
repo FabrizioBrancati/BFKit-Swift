@@ -1,5 +1,5 @@
 //
-//  NSMutableDictionary+BFKit.swift
+//  DataExtension.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -26,26 +26,32 @@
 
 import Foundation
 
-/// This extension adds some useful functions to NSMutableDictionary
-public extension NSMutableDictionary {
-    // MARK: - Instance functions -
+// MARK: - Data extension
+
+/// This extension add some useful functions to NSData.
+public extension Data {
+    // MARK: - Functions
     
-    /**
-     Set the object for a given key in safe mode (if not nil)
+    /// Convert self to a UTF8 NSString.
+    ///
+    /// - Returns: Returns self as UTF8 NSString.
+    public func toUTF8() -> String? {
+        return String(data: self, encoding: .utf8)
+    }
     
-     - parameter anObject: The object
-     - parameter forKey:   The key
+    /// Convert self to a ASCII NSString.
+    ///
+    /// - Returns: Returns self as ASCII NSString.
+    public func toASCII() -> String? {
+        return String(data: self, encoding: .ascii)
+    }
     
-     - returns: Returns true if has been setted, otherwise false
-     */
-    @discardableResult
-    public func safeSetObject(_ anObject: Any?, forKey key: NSCopying) -> Bool {
-        guard let object = anObject else {
-            return false
-        }
-        
-        self.setObject(object, forKey: key)
-        
-        return true
+    /// Convert self UUID to NSString.
+    ///
+    /// Useful for push notifications.
+    ///
+    /// - Returns: Returns self as String from UUID.
+    public func readableUUID() -> String {
+        return self.description.trimmingCharacters(in: CharacterSet(charactersIn: "<>")).replacingOccurrences(of: " ", with: "")
     }
 }

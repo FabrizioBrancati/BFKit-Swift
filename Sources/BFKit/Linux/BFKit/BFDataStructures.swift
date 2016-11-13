@@ -79,7 +79,7 @@ public struct List<Element: Equatable>: CustomStringConvertible {
     /// - Parameter index: The index.
     /// - Returns: Returns the element of the searched index.
     public func search(at index: Int) -> Element? {
-        return list.safeObjectAtIndex(index)
+        return list.safeObject(at: index)
     }
     
     /// Search an element and returns the index.

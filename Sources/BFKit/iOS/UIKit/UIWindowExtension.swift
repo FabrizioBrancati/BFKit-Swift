@@ -1,5 +1,5 @@
 //
-//  UIWindow+BFKit.swift
+//  UIWindowExtension.swift
 //  BFKit
 //
 //  The MIT License (MIT)

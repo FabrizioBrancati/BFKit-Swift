@@ -68,6 +68,6 @@ public extension NSDictionary {
         let jsonData: Data = try JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted)
         
         json = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)!
-        return json as String
+        return String(json)
     }
 }

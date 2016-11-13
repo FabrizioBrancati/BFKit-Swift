@@ -82,8 +82,11 @@ public extension NSString {
     
      - returns: Returns the decoded string
      */
-    public func decodeBase64() -> NSString {
-        return NSString.decodeBase64(self)
+    public func decodeBase64() -> NSString? {
+        guard let decoded = NSString.decodeBase64(self) else {
+            return nil
+        }
+        return decoded
     }
     
     /**
@@ -305,9 +308,11 @@ public extension NSString {
     
      - returns: Returns the decoded string
      */
-    public static func decodeBase64(_ string: NSString) -> NSString {
-        let data: Data = Data(base64Encoded: string as String, options: .ignoreUnknownCharacters)!
-        return data.convertToUTF8String() as NSString as NSString
+    public static func decodeBase64(_ string: NSString) -> NSString? {
+        guard let data: Data = Data(base64Encoded: string as String, options: .ignoreUnknownCharacters), let string = data.toUTF8() else {
+            return nil
+        }
+        return NSString(string: string)
     }
     
     /**

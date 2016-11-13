@@ -86,7 +86,7 @@ public extension UIButton {
     /// Set the title font with a size.
     ///
     /// - Parameters:
-    ///   - fontName: Font name from the FontName enum declared in UIFont+BFKit.
+    ///   - fontName: Font name from the FontName enum declared in UIFontExtension.
     ///   - size:Font size.
     public func setTitleFont(_ fontName: FontName, size: CGFloat) {
         self.titleLabel!.font = UIFont(fontName: fontName, size: size)

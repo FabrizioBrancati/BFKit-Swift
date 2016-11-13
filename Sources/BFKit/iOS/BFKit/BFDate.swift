@@ -1,5 +1,5 @@
 //
-//  BFDate+BFKit.swift
+//  BFDateExtension.swift
 //  BFKit
 //
 //  The MIT License (MIT)
