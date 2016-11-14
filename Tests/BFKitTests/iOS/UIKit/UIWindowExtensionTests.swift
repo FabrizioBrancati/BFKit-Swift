@@ -32,7 +32,7 @@ class UIWindowExtensionTests: XCTestCase {
     
     func testWindowScreenshotSave() {
         guard let screenshot = window.windowScreenshot(save: true) else {
-            XCTAssertTrue(false)
+            XCTFail()
             return
         }
         

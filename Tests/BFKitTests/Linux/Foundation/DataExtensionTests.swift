@@ -22,7 +22,7 @@ class DataExtensionTests: XCTestCase {
     
     func testToUTF8() {
         guard let utf8: String = data.toUTF8() else {
-            XCTAssertTrue(false)
+            XCTFail()
             return
         }
         
@@ -31,7 +31,7 @@ class DataExtensionTests: XCTestCase {
     
     func testToASCII() {
         guard let ascii: String = data.toASCII() else {
-            XCTAssertTrue(false)
+            XCTFail()
             return
         }
         
