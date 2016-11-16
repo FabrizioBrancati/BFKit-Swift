@@ -48,7 +48,7 @@ public extension Array {
     ///
     /// - Returns: Returns the JSON as String or nil if error while parsing.
     /// - Throws: Throws JSONSerialization error.
-    public func toJSON() throws -> String {
+    public func json() throws -> String {
         let data = try JSONSerialization.data(withJSONObject: self, options: .init(rawValue: 0))
         return NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
     }

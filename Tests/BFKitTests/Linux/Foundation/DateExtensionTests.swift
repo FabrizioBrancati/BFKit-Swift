@@ -87,23 +87,165 @@ class DateExtensionTests: XCTestCase {
     }
     
     func testNanosecond() {
-        XCTAssert(date.year == 2016)
-        XCTAssert(date.month == 10)
-        XCTAssert(date.day == 9)
-        XCTAssert(date.hour == 10)
-        XCTAssert(date.minute == 9)
-        XCTAssert(date.second == 30)
         XCTAssert(date.nanosecond == 0)
     }
     
     func testWeekday() {
+        XCTAssert(date.weekday == 1)
+    }
+    
+    func testInitYearMonthDayHourMinuteSecond() {
+        guard let newDate = Date(year: 2016, month: 10, day: 9) else {
+            XCTFail()
+            return
+        }
+        
+        XCTAssert(newDate.year == 2016)
+        XCTAssert(newDate.month == 10)
+        XCTAssert(newDate.day == 9)
+    }
+    
+    func testInitParseFormat() {
+        guard let parsed = Date(parse: "2016-10-09") else {
+            XCTFail()
+            return
+        }
+        
+        XCTAssert(parsed.year == 2016)
+        XCTAssert(parsed.month == 10)
+        XCTAssert(parsed.day == 9)
+    }
+    
+    func testInitDateTime() {
+        guard let newDate = Date(year: 2016, month: 10, day: 9) else {
+            XCTFail()
+            return
+        }
+        guard let composed = Date(date: newDate, time: date) else {
+            XCTFail()
+            return
+        }
+        
+        XCTAssert(composed.year == 2016)
+        XCTAssert(composed.month == 10)
+        XCTAssert(composed.day == 9)
+        XCTAssert(composed.hour == 10)
+        XCTAssert(composed.minute == 9)
+    }
+    
+    func testMonthsBetween() {
+        guard let newDate = Date(year: 2016, month: 5, day: 9) else {
+            XCTFail()
+            return
+        }
+        let monthsBetween = newDate.monthsBetween(date)
+        
+        XCTAssert(monthsBetween == 5)
+    }
+    
+    func testDaysBetween() {
+        guard let newDate = Date(year: 2016, month: 9, day: 9) else {
+            XCTFail()
+            return
+        }
+        let daysBetween = newDate.daysBetween(date)
+        
+        XCTAssert(daysBetween == 30)
+    }
+    
+    func testIsToday() {
+        let isToday = date.isToday()
+        
+        XCTAssertFalse(isToday)
+    }
+    
+    func testIsSameDay() {
+        guard let newDate = Date(year: 2016, month: 10, day: 9) else {
+            XCTFail()
+            return
+        }
+        let isSame = newDate.isSame(date)
+        
+        XCTAssertTrue(isSame)
+    }
+    
+    func testAddingDays() {
+        date = date.addingDays(10)
+        
         XCTAssert(date.year == 2016)
         XCTAssert(date.month == 10)
-        XCTAssert(date.day == 9)
-        XCTAssert(date.hour == 10)
-        XCTAssert(date.minute == 9)
-        XCTAssert(date.second == 30)
-        XCTAssert(date.nanosecond == 0)
-        XCTAssert(date.weekday == 1)
+        XCTAssert(date.day == 19)
+    }
+    
+    func testAddDays() {
+        date.addDays(10)
+        
+        XCTAssert(date.year == 2016)
+        XCTAssert(date.month == 10)
+        XCTAssert(date.day == 19)
+    }
+    
+    func testMonthString() {
+        let month = date.monthString()
+        
+        XCTAssert(month == "October")
+    }
+    
+    func testYearString() {
+        let year = date.yearString()
+        
+        XCTAssert(year == "2016")
+    }
+    
+    func testShortDate() {
+        let shortDate = date.shortDate()
+        
+        XCTAssert(shortDate.year == 2016)
+        XCTAssert(shortDate.month == 10)
+        XCTAssert(shortDate.day == 9)
+    }
+    
+    func testIsGreaterThan() {
+        guard let newDate = Date(year: 2016, month: 11, day: 9) else {
+            XCTFail()
+            return
+        }
+        let isGreaterThan = newDate.isGreaterThan(date)
+        
+        XCTAssertTrue(isGreaterThan)
+    }
+    
+    func testIsLessThan() {
+        guard let newDate = Date(year: 2016, month: 9, day: 9) else {
+            XCTFail()
+            return
+        }
+        let isLessThan = newDate.isLessThan(date)
+        
+        XCTAssertTrue(isLessThan)
+    }
+    
+    func testIsEqual() {
+        guard let newDate = Date(year: 2016, month: 10, day: 9) else {
+            XCTFail()
+            return
+        }
+        let isEqual = newDate.isEqual(date)
+        
+        XCTAssertTrue(isEqual)
+    }
+    
+    func testYesterday() {
+        let yesterday = date.yesterday()
+        
+        XCTAssert(yesterday.year == 2016)
+        XCTAssert(yesterday.month == 10)
+        XCTAssert(yesterday.day == 8)
+    }
+    
+    func testDecriptionDateSeparatorUSFormatNanosecond() {
+        let description = date.description(dateSeparator: "-", usFormat: false, nanosecond: false)
+        
+        XCTAssert(description == "10-09-2016 10:09:30")
     }
 }

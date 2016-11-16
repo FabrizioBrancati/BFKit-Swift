@@ -255,10 +255,34 @@ public extension Date {
     ///   - dateString: Date String.
     ///   - format: Date String format. Default is "yyyy-MM-dd". Example: "2014-05-20".
     public init?(parse dateString: String, format: String="yyyy-MM-dd") {
-        let date = DateFormatter()
-        date.timeZone = TimeZone.current
-        date.dateFormat = format
-        guard let parsed = date.date(from: dateString) else {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.dateFormat = format
+        guard let parsed = dateFormatter.date(from: dateString) else {
+            return nil
+        }
+        self = parsed
+    }
+    
+    /// Create a Date with other two Date objects.
+    /// Taken from the first date: day, month and year.
+    /// Taken from the second date: hours and minutes.
+    ///
+    /// - Parameters:
+    ///   - date: The first date for date.
+    ///   - time: The second date for time.
+    public init?(date: Date, time: Date) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let datePortion: String = dateFormatter.string(from: date)
+        
+        dateFormatter.dateFormat = "HH:mm"
+        let timePortion: String = dateFormatter.string(from: time)
+        
+        let dateTime = String(format: "%@ %@", datePortion, timePortion)
+        
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
+        guard let parsed = dateFormatter.date(from: dateTime) else {
             return nil
         }
         self = parsed
@@ -269,9 +293,9 @@ public extension Date {
     /// - Returns: Return the date with time informations.
     private func timelessDate() -> Date {
         let calendar = Calendar.autoupdatingCurrent
-        let comp = calendar.dateComponents([.year, .month, .day], from: self)
+        let components = calendar.dateComponents([.year, .month, .day], from: self)
         
-        return calendar.date(from: comp)!
+        return calendar.date(from: components)!
     }
     
     /// Return the date with time informations.
@@ -279,28 +303,16 @@ public extension Date {
     /// - Returns: Return the date with time informations.
     private func monthlessDate() -> Date {
         let calendar = Calendar.autoupdatingCurrent
-        let comp = calendar.dateComponents([.year, .month, .day, .weekday], from: self)
+        let components = calendar.dateComponents([.year, .month, .day, .weekday], from: self)
         
-        return calendar.date(from: comp)!
-    }
-    
-    /// Compare self with another date.
-    ///
-    /// - Parameter anotherDate: The another date to compare as Date.
-    /// - Returns: Returns true if is same day, false if not.
-    public func isSameDay(_ anotherDate: Date) -> Bool {
-        let calendar = Calendar.autoupdatingCurrent
-        let components1 = calendar.dateComponents([.year, .month, .day], from: self)
-        let components2 = calendar.dateComponents([.year, .month, .day], from: anotherDate)
-        
-        return components1.year == components2.year && components1.month == components2.month && components1.day == components2.day
+        return calendar.date(from: components)!
     }
     
     /// Get the months number between self and another date.
     ///
     /// - Parameter toDate: The another date.
     /// - Returns: Returns the months between the two dates.
-    public func monthsBetweenDate(_ toDate: Date) -> Int {
+    public func monthsBetween(_ toDate: Date) -> Int {
         let calendar = Calendar.autoupdatingCurrent
         let components = calendar.dateComponents([.month], from: self.monthlessDate(), to: toDate.monthlessDate())
         
@@ -311,7 +323,7 @@ public extension Date {
     ///
     /// - Parameter anotherDate: The another date.
     /// - Returns: Returns the days between the two dates.
-    public func daysBetweenDate(_ anotherDate: Date) -> Int {
+    public func daysBetween(_ anotherDate: Date) -> Int {
         let time: TimeInterval = self.timeIntervalSince(anotherDate)
         return Int(abs(time / 60 / 60 / 24))
     }
@@ -320,15 +332,34 @@ public extension Date {
     ///
     /// - Returns: Returns if self is today.
     public func isToday() -> Bool {
-        return self.isSameDay(Date())
+        return self.isSame(Date())
+    }
+    
+    /// Compare self with another date.
+    ///
+    /// - Parameter anotherDate: The another date to compare as Date.
+    /// - Returns: Returns true if is same day, false if not.
+    public func isSame(_ anotherDate: Date) -> Bool {
+        let calendar = Calendar.autoupdatingCurrent
+        let componentsSelf = calendar.dateComponents([.year, .month, .day], from: self)
+        let componentsAnotherDate = calendar.dateComponents([.year, .month, .day], from: anotherDate)
+        
+        return componentsSelf.year == componentsAnotherDate.year && componentsSelf.month == componentsAnotherDate.month && componentsSelf.day == componentsAnotherDate.day
     }
     
     /// Add days to self.
     ///
     /// - Parameter days: The number of days to add.
     /// - Returns: Returns self by adding the gived days number.
-    public func dateByAddingDays(_ days: Int) -> Date {
+    public func addingDays(_ days: Int) -> Date {
         return self.addingTimeInterval(TimeInterval(days * 24 * 60 * 60))
+    }
+    
+    /// Add days to self.
+    ///
+    /// - Parameter days: The number of days to add.
+    public mutating func addDays(_ days: Int) {
+        self.addTimeInterval(TimeInterval(days * 24 * 60 * 60))
     }
     
     /// Get the month string from self.
@@ -356,119 +387,75 @@ public extension Date {
     /// - Returns: Date after removing all components but not year, month and day.
     public func shortDate() -> Date {
         let calendar = Calendar.autoupdatingCurrent
-        let comp = calendar.dateComponents([.year, .month, .day], from:self)
+        let components = calendar.dateComponents([.year, .month, .day], from:self)
         
-        return calendar.date(from: comp)!
+        return calendar.date(from: components)!
     }
     
     /// Check if the given date is less than self.
     ///
     /// - Parameter date: Date to compare.
-    /// - Returns: Returns a true if self is greater than the given one, otherwise false.
+    /// - Returns: Returns a true if self is greater than another one, otherwise false.
     public func isGreaterThan(_ date: Date) -> Bool {
-        //Declare Variables
         var isGreater = false
-        
-        //Compare Values
         if self.compare(date) == ComparisonResult.orderedDescending {
             isGreater = true
         }
         
-        //Return Result
         return isGreater
     }
     
     /// Check if the given date is greater than self.
     ///
     /// - Parameter date: Date to compare.
-    /// - Returns: Returns a true if self is less than the given one, otherwise false.
+    /// - Returns: Returns a true if self is less than another one, otherwise false.
     public func isLessThan(_ date: Date) -> Bool {
-        //Declare Variables
         var isLess = false
-        
-        //Compare Values
         if self.compare(date) == ComparisonResult.orderedAscending {
             isLess = true
         }
         
-        //Return Result
         return isLess
+    }
+    
+    /// Just an alias for `isSame(_ anotherDate: Date)`.
+    ///
+    /// - Parameter date: Date to compare.
+    /// - Returns: Returns a true if self is equal to another one, otherwise false.
+    public func isEqual(_ date: Date) -> Bool {
+        return self.isSame(date)
     }
     
     /// Create a Date with the yesterday date.
     ///
     /// - Returns: Returns a Date with the yesterday date.
-    public static func yesterday() -> Date {
-        var date = Date()
-        date.day = date.day - 1
+    public mutating func yesterday() -> Date {
+        self.day = self.day - 1
         
-        return date
+        return self
     }
     
-    /// Create a Date with other two Date objects.
-    /// Taken from the first date: day, month and year.
-    /// Taken from the second date: hours and minutes.
+    /// Get the given Date structure as a formatted string.
     ///
     /// - Parameters:
-    ///   - date: The first date for date.
-    ///   - time: The second date for time.
-    /// - Returns: Returns the created Date.
-    public static func dateFrom(date: Date, time: Date) -> Date {
-        let dateFormatter: DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        let datePortion: String = dateFormatter.string(from: date)
-        
-        dateFormatter.dateFormat = "HH:mm"
-        let timePortion: String = dateFormatter.string(from: time)
-        
-        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
-        let dateTime = String(format: "%@ %@", datePortion, timePortion)
-        
-        return dateFormatter.date(from: dateTime)!
-    }
-    
-    /// Get the given BFDateInformation structure as a formatted string.
-    ///
-    /// - Parameters:
-    ///   - info: The BFDateInformation to be formatted.
+    ///   - info: The Date to be formatted.
     ///   - dateSeparator: The string to be used as date separator.
     ///   - usFormat: Set if the timestamp is in US format or not.
     ///   - nanosecond: Set if the timestamp has to have the nanosecond.
     /// - Returns: Returns a String in the following format (dateSeparator = "/", usFormat to false and nanosecond to false). D/M/Y H:M:S. Example: 15/10/2013 10:38:43.
-    public static func dateDescription(_ date: Date, dateSeparator: String = "/", usFormat: Bool = false, nanosecond: Bool = false) -> String {
+    public func description(dateSeparator: String = "/", usFormat: Bool = false, nanosecond: Bool = false) -> String {
         var description: String
         
         if usFormat {
-            description = String(format: "%04li%@%02li%@%02li %02li:%02li:%02li", date.year, dateSeparator, date.month, dateSeparator, date.day, date.hour, date.minute, date.second)
+            description = String(format: "%04li%@%02li%@%02li %02li:%02li:%02li", self.year, dateSeparator, self.month, dateSeparator, self.day, self.hour, self.minute, self.second)
         } else {
-            description = String(format: "%02li%@%02li%@%04li %02li:%02li:%02li", date.month, dateSeparator, date.day, dateSeparator, date.year, date.hour, date.minute, date.second)
+            description = String(format: "%02li%@%02li%@%04li %02li:%02li:%02li", self.month, dateSeparator, self.day, dateSeparator, self.year, self.hour, self.minute, self.second)
         }
         
         if nanosecond {
-            description += String(format: ":%03li", date.nanosecond / 1000000)
+            description += String(format: ":%03li", self.nanosecond / 1000000)
         }
         
         return description
     }
-}
-
-
-/// Compare two Date objects.
-///
-/// - Parameters:
-///   - left: First Date object to compare.
-///   - right: Second Date object to compare.
-/// - Returns: Returns if left is greater than right.
-public func > (left: Date, right: Date) -> Bool {
-    return left.isGreaterThan(right)
-}
-
-/// Compare two Date objects.
-///
-/// - Parameters:
-///   - left: First Date object to compare.
-///   - right: Second Date object to compare.
-/// - Returns: Returns if left is less than right.
-public func < (left: Date, right: Date) -> Bool {
-    return left.isLessThan(right)
 }

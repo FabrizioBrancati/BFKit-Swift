@@ -20,8 +20,8 @@ class DataExtensionTests: XCTestCase {
         super.tearDown()
     }
     
-    func testToUTF8() {
-        guard let utf8: String = data.toUTF8() else {
+    func testUTF8() {
+        guard let utf8: String = data.utf8() else {
             XCTFail()
             return
         }
@@ -29,8 +29,8 @@ class DataExtensionTests: XCTestCase {
         XCTAssert(utf8 == "This is a test")
     }
     
-    func testToASCII() {
-        guard let ascii: String = data.toASCII() else {
+    func testASCII() {
+        guard let ascii: String = data.ascii() else {
             XCTFail()
             return
         }

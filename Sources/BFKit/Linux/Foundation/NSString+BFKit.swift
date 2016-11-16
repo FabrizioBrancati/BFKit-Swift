@@ -309,7 +309,7 @@ public extension NSString {
      - returns: Returns the decoded string
      */
     public static func decodeBase64(_ string: NSString) -> NSString? {
-        guard let data: Data = Data(base64Encoded: string as String, options: .ignoreUnknownCharacters), let string = data.toUTF8() else {
+        guard let data: Data = Data(base64Encoded: string as String, options: .ignoreUnknownCharacters), let string = data.utf8() else {
             return nil
         }
         return NSString(string: string)

@@ -28,9 +28,9 @@ class ArrayExtensionTests: XCTestCase {
         XCTAssert(objectNil == nil)
     }
     
-    func testToJSON() {
+    func testJSON() {
         do {
-            let json = try array.toJSON()
+            let json = try array.json()
             
             XCTAssert(json == "[1,2,3,4,5]")
         } catch {

@@ -344,7 +344,7 @@ public extension UIDevice {
         
         if uniqueIdentifier is Data {
             let data: Data = uniqueIdentifier as! Data
-            guard let newUUID = data.toUTF8() else {
+            guard let newUUID = data.utf8() else {
                 return
             }
             isValid = newUUID.isUUIDForAPNS()

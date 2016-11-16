@@ -35,14 +35,14 @@ public extension Data {
     /// Convert self to a UTF8 NSString.
     ///
     /// - Returns: Returns self as UTF8 NSString.
-    public func toUTF8() -> String? {
+    public func utf8() -> String? {
         return String(data: self, encoding: .utf8)
     }
     
     /// Convert self to a ASCII NSString.
     ///
     /// - Returns: Returns self as ASCII NSString.
-    public func toASCII() -> String? {
+    public func ascii() -> String? {
         return String(data: self, encoding: .ascii)
     }
     
