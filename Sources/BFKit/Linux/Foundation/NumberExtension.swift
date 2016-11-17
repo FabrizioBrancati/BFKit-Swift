@@ -35,49 +35,38 @@ public var λ = 1.30357
 
 // MARK: - Global functions
 
-/**
- Degrees to radians conversion
-
- - parameter degrees: Degrees to be converted
-
- - returns: Returns the convertion result
- */
+/// Degrees to radians conversion.
+///
+/// - Parameter degrees: Degrees to be converted.
+/// - Returns: Returns the convertion result.
 public func degreesToRadians(_ degrees: Float) -> Float {
     return Float(Double(degrees) * M_PI / 180)
 }
 
-/**
- Radians to degrees conversion
-
- - parameter radians: Radians to be converted
-
- - returns: Returns the convertion result
- */
+/// Radians to degrees conversion.
+///
+/// - Parameter radians: Radians to be converted.
+/// - Returns: Returns the convertion result.
 public func radiansToDegrees(_ radians: Float) -> Float {
     return Float(Double(radians) * 180 / M_PI)
 }
 
-/**
- Create a random integer between the given range
-
- - parameter minValue: Mininum random value
- - parameter maxValue: Maxinum random value
-
- - returns: Returns the created random integer
- */
-public func randomIntBetweenMin(_ minValue: Int, andMax maxValue: Int) -> Int {
+/// Create a random integer between the given range.
+///
+/// - Parameters:
+///   - minValue: Mininum random value.
+///   - maxValue: Maxinum random value.
+/// - Returns: Returns the created random integer.
+public func randomInt(min minValue: Int, max maxValue: Int) -> Int {
     return minValue + Int(randomFloat()) * (maxValue - minValue)
 }
 
-/**
- Create a random integer between the given range.
- Example: NSNumber.randomInt(-500...100)
- 
- - parameter range: Range random value
- 
- - returns: Returns the created random integer
- */
-public func randomInt(_ range: Range<Int>) -> Int {
+/// Create a random integer between the given range.
+/// Example: randomInt(-500...100).
+///
+/// - Parameter range: Range random value.
+/// - Returns: Returns the created random integer.
+public func randomInt(range: Range<Int>) -> Int {
     var offset = 0
     
     if range.lowerBound < 0 {
@@ -90,34 +79,27 @@ public func randomInt(_ range: Range<Int>) -> Int {
     return Int(min + arc4random_uniform(max - min)) - offset
 }
 
-/**
- Create a random float
-
- - returns: Returns the created random float
- */
+/// Create a random float.
+///
+/// - Returns: Returns the created random float.
 public func randomFloat() -> Float {
     return Float(arc4random() / UINT32_MAX)
 }
 
-/**
- Create a random float between the given range
-
- - parameter minValue: Mininum random value
- - parameter maxValue: Maxinum random value
-
- - returns: Returns the created random float
- */
-public func randomFloatBetweenMin(_ minValue: Float, andMax maxValue: Float) -> Float {
+/// Create a random float between the given range.
+///
+/// - Parameters:
+///   - minValue: Mininum random value.
+///   - maxValue: Maxinum random value.
+/// - Returns: Returns the created random float.
+public func randomFloat(min minValue: Float, max maxValue: Float) -> Float {
     return Float(arc4random()) / Float(UINT32_MAX) * abs(minValue - maxValue) + min(minValue, maxValue)
 }
 
-/**
- Get the next power of two
-
- - parameter number: Number to be powered
-
- - returns: Returns the number powered
- */
+/// Get the next power of two
+///
+/// - Parameter number: Number to be powered
+/// - Returns: Returns the number powered
 public func nextPowerOfTwo(_ number: Int) -> Int {
     var result = 1
     while result < number {
@@ -126,13 +108,10 @@ public func nextPowerOfTwo(_ number: Int) -> Int {
     return result
 }
 
-/**
- Returns if the number is a power of two
-
- - parameter number: Number to check
-
- - returns: Returns if the number is a power of two
- */
+/// Returns if the number is a power of two.
+///
+/// - Parameter number: Number to check.
+/// - Returns: Returns if the number is a power of two.
 public func isPowerOfTwo(_ number: Int) -> Bool {
     return (number != 0) && (number & (number - 1) >= 1 ? true : false)
 }
