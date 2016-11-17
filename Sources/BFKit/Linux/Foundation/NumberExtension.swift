@@ -1,5 +1,5 @@
 //
-//  NSNumber+BFKit.swift
+//  NumberExtension.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -25,6 +25,8 @@
 //  SOFTWARE.
 
 import Foundation
+
+// MARK: - Global variables
 
 public var π = 3.14159
 public var e = 2.71828
@@ -134,9 +136,3 @@ public func nextPowerOfTwo(_ number: Int) -> Int {
 public func isPowerOfTwo(_ number: Int) -> Bool {
     return (number != 0) && (number & (number - 1) >= 1 ? true : false)
 }
-
-public func ~ (left: CGFloat, right: Double) -> Bool {
-    return round(Double(left)) == right
-}
-
-infix operator ~ : DefaultPrecedence

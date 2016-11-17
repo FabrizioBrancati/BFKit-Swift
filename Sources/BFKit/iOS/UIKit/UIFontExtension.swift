@@ -732,13 +732,13 @@ public extension UIFont {
     ///
     /// - Returns: Returns all the font family names.
     public static func allFonts() -> [String: [Any]] {
-        var fontFamilies: NSMutableArray = NSMutableArray(array: UIFont.familyNames as NSArray)
-        fontFamilies = NSMutableArray.sortArrayByKey("", array: fontFamilies, ascending: true)
+        var fontFamilies = UIFont.familyNames
+        fontFamilies.sort { $0 > $1 }
         
         var fontFamilyDictionary: [String: [Any]] = Dictionary()
         
         for i in 0 ..< fontFamilies.count {
-            let fontFamily: String = fontFamilies.object(at: i) as! String
+            let fontFamily: String = fontFamilies[i]
             let fontNames: Array = UIFont.fontNames(forFamilyName: fontFamily)
             fontFamilyDictionary[fontFamily] = fontNames
         }

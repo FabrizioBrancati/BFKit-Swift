@@ -1,5 +1,5 @@
 //
-//  Dictionary+BFKit.swift
+//  DictionaryExtension.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -26,33 +26,21 @@
 
 import Foundation
 
-/// This extension adds some useful functions to NSDictionary
+// MARK: - Dictionary extension
+
+/// This extension adds some useful functions to NSDictionary.
 public extension Dictionary {
-    // MARK: - Instance functions -
+    // MARK: - Functions
     
-    /**
-     Convert self to JSON as String
-    
-     - returns: Returns the JSON as String or nil if error while parsing
-     */
-    public func dictionaryToJSON() throws -> String {
-        return try Dictionary.dictionaryToJSON(self as AnyObject)
-    }
-    
-    // MARK: - Class functions -
-    
-    /**
-     Convert the given dictionary to JSON as String
-    
-     - parameter dictionary: The dictionary to be converted
-    
-     - returns: Returns the JSON as String or nil if error while parsing
-     */
-    public static func dictionaryToJSON(_ dictionary: AnyObject) throws -> String {
-        var json: NSString
-        let jsonData: Data = try JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted)
-        
-        json = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)!
-        return json as String
+    /// Returns an object if key exists or nil if not
+    ///
+    /// - Parameter key: Key to get value of.
+    /// - Returns: Value for the key Or nil.
+    public func safeObject(forKey key: Key) -> Any? {
+        if let value = self[key] {
+            return value
+        } else {
+            return nil
+        }
     }
 }

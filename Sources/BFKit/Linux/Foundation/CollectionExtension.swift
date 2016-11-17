@@ -1,5 +1,5 @@
 //
-//  NSMutableDictionary+BFKit.swift
+//  CollectionExtension.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -26,26 +26,22 @@
 
 import Foundation
 
-/// This extension adds some useful functions to NSMutableDictionary
-public extension NSMutableDictionary {
-    // MARK: - Instance functions -
+// MARK: - Collection extension
+
+/// This extension adds some useful functions to Collection protocol.
+public extension Collection {
+    // MARK: - Functions
     
-    /**
-     Set the object for a given key in safe mode (if not nil)
-    
-     - parameter anObject: The object
-     - parameter forKey:   The key
-    
-     - returns: Returns true if has been setted, otherwise false
-     */
-    @discardableResult
-    public func safeSetObject(_ anObject: Any?, forKey key: NSCopying) -> Bool {
-        guard let object = anObject else {
-            return false
+    /// Convert self to JSON as String.
+    ///
+    /// - Returns: Returns the JSON as String or nil if error while parsing.
+    /// - Throws: Throws JSONSerialization errors.
+    public func json() throws -> String {
+        let jsonData: Data = try JSONSerialization.data(withJSONObject: self, options: [])
+        
+        guard let json = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue) else {
+            throw NSError(domain: "BFKit", code: 100, userInfo: ["Error": "Error while encoding Data to String."])
         }
-        
-        self.setObject(object, forKey: key)
-        
-        return true
+        return String(json)
     }
 }

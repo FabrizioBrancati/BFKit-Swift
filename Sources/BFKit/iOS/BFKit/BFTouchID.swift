@@ -32,7 +32,7 @@ import LocalAuthentication
 
 /// This struct adds some useful functions to use TouchID.
 public struct BFTouchID {
-    // MARK: - Enums
+    // MARK: - Variables
     
     /// Touch result enum:
     ///

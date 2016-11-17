@@ -151,7 +151,7 @@ open class BFApp {
     ///   - objectKey: Key to set the object.
     /// - Returns: Returns true if the operation was successful, otherwise false.
     public static func setAppSetting(object: AnyObject, forKey objectKey: String) -> Bool {
-        return FileManager.setSettings(BFApp.name, object: object, forKey: objectKey)
+        return FileManager.default.setSettings(filename: BFApp.name, object: object, forKey: objectKey)
     }
     
     /// Get the App setting for a given key.
@@ -159,7 +159,7 @@ open class BFApp {
     /// - Parameter objectKey: Key to get the object.
     /// - Returns: Returns the object for the given key.
     public static func getAppSetting(objectKey: String) -> Any? {
-        return FileManager.getSettings(BFApp.name, objectForKey: objectKey)
+        return FileManager.default.getSettings(filename: BFApp.name, forKey: objectKey)
     }
 }
 

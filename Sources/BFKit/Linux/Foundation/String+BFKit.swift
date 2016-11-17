@@ -207,7 +207,7 @@ public extension String {
      - returns: Returns self as NSData
      */
     public func convertToNSData() -> Data {
-        return NSString.convertToNSData(self as NSString)
+        return self.data(using: .utf8)!
     }
 
     /**
@@ -601,7 +601,8 @@ public extension String {
     ///
     /// - returns: Remove double or more duplicated spaces.
     public func removeExtraSpaces() -> String {
-        return self.NS.removeExtraSpaces() as String
+        let squashed = self.replacingOccurrences(of: "[ ]+", with: " ", options: .regularExpression, range: nil)
+        return squashed.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
 
     /**
@@ -613,7 +614,14 @@ public extension String {
      - returns: Returns a new string containing matching regular expressions replaced with the template string
      */
     public func stringByReplacingWithRegex(_ regexString: String, replacement: String) -> String? {
-        return self.NS.stringByReplacingWithRegex(regexString as NSString, replacement: replacement as NSString) as? String
+        do {
+            let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString as String, options: .caseInsensitive)
+            return regex.stringByReplacingMatches(in: self as String, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: self.length), withTemplate: "")
+        } catch {
+            
+        }
+        
+        return nil
     }
     
     /**
@@ -699,7 +707,17 @@ public extension String {
      - returns: Readable string
      */
     public func HEXToString() -> String {
-        return self.NS.HEXToString() as String
+        var hex = self as String
+        hex = hex.replacingOccurrences(of: " ", with: "")
+        var s: String = ""
+        while hex.characters.count > 0 {
+            let c: String = hex.substring(to: hex.index(hex.startIndex, offsetBy: 2))
+            hex = hex.substring(from: hex.index(hex.startIndex, offsetBy: 2))
+            var ch: UInt32 = 0
+            Scanner(string: c).scanHexInt32(&ch)
+            s = s + String(format: "%c", ch)
+        }
+        return s
     }
 
     /**
@@ -709,6 +727,14 @@ public extension String {
      - returns: HEX string
      */
     public func stringToHEX() -> String {
-        return self.NS.stringToHEX() as String
+        let selfString = self as String
+        
+        let hexString: NSMutableString = NSMutableString()
+        
+        for i in 0 ..< self.length {
+            hexString.appendFormat("%02x", selfString[i ..< i+1])
+        }
+        
+        return hexString as String
     }
 }

@@ -349,8 +349,8 @@ public extension UIDevice {
             }
             isValid = newUUID.isUUIDForAPNS()
         } else if uniqueIdentifier is NSString {
-            let string: NSString = uniqueIdentifier as! NSString
-            newUUID = string.convertToAPNSUUID() as String
+            let string: String = uniqueIdentifier as! String
+            newUUID = string.convertToAPNSUUID()
             isValid = newUUID.isUUIDForAPNS()
         } else if uniqueIdentifier is String {
             let string: String = uniqueIdentifier as! String

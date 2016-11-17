@@ -31,7 +31,7 @@ import AudioToolbox
 
 /// This struct adds some useful functions to play system sounds.
 public class BFSystemSound {
-    // MARK: - Enums
+    // MARK: - Variables
     
     /// Audio IDs enum.
     ///
