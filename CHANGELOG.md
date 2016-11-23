@@ -27,12 +27,14 @@ All notable changes to this project will be documented in this file.<br>
 ## 2.0.0 - A new beginning
 ### XX XXX 2016
 #### Added
+- This version has been completely rewritten and is not compatible with 1.x versions
 - Added Swift 3.0 support
 - Added Full Unit Tests
 - Adopt the new [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)
-- Use of [Swiftlint](https://github.com/realm/SwiftLint)
-- Builds on Linux (Only Foundation Extensions)
-- Added French localization [#20](https://github.com/FabrizioBrancati/BFKit/pull/20
+- Use of [SwiftLint](https://github.com/realm/SwiftLint)
+- Builds on Linux (Foundation extensions only)
+- Added French localization [#20](https://github.com/FabrizioBrancati/BFKit/pull/20)
+- Added `isLowPowerModeEnabled` and `lowPowerModeChanged(_:)` in UIDevice extension
 
 Thanks to [@the0neyouseek](https://github.com/the0neyouseek) for this release
 
