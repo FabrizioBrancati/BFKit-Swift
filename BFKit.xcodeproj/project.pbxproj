@@ -28,6 +28,7 @@
 		498432121DC952C20013A2D9 /* UIFontExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498432111DC952C20013A2D9 /* UIFontExtensionTests.swift */; };
 		498432141DCA67130013A2D9 /* UIImageExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498432131DCA67130013A2D9 /* UIImageExtensionTests.swift */; };
 		4998657B1DE53AE4000D252A /* BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4998657A1DE53AE4000D252A /* BFKit.swift */; };
+		4998657D1DE61825000D252A /* NumberExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4998657C1DE61825000D252A /* NumberExtensionTests.swift */; };
 		49AA6C2F1DC7B30C00829E7D /* UIDeviceExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AA6C2E1DC7B30C00829E7D /* UIDeviceExtensionTests.swift */; };
 		49D144F11DCD4EB700675367 /* UIImageViewExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D144F01DCD4EB700675367 /* UIImageViewExtensionTests.swift */; };
 		49D524C21DDD2B5000418942 /* CollectionExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D524C11DDD2B5000418942 /* CollectionExtensionTests.swift */; };
@@ -131,6 +132,7 @@
 		498432111DC952C20013A2D9 /* UIFontExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtensionTests.swift; sourceTree = "<group>"; };
 		498432131DCA67130013A2D9 /* UIImageExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensionTests.swift; sourceTree = "<group>"; };
 		4998657A1DE53AE4000D252A /* BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFKit.swift; path = Sources/BFKit/Linux/BFKit/BFKit.swift; sourceTree = SOURCE_ROOT; };
+		4998657C1DE61825000D252A /* NumberExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberExtensionTests.swift; sourceTree = "<group>"; };
 		49AA6C2E1DC7B30C00829E7D /* UIDeviceExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceExtensionTests.swift; sourceTree = "<group>"; };
 		49D144F01DCD4EB700675367 /* UIImageViewExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensionTests.swift; sourceTree = "<group>"; };
 		49D524C11DDD2B5000418942 /* CollectionExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionExtensionTests.swift; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 				4920BB9E1DD925B500A3FBA9 /* DateExtensionTests.swift */,
 				49D524C31DDE60B000418942 /* DictionaryExtensionTests.swift */,
 				49D524C51DDE61D400418942 /* FileManagerExtensionTests.swift */,
+				4998657C1DE61825000D252A /* NumberExtensionTests.swift */,
 			);
 			name = Foundation;
 			path = Tests/BFKitTests/Linux/Foundation;
@@ -599,6 +602,7 @@
 				4920BB871DCF6C6B00A3FBA9 /* UIScreenExtensionTests.swift in Sources */,
 				49D524C61DDE61D400418942 /* FileManagerExtensionTests.swift in Sources */,
 				49D144F11DCD4EB700675367 /* UIImageViewExtensionTests.swift in Sources */,
+				4998657D1DE61825000D252A /* NumberExtensionTests.swift in Sources */,
 				49F0DCC01DBD172300C9AE18 /* BFTouchIDTests.swift in Sources */,
 				49F0DCBD1DBD172300C9AE18 /* BFPasswordTests.swift in Sources */,
 				4920BB8F1DCF8BEB00A3FBA9 /* UITextViewExtensionTests.swift in Sources */,

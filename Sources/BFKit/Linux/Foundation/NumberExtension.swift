@@ -70,7 +70,7 @@ public func randomInt(min minValue: Int, max maxValue: Int) -> Int {
 ///
 /// - Parameter range: Range random value.
 /// - Returns: Returns the created random integer.
-public func randomInt(range: Range<Int>) -> Int {
+public func randomInt(range: ClosedRange<Int>) -> Int {
     var offset = 0
     
     if range.lowerBound < 0 {
@@ -96,7 +96,6 @@ public func randomFloat() -> Float {
     #else
         return Float(arc4random()) / Float(UINT32_MAX)
     #endif
-    
 }
 
 /// Create a random float between the given range.
@@ -107,24 +106,4 @@ public func randomFloat() -> Float {
 /// - Returns: Returns the created random float.
 public func randomFloat(min minValue: Float, max maxValue: Float) -> Float {
     return randomFloat() * abs(minValue - maxValue) + min(minValue, maxValue)
-}
-
-/// Get power of two.
-///
-/// - Parameter number: Number to be powered.
-/// - Returns: Returns the number powered.
-public func powerOfTwo(_ number: Int) -> Int {
-    var result = 1
-    while result < number {
-        result *= 2
-    }
-    return result
-}
-
-/// Returns if the number is a power of two.
-///
-/// - Parameter number: Number to check.
-/// - Returns: Returns if the number is a power of two.
-public func isPowerOfTwo(_ number: Int) -> Bool {
-    return (number != 0) && (number & (number - 1) >= 1 ? true : false)
 }
