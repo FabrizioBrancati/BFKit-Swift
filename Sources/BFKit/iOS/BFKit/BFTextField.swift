@@ -75,8 +75,11 @@ open class BFTextField: UITextField {
     ///
     /// - Parameter notification: Notification object.
     @objc private func textFieldDidChange(_ notification: Notification) {
-        if self.maxNumberOfCharacters != 0 && self.text!.length >= self.maxNumberOfCharacters {
-            self.text = self.text?.substringToIndex(self.maxNumberOfCharacters)
+        guard let text = self.text else {
+            return
+        }
+        if self.maxNumberOfCharacters != 0 && text.length >= self.maxNumberOfCharacters {
+            self.text = text.substring(to: self.maxNumberOfCharacters)
         }
     }
     

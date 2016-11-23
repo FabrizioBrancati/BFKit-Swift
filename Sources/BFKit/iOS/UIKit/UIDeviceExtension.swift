@@ -89,7 +89,7 @@ public extension UIDevice {
     ///
     /// Example: 9.
     public static var osMajorVersion: Int {
-        guard let subVersion = UIDevice.current.systemVersion.substringToCharacter("."), let intSubVersion = Int(subVersion) else {
+        guard let subVersion = UIDevice.current.systemVersion.substring(to: "."), let intSubVersion = Int(subVersion) else {
             return 0
         }
         return intSubVersion
@@ -261,35 +261,35 @@ public extension UIDevice {
     ///
     /// - Returns: Returns true if it is an iPhone, otherwise false.
     public static func isPhone() -> Bool {
-        return self.hardwareModel.substringToIndex(6) == "iPhone"
+        return self.hardwareModel.substring(to: 6) == "iPhone"
     }
     
     /// Check if current device is an iPad.
     ///
     /// - Returns: Returns true if it is an iPad, otherwise false.
     public static func isPad() -> Bool {
-        return self.hardwareModel.substringToIndex(4) == "iPad"
+        return self.hardwareModel.substring(to: 4) == "iPad"
     }
     
     /// Check if current device is an iPod.
     ///
     /// - Returns: Returns true if it is an iPod, otherwise false.
     public static func isPod() -> Bool {
-        return self.hardwareModel.substringToIndex(4) == "iPod"
+        return self.hardwareModel.substring(to: 4) == "iPod"
     }
     
     /// Check if current device is an Apple TV.
     ///
     /// - Returns: Returns true if it is an Apple TV, otherwise false.
     public static func isTV() -> Bool {
-        return self.hardwareModel.substringToIndex(7) == "AppleTV"
+        return self.hardwareModel.substring(to: 7) == "AppleTV"
     }
     
     /// Check if current device is an Applw Watch.
     ///
     /// - Returns: Returns true if it is an Apple Watch, otherwise false.
     public static func isWatch() -> Bool {
-        return self.hardwareModel.substringToIndex(5) == "Watch"
+        return self.hardwareModel.substring(to: 5) == "Watch"
     }
     
     /// Check if current device is a Simulator.
@@ -372,11 +372,11 @@ public extension UIDevice {
             isValid = newUUID.isUUIDForAPNS()
         } else if uniqueIdentifier is NSString {
             let string: String = uniqueIdentifier as! String
-            newUUID = string.convertToAPNSUUID()
+            newUUID = string.apnsUUID()
             isValid = newUUID.isUUIDForAPNS()
         } else if uniqueIdentifier is String {
             let string: String = uniqueIdentifier as! String
-            newUUID = string.convertToAPNSUUID() as String
+            newUUID = string.apnsUUID() as String
             isValid = newUUID.isUUIDForAPNS()
         }
         

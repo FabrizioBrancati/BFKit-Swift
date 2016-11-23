@@ -119,7 +119,7 @@ class UIDeviceExtensionTests: XCTestCase {
     func testLowPowerModeChanged() {
         let testExpectation = expectation(description: "Low Power Mode Changed")
         
-        UIDevice.lowPowerModeChanged { (isLowPowerModeEnabled) in
+        UIDevice.lowPowerModeChanged { isLowPowerModeEnabled in
             XCTAssertFalse(isLowPowerModeEnabled)
             
             testExpectation.fulfill()

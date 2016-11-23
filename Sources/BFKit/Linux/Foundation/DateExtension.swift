@@ -345,7 +345,7 @@ public extension Date {
     /// Compare self with another date.
     ///
     /// - Parameter anotherDate: The another date to compare as Date.
-    /// - Returns: Returns true if is same day, false if not.
+    /// - Returns: Returns true if is same day, otherwise false.
     public func isSame(_ anotherDate: Date) -> Bool {
         let calendar = Calendar.autoupdatingCurrent
         let componentsSelf = calendar.dateComponents([.year, .month, .day], from: self)

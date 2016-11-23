@@ -572,7 +572,7 @@ public extension UIImage {
     
     /// Check if the image is in grayscale.
     ///
-    /// - Returns: Returns true if is in grayscale, false if not.
+    /// - Returns: Returns true if is in grayscale, otherwise false.
     public func isGrayscale() -> Bool {
         let imgReference: CGImage = self.cgImage!
         let model: CGColorSpaceModel = imgReference.colorSpace!.model
