@@ -233,7 +233,29 @@ public extension UIDevice {
         return self.getSysInfo(HW_USERMEM)
     }
     
+    /// Retruns if current device is running in low power mode.
+    @available(iOS 9.0, *)
+    public static var isLowPowerModeEnabled: Bool {
+        return ProcessInfo.processInfo.isLowPowerModeEnabled
+    }
+    
+    /// Low power mode observer.
+    private static var lowPowerModeObserver = false
+    
     // MARK: - Functions
+    
+    /// Executes a block everytime low power mode is enabled o disabled.
+    ///
+    /// - Parameter block: Block to be executed.
+    @available(iOS 9.0, *)
+    public static func lowPowerModeChanged(_ block: @escaping (_ isLowPowerModeEnabled: Bool) -> ()) {
+        if !lowPowerModeObserver {
+            NotificationCenter.default.addObserver(self, selector: #selector(lowPowerModeChanged(_:)), name: .NSProcessInfoPowerStateDidChange, object: nil)
+            lowPowerModeObserver = true
+        }
+        
+        block(UIDevice.isLowPowerModeEnabled)
+    }
     
     /// Check if current device is an iPhone.
     ///

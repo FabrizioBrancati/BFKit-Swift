@@ -108,6 +108,28 @@ class UIDeviceExtensionTests: XCTestCase {
         XCTAssert(userMemory != 0)
     }
     
+    @available(iOS 9.0, *)
+    func testIsLowPowerModeEnabled() {
+        let isLowPowerMode = UIDevice.isLowPowerModeEnabled
+        
+        XCTAssertFalse(isLowPowerMode)
+    }
+    
+    @available(iOS 9.0, *)
+    func testLowPowerModeChanged() {
+        let testExpectation = expectation(description: "Low Power Mode Changed")
+        
+        UIDevice.lowPowerModeChanged { (isLowPowerModeEnabled) in
+            XCTAssertFalse(isLowPowerModeEnabled)
+            
+            testExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5, handler: { error in
+            XCTAssertNil(error, "Something went horribly wrong.")
+        })
+    }
+    
     func testIsPhone() {
         let device = UIDevice.isPhone()
         

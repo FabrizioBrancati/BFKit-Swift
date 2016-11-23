@@ -1,5 +1,5 @@
 //
-//  ProcessInfo+BFKit.swift
+//  NSObjectExtension.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -26,16 +26,16 @@
 
 import Foundation
 
-/// This extension adds some useful functions to ProcessInfo
-private extension ProcessInfo {
-    // MARK: - Class functions -
+// MARK: - NSObject exntesion
+
+/// This extension adds some useful functions to NSObject.
+public extension NSObject {
+    // MARK: - Functions
     
-    /**
-     Returns the CPU usage by the current App
-    
-     - returns: Returns the CPU usage by the current App
-     */
-    private static func currentAppCPUUsage() -> Float {
-        return 0.0
+    /// Check if the object is valid (not null).
+    ///
+    /// - Returns: Returns if the object is valid
+    public func isValid() -> Bool {
+        return !(self is NSNull)
     }
 }

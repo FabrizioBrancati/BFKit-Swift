@@ -29,7 +29,6 @@ import Foundation
     import libc
 #endif
 
-
 // MARK: - Global variables
 
 public var π = 3.14159
