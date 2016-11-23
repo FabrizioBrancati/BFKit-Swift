@@ -170,7 +170,11 @@ class DateExtensionTests: XCTestCase {
     }
     
     func testAddingDays() {
-        date = date.addingDays(10)
+        guard let dateAdded = date.addingDays(10) else {
+            XCTFail()
+            return
+        }
+        date = dateAdded
         
         XCTAssert(date.year == 2016)
         XCTAssert(date.month == 10)

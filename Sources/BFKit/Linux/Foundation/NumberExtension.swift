@@ -25,6 +25,10 @@
 //  SOFTWARE.
 
 import Foundation
+#if os(Linux)
+    import libc
+#endif
+
 
 // MARK: - Global variables
 
@@ -58,7 +62,7 @@ public func radiansToDegrees(_ radians: Float) -> Float {
 ///   - maxValue: Maxinum random value.
 /// - Returns: Returns the created random integer.
 public func randomInt(min minValue: Int, max maxValue: Int) -> Int {
-    return minValue + Int(randomFloat()) * (maxValue - minValue)
+    return minValue + Int(randomFloat() * Float(maxValue - minValue))
 }
 
 /// Create a random integer between the given range.
@@ -76,14 +80,23 @@ public func randomInt(range: Range<Int>) -> Int {
     let min = UInt32(range.lowerBound + offset)
     let max = UInt32(range.upperBound + offset)
     
-    return Int(min + arc4random_uniform(max - min)) - offset
+    #if os(Linux)
+        return Int(libc.random() % max - min) - offset
+    #else
+        return Int(min + arc4random_uniform(max - min)) - offset
+    #endif
 }
 
 /// Create a random float.
 ///
 /// - Returns: Returns the created random float.
 public func randomFloat() -> Float {
-    return Float(arc4random() / UINT32_MAX)
+    #if os(Linux)
+        return Float(libc.random() / UINT32_MAX)
+    #else
+        return Float(arc4random()) / Float(UINT32_MAX)
+    #endif
+    
 }
 
 /// Create a random float between the given range.
@@ -93,14 +106,14 @@ public func randomFloat() -> Float {
 ///   - maxValue: Maxinum random value.
 /// - Returns: Returns the created random float.
 public func randomFloat(min minValue: Float, max maxValue: Float) -> Float {
-    return Float(arc4random()) / Float(UINT32_MAX) * abs(minValue - maxValue) + min(minValue, maxValue)
+    return randomFloat() * abs(minValue - maxValue) + min(minValue, maxValue)
 }
 
-/// Get the next power of two
+/// Get power of two.
 ///
-/// - Parameter number: Number to be powered
-/// - Returns: Returns the number powered
-public func nextPowerOfTwo(_ number: Int) -> Int {
+/// - Parameter number: Number to be powered.
+/// - Returns: Returns the number powered.
+public func powerOfTwo(_ number: Int) -> Int {
     var result = 1
     while result < number {
         result *= 2

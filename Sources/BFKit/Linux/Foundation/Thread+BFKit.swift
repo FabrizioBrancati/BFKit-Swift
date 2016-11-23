@@ -50,7 +50,7 @@ public func runInBackground(_ block: @escaping () -> ()) {
     }
 }
 
-/// This extesion adds some useful functions to NSThread
+/// This extesion adds some useful functions to Thread
 public extension Thread {
     /**
      Exectute a selector asyncronously after a delay
@@ -59,7 +59,7 @@ public extension Thread {
      - parameter target:   Target (Usually "self")
      - parameter delay:    Delay to excute the selector
     
-     - returns: Return an NSTimer who handle the execution of the selector
+     - returns: Return an Timer who handle the execution of the selector
      */
     public static func callSelectorAsync(_ selector: Selector, target: AnyObject, delay: TimeInterval = 0.0) -> Timer {
         return Timer.scheduledTimer(timeInterval: delay, target: target, selector: selector, userInfo: nil, repeats: false)

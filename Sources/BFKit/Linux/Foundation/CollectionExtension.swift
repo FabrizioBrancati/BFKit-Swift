@@ -35,13 +35,13 @@ public extension Collection {
     /// Convert self to JSON as String.
     ///
     /// - Returns: Returns the JSON as String or nil if error while parsing.
-    /// - Throws: Throws JSONSerialization errors.
+    /// - Throws: Throws JSONSerialization and BFKitError errors.
     public func json() throws -> String {
         let jsonData: Data = try JSONSerialization.data(withJSONObject: self, options: [])
         
         guard let json = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue) else {
-            throw NSError(domain: "BFKit", code: 100, userInfo: ["Error": "Error while encoding Data to String."])
+            throw BFKitError.jsonSerialization
         }
-        return String(json)
+        return String(describing: json)
     }
 }

@@ -163,7 +163,6 @@ open class BFApp {
     }
 }
 
-
 // MARK: - BFApp extension
 
 /// Extends BFApp with project infos.

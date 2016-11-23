@@ -28,7 +28,7 @@ import Foundation
 
 // MARK: - Dictionary extension
 
-/// This extension adds some useful functions to NSDictionary.
+/// This extension adds some useful functions to Dictionary.
 public extension Dictionary {
     // MARK: - Functions
     

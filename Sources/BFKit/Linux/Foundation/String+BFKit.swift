@@ -202,9 +202,9 @@ public extension String {
     }
 
     /**
-     Convert self to a NSData
+     Convert self to a Data
 
-     - returns: Returns self as NSData
+     - returns: Returns self as Data
      */
     public func convertToNSData() -> Data {
         return self.data(using: .utf8)!
@@ -261,7 +261,7 @@ public extension String {
     /**
      Encode self to an encoded url string
 
-     - returns: Returns the encoded NSString
+     - returns: Returns the encoded String
      */
     public func URLEncode() -> String {
         return self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)!
@@ -282,14 +282,14 @@ public extension String {
     }
 
     /// Delete the last path component
-    public var stringByDeletingLastPathComponent: String {
+    public var deletingLastPathComponent: String {
         get {
             return (self as NSString).deletingLastPathComponent
         }
     }
 
     /// Delete the path extension
-    public var stringByDeletingPathExtension: String {
+    public var deletingPathExtension: String {
         get {
             return (self as NSString).deletingPathExtension
         }
@@ -309,7 +309,7 @@ public extension String {
 
      - returns: Returns all the string
      */
-    public func stringByAppendingPathComponent(_ path: String) -> String {
+    public func appendingPathComponent(_ path: String) -> String {
         let string = self as NSString
 
         return string.appendingPathComponent(path)
@@ -322,13 +322,13 @@ public extension String {
 
      - returns: returns all the string
      */
-    public func stringByAppendingPathExtension(_ ext: String) -> String? {
+    public func appendingPathExtension(_ ext: String) -> String? {
         let nsSt = self as NSString
 
         return nsSt.appendingPathExtension(ext)
     }
 
-    /// Converts self to a NSString
+    /// Converts self to a String
     public var NS: NSString {
         return (self as NSString)
     }

@@ -50,7 +50,8 @@ public extension Date {
             
             components.year = newValue
             
-            guard let gregorian = NSCalendar(identifier: .gregorian), let date = gregorian.date(from: components) else {
+            let gregorian = Calendar(identifier: .gregorian)
+            guard let date = gregorian.date(from: components) else {
                 return
             }
             
@@ -76,7 +77,8 @@ public extension Date {
             
             components.month = newValue
             
-            guard let gregorian = NSCalendar(identifier: .gregorian), let date = gregorian.date(from: components) else {
+            let gregorian = Calendar(identifier: .gregorian)
+            guard let date = gregorian.date(from: components) else {
                 return
             }
             
@@ -102,7 +104,8 @@ public extension Date {
             
             components.day = newValue
             
-            guard let gregorian = NSCalendar(identifier: .gregorian), let date = gregorian.date(from: components) else {
+            let gregorian = Calendar(identifier: .gregorian)
+            guard let date = gregorian.date(from: components) else {
                 return
             }
             
@@ -128,7 +131,8 @@ public extension Date {
             
             components.hour = newValue
             
-            guard let gregorian = NSCalendar(identifier: .gregorian), let date = gregorian.date(from: components) else {
+            let gregorian = Calendar(identifier: .gregorian)
+            guard let date = gregorian.date(from: components) else {
                 return
             }
             
@@ -154,7 +158,8 @@ public extension Date {
             
             components.minute = newValue
             
-            guard let gregorian = NSCalendar(identifier: .gregorian), let date = gregorian.date(from: components) else {
+            let gregorian = Calendar(identifier: .gregorian)
+            guard let date = gregorian.date(from: components) else {
                 return
             }
             
@@ -180,7 +185,8 @@ public extension Date {
             
             components.second = newValue
             
-            guard let gregorian = NSCalendar(identifier: .gregorian), let date = gregorian.date(from: components) else {
+            let gregorian = Calendar(identifier: .gregorian)
+            guard let date = gregorian.date(from: components) else {
                 return
             }
             
@@ -243,7 +249,8 @@ public extension Date {
         components.minute = minute
         components.second = second
         
-        guard let gregorian = NSCalendar(identifier: .gregorian), let date = gregorian.date(from: components) else {
+        let gregorian = Calendar(identifier: .gregorian)
+        guard let date = gregorian.date(from: components) else {
             return nil
         }
         self = date
@@ -351,15 +358,19 @@ public extension Date {
     ///
     /// - Parameter days: The number of days to add.
     /// - Returns: Returns self by adding the gived days number.
-    public func addingDays(_ days: Int) -> Date {
-        return self.addingTimeInterval(TimeInterval(days * 24 * 60 * 60))
+    public func addingDays(_ days: Int) -> Date? {
+        let calendar = Calendar.autoupdatingCurrent
+        return calendar.date(byAdding: .day, value: days, to: self)
     }
     
     /// Add days to self.
     ///
     /// - Parameter days: The number of days to add.
     public mutating func addDays(_ days: Int) {
-        self.addTimeInterval(TimeInterval(days * 24 * 60 * 60))
+        guard let date = self.addingDays(days) else {
+            return
+        }
+        self = date
     }
     
     /// Get the month string from self.

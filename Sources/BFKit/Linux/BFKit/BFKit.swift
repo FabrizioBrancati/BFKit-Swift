@@ -31,3 +31,14 @@ public let BFKitVersion = "2.0.0"
 
 /// BFKit author string.
 public let BFKitAuthor = "Fabrizio Brancati"
+
+/// BFKit errors enum.
+///
+/// - jsonSerialization: JSONSerialization error.
+/// - pathNotExist: Path not exist error.
+/// - pathNotAllowed: Path not allowed error.
+public enum BFKitError: Error {
+    case jsonSerialization
+    case pathNotExist
+    case pathNotAllowed
+}

@@ -36,10 +36,6 @@ public extension NSObject {
      - returns: Returns if the object is valid
      */
     public func isValid() -> Bool {
-        if self is NSNull {
-            return false
-        } else {
-            return true
-        }
+        return !(self is NSNull)
     }
 }

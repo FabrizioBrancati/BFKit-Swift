@@ -26,7 +26,7 @@
 
 import Foundation
 
-/// This extension adds some useful functions to NSProcessInfo
+/// This extension adds some useful functions to ProcessInfo
 private extension ProcessInfo {
     // MARK: - Class functions -
     

@@ -43,6 +43,7 @@ public extension FileManager {
         case library
         case documents
         case cache
+        case applicationSupport
     }
     
     // MARK: - Functions
@@ -56,27 +57,46 @@ public extension FileManager {
         
         switch path {
         case .mainBundle:
-            pathString = self.mainBundlePath(file: "")
+            pathString = self.mainBundlePath()
         case .library:
-            pathString = self.libraryPath(file: "")
+            pathString = self.libraryPath()
         case .documents:
-            pathString = self.documentsPath(file: "")
+            pathString = self.documentsPath()
         case .cache:
-            pathString = self.cachePath(file: "")
+            pathString = self.cachePath()
+        case .applicationSupport:
+            pathString = self.applicationSupportPath()
         }
         
         return pathString
     }
     
+    /// Save a file with given content.
+    ///
+    /// - Parameters:
+    ///   - file: File to be saved.
+    ///   - path: File path.
+    ///   - content: Content to be saved.
+    /// - Throws: write(toFile:, atomically:, encoding:) errors.
+    public func save(file: String, in path: PathType, content: String) throws {
+        guard let path = FileManager.default.pathFor(path) else {
+            return
+        }
+        try content.write(toFile: path.appendingPathComponent(file), atomically: true, encoding: .utf8)
+    }
+    
     /// Read a file an returns the content as String.
     ///
     /// - Parameters:
-    ///   - file: File path and name.
-    ///   - ofType: File type.
+    ///   - file: File to be read.
+    ///   - path: File path.
     /// - Returns: Returns the content of the file a String.
-    /// - Throws: Throws String(contentsOfFile:, encoding) errors.
-    public func read(file: String, ofType: String) throws -> String? {
-        return try String(contentsOfFile: Bundle.main.path(forResource: file, ofType: ofType)!, encoding: String.Encoding.utf8)
+    /// - Throws: Throws String(contentsOfFile:, encoding:) errors.
+    public func read(file: String, from path: PathType) throws -> String? {
+        guard let path = FileManager.default.pathFor(path) else {
+            return nil
+        }
+        return try String(contentsOfFile: path.appendingPathComponent(file), encoding: .utf8)
     }
     
     /// Save an object into a PLIST with given filename.
@@ -86,12 +106,13 @@ public extension FileManager {
     ///   - path: Path of PLIST.
     ///   - filename: PLIST filename.
     /// - Returns: Returns true if the operation was successful, otherwise false.
-    public func save(object: Any, in path: PathType, filename: String) -> Bool {
-        guard let path = FileManager.default.pathFor(path) else {
+    @discardableResult
+    public func savePlist(object: Any, in path: PathType, filename: String) -> Bool {
+        guard let path = FileManager.default.pathFor(path), let finalPath = path.appendingPathComponent(filename).appendingPathExtension("plist") else {
             return false
         }
         
-        return NSKeyedArchiver.archiveRootObject(object, toFile: path)
+        return NSKeyedArchiver.archiveRootObject(object, toFile: finalPath)
     }
     
     /// Load an object from a PLIST with given filename.
@@ -100,54 +121,64 @@ public extension FileManager {
     ///   - path: Path of PLIST.
     ///   - filename: PLIST filename.
     /// - Returns: Returns the loaded object.
-    public func load(from path: PathType, filename: String) -> Any? {
-        guard let path = FileManager.default.pathFor(path) else {
+    public func readPlist(from path: PathType, filename: String) -> Any? {
+        guard let path = FileManager.default.pathFor(path), let finalPath = path.appendingPathComponent(filename).appendingPathExtension("plist")  else {
             return nil
         }
         
-        return NSKeyedUnarchiver.unarchiveObject(withFile: path)
+        return NSKeyedUnarchiver.unarchiveObject(withFile: finalPath)
     }
     
     /// Get Main Bundle path for a filename.
     ///
     /// - Parameter file: Filename
     /// - Returns: Returns the path as a String.
-    public func mainBundlePath(file: String) -> String? {
-        let fileExtension = file.pathExtension
-        return Bundle.main.path(forResource: file.replacingOccurrences(of: String(format: ".%@", file), with: ""), ofType: fileExtension)
+    public func mainBundlePath(file: String = "") -> String? {
+        return Bundle.main.path(forResource: file.deletingPathExtension, ofType: file.pathExtension)
     }
     
     /// Get Documents path for a filename.
     ///
     /// - Parameter file: Filename
     /// - Returns: Returns the path as a String.
-    public func documentsPath(file: String) -> String? {
+    public func documentsPath(file: String = "") -> String? {
         guard let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             return nil
         }
-        return documentsURL.path.stringByAppendingPathComponent(String(format: "%@/", file))
+        return documentsURL.path.appendingPathComponent(file)
     }
     
     /// Get Library path for a filename.
     ///
     /// - Parameter file: Filename
     /// - Returns: Returns the path as a String.
-    public func libraryPath(file: String) -> String? {
+    public func libraryPath(file: String = "") -> String? {
         guard let libraryURL = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).first else {
             return nil
         }
-        return libraryURL.path.stringByAppendingPathComponent(String(format: "%@/", file))
+        return libraryURL.path.appendingPathComponent(file)
     }
     
     /// Get Cache path for a filename.
     ///
     /// - Parameter file: Filename
     /// - Returns: Returns the path as a String.
-    public func cachePath(file: String) -> String? {
+    public func cachePath(file: String = "") -> String? {
         guard let cacheURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first else {
             return nil
         }
-        return cacheURL.path.stringByAppendingPathComponent(String(format: "%@/", file))
+        return cacheURL.path.appendingPathComponent(file)
+    }
+    
+    /// Get Application Support path for a filename.
+    ///
+    /// - Parameter file: Filename
+    /// - Returns: Returns the path as a String.
+    public func applicationSupportPath(file: String = "") -> String? {
+        guard let applicationSupportURL = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else {
+            return nil
+        }
+        return applicationSupportURL.path.appendingPathComponent(file)
     }
     
     /// Returns the file size.
@@ -163,8 +194,10 @@ public extension FileManager {
                 return nil
             }
             
-            if FileManager.default.fileExists(atPath: path) {
-                let fileAttributes = try FileManager.default.attributesOfItem(atPath: file)
+            let finalPath = path.appendingPathComponent(file)
+            
+            if FileManager.default.fileExists(atPath: finalPath) {
+                let fileAttributes = try FileManager.default.attributesOfItem(atPath: finalPath)
                 return fileAttributes[FileAttributeKey.size] as? Float
             }
         }
@@ -175,27 +208,21 @@ public extension FileManager {
     /// Delete a file with the given filename.
     ///
     /// - Parameters:
-    ///   - file: Filename to delete.
+    ///   - file: File to delete.
     ///   - path: Path of the file.
     /// - Returns: Returns true if the operation was successful, otherwise false.
     /// - Throws: Throws FileManager.default.removeItem(atPath: ) errors.
-    public func delete(file: String, from path: PathType) throws -> Bool {
+    @discardableResult
+    public func delete(file: String, from path: PathType) throws {
         if !file.characters.isEmpty {
             guard let path = FileManager.default.pathFor(path) else {
-                return false
+                throw BFKitError.pathNotExist
             }
             
-            if FileManager.default.fileExists(atPath: path) {
-                do {
-                    try FileManager.default.removeItem(atPath: path)
-                    return true
-                } catch {
-                    return false
-                }
+            if FileManager.default.fileExists(atPath: path.appendingPathComponent(file)) {
+                try FileManager.default.removeItem(atPath: path.appendingPathComponent(file))
             }
         }
-        
-        return false
     }
     
     /// Move a file from a path to another.
@@ -205,71 +232,55 @@ public extension FileManager {
     ///   - origin: Origin path of the file.
     ///   - destination:  Destination path of the file.
     /// - Returns: Returns true if the operation was successful, otherwise false.
-    /// - Throws: Throws FileManager.default.copyItem(atPath: , toPath: ) and FileManager.default.removeItem(atPath: ) errors.
-    public func move(file: String, from origin: PathType, to destination: PathType) throws -> Bool {
-        guard var originPath = FileManager.default.pathFor(origin) else {
-            return false
+    /// - Throws: Throws FileManager.default.moveItem(atPath:, toPath:) and BFKitError errors.
+    public func move(file: String, from origin: PathType, to destination: PathType) throws {
+        guard let originPath = FileManager.default.pathFor(origin) else {
+            throw BFKitError.pathNotExist
         }
         
-        guard var destinationPath = FileManager.default.pathFor(origin) else {
-            return false
+        guard let destinationPath = FileManager.default.pathFor(destination) else {
+            throw BFKitError.pathNotExist
         }
         
-        originPath += file
-        destinationPath += file
-        
-        var copied: Bool = false, deleted: Bool = false
-        if FileManager.default.fileExists(atPath: originPath) {
-            do {
-                try FileManager.default.copyItem(atPath: originPath, toPath: destinationPath)
-                copied = true
-            } catch {
-                copied = false
-            }
-        }
+        let finalOriginPath = originPath.appendingPathComponent(file)
+        let finalDestinationPath = destinationPath.appendingPathComponent(file)
         
         if destination != .mainBundle {
-            if FileManager.default.fileExists(atPath: originPath) {
-                do {
-                    try FileManager.default.removeItem(atPath: originPath)
-                    deleted = true
-                } catch {
-                    deleted = false
-                }
+            if FileManager.default.fileExists(atPath: finalOriginPath) {
+                try FileManager.default.moveItem(atPath: finalOriginPath, toPath: finalDestinationPath)
             }
+        } else {
+            throw BFKitError.pathNotAllowed
         }
-        
-        return copied && deleted
     }
     
-    /// Duplicate a file into another path.
+    /// Copy a file into another path.
     ///
     /// - Parameters:
-    ///   - file: Filename to duplicate.
+    ///   - file: Filename to copy.
     ///   - origin: Origin path
     ///   - destination: Destination path
     /// - Returns: Returns true if the operation was successful, otherwise false.
-    public func duplicate(file: String, from origin: PathType, to destination: PathType) -> Bool {
-        guard var originPath = FileManager.default.pathFor(origin) else {
-            return false
+    /// - Throws: Throws FileManager.default.copyItem(atPath:, toPath:) and BFKitError errors.
+    public func copy(file: String, from origin: PathType, to destination: PathType) throws {
+        guard let originPath = FileManager.default.pathFor(origin) else {
+            throw BFKitError.pathNotExist
         }
         
-        guard var destinationPath = FileManager.default.pathFor(origin) else {
-            return false
+        guard let destinationPath = FileManager.default.pathFor(destination) else {
+            throw BFKitError.pathNotExist
         }
         
-        originPath += file
-        destinationPath += file
+        let finalOriginPath = originPath.appendingPathComponent(file)
+        let finalDestinationPath = destinationPath.appendingPathComponent(file)
         
-        if FileManager.default.fileExists(atPath: originPath) {
-            do {
-                try FileManager.default.copyItem(atPath: originPath, toPath: destinationPath)
-                return true
-            } catch {
-                return false
+        if destination != .mainBundle {
+            if FileManager.default.fileExists(atPath: finalOriginPath) {
+                try FileManager.default.copyItem(atPath: finalOriginPath, toPath: finalDestinationPath)
             }
+        } else {
+            throw BFKitError.pathNotAllowed
         }
-        return false
     }
     
     /// Rename a file with another filename.
@@ -277,31 +288,21 @@ public extension FileManager {
     /// - Parameters:
     ///   - file: Filename to rename.
     ///   - origin: Origin path.
-    ///   - oldName: Old filename.
     ///   - newName: New filename.
     /// - Returns: Returns true if the operation was successful, otherwise false.
-    public func rename(file: String, in origin: PathType, from oldName: String, to newName: String) -> Bool {
-        guard var originPath = FileManager.default.pathFor(origin) else {
-            return false
+    /// - Throws: Throws FileManager.default.copyItem(atPath:, toPath:), FileManager.default.removeItem(atPath:, toPath:) and BFKitError errors.
+    public func rename(file: String, in origin: PathType, to newName: String) throws {
+        guard let originPath = FileManager.default.pathFor(origin) else {
+            throw BFKitError.pathNotExist
         }
         
-        originPath += file
+        let finalOriginPath = originPath.appendingPathComponent(file)
         
-        if FileManager.default.fileExists(atPath: originPath) {
-            let newNamePath: String = originPath.replacingOccurrences(of: oldName, with: newName)
-            do {
-                try FileManager.default.copyItem(atPath: originPath, toPath: newNamePath)
-                do {
-                    try FileManager.default.removeItem(atPath: originPath)
-                    return true
-                } catch {
-                    return false
-                }
-            } catch {
-                return false
-            }
+        if FileManager.default.fileExists(atPath: finalOriginPath) {
+            let destinationPath: String = finalOriginPath.replacingOccurrences(of: file, with: newName)
+            try FileManager.default.copyItem(atPath: finalOriginPath, toPath: destinationPath)
+            try FileManager.default.removeItem(atPath: finalOriginPath)
         }
-        return false
     }
     
     /// Set settings for object and key. The file will be saved in the Library path if not exist.
@@ -311,12 +312,13 @@ public extension FileManager {
     ///   - object: Object to set.
     ///   - objKey: Object key.
     /// - Returns: Returns true if the operation was successful, otherwise false.
-    public func setSettings(filename: String, object: AnyObject, forKey objKey: String) -> Bool {
-        guard var path: String = self.libraryPath(file: "") else {
+    /// - Throws: Throws BFKitError errors.
+    @discardableResult
+    public func setSettings(filename: String, object: Any, forKey objKey: String) -> Bool {
+        guard var path = FileManager.default.pathFor(.applicationSupport) else {
             return false
         }
-        path = path + "/Preferences/"
-        path = path + "\(filename)-Settings.plist"
+        path = path.appendingPathComponent("\(filename)-Settings.plist")
         
         var loadedPlist: NSMutableDictionary
         if FileManager.default.fileExists(atPath: path) {
@@ -337,11 +339,10 @@ public extension FileManager {
     ///   - forKey: Object key.
     /// - Returns: Returns the object for the given key.
     public func getSettings(filename: String, forKey: String) -> Any? {
-        guard var path: String = self.libraryPath(file: "") else {
+        guard var path = FileManager.default.pathFor(.applicationSupport) else {
             return nil
         }
-        path = path + "/Preferences/"
-        path = path + "\(filename)-Settings.plist"
+        path = path.appendingPathComponent("\(filename)-Settings.plist")
         
         var loadedPlist: NSMutableDictionary
         if FileManager.default.fileExists(atPath: path) {
