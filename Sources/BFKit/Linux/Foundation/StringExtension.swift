@@ -163,7 +163,7 @@ public extension String {
     /// - Returns: Returns true if it is an email, otherwise false.
     public func isEmail() -> Bool {
         let emailRegEx: String = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
-        let regExPredicate: NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+        let regExPredicate: NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx as CVarArg)
         
         return regExPredicate.evaluate(with: self.lowercased())
     }
@@ -560,7 +560,7 @@ public extension String {
         var hexString = ""
         
         for i in 0 ..< self.length {
-            hexString = hexString.appendingFormat("%02x", selfString[i ..< i + 1])
+            hexString = hexString.appendingFormat("%02x", selfString[i..<i + 1])
         }
         
         return hexString

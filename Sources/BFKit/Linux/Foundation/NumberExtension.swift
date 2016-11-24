@@ -80,7 +80,7 @@ public func randomInt(range: ClosedRange<Int>) -> Int {
     let max = UInt32(range.upperBound + offset)
     
     #if os(Linux)
-        return Int(Glibc.random() % max - min) - offset
+        return Int(Int(Glibc.random()) % max - min) - offset
     #else
         return Int(min + arc4random_uniform(max - min)) - offset
     #endif
@@ -91,7 +91,7 @@ public func randomInt(range: ClosedRange<Int>) -> Int {
 /// - Returns: Returns the created random float.
 public func randomFloat() -> Float {
     #if os(Linux)
-        return Float(Glibc.random() / UINT32_MAX)
+        return Float(Int(Glibc.random()) / UINT32_MAX)
     #else
         return Float(arc4random()) / Float(UINT32_MAX)
     #endif
