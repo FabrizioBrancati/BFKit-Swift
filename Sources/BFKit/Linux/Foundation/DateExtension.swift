@@ -286,7 +286,7 @@ public extension Date {
         dateFormatter.dateFormat = "HH:mm"
         let timePortion: String = dateFormatter.string(from: time)
         
-        let dateTime = String(format: "%@ %@", datePortion, timePortion)
+        let dateTime = "\(datePortion) \(timePortion)"
         
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
         guard let parsed = dateFormatter.date(from: dateTime) else {
@@ -458,9 +458,9 @@ public extension Date {
         var description: String
         
         if usFormat {
-            description = String(format: "%04li%@%02li%@%02li %02li:%02li:%02li", self.year, dateSeparator, self.month, dateSeparator, self.day, self.hour, self.minute, self.second)
+            description = String(format: "%04li%@%02li%@%02li %02li:%02li:%02li", self.year, dateSeparator as CVarArg, self.month, dateSeparator as CVarArg, self.day, self.hour, self.minute, self.second)
         } else {
-            description = String(format: "%02li%@%02li%@%04li %02li:%02li:%02li", self.month, dateSeparator, self.day, dateSeparator, self.year, self.hour, self.minute, self.second)
+            description = String(format: "%02li%@%02li%@%04li %02li:%02li:%02li", self.month, dateSeparator as CVarArg, self.day, dateSeparator as CVarArg, self.year, self.hour, self.minute, self.second)
         }
         
         if nanosecond {

@@ -25,6 +25,7 @@
 //  SOFTWARE.
 
 import Foundation
+import Dispatch
 
 // MARK: - Global functions
 

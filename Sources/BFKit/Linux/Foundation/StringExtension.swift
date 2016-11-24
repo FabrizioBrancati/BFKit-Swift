@@ -185,7 +185,7 @@ public extension String {
         guard let data: Data = Data(base64Encoded: String(self), options: .ignoreUnknownCharacters), let dataString = NSString(data: data, encoding: String.Encoding.utf8.rawValue) else {
             return ""
         }
-        return String(dataString)
+        return String(describing: dataString)
     }
     
     /// Convert self to a Data.
@@ -557,13 +557,13 @@ public extension String {
     public func stringToHEX() -> String {
         let selfString = self as String
         
-        let hexString: NSMutableString = NSMutableString()
+        var hexString = ""
         
         for i in 0 ..< self.length {
-            hexString.appendFormat("%02x", selfString[i ..< i + 1])
+            hexString = hexString.appendingFormat("%02x", selfString[i ..< i + 1])
         }
         
-        return hexString as String
+        return hexString
     }
     
     /// Returns the character at the given index.
