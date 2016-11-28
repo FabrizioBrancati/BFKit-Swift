@@ -233,7 +233,7 @@ public extension String {
     ///   - replacement: The replacement string.
     /// - Returns: Returns a new string containing matching regular expressions replaced with the template string.
     /// - Throws: Throws NSRegularExpression(pattern:, options:) errors.
-    public func stringByReplacingMatches(_ regexString: String, withString replacement: String) throws -> String {
+    public func replacingMatches(regex regexString: String, with replacement: String) throws -> String {
         let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString, options: .caseInsensitive)
         return regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: self.length), withTemplate: "")
     }
@@ -395,69 +395,12 @@ public extension String {
         return CharacterSet.lowercaseLetters.contains(self.unicodeScalars.last!)
     }
     
-    /// Convert a string to UTF8.
-    ///
-    /// - Parameter string: String to be converted.
-    /// - Returns: Returns the converted string.
-    public static func convertToUTF8Entities(_ string: String) -> String {
-        return string
-            .replacingOccurrences(of: "%27", with: "'")
-            .replacingOccurrences(of: "%e2%80%99".capitalized, with: "’")
-            .replacingOccurrences(of: "%2d".capitalized, with: "-")
-            .replacingOccurrences(of: "%c2%ab".capitalized, with: "«")
-            .replacingOccurrences(of: "%c2%bb".capitalized, with: "»")
-            .replacingOccurrences(of: "%c3%80".capitalized, with: "À")
-            .replacingOccurrences(of: "%c3%82".capitalized, with: "Â")
-            .replacingOccurrences(of: "%c3%84".capitalized, with: "Ä")
-            .replacingOccurrences(of: "%c3%86".capitalized, with: "Æ")
-            .replacingOccurrences(of: "%c3%87".capitalized, with: "Ç")
-            .replacingOccurrences(of: "%c3%88".capitalized, with: "È")
-            .replacingOccurrences(of: "%c3%89".capitalized, with: "É")
-            .replacingOccurrences(of: "%c3%8a".capitalized, with: "Ê")
-            .replacingOccurrences(of: "%c3%8b".capitalized, with: "Ë")
-            .replacingOccurrences(of: "%c3%8f".capitalized, with: "Ï")
-            .replacingOccurrences(of: "%c3%91".capitalized, with: "Ñ")
-            .replacingOccurrences(of: "%c3%94".capitalized, with: "Ô")
-            .replacingOccurrences(of: "%c3%96".capitalized, with: "Ö")
-            .replacingOccurrences(of: "%c3%9b".capitalized, with: "Û")
-            .replacingOccurrences(of: "%c3%9c".capitalized, with: "Ü")
-            .replacingOccurrences(of: "%c3%a0".capitalized, with: "à")
-            .replacingOccurrences(of: "%c3%a2".capitalized, with: "â")
-            .replacingOccurrences(of: "%c3%a4".capitalized, with: "ä")
-            .replacingOccurrences(of: "%c3%a6".capitalized, with: "æ")
-            .replacingOccurrences(of: "%c3%a7".capitalized, with: "ç")
-            .replacingOccurrences(of: "%c3%a8".capitalized, with: "è")
-            .replacingOccurrences(of: "%c3%a9".capitalized, with: "é")
-            .replacingOccurrences(of: "%c3%af".capitalized, with: "ï")
-            .replacingOccurrences(of: "%c3%b4".capitalized, with: "ô")
-            .replacingOccurrences(of: "%c3%b6".capitalized, with: "ö")
-            .replacingOccurrences(of: "%c3%bb".capitalized, with: "û")
-            .replacingOccurrences(of: "%c3%bc".capitalized, with: "ü")
-            .replacingOccurrences(of: "%c3%bf".capitalized, with: "ÿ")
-            .replacingOccurrences(of: "%20", with: " ")
-    }
-
     /// Remove double or more duplicated spaces.
     ///
     /// - returns: Remove double or more duplicated spaces.
     public func removeExtraSpaces() -> String {
         let squashed = self.replacingOccurrences(of: "[ ]+", with: " ", options: .regularExpression, range: nil)
         return squashed.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-    }
-    
-    /// Returns a new string containing matching regular expressions replaced with the template string.
-    ///
-    /// - Parameters:
-    ///   - regexString: The regex string.
-    ///   - replacement: The replacement string.
-    /// - Returns: Returns a new string containing matching regular expressions replaced with the template string.
-    public func stringByReplacingMatches(_ regexString: String, replacement: String) -> String? {
-        do {
-            let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString as String, options: .caseInsensitive)
-            return regex.stringByReplacingMatches(in: self as String, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: self.length), withTemplate: "")
-        } catch {
-            return nil
-        }
     }
     
     /// Count the number of lowercase letters.
@@ -536,7 +479,7 @@ public extension String {
     /// Example: "68 65 6c 6c 6f" -> "hello".
     ///
     /// - Returns: Readable string.
-    public func hexToString() -> String {
+    public func fromHEX() -> String {
         var hex = self as String
         hex = hex.replacingOccurrences(of: " ", with: "")
         var string: String = ""
@@ -553,14 +496,14 @@ public extension String {
     /// Convert string to HEX string.
     /// Example: "hello" -> "68656c6c6f"
     ///
+    /// - parameter spacing: Will add a space between every HEX number.
     /// - Returns: HEX string.
-    public func stringToHEX() -> String {
-        let selfString = self as String
-        
+    public func hex(spacing: Bool = false) -> String {
         var hexString = ""
+        let space = spacing ? " " : ""
         
         for i in 0 ..< self.length {
-            hexString = hexString.appendingFormat("%02x", selfString[i..<i + 1])
+            hexString = hexString.appendingFormat("%02x%@", self[i..<i + 1], space)
         }
         
         return hexString
