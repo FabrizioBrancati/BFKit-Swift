@@ -42,6 +42,32 @@ public extension String {
         return Int(NSString(string: self).intValue)
     }
 
+    /// Convert self to a Data.
+    public var dataValue: Data? {
+        return self.data(using: .utf8)
+    }
+    
+    /// Encoded string to Base64.
+    public var base64encoded: String {
+        guard let data: Data = self.data(using: .utf8) else {
+            return ""
+        }
+        return data.base64EncodedString()
+    }
+    
+    /// Decoded Base64 to string.
+    public var base64decoded: String {
+        guard let data: Data = Data(base64Encoded: String(self), options: .ignoreUnknownCharacters), let dataString = NSString(data: data, encoding: String.Encoding.utf8.rawValue) else {
+            return ""
+        }
+        return String(describing: dataString)
+    }
+    
+    /// Encode self to an encoded url string.
+    public var urlEncoded: String? {
+        return self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)
+    }
+    
     // MARK: - Functions
     
     /// Returns the lenght of the string.
@@ -52,12 +78,12 @@ public extension String {
     /// Get the character at a given index.
     ///
     /// - Parameter index: The index.
-    /// - Returns: Returns the character at a given index.
+    /// - Returns: Returns the character at a given index, starts from 0.
     public func character(at index: Int) -> Character {
         return self[self.characters.index(self.startIndex, offsetBy: index)]
     }
     
-    /// It is like substring(from: String.Index), but it requires an Int as index.
+    /// Returns a new string containing the characters of the String from the one at a given index to the end.
     ///
     /// - Parameter index: The index.
     /// - Returns: Returns the substring from index.
@@ -65,7 +91,19 @@ public extension String {
         return self.substring(from: self.characters.index(self.startIndex, offsetBy: index))
     }
     
-    /// It is like substring(to: String.Index), but it requires an Int as index.
+    /// Creates a substring from the given character.
+    ///
+    /// - Parameter character: The character.
+    /// - Returns: Returns the substring from character.
+    public func substring(from character: Character) -> String {
+        let index: Int = self.index(of: character) + 1
+        guard index > -1 else {
+            return ""
+        }
+        return substring(from: index)
+    }
+    
+    /// Returns a new string containing the characters of the String up to, but not including, the one at a given index.
     ///
     /// - Parameter index: The index.
     /// - Returns: Returns the substring to index.
@@ -74,6 +112,18 @@ public extension String {
             return ""
         }
         return self.substring(to: self.characters.index(self.startIndex, offsetBy: index))
+    }
+    
+    /// Creates a substring to the given character.
+    ///
+    /// - Parameter character: The character.
+    /// - Returns: Returns the substring to character.
+    public func substring(to character: Character) -> String {
+        let index: Int = self.index(of: character)
+        guard index > -1 else {
+            return ""
+        }
+        return substring(to: index)
     }
     
     /// Creates a substring with a given range.
@@ -87,28 +137,15 @@ public extension String {
         return self.substring(with: start..<end)
     }
     
-    /// Creates a substring from the given character.
+    /// Creates a substring with a given range.
     ///
-    /// - Parameter character: The character.
-    /// - Returns: Returns the substring from character.
-    public func substring(from character: Character) -> String? {
-        let index: Int = self.index(of: character)
-        if index > -1 {
-            return substring(from: index)
-        }
-        return nil
-    }
-    
-    /// Creates a substring to the given character.
-    ///
-    /// - Parameter character: The character.
-    /// - Returns: Returns the substring to character.
-    public func substring(to character: Character) -> String? {
-        let index: Int = self.index(of: character)
-        if index > -1 {
-            return substring(to: index)
-        }
-        return nil
+    /// - Parameter range: The range.
+    /// - Returns: Returns the string between the range.
+    public func substring(with range: CountableClosedRange<Int>) -> String {
+        let start = self.characters.index(self.startIndex, offsetBy: range.lowerBound)
+        let end = self.characters.index(self.startIndex, offsetBy: range.upperBound)
+        
+        return self.substring(with: start..<end)
     }
     
     /// Returns the index of the given character.
@@ -122,39 +159,13 @@ public extension String {
         return -1
     }
     
-    /// Search in a given string a substring from the start char to the end char (excluded form final string).
-    /// Example: "This is a test" with start char 'h' and end char 't' will return "is is a ".
-    ///
-    /// - Parameters:
-    ///   - charStart: The start char.
-    ///   - charEnd: The end char.
-    /// - Returns: Returns the substring.
-    public func search(charStart: Character, charEnd: Character) -> String {
-        var start = 0, end = 0
-        
-        for var i in 0 ..< self.length {
-            if self.character(at: i) == charStart {
-                start = i + 1
-                i += 1
-            }
-            if self.character(at: i) == charEnd {
-                end = i
-                break
-            }
-        }
-        
-        end -= start
-        
-        return self.substring(from: start).substring(to: end)
-    }
-    
     /// heck if self has the given substring in case-sensitiv or case-insensitive.
     ///
     /// - Parameters:
     ///   - string: The substring to be searched.
     ///   - caseSensitive: If the search has to be case-sensitive or not.
     /// - Returns: Returns true if founded, otherwise false.
-    public func hasString(_ string: String, caseSensitive: Bool = true) -> Bool {
+    public func range(of string: String, caseSensitive: Bool = true) -> Bool {
         return caseSensitive ? (self.range(of: string) != nil) : (self.lowercased().range(of: string.lowercased()) != nil)
     }
     
@@ -172,27 +183,21 @@ public extension String {
     ///
     /// - Returns: Returns the encoded string.
     public func base64encode() -> String {
-        guard let data: Data = self.data(using: .utf8) else {
-            return ""
-        }
-        return data.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
+        return self.base64encoded
     }
     
     /// Decode Base64 to string.
     ///
     /// - Returns: Returns the decoded string.
     public func base64decode() -> String {
-        guard let data: Data = Data(base64Encoded: String(self), options: .ignoreUnknownCharacters), let dataString = NSString(data: data, encoding: String.Encoding.utf8.rawValue) else {
-            return ""
-        }
-        return String(describing: dataString)
+        return self.base64decoded
     }
     
     /// Convert self to a Data.
     ///
     /// - Returns: Returns self as Data.
     public func data() -> Data? {
-        return self.data(using: .utf8)
+        return self.dataValue
     }
     
     /// Conver self to a capitalized string.
@@ -207,23 +212,6 @@ public extension String {
         let lowercase: String = self.substring(from: 1).lowercased()
 
         return uppercase + lowercase
-    }
-    
-    /// Returns a human readable string from a timestamp.
-    ///
-    /// - Returns: Returns a human readable string from a timestamp.
-    public func dateFromTimestamp() -> String {
-        let year: String = self.substring(to: 4)
-        var month: String = self.substring(from: 5)
-        month = month.substring(to: 4)
-        var day: String = self.substring(from: 8)
-        day = day.substring(to: 2)
-        var hours: String = self.substring(from: 11)
-        hours = hours.substring(to: 2)
-        var minutes: String = self.substring(from: 14)
-        minutes = minutes.substring(to: 2)
-
-        return "\(day)/\(month)/\(year) \(hours):\(minutes)"
     }
     
     /// Returns a new string containing matching regular expressions replaced with the template string.
@@ -241,8 +229,8 @@ public extension String {
     /// Encode self to an encoded url string.
     ///
     /// - Returns: Returns the encoded String.
-    public func URLEncode() -> String? {
-        return self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)
+    public func urlEncode() -> String? {
+        return self.urlEncoded
     }
 
     /// Returns the last path component.
@@ -306,7 +294,7 @@ public extension String {
     public func isUUID() -> Bool {
         do {
             let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", options: .caseInsensitive)
-            let matches: Int = regex.numberOfMatches(in: self as String, options: .reportCompletion, range: NSRange(location: 0, length: self.length))
+            let matches: Int = regex.numberOfMatches(in: self, options: .reportCompletion, range: NSRange(location: 0, length: self.length))
             return matches == 1
         } catch {
             return false
@@ -319,7 +307,7 @@ public extension String {
     public func isUUIDForAPNS() -> Bool {
         do {
             let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{32}$", options: .caseInsensitive)
-            let matches: Int = regex.numberOfMatches(in: self as String, options: .reportCompletion, range: NSRange(location: 0, length: self.length))
+            let matches: Int = regex.numberOfMatches(in: self, options: .reportCompletion, range: NSRange(location: 0, length: self.length))
             return matches == 1
         } catch {
             return false
@@ -480,7 +468,7 @@ public extension String {
     ///
     /// - Returns: Readable string.
     public func fromHEX() -> String {
-        var hex = self as String
+        var hex = self
         hex = hex.replacingOccurrences(of: " ", with: "")
         var string: String = ""
         while hex.characters.count > 0 {

@@ -299,7 +299,7 @@ public extension UIColor {
     /// - Returns: Returns the color component from the string.
     private static func colorComponent(fromString string: String, range: Range<Int>) -> CGFloat {
         let substring: String = string.substring(with: range)
-        let fullHex = (range.upperBound - range.lowerBound) == 2 ? substring as String : "\(substring)\(substring)"
+        let fullHex = (range.upperBound - range.lowerBound) == 2 ? substring : "\(substring)\(substring)"
         var hexComponent: CUnsignedInt = 0
         Scanner(string: fullHex).scanHexInt32(&hexComponent)
         

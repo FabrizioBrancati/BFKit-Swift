@@ -89,7 +89,8 @@ public extension UIDevice {
     ///
     /// Example: 9.
     public static var osMajorVersion: Int {
-        guard let subVersion = UIDevice.current.systemVersion.substring(to: "."), let intSubVersion = Int(subVersion) else {
+        let subVersion = UIDevice.current.systemVersion.substring(to: ".")
+        guard  let intSubVersion = Int(subVersion) else {
             return 0
         }
         return intSubVersion
@@ -341,10 +342,7 @@ public extension UIDevice {
     ///
     /// - Returns: Returns the created UUID string.
     public static func generateUniqueIdentifier() -> String {
-        guard let uuid = CFUUIDCreate(kCFAllocatorDefault), let uuidString = CFUUIDCreateString(kCFAllocatorDefault, uuid) else {
-            return ""
-        }
-        return uuidString as String
+        return UUID().uuidString
     }
     
     /// Save the unique identifier or update it if there is and it is changed.
@@ -376,7 +374,7 @@ public extension UIDevice {
             isValid = newUUID.isUUIDForAPNS()
         } else if uniqueIdentifier is String {
             let string: String = uniqueIdentifier as! String
-            newUUID = string.apnsUUID() as String
+            newUUID = string.apnsUUID()
             isValid = newUUID.isUUIDForAPNS()
         }
         

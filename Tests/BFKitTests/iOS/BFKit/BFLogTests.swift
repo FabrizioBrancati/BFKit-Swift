@@ -35,7 +35,7 @@ class BFLogTests: XCTestCase {
     func testBFLogDetailedString() {
         BFLogClear()
         
-        let filenameWithoutExtension = NSURL(string: NSString(utf8String: #file)! as String)!.deletingPathExtension!.lastPathComponent
+        let filenameWithoutExtension = NSURL(string: String(describing: NSString(utf8String: #file)!))!.deletingPathExtension!.lastPathComponent
         let function = #function
         let line = #line + 2
         

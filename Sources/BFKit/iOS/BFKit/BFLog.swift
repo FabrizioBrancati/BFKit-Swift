@@ -47,7 +47,7 @@ public func BFLog(_ message: String, filename: String = #file, function: StaticS
         
         BFLogInternal.logString += _message
         
-        let filenameWithoutExtension = NSURL(string: NSString(utf8String: filename)! as String)!.deletingPathExtension!.lastPathComponent
+        let filenameWithoutExtension = NSURL(string: String(describing: NSString(utf8String: filename)!))!.deletingPathExtension!.lastPathComponent
         let log = "(\(filenameWithoutExtension):\(line) (\(function)) \(_message)"
         let timestamp = Date().description(dateSeparator: "-", usFormat: true, nanosecond: true)
         print("\(timestamp) \(filenameWithoutExtension):\(line) \(function): \(_message)", terminator: "")
