@@ -31,9 +31,16 @@ import Foundation
 
 // MARK: - Global variables
 
+/// PI number.
 public var π = 3.14159
+
+/// Euler's number.
 public var e = 2.71828
+
+/// Phi number.
 public var φ = 1.61803398874
+
+/// Lambda number.
 public var λ = 1.30357
 
 // MARK: - Global functions
