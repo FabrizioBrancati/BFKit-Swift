@@ -29,9 +29,9 @@ import UIKit
 
 // MARK: - Global functions
 
-/// Exented NSLog.
+/// Exenteds NSLog.
 ///
-/// See [here](http://stackoverflow.com/a/26891797/4032046) on how to set DEBUG build variable.
+/// Activate it by setting BFLogActive variable to true before using it.
 ///
 /// - Parameters:
 ///   - message: Console message.
@@ -39,7 +39,7 @@ import UIKit
 ///   - function: Function name.
 ///   - line: Line number.
 public func BFLog(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
-    #if DEBUG
+    if BFLogActive {
         var _message = message
         if _message.hasSuffix("\n") == false {
             _message += "\n"
@@ -53,32 +53,37 @@ public func BFLog(_ message: String, filename: String = #file, function: StaticS
         print("\(timestamp) \(filenameWithoutExtension):\(line) \(function): \(_message)", terminator: "")
         
         BFLogInternal.detailedLogString += log
-    #endif
+    }
 }
+
+// MARK: - Global variables
+
+/// Activate or not BFLog.
+public var BFLogActive: Bool = false
 
 /// Get the log string.
 public var BFLogString: String {
-    #if DEBUG
+    if BFLogActive {
         return BFLogInternal.logString
-    #else
+    } else {
         return ""
-    #endif
+    }
 }
 
 /// Get the detailed log string.
 public var BFLogDetailedString: String {
-    #if DEBUG
+    if BFLogActive {
         return BFLogInternal.detailedLogString
-    #else
+    } else {
         return ""
-    #endif
+    }
 }
 
 /// Clear the log string.
 public func BFLogClear() {
-    #if DEBUG
+    if BFLogActive {
         BFLogInternal.clearLog()
-    #endif
+    }
 }
 
 // MARK: - BFLogInternal class
