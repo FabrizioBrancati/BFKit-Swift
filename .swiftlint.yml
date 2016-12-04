@@ -10,3 +10,7 @@ disabled_rules:
 opt_in_rules:
    - empty_count
    #- missing_docs
+
+type_body_length:
+  - 1000 # warning
+  - 1500 # error
