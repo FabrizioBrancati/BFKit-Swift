@@ -59,8 +59,8 @@ public struct BFPassword {
     /// - Returns: Returns the password strength level with value from enum PasswordStrengthLevel.
     public static func strength(password: String) -> PasswordStrengthLevel {
         let lenght = password.length
-        let lowercase = password.countLowercaseLetters()
-        let uppercase = password.countUppercaseLetters()
+        let lowercase = password.countLowercasedCharacters()
+        let uppercase = password.countUppercasedCharacters()
         let numbers = password.countNumbers()
         let symbols = password.countSymbols()
         

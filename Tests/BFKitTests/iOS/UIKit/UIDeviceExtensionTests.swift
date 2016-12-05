@@ -180,10 +180,10 @@ class UIDeviceExtensionTests: XCTestCase {
     
     func testGenerateUniqueIdentifier() {
         let uuid = UIDevice.generateUniqueIdentifier()
-        
-        print("UUID: \(uuid)")
+        let uuid2 = UIDevice.generateUniqueIdentifier()
         
         XCTAssert(uuid.length == 36)
+        XCTAssert(uuid != uuid2)
     }
     
     func testSaveAPNSIdentifier() {

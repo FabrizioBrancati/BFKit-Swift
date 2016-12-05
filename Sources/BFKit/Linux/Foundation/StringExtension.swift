@@ -179,27 +179,6 @@ public extension String {
         return regExPredicate.evaluate(with: self.lowercased())
     }
     
-    /// Encode string to Base64.
-    ///
-    /// - Returns: Returns the encoded string.
-    public func base64encode() -> String {
-        return self.base64encoded
-    }
-    
-    /// Decode Base64 to string.
-    ///
-    /// - Returns: Returns the decoded string.
-    public func base64decode() -> String {
-        return self.base64decoded
-    }
-    
-    /// Convert self to a Data.
-    ///
-    /// - Returns: Returns self as Data.
-    public func data() -> Data? {
-        return self.dataValue
-    }
-    
     /// Conver self to a capitalized string.
     /// Example: "This is a Test" will return "This is a test" and "this is a test" will return "This is a test".
     ///
@@ -224,13 +203,6 @@ public extension String {
     public func replacingMatches(regex regexString: String, with replacement: String) throws -> String {
         let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString, options: .caseInsensitive)
         return regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: self.length), withTemplate: "")
-    }
-    
-    /// Encode self to an encoded url string.
-    ///
-    /// - Returns: Returns the encoded String.
-    public func urlEncode() -> String? {
-        return self.urlEncoded
     }
 
     /// Returns the last path component.
@@ -301,9 +273,9 @@ public extension String {
         }
     }
     
-    /// Returns if self is a valid UUID for APNS (Apple Push Notification Service) or not.
+    /// Returns if self is a valid UUID for APNS (Apple Push Notification System) or not.
     ///
-    /// - Returns: Returns if self is a valid UUID for APNS (Apple Push Notification Service) or not.
+    /// - Returns: Returns if self is a valid UUID for APNS (Apple Push Notification System) or not.
     public func isUUIDForAPNS() -> Bool {
         do {
             let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{32}$", options: .caseInsensitive)
@@ -317,21 +289,21 @@ public extension String {
     /// Converts self to an UUID APNS valid (No "<>" or "-" or spaces).
     ///
     /// - Returns: Converts self to an UUID APNS valid (No "<>" or "-" or spaces).
-    public func apnsUUID() -> String {
+    public func readableUUID() -> String {
         return self.trimmingCharacters(in: CharacterSet(charactersIn: "<>")).replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "-", with: "")
     }
     
     /// Returns string with the first character uppercased.
     ///
     /// - returns: Returns string with the first character uppercased.
-    public func uppercaseFirst() -> String {
+    public func uppercasedFirst() -> String {
         return String(self.characters.prefix(1)).uppercased() + String(self.characters.dropFirst())
     }
     
     /// Returns string with the first character lowercased.
     ///
     /// - returns: Returns string with the first character lowercased.
-    public func lowercaseFirst() -> String {
+    public func lowercasedFirst() -> String {
         return String(self.characters.prefix(1)).lowercased() + String(self.characters.dropFirst())
     }
     
@@ -359,8 +331,12 @@ public extension String {
 
         reversed.removeAll()
         for word in words {
-            if word.hasUppercaseCharacter() {
-                reversed += word.lowercased().uppercaseFirst() + " "
+            if let char = word.unicodeScalars.first {
+                if CharacterSet.uppercaseLetters.contains(char) {
+                    reversed += word.lowercased().uppercasedFirst() + " "
+                } else {
+                    reversed += word.lowercased() + " "
+                }
             } else {
                 reversed += word.lowercased() + " "
             }
@@ -372,15 +348,29 @@ public extension String {
     /// Returns true if the String has at least one uppercase chatacter, otherwise false.
     ///
     /// - returns: Returns true if the String has at least one uppercase chatacter, otherwise false.
-    public func hasUppercaseCharacter() -> Bool {
-        return CharacterSet.uppercaseLetters.contains(self.unicodeScalars.last!)
+    public func hasUppercasedCharacters() -> Bool {
+        var found = false
+        for character in self.unicodeScalars {
+            if (CharacterSet.uppercaseLetters.contains(character)) {
+                found = true
+                break
+            }
+        }
+        return found
     }
     
     /// Returns true if the String has at least one lowercase chatacter, otherwise false.
     ///
     /// - returns: Returns true if the String has at least one lowercase chatacter, otherwise false.
-    public func hasLowercaseCharacter() -> Bool {
-        return CharacterSet.lowercaseLetters.contains(self.unicodeScalars.last!)
+    public func hasLowercasedCharacters() -> Bool {
+        var found = false
+        for character in self.unicodeScalars {
+            if (CharacterSet.lowercaseLetters.contains(character)) {
+                found = true
+                break
+            }
+        }
+        return found
     }
     
     /// Remove double or more duplicated spaces.
@@ -391,10 +381,10 @@ public extension String {
         return squashed.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
     
-    /// Count the number of lowercase letters.
+    /// Count the number of lowercase characters.
     ///
-    /// - Returns: Number of lowercase letters.
-    public func countLowercaseLetters() -> Int {
+    /// - Returns: Number of lowercase characters.
+    public func countLowercasedCharacters() -> Int {
         var countChar = 0
         for i in 0 ..< self.length {
             guard let character = UnicodeScalar((NSString(string: self)).character(at: i)) else {
@@ -409,10 +399,10 @@ public extension String {
         return countChar
     }
     
-    /// Count the number of uppercase letters.
+    /// Count the number of uppercase characters.
     ///
-    /// - Returns: Number of uppercase letters.
-    public func countUppercaseLetters() -> Int {
+    /// - Returns: Number of uppercase characters.
+    public func countUppercasedCharacters() -> Int {
         var countChar = 0
         for i in 0 ..< self.length {
             guard let character = UnicodeScalar((NSString(string: self)).character(at: i)) else {
@@ -467,7 +457,7 @@ public extension String {
     /// Example: "68 65 6c 6c 6f" -> "hello".
     ///
     /// - Returns: Readable string.
-    public func fromHEX() -> String {
+    public func stringFromHEX() -> String {
         var hex = self
         hex = hex.replacingOccurrences(of: " ", with: "")
         var string: String = ""
@@ -486,7 +476,7 @@ public extension String {
     ///
     /// - parameter spacing: Will add a space between every HEX number.
     /// - Returns: HEX string.
-    public func hex(spacing: Bool = false) -> String {
+    /*public func hex(spacing: Bool = false) -> String {
         var hexString = ""
         let space = spacing ? " " : ""
         
@@ -495,7 +485,7 @@ public extension String {
         }
         
         return hexString
-    }
+    }*/
     
     /// Returns the character at the given index.
     ///
@@ -515,7 +505,7 @@ public extension String {
     ///
     /// - Parameter index: Returns the character at the given index as String.
     public subscript(index: Int) -> String {
-        return String(Character(self[index]))
+        return String(self[index])
     }
     
     /// Returns the string from a given range.

@@ -370,11 +370,11 @@ public extension UIDevice {
             isValid = newUUID.isUUIDForAPNS()
         } else if uniqueIdentifier is NSString {
             let string: String = uniqueIdentifier as! String
-            newUUID = string.apnsUUID()
+            newUUID = string.readableUUID()
             isValid = newUUID.isUUIDForAPNS()
         } else if uniqueIdentifier is String {
             let string: String = uniqueIdentifier as! String
-            newUUID = string.apnsUUID()
+            newUUID = string.readableUUID()
             isValid = newUUID.isUUIDForAPNS()
         }
         
