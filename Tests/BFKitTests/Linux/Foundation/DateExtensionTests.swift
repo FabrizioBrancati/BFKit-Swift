@@ -11,6 +11,35 @@ import Foundation
 @testable import BFKit
 
 class DateExtensionTests: XCTestCase {
+    static let allTests = [
+        ("testYear", testYear),
+        ("testMonth", testMonth),
+        ("testDay", testDay),
+        ("testHour", testHour),
+        ("testMinute", testMinute),
+        ("testSecond", testSecond),
+        ("testNanosecond", testNanosecond),
+        ("testWeekday", testWeekday),
+        ("testInitYearMonthDayHourMinuteSecond", testInitYearMonthDayHourMinuteSecond),
+        ("testInitParseFormat", testInitParseFormat),
+        ("testInitDateTime", testInitDateTime),
+        ("testMonthsBetween", testMonthsBetween),
+        ("testDaysBetween", testDaysBetween),
+        ("testIsToday", testIsToday),
+        ("testIsSameDay", testIsSameDay),
+        ("testAddingDays", testAddingDays),
+        ("testAddDays", testAddDays),
+        ("testYearString", testYearString),
+        ("testShortDate", testShortDate),
+        ("testIsGreaterThan", testIsGreaterThan),
+        ("testIsLessThan", testIsLessThan),
+        ("testIsEqual", testIsEqual),
+        ("testYesterday", testYesterday),
+        ("testLocalizedWeekday", testLocalizedWeekday),
+        ("testLocalizedMonth", testLocalizedMonth),
+        ("testDecriptionDateSeparatorUSFormatNanosecond", testDecriptionDateSeparatorUSFormatNanosecond)
+    ]
+    
     var date = Date(year: 2016, month: 10, day: 9, hour: 10, minute: 9, second: 30)!
     
     override func setUp() {

@@ -5,7 +5,7 @@ import XCTest
 
 XCTMain([
     testCase(BFDataStructuresTests.allTests),
-    /*testCase(ArrayExtensionTests.allTests),
+    testCase(ArrayExtensionTests.allTests),
     testCase(CollectionExtensionTests.allTests),
     testCase(DataExtensionTests.allTests),
     testCase(DateExtensionTests.allTests),
@@ -14,7 +14,7 @@ XCTMain([
     testCase(NSObjectExtensionTests.allTests),
     testCase(NumberExtensionTests.allTests),
     testCase(StringExtensionTests.allTests),
-    testCase(ThreadExtensionTests.allTests)*/
+    testCase(ThreadExtensionTests.allTests)
 ])
 
 #endif

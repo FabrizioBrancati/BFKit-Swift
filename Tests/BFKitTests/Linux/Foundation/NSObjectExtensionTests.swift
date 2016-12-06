@@ -11,6 +11,10 @@ import Foundation
 @testable import BFKit
 
 class NSObjectExtensionTests: XCTestCase {
+    static let allTests = [
+        ("testIsValid", testIsValid)
+    ]
+    
     override func setUp() {
         super.setUp()
     }

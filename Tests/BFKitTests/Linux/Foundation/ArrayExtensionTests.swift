@@ -11,6 +11,12 @@ import Foundation
 @testable import BFKit
 
 class ArrayExtensionTests: XCTestCase {
+    static let allTests = [
+        ("testSafeObjectAt", testSafeObjectAt),
+        ("testCircleObjectAt", testCircleObjectAt),
+        ("testMoveFromTo", testMoveFromTo)
+    ]
+    
     var array = [1, 2, 3, 4, 5]
     
     override func setUp() {

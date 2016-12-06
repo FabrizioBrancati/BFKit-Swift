@@ -11,6 +11,49 @@ import Foundation
 @testable import BFKit
 
 class StringExtensionTests: XCTestCase {
+    static let allTests = [
+        ("testFloatValue", testFloatValue),
+        ("testIntValue", testIntValue),
+        ("testDataValue", testDataValue),
+        ("testURLEncoded", testURLEncoded),
+        ("testBase64Encoded", testBase64Encoded),
+        ("testBase64Decoded", testBase64Decoded),
+        ("testLength", testLength),
+        ("testChatacterAt", testChatacterAt),
+        ("testSubstringFromIndex", testSubstringFromIndex),
+        ("testSubstringFromCharacter", testSubstringFromCharacter),
+        ("testSubstringToIndex", testSubstringToIndex),
+        ("testSubstringToCharacter", testSubstringToCharacter),
+        ("testSubstringWithRange", testSubstringWithRange),
+        ("testSubstringWithCountableClosedRange", testSubstringWithCountableClosedRange),
+        ("testIndexOf", testIndexOf),
+        ("testRangeOfCaseSensitive", testRangeOfCaseSensitive),
+        ("testIsEmail", testIsEmail),
+        ("testSentenceCapitalizedString", testSentenceCapitalizedString),
+        ("testLastPathComponent", testLastPathComponent),
+        ("testPathExtension", testPathExtension),
+        ("testDeletingLastPathComponent", testDeletingLastPathComponent),
+        ("testDeletingPathExtension", testDeletingPathExtension),
+        ("testPathComponents", testPathComponents),
+        ("testAppendigPathComponent", testAppendigPathComponent),
+        ("testAppendigPathExtension", testAppendigPathExtension),
+        ("testReadableUUID", testReadableUUID),
+        ("testUppercasedFirst", testUppercasedFirst),
+        ("testLowercasedFirst", testLowercasedFirst),
+        ("testReversedPreserveFormat", testReversedPreserveFormat),
+        ("testHasUppercaseCharacters", testHasUppercaseCharacters),
+        ("testHasLowercaseCharacters", testHasLowercaseCharacters),
+        ("testRemoveExtraSpaces", testRemoveExtraSpaces),
+        ("testCountLowercasedCharacters", testCountLowercasedCharacters),
+        ("testCountUppercasedCharacters", testCountUppercasedCharacters),
+        ("testCountNumbers", testCountNumbers),
+        ("testCountSymbols", testCountSymbols),
+        ("testSubscriptIndexCharacter", testSubscriptIndexCharacter),
+        ("testSubscriptCharacter", testSubscriptCharacter),
+        ("testSubsriptIndexInt", testSubsriptIndexInt),
+        ("testSubscriptRange", testSubscriptRange)
+    ]
+    
     var string = ""
     var path = ""
     
@@ -284,27 +327,25 @@ class StringExtensionTests: XCTestCase {
         XCTAssert(range == "This is ")
     }
     
-    #if !os(Linux)
-        func testIsUUID() {
-            let isUUID = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUID()
-            
-            XCTAssertTrue(isUUID)
-        }
+    func testIsUUID() {
+        let isUUID = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUID()
         
-        func testIsUUIDForAPNS() {
-            let isUUIDForAPNS = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUIDForAPNS()
-            
-            XCTAssertFalse(isUUIDForAPNS)
-        }
+        XCTAssertTrue(isUUID)
+    }
+    
+    func testIsUUIDForAPNS() {
+        let isUUIDForAPNS = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUIDForAPNS()
         
-        func testReplacingMatchesRegexWith() {
-            do {
-                let replaced = try string.replacingMatches(regex: "\\s", with: "A")
-                
-                XCTAssert(replaced == "Thisisatest")
-            } catch {
-                XCTFail()
-            }
+        XCTAssertFalse(isUUIDForAPNS)
+    }
+    
+    func testReplacingMatchesRegexWith() {
+        do {
+            let replaced = try string.replacingMatches(regex: "\\s", with: "A")
+            
+            XCTAssert(replaced == "Thisisatest")
+        } catch {
+            XCTFail()
         }
-    #endif
+    }
 }

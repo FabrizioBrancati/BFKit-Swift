@@ -11,6 +11,11 @@ import Foundation
 @testable import BFKit
 
 class DataExtensionTests: XCTestCase {
+    static let allTests = [
+        ("testUTF8", testUTF8),
+        ("testASCII", testASCII)
+    ]
+    
     let data = Data(base64Encoded: "VGhpcyBpcyBhIHRlc3Q=")!
     
     override func setUp() {

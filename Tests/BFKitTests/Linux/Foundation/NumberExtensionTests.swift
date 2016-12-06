@@ -11,6 +11,15 @@ import Foundation
 @testable import BFKit
 
 class NumberExtensionTests: XCTestCase {
+    static let allTests = [
+        ("testDegreesToRadians", testDegreesToRadians),
+        ("testRadiansToDegrees", testRadiansToDegrees),
+        ("testRandomIntMinMax", testRandomIntMinMax),
+        ("testRandomIntRange", testRandomIntRange),
+        ("testRandomFloat", testRandomFloat),
+        ("testRandomFloatMinMax", testRandomFloatMinMax)
+    ]
+    
     override func setUp() {
         super.setUp()
     }

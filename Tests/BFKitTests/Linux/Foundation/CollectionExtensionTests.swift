@@ -11,6 +11,10 @@ import Foundation
 @testable import BFKit
 
 class CollectionExtensionTests: XCTestCase {
+    static let allTests = [
+        ("testJSON", testJSON)
+    ]
+    
     override func setUp() {
         super.setUp()
     }

@@ -11,6 +11,11 @@ import Foundation
 @testable import BFKit
 
 class ThreadExtensionTests: XCTestCase {
+    static let allTests = [
+        ("testRunOnMainThread", testRunOnMainThread),
+        ("testRunInBackgroun", testRunInBackgroun)
+    ]
+    
     override func setUp() {
         super.setUp()
     }

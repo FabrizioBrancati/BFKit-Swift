@@ -11,6 +11,10 @@ import Foundation
 @testable import BFKit
 
 class DictionaryExtensionTests: XCTestCase {
+    static let allTests = [
+        ("testSafeObjectForKey", testSafeObjectForKey)
+    ]
+    
     let dictionary = ["1": 1, "2": 2, "3": 3, "4": 4, "5": 5]
     
     override func setUp() {

@@ -11,6 +11,25 @@ import Foundation
 @testable import BFKit
 
 class FileManagerExtensionTests: XCTestCase {
+    static let allTests = [
+        ("testPathFor", testPathFor),
+        ("testReadFileOfType", testReadFileOfType),
+        ("testSavePlistObjectInFilename", testSavePlistObjectInFilename),
+        ("testReadPlistFromFilename", testReadPlistFromFilename),
+        ("testMainBundlePathFile", testMainBundlePathFile),
+        ("testDocumentsPathFile", testDocumentsPathFile),
+        ("testLibraryPathFile", testLibraryPathFile),
+        ("testCachePathFile", testCachePathFile),
+        ("testApplicationSupportPathFile", testApplicationSupportPathFile),
+        ("testSizeFileFrom", testSizeFileFrom),
+        ("testDeleteFileFrom", testDeleteFileFrom),
+        ("testMoveFileFromTo", testMoveFileFromTo),
+        ("testCopyFileFromTo", testCopyFileFromTo),
+        ("testRenameFileInFromTo", testRenameFileInFromTo),
+        ("testSetSettingsFilenameObjectForKey", testSetSettingsFilenameObjectForKey),
+        ("testGetSettingsFilenameForKey", testGetSettingsFilenameForKey)
+    ]
+    
     override func setUp() {
         super.setUp()
         
