@@ -35,8 +35,8 @@ class DateExtensionTests: XCTestCase {
         ("testIsLessThan", testIsLessThan),
         ("testIsEqual", testIsEqual),
         ("testYesterday", testYesterday),
-        ("testLocalizedWeekday", testLocalizedWeekday),
-        ("testLocalizedMonth", testLocalizedMonth),
+        //("testLocalizedWeekday", testLocalizedWeekday),
+        //("testLocalizedMonth", testLocalizedMonth),
         ("testDecriptionDateSeparatorUSFormatNanosecond", testDecriptionDateSeparatorUSFormatNanosecond)
     ]
     
