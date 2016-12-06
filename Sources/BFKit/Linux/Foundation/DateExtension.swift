@@ -373,16 +373,6 @@ public extension Date {
         self = date
     }
     
-    /// Get the month string from self.
-    ///
-    /// - Returns: Get the month string from self.
-    public func monthString() -> String {
-        let dateFormatter: DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM"
-        
-        return dateFormatter.string(from: self)
-    }
-    
     /// Get the year string from self.
     ///
     /// - Returns: Get the year string from self.

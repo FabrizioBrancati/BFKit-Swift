@@ -190,12 +190,6 @@ class DateExtensionTests: XCTestCase {
         XCTAssert(date.day == 19)
     }
     
-    func testMonthString() {
-        let month = date.monthString()
-        
-        XCTAssert(month == "October")
-    }
-    
     func testYearString() {
         let year = date.yearString()
         

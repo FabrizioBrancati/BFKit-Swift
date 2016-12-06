@@ -1,4 +1,4 @@
-if os(Linux)
+#if os(Linux)
 
 import XCTest
 @testable import BFKitTests
