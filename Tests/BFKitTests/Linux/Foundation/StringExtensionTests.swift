@@ -327,25 +327,27 @@ class StringExtensionTests: XCTestCase {
         XCTAssert(range == "This is ")
     }
     
-    func testIsUUID() {
-        let isUUID = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUID()
-        
-        XCTAssertTrue(isUUID)
-    }
-    
-    func testIsUUIDForAPNS() {
-        let isUUIDForAPNS = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUIDForAPNS()
-        
-        XCTAssertFalse(isUUIDForAPNS)
-    }
-    
-    func testReplacingMatchesRegexWith() {
-        do {
-            let replaced = try string.replacingMatches(regex: "\\s", with: "A")
+    #if !os(Linux)
+        func testIsUUID() {
+            let isUUID = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUID()
             
-            XCTAssert(replaced == "Thisisatest")
-        } catch {
-            XCTFail()
+            XCTAssertTrue(isUUID)
         }
-    }
+        
+        func testIsUUIDForAPNS() {
+            let isUUIDForAPNS = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUIDForAPNS()
+            
+            XCTAssertFalse(isUUIDForAPNS)
+        }
+        
+        func testReplacingMatchesRegexWith() {
+            do {
+                let replaced = try string.replacingMatches(regex: "\\s", with: "A")
+                
+                XCTAssert(replaced == "Thisisatest")
+            } catch {
+                XCTFail()
+            }
+        }
+    #endif
 }
