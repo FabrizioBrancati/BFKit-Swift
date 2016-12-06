@@ -741,15 +741,15 @@ public extension UIImage {
     /// - Parameters:
     ///   - blurRadius: Blur radius.
     ///   - saturation: Saturation delta factor, leave it default (1.8) if you don't what is.
-    ///   - tintColor: Blur tint color.
+    ///   - tintColor: Blur tint color, default is nil.
     ///   - maskImage: Apply a mask image, leave it default (nil) if you don't want to mask.
     /// - Returns: Return the transformed image.
     public func blur(radius blurRadius: CGFloat, saturation: CGFloat = 1.8, tintColor: UIColor? = nil, maskImage: UIImage? = nil) -> UIImage {
-        guard size.width != 0 || size.height != 0, cgImage != nil, let maskImage = maskImage, maskImage.cgImage != nil else {
+        guard size.width > 1 && size.height > 1, let selfCGImage = cgImage else {
             return self
         }
         
-        let imageRect = CGRect(origin: CGPoint.zero, size: size)
+        let imageRect = CGRect(origin: CGPoint(x: 0, y: 0), size: size)
         var effectImage = self
         
         let hasBlur = Float(blurRadius) > FLT_EPSILON
@@ -757,20 +757,25 @@ public extension UIImage {
         
         if hasBlur || hasSaturationChange {
             UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
-            let effectInContext = UIGraphicsGetCurrentContext()
-            effectInContext?.scaleBy(x: 1, y: -1)
-            effectInContext?.translateBy(x: 0, y: -size.height)
-            effectInContext?.draw(cgImage!, in: imageRect)
-            var effectInBuffer = vImage_Buffer(data: effectInContext?.data, height: UInt((effectInContext?.height)!), width: UInt((effectInContext?.width)!), rowBytes: (effectInContext?.bytesPerRow)!)
+            guard let effectInContext = UIGraphicsGetCurrentContext() else {
+                UIGraphicsEndImageContext()
+                return self
+            }
+            effectInContext.scaleBy(x: 1, y: -1)
+            effectInContext.translateBy(x: 0, y: -size.height)
+            effectInContext.draw(selfCGImage, in: imageRect)
+            var effectInBuffer = vImage_Buffer(data: effectInContext.data, height: UInt(effectInContext.height), width: UInt(effectInContext.width), rowBytes: effectInContext.bytesPerRow)
             
             UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
-            let effectOutContext = UIGraphicsGetCurrentContext()
-            var effectOutBuffer = vImage_Buffer(data: effectOutContext?.data, height: UInt((effectOutContext?.height)!), width: UInt((effectOutContext?.width)!), rowBytes: (effectOutContext?.bytesPerRow)!)
+            guard let effectOutContext = UIGraphicsGetCurrentContext() else {
+                UIGraphicsEndImageContext()
+                return self
+            }
+            var effectOutBuffer = vImage_Buffer(data: effectOutContext.data, height: UInt(effectOutContext.height), width: UInt(effectOutContext.width), rowBytes: effectOutContext.bytesPerRow)
             
             if hasBlur {
                 let inputRadius = blurRadius * UIScreen.main.scale
-                let temp = inputRadius * 3.0 * CGFloat(sqrt(2 * M_PI)) / 4 + 0.5
-                var radius = UInt32(floor(temp))
+                var radius = UInt32(floor(inputRadius * 3.0 * CGFloat(sqrt(2 * M_PI)) / 4 + 0.5))
                 if radius % 2 != 1 {
                     radius += 1
                 }
@@ -784,10 +789,10 @@ public extension UIImage {
             if hasSaturationChange {
                 let s = saturation
                 let floatingPointSaturationMatrix = [
-                    0.0722 + 0.9278 * s, 0.0722 - 0.0722 * s, 0.0722 - 0.0722 * s, 0,
-                    0.7152 - 0.7152 * s, 0.7152 + 0.2848 * s, 0.7152 - 0.7152 * s, 0,
-                    0.2126 - 0.2126 * s, 0.2126 - 0.2126 * s, 0.2126 + 0.7873 * s, 0,
-                    0, 0, 0, 1
+                    0.0722 + 0.9278 * s,  0.0722 - 0.0722 * s,  0.0722 - 0.0722 * s,  0,
+                    0.7152 - 0.7152 * s,  0.7152 + 0.2848 * s,  0.7152 - 0.7152 * s,  0,
+                    0.2126 - 0.2126 * s,  0.2126 - 0.2126 * s,  0.2126 + 0.7873 * s,  0,
+                    0,                    0,                    0,                    1
                 ]
                 
                 let divisor: CGFloat = 256
@@ -802,11 +807,7 @@ public extension UIImage {
                 }
             }
             
-            guard let effectImageContext = UIGraphicsGetImageFromCurrentImageContext() else {
-                UIGraphicsEndImageContext()
-                return self
-            }
-            effectImage = effectImageContext
+            effectImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
         }
         
@@ -818,11 +819,13 @@ public extension UIImage {
         outputContext.scaleBy(x: 1, y: -1)
         outputContext.translateBy(x: 0, y: -size.height)
         
-        outputContext.draw(cgImage!, in: imageRect)
-
+        outputContext.draw(selfCGImage, in: imageRect)
+        
         if hasBlur {
             outputContext.saveGState()
-            outputContext.clip(to: imageRect, mask: maskImage.cgImage!)
+            if let maskImage = maskImage {
+                outputContext.clip(to: imageRect, mask: maskImage.cgImage!)
+            }
             outputContext.draw(effectImage.cgImage!, in: imageRect)
             outputContext.restoreGState()
         }
