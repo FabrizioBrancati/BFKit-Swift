@@ -24,7 +24,6 @@
 		4920BB9F1DD925B500A3FBA9 /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920BB9E1DD925B500A3FBA9 /* DateExtensionTests.swift */; };
 		4971864C1D2339040032A98E /* BFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 497186411D2339040032A98E /* BFKit.framework */; };
 		497186A21D2339210032A98E /* BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 497186651D2339210032A98E /* BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		497186C71D2339210032A98E /* BFKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4971868E1D2339210032A98E /* BFKit.strings */; };
 		497E51111DE647A600EB95D0 /* NSObjectExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497E51101DE647A600EB95D0 /* NSObjectExtensionTests.swift */; };
 		498432121DC952C20013A2D9 /* UIFontExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498432111DC952C20013A2D9 /* UIFontExtensionTests.swift */; };
 		498432141DCA67130013A2D9 /* UIImageExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498432131DCA67130013A2D9 /* UIImageExtensionTests.swift */; };
@@ -37,7 +36,6 @@
 		49D524C61DDE61D400418942 /* FileManagerExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D524C51DDE61D400418942 /* FileManagerExtensionTests.swift */; };
 		49F0DC4F1DBD158F00C9AE18 /* BFApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC451DBD158F00C9AE18 /* BFApp.swift */; };
 		49F0DC501DBD158F00C9AE18 /* BFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC461DBD158F00C9AE18 /* BFButton.swift */; };
-		49F0DC511DBD158F00C9AE18 /* BFDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC471DBD158F00C9AE18 /* BFDate.swift */; };
 		49F0DC531DBD158F00C9AE18 /* BFLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC491DBD158F00C9AE18 /* BFLog.swift */; };
 		49F0DC541DBD158F00C9AE18 /* BFPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC4A1DBD158F00C9AE18 /* BFPassword.swift */; };
 		49F0DC551DBD158F00C9AE18 /* BFSystemSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC4B1DBD158F00C9AE18 /* BFSystemSound.swift */; };
@@ -76,7 +74,6 @@
 		49F0DCB81DBD171F00C9AE18 /* BFAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCA21DBD15CF00C9AE18 /* BFAppTests.swift */; };
 		49F0DCB91DBD172300C9AE18 /* BFButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCA31DBD15CF00C9AE18 /* BFButtonTests.swift */; };
 		49F0DCBA1DBD172300C9AE18 /* BFDataStructuresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCB41DBD15DB00C9AE18 /* BFDataStructuresTests.swift */; };
-		49F0DCBB1DBD172300C9AE18 /* BFDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCA41DBD15CF00C9AE18 /* BFDateTests.swift */; };
 		49F0DCBC1DBD172300C9AE18 /* BFLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCA51DBD15CF00C9AE18 /* BFLogTests.swift */; };
 		49F0DCBD1DBD172300C9AE18 /* BFPasswordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCA61DBD15CF00C9AE18 /* BFPasswordTests.swift */; };
 		49F0DCBE1DBD172300C9AE18 /* BFSystemSoundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DCA71DBD15CF00C9AE18 /* BFSystemSoundTests.swift */; };
@@ -115,21 +112,10 @@
 		4920BB9A1DD8E81300A3FBA9 /* ArrayExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensionTests.swift; sourceTree = "<group>"; };
 		4920BB9C1DD8EEF200A3FBA9 /* DataExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataExtensionTests.swift; sourceTree = "<group>"; };
 		4920BB9E1DD925B500A3FBA9 /* DateExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
-		49582C6C1DC1617C0039C213 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/BFKit.strings; sourceTree = "<group>"; };
 		497186411D2339040032A98E /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4971864B1D2339040032A98E /* BFKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BFKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		497186651D2339210032A98E /* BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BFKit.h; path = Sources/BFKit.h; sourceTree = SOURCE_ROOT; };
 		4971868C1D2339210032A98E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = SOURCE_ROOT; };
-		4971868F1D2339210032A98E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BFKit.strings; sourceTree = "<group>"; };
-		497186901D2339210032A98E /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/BFKit.strings; sourceTree = "<group>"; };
-		497186911D2339210032A98E /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/BFKit.strings; sourceTree = "<group>"; };
-		497186921D2339210032A98E /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/BFKit.strings"; sourceTree = "<group>"; };
-		497186931D2339210032A98E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/BFKit.strings; sourceTree = "<group>"; };
-		497186941D2339210032A98E /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/BFKit.strings; sourceTree = "<group>"; };
-		497186951D2339210032A98E /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/BFKit.strings; sourceTree = "<group>"; };
-		497186961D2339210032A98E /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/BFKit.strings; sourceTree = "<group>"; };
-		497186971D2339210032A98E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/BFKit.strings"; sourceTree = "<group>"; };
-		497186981D2339210032A98E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/BFKit.strings"; sourceTree = "<group>"; };
 		497186CA1D2339290032A98E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = SOURCE_ROOT; };
 		497E51101DE647A600EB95D0 /* NSObjectExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensionTests.swift; sourceTree = "<group>"; };
 		498432111DC952C20013A2D9 /* UIFontExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtensionTests.swift; sourceTree = "<group>"; };
@@ -143,7 +129,6 @@
 		49D524C51DDE61D400418942 /* FileManagerExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManagerExtensionTests.swift; sourceTree = "<group>"; };
 		49F0DC451DBD158F00C9AE18 /* BFApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFApp.swift; sourceTree = "<group>"; };
 		49F0DC461DBD158F00C9AE18 /* BFButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFButton.swift; sourceTree = "<group>"; };
-		49F0DC471DBD158F00C9AE18 /* BFDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFDate.swift; sourceTree = "<group>"; };
 		49F0DC491DBD158F00C9AE18 /* BFLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFLog.swift; sourceTree = "<group>"; };
 		49F0DC4A1DBD158F00C9AE18 /* BFPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFPassword.swift; sourceTree = "<group>"; };
 		49F0DC4B1DBD158F00C9AE18 /* BFSystemSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFSystemSound.swift; sourceTree = "<group>"; };
@@ -181,7 +166,6 @@
 		49F0DC911DBD15B400C9AE18 /* ThreadExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadExtension.swift; sourceTree = "<group>"; };
 		49F0DCA21DBD15CF00C9AE18 /* BFAppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFAppTests.swift; sourceTree = "<group>"; };
 		49F0DCA31DBD15CF00C9AE18 /* BFButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFButtonTests.swift; sourceTree = "<group>"; };
-		49F0DCA41DBD15CF00C9AE18 /* BFDateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFDateTests.swift; sourceTree = "<group>"; };
 		49F0DCA51DBD15CF00C9AE18 /* BFLogTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFLogTests.swift; sourceTree = "<group>"; };
 		49F0DCA61DBD15CF00C9AE18 /* BFPasswordTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFPasswordTests.swift; sourceTree = "<group>"; };
 		49F0DCA71DBD15CF00C9AE18 /* BFSystemSoundTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFSystemSoundTests.swift; sourceTree = "<group>"; };
@@ -248,7 +232,6 @@
 			children = (
 				497186651D2339210032A98E /* BFKit.h */,
 				490D79A21DB81A7F00E07C65 /* BFKit */,
-				4971868D1D2339210032A98E /* Languages */,
 				4971868C1D2339210032A98E /* Info.plist */,
 			);
 			path = BFKit;
@@ -265,22 +248,12 @@
 			path = BFKitTests;
 			sourceTree = "<group>";
 		};
-		4971868D1D2339210032A98E /* Languages */ = {
-			isa = PBXGroup;
-			children = (
-				4971868E1D2339210032A98E /* BFKit.strings */,
-			);
-			name = Languages;
-			path = Sources/Languages;
-			sourceTree = SOURCE_ROOT;
-		};
 		49F0DC441DBD158F00C9AE18 /* BFKit */ = {
 			isa = PBXGroup;
 			children = (
 				49F0DC451DBD158F00C9AE18 /* BFApp.swift */,
 				49F0DC461DBD158F00C9AE18 /* BFButton.swift */,
 				49F0DC591DBD159D00C9AE18 /* BFDataStructures.swift */,
-				49F0DC471DBD158F00C9AE18 /* BFDate.swift */,
 				4998657A1DE53AE4000D252A /* BFKit.swift */,
 				49F0DC491DBD158F00C9AE18 /* BFLog.swift */,
 				49F0DC4A1DBD158F00C9AE18 /* BFPassword.swift */,
@@ -343,7 +316,6 @@
 				49F0DCA21DBD15CF00C9AE18 /* BFAppTests.swift */,
 				49F0DCA31DBD15CF00C9AE18 /* BFButtonTests.swift */,
 				49F0DCB41DBD15DB00C9AE18 /* BFDataStructuresTests.swift */,
-				49F0DCA41DBD15CF00C9AE18 /* BFDateTests.swift */,
 				49F0DCA51DBD15CF00C9AE18 /* BFLogTests.swift */,
 				49F0DCA61DBD15CF00C9AE18 /* BFPasswordTests.swift */,
 				49F0DCA71DBD15CF00C9AE18 /* BFSystemSoundTests.swift */,
@@ -508,7 +480,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				497186C71D2339210032A98E /* BFKit.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,7 +542,6 @@
 				49F0DC751DBD15AC00C9AE18 /* UIImageViewExtension.swift in Sources */,
 				49F0DC7E1DBD15AC00C9AE18 /* UIToolbarExtension.swift in Sources */,
 				49F0DC561DBD158F00C9AE18 /* BFTextField.swift in Sources */,
-				49F0DC511DBD158F00C9AE18 /* BFDate.swift in Sources */,
 				49F0DC5A1DBD159D00C9AE18 /* BFDataStructures.swift in Sources */,
 				49F0DC9C1DBD15B400C9AE18 /* NSObjectExtension.swift in Sources */,
 				49F0DC7A1DBD15AC00C9AE18 /* UIScrollViewExtension.swift in Sources */,
@@ -604,7 +574,6 @@
 				49F0DCB81DBD171F00C9AE18 /* BFAppTests.swift in Sources */,
 				49FB86081DE6598900AC7E4A /* StringExtensionTests.swift in Sources */,
 				498432141DCA67130013A2D9 /* UIImageExtensionTests.swift in Sources */,
-				49F0DCBB1DBD172300C9AE18 /* BFDateTests.swift in Sources */,
 				4920BB991DD53D1800A3FBA9 /* UIWindowExtensionTests.swift in Sources */,
 				4920BB951DD5378100A3FBA9 /* UIWebViewExtensionTests.swift in Sources */,
 				4920BB871DCF6C6B00A3FBA9 /* UIScreenExtensionTests.swift in Sources */,
@@ -638,27 +607,6 @@
 			targetProxy = 4971864D1D2339040032A98E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		4971868E1D2339210032A98E /* BFKit.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4971868F1D2339210032A98E /* en */,
-				497186901D2339210032A98E /* id */,
-				497186911D2339210032A98E /* it */,
-				497186921D2339210032A98E /* pt-BR */,
-				497186931D2339210032A98E /* ru */,
-				497186941D2339210032A98E /* sv */,
-				497186951D2339210032A98E /* uk */,
-				497186961D2339210032A98E /* vi */,
-				497186971D2339210032A98E /* zh-Hans */,
-				497186981D2339210032A98E /* zh-Hant */,
-				49582C6C1DC1617C0039C213 /* fr */,
-			);
-			name = BFKit.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		497186531D2339040032A98E /* Debug */ = {
