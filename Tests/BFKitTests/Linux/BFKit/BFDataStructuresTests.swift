@@ -10,6 +10,24 @@ import XCTest
 @testable import BFKit
 
 class BFDataStructuresTests: XCTestCase {
+    static let allTests = [
+        ("testListDescription", testListDescription),
+        ("testListDeleteIndex", testListDeleteIndex),
+        ("testListDeleteElement", testListDeleteElement),
+        ("testListInsert", testListInsert),
+        ("testListSearchIndex", testListSearchIndex),
+        ("testListSearchElement", testListSearchElement),
+        ("testQueueDescription", testQueueDescription),
+        ("testQueueDequeue", testQueueDequeue),
+        ("testQueueEmpty", testQueueEmpty),
+        ("testQueueEnqueue", testQueueEnqueue),
+        ("testQueueTop", testQueueTop),
+        ("testStackDescription", testStackDescription),
+        ("testStackEmpty", testStackEmpty),
+        ("testStackPop", testStackPop),
+        ("testStackPush", testStackPush)
+    ]
+    
     var list = List<Int>()
     var queue = Queue<Int>()
     var stack = Stack<Int>()

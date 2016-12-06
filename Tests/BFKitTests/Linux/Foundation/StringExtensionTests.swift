@@ -182,7 +182,7 @@ class StringExtensionTests: XCTestCase {
     }
     
     func testReadableUUID() {
-        let readable = UIDevice.generateUniqueIdentifier().readableUUID()
+        let readable = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".readableUUID()
         
         XCTAssert(readable.length == 32)
     }
@@ -285,13 +285,13 @@ class StringExtensionTests: XCTestCase {
     
     #if !os(Linux)
         func testIsUUID() {
-            let isUUID = UIDevice.generateUniqueIdentifier().isUUID()
+            let isUUID = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUID()
             
             XCTAssertTrue(isUUID)
         }
         
         func testIsUUIDForAPNS() {
-            let isUUIDForAPNS = UIDevice.generateUniqueIdentifier().isUUIDForAPNS()
+            let isUUIDForAPNS = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUIDForAPNS()
             
             XCTAssertFalse(isUUIDForAPNS)
         }
