@@ -30,7 +30,6 @@ let package = Package(
     name: "BFKit",
     exclude: [
         "Sources/BFKit/iOS",
-        "Sources/Languages",
         "Tests/BFKitTests/iOS"
     ]
 )
