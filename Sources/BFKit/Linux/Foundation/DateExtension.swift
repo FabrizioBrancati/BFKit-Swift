@@ -295,33 +295,13 @@ public extension Date {
         self = parsed
     }
     
-    /// Return the date with time informations.
-    ///
-    /// - Returns: Return the date with time informations.
-    private func timelessDate() -> Date {
-        let calendar = Calendar.autoupdatingCurrent
-        let components = calendar.dateComponents([.year, .month, .day], from: self)
-        
-        return calendar.date(from: components)!
-    }
-    
-    /// Return the date with time informations.
-    ///
-    /// - Returns: Return the date with time informations.
-    private func monthlessDate() -> Date {
-        let calendar = Calendar.autoupdatingCurrent
-        let components = calendar.dateComponents([.year, .month, .day, .weekday], from: self)
-        
-        return calendar.date(from: components)!
-    }
-    
     /// Get the months number between self and another date.
     ///
     /// - Parameter toDate: The another date.
     /// - Returns: Returns the months between the two dates.
     public func monthsBetween(_ toDate: Date) -> Int {
         let calendar = Calendar.autoupdatingCurrent
-        let components = calendar.dateComponents([.month], from: self.monthlessDate(), to: toDate.monthlessDate())
+        let components = calendar.dateComponents([.month], from: self, to: toDate)
         
         return abs(components.month!)
     }
