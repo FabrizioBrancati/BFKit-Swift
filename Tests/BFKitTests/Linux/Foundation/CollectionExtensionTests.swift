@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Foundation
 @testable import BFKit
 
 class CollectionExtensionTests: XCTestCase {
