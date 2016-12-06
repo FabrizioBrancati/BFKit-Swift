@@ -249,8 +249,8 @@ public extension Date {
         components.minute = minute
         components.second = second
         
-        let gregorian = Calendar(identifier: .gregorian)
-        guard let date = gregorian.date(from: components) else {
+        let calendar = Calendar.autoupdatingCurrent
+        guard let date = calendar.date(from: components) else {
             return nil
         }
         self = date
