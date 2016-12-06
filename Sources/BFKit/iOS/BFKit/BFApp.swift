@@ -34,16 +34,6 @@ public let appDelegate: UIApplicationDelegate? = UIApplication.shared.delegate
 
 // MARK: - Global functions
 
-/// Use BFLocalizedString to use the string translated by BFKit.
-///
-/// - Parameters:
-///   - key: The key string.
-///   - comment: An optional comment.
-/// - Returns: Returns the localized string.
-public func BFLocalizedString(_ key: String, _ comment: String = "") -> String {
-    return Bundle(for: BFApp.self).localizedString(forKey: key, value: key, table: "BFKit")
-}
-
 /// NSLocalizedString without comment parameter.
 ///
 /// - Parameter key: The key of the localized string.
@@ -52,10 +42,10 @@ public func NSLocalizedString(_ key: String) -> String {
     return NSLocalizedString(key, comment: "")
 }
 
-// MARK: - BFApp class
+// MARK: - BFApp struct
 
 /// This class adds some useful functions for the App.
-open class BFApp {
+public struct BFApp {
     // MARK: - Variables
     
     /// Used to store the BFHasBeenOpened in defaults.

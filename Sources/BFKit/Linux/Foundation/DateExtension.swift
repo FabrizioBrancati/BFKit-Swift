@@ -440,10 +440,30 @@ public extension Date {
     /// Create a Date with the yesterday date.
     ///
     /// - Returns: Returns a Date with the yesterday date.
-    public mutating func yesterday() -> Date {
-        self.day = self.day - 1
+    public func yesterday() -> Date {
+        var date = self
+        date.day = date.day - 1
         
-        return self
+        return date
+    }
+    
+    /// Get weekday as a localized string from current weekday number.
+    ///
+    /// - Returns: Return weekday as a localized string.
+    public func localizedWeekday() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        dateFormatter.locale = NSLocale(localeIdentifier: NSLocale.preferredLanguages.first!) as Locale!
+        return dateFormatter.string(from: self).capitalized
+    }
+    
+    /// Get month as a localized string from current month.
+    ///
+    /// - Returns: Returns the given month as a localized string.
+    public func localizedMonth() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM"
+        return dateFormatter.string(from: self).capitalized
     }
     
     /// Get the given Date structure as a formatted string.

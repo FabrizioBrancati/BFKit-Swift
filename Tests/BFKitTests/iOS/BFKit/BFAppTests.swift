@@ -18,10 +18,6 @@ class BFAppTests: XCTestCase {
         super.tearDown()
     }
     
-    func testBFLocalizedString() {
-        XCTAssert(BFLocalizedString("BFKit") == "BFKit")
-    }
-    
     func testNSLocalizedString() {
         XCTAssert(NSLocalizedString("") == "")
     }

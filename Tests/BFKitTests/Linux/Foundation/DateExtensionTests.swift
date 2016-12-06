@@ -247,6 +247,20 @@ class DateExtensionTests: XCTestCase {
         XCTAssert(yesterday.day == 8)
     }
     
+    func testLocalizedWeekday() {
+        let date = Date(timeIntervalSinceReferenceDate: 0)
+        let localizedWeekday = date.localizedWeekday()
+        
+        XCTAssert(localizedWeekday == "Monday")
+    }
+    
+    func testLocalizedMonth() {
+        let date = Date(timeIntervalSinceReferenceDate: 0)
+        let localizedMonth = date.localizedMonth()
+        
+        XCTAssert(localizedMonth == "January")
+    }
+    
     func testDecriptionDateSeparatorUSFormatNanosecond() {
         let description = date.description(dateSeparator: "-", usFormat: false, nanosecond: false)
         
