@@ -174,7 +174,12 @@ public extension String {
     /// - Returns: Returns true if it is an email, otherwise false.
     public func isEmail() -> Bool {
         let emailRegEx: String = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
-        let regExPredicate: NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx as CVarArg)
+        
+        #if os(Linux)
+            let regExPredicate: NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx as! CVarArg)
+        #else
+            let regExPredicate: NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+        #endif
         
         return regExPredicate.evaluate(with: self.lowercased())
     }
@@ -201,8 +206,13 @@ public extension String {
     /// - Returns: Returns a new string containing matching regular expressions replaced with the template string.
     /// - Throws: Throws NSRegularExpression(pattern:, options:) errors.
     public func replacingMatches(regex regexString: String, with replacement: String) throws -> String {
-        let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString, options: .caseInsensitive)
-        return regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: self.length), withTemplate: "")
+        #if os(Linux)
+            let regex: RegularExpression = try RegularExpression(pattern: regexString, options: .caseInsensitive)
+            return regex.stringByReplacingMatches(in: self, options: RegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: self.length), withTemplate: "")
+        #else
+            let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString, options: .caseInsensitive)
+            return regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: self.length), withTemplate: "")
+        #endif
     }
 
     /// Returns the last path component.
@@ -465,7 +475,13 @@ public extension String {
             let character: String = hex.substring(to: hex.index(hex.startIndex, offsetBy: 2))
             hex = hex.substring(from: hex.index(hex.startIndex, offsetBy: 2))
             var characterInt: UInt32 = 0
-            Scanner(string: character).scanHexInt32(&characterInt)
+            
+            #if os(Linux)
+                Scanner(string: character).scanHexInt(&characterInt)
+            #else
+                Scanner(string: character).scanHexInt32(&characterInt)
+            #endif
+            
             string = string + String(format: "%c", characterInt)
         }
         return string

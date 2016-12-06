@@ -453,7 +453,13 @@ public extension Date {
     public func localizedWeekday() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
-        dateFormatter.locale = NSLocale(localeIdentifier: NSLocale.preferredLanguages.first!) as Locale!
+        
+        #if os(Linux)
+            dateFormatter.locale = NSLocale(localeIdentifier: NSLocale.preferredLanguages.first!)
+        #else
+            dateFormatter.locale = NSLocale(localeIdentifier: NSLocale.preferredLanguages.first!) as Locale!
+        #endif
+        
         return dateFormatter.string(from: self).capitalized
     }
     
@@ -463,6 +469,13 @@ public extension Date {
     public func localizedMonth() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM"
+        
+        #if os(Linux)
+            dateFormatter.locale = NSLocale(localeIdentifier: NSLocale.preferredLanguages.first!)
+        #else
+            dateFormatter.locale = NSLocale(localeIdentifier: NSLocale.preferredLanguages.first!) as Locale!
+        #endif
+        
         return dateFormatter.string(from: self).capitalized
     }
     
