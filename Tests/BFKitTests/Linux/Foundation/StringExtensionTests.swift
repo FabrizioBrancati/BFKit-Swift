@@ -139,16 +139,6 @@ class StringExtensionTests: XCTestCase {
         XCTAssert(notCapitalized == "This is a test")
     }
     
-    func testReplacingMatchesRegexWith() {
-        do {
-            let replaced = try string.replacingMatches(regex: "\\s", with: "A")
-            
-            XCTAssert(replaced == "Thisisatest")
-        } catch {
-            XCTFail()
-        }
-    }
-    
     func testLastPathComponent() {
         let lastPathComponent = path.lastPathComponent
         
@@ -189,18 +179,6 @@ class StringExtensionTests: XCTestCase {
         let finalPath = path.appendingPathExtension("test")
         
         XCTAssert(finalPath == "This/is/a/test/file.test.test")
-    }
-    
-    func testIsUUID() {
-        let isUUID = UIDevice.generateUniqueIdentifier().isUUID()
-        
-        XCTAssertTrue(isUUID)
-    }
-    
-    func testIsUUIDForAPNS() {
-        let isUUIDForAPNS = UIDevice.generateUniqueIdentifier().isUUIDForAPNS()
-        
-        XCTAssertFalse(isUUIDForAPNS)
     }
     
     func testReadableUUID() {
@@ -304,4 +282,28 @@ class StringExtensionTests: XCTestCase {
         
         XCTAssert(range == "This is ")
     }
+    
+    #if !os(Linux)
+        func testIsUUID() {
+            let isUUID = UIDevice.generateUniqueIdentifier().isUUID()
+            
+            XCTAssertTrue(isUUID)
+        }
+        
+        func testIsUUIDForAPNS() {
+            let isUUIDForAPNS = UIDevice.generateUniqueIdentifier().isUUIDForAPNS()
+            
+            XCTAssertFalse(isUUIDForAPNS)
+        }
+        
+        func testReplacingMatchesRegexWith() {
+            do {
+                let replaced = try string.replacingMatches(regex: "\\s", with: "A")
+                
+                XCTAssert(replaced == "Thisisatest")
+            } catch {
+                XCTFail()
+            }
+        }
+    #endif
 }

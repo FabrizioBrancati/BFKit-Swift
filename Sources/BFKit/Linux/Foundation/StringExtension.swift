@@ -198,23 +198,6 @@ public extension String {
         return uppercase + lowercase
     }
     
-    /// Returns a new string containing matching regular expressions replaced with the template string.
-    ///
-    /// - Parameters:
-    ///   - regexString: The regex string.
-    ///   - replacement: The replacement string.
-    /// - Returns: Returns a new string containing matching regular expressions replaced with the template string.
-    /// - Throws: Throws NSRegularExpression(pattern:, options:) errors.
-    public func replacingMatches(regex regexString: String, with replacement: String) throws -> String {
-        #if os(Linux)
-            let regex: RegularExpression = try RegularExpression(pattern: regexString, options: .caseInsensitive)
-            return regex.stringByReplacingMatches(in: self, options: RegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: self.length), withTemplate: "")
-        #else
-            let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString, options: .caseInsensitive)
-            return regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: self.length), withTemplate: "")
-        #endif
-    }
-
     /// Returns the last path component.
     public var lastPathComponent: String {
         get {
@@ -268,32 +251,6 @@ public extension String {
         let nsSt = NSString(string: self)
 
         return nsSt.appendingPathExtension(ext)
-    }
-    
-    /// Returns if self is a valid UUID or not.
-    ///
-    /// - Returns: Returns if self is a valid UUID or not.
-    public func isUUID() -> Bool {
-        do {
-            let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", options: .caseInsensitive)
-            let matches: Int = regex.numberOfMatches(in: self, options: .reportCompletion, range: NSRange(location: 0, length: self.length))
-            return matches == 1
-        } catch {
-            return false
-        }
-    }
-    
-    /// Returns if self is a valid UUID for APNS (Apple Push Notification System) or not.
-    ///
-    /// - Returns: Returns if self is a valid UUID for APNS (Apple Push Notification System) or not.
-    public func isUUIDForAPNS() -> Bool {
-        do {
-            let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{32}$", options: .caseInsensitive)
-            let matches: Int = regex.numberOfMatches(in: self, options: .reportCompletion, range: NSRange(location: 0, length: self.length))
-            return matches == 1
-        } catch {
-            return false
-        }
     }
     
     /// Converts self to an UUID APNS valid (No "<>" or "-" or spaces).
@@ -531,4 +488,46 @@ public extension String {
     public subscript(range: Range<Int>) -> String {
         return substring(with: range)
     }
+    
+    // MARK: - Functions not available on Linux
+    
+    #if !os(Linux)
+        /// Returns if self is a valid UUID or not.
+        ///
+        /// - Returns: Returns if self is a valid UUID or not.
+        public func isUUID() -> Bool {
+            do {
+                let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", options: .caseInsensitive)
+                let matches: Int = regex.numberOfMatches(in: self, options: .reportCompletion, range: NSRange(location: 0, length: self.length))
+                return matches == 1
+            } catch {
+                return false
+            }
+        }
+        
+        /// Returns if self is a valid UUID for APNS (Apple Push Notification System) or not.
+        ///
+        /// - Returns: Returns if self is a valid UUID for APNS (Apple Push Notification System) or not.
+        public func isUUIDForAPNS() -> Bool {
+            do {
+                let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{32}$", options: .caseInsensitive)
+                let matches: Int = regex.numberOfMatches(in: self, options: .reportCompletion, range: NSRange(location: 0, length: self.length))
+                return matches == 1
+            } catch {
+                return false
+            }
+        }
+        
+        /// Returns a new string containing matching regular expressions replaced with the template string.
+        ///
+        /// - Parameters:
+        ///   - regexString: The regex string.
+        ///   - replacement: The replacement string.
+        /// - Returns: Returns a new string containing matching regular expressions replaced with the template string.
+        /// - Throws: Throws NSRegularExpression(pattern:, options:) errors.
+        public func replacingMatches(regex regexString: String, with replacement: String) throws -> String {
+            let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString, options: .caseInsensitive)
+            return regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: self.length), withTemplate: "")
+        }
+    #endif
 }
