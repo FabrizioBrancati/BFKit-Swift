@@ -28,7 +28,6 @@ class StringExtensionTests: XCTestCase {
         ("testSubstringWithCountableClosedRange", testSubstringWithCountableClosedRange),
         ("testIndexOf", testIndexOf),
         ("testRangeOfCaseSensitive", testRangeOfCaseSensitive),
-        ("testIsEmail", testIsEmail),
         ("testSentenceCapitalizedString", testSentenceCapitalizedString),
         ("testLastPathComponent", testLastPathComponent),
         ("testPathExtension", testPathExtension),
@@ -165,14 +164,6 @@ class StringExtensionTests: XCTestCase {
         let hasString = string.range(of: "is", caseSensitive: true)
         
         XCTAssertTrue(hasString)
-    }
-    
-    func testIsEmail() {
-        let isNotEmail = string.isEmail()
-        let isEmail = "test@test.test".isEmail()
-        
-        XCTAssertFalse(isNotEmail)
-        XCTAssertTrue(isEmail)
     }
     
     func testSentenceCapitalizedString() {
@@ -328,6 +319,14 @@ class StringExtensionTests: XCTestCase {
     }
     
     #if !os(Linux)
+        func testIsEmail() {
+            let isNotEmail = string.isEmail()
+            let isEmail = "test@test.test".isEmail()
+            
+            XCTAssertFalse(isNotEmail)
+            XCTAssertTrue(isEmail)
+        }
+    
         func testIsUUID() {
             let isUUID = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUID()
             
