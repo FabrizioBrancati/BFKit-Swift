@@ -159,7 +159,7 @@ public extension String {
         return -1
     }
     
-    /// heck if self has the given substring in case-sensitiv or case-insensitive.
+    /// Check if self has the given substring in case-sensitiv or case-insensitive.
     ///
     /// - Parameters:
     ///   - string: The substring to be searched.
@@ -167,6 +167,18 @@ public extension String {
     /// - Returns: Returns true if founded, otherwise false.
     public func range(of string: String, caseSensitive: Bool = true) -> Bool {
         return caseSensitive ? (self.range(of: string) != nil) : (self.lowercased().range(of: string.lowercased()) != nil)
+    }
+    
+    /// Returns the number of occurrences of a String into self.
+    ///
+    /// - Parameter string: String of occurrences.
+    /// - Returns: Returns the number of occurrences of a String into self.
+    public func occurrences(of string: String, caseSensitive: Bool = true) -> Int {
+        var string = string
+        if !caseSensitive {
+            string = string.lowercased()
+        }
+        return self.lowercased().components(separatedBy: string).count - 1
     }
     
     /// Conver self to a capitalized string.
@@ -483,7 +495,7 @@ public extension String {
         public func isEmail() -> Bool {
             let emailRegEx: String = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
             
-            let regExPredicate: NSPredicate = NSPredicate(format: "SELF MATCHES \(emailRegEx)")
+            let regExPredicate: NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
             
             return regExPredicate.evaluate(with: self.lowercased())
         }

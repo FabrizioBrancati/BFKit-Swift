@@ -117,7 +117,7 @@ class DateExtensionTests: XCTestCase {
     }
     
     func testNanosecond() {
-        XCTAssert(date.nanosecond == 0)
+        XCTAssert(date.nanosecond >= 0 && date.nanosecond <= 1000000)
     }
     
     func testWeekday() {

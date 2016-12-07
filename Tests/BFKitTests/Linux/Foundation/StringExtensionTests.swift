@@ -28,6 +28,7 @@ class StringExtensionTests: XCTestCase {
         ("testSubstringWithCountableClosedRange", testSubstringWithCountableClosedRange),
         ("testIndexOf", testIndexOf),
         ("testRangeOfCaseSensitive", testRangeOfCaseSensitive),
+        ("testOccurrencesOfCaseSensitive", testOccurrencesOfCaseSensitive),
         ("testSentenceCapitalizedString", testSentenceCapitalizedString),
         ("testLastPathComponent", testLastPathComponent),
         ("testPathExtension", testPathExtension),
@@ -164,6 +165,12 @@ class StringExtensionTests: XCTestCase {
         let hasString = string.range(of: "is", caseSensitive: true)
         
         XCTAssertTrue(hasString)
+    }
+    
+    func testOccurrencesOfCaseSensitive() {
+        let occurrences = string.occurrences(of: "i")
+        
+        XCTAssertTrue(occurrences == 2)
     }
     
     func testSentenceCapitalizedString() {

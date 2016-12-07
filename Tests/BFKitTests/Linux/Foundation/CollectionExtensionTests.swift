@@ -39,7 +39,13 @@ class CollectionExtensionTests: XCTestCase {
         do {
             let json = try dictionary.json()
             
-            XCTAssert(json == "{\"4\":4,\"2\":2,\"1\":1,\"5\":5,\"3\":3}")
+            let braceLeft = json.occurrences(of: "{")
+            let braceRight = json.occurrences(of: "}")
+            let quotationMarks = json.occurrences(of: "\"")
+            
+            XCTAssertTrue(braceLeft == 1)
+            XCTAssertTrue(braceRight == 1)
+            XCTAssertTrue(quotationMarks == 10)
         } catch {
             XCTFail()
         }
