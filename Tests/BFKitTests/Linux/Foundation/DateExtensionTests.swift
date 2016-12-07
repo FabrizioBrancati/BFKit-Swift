@@ -18,12 +18,10 @@ class DateExtensionTests: XCTestCase {
         ("testHour", testHour),
         ("testMinute", testMinute),
         ("testSecond", testSecond),
-        ("testNanosecond", testNanosecond),
         ("testWeekday", testWeekday),
         ("testInitYearMonthDayHourMinuteSecond", testInitYearMonthDayHourMinuteSecond),
         ("testInitParseFormat", testInitParseFormat),
         ("testInitDateTime", testInitDateTime),
-        //("testMonthsBetween", testMonthsBetween), fatal error: file Foundation/NSCalendar.swift, line 615
         ("testDaysBetween", testDaysBetween),
         ("testIsToday", testIsToday),
         ("testIsSameDay", testIsSameDay),
@@ -35,8 +33,6 @@ class DateExtensionTests: XCTestCase {
         ("testIsLessThan", testIsLessThan),
         ("testIsEqual", testIsEqual),
         ("testYesterday", testYesterday),
-        //("testLocalizedWeekday", testLocalizedWeekday),
-        //("testLocalizedMonth", testLocalizedMonth),
         ("testDecriptionDateSeparatorUSFormatNanosecond", testDecriptionDateSeparatorUSFormatNanosecond)
     ]
     
@@ -159,16 +155,6 @@ class DateExtensionTests: XCTestCase {
         XCTAssert(composed.minute == 9)
     }
     
-    func testMonthsBetween() {
-        guard let newDate = Date(year: 2016, month: 5, day: 9) else {
-            XCTFail()
-            return
-        }
-        let monthsBetween = newDate.monthsBetween(date)
-        
-        XCTAssert(monthsBetween == 5)
-    }
-    
     func testDaysBetween() {
         guard let newDate = Date(year: 2016, month: 9, day: 9) else {
             XCTFail()
@@ -267,20 +253,6 @@ class DateExtensionTests: XCTestCase {
         XCTAssert(yesterday.day == 8)
     }
     
-    func testLocalizedWeekday() {
-        let date = Date(timeIntervalSinceReferenceDate: 0)
-        let localizedWeekday = date.localizedWeekday()
-        
-        XCTAssert(localizedWeekday == "Monday")
-    }
-    
-    func testLocalizedMonth() {
-        let date = Date(timeIntervalSinceReferenceDate: 0)
-        let localizedMonth = date.localizedMonth()
-        
-        XCTAssert(localizedMonth == "January")
-    }
-    
     func testDecriptionDateSeparatorUSFormatNanosecond() {
         let description = date.description(dateSeparator: "-", usFormat: false, nanosecond: false)
         
@@ -290,6 +262,30 @@ class DateExtensionTests: XCTestCase {
     #if !os(Linux)
         func testNanosecond() {
             XCTAssert(date.nanosecond == 0)
+        }
+    
+        func testMonthsBetween() {
+            guard let newDate = Date(year: 2016, month: 5, day: 9) else {
+                XCTFail()
+                return
+            }
+            let monthsBetween = newDate.monthsBetween(date)
+            
+            XCTAssert(monthsBetween == 5)
+        }
+    
+        func testLocalizedWeekday() {
+            let date = Date(timeIntervalSinceReferenceDate: 0)
+            let localizedWeekday = date.localizedWeekday()
+            
+            XCTAssert(localizedWeekday == "Monday")
+        }
+        
+        func testLocalizedMonth() {
+            let date = Date(timeIntervalSinceReferenceDate: 0)
+            let localizedMonth = date.localizedMonth()
+            
+            XCTAssert(localizedMonth == "January")
         }
     #endif
 }
