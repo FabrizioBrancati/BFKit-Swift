@@ -116,10 +116,6 @@ class DateExtensionTests: XCTestCase {
         XCTAssert(date.second == 40)
     }
     
-    func testNanosecond() {
-        XCTAssert(date.nanosecond >= -1000000 && date.nanosecond <= 1000000)
-    }
-    
     func testWeekday() {
         XCTAssert(date.weekday == 1)
     }
@@ -290,4 +286,10 @@ class DateExtensionTests: XCTestCase {
         
         XCTAssert(description == "10-09-2016 10:09:30")
     }
+    
+    #if !os(Linux)
+        func testNanosecond() {
+            XCTAssert(date.nanosecond == 0)
+        }
+    #endif
 }

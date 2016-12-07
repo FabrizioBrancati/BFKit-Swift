@@ -194,7 +194,7 @@ public extension Date {
         }
     }
     
-    /// Set and get current second.
+    /// Get current nanosecond.
     public var nanosecond: Int {
         get {
             let calendar = Calendar.autoupdatingCurrent
