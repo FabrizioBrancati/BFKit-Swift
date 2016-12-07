@@ -10,7 +10,6 @@ XCTMain([
     testCase(DataExtensionTests.allTests),
     testCase(DateExtensionTests.allTests),
     testCase(DictionaryExtensionTests.allTests),
-    testCase(FileManagerExtensionTests.allTests),
     testCase(NSObjectExtensionTests.allTests),
     testCase(NumberExtensionTests.allTests),
     testCase(StringExtensionTests.allTests),

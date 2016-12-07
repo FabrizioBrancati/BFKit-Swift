@@ -443,7 +443,7 @@ public extension Date {
     ///
     /// - Parameters:
     ///   - info: The Date to be formatted.
-    ///   - dateSeparator: The string to be used as date separator.
+    ///   - dateSeparator: The string to be used as date separator. (Currently does not work on Linux).
     ///   - usFormat: Set if the timestamp is in US format or not.
     ///   - nanosecond: Set if the timestamp has to have the nanosecond.
     /// - Returns: Returns a String in the following format (dateSeparator = "/", usFormat to false and nanosecond to false). D/M/Y H:M:S. Example: 15/10/2013 10:38:43.
@@ -451,16 +451,18 @@ public extension Date {
         var description: String
         
         #if os(Linux)
-            let finalDateSeparator = dateSeparator as! CVarArg
+            if usFormat {
+                description = String(format: "%04li-%02li-%02li %02li:%02li:%02li", self.year, self.month, self.day, self.hour, self.minute, self.second)
+            } else {
+                description = String(format: "%02li-%02li-%04li %02li:%02li:%02li", self.month, self.day, self.year, self.hour, self.minute, self.second)
+            }
         #else
-            let finalDateSeparator = dateSeparator
+            if usFormat {
+                description = String(format: "%04li%@%02li%@%02li %02li:%02li:%02li", self.year, dateSeparator, self.month, dateSeparator, self.day, self.hour, self.minute, self.second)
+            } else {
+                description = String(format: "%02li%@%02li%@%04li %02li:%02li:%02li", self.month, dateSeparator, self.day, dateSeparator, self.year, self.hour, self.minute, self.second)
+            }
         #endif
-        
-        if usFormat {
-            description = String(format: "%04li%@%02li%@%02li %02li:%02li:%02li", self.year, finalDateSeparator, self.month, finalDateSeparator, self.day, self.hour, self.minute, self.second)
-        } else {
-            description = String(format: "%02li%@%02li%@%04li %02li:%02li:%02li", self.month, finalDateSeparator, self.day, finalDateSeparator, self.year, self.hour, self.minute, self.second)
-        }
         
         if nanosecond {
             description += String(format: ":%03li", self.nanosecond / 1000000)
