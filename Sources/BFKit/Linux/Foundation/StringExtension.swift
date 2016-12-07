@@ -175,11 +175,7 @@ public extension String {
     public func isEmail() -> Bool {
         let emailRegEx: String = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
         
-        #if os(Linux)
-            let regExPredicate: NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx as! CVarArg)
-        #else
-            let regExPredicate: NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-        #endif
+        let regExPredicate: NSPredicate = NSPredicate(format: "SELF MATCHES \(emailRegEx)")
         
         return regExPredicate.evaluate(with: self.lowercased())
     }
