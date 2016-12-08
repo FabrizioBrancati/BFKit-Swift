@@ -29,7 +29,7 @@ All notable changes to this project will be documented in this file.<br>
 #### Added
 - This version has been completely rewritten and is not compatible with 1.x versions
 - Added Swift 3.0 support
-- Added Full Unit Tests
+- Added Unit Tests
 - Adopt the new [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)
 - Use of [SwiftLint](https://github.com/realm/SwiftLint)
 - Builds on Linux (Foundation extensions only)
