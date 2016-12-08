@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import Foundation
+import UIKit
 @testable import BFKit
 
 class UINavigationBarExtensionTests: XCTestCase {

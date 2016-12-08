@@ -7,19 +7,25 @@
 //
 
 import XCTest
+import Foundation
 @testable import BFKit
 
 class BFAppTests: XCTestCase {
+    static let allTests = [
+        ("testDebug", testDebug),
+        ("testRelease", testRelease),
+        ("testIsFirstStart", testIsFirstStart),
+        ("testIsFirstStartVersion", testIsFirstStartVersion),
+        ("testOnFirstStart", testOnFirstStart),
+        ("testOnFirstStartVersion", testOnFirstStartVersion)
+    ]
+    
     override func setUp() {
         super.setUp()
     }
     
     override func tearDown() {
         super.tearDown()
-    }
-    
-    func testNSLocalizedString() {
-        XCTAssert(NSLocalizedString("") == "")
     }
     
     func testDebug() {
@@ -59,9 +65,15 @@ class BFAppTests: XCTestCase {
     
     /*func testSetAppSetting() {
      
-     }*/
+    }*/
     
     /*func testGetAppSetting() {
      
-     }*/
+    }*/
+    
+    #if !os(Linux)
+    func testNSLocalizedString() {
+        XCTAssert(NSLocalizedString("") == "")
+    }
+    #endif
 }

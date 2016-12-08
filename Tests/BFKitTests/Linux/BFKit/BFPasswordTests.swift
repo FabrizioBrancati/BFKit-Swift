@@ -7,9 +7,14 @@
 //
 
 import XCTest
+import Foundation
 @testable import BFKit
 
 class BFPasswordTests: XCTestCase {
+    static let allTests = [
+        ("testStrength", testStrength)
+    ]
+    
     override func setUp() {
         super.setUp()
     }

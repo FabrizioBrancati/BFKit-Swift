@@ -7,9 +7,17 @@
 //
 
 import XCTest
+import Foundation
 @testable import BFKit
 
 class BFLogTests: XCTestCase {
+    static let allTests = [
+        ("testBFLog", testBFLog),
+        ("testBFLogString", testBFLogString),
+        ("testBFLogDetailedString", testBFLogDetailedString),
+        ("testBFLogClear", testBFLogClear)
+    ]
+    
     override func setUp() {
         super.setUp()
         
