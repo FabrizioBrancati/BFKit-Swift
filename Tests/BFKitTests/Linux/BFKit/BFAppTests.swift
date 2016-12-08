@@ -76,10 +76,10 @@ class BFAppTests: XCTestCase {
     }
     
     /*func testSetAppSetting() {
-        
-    }*/
+     
+     }*/
     
     /*func testGetAppSetting() {
-        
-    }*/
+     
+     }*/
 }

@@ -29,8 +29,10 @@ import UIKit
 
 // MARK: - Global variables
 
-/// Get AppDelegate. To use it, cast to AppDelegate with "as! AppDelegate".
-public let appDelegate: UIApplicationDelegate? = UIApplication.shared.delegate
+#if !os(Linux)
+    /// Get AppDelegate. To use it, cast to AppDelegate with "as! AppDelegate".
+    public let appDelegate: UIApplicationDelegate? = UIApplication.shared.delegate
+#endif
 
 // MARK: - Global functions
 
@@ -134,23 +136,25 @@ public struct BFApp {
         block(!hasBeenOpened)
     }
     
-    /// Set the App setting for a given object and key. The file will be saved in the Library directory.
-    ///
-    /// - Parameters:
-    ///   - object: Object to set.
-    ///   - objectKey: Key to set the object.
-    /// - Returns: Returns true if the operation was successful, otherwise false.
-    public static func setAppSetting(object: AnyObject, forKey objectKey: String) -> Bool {
-        return FileManager.default.setSettings(filename: BFApp.name, object: object, forKey: objectKey)
-    }
-    
-    /// Get the App setting for a given key.
-    ///
-    /// - Parameter objectKey: Key to get the object.
-    /// - Returns: Returns the object for the given key.
-    public static func getAppSetting(objectKey: String) -> Any? {
-        return FileManager.default.getSettings(filename: BFApp.name, forKey: objectKey)
-    }
+    #if !os(Linux)
+        /// Set the App setting for a given object and key. The file will be saved in the Library directory.
+        ///
+        /// - Parameters:
+        ///   - object: Object to set.
+        ///   - objectKey: Key to set the object.
+        /// - Returns: Returns true if the operation was successful, otherwise false.
+        public static func setAppSetting(object: AnyObject, forKey objectKey: String) -> Bool {
+            return FileManager.default.setSettings(filename: BFApp.name, object: object, forKey: objectKey)
+        }
+        
+        /// Get the App setting for a given key.
+        ///
+        /// - Parameter objectKey: Key to get the object.
+        /// - Returns: Returns the object for the given key.
+        public static func getAppSetting(objectKey: String) -> Any? {
+            return FileManager.default.getSettings(filename: BFApp.name, forKey: objectKey)
+        }
+    #endif
 }
 
 // MARK: - BFApp extension
