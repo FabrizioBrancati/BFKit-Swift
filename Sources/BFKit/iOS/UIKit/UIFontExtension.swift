@@ -717,6 +717,21 @@ public extension UIFont {
         case AcademyEngravedLET = "Academy Engraved LET"
     }
     
+    /// Static light font to use in App.
+    ///
+    /// Default is HelveticaNeueLight of size 12.
+    @nonobjc public static var lightFont: UIFont = UIFont(fontName: .HelveticaNeueLight, size: 12)
+    
+    /// Static regular font to use in App.
+    ///
+    /// Default is HelveticaNeue of size 12.
+    @nonobjc public static var regularFont: UIFont = UIFont(fontName: .HelveticaNeue, size: 12)
+    
+    /// Static bold font to use in App.
+    ///
+    /// Default is HelveticaNeueBold of size 12.
+    @nonobjc public static var boldFont: UIFont = UIFont(fontName: .HelveticaNeueBold, size: 12)
+    
     // MARK: - Functions
     
     /// Create an UIFont object from the given font name and size.
