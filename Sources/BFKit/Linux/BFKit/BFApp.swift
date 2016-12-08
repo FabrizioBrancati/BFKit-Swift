@@ -34,17 +34,18 @@ import Foundation
 #if !os(Linux)
     /// Get AppDelegate. To use it, cast to AppDelegate with "as! AppDelegate".
     public let appDelegate: UIApplicationDelegate? = UIApplication.shared.delegate
+
+
+    // MARK: - Global functions
+
+    /// NSLocalizedString without comment parameter.
+    ///
+    /// - Parameter key: The key of the localized string.
+    /// - Returns: Returns a localized string.
+    public func NSLocalizedString(_ key: String) -> String {
+        return NSLocalizedString(key, comment: "")
+    }
 #endif
-
-// MARK: - Global functions
-
-/// NSLocalizedString without comment parameter.
-///
-/// - Parameter key: The key of the localized string.
-/// - Returns: Returns a localized string.
-public func NSLocalizedString(_ key: String) -> String {
-    return NSLocalizedString(key, comment: "")
-}
 
 // MARK: - BFApp struct
 
@@ -117,7 +118,6 @@ public struct BFApp {
         let hasBeenOpened: Bool = defaults.bool(forKey: key)
         if hasBeenOpened != true {
             defaults.set(true, forKey: key)
-            defaults.synchronize()
         }
         
         block(!hasBeenOpened)
