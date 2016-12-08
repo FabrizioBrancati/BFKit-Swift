@@ -25,7 +25,6 @@
 //  SOFTWARE.
 
 import Foundation
-import UIKit
 
 // MARK: - Global functions
 
