@@ -18,6 +18,24 @@ class UIFontExtensionTests: XCTestCase {
         super.tearDown()
     }
     
+    func testLightFont() {
+        UIFont.lightFont = UIFont(fontName: .Helvetica, size: 20)
+        
+        XCTAssert(UIFont.lightFont.fontName == FontName.Helvetica.rawValue)
+    }
+    
+    func testRegularFont() {
+        UIFont.regularFont = UIFont(fontName: .Helvetica, size: 20)
+        
+        XCTAssert(UIFont.regularFont.fontName == FontName.Helvetica.rawValue)
+    }
+    
+    func testBoldFont() {
+        UIFont.boldFont = UIFont(fontName: .Helvetica, size: 20)
+        
+        XCTAssert(UIFont.boldFont.fontName == FontName.Helvetica.rawValue)
+    }
+    
     func testInitFontNameSize() {
         let font = UIFont(fontName: .HelveticaNeue, size: 20)
         
