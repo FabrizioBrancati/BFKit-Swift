@@ -46,5 +46,5 @@ script:
 after_success:
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then
       bash <(curl -s https://codecov.io/bash);
+      sleep 5;
     fi
-  - sleep 5
