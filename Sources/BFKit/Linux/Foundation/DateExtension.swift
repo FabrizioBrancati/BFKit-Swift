@@ -196,16 +196,14 @@ public extension Date {
     
     /// Get current nanosecond.
     public var nanosecond: Int {
-        get {
-            let calendar = Calendar.autoupdatingCurrent
-            let components = calendar.dateComponents([.nanosecond], from: self)
-            
-            guard let nanosecond = components.nanosecond else {
-                return 0
-            }
-            
-            return nanosecond
+        let calendar = Calendar.autoupdatingCurrent
+        let components = calendar.dateComponents([.nanosecond], from: self)
+        
+        guard let nanosecond = components.nanosecond else {
+            return 0
         }
+        
+        return nanosecond
     }
     
     /// Get the weekday number from self.
@@ -217,16 +215,14 @@ public extension Date {
     /// - 6 - Friday.
     /// - 7 - Saturday.
     public var weekday: Int {
-        get {
-            let calendar = Calendar.autoupdatingCurrent
-            let components = calendar.dateComponents([.weekday], from: self)
-            
-            guard let weekday = components.weekday else {
-                return 0
-            }
-            
-            return weekday
+        let calendar = Calendar.autoupdatingCurrent
+        let components = calendar.dateComponents([.weekday], from: self)
+        
+        guard let weekday = components.weekday else {
+            return 0
         }
+        
+        return weekday
     }
     
     // MARK: - Functions

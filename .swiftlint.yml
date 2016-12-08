@@ -1,16 +1,30 @@
 included:
   - Tests
-  #- Sources
+  - Sources
 
 disabled_rules:
   - line_length
-  - force_cast
   - trailing_whitespace
+  - function_parameter_count
 
 opt_in_rules:
-   - empty_count
-   #- missing_docs
+  - empty_count
+  #- missing_docs
 
 type_body_length:
-  - 1000 # warning
-  - 1500 # error
+  warning: 1000
+  error: 1500
+
+force_cast: warning
+
+file_length:
+  warning: 850
+  error: 1200
+
+function_body_length:
+  warning: 70
+  error: 100
+
+cyclomatic_complexity:
+  warning: 30
+  error: 50

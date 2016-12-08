@@ -777,7 +777,6 @@ public extension UIFont {
         return size.height
     }
     
-    
     /// Calculate text height for max width and font.
     ///
     /// - Parameters:

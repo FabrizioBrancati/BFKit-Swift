@@ -30,7 +30,7 @@ import UIKit
 // MARK: - Private variables
 
 /// Touch images dictionary
-private var touchImages: Dictionary<Int, UIImageView> = [:]
+private var touchImages: [Int: UIImageView] = [:]
 
 /// Tet if sendEvent: has been exchanged
 private var sendEventExchanged: Bool = false

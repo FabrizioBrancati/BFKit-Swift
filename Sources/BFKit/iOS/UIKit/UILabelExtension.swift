@@ -100,7 +100,6 @@ public extension UILabel {
         self.attributedText = string
     }
     
-    
     /// Sets a custom font from a character at an index to character at another index.
     ///
     /// - Parameters:

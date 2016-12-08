@@ -1,4 +1,3 @@
-
 //
 //  BFTouchID.swift
 //  BFKit

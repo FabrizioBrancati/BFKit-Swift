@@ -61,7 +61,7 @@ public extension UIImage {
         UIRectFill(rect)
         
         let sizeString: String = "\(Int(size.width)) x \(Int(size.height))"
-        let style: NSMutableParagraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
+        let style: NSMutableParagraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle // swiftlint:disable:this force_cast
         style.alignment = .center
         style.minimumLineHeight = size.height / 2
         let attributes: Dictionary = [NSParagraphStyleAttributeName : style]
@@ -85,7 +85,6 @@ public extension UIImage {
     public convenience init?(width: CGFloat, height: CGFloat, color: String = "lightGray") {
         self.init(dummyImage: "\(Int(width))x\(Int(height)).\(color)")
     }
-    
     
     /// Create a dummy image.
     ///
@@ -631,7 +630,6 @@ public extension UIImage {
         return newImage
     }
     
-    
     /// Apply a filter to the image.
     /// Full list of CIFilters [here](https://developer.apple.com/library/prerelease/content/documentation/GraphicsImaging/Reference/CoreImageFilterReference/).
     ///
@@ -789,10 +787,10 @@ public extension UIImage {
             if hasSaturationChange {
                 let s = saturation
                 let floatingPointSaturationMatrix = [
-                    0.0722 + 0.9278 * s,  0.0722 - 0.0722 * s,  0.0722 - 0.0722 * s,  0,
-                    0.7152 - 0.7152 * s,  0.7152 + 0.2848 * s,  0.7152 - 0.7152 * s,  0,
-                    0.2126 - 0.2126 * s,  0.2126 - 0.2126 * s,  0.2126 + 0.7873 * s,  0,
-                    0,                    0,                    0,                    1
+                    0.0722 + 0.9278 * s, 0.0722 - 0.0722 * s, 0.0722 - 0.0722 * s, 0,
+                    0.7152 - 0.7152 * s, 0.7152 + 0.2848 * s, 0.7152 - 0.7152 * s, 0,
+                    0.2126 - 0.2126 * s, 0.2126 - 0.2126 * s, 0.2126 + 0.7873 * s, 0,
+                    0, 0, 0, 1
                 ]
                 
                 let divisor: CGFloat = 256

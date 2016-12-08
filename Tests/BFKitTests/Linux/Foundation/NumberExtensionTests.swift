@@ -53,7 +53,7 @@ class NumberExtensionTests: XCTestCase {
     }
     
     func testRadiansToDegrees() {
-        let degrees = radiansToDegrees(Float(π))
+        let degrees = radiansToDegrees(Float(3.14159265))
         
         XCTAssert(degrees >= 179 && degrees <= 181)
     }

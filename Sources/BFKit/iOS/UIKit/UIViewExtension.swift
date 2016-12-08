@@ -376,7 +376,6 @@ public extension UIView {
     }
 }
 
-
 // MARK: - UIView inspectable extension
 
 /// Extends UIView with inspectable variables.
@@ -405,7 +404,6 @@ extension UIView {
             self.layer.borderColor = newValue.cgColor
         }
     }
-    
     
     /// Inspectable mask to bounds.
     ///

@@ -197,37 +197,27 @@ public extension String {
     
     /// Returns the last path component.
     public var lastPathComponent: String {
-        get {
-            return NSString(string: self).lastPathComponent
-        }
+        return NSString(string: self).lastPathComponent
     }
 
     /// Returns the path extension.
     public var pathExtension: String {
-        get {
-            return NSString(string: self).pathExtension
-        }
+        return NSString(string: self).pathExtension
     }
 
     /// Delete the last path component.
     public var deletingLastPathComponent: String {
-        get {
-            return NSString(string: self).deletingLastPathComponent
-        }
+        return NSString(string: self).deletingLastPathComponent
     }
 
     /// Delete the path extension.
     public var deletingPathExtension: String {
-        get {
-            return NSString(string: self).deletingPathExtension
-        }
+        return NSString(string: self).deletingPathExtension
     }
 
     /// Returns an array of path components.
     public var pathComponents: [String] {
-        get {
-            return NSString(string: self).pathComponents
-        }
+        return NSString(string: self).pathComponents
     }
     
     /// Appends a path component to the string.
@@ -315,7 +305,7 @@ public extension String {
     public func hasUppercasedCharacters() -> Bool {
         var found = false
         for character in self.unicodeScalars {
-            if (CharacterSet.uppercaseLetters.contains(character)) {
+            if CharacterSet.uppercaseLetters.contains(character) {
                 found = true
                 break
             }
@@ -329,7 +319,7 @@ public extension String {
     public func hasLowercasedCharacters() -> Bool {
         var found = false
         for character in self.unicodeScalars {
-            if (CharacterSet.lowercaseLetters.contains(character)) {
+            if CharacterSet.lowercaseLetters.contains(character) {
                 found = true
                 break
             }
@@ -425,7 +415,7 @@ public extension String {
         var hex = self
         hex = hex.replacingOccurrences(of: " ", with: "")
         var string: String = ""
-        while hex.characters.count > 0 {
+        while !hex.characters.isEmpty {
             let character: String = hex.substring(to: hex.index(hex.startIndex, offsetBy: 2))
             hex = hex.substring(from: hex.index(hex.startIndex, offsetBy: 2))
             var characterInt: UInt32 = 0

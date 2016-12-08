@@ -35,7 +35,6 @@ import Foundation
     /// Get AppDelegate. To use it, cast to AppDelegate with "as! AppDelegate".
     public let appDelegate: UIApplicationDelegate? = UIApplication.shared.delegate
 
-
     // MARK: - Global functions
 
     /// NSLocalizedString without comment parameter.

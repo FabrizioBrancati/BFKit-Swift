@@ -363,17 +363,17 @@ public extension UIDevice {
         var isValid = false, needsUpdate = false
         
         if uniqueIdentifier is Data {
-            let data: Data = uniqueIdentifier as! Data
+            let data: Data = uniqueIdentifier as! Data // swiftlint:disable:this force_cast
             guard let newUUID = data.utf8() else {
                 return
             }
             isValid = newUUID.isUUIDForAPNS()
         } else if uniqueIdentifier is NSString {
-            let string: String = uniqueIdentifier as! String
+            let string: String = uniqueIdentifier as! String // swiftlint:disable:this force_cast
             newUUID = string.readableUUID()
             isValid = newUUID.isUUIDForAPNS()
         } else if uniqueIdentifier is String {
-            let string: String = uniqueIdentifier as! String
+            let string: String = uniqueIdentifier as! String // swiftlint:disable:this force_cast
             newUUID = string.readableUUID()
             isValid = newUUID.isUUIDForAPNS()
         }
