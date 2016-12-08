@@ -23,8 +23,11 @@ install:
     fi
 
 script:
-  - swift -version
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then
+        swiftenv version;
+    fi
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then
+      swift -version
       xcodebuild -version;
       xcodebuild -showsdks;
       swiftlint;
