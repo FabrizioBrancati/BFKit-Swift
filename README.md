@@ -44,11 +44,11 @@ Compatibility
 ### BFKit
 |                                                                                            | **iOS**  | **Linux**  |
 |--------------------------------------------------------------------------------------------|----------|------------|
-| [BFApp](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Classes/BFApp.html)                 | ✔️       | ✔️         |
+| [BFApp](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Classes/BFApp.html)                 | ✔️       | ✔️          |
 | [BFButton](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Classes/BFButton.html)           | ✔️       |            |
 | BFDataStructures<br>([List](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Classes/List.html) - [Queue](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Classes/Queue.html) - [Stack](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Classes/Stack.html))                  | ✔️       | ✔️          |
-| [BFLog](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Functions.html#/)                   | ✔️       | ✔️         |
-| [BFPassword](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Classes/BFPassword.html)       | ✔️       | ✔️         |
+| [BFLog](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Functions.html#/)                   | ✔️       | ✔️          |
+| [BFPassword](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Classes/BFPassword.html)       | ✔️       | ✔️          |
 | [BFSystemSound](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Classes/BFSystemSound.html) | ✔️       |            |
 | [BFTextField](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Classes/BFTextField.html)     | ✔️       |            |
 | [BFTouchID](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Classes/BFTouchID.html)         | ✔️       | &nbsp;     |
@@ -60,7 +60,7 @@ Compatibility
 | [Collection](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions.html/Collection)   | ✔️       | ✔️          |
 | [Data](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/Data.html)               | ✔️       | ✔️          |
 | [Date](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/Date.html)               | ✔️       | ✔️          |
-| [FileManager](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/FileManager.html) | ✔️       |             |
+| [FileManager](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/FileManager.html) | ✔️       |            |
 | [Number](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/Number.html)           | ✔️       | ✔️          |
 | [NSObject](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/NSObject.html)       | ✔️       | ✔️          |
 | [String](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/String.html)           | ✔️       | ✔️          |
@@ -69,7 +69,7 @@ Compatibility
 ### UIKit
 |                                                                                                   | **iOS**  | **Linux**  |
 |---------------------------------------------------------------------------------------------------|----------|------------|
-| [UIBarButtonItem](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UIBarButtonItem.html) |  ✔️      |            |
+| [UIBarButtonItem](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UIBarButtonItem.html) | ✔️       |            |
 | [UIButton](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UIButton.html)               | ✔️       |            |
 | [UIColor](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UIColor.html)                 | ✔️       |            |
 | [UIDevice](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UIDevice.html)               | ✔️       |            |
@@ -91,7 +91,7 @@ Compatibility
 
 Requirements
 ============
-| **Swift** | **Xcode** | **BFKit **    | **iOS** | **Linux** |
+| **Swift** | **Xcode** | **BFKit**     | **iOS** | **Linux** |
 |-----------|-----------|---------------|---------|-----------|
 | 1.2       | 6.3       | 1.0.0...1.4.1 | 7.0+    |           |
 | 2.0...2.1 | 7.0       | 1.5.0...1.6.2 | 7.0+    |           |
@@ -124,13 +124,13 @@ See  [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements
 ### CocoaPods
 - Create a **Podfile** in your **project directory**
 - Write:
-```ruby
-    platform :ios, '8.0'
-    xcodeproj 'Project.xcodeproj'
-    use_frameworks!
+    ```ruby
+        platform :ios, '8.0'
+        xcodeproj 'Project.xcodeproj'
+        use_frameworks!
 
-    pod 'BFKit-Swift'
-```
+        pod 'BFKit-Swift'
+    ```
 - Change **"Project"**  with your **real project name**
 - Open **Terminal**, go to **project directory** and type: ```pod install```
 - Import the Framework with ```import BFKit```
@@ -139,9 +139,9 @@ See  [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements
 ### Carthage
 - Create a **Cartfile** in your **project directory**
 - Write:
-```ruby
-    github "FabrizioBrancati/BFKit-Swift"
-```
+    ```ruby
+        github "FabrizioBrancati/BFKit-Swift"
+    ```
 - Open **Terminal**, go to **project directory** and type: ```carthage update```
 - **Include the created Framework** in your project
 - **Add Build Phase** with the following contents:
@@ -172,10 +172,10 @@ Open and run the BFKitDemo project in Xcode and see BFKit in action!
 
 Todo
 ====
-- [x] Create great tests and add Codecov badge
 - [ ] Add watchOS, tvOS and macOS support
+- [ ] Create a new Example App that shows all the functionalities of BFKit Swift
+- [x] Create great tests and add Codecov badge
 - [x] Add Linux support (Foundation extensions only)
-- [ ] Create a new DEMO App that shows all the functionalities of BFKit Swift
 - [x] Add Carthage support
 - [x] Add to CocoaPods
 - [x] Create a great documentation
