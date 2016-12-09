@@ -195,6 +195,13 @@ public extension String {
         return uppercase + lowercase
     }
     
+    /// Localize current String using self as key.
+    ///
+    /// - Returns: Returns localized String using self as key.
+    func localize() -> String {
+        return NSLocalizedString(self, comment: "")
+    }
+    
     /// Returns the last path component.
     public var lastPathComponent: String {
         return NSString(string: self).lastPathComponent
@@ -447,6 +454,25 @@ public extension String {
         return hexString
     }*/
     
+    /// Return if self is anagram of another String.
+    ///
+    /// - Parameter string: Other String.
+    /// - Returns: Return true if self is anagram of another String, otherwise false.
+    func isAnagram(of string: String) -> Bool {
+        let lowerSelf = self.lowercased().replacingOccurrences(of: " ", with: "")
+        let lowerOther = string.lowercased().replacingOccurrences(of: " ", with: "")
+        return lowerSelf.characters.sorted() == lowerOther.characters.sorted()
+    }
+    
+    /// Returns if self is palindrome.
+    ///
+    /// - Returns: Returns true if self is palindrome, otherwise false.
+    func isPalindrome() -> Bool {
+        let selfString = self.lowercased().replacingOccurrences(of: " ", with: "")
+        let otherString = String(selfString.characters.reversed())
+        return selfString == otherString
+    }
+    
     /// Returns the character at the given index.
     ///
     /// - Parameter index: Returns the character at the given index.
@@ -526,6 +552,64 @@ public extension String {
         public func replacingMatches(regex regexString: String, with replacement: String) throws -> String {
             let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString, options: .caseInsensitive)
             return regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: self.length), withTemplate: "")
+        }
+        
+        /// Returns an array of String with all the links in self.
+        ///
+        /// - Returns: Returns an array of String with all the links in self.
+        /// - Throws: Throws NSDataDetector errors.
+        func links() throws -> [String] {
+            let detector = try NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
+            
+            let links = detector.matches(in: self, options: NSRegularExpression.MatchingOptions.reportCompletion, range: NSRange(location: 0, length: length)).map { $0 }
+            
+            return links.filter { link in
+                return link.url != nil
+            }.map { link -> String in
+                    return link.url!.absoluteString
+            }
+        }
+    
+        /// Returns an array of Date with all the dates in self.
+        ///
+        /// - Returns: Returns an array of Date with all the date in self.
+        /// - Throws: Throws NSDataDetector errors.
+        func dates() throws -> [Date] {
+            let detector = try NSDataDetector(types: NSTextCheckingResult.CheckingType.date.rawValue)
+            
+            let dates = detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withTransparentBounds, range: NSRange(location: 0, length: length)).map { $0 }
+            
+            return dates.filter { date in
+                return date.date != nil
+            }.map { date -> Date in
+                    return date.date!
+            }
+        }
+    
+        /// Returns an array of String with all the hashtags in self.
+        ///
+        /// - Returns: Returns an array of String with all the hashtags in self.
+        /// - Throws: Throws NSRegularExpression errors.
+        func hashtags() throws -> [String] {
+            let detector = try NSRegularExpression(pattern: "#(\\w+)", options: NSRegularExpression.Options.caseInsensitive)
+            let hashtags = detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withoutAnchoringBounds, range: NSRange(location: 0, length: length)).map { $0 }
+            
+            return hashtags.map({
+                (self as NSString).substring(with: $0.rangeAt(1))
+            })
+        }
+    
+        /// Returns an array of String with all the mentions in self.
+        ///
+        /// - Returns: Returns an array of String with all the mentions in self.
+        /// - Throws: Throws NSRegularExpression errors.
+        func mentions() throws -> [String] {
+            let detector = try NSRegularExpression(pattern: "@(\\w+)", options: NSRegularExpression.Options.caseInsensitive)
+            let mentions = detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withoutAnchoringBounds, range: NSRange(location: 0, length: length)).map { $0 }
+            
+            return mentions.map({
+                (self as NSString).substring(with: $0.rangeAt(1))
+            })
         }
     #endif
 }

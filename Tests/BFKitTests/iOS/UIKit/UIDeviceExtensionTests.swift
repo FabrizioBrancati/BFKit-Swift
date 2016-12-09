@@ -186,6 +186,12 @@ class UIDeviceExtensionTests: XCTestCase {
         XCTAssertTrue(device)
     }
     
+    func testIsJailbroken() {
+        let jailbroken = UIDevice.isJailbroken()
+        
+        XCTAssertTrue(jailbroken)
+    }
+    
     func testTotalDiskSpace() {
         let totalDiskSpace = UIDevice.totalDiskSpace()
         

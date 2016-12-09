@@ -32,7 +32,9 @@ class ArrayExtensionTests: XCTestCase {
     static let allTests = [
         ("testSafeObjectAt", testSafeObjectAt),
         ("testCircleObjectAt", testCircleObjectAt),
-        ("testMoveFromTo", testMoveFromTo)
+        ("testSwapFromTo", testSwapFromTo),
+        ("testShuffle", testShuffle),
+        ("testShuffled", testShuffled)
     ]
     
     var array = [1, 2, 3, 4, 5]
@@ -59,9 +61,21 @@ class ArrayExtensionTests: XCTestCase {
         XCTAssert(object == 2)
     }
     
-    func testMoveFromTo() {
-        array.move(from: 0, to: 5)
+    func testSwapFromTo() {
+        array.swap(from: 0, to: 5)
         
         XCTAssert(array[4] == 1)
+    }
+    
+    func testShuffle() {
+        array.shuffle()
+        
+        XCTAssert(array.count == 5)
+    }
+    
+    func testShuffled() {
+        let shuffled = array.shuffled()
+        
+        XCTAssert(shuffled.count == 5)
     }
 }

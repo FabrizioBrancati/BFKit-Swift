@@ -48,6 +48,7 @@ class StringExtensionTests: XCTestCase {
         ("testRangeOfCaseSensitive", testRangeOfCaseSensitive),
         ("testOccurrencesOfCaseSensitive", testOccurrencesOfCaseSensitive),
         ("testSentenceCapitalizedString", testSentenceCapitalizedString),
+        ("testLocalize", testLocalize),
         ("testLastPathComponent", testLastPathComponent),
         ("testPathExtension", testPathExtension),
         ("testDeletingLastPathComponent", testDeletingLastPathComponent),
@@ -66,6 +67,9 @@ class StringExtensionTests: XCTestCase {
         ("testCountUppercasedCharacters", testCountUppercasedCharacters),
         ("testCountNumbers", testCountNumbers),
         ("testCountSymbols", testCountSymbols),
+        ("testStringFromHEX", testStringFromHEX),
+        ("testIsAnagramOf", testIsAnagramOf),
+        ("testIsPalindrome", testIsPalindrome),
         ("testSubscriptIndexCharacter", testSubscriptIndexCharacter),
         ("testSubscriptCharacter", testSubscriptCharacter),
         ("testSubsriptIndexInt", testSubsriptIndexInt),
@@ -199,6 +203,12 @@ class StringExtensionTests: XCTestCase {
         XCTAssert(notCapitalized == "This is a test")
     }
     
+    func testLocalize() {
+        let localized = string.localize()
+        
+        XCTAssert(localized == "This is a test")
+    }
+    
     func testLastPathComponent() {
         let lastPathComponent = path.lastPathComponent
         
@@ -319,6 +329,18 @@ class StringExtensionTests: XCTestCase {
         XCTAssert(hex == "68 65 6c 6c 6f")
     }*/
     
+    func testIsAnagramOf() {
+        let anagram = string.reversed()
+        
+        XCTAssertTrue(string.isAnagram(of: anagram))
+    }
+    
+    func testIsPalindrome() {
+        let palindrome = "Test tset"
+        
+        XCTAssertTrue(palindrome.isPalindrome())
+    }
+    
     func testSubscriptIndexCharacter() {
         let character: Character = string[0]
         
@@ -369,6 +391,46 @@ class StringExtensionTests: XCTestCase {
                 let replaced = try string.replacingMatches(regex: "\\s", with: "A")
                 
                 XCTAssert(replaced == "Thisisatest")
+            } catch {
+                XCTFail()
+            }
+        }
+    
+        func testLinks() {
+            do {
+                let links = try "http://www.fabriziobrancati.com www.fabriziobrancati.com".links()
+                
+                XCTAssert(links.count == 2)
+            } catch {
+                XCTFail()
+            }
+        }
+    
+        func testDates() {
+            do {
+                let dates = try "5/12/1992 28/02/16".dates()
+                
+                XCTAssert(dates.count == 2)
+            } catch {
+                XCTFail()
+            }
+        }
+    
+        func testHashtags() {
+            do {
+                let hashtags = try "#FabrizioBrancati #BrancatiFabrizio".hashtags()
+                
+                XCTAssert(hashtags.count == 2)
+            } catch {
+                XCTFail()
+            }
+        }
+        
+        func testMentions() {
+            do {
+                let mentions = try "@FabrizioBrancati @BrancatiFabrizio".mentions()
+                
+                XCTAssert(mentions.count == 2)
             } catch {
                 XCTFail()
             }

@@ -25,6 +25,9 @@
 //  SOFTWARE.
 
 import Foundation
+#if os(Linux)
+    import Glibc
+#endif
 
 // MARK: - Array extension
 
@@ -76,7 +79,7 @@ public extension Array {
     /// - Parameters:
     ///   - fromIndex: The start index.
     ///   - toIndex: The end index.
-    public mutating func move(from fromIndex: Int, to toIndex: Int) {
+    public mutating func swap(from fromIndex: Int, to toIndex: Int) {
         if toIndex != fromIndex {
             guard let object: Element = self.safeObject(at: fromIndex) else {
                 return
@@ -89,5 +92,26 @@ public extension Array {
                 self.insert(object, at: toIndex)
             }
         }
+    }
+    
+    /// Shuffle the elements of `self` in-place.
+    public mutating func shuffle() {
+        for i in 0..<(count - 1) {
+            #if os(Linux)
+                let j = Int(Int(Glibc.random()) % Int(count - i)) + i
+            #else
+                let j = Int(arc4random_uniform(UInt32(count - i))) + i
+            #endif
+            self.swap(from: i, to: j)
+        }
+    }
+    
+    /// Return a copy of self with its elements shuffled.
+    ///
+    /// - Returns: Return a copy of `self` with its elements shuffled.
+    public func shuffled() -> [Element] {
+        var list = self
+        list.shuffle()
+        return list
     }
 }

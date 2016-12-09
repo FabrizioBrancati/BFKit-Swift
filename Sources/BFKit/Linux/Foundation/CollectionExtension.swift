@@ -35,7 +35,7 @@ public extension Collection {
     /// Convert self to JSON as String.
     ///
     /// - Returns: Returns the JSON as String or nil if error while parsing.
-    /// - Throws: Throws JSONSerialization and BFKitError errors.
+    /// - Throws: Throws JSONSerialization and BFKitError.jsonSerialization errors.
     public func json() throws -> String {
         let jsonData: Data = try JSONSerialization.data(withJSONObject: self, options: [])
         

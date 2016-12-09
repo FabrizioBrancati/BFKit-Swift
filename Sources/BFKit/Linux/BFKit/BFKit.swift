@@ -35,10 +35,12 @@ public let BFKitAuthor = "Fabrizio Brancati"
 /// BFKit errors enum.
 ///
 /// - jsonSerialization: JSONSerialization error.
+/// - errorLoadingSound: Could not load sound error.
 /// - pathNotExist: Path not exist error.
 /// - pathNotAllowed: Path not allowed error.
 public enum BFKitError: Error {
     case jsonSerialization
+    case errorLoadingSound
     case pathNotExist
     case pathNotAllowed
 }

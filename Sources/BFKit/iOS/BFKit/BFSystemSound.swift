@@ -302,12 +302,13 @@ public class BFSystemSound {
     ///
     /// - Parameter soundURL: Sound URL.
     /// - Returns: Returns the SystemSoundID.
-    public static func playSound(soundURL: URL) -> SystemSoundID {
+    /// - Throws: Throws BFKitError.errorLoadingSound error.
+    public static func playSound(soundURL: URL) throws -> SystemSoundID {
         var soundID: SystemSoundID = 0
         
         let error: OSStatus = AudioServicesCreateSystemSoundID(soundURL as CFURL, &soundID)
         if error != Int32(kAudioServicesNoError) {
-            BFLog("Could not load \(soundURL)")
+            throw BFKitError.errorLoadingSound
         }
         return soundID
     }
@@ -316,12 +317,10 @@ public class BFSystemSound {
     ///
     /// - Parameter soundID: SystemSoundID.
     /// - Returns: Returns true if has been disposed, otherwise false.
-    public static func disposeSound(soundID: SystemSoundID) -> Bool {
+    public static func disposeSound(soundID: SystemSoundID) throws {
         let error: OSStatus = AudioServicesDisposeSystemSoundID(soundID)
         if error != Int32(kAudioServicesNoError) {
-            BFLog("Error while disposing sound \(soundID)")
-            return false
+            throw BFKitError.errorLoadingSound
         }
-        return true
     }
 }

@@ -300,6 +300,13 @@ public extension UIDevice {
         return self.detailedModel == "Simulator"
     }
     
+    /// Returns if current device is jailbroken.
+    ///
+    /// - Returns: Returns true if current device is jailbroken, otherwise false.
+    public static func isJailbroken() -> Bool {
+        return UIApplication.shared.canOpenURL(URL(string: "cydia://")!) || FileManager.default.fileExists(atPath: "/bin/bash")
+    }
+    
     /// Returns current device total disk space
     ///
     /// - Returns: Returns current device total disk space.
