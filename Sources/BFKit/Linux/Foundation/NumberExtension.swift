@@ -73,7 +73,7 @@ public func randomInt(range: ClosedRange<Int>) -> Int {
     let max = UInt32(range.upperBound + offset)
     
     #if os(Linux)
-        return Int(min + Int(Glibc.random()) % Int(max - min)) - offset
+        return Int(Int(min) + Int(Glibc.random()) % Int(max - min)) - offset
     #else
         return Int(min + arc4random_uniform(max - min)) - offset
     #endif
