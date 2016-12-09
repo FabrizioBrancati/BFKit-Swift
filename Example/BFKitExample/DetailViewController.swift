@@ -71,28 +71,28 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         #if DEBUG
-            BFLogActive = true
+            BFLog.active = true
         #endif
         
         switch detailType {
         case .BFApp:
             scrollView.removeFromSuperview()
             
-            BFLogClear()
+            BFLog.clear()
             
-            BFLog("App name: \(BFApp.name)")
-            BFLog("App build: \(BFApp.build)")
-            BFLog("App version: \(BFApp.version)")
+            BFLog.log("App name: \(BFApp.name)")
+            BFLog.log("App build: \(BFApp.build)")
+            BFLog.log("App version: \(BFApp.version)")
             
             BFApp.onFirstStart { isFirstStart in
                 if isFirstStart {
-                    BFLog("Is first start!")
+                    BFLog.log("Is first start!")
                 } else {
-                    BFLog("Is not first start!")
+                    BFLog.log("Is not first start!")
                 }
             }
             
-            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLogString, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
+            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLog.logged, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
             self.view.addSubview(textView)
         case .BFButton:
             scrollView.removeFromSuperview()
@@ -102,76 +102,76 @@ class DetailViewController: UIViewController {
         case .BFDataStructures:
             scrollView.removeFromSuperview()
             
-            BFLogClear()
+            BFLog.clear()
             
             var stack: Stack = Stack<String>()
             stack.push("1")
             stack.push("2")
-            BFLog("Push: 1\nPush: 2\nStack: \(stack)")
+            BFLog.log("Push: 1\nPush: 2\nStack: \(stack)")
             let removed = stack.pop()
-            BFLog("Pop: \(removed!) \nStack: \(stack)")
-            stack.empty() ? BFLog("Is empty") : BFLog("Is not empty")
+            BFLog.log("Pop: \(removed!) \nStack: \(stack)")
+            stack.empty() ? BFLog.log("Is empty") : BFLog.log("Is not empty")
             
             var list: List = List<String>()
             list.insert("1")
             list.insert("2")
             list.insert("3")
-            BFLog("\n\nInsert: 1\nInsert: 2\nInsert: 3\nList: \(list)")
-            BFLog("Search index 0: \(list.search(at: 0)!)")
+            BFLog.log("\n\nInsert: 1\nInsert: 2\nInsert: 3\nList: \(list)")
+            BFLog.log("Search index 0: \(list.search(at: 0)!)")
             let search = list.search("3")!
-            BFLog("Search object \"3\": \(search)")
+            BFLog.log("Search object \"3\": \(search)")
             let deleted = list.delete("3")
-            BFLog("Delete: 3 - \(deleted) \nList: \(list)")
+            BFLog.log("Delete: 3 - \(deleted) \nList: \(list)")
             list.delete(at: 0)
-            BFLog("Delete index: 0\nList: \(list)")
+            BFLog.log("Delete index: 0\nList: \(list)")
             
             var queue: Queue = Queue<String>()
             queue.enqueue("1")
             queue.enqueue("2")
             queue.enqueue("3")
-            BFLog("\n\nEnqueue: 1\nEnqueue: 2\nEnqueue: 3\nQueue: \(queue)")
-            BFLog("Top: \(queue.top()!)")
+            BFLog.log("\n\nEnqueue: 1\nEnqueue: 2\nEnqueue: 3\nQueue: \(queue)")
+            BFLog.log("Top: \(queue.top()!)")
             let dequeued = queue.dequeue()
-            BFLog("Dequeue \(dequeued) \nQueue: \(queue)")
+            BFLog.log("Dequeue \(dequeued) \nQueue: \(queue)")
             queue.empty()
-            BFLog("Empty queue: \(queue)")
+            BFLog.log("Empty queue: \(queue)")
             
-            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLogString, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
+            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLog.logged, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
             self.view.addSubview(textView)
         case .BFLog:
             scrollView.removeFromSuperview()
             
-            BFLogClear()
+            BFLog.clear()
             
-            BFLog("This will be shown only if in DEBUG mode")
+            BFLog.log("This will be shown only if in DEBUG mode")
             
-            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLogString, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
+            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLog.logged, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
             self.view.addSubview(textView)
         case .BFPassword:
             scrollView.removeFromSuperview()
             
-            BFLogClear()
+            BFLog.clear()
             
             let pass1 = "Password"
             let passLevel1 = BFPassword.strength(password: pass1)
-            BFLog("Password: \(pass1) - Level: \(passLevel1.rawValue) of \(BFPassword.PasswordStrengthLevel.verySecure.rawValue)")
+            BFLog.log("Password: \(pass1) - Level: \(passLevel1.rawValue) of \(BFPassword.PasswordStrengthLevel.verySecure.rawValue)")
             let pass2 = "kqi019ASC.v1|!-2"
             let passLevel2 = BFPassword.strength(password: pass2)
-            BFLog("Password: \(pass2) - Level: \(passLevel2.rawValue) of \(BFPassword.PasswordStrengthLevel.verySecure.rawValue)")
+            BFLog.log("Password: \(pass2) - Level: \(passLevel2.rawValue) of \(BFPassword.PasswordStrengthLevel.verySecure.rawValue)")
             
-            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLogString, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
+            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLog.logged, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
             self.view.addSubview(textView)
         case .BFSystemSound:
             scrollView.removeFromSuperview()
             
-            BFLogClear()
+            BFLog.clear()
             
             BFSystemSound.vibrate()
-            BFLog("Vibrate")
+            BFLog.log("Vibrate")
             BFSystemSound.playSystemSound(audioID: .receivedMessage)
-            BFLog("Play sound")
+            BFLog.log("Play sound")
             
-            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLogString, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
+            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLog.logged, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
             self.view.addSubview(textView)
         case .BFTextField:
             scrollView.contentSize = CGSize(width: UIScreen.screenWidth, height: UIScreen.screenHeight - 120)
@@ -275,7 +275,7 @@ class DetailViewController: UIViewController {
         case .UIFont:
             scrollView.contentSize = CGSize(width: UIScreen.screenWidth, height: UIScreen.screenHeight - 120)
             
-            BFLog("\(UIFont.allFonts())")
+            BFLog.log("\(UIFont.allFonts())")
             
             let fontLabel: UILabel = UILabel(frame: CGRect(x: 20, y: 20, width: UIScreen.screenWidth - 40, height: 25), text: "Use a font with just an ENUM ^_^", font: .NoteworthyLight, fontSize: 16, color: UIColor.black, alignment: .left, lines: 1)
             scrollView.addSubview(fontLabel)
@@ -464,63 +464,63 @@ class DetailViewController: UIViewController {
         case .Array:
             scrollView.removeFromSuperview()
             
-            BFLogClear()
+            BFLog.clear()
             
             let array: Array<Int> = [1, 2, 3, 4, 5]
             
-            BFLog("Normal Array: \(array)")
-            BFLog("Array to JSON: \(try! array.json())")
+            BFLog.log("Normal Array: \(array)")
+            BFLog.log("Array to JSON: \(try! array.json())")
             
-            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLogString, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
+            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLog.logged, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
             self.view.addSubview(textView)
         case .Collection:
             scrollView.removeFromSuperview()
             
-            BFLogClear()
+            BFLog.clear()
             
             let today: Date = Date()
             
             let dictionary: Dictionary<String, AnyObject> = ["Today" : today.description as AnyObject, "Description of today" : Date().description as AnyObject]
             
-            BFLog("Normal Dictionary: \(dictionary)")
-            BFLog("Dictionary to JSON: \(try! dictionary.json())")
+            BFLog.log("Normal Dictionary: \(dictionary)")
+            BFLog.log("Dictionary to JSON: \(try! dictionary.json())")
             
-            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLogString, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
+            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLog.logged, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
             self.view.addSubview(textView)
         case .Data:
             scrollView.removeFromSuperview()
             
-            BFLogClear()
+            BFLog.clear()
             
             var string = "This is a test"
-            BFLog("String: \(string)")
+            BFLog.log("String: \(string)")
             
             let data = string.dataValue
-            BFLog("Converted to Data: \(data!)")
+            BFLog.log("Converted to Data: \(data!)")
             
             string = (data?.utf8())!
-            BFLog("Data converted to String: \(string)");
+            BFLog.log("Data converted to String: \(string)");
             
-            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLogString, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
+            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLog.logged, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
             self.view.addSubview(textView)
         case .Date:
             scrollView.removeFromSuperview()
             
-            BFLogClear()
+            BFLog.clear()
             
             let today: Date = Date()
             
-            BFLog("Today: \(today)")
-            BFLog("Yesterday: \(today.yesterday())")
-            BFLog("Current month: \(today.localizedMonth())")
-            BFLog("Today is: \(today.localizedWeekday())")
+            BFLog.log("Today: \(today)")
+            BFLog.log("Yesterday: \(today.yesterday())")
+            BFLog.log("Current month: \(today.localizedMonth())")
+            BFLog.log("Today is: \(today.localizedWeekday())")
             
-            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLogString, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
+            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLog.logged, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
             self.view.addSubview(textView)
         case .FileManager:
             scrollView.removeFromSuperview()
             
-            BFLogClear()
+            BFLog.clear()
             
             let array: [Int] = [1, 2, 3, 4, 5]
             
@@ -534,27 +534,27 @@ class DetailViewController: UIViewController {
                 deleting = "Deleted file: No"
             }
             
-            BFLog("\(saving)")
-            BFLog("Directory: \(directory)")
-            BFLog("\(deleting)")
+            BFLog.log("\(saving)")
+            BFLog.log("Directory: \(directory)")
+            BFLog.log("\(deleting)")
             
-            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLogString, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
+            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLog.logged, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
             self.view.addSubview(textView)
         case .Number:
             scrollView.removeFromSuperview()
             
-            BFLogClear()
+            BFLog.clear()
             
-            BFLog("Radians to degrees: \(radiansToDegrees(Float(M_PI)))")
-            BFLog("Random int: \(randomInt(min: 10, max: 50))")
-            BFLog("Random float: \(randomFloat(min: 0.1, max: 0.9)))")
+            BFLog.log("Radians to degrees: \(radiansToDegrees(Float(M_PI)))")
+            BFLog.log("Random int: \(randomInt(min: 10, max: 50))")
+            BFLog.log("Random float: \(randomFloat(min: 0.1, max: 0.9)))")
             
-            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLogString, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
+            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLog.logged, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
             self.view.addSubview(textView)
         case .NSObject:
             scrollView.removeFromSuperview()
             
-            BFLogClear()
+            BFLog.clear()
             
             let nilObject: NSObject = NSNull()
             let object: NSObject = "Object" as NSObject
@@ -562,15 +562,15 @@ class DetailViewController: UIViewController {
             let invalid: String = nilObject.isValid() ? "Object is valid" : "Object is not valid"
             let valid: String = object.isValid() ? "Object is valid" : "Object is not valid"
             
-            BFLog("\(invalid)")
-            BFLog("\(valid)")
+            BFLog.log("\(invalid)")
+            BFLog.log("\(valid)")
             
-            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLogString, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
+            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLog.logged, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
             self.view.addSubview(textView)
         case .Thread:
             scrollView.removeFromSuperview()
             
-            BFLogClear()
+            BFLog.clear()
             
             runInBackground({
                 self.threadFunciton()
@@ -578,16 +578,16 @@ class DetailViewController: UIViewController {
         case .String:
             scrollView.removeFromSuperview()
             
-            BFLogClear()
+            BFLog.clear()
             
             let string: String = "Search in this string!"
             let isEmail: String = string.isEmail() ? "Is email: Yes" : "Is email: No"
-            BFLog("\(isEmail)")
-            BFLog("Lenght: \(string.length)")
-            BFLog("Char at index 5: \(string.character(at: 5))")
-            BFLog("Substring with range: \(string.substring(with: 0..<5))")
+            BFLog.log("\(isEmail)")
+            BFLog.log("Lenght: \(string.length)")
+            BFLog.log("Char at index 5: \(string.character(at: 5))")
+            BFLog.log("Substring with range: \(string.substring(with: 0..<5))")
             
-            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLogString, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
+            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLog.logged, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
             self.view.addSubview(textView)
         }
     }
@@ -616,16 +616,16 @@ class DetailViewController: UIViewController {
     }
     
     func barButtonItemsAction(_ button: UIBarButtonItem) {
-        BFLog("Bar button pressed")
+        BFLog.log("Bar button pressed")
     }
     
     func threadFunciton() {
-        BFLog("Background: \(Thread.current)")
+        BFLog.log("Background: \(Thread.current)")
         
         runOnMainThread {
-            BFLog("Main: \(Thread.current)")
+            BFLog.log("Main: \(Thread.current)")
             
-            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 64, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLogString, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
+            let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 64, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLog.logged, font: .HelveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
             self.view.addSubview(textView)
         }
     }

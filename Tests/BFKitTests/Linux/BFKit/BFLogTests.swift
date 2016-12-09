@@ -39,42 +39,42 @@ class BFLogTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        BFLogActive = true
+        BFLog.active = true
         
-        BFLog("Test")
+        BFLog.log("Test")
     }
     
     override func tearDown() {
         super.tearDown()
         
-        BFLogClear()
+        BFLog.clear()
     }
     
     func testBFLog() {
-        XCTAssert(BFLogString == "Test\n")
+        XCTAssert(BFLog.logged == "Test\n")
     }
     
     func testBFLogString() {
-        BFLog("Test")
+        BFLog.log("Test")
         
-        XCTAssert(BFLogString == "Test\nTest\n")
+        XCTAssert(BFLog.logged == "Test\nTest\n")
     }
     
     func testBFLogDetailedString() {
-        BFLogClear()
+        BFLog.clear()
         
         let filenameWithoutExtension = NSURL(string: String(describing: NSString(utf8String: #file)!))!.deletingPathExtension!.lastPathComponent
         let function = #function
         let line = #line + 2
         
-        BFLog("Test")
+        BFLog.log("Test")
         
-        XCTAssert(BFLogDetailedString == "(\(filenameWithoutExtension):\(line) (\(function)) Test\n")
+        XCTAssert(BFLog.detailedLog == "(\(filenameWithoutExtension):\(line) (\(function)) Test\n")
     }
     
     func testBFLogClear() {
-        BFLogClear()
+        BFLog.clear()
         
-        XCTAssert(BFLogString == "")
+        XCTAssert(BFLog.logged == "")
     }
 }
