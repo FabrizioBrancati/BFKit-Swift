@@ -192,6 +192,18 @@ class UIDeviceExtensionTests: XCTestCase {
         XCTAssertTrue(jailbroken)
     }
     
+    func testUptime() {
+        let uptime = UIDevice.uptime()
+        
+        XCTAssert(uptime > 0)
+    }
+    
+    func testUptimeDate() {
+        let uptimeDate = UIDevice.uptimeDate()
+        
+        XCTAssert(uptimeDate < Date())
+    }
+    
     func testTotalDiskSpace() {
         let totalDiskSpace = UIDevice.totalDiskSpace()
         

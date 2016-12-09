@@ -42,12 +42,12 @@ class UIWindowExtensionTests: XCTestCase {
         super.tearDown()
     }
     
-    func testBFShowTouchOnScreen() {
-        BFShowTouchOnScreen()
+    func testShowTouchOnScreen() {
+        showTouchOnScreen()
     }
     
-    func testBFHideTouchOnScreen() {
-        BFHideTouchOnScreen()
+    func testHideTouchOnScreen() {
+        hideTouchOnScreen()
     }
     
     func testWindowScreenshotSave() {

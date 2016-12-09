@@ -460,7 +460,7 @@ class DetailViewController: UIViewController {
                 self.view.addSubview(screenshotView)
             })
             
-            BFShowTouchOnScreen()
+            showTouchOnScreen()
         case .Array:
             scrollView.removeFromSuperview()
             
@@ -599,7 +599,7 @@ class DetailViewController: UIViewController {
         case .UINavigationBar:
             self.navigationController?.navigationBar.setTransparent(false)
         case .UIWindow:
-            BFHideTouchOnScreen()
+            hideTouchOnScreen()
         default:
             break
         }

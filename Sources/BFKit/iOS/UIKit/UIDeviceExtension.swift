@@ -307,6 +307,20 @@ public extension UIDevice {
         return UIApplication.shared.canOpenURL(URL(string: "cydia://")!) || FileManager.default.fileExists(atPath: "/bin/bash")
     }
     
+    /// Returns system uptime.
+    ///
+    /// - Returns: eturns system uptime.
+    public static func uptime() -> TimeInterval {
+        return ProcessInfo.processInfo.systemUptime
+    }
+    
+    /// Returns sysyem uptime as Date.
+    ///
+    /// - Returns: Returns sysyem uptime as Date.
+    public static func uptimeDate() -> Date {
+        return Date(timeIntervalSinceNow: -uptime())
+    }
+    
     /// Returns current device total disk space
     ///
     /// - Returns: Returns current device total disk space.
