@@ -18,7 +18,7 @@ type_body_length:
 force_cast: warning
 
 file_length:
-  warning: 850
+  warning: 900
   error: 1200
 
 function_body_length:
