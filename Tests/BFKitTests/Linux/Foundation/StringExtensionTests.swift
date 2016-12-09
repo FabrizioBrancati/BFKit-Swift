@@ -48,7 +48,6 @@ class StringExtensionTests: XCTestCase {
         ("testRangeOfCaseSensitive", testRangeOfCaseSensitive),
         ("testOccurrencesOfCaseSensitive", testOccurrencesOfCaseSensitive),
         ("testSentenceCapitalizedString", testSentenceCapitalizedString),
-        ("testLocalize", testLocalize),
         ("testLastPathComponent", testLastPathComponent),
         ("testPathExtension", testPathExtension),
         ("testDeletingLastPathComponent", testDeletingLastPathComponent),
@@ -201,12 +200,6 @@ class StringExtensionTests: XCTestCase {
         
         XCTAssert(capitalized == "This is a test")
         XCTAssert(notCapitalized == "This is a test")
-    }
-    
-    func testLocalize() {
-        let localized = string.localize()
-        
-        XCTAssert(localized == "This is a test")
     }
     
     func testLastPathComponent() {
@@ -366,6 +359,12 @@ class StringExtensionTests: XCTestCase {
     }
     
     #if !os(Linux)
+        func testLocalize() {
+            let localized = string.localize()
+            
+            XCTAssert(localized == "This is a test")
+        }
+    
         func testIsEmail() {
             let isNotEmail = string.isEmail()
             let isEmail = "test@test.test".isEmail()

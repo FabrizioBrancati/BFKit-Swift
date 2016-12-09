@@ -187,6 +187,68 @@ public extension UIView {
         self.layer.insertSublayer(gradient, at:0)
     }
     
+    /// Adds a motion effect to the view.
+    public func applyMotionEffects() {
+        let horizontalEffect: UIInterpolatingMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
+        horizontalEffect.minimumRelativeValue = -10.0
+        horizontalEffect.maximumRelativeValue = 10.0
+        let verticalEffect: UIInterpolatingMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
+        verticalEffect.minimumRelativeValue = -10.0
+        verticalEffect.maximumRelativeValue = 10.0
+        let motionEffectGroup: UIMotionEffectGroup = UIMotionEffectGroup()
+        motionEffectGroup.motionEffects = [horizontalEffect, verticalEffect]
+        
+        self.addMotionEffect(motionEffectGroup)
+    }
+    
+    /// Take a screenshot of the current view
+    ///
+    /// - Parameter save: Save the screenshot in user pictures. Default is false.
+    /// - Returns: Returns screenshot as UIImage
+    public func screenshot(save: Bool = false) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
+        
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return nil
+        }
+        
+        self.layer.render(in: context)
+        
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
+            return nil
+        }
+        
+        UIGraphicsEndImageContext()
+        
+        if save {
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        }
+        
+        return image
+    }
+    
+    /// Removes all subviews from current view
+    public func removeAllSubviews() {
+        self.subviews.forEach { (subview) -> () in
+            subview.removeFromSuperview()
+        }
+    }
+    
+    /// Create an UIView with the given frame and background color.
+    ///
+    /// - Parameters:
+    ///   - frame: UIView frame.
+    ///   - backgroundColor: UIView background color.
+    public convenience init(frame: CGRect, backgroundColor: UIColor) {
+        self.init(frame: frame)
+        self.backgroundColor = backgroundColor
+    }
+}
+
+// MARK: - UIView animatable extension
+
+/// Extends UIView with animatable functions.
+extension UIView {
     /// Create a shake effect.
     ///
     /// - Parameters:
@@ -318,61 +380,20 @@ public extension UIView {
         }
     }
     
-    /// Adds a motion effect to the view.
-    public func applyMotionEffects() {
-        let horizontalEffect: UIInterpolatingMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
-        horizontalEffect.minimumRelativeValue = -10.0
-        horizontalEffect.maximumRelativeValue = 10.0
-        let verticalEffect: UIInterpolatingMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
-        verticalEffect.minimumRelativeValue = -10.0
-        verticalEffect.maximumRelativeValue = 10.0
-        let motionEffectGroup: UIMotionEffectGroup = UIMotionEffectGroup()
-        motionEffectGroup.motionEffects = [horizontalEffect, verticalEffect]
-        
-        self.addMotionEffect(motionEffectGroup)
-    }
-    
-    /// Take a screenshot of the current view
-    ///
-    /// - Parameter save: Save the screenshot in user pictures. Default is false.
-    /// - Returns: Returns screenshot as UIImage
-    public func screenshot(save: Bool = false) -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
-        
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return nil
-        }
-        
-        self.layer.render(in: context)
-        
-        guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
-            return nil
-        }
-        
-        UIGraphicsEndImageContext()
-        
-        if save {
-            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        }
-        
-        return image
-    }
-    
-    /// Removes all subviews from current view
-    public func removeAllSubviews() {
-        self.subviews.forEach { (subview) -> () in
-            subview.removeFromSuperview()
-        }
-    }
-    
-    /// Create an UIView with the given frame and background color.
+    /// Animate along path.
     ///
     /// - Parameters:
-    ///   - frame: UIView frame.
-    ///   - backgroundColor: UIView background color.
-    public convenience init(frame: CGRect, backgroundColor: UIColor) {
-        self.init(frame: frame)
-        self.backgroundColor = backgroundColor
+    ///   - path: Path to follow.
+    ///   - count: Animation repeat count. Default is 1.
+    ///   - duration: Animation duration.
+    public func animate(path: UIBezierPath, count: Float = 1, duration: TimeInterval) {
+        let animation = CAKeyframeAnimation(keyPath: "position")
+        animation.path = path.cgPath
+        
+        animation.repeatCount = count
+        animation.duration = duration
+        
+        self.layer.add(animation, forKey: "animateAlongPath")
     }
 }
 

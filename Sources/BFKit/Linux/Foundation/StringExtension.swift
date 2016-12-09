@@ -195,13 +195,6 @@ public extension String {
         return uppercase + lowercase
     }
     
-    /// Localize current String using self as key.
-    ///
-    /// - Returns: Returns localized String using self as key.
-    func localize() -> String {
-        return NSLocalizedString(self, comment: "")
-    }
-    
     /// Returns the last path component.
     public var lastPathComponent: String {
         return NSString(string: self).lastPathComponent
@@ -505,6 +498,13 @@ public extension String {
     // MARK: - Functions not available on Linux
     
     #if !os(Linux)
+        /// Localize current String using self as key.
+        ///
+        /// - Returns: Returns localized String using self as key.
+        func localize() -> String {
+            return NSLocalizedString(self, comment: "")
+        }
+        
         /// Check if self is an email.
         ///
         /// - Returns: Returns true if it is an email, otherwise false.

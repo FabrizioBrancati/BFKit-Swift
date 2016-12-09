@@ -92,6 +92,21 @@ class UIViewExtensionTests: XCTestCase {
         XCTAssert(view.frame == CGRect(x: 0, y: 0, width: 200, height: 100))
     }
     
+    func testApplyMotionEffect() {
+        view.applyMotionEffects()
+        
+        XCTAssert(view.motionEffects != [])
+    }
+    
+    func testScreenshotSave() {
+        guard let screenshot = view.screenshot(save: true) else {
+            XCTFail()
+            return
+        }
+        
+        XCTAssertNotNil(screenshot)
+    }
+    
     func testShakeCountDurationTranslation() {
         view.shake(count: 5, duration: 1, translation: 10)
         
@@ -124,19 +139,12 @@ class UIViewExtensionTests: XCTestCase {
         XCTAssert(view.frame.height == 100)
     }
     
-    func testApplyMotionEffect() {
-        view.applyMotionEffects()
+    func testAnimatePathCountDuration() {
+        let path = UIBezierPath()
+        path.addLine(to: CGPoint(x: 100, y: 100))
+        view.animate(path: path, count: 1, duration: 0.01)
         
-        XCTAssert(view.motionEffects != [])
-    }
-    
-    func testScreenshotSave() {
-        guard let screenshot = view.screenshot(save: true) else {
-            XCTFail()
-            return
-        }
-        
-        XCTAssertNotNil(screenshot)
+        XCTAssertNotNil(view.layer.animation(forKey: "animateAlongPath"))
     }
     
     func testBorderWidth() {
