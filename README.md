@@ -173,9 +173,10 @@ Open and run the BFKitExample project in Example folder in this repo, with Xcode
 
 Todo
 ====
-- [ ] Add watchOS, tvOS and macOS support
+- [ ] Add macOS, watchOS and tvOS support
 - [ ] Create a new Example App that shows all the functionalities of BFKit Swift
-- [x] Create great tests and add Codecov badge
+- [ ] 100% of code coverage with Unit Tests
+- [x] Create Unit Tests and add Codecov badge
 - [x] Add Linux support (Foundation extensions only)
 - [x] Add Carthage support
 - [x] Add to CocoaPods
