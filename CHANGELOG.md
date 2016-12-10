@@ -40,6 +40,7 @@ All notable changes to this project will be documented in this file.<br>
 - Added `animate(path:, count:, duration:)` function in UIView extension
 - Added `init(base64:)` function in UIImage extension
 - Added UIViewController extension
+- Added ProcessInfo extension
 
 #### Improved
 - Better handling of `!`, `?` and `throws` on all sources

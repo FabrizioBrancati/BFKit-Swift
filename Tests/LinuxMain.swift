@@ -15,6 +15,7 @@ XCTMain([
     testCase(DictionaryExtensionTests.allTests),
     testCase(NSObjectExtensionTests.allTests),
     testCase(NumberExtensionTests.allTests),
+    testCase(ProcessInfoExtensionTests.allTests),
     testCase(StringExtensionTests.allTests),
     testCase(ThreadExtensionTests.allTests)
 ])

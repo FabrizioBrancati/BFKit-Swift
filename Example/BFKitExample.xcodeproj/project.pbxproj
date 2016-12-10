@@ -46,6 +46,7 @@
 		4913377F1DF9717600BD8B0F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491337591DF9717600BD8B0F /* StringExtension.swift */; };
 		491337801DF9717600BD8B0F /* ThreadExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4913375A1DF9717600BD8B0F /* ThreadExtension.swift */; };
 		4913378C1DFB80D800BD8B0F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4913378B1DFB80D800BD8B0F /* UIViewControllerExtension.swift */; };
+		4922E88D1DFC43A300C5BD3A /* ProcessInfoExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922E88C1DFC43A300C5BD3A /* ProcessInfoExtension.swift */; };
 		49FB866A1DF34B2400AC7E4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FB86691DF34B2400AC7E4A /* AppDelegate.swift */; };
 		49FB86821DF34B5500AC7E4A /* BFKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FB867B1DF34B5500AC7E4A /* BFKitViewController.swift */; };
 		49FB86831DF34B5500AC7E4A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FB867C1DF34B5500AC7E4A /* DetailViewController.swift */; };
@@ -96,6 +97,7 @@
 		491337591DF9717600BD8B0F /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		4913375A1DF9717600BD8B0F /* ThreadExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadExtension.swift; sourceTree = "<group>"; };
 		4913378B1DFB80D800BD8B0F /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		4922E88C1DFC43A300C5BD3A /* ProcessInfoExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessInfoExtension.swift; sourceTree = "<group>"; };
 		49FB86661DF34B2400AC7E4A /* BFKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BFKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FB86691DF34B2400AC7E4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49FB86751DF34B2400AC7E4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				491337561DF9717600BD8B0F /* DictionaryExtension.swift */,
 				491337571DF9717600BD8B0F /* NSObjectExtension.swift */,
 				491337581DF9717600BD8B0F /* NumberExtension.swift */,
+				4922E88C1DFC43A300C5BD3A /* ProcessInfoExtension.swift */,
 				491337591DF9717600BD8B0F /* StringExtension.swift */,
 				4913375A1DF9717600BD8B0F /* ThreadExtension.swift */,
 			);
@@ -358,6 +361,7 @@
 				4913376D1DF9717600BD8B0F /* UITextFieldExtension.swift in Sources */,
 				4913376B1DF9717600BD8B0F /* UIScrollViewExtension.swift in Sources */,
 				49FB86821DF34B5500AC7E4A /* BFKitViewController.swift in Sources */,
+				4922E88D1DFC43A300C5BD3A /* ProcessInfoExtension.swift in Sources */,
 				491337681DF9717600BD8B0F /* UINavigationBarExtension.swift in Sources */,
 				4913377D1DF9717600BD8B0F /* NSObjectExtension.swift in Sources */,
 				4913375C1DF9717600BD8B0F /* BFSystemSound.swift in Sources */,
