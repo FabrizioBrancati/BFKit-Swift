@@ -72,7 +72,8 @@ class StringExtensionTests: XCTestCase {
         ("testSubscriptIndexCharacter", testSubscriptIndexCharacter),
         ("testSubscriptCharacter", testSubscriptCharacter),
         ("testSubsriptIndexInt", testSubsriptIndexInt),
-        ("testSubscriptRange", testSubscriptRange)
+        ("testSubscriptRange", testSubscriptRange),
+        ("testOptionalDefaultValue", testOptionalDefaultValue)
     ]
     
     var string = ""
@@ -356,6 +357,13 @@ class StringExtensionTests: XCTestCase {
         let range = string[0..<8]
         
         XCTAssert(range == "This is ")
+    }
+    
+    func testOptionalDefaultValue() {
+        var test: String? = nil
+        test = test ??? "Test"
+        
+        XCTAssert(test == "Test")
     }
     
     #if !os(Linux)
