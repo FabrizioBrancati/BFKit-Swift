@@ -24,6 +24,12 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+## [2.0.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v2.0.1) - Linux compatibility
+### 10 Dec 2016
+#### Fixed
+- Fixed a bug for Linux
+
+
 ## [2.0.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v2.0.0) - A new beginning
 ### 10 Dec 2016
 #### Added

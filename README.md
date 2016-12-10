@@ -43,51 +43,51 @@ Compatibility
 ### BFKit
 |                                                                                            | **iOS**  | **Linux**  |
 |--------------------------------------------------------------------------------------------|----------|------------|
-| [BFApp](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Classes/BFApp.html)                 | ✔️       | ✔️          |
-| [BFButton](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Classes/BFButton.html)           | ✔️       |            |
-| BFDataStructures<br>([List](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Classes/List.html) - [Queue](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Classes/Queue.html) - [Stack](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Classes/Stack.html))                  | ✔️       | ✔️          |
-| [BFLog](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Functions.html#/)                   | ✔️       | ✔️          |
-| [BFPassword](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Classes/BFPassword.html)       | ✔️       | ✔️          |
-| [BFSystemSound](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Classes/BFSystemSound.html) | ✔️       |            |
-| [BFTextField](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Classes/BFTextField.html)     | ✔️       |            |
-| [BFTouchID](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Classes/BFTouchID.html)         | ✔️       | &nbsp;     |
+| [BFApp](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Classes/BFApp.html)                 | ✔️       | ✔️          |
+| [BFButton](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Classes/BFButton.html)           | ✔️       |            |
+| BFDataStructures<br>([List](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Classes/List.html) - [Queue](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Classes/Queue.html) - [Stack](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Classes/Stack.html))                  | ✔️       | ✔️          |
+| [BFLog](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Functions.html#/)                   | ✔️       | ✔️          |
+| [BFPassword](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Classes/BFPassword.html)       | ✔️       | ✔️          |
+| [BFSystemSound](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Classes/BFSystemSound.html) | ✔️       |            |
+| [BFTextField](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Classes/BFTextField.html)     | ✔️       |            |
+| [BFTouchID](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Classes/BFTouchID.html)         | ✔️       | &nbsp;     |
 
 ### Foundation
 |                                                                                           | **iOS**  | **Linux**  |
 |-------------------------------------------------------------------------------------------|----------|------------|
-| [Array](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions.html/Array)             | ✔️       | ✔️          |
-| [Collection](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions.html/Collection)   | ✔️       | ✔️          |
-| [Data](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/Data.html)               | ✔️       | ✔️          |
-| [Date](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/Date.html)               | ✔️       | ✔️          |
-| [FileManager](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/FileManager.html) | ✔️       |            |
-| [Number](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/Number.html)           | ✔️       | ✔️          |
-| [NSObject](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/NSObject.html)       | ✔️       | ✔️          |
-| [String](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/String.html)           | ✔️       | ✔️          |
-| [Thread](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/Thread.html)           | ✔️       | ✔️          |
+| [Array](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions.html/Array)             | ✔️       | ✔️          |
+| [Collection](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions.html/Collection)   | ✔️       | ✔️          |
+| [Data](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/Data.html)               | ✔️       | ✔️          |
+| [Date](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/Date.html)               | ✔️       | ✔️          |
+| [FileManager](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/FileManager.html) | ✔️       |            |
+| [Number](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/Number.html)           | ✔️       | ✔️          |
+| [NSObject](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/NSObject.html)       | ✔️       | ✔️          |
+| [String](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/String.html)           | ✔️       | ✔️          |
+| [Thread](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/Thread.html)           | ✔️       | ✔️          |
 
 ### UIKit
 |                                                                                                     | **iOS**  | **Linux**  |
 |-----------------------------------------------------------------------------------------------------|----------|------------|
-| [UIBarButtonItem](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UIBarButtonItem.html)   | ✔️       |            |
-| [UIButton](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UIButton.html)                 | ✔️       |            |
-| [UIColor](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UIColor.html)                   | ✔️       |            |
-| [UIDevice](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UIDevice.html)                 | ✔️       |            |
-| [UIFont](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UIFont.html)                     | ✔️       |            |
-| [UIImage](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UIImage.html)                   | ✔️       |            |
-| [UIImageView](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UIImageView.html)           | ✔️       |            |
-| [UILabel](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UILabel.html)                   | ✔️       |            |
-| [UINavigationBar](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UINavigationBar.html)   | ✔️       |            |
-| [UIPasteboard](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UIPasteboard.html)         | ✔️       |            |
-| [UIScreen](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UIScreen.html)                 | ✔️       |            |
-| [UIScrollView](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UIScrollView.html)         | ✔️       |            |
-| [UITableView](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UITableView.html)           | ✔️       |            |
-| [UITextField](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UITextField.html)           | ✔️       |            |
-| [UITextView](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UITextView.html)             | ✔️       |            |
-| [UIToolbar](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UIToolbar.html)               | ✔️       |            |
-| [UIView](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UIView.html)                     | ✔️       |            |
-| [UIViewController](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UIViewController.html) | ✔️       |            |
-| [UIWebView](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UIWebView.html)               | ✔️       |            |
-| [UIWindow](http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/Extensions/UIWindow.html)                 | ✔️       | &nbsp;     |
+| [UIBarButtonItem](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/UIBarButtonItem.html)   | ✔️       |            |
+| [UIButton](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/UIButton.html)                 | ✔️       |            |
+| [UIColor](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/UIColor.html)                   | ✔️       |            |
+| [UIDevice](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/UIDevice.html)                 | ✔️       |            |
+| [UIFont](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/UIFont.html)                     | ✔️       |            |
+| [UIImage](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/UIImage.html)                   | ✔️       |            |
+| [UIImageView](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/UIImageView.html)           | ✔️       |            |
+| [UILabel](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/UILabel.html)                   | ✔️       |            |
+| [UINavigationBar](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/UINavigationBar.html)   | ✔️       |            |
+| [UIPasteboard](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/UIPasteboard.html)         | ✔️       |            |
+| [UIScreen](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/UIScreen.html)                 | ✔️       |            |
+| [UIScrollView](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/UIScrollView.html)         | ✔️       |            |
+| [UITableView](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/UITableView.html)           | ✔️       |            |
+| [UITextField](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/UITextField.html)           | ✔️       |            |
+| [UITextView](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/UITextView.html)             | ✔️       |            |
+| [UIToolbar](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/UIToolbar.html)               | ✔️       |            |
+| [UIView](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/UIView.html)                     | ✔️       |            |
+| [UIViewController](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/UIViewController.html) | ✔️       |            |
+| [UIWebView](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/UIWebView.html)               | ✔️       |            |
+| [UIWindow](http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/Extensions/UIWindow.html)                 | ✔️       | &nbsp;     |
 
 Requirements
 ============
@@ -97,7 +97,7 @@ Requirements
 | 2.0...2.1 | 7.0       | 1.5.0...1.6.2 | 7.0+    |           |
 | 2.2       | 7.3       | 1.6.3...1.7.0 | 7.0+    |           |
 | 2.3       | 8.0       | 1.8.0         | 7.0+    |           |
-| 3.0       | 8.0...8.1 | 2.0.0         | 8.0+    | ✔️        |
+| 3.0       | 8.0...8.1 | 2.0.0...2.0.1 | 8.0+    | ✔️        |
 
 Communication
 =============
@@ -193,4 +193,4 @@ License
 =======
 BFKit-Swift is available under the MIT license. See the **[LICENSE](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)** file for more info.
 
-[CocoaDocs]: http://cocoadocs.org/docsets/BFKit-Swift/2.0.0/
+[CocoaDocs]: http://cocoadocs.org/docsets/BFKit-Swift/2.0.1/
