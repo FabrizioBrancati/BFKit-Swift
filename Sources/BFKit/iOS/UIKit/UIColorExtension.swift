@@ -208,13 +208,14 @@ public extension UIColor {
     public convenience init(hex: String, alphaFirst: Bool = false) {
         let colorString: String = hex.replacingOccurrences(of: "#", with: "").uppercased()
         var alpha: CGFloat = 1.0, red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0
+        
         switch colorString.length {
-        case 3: /// #RGB, RGB
+        case 3: /// RGB
             alpha = 1.0
             red = UIColor.colorComponent(fromString: colorString, range: 0..<1)
             green = UIColor.colorComponent(fromString: colorString, range: 1..<2)
             blue = UIColor.colorComponent(fromString: colorString, range: 2..<3)
-        case 4: /// #ARGB, ARGB if irstIsAlpha is true. #RGBA, RGBA if firstIsAlpha is false.
+        case 4: /// ARGB if irstIsAlpha is true, otherwise RGBA.
             if alphaFirst {
                 alpha = UIColor.colorComponent(fromString: colorString, range: 0..<1)
                 red = UIColor.colorComponent(fromString: colorString, range: 1..<2)
@@ -226,12 +227,12 @@ public extension UIColor {
                 blue = UIColor.colorComponent(fromString: colorString, range: 2..<3)
                 alpha = UIColor.colorComponent(fromString: colorString, range: 3..<4)
             }
-        case 6: /// #RRGGBB, RRGGBB
+        case 6: /// RRGGBB
             alpha = 1.0
             red = UIColor.colorComponent(fromString: colorString, range: 0..<2)
             green = UIColor.colorComponent(fromString: colorString, range: 2..<4)
             blue = UIColor.colorComponent(fromString: colorString, range: 4..<6)
-        case 8: /// #AARRGGBB, AARRGGBB if irstIsAlpha is true. #RRGGBBAA, RRGGBBAA if firstIsAlpha is false.
+        case 8: /// AARRGGBB if irstIsAlpha is true, otherwise RRGGBBAA.
             if alphaFirst {
                 alpha = UIColor.colorComponent(fromString: colorString, range: 0..<2)
                 red = UIColor.colorComponent(fromString: colorString, range: 2..<4)
@@ -350,6 +351,8 @@ public extension UIColor {
     /// - Parameter color: String with the color.
     /// - Returns: Returns the created UIColor.
     private static func convertColor(string color: String) -> UIColor {
+        let color = color.lowercased()
+        
         switch color {
         case "black":
             return UIColor.black
@@ -382,7 +385,7 @@ public extension UIColor {
         case "clear":
             return UIColor.clear
         default:
-            return UIColor.black
+            return UIColor.clear
         }
     }
     

@@ -58,70 +58,7 @@ public struct BFPassword {
     /// - Rarameter password: Password string.
     /// - Returns: Returns the password strength level with value from enum PasswordStrengthLevel.
     public static func strength(password: String) -> PasswordStrengthLevel {
-        let lenght = password.length
-        let lowercase = password.countLowercasedCharacters()
-        let uppercase = password.countUppercasedCharacters()
-        let numbers = password.countNumbers()
-        let symbols = password.countSymbols()
-        
-        var score = 0
-        
-        switch lenght {
-        case 0...4:
-            score += 5
-        case 5...8:
-            score += 10
-        case 9...Int.max:
-            score += 20
-        default:
-            break
-        }
-        
-        switch numbers {
-        case 1:
-            score += 10
-        case 2:
-            score += 15
-        case 3...Int.max:
-            score += 20
-        default:
-            break
-        }
-        
-        switch symbols {
-        case 1:
-            score += 15
-        case 2:
-            score += 20
-        case 3...Int.max:
-            score += 25
-        default:
-            break
-        }
-        
-        switch lowercase {
-        case 1:
-            score += 5
-        case 2:
-            score += 7
-        case 3...Int.max:
-            score += 10
-        default:
-            break
-        }
-        
-        switch uppercase {
-        case 1:
-            score += 10
-        case 2:
-            score += 15
-        case 3...Int.max:
-            score += 20
-        default:
-            break
-        }
-        
-        switch score {
+        switch lengthScore(password) + numbersScore(password) + symbolsScore(password) + lowercasedCharactersScore(password) + uppercasedCharactersScore(password) {
         case 0...49:
             return .veryWeak
         case 50...59:
@@ -134,10 +71,105 @@ public struct BFPassword {
             return .veryStrong
         case 90...99:
             return .secure
-        case 100...120:
+        case 100:
             return .verySecure
         default:
             return .veryWeak
+        }
+    }
+    
+    /// Return the score based on password length.
+    ///
+    /// - Parameter password: Password to be scored.
+    /// - Returns: Return the score based on password length.
+    private static func lengthScore(_ password: String) -> Int {
+        let lenght = password.length
+        
+        switch lenght {
+        case 0...4:
+            return 5
+        case 5...8:
+            return 10
+        case 9...Int.max:
+            return 20
+        default:
+            return 0
+        }
+    }
+    
+    /// Return the score based on number of numbers in password.
+    ///
+    /// - Parameter password: Password to be scored.
+    /// - Returns: Return the score based on number of numbers in password.
+    private static func numbersScore(_ password: String) -> Int {
+        let numbers = password.countNumbers()
+        
+        switch numbers {
+        case 1:
+            return 10
+        case 2:
+            return 15
+        case 3...Int.max:
+            return 20
+        default:
+            return 0
+        }
+    }
+    
+    /// Return the score based on number of symbols in password.
+    ///
+    /// - Parameter password: Password to be scored.
+    /// - Returns: Return the score based on number of symbols in password.
+    private static func symbolsScore(_ password: String) -> Int {
+        let symbols = password.countSymbols()
+        
+        switch symbols {
+        case 1:
+            return 15
+        case 2:
+            return 20
+        case 3...Int.max:
+            return 25
+        default:
+            return 0
+        }
+    }
+    
+    /// Return the score based on number of lowercased characters in password.
+    ///
+    /// - Parameter password: Password to be scored.
+    /// - Returns: Return the score based on number of lowercased characters in password.
+    private static func lowercasedCharactersScore(_ password: String) -> Int {
+        let lowercasedCharacters = password.countLowercasedCharacters()
+        
+        switch lowercasedCharacters {
+        case 1:
+            return 5
+        case 2:
+            return 7
+        case 3...Int.max:
+            return 10
+        default:
+            return 0
+        }
+    }
+    
+    /// Return the score based on number of uppercased characters in password.
+    ///
+    /// - Parameter password: Password to be scored.
+    /// - Returns: Return the score based on number of uppercased characters in password.
+    private static func uppercasedCharactersScore(_ password: String) -> Int {
+        let uppercasedCharacters = password.countUppercasedCharacters()
+        
+        switch uppercasedCharacters {
+        case 1:
+            return 10
+        case 2:
+            return 15
+        case 3...Int.max:
+            return 25
+        default:
+            return 0
         }
     }
 }

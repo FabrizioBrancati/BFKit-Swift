@@ -35,7 +35,7 @@ If you are looking for Objective-C version check it out here: **[BFKit](https://
 
 What does it do
 ===============
-BFKit is a collection of useful classes to **develop Apps faster**.<br>
+BFKit-Swift is a collection of useful classes, struct and extensions to **develop Apps faster**.<br>
 For example you can use every **iOS fonts with just an enum!**<br>
 It also adds some useful functions with **BF** classes and extends some **Foundation** and **UIKit** classes.
 

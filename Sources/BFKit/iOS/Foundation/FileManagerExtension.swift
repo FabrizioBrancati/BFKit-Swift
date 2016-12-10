@@ -108,11 +108,12 @@ public extension FileManager {
     /// - Returns: Returns true if the operation was successful, otherwise false.
     @discardableResult
     public func savePlist(object: Any, in path: PathType, filename: String) -> Bool {
-        guard let path = FileManager.default.pathFor(path), let finalPath = path.appendingPathComponent(filename).appendingPathExtension("plist") else {
-            return false
-        }
+        let path = checkPlist(path: path, filename: filename)
         
-        return NSKeyedArchiver.archiveRootObject(object, toFile: finalPath)
+        if path.exist {
+            return NSKeyedArchiver.archiveRootObject(object, toFile: path.path)
+        }
+        return false
     }
     
     /// Load an object from a PLIST with given filename.
@@ -122,11 +123,25 @@ public extension FileManager {
     ///   - filename: PLIST filename.
     /// - Returns: Returns the loaded object.
     public func readPlist(from path: PathType, filename: String) -> Any? {
-        guard let path = FileManager.default.pathFor(path), let finalPath = path.appendingPathComponent(filename).appendingPathExtension("plist")  else {
-            return nil
-        }
+        let path = checkPlist(path: path, filename: filename)
         
-        return NSKeyedUnarchiver.unarchiveObject(withFile: finalPath)
+        if path.exist {
+            return NSKeyedUnarchiver.unarchiveObject(withFile: path.path)
+        }
+        return nil
+    }
+    
+    /// Check if plist exist.
+    ///
+    /// - Parameters:
+    ///   - path: Path of plist.
+    ///   - filename: Plist filename.
+    /// - Returns: Returns if plist exists and path.
+    private func checkPlist(path: PathType, filename: String) -> (exist: Bool, path: String) {
+        guard let path = FileManager.default.pathFor(path), let finalPath = path.appendingPathComponent(filename).appendingPathExtension("plist") else {
+            return (false, "")
+        }
+        return (true, finalPath)
     }
     
     /// Get Main Bundle path for a filename.
@@ -234,18 +249,10 @@ public extension FileManager {
     /// - Returns: Returns true if the operation was successful, otherwise false.
     /// - Throws: Throws FileManager.default.moveItem(atPath:, toPath:) and BFKitError errors.
     public func move(file: String, from origin: PathType, to destination: PathType) throws {
-        guard let originPath = FileManager.default.pathFor(origin), let destinationPath = FileManager.default.pathFor(destination) else {
-            throw BFKitError.pathNotExist
-        }
-        guard destination != .mainBundle else {
-            throw BFKitError.pathNotAllowed
-        }
+        let paths = try check(file: file, origin: origin, destination: destination)
         
-        let finalOriginPath = originPath.appendingPathComponent(file)
-        let finalDestinationPath = destinationPath.appendingPathComponent(file)
-        
-        if FileManager.default.fileExists(atPath: finalOriginPath) {
-            try FileManager.default.moveItem(atPath: finalOriginPath, toPath: finalDestinationPath)
+        if paths.fileExist {
+            try FileManager.default.moveItem(atPath: paths.origin, toPath: paths.destination)
         }
     }
     
@@ -258,6 +265,22 @@ public extension FileManager {
     /// - Returns: Returns true if the operation was successful, otherwise false.
     /// - Throws: Throws FileManager.default.copyItem(atPath:, toPath:) and BFKitError errors.
     public func copy(file: String, from origin: PathType, to destination: PathType) throws {
+        let paths = try check(file: file, origin: origin, destination: destination)
+        
+        if paths.fileExist {
+            try FileManager.default.copyItem(atPath: paths.origin, toPath: paths.destination)
+        }
+    }
+    
+    /// Check is orign path, destination path and file exists.
+    ///
+    /// - Parameters:
+    ///   - file: File.
+    ///   - origin: Origin path.
+    ///   - destination: Destination path.
+    /// - Returns: Returns a tuple with origin, destination and if file exist.
+    /// - Throws: Throws BFKitError errors.
+    private func check(file: String, origin: PathType, destination: PathType) throws -> (origin: String, destination: String, fileExist: Bool) {
         guard let originPath = FileManager.default.pathFor(origin), let destinationPath = FileManager.default.pathFor(destination) else {
             throw BFKitError.pathNotExist
         }
@@ -269,8 +292,9 @@ public extension FileManager {
         let finalDestinationPath = destinationPath.appendingPathComponent(file)
         
         if FileManager.default.fileExists(atPath: finalOriginPath) {
-            try FileManager.default.copyItem(atPath: finalOriginPath, toPath: finalDestinationPath)
+            return (finalOriginPath, finalDestinationPath, true)
         }
+        return (finalOriginPath, finalDestinationPath, false)
     }
     
     /// Rename a file with another filename.
