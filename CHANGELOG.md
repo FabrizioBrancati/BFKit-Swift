@@ -26,13 +26,13 @@ All notable changes to this project will be documented in this file.<br>
 
 ## [2.0.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v2.0.1) - Linux compatibility
 ### 10 Dec 2016
-#### Fixed
+### Fixed
 - Fixed a bug for Linux on BFApp class
 
 
 ## [2.0.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v2.0.0) - A new beginning
 ### 10 Dec 2016
-#### Added
+### Added
 - This version has been completely rewritten and is not compatible with 1.x versions
 - Added Swift 3.0 support
 - Added Unit Tests
@@ -47,7 +47,7 @@ All notable changes to this project will be documented in this file.<br>
 - Added UIViewController extension
 - Added ProcessInfo extension
 
-#### Improved
+### Improved
 - Better handling of `!`, `?` and `throws` on all sources
 - Minor enhancements & bug fix
 
@@ -56,14 +56,14 @@ Thanks to [@the0neyouseek](https://github.com/the0neyouseek) for this release
 
 ## [1.8.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.8.0)
 ### 19 Sep 2016
-#### Added
+### Added
 - Added Swift 2.3 support
 - Added Application info in BFApp class [#17](https://github.com/FabrizioBrancati/BFKit/pull/17)
 
-#### Improved
+### Improved
 - Simplified color usage in UIColor extension [#16](https://github.com/FabrizioBrancati/BFKit/pull/16)
 
-#### Fixed
+### Fixed
 - Fixed crashes on `imageToGrayscale()` and `imageToBlackAndWhite()` in UIImage extension [#15](https://github.com/FabrizioBrancati/BFKit/pull/15)
 - Fixed `countUppercaseLetters` function in BFPassword class [#14](https://github.com/FabrizioBrancati/BFKit/pull/14)
 
@@ -72,19 +72,19 @@ Thanks to [@sairamkotha](https://github.com/sairamkotha), [@ttyh061](https://git
 
 ## [1.7.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.7.0)
 ### 14 Jul 2016
-#### Added
+### Added
 - Added `debugBlock` and `NSLocalizedString(key:)` in global scope
 - Added BFView as subclass of UIView
 - Added `<` and `>` to compare two NSDate
 - Added `hexString()` and `alpha()` to UIColor extension
 - Added `cornerRadius(corners:, radius:)` to UIView extension
 
-#### Improved
+### Improved
 - Improved BFLog class - [See this post on how to properly use it](http://stackoverflow.com/a/26891797/4032046)
 - Adjusting pt-BR typo [#13](https://github.com/FabrizioBrancati/BFKit/pull/13)
 - Minor enhancements
 
-#### Fixed
+### Fixed
 - Fixed a bug with Carthage
 
 Thanks to [@gabrielPeart](https://github.com/gabrielPeart) for this release
@@ -92,17 +92,17 @@ Thanks to [@gabrielPeart](https://github.com/gabrielPeart) for this release
 
 ## [1.6.3](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.6.3)
 ### 15 May 2016
-#### Fixed
+### Fixed
 - Fixed crash on BFDateInformation struct initializer
 
 
 ## [1.6.2](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.6.2)
 ### 08 May 2016
-#### Added
+### Added
 - Added missing devices
 - Added Swedish translation [#11](https://github.com/FabrizioBrancati/BFKit/pull/11) & [#12](https://github.com/FabrizioBrancati/BFKit/pull/12)
 
-#### Improved
+### Improved
 - Minor enhancements & bug fix
 
 Thanks to [@pontus-andersson](https://github.com/pontus-andersson) for this release
@@ -110,7 +110,7 @@ Thanks to [@pontus-andersson](https://github.com/pontus-andersson) for this rele
 
 ## [1.6.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.6.1)
 ### 25 Mar 2016
-#### Added
+### Added
 - Added [Package.swift](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/Package.swift) file to add support to Swift Package Manager
 - Added support to Swift 2.2 and Xcode 7.3 [#10](https://github.com/FabrizioBrancati/BFKit-Swift/pull/10)
 
@@ -119,7 +119,7 @@ Thanks to [@lucasmpaim](https://github.com/lucasmpaim) for this release
 
 ## [1.6.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.6.0)
 ### 1 Feb 2016
-#### Added
+### Added
 - Added [CONTRIBUTING.md](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/CONTRIBUTING.md) file
 - Added `brightness` directly to UIScreen extension
 - Added `randomInt()` function with range support in NSNumber extension
@@ -134,10 +134,10 @@ Thanks to [@lucasmpaim](https://github.com/lucasmpaim) for this release
 - Added `removeAllSubviews()` in UIView extension
 - Added `calculatedHeight()` & `setFont(_, fromIndex:, toIndex:)`
 
-#### Improved
+### Improved
 - Minor enhancements & bug fix
 
-#### Fixed
+### Fixed
 - Fixed a bug in `randomColor(_)` that may cause a crash [#8](https://github.com/FabrizioBrancati/BFKit-Swift/pull/8)
 
 Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.com/emersonbroga) & [@liushixiang](https://github.com/liushixiang) for this release
@@ -146,20 +146,20 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 
 ## [1.5.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.5.1)
 ### 10 Nov 2015
-#### Added
+### Added
 - Added more stronger check on BFDataStructures
 
-#### Improved
+### Improved
 - Now support Swift 2.1 and Xcode 7.1
 
-#### Fixed
+### Fixed
 - Fixed a bug in `searchInString(_:charStart:charEnd)` that may cause a crash
 
 
 
 ## [1.5.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.5.0)
 ### 5 Nov 2015
-#### Added
+### Added
 - Added support for Swift 2.0
 - Added `onFirstStartForVersion` and `isFirstStartForVersion` functions and `isFirstStart` and `isFirstStartForCurrentVersion` variables in BFApp class
 - Added HEX functions in NSString and String extensions
@@ -168,29 +168,29 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 - Added `flipImageHorizontally` & `flipImageVertically` functions in UIImage extension
 - Added missing devices
 
-#### Improved
+### Improved
 - Now `Array` and `Dictionary` extensions are declared as public
 - `indexOfCharacter()` in String extension now doesn't returns `nil` if not found, but `-1`
 - Moved `generateUUID()` from UIDevice extension to String and NSString extensions
 
-#### Fixed
+### Fixed
 - Fixed various bugs
 
 
 
 ## [1.4.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.4.1)
 ### 20 Jul 2015
-#### Added
+### Added
 - Added support for iPod Touch 6G
 
-#### Fixed
+### Fixed
 - Fixed a problem with Carthage project
 
 
 
 ## [1.4.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.4.0)
 ### 13 Jul 2015
-#### Added
+### Added
 - Added `APP_DELEGATE` global variable
 - Added UINavigationBar extension
 - Added UIToolbar & UIBarButtonItem extensions
@@ -199,22 +199,22 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 - Added `fallbackTitle` parameter in `showTouchIDAuthenticationWithReason` function in BFTouchID class
 - Added touch on screen with `BFShowTouchOnScreen()` and `BFHideTouchOnScreen()` functions
 
-#### Improved
+### Improved
 - Removed UIScreen functions from UIDevice extension and created UIScreen extension
 - Changed `SCREEN_WIDTH` & `SCREEN_HEIGHT` variables and fixed [#2](https://github.com/FabrizioBrancati/BFKit-Swift/issues/2) (Thanks to [jiongge](https://github.com/jiongge))
 
-#### Fixed
+### Fixed
 - Fixed `iOSVersion` function in UIDevice extension
 
 
 
 ## [1.3.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.3.1)
 ### 9 Jul 2915
-#### Added
+### Added
 - Added `onFirstStart` and `onFirstStartForCurrentVersion` in BFApp class
 - Added `stringByReplacingWithRegex:withString:` in NSString and String extensions
 
-#### Improved
+### Improved
 - BFLog now prints: `timestamp filename:line function message`
 - NSDate extension now has `nanosecond` and use `autoupdatingCurrentCalendar`
 - Bug fix in DEMO App
@@ -223,14 +223,14 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 
 ## [1.3.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.3.0)
 ### 7 Jul 2015
-#### Added
+### Added
 - Added a DEMO App
 - Added `init(imageAsTemplate:, tintColor:)` to create UIImageView with a template image
 - Added a new init function in UIColor extension to create UIColor with an HEX in Int
 - Added function `dictionaryToJSON` and deprecated the old one in NSDictionary extension
 - Added `moveObjectFromIndex` function in NSMutableArray extension
 
-#### Improved
+### Improved
 - NSThread extension is now public and can perform selectors in background
 - `BFLocalizedString` now doesn't require `comment` parameter
 - Changed `BFLogString` and `BFDetailedLogString` from functions to variables
@@ -242,7 +242,7 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 - Renamed `image` variable to `screenshot` in `takeScreenshotWithDelay` function in UIWindow extension
 - Marked some function as obsoleted
 
-#### Fixed
+### Fixed
 - Fixed a bug with `iOSVersion` function in UIDevice extension
 - Fixed a bug with all the CIFilter in UIImage extension
 - Fixed a bug in `deleteFile` function in NSFileManager extension
@@ -252,11 +252,11 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 
 ## [1.2.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.2.0)
 ### 5 Jul 2015
-#### Added
+### Added
 - Added comments to all classes and extensions
 - Added the documentation with [CocoaDocs](http://cocoadocs.org/docsets/BFKit-Swift/)
 
-#### Improved
+### Improved
 - Declared public `colorForColorString` in UIColor extension
 - Declared as deprecated some functions in favor of default values
 
@@ -264,18 +264,18 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 
 ## [1.1.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.1.0)
 ### 2 Jul 2015
-#### Added
+### Added
 - Added Carthage support
 - Added all IDs in BFSystemSound class
 - Added all font family names and font names in UIFont extension
 
-#### Improved
+### Improved
 - Now you can use word like `red`, `blue` or any predefined color in UIColor class to create dummy images with `UIColor(dummyImageWithSizeAndColor:)`
 - Changed `loadArrayToPath` to `loadArrayFromPath` and now return `AnyObject?`
 - Removed `cpuUsage` function in NSProcessInfo extension
 - Reverted to old `BFLog` function in BFLog class
 
-#### Fixed
+### Fixed
 - Fixed `dictionaryToJson:` in Dictionary extension
 
 
