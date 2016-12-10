@@ -24,8 +24,8 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## 2.0.0 - A new beginning
-### XX XXX 2016
+## [2.0.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v2.0.0) - A new beginning
+### 10 Dec 2016
 #### Added
 - This version has been completely rewritten and is not compatible with 1.x versions
 - Added Swift 3.0 support
@@ -34,11 +34,11 @@ All notable changes to this project will be documented in this file.<br>
 - Use of [SwiftLint](https://github.com/realm/SwiftLint)
 - Builds on Linux (Foundation extensions only)
 - Added French localization [#20](https://github.com/FabrizioBrancati/BFKit/pull/20)
-- Added `isLowPowerModeEnabled()`, `lowPowerModeChanged(_:)`, `isJailbroken()`, `uptime` and `uptimeDate`in UIDevice extension
-- Added `shuffle()` and `shuffled()` in Array extension
-- Added `localize()`, `isAnagram()`, `isPalindrome()`, `links()`, `dates()`, `hashtags()` and `mentions()` in String extension
-- Added `animate(path:, count:, duration:)` in UIView extension
-- Added `init(base64:)` in UIImage extension
+- Added `isLowPowerModeEnabled()`, `lowPowerModeChanged(_:)`, `isJailbroken()`, `uptime` and `uptimeDate` functions in UIDevice extension
+- Added `shuffle()` and `shuffled()` functions in Array extension
+- Added `localize()`, `isAnagram()`, `isPalindrome()`, `links()`, `dates()`, `hashtags()`, `mentions()` functions and `???` operator in String extension
+- Added `animate(path:, count:, duration:)` function in UIView extension
+- Added `init(base64:)` function in UIImage extension
 - Added UIViewController extension
 
 #### Improved
