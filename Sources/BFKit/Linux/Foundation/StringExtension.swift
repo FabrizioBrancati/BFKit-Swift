@@ -613,3 +613,15 @@ public extension String {
         }
     #endif
 }
+
+infix operator ???: NilCoalescingPrecedence
+
+/// Returns defaultValue if optional is nil, otherwise returns optional.
+///
+/// - Parameters:
+///   - optional: The optional variable.
+///   - defaultValue: The default value.
+/// - Returns: Returns defaultValue if optional is nil, otherwise returns optional.
+public func ??? <T>(optional: T?, defaultValue: @autoclosure () -> String) -> String {
+    return optional.map { String(describing: $0) } ?? defaultValue()
+}
