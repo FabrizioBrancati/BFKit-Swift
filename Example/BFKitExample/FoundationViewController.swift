@@ -76,4 +76,8 @@ class FoundationViewController: UITableViewController {
             detailViewController.prepareForDetail(FoundationArray[(sender! as AnyObject).tag!])
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        smoothlyDeselectRows(tableView: tableView)
+    }
 }

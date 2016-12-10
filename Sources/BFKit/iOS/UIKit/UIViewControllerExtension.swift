@@ -31,7 +31,7 @@ import UIKit
 
 /// This extesion adds some useful functions to UIViewController.
 extension UIViewController {
-    /// Use this in viewWillAppear(animated:)
+    /// Use this in viewWillAppear(_:)
     ///
     /// - Parameter tableView: UITableView to be delected.
     func smoothlyDeselectRows(tableView: UITableView) {
