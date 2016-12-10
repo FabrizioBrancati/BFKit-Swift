@@ -234,23 +234,18 @@ public extension FileManager {
     /// - Returns: Returns true if the operation was successful, otherwise false.
     /// - Throws: Throws FileManager.default.moveItem(atPath:, toPath:) and BFKitError errors.
     public func move(file: String, from origin: PathType, to destination: PathType) throws {
-        guard let originPath = FileManager.default.pathFor(origin) else {
+        guard let originPath = FileManager.default.pathFor(origin), let destinationPath = FileManager.default.pathFor(destination) else {
             throw BFKitError.pathNotExist
         }
-        
-        guard let destinationPath = FileManager.default.pathFor(destination) else {
-            throw BFKitError.pathNotExist
+        guard destination != .mainBundle else {
+            throw BFKitError.pathNotAllowed
         }
         
         let finalOriginPath = originPath.appendingPathComponent(file)
         let finalDestinationPath = destinationPath.appendingPathComponent(file)
         
-        if destination != .mainBundle {
-            if FileManager.default.fileExists(atPath: finalOriginPath) {
-                try FileManager.default.moveItem(atPath: finalOriginPath, toPath: finalDestinationPath)
-            }
-        } else {
-            throw BFKitError.pathNotAllowed
+        if FileManager.default.fileExists(atPath: finalOriginPath) {
+            try FileManager.default.moveItem(atPath: finalOriginPath, toPath: finalDestinationPath)
         }
     }
     
@@ -263,23 +258,18 @@ public extension FileManager {
     /// - Returns: Returns true if the operation was successful, otherwise false.
     /// - Throws: Throws FileManager.default.copyItem(atPath:, toPath:) and BFKitError errors.
     public func copy(file: String, from origin: PathType, to destination: PathType) throws {
-        guard let originPath = FileManager.default.pathFor(origin) else {
+        guard let originPath = FileManager.default.pathFor(origin), let destinationPath = FileManager.default.pathFor(destination) else {
             throw BFKitError.pathNotExist
         }
-        
-        guard let destinationPath = FileManager.default.pathFor(destination) else {
-            throw BFKitError.pathNotExist
+        guard destination != .mainBundle else {
+            throw BFKitError.pathNotAllowed
         }
         
         let finalOriginPath = originPath.appendingPathComponent(file)
         let finalDestinationPath = destinationPath.appendingPathComponent(file)
         
-        if destination != .mainBundle {
-            if FileManager.default.fileExists(atPath: finalOriginPath) {
-                try FileManager.default.copyItem(atPath: finalOriginPath, toPath: finalDestinationPath)
-            }
-        } else {
-            throw BFKitError.pathNotAllowed
+        if FileManager.default.fileExists(atPath: finalOriginPath) {
+            try FileManager.default.copyItem(atPath: finalOriginPath, toPath: finalDestinationPath)
         }
     }
     
