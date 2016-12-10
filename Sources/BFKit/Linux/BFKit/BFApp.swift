@@ -25,13 +25,13 @@
 //  SOFTWARE.
 
 import Foundation
-#if !os(Linux)
+#if os(iOS)
     import UIKit
 #endif
 
 // MARK: - Global variables
 
-#if !os(Linux)
+#if os(iOS)
     /// Get AppDelegate. To use it, cast to AppDelegate with "as! AppDelegate".
     public let appDelegate: UIApplicationDelegate? = UIApplication.shared.delegate
 
@@ -122,7 +122,7 @@ public struct BFApp {
         block(!hasBeenOpened)
     }
     
-    #if !os(Linux)
+    #if os(iOS)
         /// Set the App setting for a given object and key. The file will be saved in the Library directory.
         ///
         /// - Parameters:
