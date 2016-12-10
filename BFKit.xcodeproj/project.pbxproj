@@ -14,6 +14,8 @@
 		491337821DF971A200BD8B0F /* BFPasswordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491337811DF971A200BD8B0F /* BFPasswordTests.swift */; };
 		491337841DF971C200BD8B0F /* BFLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491337831DF971C200BD8B0F /* BFLogTests.swift */; };
 		491337861DF971DD00BD8B0F /* BFAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491337851DF971DD00BD8B0F /* BFAppTests.swift */; };
+		491337881DFB7EE800BD8B0F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491337871DFB7EE800BD8B0F /* UIViewControllerExtension.swift */; };
+		4913378A1DFB7F2A00BD8B0F /* UIViewControllerExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491337891DFB7F2A00BD8B0F /* UIViewControllerExtensionTests.swift */; };
 		4920BB811DCE630B00A3FBA9 /* UILabelExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920BB801DCE630B00A3FBA9 /* UILabelExtensionTests.swift */; };
 		4920BB831DCE69B600A3FBA9 /* UINavigationBarExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920BB821DCE69B600A3FBA9 /* UINavigationBarExtensionTests.swift */; };
 		4920BB851DCE786600A3FBA9 /* UIPasteboardExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920BB841DCE786600A3FBA9 /* UIPasteboardExtensionTests.swift */; };
@@ -104,6 +106,8 @@
 		491337811DF971A200BD8B0F /* BFPasswordTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFPasswordTests.swift; path = Tests/BFKitTests/Linux/BFKit/BFPasswordTests.swift; sourceTree = SOURCE_ROOT; };
 		491337831DF971C200BD8B0F /* BFLogTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFLogTests.swift; path = Tests/BFKitTests/Linux/BFKit/BFLogTests.swift; sourceTree = SOURCE_ROOT; };
 		491337851DF971DD00BD8B0F /* BFAppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFAppTests.swift; path = Tests/BFKitTests/Linux/BFKit/BFAppTests.swift; sourceTree = SOURCE_ROOT; };
+		491337871DFB7EE800BD8B0F /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		491337891DFB7F2A00BD8B0F /* UIViewControllerExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensionTests.swift; sourceTree = "<group>"; };
 		4920BB801DCE630B00A3FBA9 /* UILabelExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtensionTests.swift; sourceTree = "<group>"; };
 		4920BB821DCE69B600A3FBA9 /* UINavigationBarExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtensionTests.swift; sourceTree = "<group>"; };
 		4920BB841DCE786600A3FBA9 /* UIPasteboardExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPasteboardExtensionTests.swift; sourceTree = "<group>"; };
@@ -285,6 +289,7 @@
 				49F0DC6A1DBD15AC00C9AE18 /* UITextViewExtension.swift */,
 				49F0DC6B1DBD15AC00C9AE18 /* UIToolbarExtension.swift */,
 				49F0DC6C1DBD15AC00C9AE18 /* UIViewExtension.swift */,
+				491337871DFB7EE800BD8B0F /* UIViewControllerExtension.swift */,
 				49F0DC6D1DBD15AC00C9AE18 /* UIWebViewExtension.swift */,
 				49F0DC6E1DBD15AC00C9AE18 /* UIWindowExtension.swift */,
 			);
@@ -364,6 +369,7 @@
 				4920BB8E1DCF8BEB00A3FBA9 /* UITextViewExtensionTests.swift */,
 				4920BB901DCF92D700A3FBA9 /* UIToolbarExtensionTests.swift */,
 				4920BB921DCFA25B00A3FBA9 /* UIViewExtensionTests.swift */,
+				491337891DFB7F2A00BD8B0F /* UIViewControllerExtensionTests.swift */,
 				4920BB941DD5378100A3FBA9 /* UIWebViewExtensionTests.swift */,
 				4920BB981DD53D1800A3FBA9 /* UIWindowExtensionTests.swift */,
 			);
@@ -548,6 +554,7 @@
 				49F0DC7D1DBD15AC00C9AE18 /* UITextViewExtension.swift in Sources */,
 				49707FF81DF8BA6400EC73DB /* FileManagerExtension.swift in Sources */,
 				49F0DC981DBD15B400C9AE18 /* DictionaryExtension.swift in Sources */,
+				491337881DFB7EE800BD8B0F /* UIViewControllerExtension.swift in Sources */,
 				49F0DC731DBD15AC00C9AE18 /* UIFontExtension.swift in Sources */,
 				49F0DC551DBD158F00C9AE18 /* BFSystemSound.swift in Sources */,
 				49F0DC721DBD15AC00C9AE18 /* UIDeviceExtension.swift in Sources */,
@@ -564,6 +571,7 @@
 				49F0DCC31DBD278100C9AE18 /* UIBarButtonItemExtensionTests.swift in Sources */,
 				491337861DF971DD00BD8B0F /* BFAppTests.swift in Sources */,
 				4920BB851DCE786600A3FBA9 /* UIPasteboardExtensionTests.swift in Sources */,
+				4913378A1DFB7F2A00BD8B0F /* UIViewControllerExtensionTests.swift in Sources */,
 				4920BB8D1DCF857100A3FBA9 /* UITextFieldExtensionTests.swift in Sources */,
 				4920BB811DCE630B00A3FBA9 /* UILabelExtensionTests.swift in Sources */,
 				4920BB831DCE69B600A3FBA9 /* UINavigationBarExtensionTests.swift in Sources */,
