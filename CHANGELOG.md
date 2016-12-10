@@ -44,6 +44,7 @@ All notable changes to this project will be documented in this file.<br>
 
 #### Improved
 - Better handling of `!`, `?` and `throws` on all sources
+- Minor enhancements & bug fix
 
 Thanks to [@the0neyouseek](https://github.com/the0neyouseek) for this release
 
