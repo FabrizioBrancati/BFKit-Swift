@@ -33,7 +33,6 @@ All notable changes to this project will be documented in this file.<br>
 - Adopt the new [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)
 - Use of [SwiftLint](https://github.com/realm/SwiftLint)
 - Builds on Linux (Foundation extensions only)
-- Added French localization [#20](https://github.com/FabrizioBrancati/BFKit/pull/20)
 - Added `isLowPowerModeEnabled()`, `lowPowerModeChanged(_:)`, `isJailbroken()`, `uptime` and `uptimeDate` functions in UIDevice extension
 - Added `shuffle()` and `shuffled()` functions in Array extension
 - Added `localize()`, `isAnagram()`, `isPalindrome()`, `links()`, `dates()`, `hashtags()`, `mentions()` functions and `???` operator in String extension
