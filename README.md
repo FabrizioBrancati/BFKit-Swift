@@ -1,7 +1,7 @@
 <p align="center"><img src="https://github.fabriziobrancati.com/bfkit/resources/banner-swift.png" alt="BFKit Swift Banner"></p>
 
-[![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit-Swift.svg?branch=swift3.0)](https://travis-ci.org/FabrizioBrancati/BFKit-Swift)
-[![Codecov](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift/branch/swift3.0/graph/badge.svg)](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift)
+[![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit-Swift.svg)](https://travis-ci.org/FabrizioBrancati/BFKit-Swift)
+[![Codecov](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift/branch/master/graph/badge.svg)](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift)
 [![Codebeat Badge](https://codebeat.co/badges/ba18628d-f16b-4cd4-81f7-f75e81d97b38)](https://codebeat.co/projects/github-com-fabriziobrancati-bfkit-swift)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/BFKit-Swift.svg?style=flat)][CocoaDocs]

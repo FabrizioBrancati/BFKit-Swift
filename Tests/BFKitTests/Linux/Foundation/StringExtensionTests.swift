@@ -172,7 +172,7 @@ class StringExtensionTests: XCTestCase {
     }
     
     func testSubstringWithCountableClosedRange() {
-        let substring = string.substring(with: 0...9)
+        let substring = string.substring(with: 0...8)
         
         XCTAssert(substring == "This is a")
     }

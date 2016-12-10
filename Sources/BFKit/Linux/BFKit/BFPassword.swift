@@ -66,90 +66,78 @@ public struct BFPassword {
         
         var score = 0
         
-        if lenght <= 4 {
+        switch lenght {
+        case 0...4:
             score += 5
-        } else {
-            if lenght > 4 && lenght <= 8 {
-                score += 10
-            } else {
-                if lenght > 8 {
-                    score += 20
-                }
-            }
-        }
-        
-        if numbers == 1 {
+        case 5...8:
             score += 10
-        } else {
-            if numbers == 2 {
-                score += 15
-            } else {
-                if numbers > 2 {
-                    score += 20
-                }
-            }
+        case 9...Int.max:
+            score += 20
+        default:
+            break
         }
         
-        if symbols == 1 {
+        switch numbers {
+        case 1:
+            score += 10
+        case 2:
             score += 15
-        } else {
-            if symbols == 2 {
-                score += 20
-            } else {
-                if symbols > 2 {
-                    score += 25
-                }
-            }
+        case 3...Int.max:
+            score += 20
+        default:
+            break
         }
         
-        if lowercase == 1 {
+        switch symbols {
+        case 1:
+            score += 15
+        case 2:
+            score += 20
+        case 3...Int.max:
+            score += 25
+        default:
+            break
+        }
+        
+        switch lowercase {
+        case 1:
             score += 5
-        } else {
-            if lowercase == 2 {
-                score += 7
-            } else {
-                if lowercase > 2 {
-                    score += 10
-                }
-            }
-        }
-        
-        if uppercase == 1 {
+        case 2:
+            score += 7
+        case 3...Int.max:
             score += 10
-        } else {
-            if uppercase == 2 {
-                score += 15
-            } else {
-                if uppercase > 2 {
-                    score += 20
-                }
-            }
+        default:
+            break
         }
         
-        if score >= 100 {
+        switch uppercase {
+        case 1:
+            score += 10
+        case 2:
+            score += 15
+        case 3...Int.max:
+            score += 20
+        default:
+            break
+        }
+        
+        switch score {
+        case 0...49:
+            return .veryWeak
+        case 50...59:
+            return .weak
+        case 60...69:
+            return .average
+        case 70...79:
+            return .strong
+        case 80...89:
+            return .veryStrong
+        case 90...99:
+            return .secure
+        case 100...120:
             return .verySecure
-        } else {
-            if score >= 90 {
-                return .secure
-            } else {
-                if score >= 80 {
-                    return .veryStrong
-                } else {
-                    if score >= 70 {
-                        return .strong
-                    } else {
-                        if score >= 60 {
-                            return .average
-                        } else {
-                            if score >= 50 {
-                                return .weak
-                            } else {
-                                return .veryWeak
-                            }
-                        }
-                    }
-                }
-            }
+        default:
+            return .veryWeak
         }
     }
 }

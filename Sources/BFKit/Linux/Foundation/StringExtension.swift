@@ -142,10 +142,7 @@ public extension String {
     /// - Parameter range: The range.
     /// - Returns: Returns the string between the range.
     public func substring(with range: CountableClosedRange<Int>) -> String {
-        let start = self.characters.index(self.startIndex, offsetBy: range.lowerBound)
-        let end = self.characters.index(self.startIndex, offsetBy: range.upperBound)
-        
-        return self.substring(with: start..<end)
+        return self.substring(with: Range(uncheckedBounds: (lower: range.lowerBound, upper: range.upperBound + 1)))
     }
     
     /// Returns the index of the given character.
