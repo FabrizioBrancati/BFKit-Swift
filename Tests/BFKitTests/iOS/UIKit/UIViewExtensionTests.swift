@@ -139,10 +139,10 @@ class UIViewExtensionTests: XCTestCase {
         XCTAssert(view.frame.height == 100)
     }
     
-    func testAnimatePathCountDuration() {
+    func testAnimatePathCountDurationAutoreverses() {
         let path = UIBezierPath()
         path.addLine(to: CGPoint(x: 100, y: 100))
-        view.animate(path: path, count: 1, duration: 0.01)
+        view.animate(path: path, count: 1, duration: 1)
         
         XCTAssertNotNil(view.layer.animation(forKey: "animateAlongPath"))
     }

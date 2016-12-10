@@ -45,17 +45,7 @@ public extension Date {
             return year
         }
         set {
-            let calendar = Calendar.autoupdatingCurrent
-            var components = calendar.dateComponents([.year, .month, .day, .weekday, .hour, .minute, .second, .nanosecond], from: self)
-            
-            components.year = newValue
-            
-            let gregorian = Calendar(identifier: .gregorian)
-            guard let date = gregorian.date(from: components) else {
-                return
-            }
-            
-            self = date
+            update(components: [.year: newValue])
         }
     }
     
@@ -72,17 +62,7 @@ public extension Date {
             return month
         }
         set {
-            let calendar = Calendar.autoupdatingCurrent
-            var components = calendar.dateComponents([.year, .month, .day, .weekday, .hour, .minute, .second, .nanosecond], from: self)
-            
-            components.month = newValue
-            
-            let gregorian = Calendar(identifier: .gregorian)
-            guard let date = gregorian.date(from: components) else {
-                return
-            }
-            
-            self = date
+            update(components: [.month: newValue])
         }
     }
     
@@ -99,17 +79,7 @@ public extension Date {
             return day
         }
         set {
-            let calendar = Calendar.autoupdatingCurrent
-            var components = calendar.dateComponents([.year, .month, .day, .weekday, .hour, .minute, .second, .nanosecond], from: self)
-            
-            components.day = newValue
-            
-            let gregorian = Calendar(identifier: .gregorian)
-            guard let date = gregorian.date(from: components) else {
-                return
-            }
-            
-            self = date
+            update(components: [.day: newValue])
         }
     }
     
@@ -126,17 +96,7 @@ public extension Date {
             return hour
         }
         set {
-            let calendar = Calendar.autoupdatingCurrent
-            var components = calendar.dateComponents([.year, .month, .day, .weekday, .hour, .minute, .second, .nanosecond], from: self)
-            
-            components.hour = newValue
-            
-            let gregorian = Calendar(identifier: .gregorian)
-            guard let date = gregorian.date(from: components) else {
-                return
-            }
-            
-            self = date
+            update(components: [.hour: newValue])
         }
     }
     
@@ -153,17 +113,7 @@ public extension Date {
             return minute
         }
         set {
-            let calendar = Calendar.autoupdatingCurrent
-            var components = calendar.dateComponents([.year, .month, .day, .weekday, .hour, .minute, .second, .nanosecond], from: self)
-            
-            components.minute = newValue
-            
-            let gregorian = Calendar(identifier: .gregorian)
-            guard let date = gregorian.date(from: components) else {
-                return
-            }
-            
-            self = date
+            update(components: [.minute: newValue])
         }
     }
     
@@ -180,17 +130,7 @@ public extension Date {
             return second
         }
         set {
-            let calendar = Calendar.autoupdatingCurrent
-            var components = calendar.dateComponents([.year, .month, .day, .weekday, .hour, .minute, .second, .nanosecond], from: self)
-            
-            components.second = newValue
-            
-            let gregorian = Calendar(identifier: .gregorian)
-            guard let date = gregorian.date(from: components) else {
-                return
-            }
-            
-            self = date
+            update(components: [.second: newValue])
         }
     }
     
@@ -225,7 +165,57 @@ public extension Date {
         return weekday
     }
     
+    /// Editable date components.
+    ///
+    /// - year: Year component.
+    /// - month: Month component.
+    /// - day: Day component.
+    /// - hour: Hour component.
+    /// - minute: Minute component.
+    /// - second: Second component.
+    public enum EditableDateComponents: Int {
+        case year
+        case month
+        case day
+        case hour
+        case minute
+        case second
+    }
+    
     // MARK: - Functions
+    
+    /// Update current Date components.
+    ///
+    /// - Parameters:
+    ///   - components: Dictionary of components and values to be updated.
+    public mutating func update(components: [EditableDateComponents: Int]) {
+        let autoupdatingCalendar = Calendar.autoupdatingCurrent
+        var dateComponents = autoupdatingCalendar.dateComponents([.year, .month, .day, .weekday, .hour, .minute, .second, .nanosecond], from: self)
+        
+        for (component, value) in components {
+            switch component {
+            case .year:
+                dateComponents.year = value
+            case .month:
+                dateComponents.month = value
+            case .day:
+                dateComponents.day = value
+            case .hour:
+                dateComponents.hour = value
+            case .minute:
+                dateComponents.minute = value
+            case .second:
+                dateComponents.second = value
+            }
+        }
+        
+        let calendar = Calendar(identifier: autoupdatingCalendar.identifier)
+        guard let date = calendar.date(from: dateComponents) else {
+            return
+        }
+        
+        self = date
+    }
     
     /// Creates a Date object from year, month and day as Int.
     ///

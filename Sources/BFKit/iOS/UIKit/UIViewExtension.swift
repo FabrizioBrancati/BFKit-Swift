@@ -40,11 +40,11 @@ public extension UIView {
     /// - left: Flip animation from left.
     /// - right: Flip animation from right.
     /// - bottom: Flip animation from bottom.
-    public enum UIViewAnimationFlipDirection: Int {
-        case top
-        case left
-        case right
-        case bottom
+    public enum UIViewAnimationFlipDirection: String {
+        case top = "fromTop"
+        case left = "fromLeft"
+        case right = "fromRight"
+        case bottom = "fromBottom"
     }
     
     /// Direction of the translation.
@@ -318,18 +318,7 @@ extension UIView {
     ///   - direction: Direction of the flip animation.
     public func flip(duration: TimeInterval, direction: UIViewAnimationFlipDirection) {
         let transition: CATransition = CATransition()
-        
-        switch direction {
-        case .top:
-            transition.subtype = "fromTop"
-        case .left:
-            transition.subtype = "fromLeft"
-        case .bottom:
-            transition.subtype = "fromBottom"
-        case .right:
-            transition.subtype = "fromRight"
-        }
-        
+        transition.subtype = direction.rawValue
         transition.startProgress = 0
         transition.endProgress = 1.0
         transition.type = "flip"
@@ -386,12 +375,12 @@ extension UIView {
     ///   - path: Path to follow.
     ///   - count: Animation repeat count. Default is 1.
     ///   - duration: Animation duration.
-    public func animate(path: UIBezierPath, count: Float = 1, duration: TimeInterval) {
+    public func animate(path: UIBezierPath, count: Float = 1, duration: TimeInterval, autoreverses: Bool = false) {
         let animation = CAKeyframeAnimation(keyPath: "position")
         animation.path = path.cgPath
-        
         animation.repeatCount = count
         animation.duration = duration
+        animation.autoreverses = false
         
         self.layer.add(animation, forKey: "animateAlongPath")
     }
