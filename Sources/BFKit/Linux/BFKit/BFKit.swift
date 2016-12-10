@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  BFKit.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,12 +24,23 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import Foundation
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit/iOS",
-        "Tests/BFKitTests/iOS"
-    ]
-)
+/// BFKit version string.
+public let BFKitVersion = "2.0.0"
+
+/// BFKit author string.
+public let BFKitAuthor = "Fabrizio Brancati"
+
+/// BFKit errors enum.
+///
+/// - jsonSerialization: JSONSerialization error.
+/// - errorLoadingSound: Could not load sound error.
+/// - pathNotExist: Path not exist error.
+/// - pathNotAllowed: Path not allowed error.
+public enum BFKitError: Error {
+    case jsonSerialization
+    case errorLoadingSound
+    case pathNotExist
+    case pathNotAllowed
+}

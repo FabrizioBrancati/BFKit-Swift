@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  DictionaryExtensionTests.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,12 +24,30 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import XCTest
+import Foundation
+@testable import BFKit
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit/iOS",
-        "Tests/BFKitTests/iOS"
+class DictionaryExtensionTests: XCTestCase {
+    static let allTests = [
+        ("testSafeObjectForKey", testSafeObjectForKey)
     ]
-)
+    
+    let dictionary = ["1": 1, "2": 2, "3": 3, "4": 4, "5": 5]
+    
+    override func setUp() {
+        super.setUp()
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+    }
+    
+    func testSafeObjectForKey() {
+        let object: Int = dictionary.safeObject(forKey: "4") as! Int // swiftlint:disable:this force_cast
+        let objectNil = dictionary.safeObject(forKey: "6")
+        
+        XCTAssert(object == 4)
+        XCTAssert(objectNil == nil)
+    }
+}

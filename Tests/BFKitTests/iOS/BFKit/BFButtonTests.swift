@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  BFButtonTests.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,12 +24,45 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import XCTest
+import Foundation
+import UIKit
+@testable import BFKit
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit/iOS",
-        "Tests/BFKitTests/iOS"
-    ]
-)
+class BFButtonTests: XCTestCase {
+    var button: BFButton = BFButton(frame: CGRect(x: 0, y: 0, width: 100, height: 44), image: UIImage(color: UIColor.red)!, highlightedImage: UIImage(color: UIColor.red)!, fadeDuration: 1)
+    
+    override func setUp() {
+        super.setUp()
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+    }
+    
+    func testIsHighlighted() {
+        button.isHighlighted = true
+        XCTAssert(button.isHighlighted, "isHighlighted is not true")
+        
+        button.isHighlighted = false
+        XCTAssert(!button.isHighlighted, "isHighlighted is not false")
+    }
+    
+    func testOverlayImageView() {
+        button.overlayImageView = UIImageView(image: UIImage(color: UIColor.red))
+        
+        XCTAssert(button.overlayImageView.image != nil)
+    }
+    
+    /*func testDecode() {
+        
+    }*/
+    
+    /*func testEncode() {
+ 
+    }*/
+    
+    func testInitFrame() {
+        XCTAssert(!button.isHighlighted)
+    }
+}

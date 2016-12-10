@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  BFSystemSoundTests.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,12 +24,38 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import XCTest
+import Foundation
+@testable import BFKit
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit/iOS",
-        "Tests/BFKitTests/iOS"
-    ]
-)
+class BFSystemSoundTests: XCTestCase {
+    override func setUp() {
+        super.setUp()
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+    }
+    
+    func testPlaySystemSound() {
+        BFSystemSound.playSystemSound(audioID: .alarm)
+        
+        XCTAssert(true)
+    }
+    
+    func testVibrate() {
+        BFSystemSound.vibrate()
+        
+        XCTAssert(true)
+    }
+    
+    /*func testPlaySound() {
+        
+    }*/
+    
+    /*func testDisposeSound() {
+        let disposedSound = BFSystemSound.disposeSound(SystemSoundID(BFSystemSound.AudioID.alarm.rawValue))
+        
+        XCTAssert(disposedSound)
+    }*/
+}

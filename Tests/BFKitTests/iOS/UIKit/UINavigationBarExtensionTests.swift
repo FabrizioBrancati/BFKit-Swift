@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  UINavigationBarExtensionTests.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,12 +24,32 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import XCTest
+import Foundation
+import UIKit
+@testable import BFKit
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit/iOS",
-        "Tests/BFKitTests/iOS"
-    ]
-)
+class UINavigationBarExtensionTests: XCTestCase {
+    override func setUp() {
+        super.setUp()
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+    }
+    
+    func testSetTrasparentTraslucent() {
+        let navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        navigationBar.setTransparent(true, translucent: false)
+        
+        XCTAssertFalse(navigationBar.isTranslucent)
+        XCTAssertNotNil(navigationBar.backgroundImage(for: .default))
+        XCTAssertNotNil(navigationBar.shadowImage)
+        
+        navigationBar.setTransparent(false, translucent: true)
+        
+        XCTAssertTrue(navigationBar.isTranslucent)
+        XCTAssert(navigationBar.backgroundImage(for: .default) == nil)
+        XCTAssert(navigationBar.shadowImage == nil)
+    }
+}

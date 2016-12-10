@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  BFTextFieldTests.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,12 +24,48 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import XCTest
+import Foundation
+import UIKit
+@testable import BFKit
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit/iOS",
-        "Tests/BFKitTests/iOS"
-    ]
-)
+class BFTextFieldTests: XCTestCase {
+    var textField: BFTextField? = BFTextField(frame: CGRect(x: 0, y: 0, width: 320, height: 30))
+    
+    override func setUp() {
+        super.setUp()
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+    }
+    
+    /*func testDecode() {
+    
+    }*/
+    
+    /*func testEncode() {
+    
+    }*/
+    
+    func testInitFrame() {
+        XCTAssert(textField!.maxNumberOfCharacters == 0)
+        XCTAssert(textField!.frame.size.width == 320)
+    }
+    
+    func testTextFieldDidChange() {
+        textField!.maxNumberOfCharacters = 20
+        textField!.text = "Testing"
+        
+        XCTAssert(textField!.text == "Testing")
+        
+        textField!.text = "TestingMoreThan20Characters"
+        NotificationCenter.default.post(name: Notification.Name.UITextFieldTextDidChange, object: textField)
+        
+        XCTAssert(textField!.text?.characters.count == 20)
+    }
+    
+    func testDeinit() {
+        textField = nil
+    }
+}

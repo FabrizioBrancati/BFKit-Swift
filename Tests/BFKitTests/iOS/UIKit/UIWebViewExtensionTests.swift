@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  UIWebViewExtensionTests.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,12 +24,38 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import XCTest
+import Foundation
+import UIKit
+@testable import BFKit
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit/iOS",
-        "Tests/BFKitTests/iOS"
-    ]
-)
+class UIWebViewExtensionTests: XCTestCase {
+    var webView: UIWebView = UIWebView()
+    
+    override func setUp() {
+        super.setUp()
+        
+        webView = UIWebView(frame: CGRect(x: 0, y: 0, width: 320, height: 500))
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+    }
+    
+    func testRemoveBackgroundShadow() {
+        webView.removeBackgroundShadow()
+        
+        XCTAssertFalse(webView.scrollView.subviews.isEmpty)
+    }
+    
+    func testLoadWebsite() {
+        webView.loadWebsite("https://www.fabriziobrancati.com")
+        
+        guard let html = webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('html')[0].innerHTML") else {
+            XCTFail()
+            return
+        }
+        
+        XCTAssert(!html.isEmpty)
+    }
+}

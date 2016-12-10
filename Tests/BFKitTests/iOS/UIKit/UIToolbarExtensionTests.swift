@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  UIToolbarExtensionTests.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,12 +24,32 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import XCTest
+import Foundation
+import UIKit
+@testable import BFKit
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit/iOS",
-        "Tests/BFKitTests/iOS"
-    ]
-)
+class UIToolbarExtensionTests: XCTestCase {
+    override func setUp() {
+        super.setUp()
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+    }
+    
+    func testSetTrasparentTraslucent() {
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        toolbar.setTransparent(true, translucent: false)
+        
+        XCTAssertFalse(toolbar.isTranslucent)
+        XCTAssertNotNil(toolbar.backgroundImage(forToolbarPosition: .any, barMetrics: .default))
+        XCTAssertNotNil(toolbar.shadowImage(forToolbarPosition: .any))
+        
+        toolbar.setTransparent(false, translucent: true)
+        
+        XCTAssertTrue(toolbar.isTranslucent)
+        XCTAssert(toolbar.backgroundImage(forToolbarPosition: .any, barMetrics: .default) == nil)
+        XCTAssert(toolbar.shadowImage(forToolbarPosition: .any) == nil)
+    }
+}

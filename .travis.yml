@@ -1,14 +1,50 @@
-
-language: objective-c
-osx_image: xcode8
+os:
+  - linux
+  - osx
+language: generic
+sudo: required
+dist: trusty
+osx_image: xcode8.1
 
 before_install:
-  - gem install xcpretty -N --no-ri --no-rdoc
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then
+      gem install xcpretty -N --no-ri --no-rdoc;
+      gem install cocoapods --pre --no-rdoc --no-ri --no-document;
+      brew update;
+      brew outdated carthage || brew upgrade carthage;
+    fi
+
+install:
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then
+      eval "$(curl -sL https://gist.githubusercontent.com/kylef/5c0475ff02b7c7671d2a/raw/02090c7ede5a637b76e6df1710e83cd0bbe7dcdf/swiftenv-install.sh)";
+    fi
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then
+      ./install_swiftlint.sh;
+    fi
 
 script:
-  - swift -version
-  - xcodebuild -version
-  - xcodebuild -showsdks
-  - sleep 5
-  - set -o pipefail
-  - xcodebuild clean build -project BFKit/BFKit.xcodeproj -scheme BFKit -destination "platform=iOS Simulator,name=iPhone 7 Plus" | xcpretty
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then
+        swiftenv version;
+    fi
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then
+      swift -version
+      xcodebuild -version;
+      xcodebuild -showsdks;
+      swiftlint;
+      sleep 5;
+      set -o pipefail;
+      xcodebuild clean test -project BFKit.xcodeproj -scheme BFKit -destination "platform=iOS Simulator,name=iPhone 7 Plus" -enableCodeCoverage YES | xcpretty;
+      xcodebuild -project Example/BFKitExample.xcodeproj -scheme BFKitExample -destination "platform=iOS Simulator,name=iPhone 7 Plus" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty;
+      pod lib lint;
+      carthage build --no-skip-current;
+    fi
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then
+      swift build;
+      swift test;
+    fi
+
+after_success:
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then
+      bash <(curl -s https://codecov.io/bash);
+      sleep 5;
+    fi

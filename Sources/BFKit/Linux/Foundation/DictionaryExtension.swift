@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  DictionaryExtension.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,12 +24,23 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import Foundation
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit/iOS",
-        "Tests/BFKitTests/iOS"
-    ]
-)
+// MARK: - Dictionary extension
+
+/// This extension adds some useful functions to Dictionary.
+public extension Dictionary {
+    // MARK: - Functions
+    
+    /// Returns an object if key exists or nil if not
+    ///
+    /// - Parameter key: Key to get value of.
+    /// - Returns: Value for the key Or nil.
+    public func safeObject(forKey key: Key) -> Any? {
+        if let value = self[key] {
+            return value
+        } else {
+            return nil
+        }
+    }
+}

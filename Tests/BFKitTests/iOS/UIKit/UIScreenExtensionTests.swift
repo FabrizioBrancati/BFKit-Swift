@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  UIScreenExtensionTests.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,12 +24,45 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import XCTest
+import Foundation
+import UIKit
+@testable import BFKit
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit/iOS",
-        "Tests/BFKitTests/iOS"
-    ]
-)
+class UIScreenExtensionTests: XCTestCase {
+    override func setUp() {
+        super.setUp()
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+    }
+    
+    func testScreenWidth() {
+        XCTAssert(UIScreen.screenWidth == 414)
+    }
+    
+    func testScreenHeight() {
+        XCTAssert(UIScreen.screenHeight == 736)
+    }
+    
+    func testMaxScreenLength() {
+        XCTAssert(UIScreen.maxScreenLength == 736)
+    }
+    
+    func testMinScreenLength() {
+        XCTAssert(UIScreen.minScreenLength == 414)
+    }
+    
+    func testIsRetina() {
+        XCTAssertFalse(UIScreen.isRetina())
+    }
+    
+    func testIsRetinaHD() {
+        XCTAssertTrue(UIScreen.isRetinaHD())
+    }
+    
+    func testFixedScreenSize() {
+        XCTAssert(UIScreen.fixedScreenSize() == CGSize(width: 414, height: 736))
+    }
+}

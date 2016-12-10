@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  UIBarButtonItemExtensionTests.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,12 +24,29 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import XCTest
+import Foundation
+import UIKit
+@testable import BFKit
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit/iOS",
-        "Tests/BFKitTests/iOS"
-    ]
-)
+class UIBarButtonItemExtensionTests: XCTestCase {
+    override func setUp() {
+        super.setUp()
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+    }
+    
+    func testInitBarButtonSpaceTypeWidth() {
+        let barButtonItemFlexible = UIBarButtonItem(barButtonSpaceType: .flexibleSpace)
+        let barButtonItemFixed = UIBarButtonItem(barButtonSpaceType: .fixedSpace, width: 100)
+        let barButtonItemDone = UIBarButtonItem(barButtonSpaceType: .done, width: 100)
+        
+        XCTAssert(barButtonItemFlexible.width == 0)
+        
+        XCTAssert(barButtonItemFixed.width == 100)
+        
+        XCTAssert(barButtonItemDone.width == 0)
+    }
+}

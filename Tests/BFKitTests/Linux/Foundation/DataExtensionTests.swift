@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  DataExtensionTests.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,12 +24,45 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import XCTest
+import Foundation
+@testable import BFKit
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit/iOS",
-        "Tests/BFKitTests/iOS"
+class DataExtensionTests: XCTestCase {
+    static let allTests = [
+        ("testUTF8", testUTF8),
+        ("testASCII", testASCII)
     ]
-)
+    
+    let data = Data(base64Encoded: "VGhpcyBpcyBhIHRlc3Q=")!
+    
+    override func setUp() {
+        super.setUp()
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+    }
+    
+    func testUTF8() {
+        guard let utf8: String = data.utf8() else {
+            XCTFail()
+            return
+        }
+        
+        XCTAssert(utf8 == "This is a test")
+    }
+    
+    func testASCII() {
+        guard let ascii: String = data.ascii() else {
+            XCTFail()
+            return
+        }
+        
+        XCTAssert(ascii == "This is a test")
+    }
+    
+    /*func testReadableUUID() {
+        
+    }*/
+}

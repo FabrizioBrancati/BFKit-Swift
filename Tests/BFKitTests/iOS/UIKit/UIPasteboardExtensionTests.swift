@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  UIPasteboardExtensionTests.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,12 +24,29 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import XCTest
+import Foundation
+import UIKit
+@testable import BFKit
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit/iOS",
-        "Tests/BFKitTests/iOS"
-    ]
-)
+class UIPasteboardExtensionTests: XCTestCase {
+    override func setUp() {
+        super.setUp()
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+    }
+    
+    func testCopy() {
+        UIPasteboard.copy(text: "This is a test")
+        
+        XCTAssert(UIPasteboard.general.string == "This is a test")
+    }
+    
+    func testGet() {
+        let pasteboard = UIPasteboard.getString()
+        
+        XCTAssert(pasteboard == "This is a test")
+    }
+}

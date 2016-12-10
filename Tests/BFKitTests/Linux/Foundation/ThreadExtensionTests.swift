@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  ThreadExtensionTests.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,12 +24,49 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import XCTest
+import Foundation
+@testable import BFKit
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit/iOS",
-        "Tests/BFKitTests/iOS"
+class ThreadExtensionTests: XCTestCase {
+    static let allTests = [
+        ("testRunOnMainThread", testRunOnMainThread),
+        ("testRunInBackgroun", testRunInBackgroun)
     ]
-)
+    
+    override func setUp() {
+        super.setUp()
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+    }
+    
+    func testRunOnMainThread() {
+        let testExpectation = expectation(description: "Run on Main Thread")
+        
+        runOnMainThread {
+            XCTAssertTrue(true)
+            
+            testExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5, handler: { error in
+            XCTAssertNil(error, "Something went horribly wrong.")
+        })
+    }
+    
+    func testRunInBackgroun() {
+        let testExpectation = expectation(description: "Run in Background")
+        
+        runInBackground {
+            XCTAssertTrue(true)
+            
+            testExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5, handler: { error in
+            XCTAssertNil(error, "Something went horribly wrong.")
+        })
+    }
+}

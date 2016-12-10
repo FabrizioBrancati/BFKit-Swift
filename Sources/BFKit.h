@@ -1,5 +1,4 @@
 //
-//  Package.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,12 +23,10 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+#import <UIKit/UIKit.h>
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit/iOS",
-        "Tests/BFKitTests/iOS"
-    ]
-)
+//! Project version number for BFKit.
+FOUNDATION_EXPORT double BFKitVersionNumber;
+
+//! Project version string for BFKit.
+FOUNDATION_EXPORT const unsigned char BFKitVersionString[];

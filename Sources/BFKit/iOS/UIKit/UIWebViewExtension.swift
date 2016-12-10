@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  UIWebViewExtension.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,12 +24,30 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import Foundation
+import UIKit
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit/iOS",
-        "Tests/BFKitTests/iOS"
-    ]
-)
+// MARK: - UIWebView extension
+
+/// This extesion adds some useful functions to UIWebView.
+public extension UIWebView {
+    // MARK: - Functions
+    
+    /// Remove the background shadow of the UIWebView.
+    public func removeBackgroundShadow() {
+        for i in 0 ..< self.scrollView.subviews.count {
+            let singleSubview: UIView = self.scrollView.subviews[i]
+            if singleSubview.isKind(of: UIImageView.self) && singleSubview.frame.origin.x <= 500 {
+                singleSubview.isHidden = true
+                singleSubview.removeFromSuperview()
+            }
+        }
+    }
+    
+    /// Load the requested website.
+    ///
+    /// - Parameter website: Website to load.
+    public func loadWebsite(_ website: String) {
+        self.loadRequest(URLRequest(url: URL(string: website)!))
+    }
+}

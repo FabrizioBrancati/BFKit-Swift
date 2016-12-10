@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  NSObjectExtensionTests.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,12 +24,28 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import XCTest
+import Foundation
+@testable import BFKit
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit/iOS",
-        "Tests/BFKitTests/iOS"
+class NSObjectExtensionTests: XCTestCase {
+    static let allTests = [
+        ("testIsValid", testIsValid)
     ]
-)
+    
+    override func setUp() {
+        super.setUp()
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+    }
+    
+    func testIsValid() {
+        let object = NSObject()
+        let nullObject = NSNull()
+        
+        XCTAssertTrue(object.isValid())
+        XCTAssertFalse(nullObject.isValid())
+    }
+}

@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  BFTouchIDTests.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,12 +24,26 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import XCTest
+import Foundation
+@testable import BFKit
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit/iOS",
-        "Tests/BFKitTests/iOS"
-    ]
-)
+class BFTouchIDTests: XCTestCase {
+    override func setUp() {
+        super.setUp()
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+    }
+    
+    func testShowTouchID() {
+        BFTouchID.showTouchID(reason: "Testing", fallbackTitle: "Password") { result in
+            if result == .success {
+                XCTAssert(true)
+            } else {
+                XCTAssert(true)
+            }
+        }
+    }
+}

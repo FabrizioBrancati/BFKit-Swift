@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  ThreadExtension.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,12 +24,25 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import Foundation
+import Dispatch
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit/iOS",
-        "Tests/BFKitTests/iOS"
-    ]
-)
+// MARK: - Global functions
+
+/// Runs a block on main thread.
+///
+/// - Parameter block: Block to be executed.
+public func runOnMainThread(_ block: @escaping () -> ()) {
+    DispatchQueue.main.async(execute: {
+        block()
+    })
+}
+
+/// Runs a block in background.
+///
+/// - Parameter block: block Block to be executed.
+public func runInBackground(_ block: @escaping () -> ()) {
+    DispatchQueue.global().async {
+        block()
+    }
+}

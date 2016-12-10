@@ -1,5 +1,5 @@
 //
-//  Package.swift
+//  BFPasswordTests.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -24,12 +24,27 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import XCTest
+import Foundation
+@testable import BFKit
 
-let package = Package(
-    name: "BFKit",
-    exclude: [
-        "Sources/BFKit/iOS",
-        "Tests/BFKitTests/iOS"
+class BFPasswordTests: XCTestCase {
+    static let allTests = [
+        ("testStrength", testStrength)
     ]
-)
+    
+    override func setUp() {
+        super.setUp()
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+    }
+    
+    func testStrength() {
+        let password = "TestPassword92"
+        let strength = BFPassword.strength(password: password)
+        
+        XCTAssert(strength == .average)
+    }
+}
