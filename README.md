@@ -114,7 +114,7 @@ See [CONTRIBUTING.md](https://github.com/FabrizioBrancati/BFKit-Swift/blob/maste
 Installing and Usage
 ====================
 
-See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements) section to check Swift, Xcode, BFKit and OS versions.
+See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements) section to check Swift, Xcode, BFKit Swift and OS versions.
 
 ### Manual
 - Open the **BFKit** folder and build the Framework from the project
@@ -152,7 +152,7 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
         /usr/local/bin/carthage copy-frameworks
     ```
 
-    and add the paths to the BFKit framework under **Input Files**
+    and add the paths to the BFKit Swift framework under **Input Files**
 
     ```sh
         $(SRCROOT)/Carthage/Build/iOS/BFKit.framework
