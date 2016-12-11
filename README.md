@@ -62,6 +62,7 @@ Compatibility
 | [FileManager](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/FileManager.html) | ✔️       |            |
 | [Number](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Functions.html)                   | ✔️       | ✔️          |
 | [NSObject](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/NSObject.html)       | ✔️       | ✔️          |
+| [ProcessInfo](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/ProcessInfo.html) | ✔️       | ✔️          |
 | [String](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/String.html)           | ✔️       | ✔️          |
 | [Thread](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Thread.html)           | ✔️       | ✔️          |
 
@@ -162,7 +163,8 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
 
 Documentation
 =============
-### [CocoaDocs] - 100% Documented
+### [CocoaDocs]
+100% Documented
 
 Changelog
 =========
