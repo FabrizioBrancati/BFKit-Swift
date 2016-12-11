@@ -329,7 +329,11 @@ public extension String {
     /// - returns: Remove double or more duplicated spaces.
     public func removeExtraSpaces() -> String {
         let squashed = self.replacingOccurrences(of: "[ ]+", with: " ", options: .regularExpression, range: nil)
-        return squashed.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        #if os(Linux) // Caused by a Linux bug with emoji.
+            return squashed
+        #else
+            return squashed.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        #endif
     }
     
     /// Count the number of lowercase characters.
