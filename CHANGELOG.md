@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 2.X Releases
-- `2.0.x` Releases - [2.0.0](#200) | [2.0.1](#201)
+- `2.0.x` Releases - [2.0.0](#200) | [2.0.1](#201) | [2.0.2](#202)
 
 ### 1.x Releases
 - `1.8.x` Releases - [1.8.0](#180)
@@ -23,6 +23,12 @@ All notable changes to this project will be documented in this file.<br>
 - `1.0.x` Releases - [1.0.0](#100)
 
 ---
+
+## [2.0.2](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v2.0.2) - Linux doesn't like Emoji
+### 11 Dec 2016
+### Fixed
+- Fixed a bug for Linux on String extension
+
 
 ## [2.0.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v2.0.1) - Linux compatibility
 ### 10 Dec 2016
