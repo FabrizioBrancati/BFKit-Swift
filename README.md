@@ -34,7 +34,7 @@ If you are looking for Objective-C version check it out here: **[BFKit](https://
 
 What does it do
 ===============
-BFKit-Swift is a collection of useful classes, struct and extensions to **develop Apps faster**.<br>
+BFKit-Swift is a collection of useful classes, structs and extensions to **develop Apps faster**.<br>
 For example you can use every **iOS fonts with just an enum!**<br>
 It also adds some useful functions with **BF** classes and extends some **Foundation** and **UIKit** classes.
 
@@ -119,7 +119,7 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
 ### Manual
 - Open the **BFKit** folder and build the Framework from the project
 - Import BFKit.framework into your project
-- Import the Framework with ```import BFKit```
+- Import the framework with ```import BFKit```
 - Enjoy!
 
 ### CocoaPods
@@ -135,7 +135,7 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
     ```
 - Change **"Project"**  with your **real project name**
 - Open **Terminal**, go to **project directory** and type: ```pod install```
-- Import the Framework with ```import BFKit```
+- Import the framework with ```import BFKit```
 - Enjoy!
 
 ### Carthage
@@ -158,7 +158,26 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
         $(SRCROOT)/Carthage/Build/iOS/BFKit.framework
     ```
     This script works around an [App Store submission bug](http://www.openradar.me/radar?id=6409498411401216) triggered by universal binaries and ensures that necessary bitcode-related files are copied when archiving
-- Import the Framework with ```import BFKit```
+- Import the framework with ```import BFKit```
+- Enjoy!
+
+### Swift Package Manager (Linux)
+- Create a **Package.swift** file in your **project directory**
+- Write:
+
+    ```swift
+    import PackageDescription
+
+    let package = Package(
+        name: "Project",
+        dependencies: [
+            .Package(url: "https://github.com/FabrizioBrancati/BFKit-Swift.git", majorVersion: 2)
+        ]
+    )
+    ```
+- Change **"Project"**  with your **real project name**
+- Open **Terminal**, go to **project directory** and type: ```swift build```
+- Import the framework with ```import BFKit```
 - Enjoy!
 
 Documentation
