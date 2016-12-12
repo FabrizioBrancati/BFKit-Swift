@@ -141,6 +141,7 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
 ### Carthage
 - Create a **Cartfile** in your **project directory**
 - Write:
+
     ```ruby
         github "FabrizioBrancati/BFKit-Swift"
     ```
