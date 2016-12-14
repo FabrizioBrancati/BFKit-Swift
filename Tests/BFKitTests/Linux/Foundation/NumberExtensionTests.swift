@@ -35,7 +35,8 @@ class NumberExtensionTests: XCTestCase {
         ("testRandomIntMinMax", testRandomIntMinMax),
         ("testRandomIntRange", testRandomIntRange),
         ("testRandomFloat", testRandomFloat),
-        ("testRandomFloatMinMax", testRandomFloatMinMax)
+        ("testRandomFloatMinMax", testRandomFloatMinMax),
+        ("testIntArray", testIntArray)
     ]
     
     override func setUp() {
@@ -80,5 +81,12 @@ class NumberExtensionTests: XCTestCase {
         let random = randomFloat(min: 2.0, max: 2.5)
         
         XCTAssert(random >= 2.0 && random <= 2.5)
+    }
+    
+    func testIntArray() {
+        let int = 123456
+        let negInt = -3895
+        XCTAssert(int.array == [1, 2, 3, 4, 5, 6])
+        XCTAssert(negInt.array == [0, 3, 8, 9, 5])
     }
 }
