@@ -34,7 +34,8 @@ class ArrayExtensionTests: XCTestCase {
         ("testCircleObjectAt", testCircleObjectAt),
         ("testSwapFromTo", testSwapFromTo),
         ("testShuffle", testShuffle),
-        ("testShuffled", testShuffled)
+        ("testShuffled", testShuffled),
+        ("testRandom", testRandom)
     ]
     
     var array = [1, 2, 3, 4, 5]
@@ -77,5 +78,11 @@ class ArrayExtensionTests: XCTestCase {
         let shuffled = array.shuffled()
         
         XCTAssert(shuffled.count == 5)
+    }
+    
+    func testRandom() {
+        let arr = array
+        arr.remove(4)
+        XCTAssert(arr == [1, 2, 3, 5])
     }
 }
