@@ -121,9 +121,15 @@ public extension Array {
     /// - returns: An element that was randomly selected from the array.
     public func random() -> Element {
         let arrayCount = UInt32(self.count)
-        let random = arc4random_uniform(arrayCount)
-        let randomNumber = Int(random)
-        return self[randomNumber]
+        #if os(Linux)
+            let random Int(Glibc.random()) % Int(arrayCount)
+            let randomNumber = Int(random)
+            return self[randomNumber]
+        #else
+            let random = arc4random_uniform(arrayCount)
+            let randomNumber = Int(random)
+            return self[randomNumber]
+        #endif
     }
     
     
