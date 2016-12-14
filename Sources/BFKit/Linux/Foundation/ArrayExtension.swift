@@ -122,7 +122,7 @@ public extension Array {
     public func random() -> Element {
         let arrayCount = UInt32(self.count)
         #if os(Linux)
-            let random Int(Glibc.random()) % Int(arrayCount)
+            let random = Int(Glibc.random()) % Int(arrayCount)
             let randomNumber = Int(random)
             return self[randomNumber]
         #else
