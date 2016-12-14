@@ -131,4 +131,19 @@ public extension Array {
             return self[randomNumber]
         }
     }
+    
+    
+    /// Removes the element from self that is passed in.
+    /// 
+    /// - parameter object: The element that is removed from self.
+    public mutating func remove(_ object: Element) {
+        var array: [String] = []
+        for i in self {
+            array.append("\(i)")
+        }
+        let item = array.index(of: "\(object)")
+        if let obj = item {
+            self.remove(at: obj)
+        }
+    }
 }
