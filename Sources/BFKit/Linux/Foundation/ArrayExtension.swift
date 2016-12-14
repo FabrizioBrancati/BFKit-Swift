@@ -25,7 +25,6 @@
 //  SOFTWARE.
 
 import Foundation
-import GameplayKit
 #if os(Linux)
     import Glibc
 #endif
@@ -121,15 +120,10 @@ public extension Array {
     ///
     /// - returns: An element that was randomly selected from the array.
     public func random() -> Element {
-        if #available(iOS 9.0, *) {
-            let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: self.count)
-            return self[randomNumber]
-        } else {
-            let arrayCount = UInt32(self.count)
-            let random = arc4random_uniform(arrayCount)
-            let randomNumber = Int(random)
-            return self[randomNumber]
-        }
+        let arrayCount = UInt32(self.count)
+        let random = arc4random_uniform(arrayCount)
+        let randomNumber = Int(random)
+        return self[randomNumber]
     }
     
     
