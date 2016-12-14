@@ -496,6 +496,11 @@ public extension String {
         return substring(with: range)
     }
     
+    /// Gets the individual characters and puts them in an array as Strings.
+    var array: [String] {
+        return description.characters.map{String($0) ?? ""}
+    }
+    
     // MARK: - Functions not available on Linux
     
     #if !os(Linux)
