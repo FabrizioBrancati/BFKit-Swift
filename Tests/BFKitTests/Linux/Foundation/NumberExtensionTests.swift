@@ -37,7 +37,8 @@ class NumberExtensionTests: XCTestCase {
         ("testRandomFloat", testRandomFloat),
         ("testRandomFloatMinMax", testRandomFloatMinMax),
         ("testIntArray", testIntArray),
-        ("testFloatArray", testFloatArray)
+        ("testFloatArray", testFloatArray),
+        ("testDoubleArray", testDoubleArray)
     ]
     
     override func setUp() {
@@ -94,5 +95,10 @@ class NumberExtensionTests: XCTestCase {
     func testFloatArray() {
         let float: Float = 92.456
         XCTAssert(float.array == [9, 2, 0, 4, 5, 6])
+    }
+    
+    func testDoubleArray() {
+        let double: Double = 832.746201
+        XCTAssert(double.array == [8, 3, 2, 0, 7, 4, 6, 2, 0, 1])
     }
 }
