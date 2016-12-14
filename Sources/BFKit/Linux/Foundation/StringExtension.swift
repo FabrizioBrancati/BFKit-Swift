@@ -32,6 +32,11 @@ import Foundation
 public extension String {
     // MARK: - Variables
 
+    /// Gets the individual characters and puts them in an array as Strings.
+    var array: [String] {
+        return description.characters.map{ String($0) }
+    }
+    
     /// Returns the Float value
     public var floatValue: Float {
         return NSString(string: self).floatValue
@@ -494,11 +499,6 @@ public extension String {
     /// - Parameter range: Returns the string from a given range.
     public subscript(range: Range<Int>) -> String {
         return substring(with: range)
-    }
-    
-    /// Gets the individual characters and puts them in an array as Strings.
-    var array: [String] {
-        return description.characters.map{ String($0) }
     }
     
     // MARK: - Functions not available on Linux
