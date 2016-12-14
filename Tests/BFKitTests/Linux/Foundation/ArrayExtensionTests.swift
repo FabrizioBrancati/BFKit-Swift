@@ -35,7 +35,8 @@ class ArrayExtensionTests: XCTestCase {
         ("testSwapFromTo", testSwapFromTo),
         ("testShuffle", testShuffle),
         ("testShuffled", testShuffled),
-        ("testRandom", testRandom)
+        ("testRandom", testRandom),
+        ("testRemove", testRemove)
     ]
     
     var array = [1, 2, 3, 4, 5]
@@ -89,5 +90,11 @@ class ArrayExtensionTests: XCTestCase {
             }
         }
         XCTFail()
+    }
+    
+    func testRemove() {
+        let arr = array
+        arr.remove(4)
+        XCTAssert(arr == [1, 2, 3, 5])
     }
 }
