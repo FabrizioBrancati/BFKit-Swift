@@ -81,8 +81,13 @@ class ArrayExtensionTests: XCTestCase {
     }
     
     func testRandom() {
-        let arr = array
-        arr.remove(4)
-        XCTAssert(arr == [1, 2, 3, 5])
+        let element = array.random()
+        for i in array {
+            if "\(i)" == "\(element)" {
+                XCTAssert("\(i)" == "\(element)")
+                return
+            }
+        }
+        XCTFail()
     }
 }
