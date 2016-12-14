@@ -93,7 +93,7 @@ class ArrayExtensionTests: XCTestCase {
     }
     
     func testRemove() {
-        let arr = array
+        var arr = array
         arr.remove(4)
         XCTAssert(arr == [1, 2, 3, 5])
     }
