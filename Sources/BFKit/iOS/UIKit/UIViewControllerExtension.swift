@@ -55,4 +55,16 @@ extension UIViewController {
             }
         }
     }
+    
+    
+    /// Presents a UIAlertController with a title, message and a button to dismiss the controller.
+    ///
+    /// - parameter title: The title of the UIAlerController.
+    /// - parameter message: An optional String for the UIAlertController's message.
+    /// - parameter buttonTitle: The title of the dismiss button: Defaults to "OK".
+    public func userErrorAlert(title: String, message: String?, buttonTitle: String = "OK") {
+        let errorAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        errorAlert.addAction(UIAlertAction(title: buttonTitle, style: .default, handler: nil))
+        self.present(errorAlert, animated: true, completion: nil)
+    }
 }
