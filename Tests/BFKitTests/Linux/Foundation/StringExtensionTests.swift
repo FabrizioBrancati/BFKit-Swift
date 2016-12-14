@@ -73,7 +73,8 @@ class StringExtensionTests: XCTestCase {
         ("testSubscriptCharacter", testSubscriptCharacter),
         ("testSubsriptIndexInt", testSubsriptIndexInt),
         ("testSubscriptRange", testSubscriptRange),
-        ("testOptionalDefaultValue", testOptionalDefaultValue)
+        ("testOptionalDefaultValue", testOptionalDefaultValue),
+        ("testArray", testArray)
     ]
     
     var string = ""
