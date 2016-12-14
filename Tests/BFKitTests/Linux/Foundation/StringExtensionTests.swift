@@ -366,6 +366,11 @@ class StringExtensionTests: XCTestCase {
         XCTAssert(test == "Test")
     }
     
+    func testArray() {
+        let str = string.array
+        XCTAssert(str == ["T", "h", "i", "s", " ", "i", "s", " ", "a", " ", "t", "e", "s", "t"])
+    }
+    
     #if !os(Linux)
         func testLocalize() {
             let localized = string.localize()
