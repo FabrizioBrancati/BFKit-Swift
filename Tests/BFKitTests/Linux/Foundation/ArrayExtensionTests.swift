@@ -30,13 +30,13 @@ import Foundation
 
 class ArrayExtensionTests: XCTestCase {
     static let allTests = [
-        ("testSafeObjectAt", testSafeObjectAt),
         ("testCircleObjectAt", testCircleObjectAt),
+        ("testRandom", testRandom),
+        ("testRemove", testRemove),
+        ("testSafeObjectAt", testSafeObjectAt),
         ("testSwapFromTo", testSwapFromTo),
         ("testShuffle", testShuffle),
-        ("testShuffled", testShuffled),
-        ("testRandom", testRandom),
-        ("testRemove", testRemove)
+        ("testShuffled", testShuffled)
     ]
     
     var array = [1, 2, 3, 4, 5]
@@ -49,18 +49,36 @@ class ArrayExtensionTests: XCTestCase {
         super.tearDown()
     }
     
+    func testCircleObjectAt() {
+        let object = array.circleObject(at: 6)
+        
+        XCTAssert(object == 2)
+    }
+    
+   func testRandom() {
+        let element = array.random()
+        for i in array {
+            if "\(i)" == "\(element)" {
+                XCTAssert("\(i)" == "\(element)")
+            } else {
+                XCTAssert("\(i)" != "\(element)")
+            }
+        }
+        XCTFail()
+    }
+    
+    func testRemove() {
+        var arr = array
+        arr.remove(4)
+        XCTAssert(arr == [1, 2, 3, 5])
+    }
+    
     func testSafeObjectAt() {
         let object = array.safeObject(at: 4)
         let objectNil = array.safeObject(at: 6)
         
         XCTAssert(object == 5)
         XCTAssert(objectNil == nil)
-    }
-    
-    func testCircleObjectAt() {
-        let object = array.circleObject(at: 6)
-        
-        XCTAssert(object == 2)
     }
     
     func testSwapFromTo() {
@@ -79,22 +97,5 @@ class ArrayExtensionTests: XCTestCase {
         let shuffled = array.shuffled()
         
         XCTAssert(shuffled.count == 5)
-    }
-    
-    func testRandom() {
-        let element = array.random()
-        for i in array {
-            if "\(i)" == "\(element)" {
-                XCTAssert("\(i)" == "\(element)")
-                return
-            }
-        }
-        XCTFail()
-    }
-    
-    func testRemove() {
-        var arr = array
-        arr.remove(4)
-        XCTAssert(arr == [1, 2, 3, 5])
     }
 }
