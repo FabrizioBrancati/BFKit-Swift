@@ -114,3 +114,10 @@ public extension Float {
         return description.characters.map{Int(String($0)) ?? 0}
     }
 }
+
+public extension Double {
+    /// Gets the individual numbers, and puts them into an array. NOTE: All negative numbers will start with 0.
+    var array: [Int] {
+        return description.characters.map{Int(String($0)) ?? 0}
+    }
+}
