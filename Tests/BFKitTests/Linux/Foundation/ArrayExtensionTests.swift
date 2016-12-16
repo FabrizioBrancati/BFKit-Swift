@@ -64,7 +64,6 @@ class ArrayExtensionTests: XCTestCase {
                 XCTAssert("\(i)" != "\(element)")
             }
         }
-        XCTFail()
     }
     
     func testRemove() {
