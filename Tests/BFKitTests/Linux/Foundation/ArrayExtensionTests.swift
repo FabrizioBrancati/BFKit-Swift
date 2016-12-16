@@ -68,9 +68,9 @@ class ArrayExtensionTests: XCTestCase {
     }
     
     func testRemove() {
-        var arr = array
-        arr.remove(4)
-        XCTAssert(arr == [1, 2, 3, 5])
+        var arrayCopy = array
+        arrayCopy.remove(4)
+        XCTAssert(arrayCopy == [1, 2, 3, 5])
     }
     
     func testSafeObjectAt() {
