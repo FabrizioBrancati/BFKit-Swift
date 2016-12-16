@@ -59,9 +59,9 @@ public extension Array {
         for i in self {
             array.append("\(i)")
         }
-        let item = array.index(of: "\(object)")
-        if let obj = item {
-            self.remove(at: obj)
+        let index = array.index(of: "\(object)")
+        if index != nil {
+            self.remove(at: index!)
         }
     }
     
