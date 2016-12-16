@@ -30,6 +30,7 @@ import Foundation
 
 class StringExtensionTests: XCTestCase {
     static let allTests = [
+        ("testArray", testArray),
         ("testFloatValue", testFloatValue),
         ("testIntValue", testIntValue),
         ("testDataValue", testDataValue),
@@ -88,6 +89,11 @@ class StringExtensionTests: XCTestCase {
     
     override func tearDown() {
         super.tearDown()
+    }
+    
+    func testArray() {
+        let str = string.array
+        XCTAssert(str == ["T", "h", "i", "s", " ", "i", "s", " ", "a", " ", "t", "e", "s", "t"])
     }
     
     func testFloatValue() {

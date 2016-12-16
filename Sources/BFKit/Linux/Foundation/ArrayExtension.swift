@@ -35,6 +35,36 @@ import Foundation
 public extension Array {
     // MARK: - Functions
     
+    /// Simulates the array as a circle. When it is out of range, begins again.
+    ///
+    /// - Parameter index: The index.
+    /// - Returns: Returns the object at a given index.
+    public func circleObject(at index: Int) -> Element {
+        return self[self.superCircle(at: index, size: self.count)]
+    }
+    
+    /// Randomly selects an element from self and returns it.
+    ///
+    /// - returns: An element that was randomly selected from the array.
+    public func random() -> Element {
+        return self[randomInt(range: 0...self.count-1)]
+    }
+    
+    
+    /// Removes the element from self that is passed in.
+    /// 
+    /// - parameter object: The element that is removed from self.
+    public mutating func remove(_ object: Element) {
+        var array: [String] = []
+        for i in self {
+            array.append("\(i)")
+        }
+        let index = array.index(of: "\(object)")
+        if index != nil {
+            self.remove(at: index!)
+        }
+    }
+    
     /// Get the object at a given index in safe mode (nil if self is empty or out of range).
     ///
     /// - Parameter index: The index.
@@ -45,14 +75,6 @@ public extension Array {
         } else {
             return nil
         }
-    }
-    
-    /// Simulates the array as a circle. When it is out of range, begins again.
-    ///
-    /// - Parameter index: The index.
-    /// - Returns: Returns the object at a given index.
-    public func circleObject(at index: Int) -> Element {
-        return self[self.superCircle(at: index, size: self.count)]
     }
     
     /// Get the index as a circle.

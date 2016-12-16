@@ -30,8 +30,10 @@ import Foundation
 
 class ArrayExtensionTests: XCTestCase {
     static let allTests = [
-        ("testSafeObjectAt", testSafeObjectAt),
         ("testCircleObjectAt", testCircleObjectAt),
+        ("testRandom", testRandom),
+        ("testRemove", testRemove),
+        ("testSafeObjectAt", testSafeObjectAt),
         ("testSwapFromTo", testSwapFromTo),
         ("testShuffle", testShuffle),
         ("testShuffled", testShuffled)
@@ -47,18 +49,35 @@ class ArrayExtensionTests: XCTestCase {
         super.tearDown()
     }
     
+    func testCircleObjectAt() {
+        let object = array.circleObject(at: 6)
+        
+        XCTAssert(object == 2)
+    }
+    
+   func testRandom() {
+        let element = array.random()
+        for i in array {
+            if "\(i)" == "\(element)" {
+                XCTAssert("\(i)" == "\(element)")
+                return
+            }
+        }
+       XCTFail()
+    }
+    
+    func testRemove() {
+        var arrayCopy = array
+        arrayCopy.remove(4)
+        XCTAssert(arrayCopy == [1, 2, 3, 5])
+    }
+    
     func testSafeObjectAt() {
         let object = array.safeObject(at: 4)
         let objectNil = array.safeObject(at: 6)
         
         XCTAssert(object == 5)
         XCTAssert(objectNil == nil)
-    }
-    
-    func testCircleObjectAt() {
-        let object = array.circleObject(at: 6)
-        
-        XCTAssert(object == 2)
     }
     
     func testSwapFromTo() {

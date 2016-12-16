@@ -55,4 +55,19 @@ extension UIViewController {
             }
         }
     }
+    
+    
+    /// Presents a UIAlertController with a title, message and a set of actions.
+    ///
+    /// - parameter title: The title of the UIAlerController.
+    /// - parameter message: An optional String for the UIAlertController's message.
+    /// - parameter actions: An array of actions that will be added to the UIAlertController.
+    /// - parameter alertType: The style of the UIAlertController.
+    public func present(title: String, message: String, actions: [UIAlertAction], alertType: UIAlertControllerStyle = .alert) {
+        let errorAlert = UIAlertController(title: title, message: message, preferredStyle: alertType)
+        for action in actions {
+            errorAlert.addAction(action)
+        }
+        self.present(errorAlert, animated: true, completion: nil)
+    }
 }

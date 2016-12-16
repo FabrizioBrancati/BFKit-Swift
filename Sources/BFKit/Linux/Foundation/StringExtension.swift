@@ -32,6 +32,11 @@ import Foundation
 public extension String {
     // MARK: - Variables
 
+    /// Gets the individual characters and puts them in an array as Strings.
+    var array: [String] {
+        return description.characters.map{ String($0) }
+    }
+    
     /// Returns the Float value
     public var floatValue: Float {
         return NSString(string: self).floatValue
