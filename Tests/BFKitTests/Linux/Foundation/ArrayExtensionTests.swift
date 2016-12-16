@@ -60,10 +60,10 @@ class ArrayExtensionTests: XCTestCase {
         for i in array {
             if "\(i)" == "\(element)" {
                 XCTAssert("\(i)" == "\(element)")
-            } else {
-                XCTAssert("\(i)" != "\(element)")
+                return
             }
         }
+       XCTFail()
     }
     
     func testRemove() {
