@@ -131,7 +131,7 @@ public extension UIWindow {
     ///   - delay: The delay, in seconds.
     ///   - save: Set to true to save, otherwise false.
     ///   - completion: Completion handler with the UIImage.
-    public func windowScreenshot(delay: Double, save: Bool = false, completion: @escaping (_ screeshot: UIImage?) -> ()) {
+    public func windowScreenshot(delay: Double, save: Bool = false, completion: @escaping (_ screeshot: UIImage?) -> Void) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
             completion(self.windowScreenshot(save: save))
         })

@@ -249,7 +249,7 @@ public extension UIDevice {
     ///
     /// - Parameter block: Block to be executed.
     @available(iOS 9.0, *)
-    public static func lowPowerModeChanged(_ block: @escaping (_ isLowPowerModeEnabled: Bool) -> ()) {
+    public static func lowPowerModeChanged(_ block: @escaping (_ isLowPowerModeEnabled: Bool) -> Void) {
         if !lowPowerModeObserver {
             NotificationCenter.default.addObserver(self, selector: #selector(lowPowerModeChanged(_:)), name: .NSProcessInfoPowerStateDidChange, object: nil)
             lowPowerModeObserver = true
@@ -378,7 +378,7 @@ public extension UIDevice {
     ///   - needsUpdate:      Returns if the APNS token needsAnUpdate.
     ///   - oldUUID:          Returns the old UUID, if present. May be nil.
     ///   - newUUID:          Returns the new UUID.
-    public static func saveAPNSIdentifier(_ uniqueIdentifier: Any, completion: @escaping (_ isValid: Bool, _ needsUpdate: Bool, _ savedUUID: String?, _ newUUID: String) -> ()) {
+    public static func saveAPNSIdentifier(_ uniqueIdentifier: Any, completion: @escaping (_ isValid: Bool, _ needsUpdate: Bool, _ savedUUID: String?, _ newUUID: String) -> Void) {
         var newUUID: String = ""
         var savedUUID: String? = nil
         var isValid = false, needsUpdate = false

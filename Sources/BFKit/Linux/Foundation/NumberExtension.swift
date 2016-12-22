@@ -102,23 +102,26 @@ public func randomFloat(min minValue: Float, max maxValue: Float) -> Float {
 
 // MARK: - Extensions
 
+/// This extesion adds some useful functions to Double.
 public extension Double {
-    /// Gets the individual numbers, and puts them into an array. NOTE: All negative numbers will start with 0.
+    /// Gets the individual numbers, and puts them into an array. All negative numbers will start with 0.
     var array: [Int] {
-        return description.characters.map{Int(String($0)) ?? 0}
+        return description.characters.map { Int(String($0)) ?? 0 }
     }
 }
 
+/// This extesion adds some useful functions to Float.
 public extension Float {
-    /// Gets the individual numbers, and puts them into an array. NOTE: All negative numbers will start with 0.
+    /// Gets the individual numbers, and puts them into an array. All negative numbers will start with 0.
     var array: [Int] {
-        return description.characters.map{Int(String($0)) ?? 0}
+        return description.characters.map { Int(String($0)) ?? 0 }
     }
 }
 
+/// This extesion adds some useful functions to Int.
 public extension Int {
-    /// Gets the individual numbers, and puts them into an array. NOTE: All negative numbers will start with 0.
+    /// Gets the individual numbers, and puts them into an array. All negative numbers will start with 0.
     var array: [Int] {
-        return description.characters.map{Int(String($0)) ?? 0}
+        return description.characters.map { Int(String($0)) ?? 0 }
     }
 }

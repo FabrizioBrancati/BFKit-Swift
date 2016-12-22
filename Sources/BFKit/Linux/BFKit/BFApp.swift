@@ -62,7 +62,7 @@ public struct BFApp {
     /// More info on how to use it [here](http://stackoverflow.com/questions/26890537/disabling-nslog-for-production-in-swift-project/26891797#26891797).
     ///
     /// - Parameter block: The block to be executed.
-    public static func debug(_ block: () -> ()) {
+    public static func debug(_ block: () -> Void) {
         #if DEBUG
             block()
         #endif
@@ -73,7 +73,7 @@ public struct BFApp {
     /// More info on how to use it [here](http://stackoverflow.com/questions/26890537/disabling-nslog-for-production-in-swift-project/26891797#26891797).
     ///
     /// - Parameter block: The block to be executed.
-    public static func release(_ block: () -> ()) {
+    public static func release(_ block: () -> Void) {
         #if !DEBUG
             block()
         #endif
@@ -105,7 +105,7 @@ public struct BFApp {
     /// - Parameters:
     ///   - version: Version to be checked, you can use the global varialble AppVersion to pass the current App version.
     ///   - block: The block to execute, returns isFirstStart.
-    public static func onFirstStart(version: String = "", block: (_ isFirstStart: Bool) -> ()) {
+    public static func onFirstStart(version: String = "", block: (_ isFirstStart: Bool) -> Void) {
         let key: String
         if version == "" {
             key = BFAppHasBeenOpened

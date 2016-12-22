@@ -230,6 +230,7 @@ class UIDeviceExtensionTests: XCTestCase {
         
         UIDevice.saveAPNSIdentifier(uuid, completion: { isValid, needsUpdate, savedUUID, newUUID in
             XCTAssertTrue(isValid)
+            XCTAssertNotNil(savedUUID)
             XCTAssertTrue(needsUpdate)
             XCTAssertNotNil(newUUID)
             

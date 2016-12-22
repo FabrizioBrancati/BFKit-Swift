@@ -229,7 +229,7 @@ public extension UIView {
     
     /// Removes all subviews from current view
     public func removeAllSubviews() {
-        self.subviews.forEach { (subview) -> () in
+        self.subviews.forEach { (subview) -> Void in
             subview.removeFromSuperview()
         }
     }

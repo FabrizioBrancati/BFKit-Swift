@@ -50,7 +50,6 @@ public extension Array {
         return self[randomInt(range: 0...self.count-1)]
     }
     
-    
     /// Removes the element from self that is passed in.
     /// 
     /// - parameter object: The element that is removed from self.

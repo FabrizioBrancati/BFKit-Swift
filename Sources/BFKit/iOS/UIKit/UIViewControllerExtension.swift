@@ -56,7 +56,6 @@ extension UIViewController {
         }
     }
     
-    
     /// Presents a UIAlertController with a title, message and a set of actions.
     ///
     /// - parameter title: The title of the UIAlerController.

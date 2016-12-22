@@ -32,7 +32,7 @@ import Dispatch
 /// Runs a block on main thread.
 ///
 /// - Parameter block: Block to be executed.
-public func runOnMainThread(_ block: @escaping () -> ()) {
+public func runOnMainThread(_ block: @escaping () -> Void) {
     DispatchQueue.main.async(execute: {
         block()
     })
@@ -41,7 +41,7 @@ public func runOnMainThread(_ block: @escaping () -> ()) {
 /// Runs a block in background.
 ///
 /// - Parameter block: block Block to be executed.
-public func runInBackground(_ block: @escaping () -> ()) {
+public func runInBackground(_ block: @escaping () -> Void) {
     DispatchQueue.global().async {
         block()
     }
