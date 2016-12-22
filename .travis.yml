@@ -33,8 +33,8 @@ script:
       swiftlint;
       sleep 5;
       set -o pipefail;
-      xcodebuild clean test -project BFKit.xcodeproj -scheme BFKit -destination "platform=iOS Simulator,name=iPhone 7 Plus" -enableCodeCoverage YES | xcpretty;
-      xcodebuild -project Example/BFKitExample.xcodeproj -scheme BFKitExample -destination "platform=iOS Simulator,name=iPhone 7 Plus" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty;
+      xcodebuild clean test -project BFKit.xcodeproj -scheme BFKit -destination "platform=iOS Simulator, OS=10.2, name=iPhone 7 Plus" -enableCodeCoverage YES | xcpretty;
+      xcodebuild -project Example/BFKitExample.xcodeproj -scheme BFKitExample -destination "platform=iOS Simulator, OS=10.2, name=iPhone 7 Plus" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty;
       pod lib lint;
       carthage build --no-skip-current;
     fi
