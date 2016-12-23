@@ -25,7 +25,7 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## [2.1.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v2.1.0) - Napalm Explosion
+## [2.1.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.1.0) - Napalm Explosion
 ### 23 Dec 2016
 ### Added
 - Added `random` function in Array extension
@@ -39,19 +39,19 @@ All notable changes to this project will be documented in this file.<br>
 Thanks to [@calebkleveter](https://github.com/calebkleveter) for this release
 
 
-## [2.0.2](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v2.0.2) - Linux Doesn't Like Emoji
+## [2.0.2](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.0.2) - Linux Doesn't Like Emoji
 ### 11 Dec 2016
 ### Fixed
 - Fixed a bug for Linux on String extension
 
 
-## [2.0.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v2.0.1) - Linux Compatibility
+## [2.0.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.0.1) - Linux Compatibility
 ### 10 Dec 2016
 ### Fixed
 - Fixed a bug for Linux on BFApp class
 
 
-## [2.0.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v2.0.0) - A New Beginning
+## [2.0.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.0.0) - A New Beginning
 ### 10 Dec 2016
 ### Added
 - This version has been completely rewritten and is not compatible with 1.x versions

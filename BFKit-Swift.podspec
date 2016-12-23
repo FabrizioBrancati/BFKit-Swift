@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.version           = "2.1.0"
   s.summary           = "BFKit Swift is a collection of useful classes, structs and extensions to develop Apps faster."
   s.homepage          = "https://github.com/FabrizioBrancati/BFKit-Swift"
-  s.screenshots       = "http://github.fabriziobrancati.com/bfkit/resources/screenshot-swift.png"
+  s.screenshots       = "https://github.fabriziobrancati.com/bfkit/resources/screenshot-swift.png"
   s.license           = {
                            :type => "MIT",
                            :file => "LICENSE"
