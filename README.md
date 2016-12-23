@@ -123,7 +123,7 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
 - Enjoy!
 
 ### CocoaPods
-- Create a **Podfile** in your **project directory**, and write into:
+- Create a **Podfile** in your **project directory** and write into:
 
     ```ruby
         platform :ios, '8.0'
