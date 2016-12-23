@@ -123,8 +123,7 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
 - Enjoy!
 
 ### CocoaPods
-- Create a **Podfile** in your **project directory**
-- Write:
+- Create a **Podfile** in your **project directory**, and write into:
 
     ```ruby
         platform :ios, '8.0'
@@ -139,8 +138,7 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
 - Enjoy!
 
 ### Carthage
-- Create a **Cartfile** in your **project directory**
-- Write:
+- Create a **Cartfile** in your **project directory** and write into:
 
     ```ruby
         github "FabrizioBrancati/BFKit-Swift"
@@ -163,8 +161,7 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
 - Enjoy!
 
 ### Swift Package Manager (Linux)
-- Create a **Package.swift** file in your **project directory**
-- Write:
+- Create a **Package.swift** file in your **project directory** and write into:
 
     ```swift
     import PackageDescription
