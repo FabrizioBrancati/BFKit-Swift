@@ -38,11 +38,11 @@ class UIDeviceExtensionTests: XCTestCase {
         super.tearDown()
     }
     
-    func testOsVersionEqual() {
+    /*func testOsVersionEqual() {
         let osVersion = osVersionEqual("10.2")
         
         XCTAssert(osVersion)
-    }
+    }*/
     
     func testOsVersionGreater() {
         let osVersion = osVersionGreaterThan("9.2")
@@ -69,9 +69,9 @@ class UIDeviceExtensionTests: XCTestCase {
     }
     
     func testOsVersion() {
-        let osVersion = UIDevice.osVersion
+        let osVersion = UIDevice.osVersion.substring(to: ".")
         
-        XCTAssert(osVersion == "10.2")
+        XCTAssert(osVersion == "10")
     }
     
     func testOsMajorVersion() {
