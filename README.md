@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit-Swift.svg)](https://travis-ci.org/FabrizioBrancati/BFKit-Swift)
 [![Codecov](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift/branch/master/graph/badge.svg)](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift)
+[![codebeat](https://codebeat.co/badges/ba18628d-f16b-4cd4-81f7-f75e81d97b38)](https://codebeat.co/projects/github-com-fabriziobrancati-bfkit-swift)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/BFKit-Swift.svg?style=flat)][CocoaDocs]
 [![Language](https://img.shields.io/badge/language-Swift%203.0-orange.svg)](https://developer.apple.com/swift/)
@@ -196,6 +197,7 @@ Todo
 - [ ] Add macOS, watchOS and tvOS support
 - [ ] Create a new Example App that shows all the functionalities of BFKit Swift
 - [ ] 100% of code coverage with Unit Tests
+- [ ] Improve code to get an _A_ from codebeat
 - [x] Create Unit Tests and add Codecov badge
 - [x] Add Linux support (Foundation extensions only)
 - [x] Add Carthage support
