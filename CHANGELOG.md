@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 2.X Releases
+- `2.1.x` Releases - [2.1.0](#210)
 - `2.0.x` Releases - [2.0.0](#200) | [2.0.1](#201) | [2.0.2](#202)
 
 ### 1.x Releases
@@ -23,6 +24,20 @@ All notable changes to this project will be documented in this file.<br>
 - `1.0.x` Releases - [1.0.0](#100)
 
 ---
+
+## [2.1.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v2.1.0) - Napalm Explosion
+### 23 Dec 2016
+### Added
+- Added `random` function in Array extension
+- Added `array` variable to String, Int, Float and Double extensions
+- Added `present(title:, message:, actions:, alertType:)` in UIViewController extension
+- Added support for Xcode 8.2 and Swift 3.0.2
+
+### Improved
+- Updated SwiftLint to 0.14.0
+
+Thanks to [@calebkleveter](https://github.com/calebkleveter) for this release
+
 
 ## [2.0.2](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v2.0.2) - Linux Doesn't Like Emoji
 ### 11 Dec 2016
