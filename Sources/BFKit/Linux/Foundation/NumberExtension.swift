@@ -82,7 +82,7 @@ public func randomInt(range: ClosedRange<Int>) -> Int {
 /// - Returns: Returns the created random float.
 public func randomFloat() -> Float {
     #if os(Linux)
-        return Float(Int.random() / Int(UINT32_MAX))
+        return Float.random()
     #else
         return Float(arc4random()) / Float(UINT32_MAX)
     #endif
