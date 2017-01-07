@@ -228,9 +228,8 @@ class UIDeviceExtensionTests: XCTestCase {
         let testExpectation = expectation(description: "Save APNS Identifier")
         let uuid = UIDevice.generateUniqueIdentifier()
         
-        UIDevice.saveAPNSIdentifier(uuid, completion: { isValid, needsUpdate, savedUUID, newUUID in
+        UIDevice.saveAPNSIdentifier(uuid, completion: { isValid, needsUpdate, _, newUUID in
             XCTAssertTrue(isValid)
-            XCTAssert(savedUUID == nil)
             XCTAssertTrue(needsUpdate)
             XCTAssertNotNil(newUUID)
             

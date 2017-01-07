@@ -378,9 +378,9 @@ public extension UIDevice {
     ///   - needsUpdate:      Returns if the APNS token needsAnUpdate.
     ///   - oldUUID:          Returns the old UUID, if present. May be nil.
     ///   - newUUID:          Returns the new UUID.
-    public static func saveAPNSIdentifier(_ uniqueIdentifier: Any, completion: @escaping (_ isValid: Bool, _ needsUpdate: Bool, _ savedUUID: String?, _ newUUID: String) -> Void) {
+    public static func saveAPNSIdentifier(_ uniqueIdentifier: Any, completion: @escaping (_ isValid: Bool, _ needsUpdate: Bool, _ oldUUID: String?, _ newUUID: String) -> Void) {
         var newUUID: String = ""
-        var savedUUID: String? = nil
+        var oldUUID: String? = nil
         var isValid = false, needsUpdate = false
         
         if uniqueIdentifier is Data {
@@ -401,8 +401,8 @@ public extension UIDevice {
         
         if isValid {
             let defaults: UserDefaults = UserDefaults.standard
-            savedUUID = defaults.string(forKey: BFAPNSIdentifierDefaultsKey)
-            if savedUUID == nil || savedUUID != newUUID {
+            oldUUID = defaults.string(forKey: BFAPNSIdentifierDefaultsKey)
+            if oldUUID == nil || oldUUID != newUUID {
                 defaults.set(newUUID, forKey: BFAPNSIdentifierDefaultsKey)
                 defaults.synchronize()
                 
@@ -410,6 +410,6 @@ public extension UIDevice {
             }
         }
         
-        completion(isValid, needsUpdate, savedUUID, newUUID)
+        completion(isValid, needsUpdate, oldUUID, newUUID)
     }
 }
