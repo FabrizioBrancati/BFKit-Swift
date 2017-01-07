@@ -25,6 +25,7 @@
 //  SOFTWARE.
 
 import Foundation
+import Dispatch
 
 // MARK: - Global functions
 
@@ -101,7 +102,7 @@ public func randomFloat(min minValue: Float, max maxValue: Float) -> Float {
 
 #if os(Linux)
     /// Produces great cryptographically random numbers.
-     private struct Randomizer {
+    private struct Randomizer {
         /// /dev/urandom file.
         static let file = fopen("/dev/urandom", "r")!
         /// Random queue.
