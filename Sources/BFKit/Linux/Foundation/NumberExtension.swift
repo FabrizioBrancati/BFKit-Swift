@@ -25,9 +25,6 @@
 //  SOFTWARE.
 
 import Foundation
-#if os(Linux)
-    import Glibc
-#endif
 
 // MARK: - Global functions
 
@@ -73,7 +70,7 @@ public func randomInt(range: ClosedRange<Int>) -> Int {
     let max = UInt32(range.upperBound + offset)
     
     #if os(Linux)
-        return Int(Int(min) + Int(Glibc.random()) % Int(max - min)) - offset
+        return Int(Int(min) + Int(Int.random()) % Int(max - min)) - offset
     #else
         return Int(min + arc4random_uniform(max - min)) - offset
     #endif
@@ -84,7 +81,7 @@ public func randomInt(range: ClosedRange<Int>) -> Int {
 /// - Returns: Returns the created random float.
 public func randomFloat() -> Float {
     #if os(Linux)
-        return Float(Int(Glibc.random()) / Int(UINT32_MAX))
+        return Float(Int.random() / Int(UINT32_MAX))
     #else
         return Float(arc4random()) / Float(UINT32_MAX)
     #endif
@@ -101,6 +98,57 @@ public func randomFloat(min minValue: Float, max maxValue: Float) -> Float {
 }
 
 // MARK: - Extensions
+
+#if os(Linux)
+    /// Produces great cryptographically random numbers.
+    struct Randomizer {
+        /// /dev/urandom file.
+        static let file = fopen("/dev/urandom", "r")!
+        /// Random queue.
+        static let queue = DispatchQueue(label: "random")
+        
+        /// Get a random number of a given capacity.
+        ///
+        /// - Parameter count: Byte count.
+        /// - Returns: Return the random number.
+        static func get(count: Int) -> [Int8] {
+            let capacity = count + 1
+            var data = UnsafeMutablePointer<Int8>.allocate(capacity: capacity)
+            defer {
+                data.deallocate(capacity: capacity)
+            }
+            _ = queue.sync {
+                fgets(data, Int32(capacity), file)
+            }
+            return Array(UnsafeMutableBufferPointer(start: data, count: count))
+        }
+    }
+    
+    /// This extension adds some useful function to SignedInteger.
+    public extension SignedInteger {
+        /// Creates a random integer number.
+        ///
+        /// - Returns: Returns the creates a random integer number.
+        static func random() -> Self {
+            let numbers = Randomizer.get(count: MemoryLayout<Self>.size)
+            return numbers.withUnsafeBufferPointer { bufferPointer in
+                return bufferPointer.baseAddress!.withMemoryRebound(to: Self.self, capacity: 1) {
+                    return $0.pointee
+                }
+            }
+        }
+    }
+    
+    /// This extension adds some useful function to FloatingPoint.
+    public extension FloatingPoint {
+        /// Creates a random floating number.
+        ///
+        /// - Returns: Returns the creates a random floating number.
+        static func random() -> Self {
+            return Self(Int.random) / Self(UINT32_MAX)
+        }
+    }
+#endif
 
 /// This extesion adds some useful functions to Double.
 public extension Double {
