@@ -69,7 +69,7 @@ public extension Array {
     /// - Parameter index: The index.
     /// - Returns: Returns the object at a given index in safe mode (nil if self is empty or out of range).
     public func safeObject(at index: Int) -> Element? {
-        if !self.isEmpty && self.count > index {
+        if !self.isEmpty, self.count > index {
             return self[index]
         } else {
             return nil

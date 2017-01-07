@@ -61,7 +61,7 @@ open class BFButton: UIButton {
     /// The overlay image, cannot be nil.
     public var overlayImageView: UIImageView! {
         didSet(newOverlayImageView) {
-            if self.overlayImageView != newOverlayImageView && newOverlayImageView != nil {
+            if self.overlayImageView != newOverlayImageView, newOverlayImageView != nil {
                 self.overlayImageView = newOverlayImageView
             }
             

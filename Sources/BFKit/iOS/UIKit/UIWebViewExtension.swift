@@ -37,7 +37,7 @@ public extension UIWebView {
     public func removeBackgroundShadow() {
         for i in 0 ..< self.scrollView.subviews.count {
             let singleSubview: UIView = self.scrollView.subviews[i]
-            if singleSubview.isKind(of: UIImageView.self) && singleSubview.frame.origin.x <= 500 {
+            if singleSubview.isKind(of: UIImageView.self), singleSubview.frame.origin.x <= 500 {
                 singleSubview.isHidden = true
                 singleSubview.removeFromSuperview()
             }

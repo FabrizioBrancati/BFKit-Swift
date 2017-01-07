@@ -299,7 +299,7 @@ public extension UIImage {
     public func scaleProportionally(toMaximumSize targetSize: CGSize) -> UIImage {
         let newTargetSize: CGSize = targetSize
         
-        if (self.size.width > newTargetSize.width || newTargetSize.width == newTargetSize.height) && self.size.width > self.size.height {
+        if (self.size.width > newTargetSize.width || newTargetSize.width == newTargetSize.height), self.size.width > self.size.height {
             let factor: CGFloat = (newTargetSize.width * 100)/self.size.width
             let newWidth: CGFloat = (self.size.width * factor)/100
             let newHeight: CGFloat = (self.size.height * factor)/100
@@ -307,7 +307,7 @@ public extension UIImage {
             let newSize: CGSize = CGSize(width: newWidth, height: newHeight)
             UIGraphicsBeginImageContextWithOptions(newSize, false, UIScreen.main.scale)
             self.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
-        } else if (self.size.height > newTargetSize.height || newTargetSize.width == newTargetSize.height) && self.size.width < self.size.height {
+        } else if (self.size.height > newTargetSize.height || newTargetSize.width == newTargetSize.height), self.size.width < self.size.height {
             let factor: CGFloat = (newTargetSize.width * 100)/self.size.height
             let newWidth: CGFloat = (self.size.width * factor)/100
             let newHeight: CGFloat = (self.size.height * factor)/100
@@ -315,7 +315,7 @@ public extension UIImage {
             let newSize: CGSize = CGSize(width: newWidth, height: newHeight)
             UIGraphicsBeginImageContextWithOptions(newSize, false, UIScreen.main.scale)
             self.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
-        } else if (self.size.height > newTargetSize.height || self.size.width > newTargetSize.width ) && self.size.width == self.size.height {
+        } else if (self.size.height > newTargetSize.height || self.size.width > newTargetSize.width ), self.size.width == self.size.height {
             let factor: CGFloat = (newTargetSize.height * 100) / self.size.height
             let newDimension: CGFloat = (self.size.height * factor) / 100
             
