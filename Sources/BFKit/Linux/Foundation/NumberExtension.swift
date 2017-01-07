@@ -101,7 +101,7 @@ public func randomFloat(min minValue: Float, max maxValue: Float) -> Float {
 
 #if os(Linux)
     /// Produces great cryptographically random numbers.
-    struct Randomizer {
+     private struct Randomizer {
         /// /dev/urandom file.
         static let file = fopen("/dev/urandom", "r")!
         /// Random queue.
@@ -145,7 +145,7 @@ public func randomFloat(min minValue: Float, max maxValue: Float) -> Float {
         ///
         /// - Returns: Returns the creates a random floating number.
         static func random() -> Self {
-            return Self(Int.random) / Self(UINT32_MAX)
+            return Self(Int.random() / Int(UINT32_MAX))
         }
     }
 #endif
