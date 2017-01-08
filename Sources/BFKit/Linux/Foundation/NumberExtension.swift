@@ -151,7 +151,7 @@ public extension Double {
         ///
         /// - Returns: Returns the creates a random Double number.
         static func random() -> Double {
-            return Double(Int.random()) / Double(UINT64_MAX)
+            return Double(Int.random()) / Double(UINT32_MAX)
         }
     #endif
 }
