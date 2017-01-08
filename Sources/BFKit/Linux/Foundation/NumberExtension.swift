@@ -71,7 +71,7 @@ public func randomInt(range: ClosedRange<Int>) -> Int {
     let max = UInt32(range.upperBound + offset)
     
     #if os(Linux)
-        return Int(Int(min) + Int(Int.random()) % Int(max - min)) - offset
+        return Int(Int(min) + Int(abs(Int.random())) % Int(max - min)) - offset
     #else
         return Int(min + arc4random_uniform(max - min)) - offset
     #endif
@@ -82,7 +82,7 @@ public func randomInt(range: ClosedRange<Int>) -> Int {
 /// - Returns: Returns the created random float.
 public func randomFloat() -> Float {
     #if os(Linux)
-        return Float.random()
+        return abs(Float.random())
     #else
         return Float(arc4random()) / Float(UINT32_MAX)
     #endif
@@ -98,9 +98,9 @@ public func randomFloat(min minValue: Float, max maxValue: Float) -> Float {
     return randomFloat() * abs(minValue - maxValue) + min(minValue, maxValue)
 }
 
-// MARK: - Extensions
+// MARK: - Randomizer struct
 
-#if os(Linux)
+//#if os(Linux)
     /// Produces great cryptographically random numbers.
     private struct Randomizer {
         /// /dev/urandom file.
@@ -124,9 +124,13 @@ public func randomFloat(min minValue: Float, max maxValue: Float) -> Float {
             return Array(UnsafeMutableBufferPointer(start: data, count: count))
         }
     }
-    
-    /// This extension adds some useful function to SignedInteger.
-    public extension SignedInteger {
+//#endif
+
+// MARK: - Extensions
+
+//#if os(Linux)
+    /// This extension adds some useful function to Integer.
+    public extension Integer {
         /// Creates a random integer number.
         ///
         /// - Returns: Returns the creates a random integer number.
@@ -149,7 +153,7 @@ public func randomFloat(min minValue: Float, max maxValue: Float) -> Float {
             return Self(Int.random() / Int(UINT32_MAX))
         }
     }
-#endif
+//#endif
 
 /// This extesion adds some useful functions to Double.
 public extension Double {
