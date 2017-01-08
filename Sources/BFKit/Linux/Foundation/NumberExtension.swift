@@ -100,7 +100,7 @@ public func randomFloat(min minValue: Float, max maxValue: Float) -> Float {
 
 // MARK: - Randomizer struct
 
-//#if os(Linux)
+#if os(Linux)
     /// Produces great cryptographically random numbers.
     private struct Randomizer {
         /// /dev/urandom file.
@@ -124,11 +124,11 @@ public func randomFloat(min minValue: Float, max maxValue: Float) -> Float {
             return Array(UnsafeMutableBufferPointer(start: data, count: count))
         }
     }
-//#endif
+#endif
 
 // MARK: - Extensions
 
-//#if os(Linux)
+#if os(Linux)
     /// This extension adds some useful function to Integer.
     public extension Integer {
         /// Creates a random integer number.
@@ -150,10 +150,10 @@ public func randomFloat(min minValue: Float, max maxValue: Float) -> Float {
         ///
         /// - Returns: Returns the creates a random floating number.
         static func random() -> Self {
-            return Self(Int.random() / Int(UINT32_MAX))
+            return abs(Self(Int.random() / Int(UINT32_MAX)))
         }
     }
-//#endif
+#endif
 
 /// This extesion adds some useful functions to Double.
 public extension Double {
