@@ -52,7 +52,7 @@ public func radiansToDegrees(_ radians: Float) -> Float {
 ///   - maxValue: Maxinum random value.
 /// - Returns: Returns the created random integer.
 public func randomInt(min minValue: Int, max maxValue: Int) -> Int {
-    return minValue + Int(randomFloat() * Float(maxValue - minValue))
+    return randomInt(range: minValue...maxValue)
 }
 
 /// Create a random integer between the given range.
@@ -77,25 +77,19 @@ public func randomInt(range: ClosedRange<Int>) -> Int {
     #endif
 }
 
-/// Create a random float.
-///
-/// - Returns: Returns the created random float.
-public func randomFloat() -> Float {
-    #if os(Linux)
-        return abs(Float.random())
-    #else
-        return Float(arc4random()) / Float(UINT32_MAX)
-    #endif
-}
-
 /// Create a random float between the given range.
 ///
 /// - Parameters:
-///   - minValue: Mininum random value.
-///   - maxValue: Maxinum random value.
+///   - minValue: Mininum random value. Default is 0.
+///   - maxValue: Maxinum random value. Default is 1.
 /// - Returns: Returns the created random float.
-public func randomFloat(min minValue: Float, max maxValue: Float) -> Float {
-    return randomFloat() * abs(minValue - maxValue) + min(minValue, maxValue)
+public func randomFloat(min minValue: Float = 0, max maxValue: Float = 1) -> Float {
+    #if os(Linux)
+        let random = abs(Float.random())
+    #else
+        let random = Float(arc4random()) / Float(UINT32_MAX)
+    #endif
+    return random * abs(minValue - maxValue) + min(minValue, maxValue)
 }
 
 // MARK: - Randomizer struct
@@ -143,16 +137,6 @@ public func randomFloat(min minValue: Float, max maxValue: Float) -> Float {
             }
         }
     }
-    
-    /// This extension adds some useful function to FloatingPoint.
-    public extension FloatingPoint {
-        /// Creates a random floating number.
-        ///
-        /// - Returns: Returns the creates a random floating number.
-        static func random() -> Self {
-            return abs(Self(Int.random() / Int(UINT32_MAX)))
-        }
-    }
 #endif
 
 /// This extesion adds some useful functions to Double.
@@ -161,6 +145,15 @@ public extension Double {
     var array: [Int] {
         return description.characters.map { Int(String($0)) ?? 0 }
     }
+    
+    #if os(Linux)
+        /// Creates a random Double number.
+        ///
+        /// - Returns: Returns the creates a random Double number.
+        static func random() -> Double {
+            return Double(Int.random()) / Double(INT64_MAX)
+        }
+    #endif
 }
 
 /// This extesion adds some useful functions to Float.
@@ -169,6 +162,15 @@ public extension Float {
     var array: [Int] {
         return description.characters.map { Int(String($0)) ?? 0 }
     }
+    
+    #if os(Linux)
+        /// Creates a random Float number.
+        ///
+        /// - Returns: Returns the creates a random Float number.
+        static func random() -> Float {
+            return Float(Double.random())
+        }
+    #endif
 }
 
 /// This extesion adds some useful functions to Int.
