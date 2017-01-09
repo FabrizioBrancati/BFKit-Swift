@@ -90,15 +90,16 @@ class BFAppTests: XCTestCase {
         }
     }
     
-    func testAppSetting() {
-        BFApp.setAppSetting(object: "Test", forKey: "Test")
-        
-        XCTAssert((BFApp.getAppSetting(objectKey: "Test") as! String) == "Test") // swiftlint:disable:this force_cast
-    }
-    
     #if !os(Linux)
-    func testNSLocalizedString() {
-        XCTAssert(NSLocalizedString("") == "")
-    }
+        func testAppSetting() {
+            BFApp.setAppSetting(object: "Test", forKey: "Test")
+            
+            XCTAssert((BFApp.getAppSetting(objectKey: "Test") as! String) == "Test") // swiftlint:disable:this force_cast
+        }
+        
+        
+        func testNSLocalizedString() {
+            XCTAssert(NSLocalizedString("") == "")
+        }
     #endif
 }
