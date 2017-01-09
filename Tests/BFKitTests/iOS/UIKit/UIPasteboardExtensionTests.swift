@@ -46,7 +46,10 @@ class UIPasteboardExtensionTests: XCTestCase {
     
     func testGet() {
         let pasteboard = UIPasteboard.getString()
+        UIPasteboard.general.items = [[:]]
+        let pasteboardEmpty = UIPasteboard.getString()
         
         XCTAssert(pasteboard == "This is a test")
+        XCTAssert(pasteboardEmpty == "")
     }
 }

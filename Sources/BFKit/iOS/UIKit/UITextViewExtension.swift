@@ -117,10 +117,6 @@ public extension UITextView {
     
     /// Copy UITextView text to pasteboard
     public func copyToPasteboard() {
-        guard let textToCopy = self.text else {
-            return
-        }
-        
-        UIPasteboard.copy(text: textToCopy)
+        UIPasteboard.copy(text: self.text)
     }
 }
