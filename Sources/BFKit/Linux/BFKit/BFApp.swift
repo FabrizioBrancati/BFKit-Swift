@@ -82,7 +82,7 @@ public struct BFApp {
     /// If version is set returns if is first start for that version,
     /// otherwise returns if is first start of the App.
     ///
-    /// - Parameter version: Version to be checked, you can use the global varialble AppVersion to pass the current App version.
+    /// - Parameter version: Version to be checked, you can use the variable BFApp.version to pass the current App version.
     /// - Returns: Returns if is first start of the App or for custom version.
     public static func isFirstStart(version: String = "") -> Bool {
         let key: String
@@ -103,7 +103,7 @@ public struct BFApp {
     /// Remember to execute UI instuctions on main thread.
     ///
     /// - Parameters:
-    ///   - version: Version to be checked, you can use the global varialble AppVersion to pass the current App version.
+    ///   - version: Version to be checked, you can use the variable BFApp.version to pass the current App version.
     ///   - block: The block to execute, returns isFirstStart.
     public static func onFirstStart(version: String = "", block: (_ isFirstStart: Bool) -> Void) {
         let key: String
@@ -129,7 +129,8 @@ public struct BFApp {
         ///   - object: Object to set.
         ///   - objectKey: Key to set the object.
         /// - Returns: Returns true if the operation was successful, otherwise false.
-        public static func setAppSetting(object: AnyObject, forKey objectKey: String) -> Bool {
+        @discardableResult
+        public static func setAppSetting(object: Any, forKey objectKey: String) -> Bool {
             return FileManager.default.setSettings(filename: BFApp.name, object: object, forKey: objectKey)
         }
         

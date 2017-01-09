@@ -63,6 +63,11 @@ class BFAppTests: XCTestCase {
         BFApp.debug {
             XCTAssert(isFirstStart == true || isFirstStart == false)
         }
+        
+        let isFirstStartVersion = BFApp.isFirstStart(version: "3.0.0")
+        BFApp.debug {
+            XCTAssert(isFirstStartVersion == true || isFirstStartVersion == false)
+        }
     }
     
     func testIsFirstStartVersion() {
@@ -70,24 +75,26 @@ class BFAppTests: XCTestCase {
     }
     
     func testOnFirstStart() {
-        BFApp.onFirstStart { (isFirstStart) in
+        BFApp.onFirstStart { isFirstStart in
+            XCTAssert(isFirstStart == true || isFirstStart == false)
+        }
+        
+        BFApp.onFirstStart(version: "3.0.0") { isFirstStart in
             XCTAssert(isFirstStart == true || isFirstStart == false)
         }
     }
     
     func testOnFirstStartVersion() {
-        BFApp.onFirstStart(version: BFApp.version) { (isFirstStart) in
+        BFApp.onFirstStart(version: BFApp.version) { isFirstStart in
             XCTAssert(isFirstStart == true || isFirstStart == false)
         }
     }
     
-    /*func testSetAppSetting() {
-     
-    }*/
-    
-    /*func testGetAppSetting() {
-     
-    }*/
+    func testAppSetting() {
+        BFApp.setAppSetting(object: "Test", forKey: "Test")
+        
+        XCTAssert((BFApp.getAppSetting(objectKey: "Test") as! String) == "Test") // swiftlint:disable:this force_cast
+    }
     
     #if !os(Linux)
     func testNSLocalizedString() {
