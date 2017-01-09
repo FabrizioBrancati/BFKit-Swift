@@ -325,8 +325,7 @@ public extension Date {
     /// - Parameter days: The number of days to add.
     /// - Returns: Returns self by adding the gived days number.
     public func addingDays(_ days: Int) -> Date? {
-        let calendar = Calendar.autoupdatingCurrent
-        return calendar.date(byAdding: .day, value: days, to: self)
+        return Calendar.autoupdatingCurrent.date(byAdding: .day, value: days, to: self)
     }
     
     /// Add days to self.
@@ -336,6 +335,7 @@ public extension Date {
         guard let date = self.addingDays(days) else {
             return
         }
+        
         self = date
     }
     
