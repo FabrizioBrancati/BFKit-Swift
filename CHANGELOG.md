@@ -30,7 +30,7 @@ All notable changes to this project will be documented in this file.<br>
 ### 09 Jan 2017
 ### Added
 - Added new cryptographically secure random numbers generator with `random()` function in Number extension
-    - Avaiable to all Integer types, Float and Double
+    - Available to all Integer types, Float and Double
 - Added `warning`, `error`, `debug` and `info` functions in BFLog extension
 - Added `has(_:, caseSensitive:)` as alias of `range(of:, caseSensitive:)` in String extension
 
