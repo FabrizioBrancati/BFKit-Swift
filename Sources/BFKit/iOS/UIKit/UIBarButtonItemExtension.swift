@@ -40,15 +40,12 @@ public extension UIBarButtonItem {
     ///   - width: To use only if space is setted to FixedSpace, and it will be the width of it.
     public convenience init(barButtonSpaceType space: UIBarButtonSystemItem, width: CGFloat = 0.0) {
         if space == .fixedSpace || space == .flexibleSpace {
-            self.init(barButtonSystemItem: space, target: nil, action: #selector(UIBarButtonItem.nothing))
+            self.init(barButtonSystemItem: space, target: nil, action: nil)
             if space == .fixedSpace {
                 self.width = width
             }
         } else {
-            self.init(barButtonSystemItem: .flexibleSpace, target: nil, action: #selector(UIBarButtonItem.nothing))
+            self.init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         }
     }
-    
-    /// It is just a placeholder to remove warning messages.
-    @objc private func nothing() {}
 }
