@@ -138,7 +138,7 @@ class StringExtensionTests: XCTestCase {
         let decodedInvalid = "Test".base64decoded
         
         XCTAssert(decoded == string)
-        XCTAssert(decodedInvalid == "")
+        XCTAssert(decodedInvalid != string)
     }
     
     func testLength() {
