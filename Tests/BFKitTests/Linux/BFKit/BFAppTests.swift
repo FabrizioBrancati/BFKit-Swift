@@ -96,7 +96,7 @@ class BFAppTests: XCTestCase {
             
             XCTAssert((BFApp.getAppSetting(objectKey: "Test") as! String) == "Test") // swiftlint:disable:this force_cast
         }
-        
+    
         func testNSLocalizedString() {
             XCTAssert(NSLocalizedString("") == "")
         }
