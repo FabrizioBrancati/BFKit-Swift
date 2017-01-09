@@ -33,6 +33,7 @@ All notable changes to this project will be documented in this file.<br>
 
 Thanks to [@ianrahman](https://github.com/ianrahman) for this release
 
+---
 
 ## [2.2.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.2.0) - Cryptographically First
 ### 09 Jan 2017
@@ -53,6 +54,7 @@ Thanks to [@ianrahman](https://github.com/ianrahman) for this release
 ### Fixed
 - Fixed a bug in `reversed(preserveFormat:)` function in String extension
 
+---
 
 ## [2.1.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.1.0) - Napalm Explosion
 ### 23 Dec 2016
@@ -67,18 +69,21 @@ Thanks to [@ianrahman](https://github.com/ianrahman) for this release
 
 Thanks to [@calebkleveter](https://github.com/calebkleveter) for this release
 
+---
 
 ## [2.0.2](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.0.2) - Linux Doesn't Like Emoji
 ### 11 Dec 2016
 ### Fixed
 - Fixed a bug for Linux on String extension
 
+---
 
 ## [2.0.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.0.1) - Linux Compatibility
 ### 10 Dec 2016
 ### Fixed
 - Fixed a bug for Linux on BFApp class
 
+---
 
 ## [2.0.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.0.0) - A New Beginning
 ### 10 Dec 2016
@@ -103,6 +108,7 @@ Thanks to [@calebkleveter](https://github.com/calebkleveter) for this release
 
 Thanks to [@the0neyouseek](https://github.com/the0neyouseek) for this release
 
+---
 
 ## [1.8.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.8.0)
 ### 19 Sep 2016
@@ -119,6 +125,7 @@ Thanks to [@the0neyouseek](https://github.com/the0neyouseek) for this release
 
 Thanks to [@sairamkotha](https://github.com/sairamkotha), [@ttyh061](https://github.com/ttyh061) & [@astrokin](https://github.com/astrokin) for this release
 
+---
 
 ## [1.7.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.7.0)
 ### 14 Jul 2016
@@ -139,6 +146,7 @@ Thanks to [@sairamkotha](https://github.com/sairamkotha), [@ttyh061](https://git
 
 Thanks to [@gabrielPeart](https://github.com/gabrielPeart) for this release
 
+---
 
 ## [1.6.3](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.6.3)
 ### 15 May 2016
@@ -157,6 +165,7 @@ Thanks to [@gabrielPeart](https://github.com/gabrielPeart) for this release
 
 Thanks to [@pontus-andersson](https://github.com/pontus-andersson) for this release
 
+---
 
 ## [1.6.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.6.1)
 ### 25 Mar 2016
@@ -166,6 +175,7 @@ Thanks to [@pontus-andersson](https://github.com/pontus-andersson) for this rele
 
 Thanks to [@lucasmpaim](https://github.com/lucasmpaim) for this release
 
+---
 
 ## [1.6.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.6.0)
 ### 1 Feb 2016
@@ -192,7 +202,7 @@ Thanks to [@lucasmpaim](https://github.com/lucasmpaim) for this release
 
 Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.com/emersonbroga) & [@liushixiang](https://github.com/liushixiang) for this release
 
-
+---
 
 ## [1.5.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.5.1)
 ### 10 Nov 2015
@@ -205,7 +215,7 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 ### Fixed
 - Fixed a bug in `searchInString(_:charStart:charEnd)` that may cause a crash
 
-
+---
 
 ## [1.5.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.5.0)
 ### 5 Nov 2015
@@ -226,7 +236,7 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 ### Fixed
 - Fixed various bugs
 
-
+---
 
 ## [1.4.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.4.1)
 ### 20 Jul 2015
@@ -236,7 +246,7 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 ### Fixed
 - Fixed a problem with Carthage project
 
-
+---
 
 ## [1.4.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.4.0)
 ### 13 Jul 2015
@@ -256,7 +266,7 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 ### Fixed
 - Fixed `iOSVersion` function in UIDevice extension
 
-
+---
 
 ## [1.3.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.3.1)
 ### 9 Jul 2915
@@ -269,7 +279,7 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 - NSDate extension now has `nanosecond` and use `autoupdatingCurrentCalendar`
 - Bug fix in DEMO App
 
-
+---
 
 ## [1.3.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.3.0)
 ### 7 Jul 2015
@@ -298,7 +308,7 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 - Fixed a bug in `deleteFile` function in NSFileManager extension
 - Fixed a bug in `safeSetObject` function in NSMutableDictionary extension
 
-
+---
 
 ## [1.2.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.2.0)
 ### 5 Jul 2015
@@ -310,7 +320,7 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 - Declared public `colorForColorString` in UIColor extension
 - Declared as deprecated some functions in favor of default values
 
-
+---
 
 ## [1.1.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.1.0)
 ### 2 Jul 2015
@@ -328,7 +338,7 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 ### Fixed
 - Fixed `dictionaryToJson:` in Dictionary extension
 
-
+---
 
 ## [1.0.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.0.0)
 ### 30 Jun 2015
