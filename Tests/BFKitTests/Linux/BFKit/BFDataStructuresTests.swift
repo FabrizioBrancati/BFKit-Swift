@@ -90,6 +90,7 @@ class BFDataStructuresTests: XCTestCase {
         XCTAssert(list.count == 2, "List hasn't 2 elements")
         XCTAssert(list.search(at: 0) == 2, "Element 0 of the list is not 2")
         XCTAssert(list.search(at: 1) == 3, "Element 1 of the list is not 3")
+        XCTAssertFalse(list.delete(4))
     }
     
     func testListInsert() {
@@ -104,6 +105,7 @@ class BFDataStructuresTests: XCTestCase {
     
     func testListSearchElement() {
         XCTAssert(list.search(1) == 0)
+        XCTAssert(list.search(4) == nil)
     }
     
     // MARK: - Queue tests

@@ -91,5 +91,10 @@ class UITextFieldExtensionTests: XCTestCase {
         textField.copyToPasteboard()
         
         XCTAssert(UIPasteboard.getString() == "This is a test!")
+        
+        textField.text = nil
+        textField.copyToPasteboard()
+        
+        XCTAssert(UIPasteboard.getString() == "")
     }
 }

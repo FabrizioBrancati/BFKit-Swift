@@ -94,5 +94,10 @@ class UITextViewExtensionTests: XCTestCase {
         textView.copyToPasteboard()
         
         XCTAssert(UIPasteboard.getString() == "This is a test!")
+        
+        textView.text = nil
+        textView.copyToPasteboard()
+        
+        XCTAssert(UIPasteboard.getString() == "")
     }
 }

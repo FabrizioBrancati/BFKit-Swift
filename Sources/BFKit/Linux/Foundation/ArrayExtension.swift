@@ -71,9 +71,8 @@ public extension Array {
     public func safeObject(at index: Int) -> Element? {
         if !self.isEmpty, self.count > index {
             return self[index]
-        } else {
-            return nil
         }
+        return nil
     }
     
     /// Get the index as a circle.

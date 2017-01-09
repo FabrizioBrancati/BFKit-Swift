@@ -76,6 +76,11 @@ class UILabelExtensionTests: XCTestCase {
         label.setFont(UIFont(fontName: .HelveticaNeueUltraLight, size: 12), fromIndex: 0, toIndex: 4)
         
         XCTAssert(label.attributedText?.length == 14)
+        
+        label.text = nil
+        label.setFont(UIFont(fontName: .HelveticaNeueUltraLight, size: 12), fromIndex: 0, toIndex: 4)
+        
+        XCTAssert(label.attributedText == nil)
     }
     
     func testSetFontFontSizeFromIndexToIndex() {
@@ -84,5 +89,10 @@ class UILabelExtensionTests: XCTestCase {
         label.setFont(.HelveticaNeueUltraLight, fontSize: 12, fromIndex: 0, toIndex: 4)
         
         XCTAssert(label.attributedText?.length == 14)
+        
+        label.text = nil
+        label.setFont(.HelveticaNeueUltraLight, fontSize: 12, fromIndex: 0, toIndex: 4)
+        
+        XCTAssert(label.attributedText == nil)
     }
 }

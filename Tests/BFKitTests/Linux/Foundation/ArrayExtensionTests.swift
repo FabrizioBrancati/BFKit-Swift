@@ -50,9 +50,11 @@ class ArrayExtensionTests: XCTestCase {
     }
     
     func testCircleObjectAt() {
-        let object = array.circleObject(at: 6)
+        let objectRight = array.circleObject(at: 6)
+        let objectLeft = array.circleObject(at: -6)
         
-        XCTAssert(object == 2)
+        XCTAssert(objectRight == 2)
+        XCTAssert(objectLeft == 5)
     }
     
    func testRandom() {
@@ -81,9 +83,14 @@ class ArrayExtensionTests: XCTestCase {
     }
     
     func testSwapFromTo() {
-        array.swap(from: 0, to: 5)
+        array.swap(from: 0, to: 4)
         
         XCTAssert(array[4] == 1)
+        XCTAssert(array[0] == 2)
+        
+        array.swap(from: 5, to: 6)
+        
+        XCTAssert(array[0] == 2)
     }
     
     func testShuffle() {

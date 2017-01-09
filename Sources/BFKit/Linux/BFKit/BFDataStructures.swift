@@ -125,9 +125,8 @@ public struct Queue<Element: Equatable>: CustomStringConvertible {
         if !queue.isEmpty {
             queue.remove(at: 0)
             return true
-        } else {
-            return false
         }
+        return false
     }
     
     /// Remove all the elements in the Queue.
