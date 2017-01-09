@@ -29,3 +29,6 @@ Cartfile.resolved
 # Build
 build/
 DerivedData/
+
+# Jazzy
+Docs/
