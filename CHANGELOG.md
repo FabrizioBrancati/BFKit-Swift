@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 2.X Releases
+- `2.2.x` Releases - [2.2.0](#220)
 - `2.1.x` Releases - [2.1.0](#210)
 - `2.0.x` Releases - [2.0.0](#200) | [2.0.1](#201) | [2.0.2](#202)
 
@@ -25,10 +26,30 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+## [2.2.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.2.0) - Cryptographically First
+### 09 Jan 2017
+### Added
+- Added new cryptographically secure random numbers generator with `random()` function in Number extension
+    - Avaiable to all Integer types, Float and Double
+- Added `warning`, `error`, `debug` and `info` functions in BFLog extension
+- Added `has(_:, caseSensitive:)` as alias of `range(of:, caseSensitive:)` in String extension
+
+### Improved
+- Increased code coverage
+- General enhancements in pasteboard functions
+- Enhancements in `init(barButtonSpaceType:, width:)` in UIBarButtonItem extension
+- Changed the implementation of `randomInt()` and `randomFloat()` function in Number extension
+- Updated SwiftLint to 0.15.0
+- Minor enhancements
+
+### Fixed
+- Fixed a bug in `reversed(preserveFormat:)` function in String extension
+
+
 ## [2.1.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.1.0) - Napalm Explosion
 ### 23 Dec 2016
 ### Added
-- Added `random` function in Array extension
+- Added `random()` function in Array extension
 - Added `array` variable to String, Int, Float and Double extensions
 - Added `present(title:, message:, actions:, alertType:)` in UIViewController extension
 - Added support for Xcode 8.2 and Swift 3.0.2
