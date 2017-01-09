@@ -47,6 +47,7 @@ class StringExtensionTests: XCTestCase {
         ("testSubstringWithCountableClosedRange", testSubstringWithCountableClosedRange),
         ("testIndexOf", testIndexOf),
         ("testRangeOfCaseSensitive", testRangeOfCaseSensitive),
+        ("testHasCaseSensitive", testHasCaseSensitive),
         ("testOccurrencesOfCaseSensitive", testOccurrencesOfCaseSensitive),
         ("testSentenceCapitalizedString", testSentenceCapitalizedString),
         ("testLastPathComponent", testLastPathComponent),
@@ -125,14 +126,19 @@ class StringExtensionTests: XCTestCase {
     
     func testBase64Encoded() {
         let encoded = string.base64encoded
+        var encodedNil: String? = nil
+        encodedNil = encodedNil?.base64encoded
         
         XCTAssert(encoded == "VGhpcyBpcyBhIHRlc3Q=")
+        XCTAssert(encodedNil == nil)
     }
     
     func testBase64Decoded() {
         let decoded = "VGhpcyBpcyBhIHRlc3Q=".base64decoded
+        let decodedInvalid = "Test".base64decoded
         
         XCTAssert(decoded == string)
+        XCTAssert(decodedInvalid == "")
     }
     
     func testLength() {
@@ -155,8 +161,10 @@ class StringExtensionTests: XCTestCase {
     
     func testSubstringFromCharacter() {
         let substring = string.substring(from: " ")
+        let substringInvalid = string.substring(from: "r")
         
         XCTAssert(substring == "is a test")
+        XCTAssert(substringInvalid == "")
     }
     
     func testSubstringToIndex() {
@@ -167,8 +175,10 @@ class StringExtensionTests: XCTestCase {
     
     func testSubstringToCharacter() {
         let substring = string.substring(to: "t")
+        let substringInvalid = string.substring(to: "r")
         
         XCTAssert(substring == "This is a ")
+        XCTAssert(substringInvalid == "")
     }
     
     func testSubstringWithRange() {
@@ -185,28 +195,42 @@ class StringExtensionTests: XCTestCase {
     
     func testIndexOf() {
         let index = string.index(of: "s")
+        let indexInvalid = string.index(of: "r")
         
         XCTAssert(index == 3)
+        XCTAssert(indexInvalid == -1)
     }
     
     func testRangeOfCaseSensitive() {
         let hasString = string.range(of: "is", caseSensitive: true)
+        let hasStringInsensitive = string.range(of: "test", caseSensitive: false)
+        
+        XCTAssertTrue(hasString)
+        XCTAssertTrue(hasStringInsensitive)
+    }
+    
+    func testHasCaseSensitive() {
+        let hasString = string.has("is", caseSensitive: true)
         
         XCTAssertTrue(hasString)
     }
     
     func testOccurrencesOfCaseSensitive() {
-        let occurrences = string.occurrences(of: "i")
+        let occurrences = string.occurrences(of: "i", caseSensitive: true)
+        let occurrencesInsensitive = string.occurrences(of: "I", caseSensitive: false)
         
         XCTAssertTrue(occurrences == 2)
+        XCTAssertTrue(occurrencesInsensitive == 2)
     }
     
     func testSentenceCapitalizedString() {
         let capitalized = string.sentenceCapitalizedString()
         let notCapitalized = "this is a test".sentenceCapitalizedString()
+        let zeroLength = "".sentenceCapitalizedString()
         
         XCTAssert(capitalized == "This is a test")
         XCTAssert(notCapitalized == "This is a test")
+        XCTAssert(zeroLength == "")
     }
     
     func testLastPathComponent() {
@@ -270,9 +294,13 @@ class StringExtensionTests: XCTestCase {
     }
     
     func testReversedPreserveFormat() {
-        let reversed = string.reversed()
+        let reversed = string.reversed(preserveFormat: false)
+        let zeroLength = "".reversed(preserveFormat: false)
+        let preservingFormat = (string + " ").reversed(preserveFormat: true)
         
         XCTAssert(reversed == "tset a si sihT")
+        XCTAssert(zeroLength == "")
+        XCTAssert(preservingFormat == "tset a si Siht")
     }
     
     func testHasUppercaseCharacters() {
@@ -313,8 +341,10 @@ class StringExtensionTests: XCTestCase {
     
     func testCountSymbols() {
         let symbols = string.countSymbols()
+        let hasSymbols = "-.,!/".countSymbols()
         
         XCTAssert(symbols == 0)
+        XCTAssert(hasSymbols == 5)
     }
     
     func testStringFromHEX() {
@@ -366,10 +396,12 @@ class StringExtensionTests: XCTestCase {
     }
     
     func testOptionalDefaultValue() {
-        var test: String? = nil
-        test = test ??? "Test"
+        var testNil: String? = nil
+        testNil = testNil ??? "Test"
+        let testNotNil = "Test" ??? "Nil"
         
-        XCTAssert(test == "Test")
+        XCTAssert(testNil == "Test")
+        XCTAssert(testNotNil == "Test")
     }
     
     #if !os(Linux)

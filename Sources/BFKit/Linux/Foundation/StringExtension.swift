@@ -101,11 +101,11 @@ public extension String {
     /// - Parameter character: The character.
     /// - Returns: Returns the substring from character.
     public func substring(from character: Character) -> String {
-        let index: Int = self.index(of: character) + 1
+        let index: Int = self.index(of: character)
         guard index > -1 else {
             return ""
         }
-        return substring(from: index)
+        return substring(from: index + 1)
     }
     
     /// Returns a new string containing the characters of the String up to, but not including, the one at a given index.
@@ -169,6 +169,16 @@ public extension String {
     /// - Returns: Returns true if founded, otherwise false.
     public func range(of string: String, caseSensitive: Bool = true) -> Bool {
         return caseSensitive ? (self.range(of: string) != nil) : (self.lowercased().range(of: string.lowercased()) != nil)
+    }
+    
+    /// Check if self has the given substring in case-sensitiv or case-insensitive.
+    ///
+    /// - Parameters:
+    ///   - string: The substring to be searched.
+    ///   - caseSensitive: If the search has to be case-sensitive or not.
+    /// - Returns: Returns true if founded, otherwise false.
+    public func has(_ string: String, caseSensitive: Bool = true) -> Bool {
+        return self.range(of: string, caseSensitive: caseSensitive)
     }
     
     /// Returns the number of occurrences of a String into self.
@@ -287,14 +297,18 @@ public extension String {
 
         reversed.removeAll()
         for word in words {
-            if let char = word.unicodeScalars.first {
+            if let char = word.unicodeScalars.last {
                 if CharacterSet.uppercaseLetters.contains(char) {
-                    reversed += word.lowercased().uppercasedFirst() + " "
+                    reversed += word.lowercased().uppercasedFirst()
                 } else {
-                    reversed += word.lowercased() + " "
+                    reversed += word.lowercased()
                 }
             } else {
-                reversed += word.lowercased() + " "
+                reversed += word.lowercased()
+            }
+            
+            if word != words[words.count - 1] {
+                reversed += " "
             }
         }
 
