@@ -69,6 +69,58 @@ public struct BFLog {
         }
     }
     
+    /// Exenteds NSLog with a warning sign.
+    ///
+    /// Activate it by setting BFLogActive variable to true before using it.
+    ///
+    /// - Parameters:
+    ///   - message: Console message.
+    ///   - filename: File. Default is #file.
+    ///   - function: Function name. Default is #function.
+    ///   - line: Line number. Default is #line.
+    public static func warning(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
+        log("⚠️ \(message)")
+    }
+    
+    /// Exenteds NSLog with an error sign.
+    ///
+    /// Activate it by setting BFLogActive variable to true before using it.
+    ///
+    /// - Parameters:
+    ///   - message: Console message.
+    ///   - filename: File. Default is #file.
+    ///   - function: Function name. Default is #function.
+    ///   - line: Line number. Default is #line.
+    public static func error(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
+        log("❗️ \(message)")
+    }
+    
+    /// Exenteds NSLog with a debug sign.
+    ///
+    /// Activate it by setting BFLogActive variable to true before using it.
+    ///
+    /// - Parameters:
+    ///   - message: Console message.
+    ///   - filename: File. Default is #file.
+    ///   - function: Function name. Default is #function.
+    ///   - line: Line number. Default is #line.
+    public static func debug(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
+        log("🔵 \(message)")
+    }
+    
+    /// Exenteds NSLog with an info sign.
+    ///
+    /// Activate it by setting BFLogActive variable to true before using it.
+    ///
+    /// - Parameters:
+    ///   - message: Console message.
+    ///   - filename: File. Default is #file.
+    ///   - function: Function name. Default is #function.
+    ///   - line: Line number. Default is #line.
+    public static func info(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
+        log("ℹ️ \(message)")
+    }
+    
     /// Clear the log string.
     public static func clear() {
         logged = ""

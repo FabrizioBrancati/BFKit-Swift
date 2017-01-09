@@ -30,10 +30,9 @@ import Foundation
 
 class BFLogTests: XCTestCase {
     static let allTests = [
-        ("testBFLog", testBFLog),
-        ("testBFLogString", testBFLogString),
-        ("testBFLogDetailedString", testBFLogDetailedString),
-        ("testBFLogClear", testBFLogClear)
+        ("testLog", testLog),
+        ("testDetailedLog", testDetailedLog),
+        ("testClear", testClear)
     ]
     
     override func setUp() {
@@ -50,17 +49,31 @@ class BFLogTests: XCTestCase {
         BFLog.clear()
     }
     
-    func testBFLog() {
+    func testLog() {
         XCTAssert(BFLog.logged == "Test\n")
-    }
-    
-    func testBFLogString() {
+        
         BFLog.log("Test")
         
         XCTAssert(BFLog.logged == "Test\nTest\n")
+        
+        BFLog.warning("Warning")
+        
+        XCTAssert(BFLog.logged == "Test\nTest\n⚠️ Warning\n")
+        
+        BFLog.error("Error")
+        
+        XCTAssert(BFLog.logged == "Test\nTest\n⚠️ Warning\n❗️ Error\n")
+        
+        BFLog.debug("Debug")
+        
+        XCTAssert(BFLog.logged == "Test\nTest\n⚠️ Warning\n❗️ Error\n🔵 Debug\n")
+        
+        BFLog.info("Info")
+        
+        XCTAssert(BFLog.logged == "Test\nTest\n⚠️ Warning\n❗️ Error\n🔵 Debug\nℹ️ Info\n")
     }
     
-    func testBFLogDetailedString() {
+    func testDetailedLog() {
         BFLog.clear()
         
         let filenameWithoutExtension = NSURL(string: String(describing: NSString(utf8String: #file)!))!.deletingPathExtension!.lastPathComponent
@@ -72,7 +85,7 @@ class BFLogTests: XCTestCase {
         XCTAssert(BFLog.detailedLog == "(\(filenameWithoutExtension):\(line) (\(function)) Test\n")
     }
     
-    func testBFLogClear() {
+    func testClear() {
         BFLog.clear()
         
         XCTAssert(BFLog.logged == "")
