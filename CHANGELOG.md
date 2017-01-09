@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 2.X Releases
-- `2.2.x` Releases - [2.2.0](#220)
+- `2.2.x` Releases - [2.2.0](#220) | [2.2.1](#221)
 - `2.1.x` Releases - [2.1.0](#210)
 - `2.0.x` Releases - [2.0.0](#200) | [2.0.1](#201) | [2.0.2](#202)
 
@@ -25,6 +25,14 @@ All notable changes to this project will be documented in this file.<br>
 - `1.0.x` Releases - [1.0.0](#100)
 
 ---
+
+## [2.2.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.2.1) - Better Log
+### 10 Jan 2017
+### Fixed
+- Fixed a bug in `warning`, `error`, `debug` and `info` functions in BFLog extension
+
+Thanks to [@ianrahman](https://github.com/ianrahman) for this release
+
 
 ## [2.2.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.2.0) - Cryptographically First
 ### 09 Jan 2017

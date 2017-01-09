@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name              = "BFKit-Swift"
   s.module_name       = "BFKit"
-  s.version           = "2.2.0"
+  s.version           = "2.2.1"
   s.summary           = "BFKit Swift is a collection of useful classes, structs and extensions to develop Apps faster."
   s.homepage          = "https://github.com/FabrizioBrancati/BFKit-Swift"
   s.screenshots       = "https://github.fabriziobrancati.com/bfkit/resources/screenshot-swift.png"
