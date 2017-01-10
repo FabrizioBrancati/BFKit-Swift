@@ -114,14 +114,14 @@ Thanks to [@the0neyouseek](https://github.com/the0neyouseek) for this release
 ### 19 Sep 2016
 ### Added
 - Added Swift 2.3 support
-- Added Application info in BFApp class [#17](https://github.com/FabrizioBrancati/BFKit/pull/17)
+- Added Application info in BFApp class [#17](https://github.com/FabrizioBrancati/BFKit-Swift/pull/17)
 
 ### Improved
-- Simplified color usage in UIColor extension [#16](https://github.com/FabrizioBrancati/BFKit/pull/16)
+- Simplified color usage in UIColor extension [#16](https://github.com/FabrizioBrancati/BFKit-Swift/pull/16)
 
 ### Fixed
-- Fixed crashes on `imageToGrayscale()` and `imageToBlackAndWhite()` in UIImage extension [#15](https://github.com/FabrizioBrancati/BFKit/pull/15)
-- Fixed `countUppercaseLetters` function in BFPassword class [#14](https://github.com/FabrizioBrancati/BFKit/pull/14)
+- Fixed crashes on `imageToGrayscale()` and `imageToBlackAndWhite()` in UIImage extension [#15](https://github.com/FabrizioBrancati/BFKit-Swift/pull/15)
+- Fixed `countUppercaseLetters` function in BFPassword class [#14](https://github.com/FabrizioBrancati/BFKit-Swift/pull/14)
 
 Thanks to [@sairamkotha](https://github.com/sairamkotha), [@ttyh061](https://github.com/ttyh061) & [@astrokin](https://github.com/astrokin) for this release
 
@@ -138,7 +138,7 @@ Thanks to [@sairamkotha](https://github.com/sairamkotha), [@ttyh061](https://git
 
 ### Improved
 - Improved BFLog class - [See this post on how to properly use it](http://stackoverflow.com/a/26891797/4032046)
-- Adjusting pt-BR typo [#13](https://github.com/FabrizioBrancati/BFKit/pull/13)
+- Adjusting pt-BR typo [#13](https://github.com/FabrizioBrancati/BFKit-Swift/pull/13)
 - Minor enhancements
 
 ### Fixed
@@ -158,7 +158,7 @@ Thanks to [@gabrielPeart](https://github.com/gabrielPeart) for this release
 ### 08 May 2016
 ### Added
 - Added missing devices
-- Added Swedish translation [#11](https://github.com/FabrizioBrancati/BFKit/pull/11) & [#12](https://github.com/FabrizioBrancati/BFKit/pull/12)
+- Added Swedish translation [#11](https://github.com/FabrizioBrancati/BFKit-Swift/pull/11) & [#12](https://github.com/FabrizioBrancati/BFKit-Swift/pull/12)
 
 ### Improved
 - Minor enhancements & bug fix
