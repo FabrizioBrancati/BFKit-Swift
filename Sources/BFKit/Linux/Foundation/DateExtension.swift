@@ -398,7 +398,7 @@ public extension Date {
     /// - Returns: Returns a Date with the yesterday date.
     public func yesterday() -> Date {
         var date = self
-        date.day = date.day - 1
+        date.day -= 1
         
         return date
     }
