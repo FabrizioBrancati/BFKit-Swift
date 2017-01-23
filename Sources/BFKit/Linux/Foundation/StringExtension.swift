@@ -446,7 +446,7 @@ public extension String {
                 Scanner(string: character).scanHexInt32(&characterInt)
             #endif
             
-            string = string + String(format: "%c", characterInt)
+            string += String(format: "%c", characterInt)
         }
         return string
     }
