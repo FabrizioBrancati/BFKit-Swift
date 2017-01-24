@@ -64,7 +64,7 @@ public extension UIImage {
         let style: NSMutableParagraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle // swiftlint:disable:this force_cast
         style.alignment = .center
         style.minimumLineHeight = size.height / 2
-        let attributes: Dictionary = [NSParagraphStyleAttributeName : style]
+        let attributes: Dictionary = [NSParagraphStyleAttributeName: style]
         sizeString.draw(in: rect, withAttributes:attributes)
         
         if let result = UIGraphicsGetImageFromCurrentImageContext() {
@@ -105,7 +105,7 @@ public extension UIImage {
     public convenience init?(text: String, font: FontName, fontSize: CGFloat, imageSize: CGSize) {
         UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.main.scale)
         
-        text.draw(at: CGPoint(x: 0.0, y: 0.0), withAttributes: [NSFontAttributeName : UIFont(fontName: font, size:fontSize)])
+        text.draw(at: CGPoint(x: 0.0, y: 0.0), withAttributes: [NSFontAttributeName: UIFont(fontName: font, size:fontSize)])
         
         guard let image: UIImage = UIGraphicsGetImageFromCurrentImageContext() else {
             UIGraphicsEndImageContext()
@@ -127,7 +127,7 @@ public extension UIImage {
     ///   - backgroundColor: Image background color.
     public convenience init?(maskedText: String, font: FontName, fontSize: CGFloat, imageSize: CGSize, backgroundColor: UIColor) {
         let fontName: UIFont = UIFont(fontName: font, size: fontSize)
-        let textAttributes = [NSFontAttributeName : fontName]
+        let textAttributes = [NSFontAttributeName: fontName]
         
         let textSize: CGSize = maskedText.size(attributes: textAttributes)
         

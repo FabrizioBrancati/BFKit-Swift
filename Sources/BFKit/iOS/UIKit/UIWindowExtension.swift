@@ -37,7 +37,7 @@ private var sendEventExchanged: Bool = false
 
 // MARK: - Global variables
 
-public var customTouchImage: UIImage? = nil
+public var customTouchImage: UIImage?
 
 // MARK: - Global functions
 
@@ -90,13 +90,13 @@ public extension UIWindow {
         
         if !ignoreOrientation {
             if orientation == .landscapeLeft {
-                context.rotate(by: CGFloat(M_PI_2))
+                context.rotate(by: CGFloat.pi / 2)
                 context.translateBy(x: 0, y: -imageSize.width)
             } else if orientation == .landscapeRight {
-                context.rotate(by: CGFloat(-M_PI_2))
+                context.rotate(by: -CGFloat.pi / 2)
                 context.translateBy(x: -imageSize.height, y: 0)
             } else if orientation == .portraitUpsideDown {
-                context.rotate(by: CGFloat(M_PI))
+                context.rotate(by: CGFloat.pi)
                 context.translateBy(x: -imageSize.width, y: -imageSize.height)
             }
         }

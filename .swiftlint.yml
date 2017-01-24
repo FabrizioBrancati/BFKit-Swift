@@ -28,3 +28,7 @@ function_body_length:
 cyclomatic_complexity:
   warning: 30
   error: 50
+
+large_tuple:
+  warning: 3
+  error: 5
