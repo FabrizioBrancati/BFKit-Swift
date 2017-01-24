@@ -174,7 +174,7 @@ class UIImageExtensionTests: XCTestCase {
             return
         }
         
-        image = image.rotate(radians: Float(M_PI_2))
+        image = image.rotate(radians: Float.pi / 2)
         
         XCTAssert(image.size.width == 100)
         XCTAssert(image.size.height == 200)

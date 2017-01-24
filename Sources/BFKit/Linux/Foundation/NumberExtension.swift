@@ -34,7 +34,7 @@ import Dispatch
 /// - Parameter degrees: Degrees to be converted.
 /// - Returns: Returns the convertion result.
 public func degreesToRadians(_ degrees: Float) -> Float {
-    return Float(Double(degrees) * M_PI / 180)
+    return Float(Double(degrees) * Double.pi / 180)
 }
 
 /// Radians to degrees conversion.
@@ -42,7 +42,7 @@ public func degreesToRadians(_ degrees: Float) -> Float {
 /// - Parameter radians: Radians to be converted.
 /// - Returns: Returns the convertion result.
 public func radiansToDegrees(_ radians: Float) -> Float {
-    return Float(Double(radians) * 180 / M_PI)
+    return Float(Double(radians) * 180 / Double.pi)
 }
 
 /// Create a random integer between the given range.

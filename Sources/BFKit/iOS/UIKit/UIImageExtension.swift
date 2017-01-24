@@ -783,7 +783,7 @@ public extension UIImage {
             
             if hasBlur {
                 let inputRadius = blurRadius * UIScreen.main.scale
-                var radius = UInt32(floor(inputRadius * 3.0 * CGFloat(sqrt(2 * M_PI)) / 4 + 0.5))
+                var radius = UInt32(floor(inputRadius * 3.0 * CGFloat(sqrt(2 * Double.pi)) / 4 + 0.5))
                 if radius % 2 != 1 {
                     radius += 1
                 }
