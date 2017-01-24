@@ -1,5 +1,6 @@
 # Swift Package Manager
 Packages/
+Package.pins
 .build/
 
 # Xcode
