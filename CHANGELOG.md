@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-### 2.X Releases
+### 2.x Releases
 - `2.2.x` Releases - [2.2.0](#220---cryptographically-first) | [2.2.1](#221---better-log)
 - `2.1.x` Releases - [2.1.0](#210---napalm-explosion)
 - `2.0.x` Releases - [2.0.0](#200---a-new-beginning) | [2.0.1](#201---linux-compatibility) | [2.0.2](#202---linux-doesnt-like-emoji)
