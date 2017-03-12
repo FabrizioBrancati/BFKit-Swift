@@ -355,6 +355,21 @@ public extension String {
         #endif
     }
     
+    /// Returns a new string in which all occurrences of a target strings in a specified range of the String are replaced by another given string.
+    ///
+    /// - Parameters:
+    ///   - target: Target strings array.
+    ///   - replacement: Replacement string.
+    /// - Returns: Returns a new string in which all occurrences of a target strings in a specified range of the String are replaced by another given string.
+    public func replacingOccurrences(of target: [String], with replacement: String) -> String {
+        var string = self
+        for occurrence in target {
+            string = string.replacingOccurrences(of: occurrence, with: replacement)
+        }
+        
+        return string
+    }
+    
     /// Count the number of lowercase characters.
     ///
     /// - Returns: Number of lowercase characters.

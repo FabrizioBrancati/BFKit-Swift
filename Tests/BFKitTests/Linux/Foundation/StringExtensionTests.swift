@@ -64,6 +64,7 @@ class StringExtensionTests: XCTestCase {
         ("testHasUppercaseCharacters", testHasUppercaseCharacters),
         ("testHasLowercaseCharacters", testHasLowercaseCharacters),
         ("testRemoveExtraSpaces", testRemoveExtraSpaces),
+        ("testReplacingOccurrencesOfWith", testReplacingOccurrencesOfWith),
         ("testCountLowercasedCharacters", testCountLowercasedCharacters),
         ("testCountUppercasedCharacters", testCountUppercasedCharacters),
         ("testCountNumbers", testCountNumbers),
@@ -319,6 +320,12 @@ class StringExtensionTests: XCTestCase {
         let extraSpacedString = "This    is   a   test".removeExtraSpaces()
         
         XCTAssert(extraSpacedString == "This is a test")
+    }
+    
+    func testReplacingOccurrencesOfWith() {
+        let replaced = string.replacingOccurrences(of: ["This", "test"], with: "A")
+        
+        XCTAssert(replaced == "A is a A")
     }
     
     func testCountLowercasedCharacters() {
