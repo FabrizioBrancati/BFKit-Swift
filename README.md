@@ -42,54 +42,54 @@ It also adds some useful functions with **BF** classes and extends some **Founda
 Compatibility
 =============
 ### BFKit
-|                                                                                                           | **iOS**  | **Linux**  |
-|-----------------------------------------------------------------------------------------------------------|----------|------------|
-| [BFApp](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/BFApp.html)                 | ✔️       | ✔️          |
-| [BFButton](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Classes/BFButton.html)           | ✔️       |            |
-| BFDataStructures<br>([List](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/List.html) - [Queue](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/Queue.html) - [Stack](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/Stack.html))                  | ✔️       | ✔️          |
-| [BFLog](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/BFLog.html)                | ✔️       | ✔️          |
-| [BFPassword](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/BFPassword.html)       | ✔️       | ✔️          |
-| [BFSystemSound](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Classes/BFSystemSound.html) | ✔️       |            |
-| [BFTextField](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Classes/BFTextField.html)     | ✔️       |            |
-| [BFTouchID](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/BFTouchID.html)         | ✔️       | &nbsp;     |
+|                                                                                                           | **iOS**    | **Linux**  |
+|-----------------------------------------------------------------------------------------------------------|------------|------------|
+| [BFApp](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/BFApp.html)                 | ![X]       | ![X]       |
+| [BFButton](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Classes/BFButton.html)           | ![X]       |            |
+| BFDataStructures<br>([List](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/List.html) - [Queue](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/Queue.html) - [Stack](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/Stack.html))                  | ![X]       | ![X]       |
+| [BFLog](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/BFLog.html)                 | ![X]       | ![X]       |
+| [BFPassword](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/BFPassword.html)       | ![X]       | ![X]       |
+| [BFSystemSound](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Classes/BFSystemSound.html) | ![X]       |            |
+| [BFTextField](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Classes/BFTextField.html)     | ![X]       |            |
+| [BFTouchID](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/BFTouchID.html)         | ![X]       | &nbsp;     |
 
 ### Foundation
-|                                                                                                          | **iOS**  | **Linux**  |
-|----------------------------------------------------------------------------------------------------------|----------|------------|
-| [Array](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Array.html)             | ✔️       | ✔️          |
-| [Collection](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Collection.html)   | ✔️       | ✔️          |
-| [Data](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Data.html)               | ✔️       | ✔️          |
-| [Date](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Date.html)               | ✔️       | ✔️          |
-| [FileManager](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/FileManager.html) | ✔️       |            |
-| [Number](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Functions.html)                   | ✔️       | ✔️          |
-| [NSObject](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/NSObject.html)       | ✔️       | ✔️          |
-| [ProcessInfo](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/ProcessInfo.html) | ✔️       | ✔️          |
-| [String](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/String.html)           | ✔️       | ✔️          |
-| [Thread](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Functions.html)                   | ✔️       | ✔️          |
+|                                                                                                          | **iOS**    | **Linux**  |
+|----------------------------------------------------------------------------------------------------------|------------|------------|
+| [Array](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Array.html)             | ![X]       | ![X]       |
+| [Collection](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Collection.html)   | ![X]       | ![X]       |
+| [Data](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Data.html)               | ![X]       | ![X]       |
+| [Date](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Date.html)               | ![X]       | ![X]       |
+| [FileManager](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/FileManager.html) | ![X]       |            |
+| [Number](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Functions.html)                   | ![X]       | ![X]       |
+| [NSObject](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/NSObject.html)       | ![X]       | ![X]       |
+| [ProcessInfo](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/ProcessInfo.html) | ![X]       | ![X]       |
+| [String](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/String.html)           | ![X]       | ![X]       |
+| [Thread](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Functions.html)                   | ![X]       | ![X]       |
 
 ### UIKit
-|                                                                                                                                         | **iOS**  | **Linux**  |
-|-----------------------------------------------------------------------------------------------------------------------------------------|----------|------------|
-| [UIBarButtonItem](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIBarButtonItem.html)                        | ✔️       |            |
-| [UIButton](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIButton.html)                                      | ✔️       |            |
-| [UIColor](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIColor.html)                                        | ✔️       |            |
-| [UIDevice](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIDevice.html)                                      | ✔️       |            |
-| [UIFont](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIFont.html)                                          | ✔️       |            |
-| [UIImage](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIImage.html)                                        | ✔️       |            |
-| [UIImageView](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIImageView.html)                                | ✔️       |            |
-| [UILabel](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UILabel.html)                                        | ✔️       |            |
-| [UINavigationBar](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UINavigationBar.html)                        | ✔️       |            |
-| [UIPasteboard](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIPasteboard.html)                              | ✔️       |            |
-| [UIScreen](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIScreen.html)                                      | ✔️       |            |
-| [UIScrollView](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIScrollView.html)                              | ✔️       |            |
-| [UITableView](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UITableView.html)                                | ✔️       |            |
-| [UITextField](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UITextField.html)                                | ✔️       |            |
-| [UITextView](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UITextView.html)                                  | ✔️       |            |
-| [UIToolbar](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIToolbar.html)                                    | ✔️       |            |
-| [UIView](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIView.html)                                          | ✔️       |            |
-| [UIViewController](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/Sources/BFKit/iOS/UIKit/UIViewControllerExtension.swift) | ✔️       |            |
-| [UIWebView](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIWebView.html)                                    | ✔️       |            |
-| [UIWindow](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIWindow.html)                                      | ✔️       | &nbsp;     |
+|                                                                                                                                         | **iOS**    | **Linux**  |
+|-----------------------------------------------------------------------------------------------------------------------------------------|------------|------------|
+| [UIBarButtonItem](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIBarButtonItem.html)                        | ![X]       |            |
+| [UIButton](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIButton.html)                                      | ![X]       |            |
+| [UIColor](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIColor.html)                                        | ![X]       |            |
+| [UIDevice](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIDevice.html)                                      | ![X]       |            |
+| [UIFont](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIFont.html)                                          | ![X]       |            |
+| [UIImage](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIImage.html)                                        | ![X]       |            |
+| [UIImageView](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIImageView.html)                                | ![X]       |            |
+| [UILabel](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UILabel.html)                                        | ![X]       |            |
+| [UINavigationBar](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UINavigationBar.html)                        | ![X]       |            |
+| [UIPasteboard](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIPasteboard.html)                              | ![X]       |            |
+| [UIScreen](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIScreen.html)                                      | ![X]       |            |
+| [UIScrollView](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIScrollView.html)                              | ![X]       |            |
+| [UITableView](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UITableView.html)                                | ![X]       |            |
+| [UITextField](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UITextField.html)                                | ![X]       |            |
+| [UITextView](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UITextView.html)                                  | ![X]       |            |
+| [UIToolbar](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIToolbar.html)                                    | ![X]       |            |
+| [UIView](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIView.html)                                          | ![X]       |            |
+| [UIViewController](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/Sources/BFKit/iOS/UIKit/UIViewControllerExtension.swift) | ![X]       |            |
+| [UIWebView](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIWebView.html)                                    | ![X]       |            |
+| [UIWindow](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIWindow.html)                                      | ![X]       | &nbsp;     |
 
 Requirements
 ============
@@ -99,7 +99,7 @@ Requirements
 | 2.0...2.1 | 7.0       | 1.5.0...1.6.2   | 7.0+    |           |
 | 2.2       | 7.3       | 1.6.3...1.7.0   | 7.0+    |           |
 | 2.3       | 8.0       | 1.8.0           | 7.0+    |           |
-| 3.0       | 8.0...8.2 | 2.0.0...2.2.1   | 8.0+    | ✔️        |
+| 3.0       | 8.0...8.2 | 2.0.0...2.2.1   | 8.0+    | ![X]        |
 
 Communication
 =============
@@ -217,3 +217,4 @@ License
 BFKit-Swift is available under the MIT license. See the **[LICENSE](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)** file for more info.
 
 [CocoaDocs]: https://github.fabriziobrancati.com/documentation/BFKit-Swift/
+[X]: https://github.fabriziobrancati.com/bfkit/resources/check.png

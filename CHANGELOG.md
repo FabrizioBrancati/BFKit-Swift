@@ -26,6 +26,13 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+## [2.2.2](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.2.2) - Swift 3.1 Ready
+### 12 Mar 2017
+### Improved
+- Minor changes to be Swift 3.1 ready
+
+---
+
 ## [2.2.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.2.1) - Better Log
 ### 10 Jan 2017
 ### Fixed
