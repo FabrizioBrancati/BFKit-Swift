@@ -760,8 +760,8 @@ public extension UIImage {
         let imageRect = CGRect(origin: CGPoint(x: 0, y: 0), size: size)
         var effectImage = self
         
-        let hasBlur = Float(blurRadius) > FLT_EPSILON
-        let hasSaturationChange = Float(abs(saturation - 1)) > FLT_EPSILON
+        let hasBlur = Float(blurRadius) > Float.ulpOfOne
+        let hasSaturationChange = Float(abs(saturation - 1)) > Float.ulpOfOne
         
         if hasBlur || hasSaturationChange {
             UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)

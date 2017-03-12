@@ -321,7 +321,7 @@ class DetailViewController: UIViewController {
             blurredImageView.addSubview(blurredLabel)
             scrollView.addSubview(blurredImageView)
             
-            let bumpedImage: UIImage = #imageLiteral(resourceName: "Logo").bumpDistortionLinear(center: CIVector(x: UIScreen.screenWidth - 40, y:UIScreen.screenWidth - 40), radius: 100, scale: 2, angle: Float(M_PI))
+            let bumpedImage: UIImage = #imageLiteral(resourceName: "Logo").bumpDistortionLinear(center: CIVector(x: UIScreen.screenWidth - 40, y:UIScreen.screenWidth - 40), radius: 100, scale: 2, angle: Float.pi)
             let bumpedImageView: UIImageView = UIImageView(frame: CGRect(x: 20, y: 20 + blendOverlayImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20 + invertedImageView.frame.size.height + 20 + blurredImageView.frame.size.height + 20, width: UIScreen.screenWidth - 40, height: UIScreen.screenWidth - 40), image: bumpedImage)
             let bumpedLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 20, width: UIScreen.screenWidth - 40, height: 25), text: "Bump Distortion Linear Image", font: .HelveticaNeue, fontSize: 16, color: UIColor.white, alignment: .center, lines: 1, shadowColor: UIColor.black)
             bumpedImageView.addSubview(bumpedLabel)
@@ -545,7 +545,7 @@ class DetailViewController: UIViewController {
             
             BFLog.clear()
             
-            BFLog.log("Radians to degrees: \(radiansToDegrees(Float(M_PI)))")
+            BFLog.log("Radians to degrees: \(radiansToDegrees(Float.pi))")
             BFLog.log("Random int: \(randomInt(min: 10, max: 50))")
             BFLog.log("Random float: \(randomFloat(min: 0.1, max: 0.9)))")
             

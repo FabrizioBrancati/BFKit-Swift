@@ -225,9 +225,7 @@ public extension FileManager {
     /// - Parameters:
     ///   - file: File to delete.
     ///   - path: Path of the file.
-    /// - Returns: Returns true if the operation was successful, otherwise false.
     /// - Throws: Throws FileManager.default.removeItem(atPath: ) errors.
-    @discardableResult
     public func delete(file: String, from path: PathType) throws {
         if !file.characters.isEmpty {
             guard let path = FileManager.default.pathFor(path) else {
