@@ -57,15 +57,38 @@ class ArrayExtensionTests: XCTestCase {
         XCTAssert(objectLeft == 5)
     }
     
-   func testRandom() {
-        let element = array.random()
-        for i in array {
-            if "\(i)" == "\(element)" {
-                XCTAssert("\(i)" == "\(element)")
-                return
-            }
+    func testRandom() {
+        var random: [Int] = []
+        
+        for _ in 1...100 {
+            random.append(array.random())
         }
-       XCTFail()
+        
+        if random.contains(1) {
+            XCTAssertTrue(true)
+        } else {
+            XCTFail()
+        }
+        if random.contains(2) {
+            XCTAssertTrue(true)
+        } else {
+            XCTFail()
+        }
+        if random.contains(3) {
+            XCTAssertTrue(true)
+        } else {
+            XCTFail()
+        }
+        if random.contains(4) {
+            XCTAssertTrue(true)
+        } else {
+            XCTFail()
+        }
+        if random.contains(5) {
+            XCTAssertTrue(true)
+        } else {
+            XCTFail()
+        }
     }
     
     func testRemove() {
