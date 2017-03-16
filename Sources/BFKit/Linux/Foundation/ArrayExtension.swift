@@ -47,7 +47,7 @@ public extension Array {
     ///
     /// - returns: An element that was randomly selected from the array.
     public func random() -> Element {
-        return self[randomInt(range: 0...self.count)]
+        return self[randomInt(range: 0...self.count - 1)]
     }
     
     /// Removes the element from self that is passed in.

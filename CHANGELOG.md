@@ -26,6 +26,15 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+## Master - ???
+### XX XXX 2017
+### Fixed
+- Fixed an issue with `randomInt()` function on Number extension  [#26](https://github.com/FabrizioBrancati/BFKit-Swift/issue/26)
+
+Thanks to [@on123](https://github.com/on123) for this release
+
+---
+
 ## [2.2.2](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.2.2) - Swift 3.1 Ready
 ### 12 Mar 2017
 ### Improved
@@ -36,7 +45,7 @@ All notable changes to this project will be documented in this file.<br>
 ## [2.2.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.2.1) - Better Log
 ### 10 Jan 2017
 ### Fixed
-- Fixed a bug in `warning`, `error`, `debug` and `info` functions in BFLog extension
+- Fixed a bug in `warning`, `error`, `debug` and `info` functions in BFLog struct
 
 Thanks to [@ianrahman](https://github.com/ianrahman) for this release
 

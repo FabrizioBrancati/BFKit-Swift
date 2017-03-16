@@ -61,7 +61,7 @@ public func randomInt(min minValue: Int = 0, max maxValue: Int = 100) -> Int {
 /// - Parameter range: Range random value.
 /// - Returns: Returns the created random integer.
 public func randomInt(range: ClosedRange<Int>) -> Int {
-    return Int(randomFloat(range: Float(range.lowerBound)...Float(range.upperBound)))
+    return Int(randomFloat(range: Float(range.lowerBound)...Float(range.upperBound)) + 0.5)
 }
 
 /// Create a random float between the given range.

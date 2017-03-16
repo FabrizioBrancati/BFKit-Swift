@@ -56,21 +56,47 @@ class NumberExtensionTests: XCTestCase {
     }
     
     func testRadiansToDegrees() {
-        let degrees = radiansToDegrees(Float(3.14159265))
+        let degrees = radiansToDegrees(Float.pi)
         
         XCTAssert(degrees >= 179 && degrees <= 181)
     }
     
     func testRandomIntMinMax() {
-        let random = randomInt(min: 10, max: 100)
+        var random: [Int] = []
         
-        XCTAssert(random >= 10 && random <= 100)
+        for _ in 0...10 {
+            random.append(randomInt(min: 0, max: 1))
+        }
+        
+        if random.contains(0) {
+            XCTAssertTrue(true)
+        } else {
+            XCTFail()
+        }
+        if random.contains(1) {
+            XCTAssertTrue(true)
+        } else {
+            XCTFail()
+        }
     }
     
     func testRandomIntRange() {
-        let random = randomInt(range: 10...100)
+        var random: [Int] = []
         
-        XCTAssert(random >= 10 && random <= 100)
+        for _ in 0...10 {
+            random.append(randomInt(range: 0...1))
+        }
+        
+        if random.contains(0) {
+            XCTAssertTrue(true)
+        } else {
+            XCTFail()
+        }
+        if random.contains(1) {
+            XCTAssertTrue(true)
+        } else {
+            XCTFail()
+        }
     }
     
     func testRandomFloat() {
