@@ -4,7 +4,7 @@ os:
 language: generic
 sudo: required
 dist: trusty
-osx_image: xcode8.2
+osx_image: xcode8.3
 
 before_install:
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then
@@ -33,14 +33,14 @@ script:
       swiftlint;
       sleep 5;
       set -o pipefail;
-      xcodebuild clean test -project BFKit.xcodeproj -scheme BFKit -destination "platform=iOS Simulator,OS=10.1,name=iPhone 7 Plus" -enableCodeCoverage YES | xcpretty;
-      xcodebuild -project Example/BFKitExample.xcodeproj -scheme BFKitExample -destination "platform=iOS Simulator,OS=10.1,name=iPhone 7 Plus" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty;
+      xcodebuild clean test -project BFKit.xcodeproj -scheme BFKit -destination "platform=iOS Simulator,OS=10.3,name=iPhone 7 Plus" -enableCodeCoverage YES | xcpretty;
+      xcodebuild -project Example/BFKitExample.xcodeproj -scheme BFKitExample -destination "platform=iOS Simulator,OS=10.3,name=iPhone 7 Plus" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty;
       pod lib lint --verbose;
       carthage build --no-skip-current;
     fi
   - if [ "$TRAVIS_OS_NAME" == "linux" ]; then
       swift build;
-      swift test;
+      swift test --parallel;
     fi
 
 after_success:
