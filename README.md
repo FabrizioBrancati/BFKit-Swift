@@ -118,7 +118,7 @@ Installing and Usage
 See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements) section to check Swift, Xcode, BFKit Swift and OS versions.
 
 ### Manual
-- Open the **BFKit** folder and build the Framework from the project
+- Open and build the framework from the project (**BFKit.xcodeproj**)
 - Import BFKit.framework into your project
 - Import the framework with ```import BFKit```
 - Enjoy!
@@ -134,7 +134,7 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
         pod 'BFKit-Swift'
     ```
 - Change **"Project"**  with your **real project name**
-- Open **Terminal**, go to **project directory** and type: ```pod install```
+- Open **Terminal**, go to your **project directory** and type: ```pod install```
 - Import the framework with ```import BFKit```
 - Enjoy!
 
