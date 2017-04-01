@@ -40,7 +40,7 @@ script:
     fi
   - if [ "$TRAVIS_OS_NAME" == "linux" ]; then
       swift build;
-      swift test --parallel;
+      swift test;
     fi
 
 after_success:
