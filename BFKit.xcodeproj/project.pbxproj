@@ -448,13 +448,14 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 2PN5CL25E2;
 						DevelopmentTeamName = "Fabrizio Brancati";
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Manual;
 					};
 					4971864A1D2339040032A98E = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 2PN5CL25E2;
 						DevelopmentTeamName = "Fabrizio Brancati";
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Manual;
 					};
 				};

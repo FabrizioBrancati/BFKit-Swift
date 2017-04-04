@@ -25,6 +25,8 @@ install:
 script:
   - if [ "$TRAVIS_OS_NAME" == "linux" ]; then
         swiftenv version;
+        swift build;
+        swift test;
     fi
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then
       swift -version
@@ -37,10 +39,6 @@ script:
       xcodebuild -project Example/BFKitExample.xcodeproj -scheme BFKitExample -destination "platform=iOS Simulator,OS=10.3,name=iPhone 7 Plus" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty;
       pod lib lint --verbose;
       carthage build --no-skip-current;
-    fi
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then
-      swift build;
-      swift test;
     fi
 
 after_success:
