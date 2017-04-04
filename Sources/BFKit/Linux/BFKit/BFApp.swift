@@ -85,12 +85,7 @@ public struct BFApp {
     /// - Parameter version: Version to be checked, you can use the variable BFApp.version to pass the current App version.
     /// - Returns: Returns if is first start of the App or for custom version.
     public static func isFirstStart(version: String = "") -> Bool {
-        let key: String
-        if version == "" {
-            key = BFAppHasBeenOpened
-        } else {
-            key = BFAppHasBeenOpened + "\(version)"
-        }
+        let key: String = BFAppHasBeenOpened + "\(version)"
         
         let defaults = UserDefaults.standard
         let hasBeenOpened: Bool = defaults.bool(forKey: key)

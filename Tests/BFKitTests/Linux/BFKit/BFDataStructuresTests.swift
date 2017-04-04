@@ -74,50 +74,50 @@ class BFDataStructuresTests: XCTestCase {
     // MARK: - List tests
     
     func testListDescription() {
-        XCTAssert(list.description != "")
+        XCTAssertNotEqual(list.description, "")
     }
     
     func testListDeleteIndex() {
         list.delete(at: 0)
         
-        XCTAssert(list.count == 2, "List hasn't 2 elements")
-        XCTAssert(list.search(at: 0) == 2, "Element 0 of the list is not 2")
-        XCTAssert(list.search(at: 1) == 3, "Element 1 of the list is not 3")
+        XCTAssertEqual(list.count, 2, "List hasn't 2 elements")
+        XCTAssertEqual(list.search(at: 0), 2, "Element 0 of the list is not 2")
+        XCTAssertEqual(list.search(at: 1), 3, "Element 1 of the list is not 3")
     }
     
     func testListDeleteElement() {
-        XCTAssert(list.delete(1), "Element delete error")
-        XCTAssert(list.count == 2, "List hasn't 2 elements")
-        XCTAssert(list.search(at: 0) == 2, "Element 0 of the list is not 2")
-        XCTAssert(list.search(at: 1) == 3, "Element 1 of the list is not 3")
+        XCTAssertTrue(list.delete(1), "Element delete error")
+        XCTAssertEqual(list.count, 2, "List hasn't 2 elements")
+        XCTAssertEqual(list.search(at: 0), 2, "Element 0 of the list is not 2")
+        XCTAssertEqual(list.search(at: 1), 3, "Element 1 of the list is not 3")
         XCTAssertFalse(list.delete(4))
     }
     
     func testListInsert() {
         list.insert(4)
         
-        XCTAssert(list.count == 4)
+        XCTAssertEqual(list.count, 4)
     }
     
     func testListSearchIndex() {
-        XCTAssert(list.search(at: 0) == 1)
+        XCTAssertEqual(list.search(at: 0), 1)
     }
     
     func testListSearchElement() {
-        XCTAssert(list.search(1) == 0)
-        XCTAssert(list.search(4) == nil)
+        XCTAssertEqual(list.search(1), 0)
+        XCTAssertNil(list.search(4))
     }
     
     // MARK: - Queue tests
     
     func testQueueDescription() {
-        XCTAssert(queue.description != "")
+        XCTAssertNotEqual(queue.description, "")
     }
     
     func testQueueDequeue() {
-        XCTAssert(queue.dequeue())
-        XCTAssert(queue.dequeue())
-        XCTAssert(queue.dequeue())
+        XCTAssertTrue(queue.dequeue())
+        XCTAssertTrue(queue.dequeue())
+        XCTAssertTrue(queue.dequeue())
         XCTAssertFalse(queue.dequeue())
     }
     
@@ -128,33 +128,33 @@ class BFDataStructuresTests: XCTestCase {
     
     func testQueueEnqueue() {
         queue.enqueue(4)
-        XCTAssert(queue.count == 4)
+        XCTAssertEqual(queue.count, 4)
     }
     
     func testQueueTop() {
-        XCTAssert(queue.top() == 1)
+        XCTAssertEqual(queue.top(), 1)
     }
     
     // MARK: - Stack tests
     
     func testStackDescription() {
-        XCTAssert(stack.description != "")
+        XCTAssertNotEqual(stack.description, "")
     }
     
     func testStackEmpty() {
-        XCTAssert(stack.empty() == false)
+        XCTAssertFalse(stack.empty())
     }
     
     func testStackPop() {
         let element = stack.pop()
         
-        XCTAssert(stack.count == 2)
-        XCTAssert(element == 3)
+        XCTAssertEqual(stack.count, 2)
+        XCTAssertEqual(element, 3)
     }
     
     func testStackPush() {
         stack.push(4)
         
-        XCTAssert(stack.count == 4)
+        XCTAssertEqual(stack.count, 4)
     }
 }

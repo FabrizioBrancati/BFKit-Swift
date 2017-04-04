@@ -38,12 +38,8 @@ class BFTouchIDTests: XCTestCase {
     }
     
     func testShowTouchID() {
-        BFTouchID.showTouchID(reason: "Testing", fallbackTitle: "Password") { result in
-            if result == .success {
-                XCTAssert(true)
-            } else {
-                XCTAssert(true)
-            }
+        BFTouchID.showTouchID(reason: "Testing", fallbackTitle: "Password") { _ in 
+             XCTAssertTrue(true)
         }
     }
 }

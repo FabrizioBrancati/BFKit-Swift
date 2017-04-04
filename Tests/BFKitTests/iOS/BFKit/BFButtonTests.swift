@@ -42,16 +42,16 @@ class BFButtonTests: XCTestCase {
     
     func testIsHighlighted() {
         button.isHighlighted = true
-        XCTAssert(button.isHighlighted, "isHighlighted is not true")
+        XCTAssertTrue(button.isHighlighted, "isHighlighted is not true")
         
         button.isHighlighted = false
-        XCTAssert(!button.isHighlighted, "isHighlighted is not false")
+        XCTAssertTrue(!button.isHighlighted, "isHighlighted is not false")
     }
     
     func testOverlayImageView() {
         button.overlayImageView = UIImageView(image: UIImage(color: UIColor.red))
         
-        XCTAssert(button.overlayImageView.image != nil)
+        XCTAssertNotNil(button.overlayImageView.image)
     }
     
     /*func testDecode() {
@@ -63,6 +63,6 @@ class BFButtonTests: XCTestCase {
     }*/
     
     func testInitFrame() {
-        XCTAssert(!button.isHighlighted)
+        XCTAssertTrue(!button.isHighlighted)
     }
 }

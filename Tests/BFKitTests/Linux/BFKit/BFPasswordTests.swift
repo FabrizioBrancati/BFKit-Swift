@@ -45,6 +45,6 @@ class BFPasswordTests: XCTestCase {
         let password = "TestPassword92"
         let strength = BFPassword.strength(password: password)
         
-        XCTAssert(strength == .average)
+        XCTAssertEqual(strength, .average)
     }
 }

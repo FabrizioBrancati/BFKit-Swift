@@ -50,44 +50,44 @@ class BFLogTests: XCTestCase {
     }
     
     func testLog() {
-        XCTAssert(BFLog.logged == "Test\n")
+        XCTAssertEqual(BFLog.logged, "Test\n")
         
         BFLog.log("Test")
         
-        XCTAssert(BFLog.logged == "Test\nTest\n")
+        XCTAssertEqual(BFLog.logged, "Test\nTest\n")
         
         BFLog.warning("Warning")
         
-        XCTAssert(BFLog.logged == "Test\nTest\n⚠️ Warning\n")
+        XCTAssertEqual(BFLog.logged, "Test\nTest\n⚠️ Warning\n")
         
         BFLog.error("Error")
         
-        XCTAssert(BFLog.logged == "Test\nTest\n⚠️ Warning\n❗️ Error\n")
+        XCTAssertEqual(BFLog.logged, "Test\nTest\n⚠️ Warning\n❗️ Error\n")
         
         BFLog.debug("Debug")
         
-        XCTAssert(BFLog.logged == "Test\nTest\n⚠️ Warning\n❗️ Error\n🔵 Debug\n")
+        XCTAssertEqual(BFLog.logged, "Test\nTest\n⚠️ Warning\n❗️ Error\n🔵 Debug\n")
         
         BFLog.info("Info")
         
-        XCTAssert(BFLog.logged == "Test\nTest\n⚠️ Warning\n❗️ Error\n🔵 Debug\nℹ️ Info\n")
+        XCTAssertEqual(BFLog.logged, "Test\nTest\n⚠️ Warning\n❗️ Error\n🔵 Debug\nℹ️ Info\n")
     }
     
     func testDetailedLog() {
         BFLog.clear()
         
-        let filenameWithoutExtension = URL(string: String(describing: NSString(utf8String: #file)!))!.deletingPathExtension!.lastPathComponent
+        let filenameWithoutExtension = URL(string: String(describing: NSString(utf8String: #file)!))!.deletingPathExtension().lastPathComponent
         let function = #function
         let line = #line + 2
         
         BFLog.log("Test")
         
-        XCTAssert(BFLog.detailedLog == "(\(filenameWithoutExtension):\(line) (\(function)) Test\n")
+        XCTAssertEqual(BFLog.detailedLog, "(\(filenameWithoutExtension):\(line) (\(function)) Test\n")
     }
     
     func testClear() {
         BFLog.clear()
         
-        XCTAssert(BFLog.logged == "")
+        XCTAssertEqual(BFLog.logged, "")
     }
 }

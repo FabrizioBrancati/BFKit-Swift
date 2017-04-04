@@ -48,45 +48,45 @@ class BFAppTests: XCTestCase {
     
     func testDebug() {
         BFApp.debug {
-            XCTAssert(true)
+            XCTAssertTrue(true)
         }
     }
     
     func testRelease() {
         BFApp.release {
-            XCTAssert(true)
+            XCTAssertTrue(true)
         }
     }
     
     func testIsFirstStart() {
         let isFirstStart = BFApp.isFirstStart()
         BFApp.debug {
-            XCTAssert(isFirstStart == true || isFirstStart == false)
+            XCTAssertTrue(isFirstStart == true || isFirstStart == false)
         }
         
         let isFirstStartVersion = BFApp.isFirstStart(version: "3.0.0")
         BFApp.debug {
-            XCTAssert(isFirstStartVersion == true || isFirstStartVersion == false)
+            XCTAssertTrue(isFirstStartVersion == true || isFirstStartVersion == false)
         }
     }
     
     func testIsFirstStartVersion() {
-        XCTAssert(BFApp.isFirstStart(version: BFApp.version) == true || BFApp.isFirstStart(version: BFApp.version) == false)
+        XCTAssertTrue(BFApp.isFirstStart(version: BFApp.version) == true || BFApp.isFirstStart(version: BFApp.version) == false)
     }
     
     func testOnFirstStart() {
         BFApp.onFirstStart { isFirstStart in
-            XCTAssert(isFirstStart == true || isFirstStart == false)
+            XCTAssertTrue(isFirstStart == true || isFirstStart == false)
         }
         
         BFApp.onFirstStart(version: "3.0.0") { isFirstStart in
-            XCTAssert(isFirstStart == true || isFirstStart == false)
+            XCTAssertTrue(isFirstStart == true || isFirstStart == false)
         }
     }
     
     func testOnFirstStartVersion() {
         BFApp.onFirstStart(version: BFApp.version) { isFirstStart in
-            XCTAssert(isFirstStart == true || isFirstStart == false)
+            XCTAssertTrue(isFirstStart == true || isFirstStart == false)
         }
     }
     
@@ -94,11 +94,11 @@ class BFAppTests: XCTestCase {
         func testAppSetting() {
             BFApp.setAppSetting(object: "Test", forKey: "Test")
             
-            XCTAssert((BFApp.getAppSetting(objectKey: "Test") as! String) == "Test") // swiftlint:disable:this force_cast
+            XCTAssertEqual((BFApp.getAppSetting(objectKey: "Test") as! String), "Test") // swiftlint:disable:this force_cast
         }
     
         func testNSLocalizedString() {
-            XCTAssert(NSLocalizedString("") == "")
+            XCTAssertEqual(NSLocalizedString(""), "")
         }
     #endif
 }

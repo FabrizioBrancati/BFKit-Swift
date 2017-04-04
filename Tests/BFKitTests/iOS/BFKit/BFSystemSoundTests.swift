@@ -40,13 +40,13 @@ class BFSystemSoundTests: XCTestCase {
     func testPlaySystemSound() {
         BFSystemSound.playSystemSound(audioID: .alarm)
         
-        XCTAssert(true)
+        XCTAssertTrue(true)
     }
     
     func testVibrate() {
         BFSystemSound.vibrate()
         
-        XCTAssert(true)
+        XCTAssertTrue(true)
     }
     
     /*func testPlaySound() {

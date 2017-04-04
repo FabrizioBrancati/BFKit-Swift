@@ -43,10 +43,10 @@ class UIBarButtonItemExtensionTests: XCTestCase {
         let barButtonItemFixed = UIBarButtonItem(barButtonSpaceType: .fixedSpace, width: 100)
         let barButtonItemDone = UIBarButtonItem(barButtonSpaceType: .done, width: 100)
         
-        XCTAssert(barButtonItemFlexible.width == 0)
+        XCTAssertEqual(barButtonItemFlexible.width, 0)
         
-        XCTAssert(barButtonItemFixed.width == 100)
+        XCTAssertEqual(barButtonItemFixed.width, 100)
         
-        XCTAssert(barButtonItemDone.width == 0)
+        XCTAssertEqual(barButtonItemDone.width, 0)
     }
 }
