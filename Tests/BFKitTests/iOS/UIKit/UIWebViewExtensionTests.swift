@@ -56,6 +56,6 @@ class UIWebViewExtensionTests: XCTestCase {
             return
         }
         
-        XCTAssertFlase(html.isEmpty)
+        XCTAssertFalse(html.isEmpty)
     }
 }
