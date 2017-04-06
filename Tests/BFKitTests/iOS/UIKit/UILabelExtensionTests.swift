@@ -41,25 +41,25 @@ class UILabelExtensionTests: XCTestCase {
     func testInitFrameTextFontColorAlignmentLinesShadowColor() {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30), text: "This is a test", font: UIFont(fontName: .HelveticaNeue, size: 20), color: UIColor.black, alignment: .left, lines: 1, shadowColor: UIColor.white)
         
-        XCTAssert(label.frame == CGRect(x: 0, y: 0, width: 100, height: 30))
-        XCTAssert(label.font == UIFont(fontName: .HelveticaNeue, size: 20))
-        XCTAssert(label.text == "This is a test")
-        XCTAssert(label.textColor == UIColor.black)
-        XCTAssert(label.textAlignment == .left)
-        XCTAssert(label.numberOfLines == 1)
-        XCTAssert(label.shadowColor == UIColor.white)
+        XCTAssertEqual(label.frame, CGRect(x: 0, y: 0, width: 100, height: 30))
+        XCTAssertEqual(label.font, UIFont(fontName: .HelveticaNeue, size: 20))
+        XCTAssertEqual(label.text, "This is a test")
+        XCTAssertEqual(label.textColor, UIColor.black)
+        XCTAssertEqual(label.textAlignment, .left)
+        XCTAssertEqual(label.numberOfLines, 1)
+        XCTAssertEqual(label.shadowColor, UIColor.white)
     }
     
     func testInitFrameTextFontFontSizeColorAlignmentLinesShadowColor() {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30), text: "This is a test", font: .HelveticaNeue, fontSize: 20, color: UIColor.black, alignment: .left, lines: 1, shadowColor: UIColor.white)
         
-        XCTAssert(label.frame == CGRect(x: 0, y: 0, width: 100, height: 30))
-        XCTAssert(label.font == UIFont(fontName: .HelveticaNeue, size: 20))
-        XCTAssert(label.text == "This is a test")
-        XCTAssert(label.textColor == UIColor.black)
-        XCTAssert(label.textAlignment == .left)
-        XCTAssert(label.numberOfLines == 1)
-        XCTAssert(label.shadowColor == UIColor.white)
+        XCTAssertEqual(label.frame, CGRect(x: 0, y: 0, width: 100, height: 30))
+        XCTAssertEqual(label.font, UIFont(fontName: .HelveticaNeue, size: 20))
+        XCTAssertEqual(label.text, "This is a test")
+        XCTAssertEqual(label.textColor, UIColor.black)
+        XCTAssertEqual(label.textAlignment, .left)
+        XCTAssertEqual(label.numberOfLines, 1)
+        XCTAssertEqual(label.shadowColor, UIColor.white)
     }
     
     func testCalculateHeight() {
@@ -67,7 +67,7 @@ class UILabelExtensionTests: XCTestCase {
         label.text = "This is a test"
         let height = label.calculateHeight()
         
-        XCTAssert(height > 0)
+        XCTAssertGreaterThan(height, 0)
     }
     
     func testSetFontFromIndexToIndex() {
@@ -75,12 +75,12 @@ class UILabelExtensionTests: XCTestCase {
         label.text = "This is a test"
         label.setFont(UIFont(fontName: .HelveticaNeueUltraLight, size: 12), fromIndex: 0, toIndex: 4)
         
-        XCTAssert(label.attributedText?.length == 14)
+        XCTAssertEqual(label.attributedText?.length, 14)
         
         label.text = nil
         label.setFont(UIFont(fontName: .HelveticaNeueUltraLight, size: 12), fromIndex: 0, toIndex: 4)
         
-        XCTAssert(label.attributedText == nil)
+        XCTAssertNil(label.attributedText)
     }
     
     func testSetFontFontSizeFromIndexToIndex() {
@@ -88,11 +88,11 @@ class UILabelExtensionTests: XCTestCase {
         label.text = "This is a test"
         label.setFont(.HelveticaNeueUltraLight, fontSize: 12, fromIndex: 0, toIndex: 4)
         
-        XCTAssert(label.attributedText?.length == 14)
+        XCTAssertEqual(label.attributedText?.length, 14)
         
         label.text = nil
         label.setFont(.HelveticaNeueUltraLight, fontSize: 12, fromIndex: 0, toIndex: 4)
         
-        XCTAssert(label.attributedText == nil)
+        XCTAssertNil(label.attributedText)
     }
 }

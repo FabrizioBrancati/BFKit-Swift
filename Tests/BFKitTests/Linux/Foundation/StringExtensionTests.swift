@@ -95,19 +95,19 @@ class StringExtensionTests: XCTestCase {
     
     func testArray() {
         let str = string.array
-        XCTAssert(str == ["T", "h", "i", "s", " ", "i", "s", " ", "a", " ", "t", "e", "s", "t"])
+        XCTAssertEqual(str, ["T", "h", "i", "s", " ", "i", "s", " ", "a", " ", "t", "e", "s", "t"])
     }
     
     func testFloatValue() {
         let float = "3.5".floatValue
         
-        XCTAssert(float == 3.5)
+        XCTAssertEqual(float, 3.5)
     }
     
     func testIntValue() {
         let int = "3".intValue
         
-        XCTAssert(int == 3)
+        XCTAssertEqual(int, 3)
     }
     
     func testDataValue() {
@@ -122,7 +122,7 @@ class StringExtensionTests: XCTestCase {
     func testURLEncoded() {
         let encoded = string.urlEncoded
         
-        XCTAssert(encoded == "This%20is%20a%20test")
+        XCTAssertEqual(encoded, "This%20is%20a%20test")
     }
     
     func testBase64Encoded() {
@@ -130,76 +130,76 @@ class StringExtensionTests: XCTestCase {
         var encodedNil: String? = nil
         encodedNil = encodedNil?.base64encoded
         
-        XCTAssert(encoded == "VGhpcyBpcyBhIHRlc3Q=")
-        XCTAssert(encodedNil == nil)
+        XCTAssertEqual(encoded, "VGhpcyBpcyBhIHRlc3Q=")
+        XCTAssertNil(encodedNil)
     }
     
     func testBase64Decoded() {
         let decoded = "VGhpcyBpcyBhIHRlc3Q=".base64decoded
         let decodedInvalid = "Test".base64decoded
         
-        XCTAssert(decoded == string)
-        XCTAssert(decodedInvalid != string)
+        XCTAssertEqual(decoded, string)
+        XCTAssertNotEqual(decodedInvalid, string)
     }
     
     func testLength() {
         let length = string.length
         
-        XCTAssert(length == 14)
+        XCTAssertEqual(length, 14)
     }
     
     func testChatacterAt() {
         let character = string.character(at: 2)
         
-        XCTAssert(character == "i")
+        XCTAssertEqual(character, "i")
     }
     
     func testSubstringFromIndex() {
         let substring = string.substring(from: 5)
         
-        XCTAssert(substring == "is a test")
+        XCTAssertEqual(substring, "is a test")
     }
     
     func testSubstringFromCharacter() {
         let substring = string.substring(from: " ")
         let substringInvalid = string.substring(from: "r")
         
-        XCTAssert(substring == "is a test")
-        XCTAssert(substringInvalid == "")
+        XCTAssertEqual(substring, "is a test")
+        XCTAssertEqual(substringInvalid, "")
     }
     
     func testSubstringToIndex() {
         let substring = string.substring(to: 9)
         
-        XCTAssert(substring == "This is a")
+        XCTAssertEqual(substring, "This is a")
     }
     
     func testSubstringToCharacter() {
         let substring = string.substring(to: "t")
         let substringInvalid = string.substring(to: "r")
         
-        XCTAssert(substring == "This is a ")
-        XCTAssert(substringInvalid == "")
+        XCTAssertEqual(substring, "This is a ")
+        XCTAssertEqual(substringInvalid, "")
     }
     
     func testSubstringWithRange() {
         let substring = string.substring(with: 0..<9)
         
-        XCTAssert(substring == "This is a")
+        XCTAssertEqual(substring, "This is a")
     }
     
     func testSubstringWithCountableClosedRange() {
         let substring = string.substring(with: 0...8)
         
-        XCTAssert(substring == "This is a")
+        XCTAssertEqual(substring, "This is a")
     }
     
     func testIndexOf() {
         let index = string.index(of: "s")
         let indexInvalid = string.index(of: "r")
         
-        XCTAssert(index == 3)
-        XCTAssert(indexInvalid == -1)
+        XCTAssertEqual(index, 3)
+        XCTAssertEqual(indexInvalid, -1)
     }
     
     func testRangeOfCaseSensitive() {
@@ -229,69 +229,69 @@ class StringExtensionTests: XCTestCase {
         let notCapitalized = "this is a test".sentenceCapitalizedString()
         let zeroLength = "".sentenceCapitalizedString()
         
-        XCTAssert(capitalized == "This is a test")
-        XCTAssert(notCapitalized == "This is a test")
-        XCTAssert(zeroLength == "")
+        XCTAssertEqual(capitalized, "This is a test")
+        XCTAssertEqual(notCapitalized, "This is a test")
+        XCTAssertEqual(zeroLength, "")
     }
     
     func testLastPathComponent() {
         let lastPathComponent = path.lastPathComponent
         
-        XCTAssert(lastPathComponent == "file.test")
+        XCTAssertEqual(lastPathComponent, "file.test")
     }
     
     func testPathExtension() {
         let pathExtension = path.pathExtension
         
-        XCTAssert(pathExtension == "test")
+        XCTAssertEqual(pathExtension, "test")
     }
     
     func testDeletingLastPathComponent() {
         let deletedLastPathComponent = path.deletingLastPathComponent
         
-        XCTAssert(deletedLastPathComponent == "This/is/a/test")
+        XCTAssertEqual(deletedLastPathComponent, "This/is/a/test")
     }
     
     func testDeletingPathExtension() {
         let deletedPathExtension = path.deletingPathExtension
         
-        XCTAssert(deletedPathExtension == "This/is/a/test/file")
+        XCTAssertEqual(deletedPathExtension, "This/is/a/test/file")
     }
     
     func testPathComponents() {
         let pathComponents = path.pathComponents
         
-        XCTAssert(pathComponents.count == 5)
+        XCTAssertEqual(pathComponents.count, 5)
     }
     
     func testAppendigPathComponent() {
         let finalPath = path.appendingPathComponent("test")
         
-        XCTAssert(finalPath == "This/is/a/test/file.test/test")
+        XCTAssertEqual(finalPath, "This/is/a/test/file.test/test")
     }
     
     func testAppendigPathExtension() {
         let finalPath = path.appendingPathExtension("test")
         
-        XCTAssert(finalPath == "This/is/a/test/file.test.test")
+        XCTAssertEqual(finalPath, "This/is/a/test/file.test.test")
     }
     
     func testReadableUUID() {
         let readable = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".readableUUID()
         
-        XCTAssert(readable.length == 32)
+        XCTAssertEqual(readable.length, 32)
     }
     
     func testUppercasedFirst() {
         let uppercased = string.uppercasedFirst()
         
-        XCTAssert(uppercased == "This is a test")
+        XCTAssertEqual(uppercased, "This is a test")
     }
     
     func testLowercasedFirst() {
         let lowercased = string.lowercasedFirst()
         
-        XCTAssert(lowercased == "this is a test")
+        XCTAssertEqual(lowercased, "this is a test")
     }
     
     func testReversedPreserveFormat() {
@@ -299,9 +299,9 @@ class StringExtensionTests: XCTestCase {
         let zeroLength = "".reversed(preserveFormat: false)
         let preservingFormat = (string + " ").reversed(preserveFormat: true)
         
-        XCTAssert(reversed == "tset a si sihT")
-        XCTAssert(zeroLength == "")
-        XCTAssert(preservingFormat == "tset a si Siht")
+        XCTAssertEqual(reversed, "tset a si sihT")
+        XCTAssertEqual(zeroLength, "")
+        XCTAssertEqual(preservingFormat, "tset a si Siht")
     }
     
     func testHasUppercaseCharacters() {
@@ -319,51 +319,51 @@ class StringExtensionTests: XCTestCase {
     func testRemoveExtraSpaces() {
         let extraSpacedString = "This    is   a   test".removeExtraSpaces()
         
-        XCTAssert(extraSpacedString == "This is a test")
+        XCTAssertEqual(extraSpacedString, "This is a test")
     }
     
     func testReplacingOccurrencesOfWith() {
         let replaced = string.replacingOccurrences(of: ["This", "test"], with: "A")
         
-        XCTAssert(replaced == "A is a A")
+        XCTAssertEqual(replaced, "A is a A")
     }
     
     func testCountLowercasedCharacters() {
         let lowercased = string.countLowercasedCharacters()
         
-        XCTAssert(lowercased == 10)
+        XCTAssertEqual(lowercased, 10)
     }
     
     func testCountUppercasedCharacters() {
         let uppercased = string.countUppercasedCharacters()
         
-        XCTAssert(uppercased == 1)
+        XCTAssertEqual(uppercased, 1)
     }
     
     func testCountNumbers() {
         let numbers = string.countNumbers()
         
-        XCTAssert(numbers == 0)
+        XCTAssertEqual(numbers, 0)
     }
     
     func testCountSymbols() {
         let symbols = string.countSymbols()
         let hasSymbols = "-.,!/".countSymbols()
         
-        XCTAssert(symbols == 0)
-        XCTAssert(hasSymbols == 5)
+        XCTAssertEqual(symbols, 0)
+        XCTAssertEqual(hasSymbols, 5)
     }
     
     func testStringFromHEX() {
         let stringFromHEX = "68 65 6c 6c 6f".stringFromHEX()
         
-        XCTAssert(stringFromHEX == "hello")
+        XCTAssertEqual(stringFromHEX, "hello")
     }
     
     /*func testHEXSpacing() {
         let hex = "hello".hex(spacing: true)
         
-        XCTAssert(hex == "68 65 6c 6c 6f")
+        XCTAssertEqual(hex, "68 65 6c 6c 6f")
     }*/
     
     func testIsAnagramOf() {
@@ -381,25 +381,25 @@ class StringExtensionTests: XCTestCase {
     func testSubscriptIndexCharacter() {
         let character: Character = string[0]
         
-        XCTAssert(character == "T")
+        XCTAssertEqual(character, "T")
     }
     
     func testSubscriptCharacter() {
         let index = string["i"]
         
-        XCTAssert(index == 2)
+        XCTAssertEqual(index, 2)
     }
     
     func testSubsriptIndexInt() {
         let characterString: String = string[0]
         
-        XCTAssert(characterString == "T")
+        XCTAssertEqual(characterString, "T")
     }
     
     func testSubscriptRange() {
         let range = string[0..<8]
         
-        XCTAssert(range == "This is ")
+        XCTAssertEqual(range, "This is ")
     }
     
     func testOptionalDefaultValue() {
@@ -407,15 +407,15 @@ class StringExtensionTests: XCTestCase {
         testNil = testNil ??? "Test"
         let testNotNil = "Test" ??? "Nil"
         
-        XCTAssert(testNil == "Test")
-        XCTAssert(testNotNil == "Test")
+        XCTAssertEqual(testNil, "Test")
+        XCTAssertEqual(testNotNil, "Test")
     }
     
     #if !os(Linux)
         func testLocalize() {
             let localized = string.localize()
             
-            XCTAssert(localized == "This is a test")
+            XCTAssertEqual(localized, "This is a test")
         }
     
         func testIsEmail() {
@@ -442,7 +442,7 @@ class StringExtensionTests: XCTestCase {
             do {
                 let replaced = try string.replacingMatches(regex: "\\s", with: "A")
                 
-                XCTAssert(replaced == "Thisisatest")
+                XCTAssertEqual(replaced, "Thisisatest")
             } catch {
                 XCTFail()
             }
@@ -452,7 +452,7 @@ class StringExtensionTests: XCTestCase {
             do {
                 let links = try "http://www.fabriziobrancati.com www.fabriziobrancati.com".links()
                 
-                XCTAssert(links.count == 2)
+                XCTAssertEqual(links.count, 2)
             } catch {
                 XCTFail()
             }
@@ -462,7 +462,7 @@ class StringExtensionTests: XCTestCase {
             do {
                 let dates = try "5/12/1992 28/02/16".dates()
                 
-                XCTAssert(dates.count == 2)
+                XCTAssertEqual(dates.count, 2)
             } catch {
                 XCTFail()
             }
@@ -472,7 +472,7 @@ class StringExtensionTests: XCTestCase {
             do {
                 let hashtags = try "#FabrizioBrancati #BrancatiFabrizio".hashtags()
                 
-                XCTAssert(hashtags.count == 2)
+                XCTAssertEqual(hashtags.count, 2)
             } catch {
                 XCTFail()
             }
@@ -482,7 +482,7 @@ class StringExtensionTests: XCTestCase {
             do {
                 let mentions = try "@FabrizioBrancati @BrancatiFabrizio".mentions()
                 
-                XCTAssert(mentions.count == 2)
+                XCTAssertEqual(mentions.count, 2)
             } catch {
                 XCTFail()
             }

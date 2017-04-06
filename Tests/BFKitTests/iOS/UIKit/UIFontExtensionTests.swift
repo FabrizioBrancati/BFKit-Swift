@@ -41,25 +41,25 @@ class UIFontExtensionTests: XCTestCase {
     func testLightFont() {
         UIFont.lightFont = UIFont(fontName: .Helvetica, size: 20)
         
-        XCTAssert(UIFont.lightFont.fontName == FontName.Helvetica.rawValue)
+        XCTAssertEqual(UIFont.lightFont.fontName, FontName.Helvetica.rawValue)
     }
     
     func testRegularFont() {
         UIFont.regularFont = UIFont(fontName: .Helvetica, size: 20)
         
-        XCTAssert(UIFont.regularFont.fontName == FontName.Helvetica.rawValue)
+        XCTAssertEqual(UIFont.regularFont.fontName, FontName.Helvetica.rawValue)
     }
     
     func testBoldFont() {
         UIFont.boldFont = UIFont(fontName: .Helvetica, size: 20)
         
-        XCTAssert(UIFont.boldFont.fontName == FontName.Helvetica.rawValue)
+        XCTAssertEqual(UIFont.boldFont.fontName, FontName.Helvetica.rawValue)
     }
     
     func testInitFontNameSize() {
         let font = UIFont(fontName: .HelveticaNeue, size: 20)
         
-        XCTAssert(font.fontName == FontName.HelveticaNeue.rawValue)
+        XCTAssertEqual(font.fontName, FontName.HelveticaNeue.rawValue)
     }
     
     func testAllFonts() {
@@ -72,13 +72,13 @@ class UIFontExtensionTests: XCTestCase {
     func testCalculateHeightWidthFontText() {
         let height = UIFont.calculateHeight(width: 320, font: UIFont(fontName: .Helvetica, size: 12), text: "This is a test\nOn multiple\nLines.\n\nBye.")
         
-        XCTAssert(height > 0)
+        XCTAssertGreaterThan(height, 0)
     }
     
     func testCalculateHeightWidthFontSizeText() {
         let height = UIFont.calculateHeight(width: 320, font: .Helvetica, fontSize: 12, text: "This is a test\nOn multiple\nLines.\n\nBye.")
         
-        XCTAssert(height > 0)
+        XCTAssertGreaterThan(height, 0)
     }
     
     func testFontsNameFamily() {

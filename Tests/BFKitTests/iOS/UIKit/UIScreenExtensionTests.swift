@@ -39,19 +39,19 @@ class UIScreenExtensionTests: XCTestCase {
     }
     
     func testScreenWidth() {
-        XCTAssert(UIScreen.screenWidth == 414)
+        XCTAssertEqual(UIScreen.screenWidth, 414)
     }
     
     func testScreenHeight() {
-        XCTAssert(UIScreen.screenHeight == 736)
+        XCTAssertEqual(UIScreen.screenHeight, 736)
     }
     
     func testMaxScreenLength() {
-        XCTAssert(UIScreen.maxScreenLength == 736)
+        XCTAssertEqual(UIScreen.maxScreenLength, 736)
     }
     
     func testMinScreenLength() {
-        XCTAssert(UIScreen.minScreenLength == 414)
+        XCTAssertEqual(UIScreen.minScreenLength, 414)
     }
     
     func testIsRetina() {
@@ -63,6 +63,6 @@ class UIScreenExtensionTests: XCTestCase {
     }
     
     func testFixedScreenSize() {
-        XCTAssert(UIScreen.fixedScreenSize() == CGSize(width: 414, height: 736))
+        XCTAssertEqual(UIScreen.fixedScreenSize(), CGSize(width: 414, height: 736))
     }
 }

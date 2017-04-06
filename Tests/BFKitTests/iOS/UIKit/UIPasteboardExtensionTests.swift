@@ -41,7 +41,7 @@ class UIPasteboardExtensionTests: XCTestCase {
     func testCopy() {
         UIPasteboard.copy(text: "This is a test")
         
-        XCTAssert(UIPasteboard.general.string == "This is a test")
+        XCTAssertEqual(UIPasteboard.general.string, "This is a test")
     }
     
     func testGet() {
@@ -49,7 +49,7 @@ class UIPasteboardExtensionTests: XCTestCase {
         UIPasteboard.general.items = [[:]]
         let pasteboardEmpty = UIPasteboard.getString()
         
-        XCTAssert(pasteboard == "This is a test")
-        XCTAssert(pasteboardEmpty == "")
+        XCTAssertEqual(pasteboard, "This is a test")
+        XCTAssertEqual(pasteboardEmpty, "")
     }
 }

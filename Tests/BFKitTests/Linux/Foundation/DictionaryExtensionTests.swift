@@ -47,7 +47,7 @@ class DictionaryExtensionTests: XCTestCase {
         let object: Int = dictionary.safeObject(forKey: "4") as! Int // swiftlint:disable:this force_cast
         let objectNil = dictionary.safeObject(forKey: "6")
         
-        XCTAssert(object == 4)
-        XCTAssert(objectNil == nil)
+        XCTAssertEqual(object, 4)
+        XCTAssertNil(objectNil)
     }
 }

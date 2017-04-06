@@ -50,7 +50,7 @@ class DataExtensionTests: XCTestCase {
             return
         }
         
-        XCTAssert(utf8 == "This is a test")
+        XCTAssertEqual(utf8, "This is a test")
     }
     
     func testASCII() {
@@ -59,7 +59,7 @@ class DataExtensionTests: XCTestCase {
             return
         }
         
-        XCTAssert(ascii == "This is a test")
+        XCTAssertEqual(ascii, "This is a test")
     }
     
     /*func testReadableUUID() {

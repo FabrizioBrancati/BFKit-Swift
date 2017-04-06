@@ -45,18 +45,18 @@ class UIViewExtensionTests: XCTestCase {
     func testBorderColorRadiusWidth() {
         view.border(color: UIColor.red, radius: 5, width: 2)
         
-        XCTAssert(view.layer.borderWidth == 2)
-        XCTAssert(view.layer.cornerRadius == 5)
-        XCTAssert(view.layer.borderColor == UIColor.red.cgColor)
+        XCTAssertEqual(view.layer.borderWidth, 2)
+        XCTAssertEqual(view.layer.cornerRadius, 5)
+        XCTAssertEqual(view.layer.borderColor, UIColor.red.cgColor)
     }
     
     func testRemoveBorder() {
         view.border(color: UIColor.red, radius: 5, width: 2)
         view.removeBorder()
         
-        XCTAssert(view.layer.borderWidth == 0)
-        XCTAssert(view.layer.cornerRadius == 0)
-        XCTAssert(view.layer.borderColor == nil)
+        XCTAssertEqual(view.layer.borderWidth, 0)
+        XCTAssertEqual(view.layer.cornerRadius, 0)
+        XCTAssertNil(view.layer.borderColor)
     }
     
     func testCornerRadiusCornersRadius() {
@@ -68,34 +68,34 @@ class UIViewExtensionTests: XCTestCase {
     func testShadowOffsetOpacityRadiusCornerRadiusColor() {
         view.shadow(offset: CGSize(width: 5, height: 5), opacity: 0.5, radius: 5, cornerRadius: 5, color: UIColor.red)
         
-        XCTAssert(view.layer.shadowColor == UIColor.red.cgColor)
-        XCTAssert(view.layer.shadowOpacity == 0.5)
-        XCTAssert(view.layer.shadowOffset == CGSize(width: 5, height: 5))
-        XCTAssert(view.layer.shadowRadius == 5)
-        XCTAssert(view.layer.cornerRadius == 5)
+        XCTAssertEqual(view.layer.shadowColor, UIColor.red.cgColor)
+        XCTAssertEqual(view.layer.shadowOpacity, 0.5)
+        XCTAssertEqual(view.layer.shadowOffset, CGSize(width: 5, height: 5))
+        XCTAssertEqual(view.layer.shadowRadius, 5)
+        XCTAssertEqual(view.layer.cornerRadius, 5)
     }
     
     func testRemoveShadow() {
         view.shadow(offset: CGSize(width: 5, height: 5), opacity: 0.5, radius: 5, cornerRadius: 5, color: UIColor.red)
         view.removeShadow()
         
-        XCTAssert(view.layer.shadowColor == nil)
-        XCTAssert(view.layer.shadowOpacity == 0)
-        XCTAssert(view.layer.shadowOffset == CGSize(width: 0, height: 0))
-        XCTAssert(view.layer.shadowRadius == 0)
-        XCTAssert(view.layer.cornerRadius == 0)
+        XCTAssertNil(view.layer.shadowColor)
+        XCTAssertEqual(view.layer.shadowOpacity, 0)
+        XCTAssertEqual(view.layer.shadowOffset, CGSize(width: 0, height: 0))
+        XCTAssertEqual(view.layer.shadowRadius, 0)
+        XCTAssertEqual(view.layer.cornerRadius, 0)
     }
     
     func testGradientColorsDirection() {
         view.gradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .custom(startPoint: CGPoint(x: 10, y: 10), endPoint: CGPoint(x: 90, y: 90)))
         
-        XCTAssert(view.frame == CGRect(x: 0, y: 0, width: 200, height: 100))
+        XCTAssertEqual(view.frame, CGRect(x: 0, y: 0, width: 200, height: 100))
     }
     
     func testApplyMotionEffect() {
         view.applyMotionEffects()
         
-        XCTAssert(view.motionEffects != [])
+        XCTAssertNotEqual(view.motionEffects, [])
     }
     
     func testScreenshotSave() {
@@ -135,8 +135,8 @@ class UIViewExtensionTests: XCTestCase {
         let topView = UIView(frame: CGRect(x: 0, y: 0, width: 1000, height: 100))
         view.translateAround(topView: topView, duration: 1, direction: .leftToRight, repeatAnimation: true, startFromEdge: true)
         
-        XCTAssert(view.frame.width == 200)
-        XCTAssert(view.frame.height == 100)
+        XCTAssertEqual(view.frame.width, 200)
+        XCTAssertEqual(view.frame.height, 100)
     }
     
     func testAnimatePathCountDurationAutoreverses() {
@@ -150,13 +150,13 @@ class UIViewExtensionTests: XCTestCase {
     func testBorderWidth() {
         view.borderWidth = 2
         
-        XCTAssert(view.layer.borderWidth == 2)
+        XCTAssertEqual(view.layer.borderWidth, 2)
     }
     
     func testBorderColor() {
         view.borderColor = UIColor.red
         
-        XCTAssert(view.layer.borderColor == UIColor.red.cgColor)
+        XCTAssertEqual(view.layer.borderColor, UIColor.red.cgColor)
     }
     
     func testMaskToBounds() {
@@ -168,36 +168,36 @@ class UIViewExtensionTests: XCTestCase {
     func testCornerRadius() {
         view.cornerRadius = 5
         
-        XCTAssert(view.layer.cornerRadius == 5)
+        XCTAssertEqual(view.layer.cornerRadius, 5)
     }
     
     func testShadowColor() {
         view.shadowColor = UIColor.blue
         
-        XCTAssert(view.layer.shadowColor == UIColor.blue.cgColor)
+        XCTAssertEqual(view.layer.shadowColor, UIColor.blue.cgColor)
     }
     
     func testShadowOpacity() {
         view.shadowOpacity = 0.5
         
-        XCTAssert(view.layer.shadowOpacity == 0.5)
+        XCTAssertEqual(view.layer.shadowOpacity, 0.5)
     }
     
     func testShadowOffsetX() {
         view.shadowOffsetX = 2
         
-        XCTAssert(view.layer.shadowOffset == CGSize(width: 2, height: view.layer.shadowOffset.height))
+        XCTAssertEqual(view.layer.shadowOffset, CGSize(width: 2, height: view.layer.shadowOffset.height))
     }
     
     func testShadowOffsetY() {
         view.shadowOffsetY = 2
         
-        XCTAssert(view.layer.shadowOffset == CGSize(width: view.layer.shadowOffset.width, height: 2))
+        XCTAssertEqual(view.layer.shadowOffset, CGSize(width: view.layer.shadowOffset.width, height: 2))
     }
     
     func testShadowRadius() {
         view.shadowRadius = 5
         
-        XCTAssert(view.layer.shadowRadius == 5)
+        XCTAssertEqual(view.layer.shadowRadius, 5)
     }
 }

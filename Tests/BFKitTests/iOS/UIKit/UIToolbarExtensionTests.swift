@@ -49,7 +49,7 @@ class UIToolbarExtensionTests: XCTestCase {
         toolbar.setTransparent(false, translucent: true)
         
         XCTAssertTrue(toolbar.isTranslucent)
-        XCTAssert(toolbar.backgroundImage(forToolbarPosition: .any, barMetrics: .default) == nil)
-        XCTAssert(toolbar.shadowImage(forToolbarPosition: .any) == nil)
+        XCTAssertNil(toolbar.backgroundImage(forToolbarPosition: .any, barMetrics: .default))
+        XCTAssertNil(toolbar.shadowImage(forToolbarPosition: .any))
     }
 }

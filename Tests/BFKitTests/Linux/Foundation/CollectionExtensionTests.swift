@@ -47,7 +47,7 @@ class CollectionExtensionTests: XCTestCase {
         do {
             let json = try array.json()
             
-            XCTAssert(json == "[1,2,3,4,5]")
+            XCTAssertEqual(json, "[1,2,3,4,5]")
         } catch {
             XCTFail()
         }

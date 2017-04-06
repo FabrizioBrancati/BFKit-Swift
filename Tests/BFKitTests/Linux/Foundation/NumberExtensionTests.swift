@@ -114,17 +114,17 @@ class NumberExtensionTests: XCTestCase {
     func testIntArray() {
         let int = 123456
         let negInt = -3895
-        XCTAssert(int.array == [1, 2, 3, 4, 5, 6])
-        XCTAssert(negInt.array == [0, 3, 8, 9, 5])
+        XCTAssertEqual(int.array, [1, 2, 3, 4, 5, 6])
+        XCTAssertEqual(negInt.array, [0, 3, 8, 9, 5])
     }
     
     func testFloatArray() {
         let float: Float = 92.456
-        XCTAssert(float.array == [9, 2, 0, 4, 5, 6])
+        XCTAssertEqual(float.array, [9, 2, 0, 4, 5, 6])
     }
     
     func testDoubleArray() {
         let double: Double = 832.746201
-        XCTAssert(double.array == [8, 3, 2, 0, 7, 4, 6, 2, 0, 1])
+        XCTAssertEqual(double.array, [8, 3, 2, 0, 7, 4, 6, 2, 0, 1])
     }
 }

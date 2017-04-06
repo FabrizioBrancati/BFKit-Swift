@@ -41,43 +41,43 @@ class UIDeviceExtensionTests: XCTestCase {
     /*func testOsVersionEqual() {
         let osVersion = osVersionEqual("10.2")
         
-        XCTAssert(osVersion)
+        XCTAssertTrue(osVersion)
     }*/
     
     func testOsVersionGreater() {
         let osVersion = osVersionGreaterThan("9.2")
         
-        XCTAssert(osVersion)
+        XCTAssertTrue(osVersion)
     }
     
     func testOsVersionGreaterOrEqual() {
         let osVersion = osVersionGreaterThanOrEqual("9.2")
         
-        XCTAssert(osVersion)
+        XCTAssertTrue(osVersion)
     }
     
     func testOsVersionLess() {
         let osVersion = osVersionLessThan("11.0")
         
-        XCTAssert(osVersion)
+        XCTAssertTrue(osVersion)
     }
     
     func testOsVersionLessOrEqual() {
         let osVersion = osVersionLessThanOrEqual("11.0")
         
-        XCTAssert(osVersion)
+        XCTAssertTrue(osVersion)
     }
     
     func testOsVersion() {
         let osVersion = UIDevice.osVersion.substring(to: ".")
         
-        XCTAssert(osVersion == "10")
+        XCTAssertEqual(osVersion, "10")
     }
     
     func testOsMajorVersion() {
         let osVersion = UIDevice.osMajorVersion
         
-        XCTAssert(osVersion == 10)
+        XCTAssertEqual(osVersion, 10)
     }
     
     func testHardwareModel() {
@@ -89,43 +89,43 @@ class UIDeviceExtensionTests: XCTestCase {
     func testDetailedModel() {
         let model = UIDevice.detailedModel
         
-        XCTAssert(model == "Simulator")
+        XCTAssertEqual(model, "Simulator")
     }
     
     func testCPUFrequency() {
         let frequency = UIDevice.cpuFrequency
         
-        XCTAssert(frequency != 0)
+        XCTAssertNotEqual(frequency, 0)
     }
     
     func testBUSFrequency() {
         let frequency = UIDevice.busFrequency
         
-        XCTAssert(frequency != 0)
+        XCTAssertNotEqual(frequency, 0)
     }
     
     func testRamSize() {
         let ramSize = UIDevice.ramSize
         
-        XCTAssert(ramSize != 0)
+        XCTAssertNotEqual(ramSize, 0)
     }
     
     func testCPUSNumber() {
         let cpusNumber = UIDevice.cpusNumber
         
-        XCTAssert(cpusNumber != 0)
+        XCTAssertNotEqual(cpusNumber, 0)
     }
     
     func testTotalMemory() {
         let totalMemory = UIDevice.totalMemory
         
-        XCTAssert(totalMemory != 0)
+        XCTAssertNotEqual(totalMemory, 0)
     }
     
     func testUserMemory() {
         let userMemory = UIDevice.userMemory
         
-        XCTAssert(userMemory != 0)
+        XCTAssertNotEqual(userMemory, 0)
     }
     
     @available(iOS 9.0, *)
@@ -195,33 +195,33 @@ class UIDeviceExtensionTests: XCTestCase {
     func testUptime() {
         let uptime = UIDevice.uptime()
         
-        XCTAssert(uptime > 0)
+        XCTAssertGreaterThan(uptime, 0)
     }
     
     func testUptimeDate() {
         let uptimeDate = UIDevice.uptimeDate()
         
-        XCTAssert(uptimeDate < Date())
+        XCTAssertLessThan(uptimeDate, Date())
     }
     
     func testTotalDiskSpace() {
         let totalDiskSpace = UIDevice.totalDiskSpace()
         
-        XCTAssert(totalDiskSpace != 0.0)
+        XCTAssertNotEqual(totalDiskSpace, 0.0)
     }
     
     func testFreeDiskSpace() {
         let freeDiskSpace = UIDevice.freeDiskSpace()
         
-        XCTAssert(freeDiskSpace != 0.0)
+        XCTAssertNotEqual(freeDiskSpace, 0.0)
     }
     
     func testGenerateUniqueIdentifier() {
         let uuid = UIDevice.generateUniqueIdentifier()
         let uuid2 = UIDevice.generateUniqueIdentifier()
         
-        XCTAssert(uuid.length == 36)
-        XCTAssert(uuid != uuid2)
+        XCTAssertEqual(uuid.length, 36)
+        XCTAssertNotEqual(uuid, uuid2)
     }
     
     func testSaveAPNSIdentifier() {

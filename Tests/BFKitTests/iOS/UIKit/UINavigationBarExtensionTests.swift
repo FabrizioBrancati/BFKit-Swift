@@ -49,7 +49,7 @@ class UINavigationBarExtensionTests: XCTestCase {
         navigationBar.setTransparent(false, translucent: true)
         
         XCTAssertTrue(navigationBar.isTranslucent)
-        XCTAssert(navigationBar.backgroundImage(for: .default) == nil)
-        XCTAssert(navigationBar.shadowImage == nil)
+        XCTAssertNil(navigationBar.backgroundImage(for: .default))
+        XCTAssertNil(navigationBar.shadowImage)
     }
 }

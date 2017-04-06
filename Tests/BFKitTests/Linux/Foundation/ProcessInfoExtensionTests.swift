@@ -44,12 +44,12 @@ class ProcessInfoExtensionTests: XCTestCase {
     func testUptime() {
         let uptime = ProcessInfo.uptime()
         
-        XCTAssert(uptime > 0)
+        XCTAssertGreaterThan(uptime, 0)
     }
     
     func testUptimeDate() {
         let uptimeDate = ProcessInfo.uptimeDate()
         
-        XCTAssert(uptimeDate < Date())
+        XCTAssertLessThan(uptimeDate, Date())
     }
 }

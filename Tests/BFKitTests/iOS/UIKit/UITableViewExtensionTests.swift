@@ -42,20 +42,20 @@ class UITableViewExtensionTests: XCTestCase {
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: 320, height: 500), style: .plain)
         let indexPaths = tableView.indexPaths(section: 0)
         
-        XCTAssert(indexPaths.isEmpty)
+        XCTAssertTrue(indexPaths.isEmpty)
     }
     
     func testNextIntedPathRowForSection() {
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: 320, height: 500), style: .plain)
         let indexPath = tableView.nextIndexPath(row: 0, forSection: 0)
         
-        XCTAssert(indexPath == nil)
+        XCTAssertNil(indexPath)
     }
     
     func testPreviousIntedPathRowForSection() {
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: 320, height: 500), style: .plain)
         let indexPath = tableView.previousIndexPath(row: 0, forSection: 0)
         
-        XCTAssert(indexPath == nil)
+        XCTAssertNil(indexPath)
     }
 }

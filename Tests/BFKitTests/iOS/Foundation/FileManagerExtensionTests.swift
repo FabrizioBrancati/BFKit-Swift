@@ -47,7 +47,7 @@ class FileManagerExtensionTests: XCTestCase {
     func testPathFor() {
         let path = FileManager.default.pathFor(.documents)
         
-        XCTAssert(path != "")
+        XCTAssertNotEqual(path, "")
     }
     
     func testReadFileOfType() {
@@ -55,7 +55,7 @@ class FileManagerExtensionTests: XCTestCase {
             try FileManager.default.save(file: "Test.txt", in: .documents, content: "Test")
             let file = try FileManager.default.read(file: "Test.txt", from: .documents)
             
-            XCTAssert(file != nil)
+            XCTAssertNotNil(file)
         } catch {
             XCTFail()
         }
