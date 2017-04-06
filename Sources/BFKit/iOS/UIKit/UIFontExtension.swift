@@ -31,521 +31,521 @@ import UIKit
 
 /// All font names for all family available from iOS 7.0 to iOS 10.0.
 ///
-/// - AcademyEngravedLetPlain: AcademyEngravedLetPlain.
-/// - AlNile: AlNile.
-/// - AlNileBold: AlNile Bold.
-/// - AmericanTypewriter: AmericanTypewriter.
-/// - AmericanTypewriterBold: AmericanTypewriter Bold.
-/// - AmericanTypewriterCondensed: AmericanTypewriter Condensed.
-/// - AmericanTypewriterCondensedBold: AmericanTypewriter Condensed Bold.
-/// - AmericanTypewriterCondensedLight: AmericanTypewriter Condensed Light.
-/// - AmericanTypewriterLight: AmericanTypewriter Light.
-/// - AmericanTypewriterSemiBold: AmericanTypewriter Semi Bold.
-/// - AppleColorEmoji: AppleColorEmoji.
-/// - AppleSDGothicNeoBold: AppleSDGothicNeo Bold.
-/// - AppleSDGothicNeoLight: AppleSDGothicNeo Light.
-/// - AppleSDGothicNeoMedium: AppleSDGothicNeo Medium.
-/// - AppleSDGothicNeoRegular: AppleSDGothicNeo Regular.
-/// - AppleSDGothicNeoSemiBold: AppleSDGothicNeo Semi Bold.
-/// - AppleSDGothicNeoThin: AppleSDGothicNeo Thin.
-/// - AppleSDGothicNeoUltraLight: AppleSDGothicNeo Ultra Light.
-/// - ArialBoldItalicMT: Arial Bold Italic MT.
-/// - ArialBoldMT: Arial Bold MT.
-/// - ArialHebrew: ArialHebrew.
-/// - ArialHebrewBold: ArialHebrew Bold.
-/// - ArialHebrewLight: ArialHebrew Light.
-/// - ArialItalicMT: Arial Italic MT.
-/// - ArialMT: Arial MT.
-/// - ArialRoundedMTBold: Arial Rounded MT Bold.
-/// - ASTHeitiLight: ASTHeiti Light.
-/// - ASTHeitiMedium: ASTHeiti Medium.
-/// - AvenirBlack: AvenirBlack.
-/// - AvenirBlackOblique: AvenirBlack Oblique.
-/// - AvenirBook: AvenirBook.
-/// - AvenirBookOblique: AvenirBook Oblique.
-/// - AvenirHeavy: AvenirHeavy.
-/// - AvenirHeavyOblique: AvenirHeavy Oblique.
-/// - AvenirLight: AvenirLight.
-/// - AvenirLightOblique: AvenirLight Oblique.
-/// - AvenirMedium: AvenirMedium.
-/// - AvenirMediumOblique: AvenirMedium Oblique.
-/// - AvenirNextBold: AvenirNext Bold.
-/// - AvenirNextBoldItalic: AvenirNext Bold Italic.
-/// - AvenirNextCondensedBold: AvenirNextCondensed Bold.
-/// - AvenirNextCondensedBoldItalic: AvenirNextCondensed Bold Italic.
-/// - AvenirNextCondensedDemiBold: AvenirNextCondensed Demi Bold.
-/// - AvenirNextCondensedDemiBoldItalic: AvenirNextCondensed Demi Bold Italic.
-/// - AvenirNextCondensedHeavy: AvenirNextCondensed Heavy.
-/// - AvenirNextCondensedHeavyItalic: AvenirNextCondensed Heavy Italic.
-/// - AvenirNextCondensedItalic: AvenirNextCondensed Italic.
-/// - AvenirNextCondensedMedium: AvenirNextCondensed Medium.
-/// - AvenirNextCondensedMediumItalic: AvenirNextCondensed Medium Italic.
-/// - AvenirNextCondensedRegular: AvenirNextCondensed Regular.
-/// - AvenirNextCondensedUltraLight: AvenirNextCondensed Ultra Light.
-/// - AvenirNextCondensedUltraLightItalic: AvenirNextCondensed Ultra Light Italic.
-/// - AvenirNextDemiBold: AvenirNextDemi Bold.
-/// - AvenirNextDemiBoldItalic: AvenirNextDemi Bold Italic.
-/// - AvenirNextHeavy: AvenirNext Heavy.
-/// - AvenirNextItalic: AvenirNext Italic.
-/// - AvenirNextMedium: AvenirNext Medium.
-/// - AvenirNextMediumItalic: AvenirNext Medium Italic.
-/// - AvenirNextRegular: AvenirNext Regular.
-/// - AvenirNextUltraLight: AvenirNext Ultra Light.
-/// - AvenirNextUltraLightItalic: AvenirNext Ultra Light Italic.
-/// - AvenirOblique: Avenir Oblique.
-/// - AvenirRoman: Avenir Roman.
-/// - Baskerville: Baskerville.
-/// - BaskervilleBold: Baskerville Bold.
-/// - BaskervilleBoldItalic: Baskerville Bold Italic.
-/// - BaskervilleItalic: Baskerville Italic.
-/// - BaskervilleSemiBold: Baskerville Semi Bold.
-/// - BaskervilleSemiBoldItalic: Baskerville Semi Bold Italic.
-/// - BodoniOrnamentsITCTT: BodoniOrnamentsITCTT.
-/// - BodoniSvtyTwoITCTTBold: BodoniSvtyTwoITCTT Bold.
-/// - BodoniSvtyTwoITCTTBook: BodoniSvtyTwoITCTT Book.
-/// - BodoniSvtyTwoITCTTBookIta: BodoniSvtyTwoITCTT Book Ita.
-/// - BodoniSvtyTwoOSITCTTBold: BodoniSvtyTwoOSITCTT Bold.
-/// - BodoniSvtyTwoOSITCTTBook: BodoniSvtyTwoOSITCTT Book.
-/// - BodoniSvtyTwoOSITCTTBookIt: BodoniSvtyTwoOSITCTT Book It.
-/// - BodoniSvtyTwoSCITCTTBook: BodoniSvtyTwoSCITCTT Book.
-/// - BradleyHandITCTTBold: BradleyHandITCTT Bold.
-/// - ChalkboardSEBold: ChalkboardSE Bold.
-/// - ChalkboardSELight: ChalkboardSE Light.
-/// - ChalkboardSERegular: ChalkboardSE Regular.
-/// - Chalkduster: Chalkduster.
-/// - Cochin: Cochin.
-/// - CochinBold: Cochin Bold.
-/// - CochinBoldItalic: Cochin Bold Italic.
-/// - CochinItalic: Cochin Italic.
-/// - Copperplate: Copperplate.
-/// - CopperplateBold: Copperplate Bold.
-/// - CopperplateLight: Copperplate Light.
-/// - Courier: Courier.
-/// - CourierBold: Courier Bold.
-/// - CourierBoldOblique: Courier Bold Oblique.
-/// - CourierNewPSBoldItalicMT: CourierNewPS Bold Italic MT.
-/// - CourierNewPSBoldMT: CourierNewPS Bold MT.
-/// - CourierNewPSItalicMT: CourierNewPS Italic MT.
-/// - CourierNewPSMT: CourierNewPS MT.
-/// - CourierOblique: Courier Oblique.
-/// - Damascus: Damascus.
-/// - DamascusBold: Damascus Bold.
-/// - DamascusMedium: Damascus Medium.
-/// - DamascusSemiBold: Damascus Semi Bold.
-/// - DevanagariSangamMN: DevanagariSangamMN.
-/// - DevanagariSangamMNBold: DevanagariSangamMN Bold.
-/// - Didot: Didot.
-/// - DidotBold: Didot Bold.
-/// - DidotItalic: Didot Italic.
-/// - DiwanMishafi: DiwanMishafi..
-/// - EuphemiaUCAS: EuphemiaUCAS.
-/// - EuphemiaUCASBold: EuphemiaUCAS Bold.
-/// - EuphemiaUCASItalic: EuphemiaUCAS Italic.
-/// - Farah: Farah.
-/// - FuturaBold: Futura Bold.
-/// - FuturaCondensedExtraBold: Futura Condensed Extra Bold.
-/// - FuturaCondensedMedium: Futura Condensed Medium.
-/// - FuturaMedium: Futura Medium.
-/// - FuturaMediumItalic: Futura Medium Italic.
-/// - GeezaPro: GeezaPro.
-/// - GeezaProBold: GeezaPro Bold.
-/// - GeezaProLight: GeezaPro Light.
-/// - Georgia: Georgia.
-/// - GeorgiaBold: Georgia Bold.
-/// - GeorgiaBoldItalic: Georgia Bold Italic.
-/// - GeorgiaItalic: Georgia Italic.
-/// - GillSans: GillSans.
-/// - GillSansBold: GillSans Bold.
-/// - GillSansBoldItalic: GillSans Bold Italic.
-/// - GillSansItalic: GillSans Italic.
-/// - GillSansLight: GillSans Light.
-/// - GillSansLightItalic: GillSans Light Italic.
-/// - GillSansSemiBold: GillSans Semi Bold.
-/// - GillSansSemiBoldItalic: GillSans Semi Bold Italic.
-/// - GillSansUltraBold: GillSans Ultra Bold.
-/// - GujaratiSangamMN: GujaratiSangamMN.
-/// - GujaratiSangamMNBold: GujaratiSangamMN Bold.
-/// - GurmukhiMN: GurmukhiMN.
-/// - GurmukhiMNBold: GurmukhiMN Bold.
-/// - Helvetica: Helvetica.
-/// - HelveticaBold: Helvetica Bold.
-/// - HelveticaBoldOblique: Helvetica Bold Oblique.
-/// - HelveticaLight: Helvetica Light.
-/// - HelveticaLightOblique: Helvetica Light Oblique.
-/// - HelveticaNeue: HelveticaNeue.
-/// - HelveticaNeueBold: HelveticaNeue Bold.
-/// - HelveticaNeueBoldItalic: HelveticaNeue Bold Italic.
-/// - HelveticaNeueCondensedBlack: HelveticaNeue Condensed Black.
-/// - HelveticaNeueCondensedBold: HelveticaNeue Condensed Bold.
-/// - HelveticaNeueItalic: HelveticaNeue Italic.
-/// - HelveticaNeueLight: HelveticaNeue Light.
-/// - HelveticaNeueMedium: HelveticaNeue Medium.
-/// - HelveticaNeueMediumItalic: HelveticaNeue Medium Italic.
-/// - HelveticaNeueThin: HelveticaNeue Thin.
-/// - HelveticaNeueThinItalic: HelveticaNeue Thin Italic.
-/// - HelveticaNeueUltraLight: HelveticaNeue Ultra Light.
-/// - HelveticaNeueUltraLightItalic: HelveticaNeue Ultra Light Italic.
-/// - HelveticaOblique: Helvetica Oblique.
-/// - HiraginoSansW3: HiraginoSansW3.
-/// - HiraginoSansW6: HiraginoSansW6.
-/// - HiraKakuProNW3: HiraKakuProNW3.
-/// - HiraKakuProNW6: HiraKakuProNW6.
-/// - HiraMinProNW3: HiraMinProNW3.
-/// - HiraMinProNW6: HiraMinProNW6.
-/// - HoeflerTextBlack: HoeflerTextBlack.
-/// - HoeflerTextBlackItalic: HoeflerTextBlack Italic.
-/// - HoeflerTextItalic: HoeflerText Italic.
-/// - HoeflerTextRegular: HoeflerText Regular.
-/// - Kailasa: Kailasa.
-/// - KailasaBold: Kailasa Bold.
-/// - KannadaSangamMN: KannadaSangamMN.
-/// - KannadaSangamMNBold: KannadaSangamMN Bold.
-/// - KhmerSangamMN: KhmerSangamMN.
-/// - KohinoorBanglaLight: KohinoorBangla Light.
-/// - KohinoorBanglaMedium: KohinoorBangla Medium.
-/// - KohinoorBanglaRegular: KohinoorBangla Regular.
-/// - KohinoorBanglaSemiBold: KohinoorBangla Semi Bold.
-/// - KohinoorDevanagariBook: KohinoorDevanagari Book.
-/// - KohinoorDevanagariLight: KohinoorDevanagari Light.
-/// - KohinoorDevanagariMedium: KohinoorDevanagari Medium.
-/// - KohinoorDevanagariRegular KohinoorDevanagari Regular.
-/// - KohinoorDevanagariSemiBold KohinoorDevanagari Semi Bold.
-/// - KohinoorTeluguLight: KohinoorTelugu Light.
-/// - KohinoorTeluguMedium: KohinoorTelugu Medium.
-/// - KohinoorTeluguRegular: KohinoorTelugu Regular.
-/// - LaoSangamMN: LaoSangamMN.
-/// - MalayalamSangamMN: MalayalamSangamMN.
-/// - MalayalamSangamMNBold: MalayalamSangamMN Bold.
-/// - MarkerFeltThin: MarkerFelt Thin.
-/// - MarkerFeltWide: MarkerFelt Wide.
-/// - MenloBold: MenloBold.
-/// - MenloBoldItalic: MenloBold Italic.
-/// - MenloItalic: Menlo Italic.
-/// - MenloRegular: Menlo Regular.
-/// - MyanmarSangamMN: MyanmarSangamMN.
-/// - MyanmarSangamMNBold: MyanmarSangamMN Bold.
-/// - NoteworthyBold: Noteworthy Bold.
-/// - NoteworthyLight: Noteworthy Light.
-/// - OptimaBold: Optima Bold.
-/// - OptimaBoldItalic: Optima Bold Italic.
-/// - OptimaExtraBlack: Optima Extra Black.
-/// - OptimaItalic: Optima Italic.
-/// - OptimaRegular: Optima Regular.
-/// - OriyaSangamMN: OriyaSangamMN.
-/// - OriyaSangamMNBold: OriyaSangamMN Bold.
-/// - PalatinoBold: Palatino Bold.
-/// - PalatinoBoldItalic: Palatino Bold Italic.
-/// - PalatinoItalic: Palatino Italic.
-/// - PalatinoRoman: Palatino Roman.
-/// - Papyrus: Papyrus.
-/// - PapyrusCondensed: Papyrus Condensed.
-/// - PartyLetPlain: PartyLetPlain.
-/// - PingFangHKLight: PingFangHK Light.
-/// - PingFangHKMedium: PingFangHK Medium.
-/// - PingFangHKRegular: PingFangHK Regular.
-/// - PingFangHKSemiBold: PingFangHK Semi Bold.
-/// - PingFangHKThin: PingFangHK Thin.
-/// - PingFangHKUltraLight: PingFangHK Ultra Light.
-/// - PingFangSCLight: PingFangSC Light.
-/// - PingFangSCMedium: PingFangSC Medium.
-/// - PingFangSCRegular: PingFangSC Regular.
-/// - PingFangSCSemiBold: PingFangSC Semi Bold.
-/// - PingFangSCThin: PingFangSC Thin.
-/// - PingFangSCUltraLight: PingFangSC Ultra Light.
-/// - PingFangTCLight: PingFangTC Light.
-/// - PingFangTCMedium: PingFangTC Medium.
-/// - PingFangTCRegular: PingFangTC Regular.
-/// - PingFangTCSemiBold: PingFangTC Semi Bold.
-/// - PingFangTCThin: PingFangTC Thin.
-/// - PingFangTCUltraLight: PingFangTC Ultra Light.
-/// - SavoyeLetPlain: SavoyeLetPlain.
-/// - SinhalaSangamMN: SinhalaSangamMN.
-/// - SinhalaSangamMNBold: SinhalaSangamMN Bold.
-/// - SnellRoundhand: SnellRoundhand.
-/// - SnellRoundhandBlack: SnellRoundhand Black.
-/// - SnellRoundhandBold: SnellRoundhand Bold.
-/// - STHeitiSCLight: STHeitiSC Light.
-/// - STHeitiSCMedium: STHeitiSC Medium.
-/// - STHeitiTCLight: STHeitiTC Light.
-/// - STHeitiTCMedium: STHeitiTC Medium.
-/// - Symbol: Symbol.
-/// - TamilSangamMN: TamilSangamMN.
-/// - TamilSangamMNBold: TamilSangamMN Bold.
-/// - TeluguSangamMN: TeluguSangamMN.
-/// - TeluguSangamMNBold: TeluguSangamMN Bold.
-/// - Thonburi: Thonburi.
-/// - ThonburiBold: Thonburi Bold.
-/// - ThonburiLight: Thonburi Light.
-/// - TimesNewRomanPSBoldItalicMT: TimesNewRomanPS Bold Italic MT.
-/// - TimesNewRomanPSBoldMT: TimesNewRomanPS Bold MT.
-/// - TimesNewRomanPSItalicMT: TimesNewRomanPS Italic MT.
-/// - TimesNewRomanPSMT: TimesNewRomanPS MT.
-/// - TrebuchetBoldItalic: Trebuchet Bold Italic.
-/// - TrebuchetMS: TrebuchetMS.
-/// - TrebuchetMSBold: TrebuchetMS Bold.
-/// - TrebuchetMSItalic: TrebuchetMS Italic.
-/// - Verdana: Verdana.
-/// - VerdanaBold: Verdana Bold.
-/// - VerdanaBoldItalic: Verdana Bold Italic.
-/// - VerdanaItalic: Verdana Italic.
+/// - academyEngravedLetPlain: AcademyEngravedLetPlain.
+/// - alNile: AlNile.
+/// - alNileBold: AlNile Bold.
+/// - americanTypewriter: AmericanTypewriter.
+/// - americanTypewriterBold: AmericanTypewriter Bold.
+/// - americanTypewriterCondensed: AmericanTypewriter Condensed.
+/// - americanTypewriterCondensedBold: AmericanTypewriter Condensed Bold.
+/// - americanTypewriterCondensedLight: AmericanTypewriter Condensed Light.
+/// - americanTypewriterLight: AmericanTypewriter Light.
+/// - americanTypewriterSemiBold: AmericanTypewriter Semi Bold.
+/// - appleColorEmoji: AppleColorEmoji.
+/// - appleSDGothicNeoBold: AppleSDGothicNeo Bold.
+/// - appleSDGothicNeoLight: AppleSDGothicNeo Light.
+/// - appleSDGothicNeoMedium: AppleSDGothicNeo Medium.
+/// - appleSDGothicNeoRegular: AppleSDGothicNeo Regular.
+/// - appleSDGothicNeoSemiBold: AppleSDGothicNeo Semi Bold.
+/// - appleSDGothicNeoThin: AppleSDGothicNeo Thin.
+/// - appleSDGothicNeoUltraLight: AppleSDGothicNeo Ultra Light.
+/// - arialBoldItalicMT: Arial Bold Italic MT.
+/// - arialBoldMT: Arial Bold MT.
+/// - arialHebrew: ArialHebrew.
+/// - arialHebrewBold: ArialHebrew Bold.
+/// - arialHebrewLight: ArialHebrew Light.
+/// - arialItalicMT: Arial Italic MT.
+/// - arialMT: Arial MT.
+/// - arialRoundedMTBold: Arial Rounded MT Bold.
+/// - astHeitiLight: ASTHeiti Light.
+/// - astHeitiMedium: ASTHeiti Medium.
+/// - avenirBlack: AvenirBlack.
+/// - avenirBlackOblique: AvenirBlack Oblique.
+/// - avenirBook: AvenirBook.
+/// - avenirBookOblique: AvenirBook Oblique.
+/// - avenirHeavy: AvenirHeavy.
+/// - avenirHeavyOblique: AvenirHeavy Oblique.
+/// - avenirLight: AvenirLight.
+/// - avenirLightOblique: AvenirLight Oblique.
+/// - avenirMedium: AvenirMedium.
+/// - avenirMediumOblique: AvenirMedium Oblique.
+/// - avenirNextBold: AvenirNext Bold.
+/// - avenirNextBoldItalic: AvenirNext Bold Italic.
+/// - avenirNextCondensedBold: AvenirNextCondensed Bold.
+/// - avenirNextCondensedBoldItalic: AvenirNextCondensed Bold Italic.
+/// - avenirNextCondensedDemiBold: AvenirNextCondensed Demi Bold.
+/// - avenirNextCondensedDemiBoldItalic: AvenirNextCondensed Demi Bold Italic.
+/// - aAvenirNextCondensedHeavy: AvenirNextCondensed Heavy.
+/// - avenirNextCondensedHeavyItalic: AvenirNextCondensed Heavy Italic.
+/// - avenirNextCondensedItalic: AvenirNextCondensed Italic.
+/// - avenirNextCondensedMedium: AvenirNextCondensed Medium.
+/// - avenirNextCondensedMediumItalic: AvenirNextCondensed Medium Italic.
+/// - avenirNextCondensedRegular: AvenirNextCondensed Regular.
+/// - avenirNextCondensedUltraLight: AvenirNextCondensed Ultra Light.
+/// - avenirNextCondensedUltraLightItalic: AvenirNextCondensed Ultra Light Italic.
+/// - avenirNextDemiBold: AvenirNextDemi Bold.
+/// - avenirNextDemiBoldItalic: AvenirNextDemi Bold Italic.
+/// - avenirNextHeavy: AvenirNext Heavy.
+/// - avenirNextItalic: AvenirNext Italic.
+/// - avenirNextMedium: AvenirNext Medium.
+/// - avenirNextMediumItalic: AvenirNext Medium Italic.
+/// - avenirNextRegular: AvenirNext Regular.
+/// - avenirNextUltraLight: AvenirNext Ultra Light.
+/// - avenirNextUltraLightItalic: AvenirNext Ultra Light Italic.
+/// - avenirOblique: Avenir Oblique.
+/// - avenirRoman: Avenir Roman.
+/// - baskerville: Baskerville.
+/// - baskervilleBold: Baskerville Bold.
+/// - baskervilleBoldItalic: Baskerville Bold Italic.
+/// - baskervilleItalic: Baskerville Italic.
+/// - baskervilleSemiBold: Baskerville Semi Bold.
+/// - baskervilleSemiBoldItalic: Baskerville Semi Bold Italic.
+/// - bodoniOrnamentsITCTT: BodoniOrnamentsITCTT.
+/// - bodoniSvtyTwoITCTTBold: BodoniSvtyTwoITCTT Bold.
+/// - bodoniSvtyTwoITCTTBook: BodoniSvtyTwoITCTT Book.
+/// - bodoniSvtyTwoITCTTBookIta: BodoniSvtyTwoITCTT Book Ita.
+/// - bodoniSvtyTwoOSITCTTBold: BodoniSvtyTwoOSITCTT Bold.
+/// - bodoniSvtyTwoOSITCTTBook: BodoniSvtyTwoOSITCTT Book.
+/// - bodoniSvtyTwoOSITCTTBookIt: BodoniSvtyTwoOSITCTT Book It.
+/// - bodoniSvtyTwoSCITCTTBook: BodoniSvtyTwoSCITCTT Book.
+/// - bradleyHandITCTTBold: BradleyHandITCTT Bold.
+/// - chalkboardSEBold: ChalkboardSE Bold.
+/// - chalkboardSELight: ChalkboardSE Light.
+/// - chalkboardSERegular: ChalkboardSE Regular.
+/// - chalkduster: Chalkduster.
+/// - cochin: Cochin.
+/// - cochinBold: Cochin Bold.
+/// - cochinBoldItalic: Cochin Bold Italic.
+/// - cochinItalic: Cochin Italic.
+/// - copperplate: Copperplate.
+/// - copperplateBold: Copperplate Bold.
+/// - copperplateLight: Copperplate Light.
+/// - courier: Courier.
+/// - courierBold: Courier Bold.
+/// - courierBoldOblique: Courier Bold Oblique.
+/// - courierNewPSBoldItalicMT: CourierNewPS Bold Italic MT.
+/// - courierNewPSBoldMT: CourierNewPS Bold MT.
+/// - courierNewPSItalicMT: CourierNewPS Italic MT.
+/// - courierNewPSMT: CourierNewPS MT.
+/// - courierOblique: Courier Oblique.
+/// - damascus: Damascus.
+/// - damascusBold: Damascus Bold.
+/// - damascusMedium: Damascus Medium.
+/// - damascusSemiBold: Damascus Semi Bold.
+/// - devanagariSangamMN: DevanagariSangamMN.
+/// - devanagariSangamMNBold: DevanagariSangamMN Bold.
+/// - didot: Didot.
+/// - didotBold: Didot Bold.
+/// - didotItalic: Didot Italic.
+/// - diwanMishafi: DiwanMishafi..
+/// - euphemiaUCAS: EuphemiaUCAS.
+/// - euphemiaUCASBold: EuphemiaUCAS Bold.
+/// - euphemiaUCASItalic: EuphemiaUCAS Italic.
+/// - farah: Farah.
+/// - futuraBold: Futura Bold.
+/// - futuraCondensedExtraBold: Futura Condensed Extra Bold.
+/// - futuraCondensedMedium: Futura Condensed Medium.
+/// - futuraMedium: Futura Medium.
+/// - futuraMediumItalic: Futura Medium Italic.
+/// - geezaPro: GeezaPro.
+/// - geezaProBold: GeezaPro Bold.
+/// - geezaProLight: GeezaPro Light.
+/// - georgia: Georgia.
+/// - georgiaBold: Georgia Bold.
+/// - georgiaBoldItalic: Georgia Bold Italic.
+/// - georgiaItalic: Georgia Italic.
+/// - gillSans: GillSans.
+/// - gillSansBold: GillSans Bold.
+/// - gillSansBoldItalic: GillSans Bold Italic.
+/// - gillSansItalic: GillSans Italic.
+/// - gillSansLight: GillSans Light.
+/// - gillSansLightItalic: GillSans Light Italic.
+/// - gillSansSemiBold: GillSans Semi Bold.
+/// - gillSansSemiBoldItalic: GillSans Semi Bold Italic.
+/// - gillSansUltraBold: GillSans Ultra Bold.
+/// - gujaratiSangamMN: GujaratiSangamMN.
+/// - gujaratiSangamMNBold: GujaratiSangamMN Bold.
+/// - gurmukhiMN: GurmukhiMN.
+/// - gurmukhiMNBold: GurmukhiMN Bold.
+/// - helvetica: Helvetica.
+/// - helveticaBold: Helvetica Bold.
+/// - helveticaBoldOblique: Helvetica Bold Oblique.
+/// - helveticaLight: Helvetica Light.
+/// - helveticaLightOblique: Helvetica Light Oblique.
+/// - helveticaNeue: HelveticaNeue.
+/// - helveticaNeueBold: HelveticaNeue Bold.
+/// - helveticaNeueBoldItalic: HelveticaNeue Bold Italic.
+/// - helveticaNeueCondensedBlack: HelveticaNeue Condensed Black.
+/// - helveticaNeueCondensedBold: HelveticaNeue Condensed Bold.
+/// - helveticaNeueItalic: HelveticaNeue Italic.
+/// - helveticaNeueLight: HelveticaNeue Light.
+/// - helveticaNeueMedium: HelveticaNeue Medium.
+/// - helveticaNeueMediumItalic: HelveticaNeue Medium Italic.
+/// - helveticaNeueThin: HelveticaNeue Thin.
+/// - helveticaNeueThinItalic: HelveticaNeue Thin Italic.
+/// - helveticaNeueUltraLight: HelveticaNeue Ultra Light.
+/// - helveticaNeueUltraLightItalic: HelveticaNeue Ultra Light Italic.
+/// - helveticaOblique: Helvetica Oblique.
+/// - hiraginoSansW3: HiraginoSansW3.
+/// - hiraginoSansW6: HiraginoSansW6.
+/// - hiraKakuProNW3: HiraKakuProNW3.
+/// - hiraKakuProNW6: HiraKakuProNW6.
+/// - hiraMinProNW3: HiraMinProNW3.
+/// - hiraMinProNW6: HiraMinProNW6.
+/// - hoeflerTextBlack: HoeflerTextBlack.
+/// - hoeflerTextBlackItalic: HoeflerTextBlack Italic.
+/// - hoeflerTextItalic: HoeflerText Italic.
+/// - hoeflerTextRegular: HoeflerText Regular.
+/// - kailasa: Kailasa.
+/// - kailasaBold: Kailasa Bold.
+/// - kannadaSangamMN: KannadaSangamMN.
+/// - kannadaSangamMNBold: KannadaSangamMN Bold.
+/// - khmerSangamMN: KhmerSangamMN.
+/// - kohinoorBanglaLight: KohinoorBangla Light.
+/// - kohinoorBanglaMedium: KohinoorBangla Medium.
+/// - kohinoorBanglaRegular: KohinoorBangla Regular.
+/// - kohinoorBanglaSemiBold: KohinoorBangla Semi Bold.
+/// - kohinoorDevanagariBook: KohinoorDevanagari Book.
+/// - kohinoorDevanagariLight: KohinoorDevanagari Light.
+/// - kohinoorDevanagariMedium: KohinoorDevanagari Medium.
+/// - ohinoorDevanagariRegular KohinoorDevanagari Regular.
+/// - kohinoorDevanagariSemiBold KohinoorDevanagari Semi Bold.
+/// - kohinoorTeluguLight: KohinoorTelugu Light.
+/// - kohinoorTeluguMedium: KohinoorTelugu Medium.
+/// - kohinoorTeluguRegular: KohinoorTelugu Regular.
+/// - laoSangamMN: LaoSangamMN.
+/// - malayalamSangamMN: MalayalamSangamMN.
+/// - malayalamSangamMNBold: MalayalamSangamMN Bold.
+/// - markerFeltThin: MarkerFelt Thin.
+/// - markerFeltWide: MarkerFelt Wide.
+/// - menloBold: MenloBold.
+/// - menloBoldItalic: MenloBold Italic.
+/// - menloItalic: Menlo Italic.
+/// - menloRegular: Menlo Regular.
+/// - myanmarSangamMN: MyanmarSangamMN.
+/// - myanmarSangamMNBold: MyanmarSangamMN Bold.
+/// - noteworthyBold: Noteworthy Bold.
+/// - noteworthyLight: Noteworthy Light.
+/// - optimaBold: Optima Bold.
+/// - optimaBoldItalic: Optima Bold Italic.
+/// - optimaExtraBlack: Optima Extra Black.
+/// - optimaItalic: Optima Italic.
+/// - optimaRegular: Optima Regular.
+/// - oriyaSangamMN: OriyaSangamMN.
+/// - oriyaSangamMNBold: OriyaSangamMN Bold.
+/// - palatinoBold: Palatino Bold.
+/// - palatinoBoldItalic: Palatino Bold Italic.
+/// - palatinoItalic: Palatino Italic.
+/// - palatinoRoman: Palatino Roman.
+/// - papyrus: Papyrus.
+/// - papyrusCondensed: Papyrus Condensed.
+/// - partyLetPlain: PartyLetPlain.
+/// - pingFangHKLight: PingFangHK Light.
+/// - pingFangHKMedium: PingFangHK Medium.
+/// - pingFangHKRegular: PingFangHK Regular.
+/// - pingFangHKSemiBold: PingFangHK Semi Bold.
+/// - pingFangHKThin: PingFangHK Thin.
+/// - pingFangHKUltraLight: PingFangHK Ultra Light.
+/// - pingFangSCLight: PingFangSC Light.
+/// - pingFangSCMedium: PingFangSC Medium.
+/// - pingFangSCRegular: PingFangSC Regular.
+/// - pingFangSCSemiBold: PingFangSC Semi Bold.
+/// - pingFangSCThin: PingFangSC Thin.
+/// - pingFangSCUltraLight: PingFangSC Ultra Light.
+/// - pingFangTCLight: PingFangTC Light.
+/// - pingFangTCMedium: PingFangTC Medium.
+/// - pingFangTCRegular: PingFangTC Regular.
+/// - pingFangTCSemiBold: PingFangTC Semi Bold.
+/// - pingFangTCThin: PingFangTC Thin.
+/// - pingFangTCUltraLight: PingFangTC Ultra Light.
+/// - savoyeLetPlain: SavoyeLetPlain.
+/// - sinhalaSangamMN: SinhalaSangamMN.
+/// - sinhalaSangamMNBold: SinhalaSangamMN Bold.
+/// - snellRoundhand: SnellRoundhand.
+/// - snellRoundhandBlack: SnellRoundhand Black.
+/// - snellRoundhandBold: SnellRoundhand Bold.
+/// - stHeitiSCLight: STHeitiSC Light.
+/// - stHeitiSCMedium: STHeitiSC Medium.
+/// - stHeitiTCLight: STHeitiTC Light.
+/// - stHeitiTCMedium: STHeitiTC Medium.
+/// - symbol: Symbol.
+/// - tamilSangamMN: TamilSangamMN.
+/// - tamilSangamMNBold: TamilSangamMN Bold.
+/// - teluguSangamMN: TeluguSangamMN.
+/// - teluguSangamMNBold: TeluguSangamMN Bold.
+/// - thonburi: Thonburi.
+/// - thonburiBold: Thonburi Bold.
+/// - thonburiLight: Thonburi Light.
+/// - timesNewRomanPSBoldItalicMT: TimesNewRomanPS Bold Italic MT.
+/// - timesNewRomanPSBoldMT: TimesNewRomanPS Bold MT.
+/// - timesNewRomanPSItalicMT: TimesNewRomanPS Italic MT.
+/// - timesNewRomanPSMT: TimesNewRomanPS MT.
+/// - trebuchetBoldItalic: Trebuchet Bold Italic.
+/// - trebuchetMS: TrebuchetMS.
+/// - trebuchetMSBold: TrebuchetMS Bold.
+/// - trebuchetMSItalic: TrebuchetMS Italic.
+/// - verdana: Verdana.
+/// - verdanaBold: Verdana Bold.
+/// - verdanaBoldItalic: Verdana Bold Italic.
+/// - verdanaItalic: Verdana Italic.
 public enum FontName: String {
-    case AcademyEngravedLetPlain = "AcademyEngravedLetPlain"
-    case AlNile = "AlNile"
-    case AlNileBold = "AlNile-Bold"
-    case AmericanTypewriter = "AmericanTypewriter"
-    case AmericanTypewriterBold = "AmericanTypewriter-Bold"
-    case AmericanTypewriterCondensed = "AmericanTypewriter-Condensed"
-    case AmericanTypewriterCondensedBold = "AmericanTypewriter-CondensedBold"
-    case AmericanTypewriterCondensedLight = "AmericanTypewriter-CondensedLight"
-    case AmericanTypewriterLight = "AmericanTypewriter-Light"
-    case AmericanTypewriterSemiBold = "AmericanTypewriter-SemiBold"
-    case AppleColorEmoji = "AppleColorEmoji"
-    case AppleSDGothicNeoBold = "AppleSDGothicNeo-Bold"
-    case AppleSDGothicNeoLight = "AppleSDGothicNeo-Light"
-    case AppleSDGothicNeoMedium = "AppleSDGothicNeo-Medium"
-    case AppleSDGothicNeoRegular = "AppleSDGothicNeo-Regular"
-    case AppleSDGothicNeoSemiBold = "AppleSDGothicNeo-SemiBold"
-    case AppleSDGothicNeoThin = "AppleSDGothicNeo-Thin"
-    case AppleSDGothicNeoUltraLight = "AppleSDGothicNeo-UltraLight"
-    case ArialBoldItalicMT = "Arial-BoldItalicMT"
-    case ArialBoldMT = "Arial-BoldMT"
-    case ArialHebrew = "ArialHebrew"
-    case ArialHebrewBold = "ArialHebrew-Bold"
-    case ArialHebrewLight = "ArialHebrew-Light"
-    case ArialItalicMT = "Arial-ItalicMT"
-    case ArialMT = "ArialMT"
-    case ArialRoundedMTBold = "ArialRoundedMTBold"
-    case ASTHeitiLight = "ASTHeiti-Light"
-    case ASTHeitiMedium = "ASTHeiti-Medium"
-    case AvenirBlack = "Avenir-Black"
-    case AvenirBlackOblique = "Avenir-BlackOblique"
-    case AvenirBook = "Avenir-Book"
-    case AvenirBookOblique = "Avenir-BookOblique"
-    case AvenirHeavy = "Avenir-Heavy"
-    case AvenirHeavyOblique = "Avenir-HeavyOblique"
-    case AvenirLight = "Avenir-Light"
-    case AvenirLightOblique = "Avenir-LightOblique"
-    case AvenirMedium = "Avenir-Medium"
-    case AvenirMediumOblique = "Avenir-MediumOblique"
-    case AvenirNextBold = "AvenirNext-Bold"
-    case AvenirNextBoldItalic = "AvenirNext-BoldItalic"
-    case AvenirNextCondensedBold = "AvenirNextCondensed-Bold"
-    case AvenirNextCondensedBoldItalic = "AvenirNextCondensed-BoldItalic"
-    case AvenirNextCondensedDemiBold = "AvenirNextCondensed-DemiBold"
-    case AvenirNextCondensedDemiBoldItalic = "AvenirNextCondensed-DemiBoldItalic"
-    case AvenirNextCondensedHeavy = "AvenirNextCondensed-Heavy"
-    case AvenirNextCondensedHeavyItalic = "AvenirNextCondensed-HeavyItalic"
-    case AvenirNextCondensedItalic = "AvenirNextCondensed-Italic"
-    case AvenirNextCondensedMedium = "AvenirNextCondensed-Medium"
-    case AvenirNextCondensedMediumItalic = "AvenirNextCondensed-MediumItalic"
-    case AvenirNextCondensedRegular = "AvenirNextCondensed-Regular"
-    case AvenirNextCondensedUltraLight = "AvenirNextCondensed-UltraLight"
-    case AvenirNextCondensedUltraLightItalic = "AvenirNextCondensed-UltraLightItalic"
-    case AvenirNextDemiBold = "AvenirNext-DemiBold"
-    case AvenirNextDemiBoldItalic = "AvenirNext-DemiBoldItalic"
-    case AvenirNextHeavy = "AvenirNext-Heavy"
-    case AvenirNextItalic = "AvenirNext-Italic"
-    case AvenirNextMedium = "AvenirNext-Medium"
-    case AvenirNextMediumItalic = "AvenirNext-MediumItalic"
-    case AvenirNextRegular = "AvenirNext-Regular"
-    case AvenirNextUltraLight = "AvenirNext-UltraLight"
-    case AvenirNextUltraLightItalic = "AvenirNext-UltraLightItalic"
-    case AvenirOblique = "Avenir-Oblique"
-    case AvenirRoman = "Avenir-Roman"
-    case Baskerville = "Baskerville"
-    case BaskervilleBold = "Baskerville-Bold"
-    case BaskervilleBoldItalic = "Baskerville-BoldItalic"
-    case BaskervilleItalic = "Baskerville-Italic"
-    case BaskervilleSemiBold = "Baskerville-SemiBold"
-    case BaskervilleSemiBoldItalic = "Baskerville-SemiBoldItalic"
-    case BodoniOrnamentsITCTT = "BodoniOrnamentsITCTT"
-    case BodoniSvtyTwoITCTTBold = "BodoniSvtyTwoITCTT-Bold"
-    case BodoniSvtyTwoITCTTBook = "BodoniSvtyTwoITCTT-Book"
-    case BodoniSvtyTwoITCTTBookIta = "BodoniSvtyTwoITCTT-BookIta"
-    case BodoniSvtyTwoOSITCTTBold = "BodoniSvtyTwoOSITCTT-Bold"
-    case BodoniSvtyTwoOSITCTTBook = "BodoniSvtyTwoOSITCTT-Book"
-    case BodoniSvtyTwoOSITCTTBookIt = "BodoniSvtyTwoOSITCTT-BookIt"
-    case BodoniSvtyTwoSCITCTTBook = "BodoniSvtyTwoSCITCTT-Book"
-    case BradleyHandITCTTBold = "BradleyHandITCTT-Bold"
-    case ChalkboardSEBold = "ChalkboardSE-Bold"
-    case ChalkboardSELight = "ChalkboardSE-Light"
-    case ChalkboardSERegular = "ChalkboardSE-Regular"
-    case Chalkduster = "Chalkduster"
-    case Cochin = "Cochin"
-    case CochinBold = "Cochin-Bold"
-    case CochinBoldItalic = "Cochin-BoldItalic"
-    case CochinItalic = "Cochin-Italic"
-    case Copperplate = "Copperplate"
-    case CopperplateBold = "Copperplate-Bold"
-    case CopperplateLight = "Copperplate-Light"
-    case Courier = "Courier"
-    case CourierBold = "Courier-Bold"
-    case CourierBoldOblique = "Courier-BoldOblique"
-    case CourierNewPSBoldItalicMT = "CourierNewPS-BoldItalicMT"
-    case CourierNewPSBoldMT = "CourierNewPS-BoldMT"
-    case CourierNewPSItalicMT = "CourierNewPS-ItalicMT"
-    case CourierNewPSMT = "CourierNewPSMT"
-    case CourierOblique = "Courier-Oblique"
-    case Damascus = "Damascus"
-    case DamascusBold = "DamascusBold"
-    case DamascusMedium = "DamascusMedium"
-    case DamascusSemiBold = "DamascusSemiBold"
-    case DevanagariSangamMN = "DevanagariSangamMN"
-    case DevanagariSangamMNBold = "DevanagariSangamMN-Bold"
-    case Didot = "Didot"
-    case DidotBold = "Didot-Bold"
-    case DidotItalic = "Didot-Italic"
-    case DiwanMishafi = "DiwanMishafi"
-    case EuphemiaUCAS = "EuphemiaUCAS"
-    case EuphemiaUCASBold = "EuphemiaUCAS-Bold"
-    case EuphemiaUCASItalic = "EuphemiaUCAS-Italic"
-    case Farah = "Farah"
-    case FuturaBold = "Futura-Bold"
-    case FuturaCondensedExtraBold = "Futura-ExtraBold"
-    case FuturaCondensedMedium = "Futura-CondensedMedium"
-    case FuturaMedium = "Futura-Medium"
-    case FuturaMediumItalic = "Futura-MediumItalic"
-    case GeezaPro = "GeezaPro"
-    case GeezaProBold = "GeezaPro-Bold"
-    case GeezaProLight = "GeezaPro-Light"
-    case Georgia = "Georgia"
-    case GeorgiaBold = "Georgia-Bold"
-    case GeorgiaBoldItalic = "Georgia-BoldItalic"
-    case GeorgiaItalic = "Georgia-Italic"
-    case GillSans = "GillSans"
-    case GillSansBold = "GillSans-Bold"
-    case GillSansBoldItalic = "GillSans-BoldItalic"
-    case GillSansItalic = "GillSans-Italic"
-    case GillSansLight = "GillSans-Light"
-    case GillSansLightItalic = "GillSans-LightItalic"
-    case GillSansSemiBold = "GillSans-SemiBold"
-    case GillSansSemiBoldItalic = "GillSans-SemiBoldItalic"
-    case GillSansUltraBold = "GillSans-UltraBold"
-    case GujaratiSangamMN = "GujaratiSangamMN"
-    case GujaratiSangamMNBold = "GujaratiSangamMN-Bold"
-    case GurmukhiMN = "GurmukhiMN"
-    case GurmukhiMNBold = "GurmukhiMN-Bold"
-    case Helvetica = "Helvetica"
-    case HelveticaBold = "Helvetica-Bold"
-    case HelveticaBoldOblique = "Helvetica-BoldOblique"
-    case HelveticaLight = "Helvetica-Light"
-    case HelveticaLightOblique = "Helvetica-LightOblique"
-    case HelveticaNeue = "HelveticaNeue"
-    case HelveticaNeueBold = "HelveticaNeue-Bold"
-    case HelveticaNeueBoldItalic = "HelveticaNeue-BoldItalic"
-    case HelveticaNeueCondensedBlack = "HelveticaNeue-CondensedBlack"
-    case HelveticaNeueCondensedBold = "HelveticaNeue-CondensedBold"
-    case HelveticaNeueItalic = "HelveticaNeue-Italic"
-    case HelveticaNeueLight = "HelveticaNeue-Light"
-    case HelveticaNeueMedium = "HelveticaNeue-Medium"
-    case HelveticaNeueMediumItalic = "HelveticaNeue-MediumItalic"
-    case HelveticaNeueThin = "HelveticaNeue-Thin"
-    case HelveticaNeueThinItalic = "HelveticaNeue-ThinItalic"
-    case HelveticaNeueUltraLight = "HelveticaNeue-UltraLight"
-    case HelveticaNeueUltraLightItalic = "HelveticaNeue-UltraLightItalic"
-    case HelveticaOblique = "Helvetica-Oblique"
-    case HiraginoSansW3 = "HiraginoSans-W3"
-    case HiraginoSansW6 = "HiraginoSans-W6"
-    case HiraKakuProNW3 = "HiraKakuProN-W3"
-    case HiraKakuProNW6 = "HiraKakuProN-W6"
-    case HiraMinProNW3 = "HiraMinProN-W3"
-    case HiraMinProNW6 = "HiraMinProN-W6"
-    case HoeflerTextBlack = "HoeflerText-Black"
-    case HoeflerTextBlackItalic = "HoeflerText-BlackItalic"
-    case HoeflerTextItalic = "HoeflerText-Italic"
-    case HoeflerTextRegular = "HoeflerText-Regular"
-    case Kailasa = "Kailasa"
-    case KailasaBold = "Kailasa-Bold"
-    case KannadaSangamMN = "KannadaSangamMN"
-    case KannadaSangamMNBold = "KannadaSangamMN-Bold"
-    case KhmerSangamMN = "KhmerSangamMN"
-    case KohinoorBanglaLight = "KohinoorBangla-Light"
-    case KohinoorBanglaMedium = "KohinoorBangla-Medium"
-    case KohinoorBanglaRegular = "KohinoorBangla-Regular"
-    case KohinoorBanglaSemiBold = "KohinoorBangla-SemiBold"
-    case KohinoorDevanagariBook = "KohinoorDevanagari-Book"
-    case KohinoorDevanagariLight = "KohinoorDevanagari-Light"
-    case KohinoorDevanagariMedium = "KohinoorDevanagari-Medium"
-    case KohinoorDevanagariRegular = "KohinoorDevanagari-Regular"
-    case KohinoorDevanagariSemiBold = "KohinoorDevanagari-SemiBold"
-    case KohinoorTeluguLight = "KohinoorTelugu-Light"
-    case KohinoorTeluguMedium = "KohinoorTelugu-Medium"
-    case KohinoorTeluguRegular = "KohinoorTelugu-Regular"
-    case LaoSangamMN = "LaoSangamMN"
-    case MalayalamSangamMN = "MalayalamSangamMN"
-    case MalayalamSangamMNBold = "MalayalamSangamMN-Bold"
-    case MarkerFeltThin = "MarkerFelt-Thin"
-    case MarkerFeltWide = "MarkerFelt-Wide"
-    case MenloBold = "Menlo-Bold"
-    case MenloBoldItalic = "Menlo-BoldItalic"
-    case MenloItalic = "Menlo-Italic"
-    case MenloRegular = "Menlo-Regular"
-    case MyanmarSangamMN = "MyanmarSangamMN"
-    case MyanmarSangamMNBold = "MyanmarSangamMN-Bold"
-    case NoteworthyBold = "Noteworthy-Bold"
-    case NoteworthyLight = "Noteworthy-Light"
-    case OptimaBold = "Optima-Bold"
-    case OptimaBoldItalic = "Optima-BoldItalic"
-    case OptimaExtraBlack = "Optima-ExtraBold"
-    case OptimaItalic = "Optima-Italic"
-    case OptimaRegular = "Optima-Regular"
-    case OriyaSangamMN = "OriyaSangamMN"
-    case OriyaSangamMNBold = "OriyaSangamMN-Bold"
-    case PalatinoBold = "Palatino-Bold"
-    case PalatinoBoldItalic = "Palatino-BoldItalic"
-    case PalatinoItalic = "Palatino-Italic"
-    case PalatinoRoman = "Palatino-Roman"
-    case Papyrus = "Papyrus"
-    case PapyrusCondensed = "Papyrus-Condensed"
-    case PartyLetPlain = "PartyLetPlain"
-    case PingFangHKLight = "PingFangHK-Light"
-    case PingFangHKMedium = "PingFangHK-Medium"
-    case PingFangHKRegular = "PingFangHK-Regular"
-    case PingFangHKSemiBold = "PingFangHK-SemiBold"
-    case PingFangHKThin = "PingFangHK-Thin"
-    case PingFangHKUltraLight = "PingFangHK-UltraLight"
-    case PingFangSCLight = "PingFangSC-Light"
-    case PingFangSCMedium = "PingFangSC-Medium"
-    case PingFangSCRegular = "PingFangSC-Regular"
-    case PingFangSCSemiBold = "PingFangSC-SemiBold"
-    case PingFangSCThin = "PingFangSC-Thin"
-    case PingFangSCUltraLight = "PingFangSC-UltraLight"
-    case PingFangTCLight = "PingFangTC-Light"
-    case PingFangTCMedium = "PingFangTC-Medium"
-    case PingFangTCRegular = "PingFangTC-Regular"
-    case PingFangTCSemiBold = "PingFangTC-SemiBold"
-    case PingFangTCThin = "PingFangTC-Thin"
-    case PingFangTCUltraLight = "PingFangTC-UltraLight"
-    case SavoyeLetPlain = "SavoyeLetPlain"
-    case SinhalaSangamMN = "SinhalaSangamMN"
-    case SinhalaSangamMNBold = "SinhalaSangamMN-Bold"
-    case SnellRoundhand = "SnellRoundhand"
-    case SnellRoundhandBlack = "SnellRoundhand-Black"
-    case SnellRoundhandBold = "SnellRoundhand-Bold"
-    case STHeitiSCLight = "STHeitiSC-Light"
-    case STHeitiSCMedium = "STHeitiSC-Medium"
-    case STHeitiTCLight = "STHeitiTC-Light"
-    case STHeitiTCMedium = "STHeitiTC-Medium"
-    case Symbol = "Symbol"
-    case TamilSangamMN = "TamilSangamMN"
-    case TamilSangamMNBold = "TamilSangamMN-Bold"
-    case TeluguSangamMN = "TeluguSangamMN"
-    case TeluguSangamMNBold = "TeluguSangamMN-Bold"
-    case Thonburi = "Thonburi"
-    case ThonburiBold = "Thonburi-Bold"
-    case ThonburiLight = "Thonburi-Light"
-    case TimesNewRomanPSBoldItalicMT = "TimesNewRomanPS-BoldItalic"
-    case TimesNewRomanPSBoldMT = "TimesNewRomanPS-Bold"
-    case TimesNewRomanPSItalicMT = "TimesNewRomanPS-ItalicMT"
-    case TimesNewRomanPSMT = "TimesNewRomanPSMT"
-    case TrebuchetBoldItalic = "Trebuchet-BoldItalic"
-    case TrebuchetMS = "TrebuchetMS"
-    case TrebuchetMSBold = "TrebuchetMS-Bold"
-    case TrebuchetMSItalic = "TrebuchetMS-Italic"
-    case Verdana = "Verdana"
-    case VerdanaBold = "Verdana-Bold"
-    case VerdanaBoldItalic = "Verdana-BoldItalic"
-    case VerdanaItalic = "Verdana-Italic"
+    case academyEngravedLetPlain = "AcademyEngravedLetPlain"
+    case alNile = "AlNile"
+    case alNileBold = "AlNile-Bold"
+    case americanTypewriter = "AmericanTypewriter"
+    case americanTypewriterBold = "AmericanTypewriter-Bold"
+    case americanTypewriterCondensed = "AmericanTypewriter-Condensed"
+    case americanTypewriterCondensedBold = "AmericanTypewriter-CondensedBold"
+    case americanTypewriterCondensedLight = "AmericanTypewriter-CondensedLight"
+    case americanTypewriterLight = "AmericanTypewriter-Light"
+    case americanTypewriterSemiBold = "AmericanTypewriter-SemiBold"
+    case appleColorEmoji = "AppleColorEmoji"
+    case appleSDGothicNeoBold = "AppleSDGothicNeo-Bold"
+    case appleSDGothicNeoLight = "AppleSDGothicNeo-Light"
+    case appleSDGothicNeoMedium = "AppleSDGothicNeo-Medium"
+    case appleSDGothicNeoRegular = "AppleSDGothicNeo-Regular"
+    case appleSDGothicNeoSemiBold = "AppleSDGothicNeo-SemiBold"
+    case appleSDGothicNeoThin = "AppleSDGothicNeo-Thin"
+    case appleSDGothicNeoUltraLight = "AppleSDGothicNeo-UltraLight"
+    case arialBoldItalicMT = "Arial-BoldItalicMT"
+    case arialBoldMT = "Arial-BoldMT"
+    case arialHebrew = "ArialHebrew"
+    case arialHebrewBold = "ArialHebrew-Bold"
+    case arialHebrewLight = "ArialHebrew-Light"
+    case arialItalicMT = "Arial-ItalicMT"
+    case arialMT = "ArialMT"
+    case arialRoundedMTBold = "ArialRoundedMTBold"
+    case asTHeitiLight = "ASTHeiti-Light"
+    case asTHeitiMedium = "ASTHeiti-Medium"
+    case avenirBlack = "Avenir-Black"
+    case avenirBlackOblique = "Avenir-BlackOblique"
+    case avenirBook = "Avenir-Book"
+    case avenirBookOblique = "Avenir-BookOblique"
+    case avenirHeavy = "Avenir-Heavy"
+    case avenirHeavyOblique = "Avenir-HeavyOblique"
+    case avenirLight = "Avenir-Light"
+    case avenirLightOblique = "Avenir-LightOblique"
+    case avenirMedium = "Avenir-Medium"
+    case avenirMediumOblique = "Avenir-MediumOblique"
+    case avenirNextBold = "AvenirNext-Bold"
+    case avenirNextBoldItalic = "AvenirNext-BoldItalic"
+    case avenirNextCondensedBold = "AvenirNextCondensed-Bold"
+    case avenirNextCondensedBoldItalic = "AvenirNextCondensed-BoldItalic"
+    case avenirNextCondensedDemiBold = "AvenirNextCondensed-DemiBold"
+    case avenirNextCondensedDemiBoldItalic = "AvenirNextCondensed-DemiBoldItalic"
+    case avenirNextCondensedHeavy = "AvenirNextCondensed-Heavy"
+    case avenirNextCondensedHeavyItalic = "AvenirNextCondensed-HeavyItalic"
+    case avenirNextCondensedItalic = "AvenirNextCondensed-Italic"
+    case avenirNextCondensedMedium = "AvenirNextCondensed-Medium"
+    case avenirNextCondensedMediumItalic = "AvenirNextCondensed-MediumItalic"
+    case avenirNextCondensedRegular = "AvenirNextCondensed-Regular"
+    case avenirNextCondensedUltraLight = "AvenirNextCondensed-UltraLight"
+    case avenirNextCondensedUltraLightItalic = "AvenirNextCondensed-UltraLightItalic"
+    case avenirNextDemiBold = "AvenirNext-DemiBold"
+    case avenirNextDemiBoldItalic = "AvenirNext-DemiBoldItalic"
+    case avenirNextHeavy = "AvenirNext-Heavy"
+    case avenirNextItalic = "AvenirNext-Italic"
+    case avenirNextMedium = "AvenirNext-Medium"
+    case avenirNextMediumItalic = "AvenirNext-MediumItalic"
+    case avenirNextRegular = "AvenirNext-Regular"
+    case avenirNextUltraLight = "AvenirNext-UltraLight"
+    case avenirNextUltraLightItalic = "AvenirNext-UltraLightItalic"
+    case avenirOblique = "Avenir-Oblique"
+    case avenirRoman = "Avenir-Roman"
+    case baskerville = "Baskerville"
+    case baskervilleBold = "Baskerville-Bold"
+    case baskervilleBoldItalic = "Baskerville-BoldItalic"
+    case baskervilleItalic = "Baskerville-Italic"
+    case baskervilleSemiBold = "Baskerville-SemiBold"
+    case baskervilleSemiBoldItalic = "Baskerville-SemiBoldItalic"
+    case bodoniOrnamentsITCTT = "BodoniOrnamentsITCTT"
+    case bodoniSvtyTwoITCTTBold = "BodoniSvtyTwoITCTT-Bold"
+    case bodoniSvtyTwoITCTTBook = "BodoniSvtyTwoITCTT-Book"
+    case bodoniSvtyTwoITCTTBookIta = "BodoniSvtyTwoITCTT-BookIta"
+    case bodoniSvtyTwoOSITCTTBold = "BodoniSvtyTwoOSITCTT-Bold"
+    case bodoniSvtyTwoOSITCTTBook = "BodoniSvtyTwoOSITCTT-Book"
+    case bodoniSvtyTwoOSITCTTBookIt = "BodoniSvtyTwoOSITCTT-BookIt"
+    case bodoniSvtyTwoSCITCTTBook = "BodoniSvtyTwoSCITCTT-Book"
+    case bradleyHandITCTTBold = "BradleyHandITCTT-Bold"
+    case chalkboardSEBold = "ChalkboardSE-Bold"
+    case chalkboardSELight = "ChalkboardSE-Light"
+    case chalkboardSERegular = "ChalkboardSE-Regular"
+    case chalkduster = "Chalkduster"
+    case cochin = "Cochin"
+    case cochinBold = "Cochin-Bold"
+    case cochinBoldItalic = "Cochin-BoldItalic"
+    case cochinItalic = "Cochin-Italic"
+    case copperplate = "Copperplate"
+    case copperplateBold = "Copperplate-Bold"
+    case copperplateLight = "Copperplate-Light"
+    case courier = "Courier"
+    case courierBold = "Courier-Bold"
+    case courierBoldOblique = "Courier-BoldOblique"
+    case courierNewPSBoldItalicMT = "CourierNewPS-BoldItalicMT"
+    case courierNewPSBoldMT = "CourierNewPS-BoldMT"
+    case courierNewPSItalicMT = "CourierNewPS-ItalicMT"
+    case courierNewPSMT = "CourierNewPSMT"
+    case courierOblique = "Courier-Oblique"
+    case damascus = "Damascus"
+    case dDamascusBold = "DamascusBold"
+    case damascusMedium = "DamascusMedium"
+    case damascusSemiBold = "DamascusSemiBold"
+    case devanagariSangamMN = "DevanagariSangamMN"
+    case devanagariSangamMNBold = "DevanagariSangamMN-Bold"
+    case didot = "Didot"
+    case didotBold = "Didot-Bold"
+    case didotItalic = "Didot-Italic"
+    case diwanMishafi = "DiwanMishafi"
+    case euphemiaUCAS = "EuphemiaUCAS"
+    case euphemiaUCASBold = "EuphemiaUCAS-Bold"
+    case euphemiaUCASItalic = "EuphemiaUCAS-Italic"
+    case farah = "Farah"
+    case futuraBold = "Futura-Bold"
+    case futuraCondensedExtraBold = "Futura-ExtraBold"
+    case futuraCondensedMedium = "Futura-CondensedMedium"
+    case futuraMedium = "Futura-Medium"
+    case futuraMediumItalic = "Futura-MediumItalic"
+    case geezaPro = "GeezaPro"
+    case geezaProBold = "GeezaPro-Bold"
+    case geezaProLight = "GeezaPro-Light"
+    case georgia = "Georgia"
+    case georgiaBold = "Georgia-Bold"
+    case georgiaBoldItalic = "Georgia-BoldItalic"
+    case georgiaItalic = "Georgia-Italic"
+    case gillSans = "GillSans"
+    case gillSansBold = "GillSans-Bold"
+    case gillSansBoldItalic = "GillSans-BoldItalic"
+    case gillSansItalic = "GillSans-Italic"
+    case gillSansLight = "GillSans-Light"
+    case gillSansLightItalic = "GillSans-LightItalic"
+    case gillSansSemiBold = "GillSans-SemiBold"
+    case gillSansSemiBoldItalic = "GillSans-SemiBoldItalic"
+    case gillSansUltraBold = "GillSans-UltraBold"
+    case gujaratiSangamMN = "GujaratiSangamMN"
+    case gujaratiSangamMNBold = "GujaratiSangamMN-Bold"
+    case gurmukhiMN = "GurmukhiMN"
+    case gurmukhiMNBold = "GurmukhiMN-Bold"
+    case helvetica = "Helvetica"
+    case helveticaBold = "Helvetica-Bold"
+    case helveticaBoldOblique = "Helvetica-BoldOblique"
+    case helveticaLight = "Helvetica-Light"
+    case helveticaLightOblique = "Helvetica-LightOblique"
+    case helveticaNeue = "HelveticaNeue"
+    case helveticaNeueBold = "HelveticaNeue-Bold"
+    case helveticaNeueBoldItalic = "HelveticaNeue-BoldItalic"
+    case helveticaNeueCondensedBlack = "HelveticaNeue-CondensedBlack"
+    case helveticaNeueCondensedBold = "HelveticaNeue-CondensedBold"
+    case helveticaNeueItalic = "HelveticaNeue-Italic"
+    case helveticaNeueLight = "HelveticaNeue-Light"
+    case helveticaNeueMedium = "HelveticaNeue-Medium"
+    case helveticaNeueMediumItalic = "HelveticaNeue-MediumItalic"
+    case helveticaNeueThin = "HelveticaNeue-Thin"
+    case helveticaNeueThinItalic = "HelveticaNeue-ThinItalic"
+    case helveticaNeueUltraLight = "HelveticaNeue-UltraLight"
+    case helveticaNeueUltraLightItalic = "HelveticaNeue-UltraLightItalic"
+    case helveticaOblique = "Helvetica-Oblique"
+    case hiraginoSansW3 = "HiraginoSans-W3"
+    case hiraginoSansW6 = "HiraginoSans-W6"
+    case hiraKakuProNW3 = "HiraKakuProN-W3"
+    case hiraKakuProNW6 = "HiraKakuProN-W6"
+    case hiraMinProNW3 = "HiraMinProN-W3"
+    case hiraMinProNW6 = "HiraMinProN-W6"
+    case hoeflerTextBlack = "HoeflerText-Black"
+    case hoeflerTextBlackItalic = "HoeflerText-BlackItalic"
+    case hoeflerTextItalic = "HoeflerText-Italic"
+    case hoeflerTextRegular = "HoeflerText-Regular"
+    case kailasa = "Kailasa"
+    case kailasaBold = "Kailasa-Bold"
+    case kannadaSangamMN = "KannadaSangamMN"
+    case kannadaSangamMNBold = "KannadaSangamMN-Bold"
+    case khmerSangamMN = "KhmerSangamMN"
+    case kohinoorBanglaLight = "KohinoorBangla-Light"
+    case kohinoorBanglaMedium = "KohinoorBangla-Medium"
+    case kohinoorBanglaRegular = "KohinoorBangla-Regular"
+    case kohinoorBanglaSemiBold = "KohinoorBangla-SemiBold"
+    case kohinoorDevanagariBook = "KohinoorDevanagari-Book"
+    case kohinoorDevanagariLight = "KohinoorDevanagari-Light"
+    case kohinoorDevanagariMedium = "KohinoorDevanagari-Medium"
+    case kohinoorDevanagariRegular = "KohinoorDevanagari-Regular"
+    case kohinoorDevanagariSemiBold = "KohinoorDevanagari-SemiBold"
+    case kohinoorTeluguLight = "KohinoorTelugu-Light"
+    case kohinoorTeluguMedium = "KohinoorTelugu-Medium"
+    case kohinoorTeluguRegular = "KohinoorTelugu-Regular"
+    case laoSangamMN = "LaoSangamMN"
+    case malayalamSangamMN = "MalayalamSangamMN"
+    case malayalamSangamMNBold = "MalayalamSangamMN-Bold"
+    case markerFeltThin = "MarkerFelt-Thin"
+    case markerFeltWide = "MarkerFelt-Wide"
+    case menloBold = "Menlo-Bold"
+    case menloBoldItalic = "Menlo-BoldItalic"
+    case menloItalic = "Menlo-Italic"
+    case menloRegular = "Menlo-Regular"
+    case myanmarSangamMN = "MyanmarSangamMN"
+    case myanmarSangamMNBold = "MyanmarSangamMN-Bold"
+    case noteworthyBold = "Noteworthy-Bold"
+    case noteworthyLight = "Noteworthy-Light"
+    case optimaBold = "Optima-Bold"
+    case optimaBoldItalic = "Optima-BoldItalic"
+    case optimaExtraBlack = "Optima-ExtraBold"
+    case optimaItalic = "Optima-Italic"
+    case optimaRegular = "Optima-Regular"
+    case oriyaSangamMN = "OriyaSangamMN"
+    case oriyaSangamMNBold = "OriyaSangamMN-Bold"
+    case palatinoBold = "Palatino-Bold"
+    case palatinoBoldItalic = "Palatino-BoldItalic"
+    case palatinoItalic = "Palatino-Italic"
+    case palatinoRoman = "Palatino-Roman"
+    case papyrus = "Papyrus"
+    case papyrusCondensed = "Papyrus-Condensed"
+    case partyLetPlain = "PartyLetPlain"
+    case pingFangHKLight = "PingFangHK-Light"
+    case pingFangHKMedium = "PingFangHK-Medium"
+    case pingFangHKRegular = "PingFangHK-Regular"
+    case pingFangHKSemiBold = "PingFangHK-SemiBold"
+    case pingFangHKThin = "PingFangHK-Thin"
+    case pingFangHKUltraLight = "PingFangHK-UltraLight"
+    case pingFangSCLight = "PingFangSC-Light"
+    case pingFangSCMedium = "PingFangSC-Medium"
+    case pingFangSCRegular = "PingFangSC-Regular"
+    case pingFangSCSemiBold = "PingFangSC-SemiBold"
+    case pingFangSCThin = "PingFangSC-Thin"
+    case pingFangSCUltraLight = "PingFangSC-UltraLight"
+    case pingFangTCLight = "PingFangTC-Light"
+    case pingFangTCMedium = "PingFangTC-Medium"
+    case pingFangTCRegular = "PingFangTC-Regular"
+    case pingFangTCSemiBold = "PingFangTC-SemiBold"
+    case pingFangTCThin = "PingFangTC-Thin"
+    case pingFangTCUltraLight = "PingFangTC-UltraLight"
+    case savoyeLetPlain = "SavoyeLetPlain"
+    case sinhalaSangamMN = "SinhalaSangamMN"
+    case sinhalaSangamMNBold = "SinhalaSangamMN-Bold"
+    case snellRoundhand = "SnellRoundhand"
+    case snellRoundhandBlack = "SnellRoundhand-Black"
+    case snellRoundhandBold = "SnellRoundhand-Bold"
+    case stHeitiSCLight = "STHeitiSC-Light"
+    case stHeitiSCMedium = "STHeitiSC-Medium"
+    case stHeitiTCLight = "STHeitiTC-Light"
+    case stHeitiTCMedium = "STHeitiTC-Medium"
+    case symbol = "Symbol"
+    case tamilSangamMN = "TamilSangamMN"
+    case tamilSangamMNBold = "TamilSangamMN-Bold"
+    case teluguSangamMN = "TeluguSangamMN"
+    case teluguSangamMNBold = "TeluguSangamMN-Bold"
+    case thonburi = "Thonburi"
+    case thonburiBold = "Thonburi-Bold"
+    case thonburiLight = "Thonburi-Light"
+    case timesNewRomanPSBoldItalicMT = "TimesNewRomanPS-BoldItalic"
+    case timesNewRomanPSBoldMT = "TimesNewRomanPS-Bold"
+    case timesNewRomanPSItalicMT = "TimesNewRomanPS-ItalicMT"
+    case timesNewRomanPSMT = "TimesNewRomanPSMT"
+    case trebuchetBoldItalic = "Trebuchet-BoldItalic"
+    case trebuchetMS = "TrebuchetMS"
+    case trebuchetMSBold = "TrebuchetMS-Bold"
+    case trebuchetMSItalic = "TrebuchetMS-Italic"
+    case verdana = "Verdana"
+    case verdanaBold = "Verdana-Bold"
+    case verdanaBoldItalic = "Verdana-BoldItalic"
+    case verdanaItalic = "Verdana-Italic"
 }
 
 // MARK: - UIFont extension
@@ -556,181 +556,181 @@ public extension UIFont {
     
     /// All font family names available from iOS 7.0 to iOS 10.0.
     ///
-    /// - AlNile: AlNile.
-    /// - AmericanTypewriter: AmericanTypewriter.
-    /// - AppleColorEmoji: AppleColorEmoji.
-    /// - AppleSDGothicNeo: AppleSDGothicNeo.
-    /// - Arial: Arial.
-    /// - ArialHebrew: ArialHebrew.
-    /// - ArialRoundedMTBold: ArialRoundedMTBold.
-    /// - Avenir: Avenir.
-    /// - AvenirNext: AvenirNext.
-    /// - AvenirNextCondensed: AvenirNextCondensed.
-    /// - BanglaSangamMN: BanglaSangamMN.
-    /// - Baskerville: Baskerville.
-    /// - Bodoni72: Bodoni72.
-    /// - Bodoni72Oldstyle: Bodoni72Oldstyle.
-    /// - Bodoni72Smallcaps: Bodoni72Smallcaps.
-    /// - BodoniOrnaments: BodoniOrnaments.
-    /// - BradleyHand: BradleyHand.
-    /// - ChalkboardSE: ChalkboardSE.
-    /// - Chalkduster: Chalkduster.
-    /// - Cochin: Cochin.
-    /// - Copperplate: Copperplate.
-    /// - Courier: Courier.
-    /// - CourierNew: CourierNew.
-    /// - Damascus: Damascus.
-    /// - DevanagariSangamMN: DevanagariSangamMN.
-    /// - Didot: Didot.
-    /// - DINAlternate: DINAlternate.
-    /// - DINCondensed: DINCondensed.
-    /// - EuphemiaUCAS: EuphemiaUCAS.
-    /// - Farah: Farah.
-    /// - Futura: Futura.
-    /// - GeezaPro: GeezaPro.
-    /// - Georgia: Georgia.
-    /// - GillSans: GillSans.
-    /// - GujaratiSangamMN: GujaratiSangamMN.
-    /// - GurmukhiMN: GurmukhiMN.
-    /// - HeitiSC: HeitiSC.
-    /// - HeitiTC: HeitiTC.
-    /// - Helvetica: Helvetica.
-    /// - HelveticaNeue: HelveticaNeue.
-    /// - HiraginoKakuGothicProN: HiraginoKakuGothicProN.
-    /// - HiraginoMinchoProN: HiraginoMinchoProN.
-    /// - HiraginoSansW3: HiraginoSansW3.
-    /// - HiraginoSansW6: HiraginoSansW6.
-    /// - HoeflerText: HoeflerText.
-    /// - IowanOldStyle: IowanOldStyle.
-    /// - Kailasa: Kailasa.
-    /// - KannadaSangamMN: KannadaSangamMN.
-    /// - KhmerSangamMN: KhmerSangamMN.
-    /// - KohinoorBangla: KohinoorBangla.
-    /// - KohinoorDevanagari: KohinoorDevanagari.
-    /// - KohinoorTelugu KohinoorTelugu.
-    /// - LaoSangamMN: LaoSangamMN.
-    /// - MalayalamSangamMN: MalayalamSangamMN.
-    /// - Marion: Marion.
-    /// - MarkerFelt: MarkerFelt.
-    /// - Menlo: Menlo.
-    /// - Mishafi: Mishafi.
-    /// - MyanmarSangamMN: MyanmarSangamMN.
-    /// - Noteworthy: Noteworthy.
-    /// - Optima: Optima.
-    /// - OriyaSangamMN: OriyaSangamMN.
-    /// - Palatino: Palatino.
-    /// - Papyrus: Papyrus.
-    /// - PartyLET: PartyLET.
-    /// - PingFangHK: PingFangHK.
-    /// - PingFangSC: PingFangSC.
-    /// - PingFangTC: PingFangTC.
-    /// - SavoyeLET: SavoyeLET.
-    /// - SinhalaSangamMN: SinhalaSangamMN.
-    /// - SnellRoundhand: SnellRoundhand.
-    /// - Superclarendon: Superclarendon.
-    /// - Symbol: Symbol.
-    /// - TamilSangamMN: TamilSangamMN.
-    /// - TeluguSangamMN: TeluguSangamMN.
-    /// - Thonburi: Thonburi.
-    /// - TimesNewRoman: TimesNewRoman.
-    /// - TrebuchetMS: TrebuchetMS.
-    /// - Verdana: Verdana.
-    /// - ZapfDingbats: ZapfDingbats.
-    /// - Zapfino: Zapfino.
-    /// - AcademyEngravedLET: AcademyEngravedLET.
+    /// - academyEngravedLET: AcademyEngravedLET.
+    /// - alNile: AlNile.
+    /// - americanTypewriter: AmericanTypewriter.
+    /// - appleColorEmoji: AppleColorEmoji.
+    /// - appleSDGothicNeo: AppleSDGothicNeo.
+    /// - arial: Arial.
+    /// - arialHebrew: ArialHebrew.
+    /// - arialRoundedMTBold: ArialRoundedMTBold.
+    /// - avenir: Avenir.
+    /// - avenirNext: AvenirNext.
+    /// - avenirNextCondensed: AvenirNextCondensed.
+    /// - banglaSangamMN: BanglaSangamMN.
+    /// - baskerville: Baskerville.
+    /// - bodoni72: Bodoni72.
+    /// - bodoni72Oldstyle: Bodoni72Oldstyle.
+    /// - bodoni72Smallcaps: Bodoni72Smallcaps.
+    /// - bodoniOrnaments: BodoniOrnaments.
+    /// - bradleyHand: BradleyHand.
+    /// - chalkboardSE: ChalkboardSE.
+    /// - chalkduster: Chalkduster.
+    /// - cochin: Cochin.
+    /// - copperplate: Copperplate.
+    /// - courier: Courier.
+    /// - courierNew: CourierNew.
+    /// - damascus: Damascus.
+    /// - devanagariSangamMN: DevanagariSangamMN.
+    /// - didot: Didot.
+    /// - dINAlternate: DINAlternate.
+    /// - dINCondensed: DINCondensed.
+    /// - euphemiaUCAS: EuphemiaUCAS.
+    /// - farah: Farah.
+    /// - futura: Futura.
+    /// - geezaPro: GeezaPro.
+    /// - georgia: Georgia.
+    /// - gillSans: GillSans.
+    /// - gujaratiSangamMN: GujaratiSangamMN.
+    /// - gurmukhiMN: GurmukhiMN.
+    /// - heitiSC: HeitiSC.
+    /// - heitiTC: HeitiTC.
+    /// - helvetica: Helvetica.
+    /// - helveticaNeue: HelveticaNeue.
+    /// - hiraginoKakuGothicProN: HiraginoKakuGothicProN.
+    /// - hiraginoMinchoProN: HiraginoMinchoProN.
+    /// - hiraginoSansW3: HiraginoSansW3.
+    /// - hiraginoSansW6: HiraginoSansW6.
+    /// - hoeflerText: HoeflerText.
+    /// - iowanOldStyle: IowanOldStyle.
+    /// - kailasa: Kailasa.
+    /// - kannadaSangamMN: KannadaSangamMN.
+    /// - khmerSangamMN: KhmerSangamMN.
+    /// - kohinoorBangla: KohinoorBangla.
+    /// - kohinoorDevanagari: KohinoorDevanagari.
+    /// - kohinoorTelugu KohinoorTelugu.
+    /// - laoSangamMN: LaoSangamMN.
+    /// - malayalamSangamMN: MalayalamSangamMN.
+    /// - marion: Marion.
+    /// - markerFelt: MarkerFelt.
+    /// - menlo: Menlo.
+    /// - mishafi: Mishafi.
+    /// - myanmarSangamMN: MyanmarSangamMN.
+    /// - noteworthy: Noteworthy.
+    /// - optima: Optima.
+    /// - oriyaSangamMN: OriyaSangamMN.
+    /// - palatino: Palatino.
+    /// - papyrus: Papyrus.
+    /// - partyLET: PartyLET.
+    /// - pingFangHK: PingFangHK.
+    /// - pingFangSC: PingFangSC.
+    /// - pingFangTC: PingFangTC.
+    /// - savoyeLET: SavoyeLET.
+    /// - sinhalaSangamMN: SinhalaSangamMN.
+    /// - snellRoundhand: SnellRoundhand.
+    /// - superclarendon: Superclarendon.
+    /// - symbol: Symbol.
+    /// - tamilSangamMN: TamilSangamMN.
+    /// - teluguSangamMN: TeluguSangamMN.
+    /// - thonburi: Thonburi.
+    /// - timesNewRoman: TimesNewRoman.
+    /// - trebuchetMS: TrebuchetMS.
+    /// - verdana: Verdana.
+    /// - zapfDingbats: ZapfDingbats.
+    /// - zapfino: Zapfino.
     public enum FamilyFontName: String {
-        case AlNile = "Al Nile"
-        case AmericanTypewriter = "American Typewriter"
-        case AppleColorEmoji = "Apple Color Emoji"
-        case AppleSDGothicNeo = "Apple SD Gothic Neo"
-        case Arial = "Arial"
-        case ArialHebrew = "Arial Hebrew"
-        case ArialRoundedMTBold = "Arial Rounded MT Bold"
-        case Avenir = "Avenir"
-        case AvenirNext = "Avenir Next"
-        case AvenirNextCondensed = "Avenir Next Condensed"
-        case Baskerville = "Baskerville"
-        case Bodoni72 = "Bodoni 72"
-        case Bodoni72Oldstyle = "Bodoni 72 Oldstyle"
-        case Bodoni72Smallcaps = "Bodoni 72 Smallcaps"
-        case BodoniOrnaments = "Bodoni Ornaments"
-        case BradleyHand = "Bradley Hand"
-        case ChalkboardSE = "Chalkboard SE"
-        case Chalkduster = "Chalkduster"
-        case Cochin = "Cochin"
-        case Copperplate = "Copperplate"
-        case Courier = "Courier"
-        case CourierNew = "Courier New"
-        case Damascus = "Damascus"
-        case DevanagariSangamMN = "Devanagari Sangam MN"
-        case Didot = "Didot"
-        case EuphemiaUCAS = "Euphemia UCAS"
-        case Farah = "Farah"
-        case Futura = "Futura"
-        case GeezaPro = "Geeza Pro"
-        case Georgia = "Georgia"
-        case GillSans = "Gill Sans"
-        case GujaratiSangamMN = "Gujarati Sangam MN"
-        case GurmukhiMN = "Gurmukhi MN"
-        case HeitiSC = "Heiti SC"
-        case HeitiTC = "Heiti TC"
-        case Helvetica = "Helvetica"
-        case HelveticaNeue = "Helvetica Neue"
-        case HiraginoKakuGothicProN = "Hiragino Kaku Gothic ProN"
-        case HiraginoMinchoProN = "Hiragino Mincho ProN"
-        case HiraginoSansW3 = "Hiragino Sans W3"
-        case HiraginoSansW6 = "Hiragino Sans W6"
-        case HoeflerText = "Hoefler Text"
-        case Kailasa = "Kailasa"
-        case KannadaSangamMN = "Kannada Sangam MN"
-        case KhmerSangamMN = "Khmer Sangam MN"
-        case KohinoorBangla = "Kohinoor Bangla"
-        case KohinoorDevanagari = "Kohinoor Devanagari"
-        case KohinoorTelugu = "Kohinoor Telugu"
-        case LaoSangamMN = "Lao Sangam MN"
-        case MalayalamSangamMN = "Malayalam Sangam MN"
-        case MarkerFelt = "Marker Felt"
-        case Menlo = "Menlo"
-        case Mishafi = "Mishafi"
-        case MyanmarSangamMN = "Myanmar Sangam MN"
-        case Noteworthy = "Noteworthy"
-        case Optima = "Optima"
-        case OriyaSangamMN = "Oriya Sangam MN"
-        case Palatino = "Palatino"
-        case Papyrus = "Papyrus"
-        case PartyLET = "Party LET"
-        case PingFangHK = "PingFangHK"
-        case PingFangSC = "PingFangSC"
-        case PingFangTC = "PingFangTC"
-        case SavoyeLET = "Savoye LET"
-        case SinhalaSangamMN = "Sinhala Sangam MN"
-        case SnellRoundhand = "Snell Roundhand"
-        case Symbol = "Symbol"
-        case TamilSangamMN = "Tamil Sangam MN"
-        case TeluguSangamMN = "Telugu Sangam MN"
-        case Thonburi = "Thonburi"
-        case TimesNewRoman = "Times New Roman"
-        case TrebuchetMS = "Trebuchet MS"
-        case Verdana = "Verdana"
-        case ZapfDingbats = "Zapf Dingbats"
-        case Zapfino = "Zapfino"
-        case AcademyEngravedLET = "Academy Engraved LET"
+        case academyEngravedLET = "Academy Engraved LET"
+        case alNile = "Al Nile"
+        case americanTypewriter = "American Typewriter"
+        case appleColorEmoji = "Apple Color Emoji"
+        case appleSDGothicNeo = "Apple SD Gothic Neo"
+        case arial = "Arial"
+        case arialHebrew = "Arial Hebrew"
+        case arialRoundedMTBold = "Arial Rounded MT Bold"
+        case avenir = "Avenir"
+        case avenirNext = "Avenir Next"
+        case avenirNextCondensed = "Avenir Next Condensed"
+        case baskerville = "Baskerville"
+        case bodoni72 = "Bodoni 72"
+        case bodoni72Oldstyle = "Bodoni 72 Oldstyle"
+        case bodoni72Smallcaps = "Bodoni 72 Smallcaps"
+        case bodoniOrnaments = "Bodoni Ornaments"
+        case bradleyHand = "Bradley Hand"
+        case chalkboardSE = "Chalkboard SE"
+        case chalkduster = "Chalkduster"
+        case cochin = "Cochin"
+        case copperplate = "Copperplate"
+        case courier = "Courier"
+        case courierNew = "Courier New"
+        case damascus = "Damascus"
+        case devanagariSangamMN = "Devanagari Sangam MN"
+        case didot = "Didot"
+        case euphemiaUCAS = "Euphemia UCAS"
+        case farah = "Farah"
+        case futura = "Futura"
+        case geezaPro = "Geeza Pro"
+        case georgia = "Georgia"
+        case gillSans = "Gill Sans"
+        case gujaratiSangamMN = "Gujarati Sangam MN"
+        case gurmukhiMN = "Gurmukhi MN"
+        case heitiSC = "Heiti SC"
+        case heitiTC = "Heiti TC"
+        case helvetica = "Helvetica"
+        case helveticaNeue = "Helvetica Neue"
+        case hiraginoKakuGothicProN = "Hiragino Kaku Gothic ProN"
+        case hiraginoMinchoProN = "Hiragino Mincho ProN"
+        case hiraginoSansW3 = "Hiragino Sans W3"
+        case hiraginoSansW6 = "Hiragino Sans W6"
+        case hoeflerText = "Hoefler Text"
+        case kailasa = "Kailasa"
+        case kannadaSangamMN = "Kannada Sangam MN"
+        case khmerSangamMN = "Khmer Sangam MN"
+        case kohinoorBangla = "Kohinoor Bangla"
+        case kohinoorDevanagari = "Kohinoor Devanagari"
+        case kohinoorTelugu = "Kohinoor Telugu"
+        case laoSangamMN = "Lao Sangam MN"
+        case malayalamSangamMN = "Malayalam Sangam MN"
+        case markerFelt = "Marker Felt"
+        case menlo = "Menlo"
+        case mishafi = "Mishafi"
+        case myanmarSangamMN = "Myanmar Sangam MN"
+        case noteworthy = "Noteworthy"
+        case optima = "Optima"
+        case oriyaSangamMN = "Oriya Sangam MN"
+        case palatino = "Palatino"
+        case papyrus = "Papyrus"
+        case partyLET = "Party LET"
+        case pingFangHK = "PingFangHK"
+        case pingFangSC = "PingFangSC"
+        case pingFangTC = "PingFangTC"
+        case savoyeLET = "Savoye LET"
+        case sinhalaSangamMN = "Sinhala Sangam MN"
+        case snellRoundhand = "Snell Roundhand"
+        case symbol = "Symbol"
+        case tamilSangamMN = "Tamil Sangam MN"
+        case teluguSangamMN = "Telugu Sangam MN"
+        case thonburi = "Thonburi"
+        case timesNewRoman = "Times New Roman"
+        case trebuchetMS = "Trebuchet MS"
+        case verdana = "Verdana"
+        case zapfDingbats = "Zapf Dingbats"
+        case zapfino = "Zapfino"
     }
     
     /// Static light font to use in App.
     ///
     /// Default is HelveticaNeueLight of size 12.
-    @nonobjc public static var lightFont: UIFont = UIFont(fontName: .HelveticaNeueLight, size: 12)
+    @nonobjc public static var lightFont: UIFont = UIFont(fontName: .helveticaNeueLight, size: 12)
     
     /// Static regular font to use in App.
     ///
     /// Default is HelveticaNeue of size 12.
-    @nonobjc public static var regularFont: UIFont = UIFont(fontName: .HelveticaNeue, size: 12)
+    @nonobjc public static var regularFont: UIFont = UIFont(fontName: .helveticaNeue, size: 12)
     
     /// Static bold font to use in App.
     ///
     /// Default is HelveticaNeueBold of size 12.
-    @nonobjc public static var boldFont: UIFont = UIFont(fontName: .HelveticaNeueBold, size: 12)
+    @nonobjc public static var boldFont: UIFont = UIFont(fontName: .helveticaNeueBold, size: 12)
     
     // MARK: - Functions
     

@@ -69,7 +69,7 @@ class UIImageExtensionTests: XCTestCase {
     }
     
     func testInitTextFontFontSizeImageSize() {
-        guard let image = UIImage(text: "This is a test", font: .Helvetica, fontSize: 16, imageSize: CGSize(width: 100, height: 100)) else {
+        guard let image = UIImage(text: "This is a test", font: .helvetica, fontSize: 16, imageSize: CGSize(width: 100, height: 100)) else {
             XCTFail()
             return
         }
@@ -79,7 +79,7 @@ class UIImageExtensionTests: XCTestCase {
     }
     
     func testInitMaskedTextFontFontSizeImageSizeBackgroundColor() {
-        guard let image = UIImage(maskedText: "This is a test", font: .Helvetica, fontSize: 20, imageSize: CGSize(width: 100, height: 100), backgroundColor: UIColor.brown) else {
+        guard let image = UIImage(maskedText: "This is a test", font: .helvetica, fontSize: 20, imageSize: CGSize(width: 100, height: 100), backgroundColor: UIColor.brown) else {
             XCTFail()
             return
         }

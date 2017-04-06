@@ -40,11 +40,11 @@ class UITextFieldExtensionTests: XCTestCase {
     }
     
     func testInitFramePlaceholderFontFontSizeTextColorReturnKeyTypeKeyboardTypeSecureBorderStyleAutocapitalizationKeyboardAppearanceEnablesReturnKeyAutomaticallyClearButtonModeAutocorrectionTypeDelegate() {
-        let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 320, height: 35), placeholder: "This is a test", font: .Helvetica, fontSize: 20, textColor: UIColor.black, returnKeyType: .done, keyboardType: .default, secure: false, borderStyle: .roundedRect, autocapitalizationType: .sentences, keyboardAppearance: .dark, enablesReturnKeyAutomatically: true, clearButtonMode: .whileEditing, autocorrectionType: .default, delegate: nil)
+        let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 320, height: 35), placeholder: "This is a test", font: .helvetica, fontSize: 20, textColor: UIColor.black, returnKeyType: .done, keyboardType: .default, secure: false, borderStyle: .roundedRect, autocapitalizationType: .sentences, keyboardAppearance: .dark, enablesReturnKeyAutomatically: true, clearButtonMode: .whileEditing, autocorrectionType: .default, delegate: nil)
         
         XCTAssertEqual(textField.frame, CGRect(x: 0, y: 0, width: 320, height: 35))
         XCTAssertEqual(textField.placeholder, "This is a test")
-        XCTAssertEqual(textField.font, UIFont(fontName: .Helvetica, size: 20))
+        XCTAssertEqual(textField.font, UIFont(fontName: .helvetica, size: 20))
         XCTAssertEqual(textField.textColor, UIColor.black)
         XCTAssertEqual(textField.returnKeyType, .done)
         XCTAssertEqual(textField.keyboardType, .default)
@@ -59,11 +59,11 @@ class UITextFieldExtensionTests: XCTestCase {
     }
     
     func testInitFramePlaceholderFontTextColorReturnKeyTypeKeyboardTypeSecureBorderStyleAutocapitalizationKeyboardAppearanceEnablesReturnKeyAutomaticallyClearButtonModeAutocorrectionTypeDelegate() {
-        let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 320, height: 35), placeholder: "This is a test", font: UIFont(fontName: .Helvetica, size: 20), textColor: UIColor.black, returnKeyType: .done, keyboardType: .default, secure: false, borderStyle: .roundedRect, autocapitalizationType: .sentences, keyboardAppearance: .dark, enablesReturnKeyAutomatically: true, clearButtonMode: .whileEditing, autocorrectionType: .default, delegate: nil)
+        let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 320, height: 35), placeholder: "This is a test", font: UIFont(fontName: .helvetica, size: 20), textColor: UIColor.black, returnKeyType: .done, keyboardType: .default, secure: false, borderStyle: .roundedRect, autocapitalizationType: .sentences, keyboardAppearance: .dark, enablesReturnKeyAutomatically: true, clearButtonMode: .whileEditing, autocorrectionType: .default, delegate: nil)
         
         XCTAssertEqual(textField.frame, CGRect(x: 0, y: 0, width: 320, height: 35))
         XCTAssertEqual(textField.placeholder, "This is a test")
-        XCTAssertEqual(textField.font, UIFont(fontName: .Helvetica, size: 20))
+        XCTAssertEqual(textField.font, UIFont(fontName: .helvetica, size: 20))
         XCTAssertEqual(textField.textColor, UIColor.black)
         XCTAssertEqual(textField.returnKeyType, .done)
         XCTAssertEqual(textField.keyboardType, .default)

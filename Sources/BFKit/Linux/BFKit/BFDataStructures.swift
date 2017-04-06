@@ -87,10 +87,8 @@ public struct List<Element: Equatable>: CustomStringConvertible {
     /// - Parameter element: The element to search.
     /// - Returns: Returns the index of the searched element.
     public func search(_ element: Element) -> Int? {
-        for i in 0 ..< list.count {
-            if list[i] == element {
-                return i
-            }
+        for i in 0 ..< list.count where list[i] == element {
+            return i
         }
         
         return nil

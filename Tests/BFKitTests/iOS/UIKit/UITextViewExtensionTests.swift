@@ -39,11 +39,11 @@ class UITextViewExtensionTests: XCTestCase {
     }
     
     func testInitFrameTextFontTextColorAlignmentDataDetectorTypesEditableSelectableReturnKeyTypeKeyboardTypeSecureAutocapitalizationTypeKeyboardAppearenceEnablesReturnKeyAutomaticallyAutocorrectionTypeDelegate() {
-        let textView = UITextView(frame: CGRect(x: 0, y: 0, width: 320, height: 500), text: "This is a test", font: UIFont(fontName: .Helvetica, size: 20), textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: true, selectable: true, returnKeyType: .done, keyboardType: .default, secure: false, autocapitalizationType: .sentences, keyboardAppearance: .light, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
+        let textView = UITextView(frame: CGRect(x: 0, y: 0, width: 320, height: 500), text: "This is a test", font: UIFont(fontName: .helvetica, size: 20), textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: true, selectable: true, returnKeyType: .done, keyboardType: .default, secure: false, autocapitalizationType: .sentences, keyboardAppearance: .light, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
         
         XCTAssertEqual(textView.frame, CGRect(x: 0, y: 0, width: 320, height: 500))
         XCTAssertEqual(textView.text, "This is a test")
-        XCTAssertEqual(textView.font, UIFont(fontName: .Helvetica, size: 20))
+        XCTAssertEqual(textView.font, UIFont(fontName: .helvetica, size: 20))
         XCTAssertEqual(textView.textColor, UIColor.black)
         XCTAssertEqual(textView.textAlignment, .left)
         XCTAssertEqual(textView.dataDetectorTypes, .all)
@@ -60,11 +60,11 @@ class UITextViewExtensionTests: XCTestCase {
     }
     
     func testInitFrameTextFontFontSizeTextColorAlignmentDataDetectorTypesEditableSelectableReturnKeyTypeKeyboardTypeSecureAutocapitalizationTypeKeyboardAppearenceEnablesReturnKeyAutomaticallyAutocorrectionTypeDelegate() {
-        let textView = UITextView(frame: CGRect(x: 0, y: 0, width: 320, height: 500), text: "This is a test", font: .Helvetica, fontSize: 20, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: true, selectable: true, returnKeyType: .done, keyboardType: .default, secure: false, autocapitalizationType: .sentences, keyboardAppearance: .light, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
+        let textView = UITextView(frame: CGRect(x: 0, y: 0, width: 320, height: 500), text: "This is a test", font: .helvetica, fontSize: 20, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: true, selectable: true, returnKeyType: .done, keyboardType: .default, secure: false, autocapitalizationType: .sentences, keyboardAppearance: .light, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
         
         XCTAssertEqual(textView.frame, CGRect(x: 0, y: 0, width: 320, height: 500))
         XCTAssertEqual(textView.text, "This is a test")
-        XCTAssertEqual(textView.font, UIFont(fontName: .Helvetica, size: 20))
+        XCTAssertEqual(textView.font, UIFont(fontName: .helvetica, size: 20))
         XCTAssertEqual(textView.textColor, UIColor.black)
         XCTAssertEqual(textView.textAlignment, .left)
         XCTAssertEqual(textView.dataDetectorTypes, .all)
