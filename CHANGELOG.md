@@ -26,10 +26,14 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## Master - ???
+## Master
 ### XX XXX 2017
+### Improved
+- Font enums are now in camel case. It's a little breaking change but Xcode and Swift build hints will help you
+- Better tests
+
 ### Fixed
-- Fixed an issue with `randomInt()` function on Number extension  [#26](https://github.com/FabrizioBrancati/BFKit-Swift/issue/26)
+- Fixed an issue with `randomInt()` function on Number extension [#26](https://github.com/FabrizioBrancati/BFKit-Swift/issue/26)
 
 Thanks to [@on123](https://github.com/on123) for this release
 
