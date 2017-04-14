@@ -145,11 +145,12 @@ public extension FileManager {
     }
     
     /// Get Main Bundle path for a filename.
+    /// If no file is specified, the main bundle path will be returned.
     ///
-    /// - Parameter file: Filename
+    /// - Parameter file: Filename.
     /// - Returns: Returns the path as a String.
     public func mainBundlePath(file: String = "") -> String? {
-        return Bundle.main.path(forResource: file.deletingPathExtension, ofType: file.pathExtension)
+        return file.isEmpty ? Bundle.main.bundlePath : Bundle.main.path(forResource: file.deletingPathExtension, ofType: file.pathExtension)
     }
     
     /// Get Documents path for a filename.

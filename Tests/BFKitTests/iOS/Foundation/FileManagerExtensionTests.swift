@@ -77,7 +77,7 @@ class FileManagerExtensionTests: XCTestCase {
     func testMainBundlePathFile() {
         let path = FileManager.default.mainBundlePath()
         
-        XCTAssertNil(path)
+        XCTAssertNotNil(path)
     }
     
     func testDocumentsPathFile() {
