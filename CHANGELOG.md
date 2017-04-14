@@ -26,13 +26,13 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## Master - ???
+## Master
 ### Added
 - Added `replacingOccurrences(of:, with:)` in String extension
 
 ### Improved
 - Changing Sound and Fonts enums to be more Swifty (Xcode hints will help)
-- Updating with Swift 3.1 compatibility
+- Updated with Swift 3.1 compatibility
 - Updated SwiftLint to 0.18.1
 - Improved tests
 - `mainBundlePath` in FileManager extension will now return the main bundle path if no file is specified [#27](https://github.com/FabrizioBrancati/BFKit-Swift/issue/27)
