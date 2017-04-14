@@ -46,6 +46,7 @@ class DateExtensionTests: XCTestCase {
         ("testAddingDays", testAddingDays),
         ("testAddDays", testAddDays),
         ("testYearString", testYearString),
+        ("testDateString", testDateString),
         ("testShortDate", testShortDate),
         ("testIsGreaterThan", testIsGreaterThan),
         ("testIsLessThan", testIsLessThan),
@@ -223,6 +224,12 @@ class DateExtensionTests: XCTestCase {
         let year = date.yearString()
         
         XCTAssertEqual(year, "2016")
+    }
+    
+    func testDateString() {
+        let dateString = date.dateString()
+        
+        XCTAssertEqual(dateString, "2016-10-09")
     }
     
     func testShortDate() {

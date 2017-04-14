@@ -266,15 +266,15 @@ public extension Date {
     ///   - time: The second date for time.
     public init?(date: Date, time: Date) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         let datePortion: String = dateFormatter.string(from: date)
         
         dateFormatter.dateFormat = "HH:mm"
         let timePortion: String = dateFormatter.string(from: time)
         
         let dateTime = "\(datePortion) \(timePortion)"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         
-        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
         guard let parsed = dateFormatter.date(from: dateTime) else {
             return nil
         }
@@ -341,10 +341,21 @@ public extension Date {
     
     /// Get the year string from self.
     ///
-    /// - Returns: Get the year string from self.
+    /// - Returns: Returns the year string from self.
     public func yearString() -> String {
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy"
+        
+        return dateFormatter.string(from: self)
+    }
+    
+    /// Get the String date from self.
+    ///
+    /// - Parameter format: Date format.
+    /// - Returns: Returns the String data from self.
+    public func dateString(format: String = "yyyy-MM-dd") -> String {
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
         
         return dateFormatter.string(from: self)
     }

@@ -28,6 +28,7 @@ All notable changes to this project will be documented in this file.<br>
 
 ## Master
 ### Added
+- Added `dateString(format:)` in Date extension
 - Added `replacingOccurrences(of:, with:)` in String extension
 
 ### Improved
