@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-### 2.x Releases
+### 2.x Releases
 - `2.2.x` Releases - [2.2.0](#220---cryptographically-first) | [2.2.1](#221---better-log) | [2.2.2](#222---swift-31-ready)
 - `2.1.x` Releases - [2.1.0](#210---napalm-explosion)
 - `2.0.x` Releases - [2.0.0](#200---a-new-beginning) | [2.0.1](#201---linux-compatibility) | [2.0.2](#202---linux-doesnt-like-emoji)
@@ -27,8 +27,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ## Master - ???
-
-### Added
+### Added
 - Added `replacingOccurrences(of:, with:)` in String extension
 
 ### Improved
@@ -46,7 +45,6 @@ Thanks to [@on123](https://github.com/on123) & [@jiongge](https://github.com/jio
 ---
 
 ## [2.2.2](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.2.2) - Swift 3.1 Ready
-
 ### 12 Mar 2017
 ### Improved
 - Minor changes to be Swift 3.1 ready
@@ -54,8 +52,7 @@ Thanks to [@on123](https://github.com/on123) & [@jiongge](https://github.com/jio
 ---
 
 ## [2.2.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.2.1) - Better Log
-
-### 10 Jan 2017
+### 10 Jan 2017
 ### Fixed
 - Fixed a bug in `warning`, `error`, `debug` and `info` functions in BFLog struct
 
@@ -64,8 +61,7 @@ Thanks to [@ianrahman](https://github.com/ianrahman) for this release
 ---
 
 ## [2.2.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.2.0) - Cryptographically First
-
-### 09 Jan 2017
+### 09 Jan 2017
 ### Added
 - Added new cryptographically secure random numbers generator with `random()` function in Number extension
     - Available to all Integer types, Float and Double
@@ -86,8 +82,7 @@ Thanks to [@ianrahman](https://github.com/ianrahman) for this release
 ---
 
 ## [2.1.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.1.0) - Napalm Explosion
-
-### 23 Dec 2016
+### 23 Dec 2016
 ### Added
 - Added `random()` function in Array extension
 - Added `array` variable to String, Int, Float and Double extensions
@@ -102,24 +97,21 @@ Thanks to [@calebkleveter](https://github.com/calebkleveter) for this release
 ---
 
 ## [2.0.2](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.0.2) - Linux Doesn't Like Emoji
-
-### 11 Dec 2016
+### 11 Dec 2016
 ### Fixed
 - Fixed a bug for Linux on String extension
 
 ---
 
-## [2.0.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.0.1) - Linux Compatibility
-
-### 10 Dec 2016
+## [2.0.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.0.1) - Linux Compatibilit
+### 10 Dec 2016
 ### Fixed
 - Fixed a bug for Linux on BFApp class
 
 ---
 
 ## [2.0.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.0.0) - A New Beginning
-
-### 10 Dec 2016
+### 10 Dec 2016
 ### Added
 - This version has been completely rewritten and is not compatible with 1.x versions
 - Added Swift 3.0 support
@@ -144,7 +136,6 @@ Thanks to [@the0neyouseek](https://github.com/the0neyouseek) for this release
 ---
 
 ## [1.8.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.8.0)
-
 ### 19 Sep 2016
 ### Added
 - Added Swift 2.3 support
@@ -162,7 +153,6 @@ Thanks to [@sairamkotha](https://github.com/sairamkotha), [@ttyh061](https://git
 ---
 
 ## [1.7.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.7.0)
-
 ### 14 Jul 2016
 ### Added
 - Added `debugBlock` and `NSLocalizedString(key:)` in global scope
@@ -184,14 +174,12 @@ Thanks to [@gabrielPeart](https://github.com/gabrielPeart) for this release
 ---
 
 ## [1.6.3](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.6.3)
-
 ### 15 May 2016
 ### Fixed
 - Fixed crash on BFDateInformation struct initializer
 
 
 ## [1.6.2](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.6.2)
-
 ### 08 May 2016
 ### Added
 - Added missing devices
@@ -205,7 +193,6 @@ Thanks to [@pontus-andersson](https://github.com/pontus-andersson) for this rele
 ---
 
 ## [1.6.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.6.1)
-
 ### 25 Mar 2016
 ### Added
 - Added [Package.swift](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/Package.swift) file to add support to Swift Package Manager
@@ -216,7 +203,6 @@ Thanks to [@lucasmpaim](https://github.com/lucasmpaim) for this release
 ---
 
 ## [1.6.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.6.0)
-
 ### 1 Feb 2016
 ### Added
 - Added [CONTRIBUTING.md](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/CONTRIBUTING.md) file
@@ -244,7 +230,6 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 ---
 
 ## [1.5.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.5.1)
-
 ### 10 Nov 2015
 ### Added
 - Added more stronger check on BFDataStructures
@@ -258,7 +243,6 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 ---
 
 ## [1.5.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.5.0)
-
 ### 5 Nov 2015
 ### Added
 - Added support for Swift 2.0
@@ -280,7 +264,6 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 ---
 
 ## [1.4.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.4.1)
-
 ### 20 Jul 2015
 ### Added
 - Added support for iPod Touch 6G
@@ -291,7 +274,6 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 ---
 
 ## [1.4.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.4.0)
-
 ### 13 Jul 2015
 ### Added
 - Added `APP_DELEGATE` global variable
@@ -312,7 +294,6 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 ---
 
 ## [1.3.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.3.1)
-
 ### 9 Jul 2915
 ### Added
 - Added `onFirstStart` and `onFirstStartForCurrentVersion` in BFApp class
@@ -326,7 +307,6 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 ---
 
 ## [1.3.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.3.0)
-
 ### 7 Jul 2015
 ### Added
 - Added a DEMO App
@@ -356,7 +336,6 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 ---
 
 ## [1.2.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.2.0)
-
 ### 5 Jul 2015
 ### Added
 - Added comments to all classes and extensions
@@ -369,7 +348,6 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 ---
 
 ## [1.1.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.1.0)
-
 ### 2 Jul 2015
 ### Added
 - Added Carthage support
@@ -388,6 +366,5 @@ Thanks to [@Ewg777](https://github.com/Ewg777), [@emersonbroga](https://github.c
 ---
 
 ## [1.0.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/v1.0.0)
-
 ### 30 Jun 2015
 - Initial release
