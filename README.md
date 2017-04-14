@@ -46,7 +46,7 @@ Compatibility
 |-----------------------------------------------------------------------------------------------------------|------------|------------|
 | [BFApp](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/BFApp.html)                 | ![✓]       | ![✓]       |
 | [BFButton](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Classes/BFButton.html)           | ![✓]       |            |
-| BFDataStructures<br>([List](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/List.html) - [Queue](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/Queue.html) - [Stack](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/Stack.html))                  | ![✓]       | ![✓]       |
+| BFDataStructures<br>([List](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/List.html) - [Queue](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/Queue.html) - [Stack](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/Stack.html))                | ![✓]       | ![✓]       |
 | [BFLog](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/BFLog.html)                 | ![✓]       | ![✓]       |
 | [BFPassword](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/BFPassword.html)       | ![✓]       | ![✓]       |
 | [BFSystemSound](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Classes/BFSystemSound.html) | ![✓]       |            |

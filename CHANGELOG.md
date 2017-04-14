@@ -27,11 +27,20 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ## Master - ???
-### XX XXX 2017
-### Fixed
-- Fixed an issue with `randomInt()` function on Number extension  [#26](https://github.com/FabrizioBrancati/BFKit-Swift/issue/26)
+### Added
+- Added `replacingOccurrences(of:, with:)` in String extension
 
-Thanks to [@on123](https://github.com/on123) for this release
+### Improved
+- Changing Sound and Fonts enums to be more Swifty (Xcode hints will help)
+- Updating with Swift 3.1 compatibility
+- Updated SwiftLint to 0.18.1
+- Improved tests
+- `mainBundlePath` in FileManager extension will now return the main bundle path if no file is specified [#27](https://github.com/FabrizioBrancati/BFKit-Swift/issue/27)
+
+### Fixed
+- Fixed an issue with `randomInt()` function on Number extension [#26](https://github.com/FabrizioBrancati/BFKit-Swift/issue/26)
+
+Thanks to [@on123](https://github.com/on123) & [@jiongge](https://github.com/jiongge) for this release
 
 ---
 
