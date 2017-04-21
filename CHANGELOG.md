@@ -26,6 +26,12 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+## watchOS Support
+### Added
+- Added watchOS support
+
+---
+
 ## Master
 ### Added
 - Added `dateString(format:)` in Date extension
