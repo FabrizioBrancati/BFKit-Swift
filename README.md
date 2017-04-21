@@ -75,7 +75,7 @@ Compatibility
 | [UIColor](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIColor.html)                                        | ![✓]       | ![✓]        |            |
 | [UIDevice](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIDevice.html)                                      | ![✓]       |             |            |
 | [UIFont](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIFont.html)                                          | ![✓]       | ![✓]        |            |
-| [UIImage](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIImage.html)                                        | ![✓]       |             |            |
+| [UIImage](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIImage.html)                                        | ![✓]       | ![✓]        |            |
 | [UIImageView](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIImageView.html)                                | ![✓]       |             |            |
 | [UILabel](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UILabel.html)                                        | ![✓]       |             |            |
 | [UINavigationBar](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UINavigationBar.html)                        | ![✓]       |             |            |
