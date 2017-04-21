@@ -52,6 +52,7 @@
 		49381D621EAA091C00DBFC89 /* BFPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4913372A1DF9714D00BD8B0F /* BFPassword.swift */; };
 		49381D661EAA0CAE00DBFC89 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC5E1DBD15AC00C9AE18 /* UIColorExtension.swift */; };
 		49381D671EAA0CBE00DBFC89 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC601DBD15AC00C9AE18 /* UIFontExtension.swift */; };
+		49381D6F1EAA14EC00DBFC89 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC611DBD15AC00C9AE18 /* UIImageExtension.swift */; };
 		49707FF81DF8BA6400EC73DB /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49707FF71DF8BA6400EC73DB /* FileManagerExtension.swift */; };
 		4971864C1D2339040032A98E /* BFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 497186411D2339040032A98E /* BFKit.framework */; };
 		497186A21D2339210032A98E /* BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 497186651D2339210032A98E /* BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -617,6 +618,7 @@
 				49381D671EAA0CBE00DBFC89 /* UIFontExtension.swift in Sources */,
 				49381D5D1EAA091C00DBFC89 /* BFApp.swift in Sources */,
 				49381D4F1EAA08C600DBFC89 /* NumberExtension.swift in Sources */,
+				49381D6F1EAA14EC00DBFC89 /* UIImageExtension.swift in Sources */,
 				49381D4A1EAA08C600DBFC89 /* CollectionExtension.swift in Sources */,
 				49381D621EAA091C00DBFC89 /* BFPassword.swift in Sources */,
 				49381D531EAA08C600DBFC89 /* ThreadExtension.swift in Sources */,
