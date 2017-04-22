@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "497186401D2339040032A98E"
-               BuildableName = "BFKit.framework"
-               BlueprintName = "BFKit"
+               BuildableName = "BFKit_iOS.framework"
+               BlueprintName = "BFKit_iOS"
                ReferencedContainer = "container:BFKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,8 +44,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "497186401D2339040032A98E"
-            BuildableName = "BFKit.framework"
-            BlueprintName = "BFKit"
+            BuildableName = "BFKit_iOS.framework"
+            BlueprintName = "BFKit_iOS"
             ReferencedContainer = "container:BFKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,8 +66,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "497186401D2339040032A98E"
-            BuildableName = "BFKit.framework"
-            BlueprintName = "BFKit"
+            BuildableName = "BFKit_iOS.framework"
+            BlueprintName = "BFKit_iOS"
             ReferencedContainer = "container:BFKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -91,8 +91,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "497186401D2339040032A98E"
-            BuildableName = "BFKit.framework"
-            BlueprintName = "BFKit"
+            BuildableName = "BFKit_iOS.framework"
+            BlueprintName = "BFKit_iOS"
             ReferencedContainer = "container:BFKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

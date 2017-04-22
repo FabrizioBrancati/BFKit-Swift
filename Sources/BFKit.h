@@ -23,7 +23,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import <UIKit/UIKit.h>
+@import Foundation;
 
 //! Project version number for BFKit.
 FOUNDATION_EXPORT double BFKitVersionNumber;
