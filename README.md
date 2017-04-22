@@ -37,7 +37,7 @@ What does it do
 ===============
 BFKit-Swift is a collection of useful classes, structs and extensions to **develop Apps faster**.<br>
 For example you can use every **iOS font with just an enum!**<br>
-It also adds some useful functions with **BF** classes and extends some **Foundation** and **UIKit** classes.
+It also adds some useful functions with **Custom** classes and extends **Foundation** and **UIKit** classes.
 
 Compatibility
 =============
