@@ -432,9 +432,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		49381D401EAA084C00DBFC89 /* BFKit_watchOS */ = {
+		49381D401EAA084C00DBFC89 /* BFKit watchOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 49381D481EAA084D00DBFC89 /* Build configuration list for PBXNativeTarget "BFKit_watchOS" */;
+			buildConfigurationList = 49381D481EAA084D00DBFC89 /* Build configuration list for PBXNativeTarget "BFKit watchOS" */;
 			buildPhases = (
 				49381D3C1EAA084C00DBFC89 /* Sources */,
 				49381D3D1EAA084C00DBFC89 /* Frameworks */,
@@ -445,14 +445,14 @@
 			);
 			dependencies = (
 			);
-			name = BFKit_watchOS;
+			name = "BFKit watchOS";
 			productName = BFKit_watchOS;
 			productReference = 49381D411EAA084C00DBFC89 /* BFKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		497186401D2339040032A98E /* BFKit_iOS */ = {
+		497186401D2339040032A98E /* BFKit iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 497186551D2339040032A98E /* Build configuration list for PBXNativeTarget "BFKit_iOS" */;
+			buildConfigurationList = 497186551D2339040032A98E /* Build configuration list for PBXNativeTarget "BFKit iOS" */;
 			buildPhases = (
 				4971863C1D2339040032A98E /* Sources */,
 				4971863D1D2339040032A98E /* Frameworks */,
@@ -464,7 +464,7 @@
 			);
 			dependencies = (
 			);
-			name = BFKit_iOS;
+			name = "BFKit iOS";
 			productName = BFKit;
 			productReference = 497186411D2339040032A98E /* BFKit.framework */;
 			productType = "com.apple.product-type.framework";
@@ -539,8 +539,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				497186401D2339040032A98E /* BFKit_iOS */,
-				49381D401EAA084C00DBFC89 /* BFKit_watchOS */,
+				497186401D2339040032A98E /* BFKit iOS */,
+				49381D401EAA084C00DBFC89 /* BFKit watchOS */,
 				4971864A1D2339040032A98E /* BFKitTests */,
 			);
 		};
@@ -711,7 +711,7 @@
 /* Begin PBXTargetDependency section */
 		4971864E1D2339040032A98E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 497186401D2339040032A98E /* BFKit_iOS */;
+			target = 497186401D2339040032A98E /* BFKit iOS */;
 			targetProxy = 4971864D1D2339040032A98E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -936,7 +936,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		49381D481EAA084D00DBFC89 /* Build configuration list for PBXNativeTarget "BFKit_watchOS" */ = {
+		49381D481EAA084D00DBFC89 /* Build configuration list for PBXNativeTarget "BFKit watchOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				49381D461EAA084D00DBFC89 /* Debug */,
@@ -953,7 +953,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		497186551D2339040032A98E /* Build configuration list for PBXNativeTarget "BFKit_iOS" */ = {
+		497186551D2339040032A98E /* Build configuration list for PBXNativeTarget "BFKit iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				497186561D2339040032A98E /* Debug */,
