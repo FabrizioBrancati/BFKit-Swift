@@ -189,9 +189,12 @@ public extension UIImage {
         self.init(data: data)
     }
     
+    /// Returns the screen scale, based on the device.
+    ///
+    /// - Returns: Returns the screen scale, based on the device.
     private static func screenScale() -> CGFloat {
         #if os(iOS)
-            return UIImage.screenScale()
+            return UIScreen.main.scale
         #elseif os(watchOS)
             return WKInterfaceDevice.current().screenScale
         #endif
