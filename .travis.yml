@@ -7,6 +7,7 @@ env:
 matrix:
   include:
     - os: linux
+      language: generic
       sudo: required
       dist: trusty
     - os: osx
@@ -62,7 +63,8 @@ script:
 
   - if [ "$RUN_TESTS" == "YES" ]; then
       xcodebuild clean test -project "$PROJ" -scheme "$SCHEME" -destination "$DESTINATION" -enableCodeCoverage YES | xcpretty;
-    else
+    fi
+  - if [ "$RUN_TESTS" == "NO" ]; then
       xcodebuild clean build -project "$PROJ" -scheme "$SCHEME" -destination "$DESTINATION" -enableCodeCoverage YES | xcpretty;
     fi
 

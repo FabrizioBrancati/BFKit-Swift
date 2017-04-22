@@ -28,7 +28,10 @@ All notable changes to this project will be documented in this file.<br>
 
 ## watchOS Support
 ### Added
-- Added watchOS support
+- Added watchOS support (For specific classes, structs and extensions support refer to [compatibility](https://github.com/FabrizioBrancati/BFKit-Swift/tree/master#compatibility) table)
+
+### Improved
+- Changed Travis CI build
 
 ---
 
