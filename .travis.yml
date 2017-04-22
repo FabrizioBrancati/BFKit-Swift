@@ -62,10 +62,10 @@ script:
     fi
 
   - if [ "$RUN_TESTS" == "YES" ]; then
-      xcodebuild clean test -project "$PROJ" -scheme "$SCHEME" -destination "$DESTINATION" -enableCodeCoverage YES | xcpretty;
+      xcodebuild test -project "$PROJ" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Release -enableCodeCoverage YES | xcpretty;
     fi
   - if [ "$RUN_TESTS" == "NO" ]; then
-      xcodebuild clean build -project "$PROJ" -scheme "$SCHEME" -destination "$DESTINATION" -enableCodeCoverage YES | xcpretty;
+      xcodebuild build -project "$PROJ" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Debug | xcpretty;
     fi
 
   - if [ "$EXAMPLE" == "YES" ]; then
