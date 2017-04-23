@@ -33,6 +33,8 @@ All notable changes to this project will be documented in this file.<br>
 
 ### Improved
 - Changed Travis CI builds
+- Use of `randomInt()` in UIColor and Array extensions
+- Removed Glibc library for Linux
 
 ---
 

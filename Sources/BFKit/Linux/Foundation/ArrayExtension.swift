@@ -25,9 +25,6 @@
 //  SOFTWARE.
 
 import Foundation
-#if os(Linux)
-    import Glibc
-#endif
 
 // MARK: - Array extension
 
@@ -117,11 +114,7 @@ public extension Array {
     /// Shuffle the elements of `self` in-place.
     public mutating func shuffle() {
         for i in 0..<(count - 1) {
-            #if os(Linux)
-                let j = Int(Int(Glibc.random()) % Int(count - i)) + i
-            #else
-                let j = Int(arc4random_uniform(UInt32(count - i))) + i
-            #endif
+            let j = Int(randomInt(range: 0...Int(count - i))) + i
             self.swap(from: i, to: j)
         }
     }

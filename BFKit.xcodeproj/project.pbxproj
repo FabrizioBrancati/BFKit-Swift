@@ -39,31 +39,8 @@
 		49768CC01EACBE5C003B113A /* BFSystemSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CBC1EACBE5C003B113A /* BFSystemSound.swift */; };
 		49768CC11EACBE5C003B113A /* BFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CBD1EACBE5C003B113A /* BFTextField.swift */; };
 		49768CC21EACBE5C003B113A /* BFTouchID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CBE1EACBE5C003B113A /* BFTouchID.swift */; };
-		49768CD81EACBE6E003B113A /* UIBarButtonItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CC41EACBE6E003B113A /* UIBarButtonItemExtension.swift */; };
-		49768CD91EACBE6E003B113A /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CC51EACBE6E003B113A /* UIButtonExtension.swift */; };
-		49768CDA1EACBE6E003B113A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CC61EACBE6E003B113A /* UIColorExtension.swift */; };
-		49768CDB1EACBE6E003B113A /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CC71EACBE6E003B113A /* UIDeviceExtension.swift */; };
-		49768CDC1EACBE6E003B113A /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CC81EACBE6E003B113A /* UIFontExtension.swift */; };
-		49768CDD1EACBE6E003B113A /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CC91EACBE6E003B113A /* UIImageExtension.swift */; };
-		49768CDE1EACBE6E003B113A /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CCA1EACBE6E003B113A /* UIImageViewExtension.swift */; };
-		49768CDF1EACBE6E003B113A /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CCB1EACBE6E003B113A /* UILabelExtension.swift */; };
-		49768CE01EACBE6E003B113A /* UINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CCC1EACBE6E003B113A /* UINavigationBarExtension.swift */; };
-		49768CE11EACBE6E003B113A /* UIPasteboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CCD1EACBE6E003B113A /* UIPasteboardExtension.swift */; };
-		49768CE21EACBE6E003B113A /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CCE1EACBE6E003B113A /* UIScreenExtension.swift */; };
-		49768CE31EACBE6E003B113A /* UIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CCF1EACBE6E003B113A /* UIScrollViewExtension.swift */; };
-		49768CE41EACBE6E003B113A /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CD01EACBE6E003B113A /* UITableViewExtension.swift */; };
-		49768CE51EACBE6E003B113A /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CD11EACBE6E003B113A /* UITextFieldExtension.swift */; };
-		49768CE61EACBE6E003B113A /* UITextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CD21EACBE6E003B113A /* UITextViewExtension.swift */; };
-		49768CE71EACBE6E003B113A /* UIToolbarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CD31EACBE6E003B113A /* UIToolbarExtension.swift */; };
-		49768CE81EACBE6E003B113A /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CD41EACBE6E003B113A /* UIViewControllerExtension.swift */; };
-		49768CE91EACBE6E003B113A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CD51EACBE6E003B113A /* UIViewExtension.swift */; };
-		49768CEA1EACBE6E003B113A /* UIWebViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CD61EACBE6E003B113A /* UIWebViewExtension.swift */; };
-		49768CEB1EACBE6E003B113A /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CD71EACBE6E003B113A /* UIWindowExtension.swift */; };
 		49768CED1EACBE84003B113A /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CEC1EACBE84003B113A /* FileManagerExtension.swift */; };
 		49768D201EACBF39003B113A /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CEC1EACBE84003B113A /* FileManagerExtension.swift */; };
-		49768D211EACBF4D003B113A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CC61EACBE6E003B113A /* UIColorExtension.swift */; };
-		49768D221EACBF4F003B113A /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CC81EACBE6E003B113A /* UIFontExtension.swift */; };
-		49768D231EACBF52003B113A /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CC91EACBE6E003B113A /* UIImageExtension.swift */; };
 		49768D271EACC032003B113A /* WKInterfaceControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768D251EACBF83003B113A /* WKInterfaceControllerExtension.swift */; };
 		49768D281EACC47C003B113A /* BFButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CEE1EACBE9B003B113A /* BFButtonTests.swift */; };
 		49768D291EACC483003B113A /* BFSystemSoundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CEF1EACBE9B003B113A /* BFSystemSoundTests.swift */; };
@@ -90,6 +67,26 @@
 		49768D3E1EACC4A4003B113A /* UIViewExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768D071EACBEBC003B113A /* UIViewExtensionTests.swift */; };
 		49768D3F1EACC4A4003B113A /* UIWebViewExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768D081EACBEBC003B113A /* UIWebViewExtensionTests.swift */; };
 		49768D401EACC4A4003B113A /* UIWindowExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768D091EACBEBC003B113A /* UIWindowExtensionTests.swift */; };
+		49768DB31EAD2BC1003B113A /* UIBarButtonItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768D9F1EAD2BC1003B113A /* UIBarButtonItemExtension.swift */; };
+		49768DB41EAD2BC1003B113A /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DA01EAD2BC1003B113A /* UIButtonExtension.swift */; };
+		49768DB51EAD2BC1003B113A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DA11EAD2BC1003B113A /* UIColorExtension.swift */; };
+		49768DB61EAD2BC1003B113A /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DA21EAD2BC1003B113A /* UIDeviceExtension.swift */; };
+		49768DB71EAD2BC1003B113A /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DA31EAD2BC1003B113A /* UIFontExtension.swift */; };
+		49768DB81EAD2BC1003B113A /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DA41EAD2BC1003B113A /* UIImageExtension.swift */; };
+		49768DB91EAD2BC1003B113A /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DA51EAD2BC1003B113A /* UIImageViewExtension.swift */; };
+		49768DBA1EAD2BC1003B113A /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DA61EAD2BC1003B113A /* UILabelExtension.swift */; };
+		49768DBB1EAD2BC1003B113A /* UINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DA71EAD2BC1003B113A /* UINavigationBarExtension.swift */; };
+		49768DBC1EAD2BC1003B113A /* UIPasteboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DA81EAD2BC1003B113A /* UIPasteboardExtension.swift */; };
+		49768DBD1EAD2BC1003B113A /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DA91EAD2BC1003B113A /* UIScreenExtension.swift */; };
+		49768DBE1EAD2BC1003B113A /* UIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DAA1EAD2BC1003B113A /* UIScrollViewExtension.swift */; };
+		49768DBF1EAD2BC1003B113A /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DAB1EAD2BC1003B113A /* UITableViewExtension.swift */; };
+		49768DC01EAD2BC1003B113A /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DAC1EAD2BC1003B113A /* UITextFieldExtension.swift */; };
+		49768DC11EAD2BC1003B113A /* UITextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DAD1EAD2BC1003B113A /* UITextViewExtension.swift */; };
+		49768DC21EAD2BC1003B113A /* UIToolbarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DAE1EAD2BC1003B113A /* UIToolbarExtension.swift */; };
+		49768DC31EAD2BC1003B113A /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DAF1EAD2BC1003B113A /* UIViewControllerExtension.swift */; };
+		49768DC41EAD2BC1003B113A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DB01EAD2BC1003B113A /* UIViewExtension.swift */; };
+		49768DC51EAD2BC1003B113A /* UIWebViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DB11EAD2BC1003B113A /* UIWebViewExtension.swift */; };
+		49768DC61EAD2BC1003B113A /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DB21EAD2BC1003B113A /* UIWindowExtension.swift */; };
 		497E51111DE647A600EB95D0 /* NSObjectExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497E51101DE647A600EB95D0 /* NSObjectExtensionTests.swift */; };
 		4998657B1DE53AE4000D252A /* BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4998657A1DE53AE4000D252A /* BFKit.swift */; };
 		4998657D1DE61825000D252A /* NumberExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4998657C1DE61825000D252A /* NumberExtensionTests.swift */; };
@@ -142,26 +139,6 @@
 		49768CBC1EACBE5C003B113A /* BFSystemSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFSystemSound.swift; path = Sources/BFKit/Apple/BFKit/BFSystemSound.swift; sourceTree = SOURCE_ROOT; };
 		49768CBD1EACBE5C003B113A /* BFTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFTextField.swift; path = Sources/BFKit/Apple/BFKit/BFTextField.swift; sourceTree = SOURCE_ROOT; };
 		49768CBE1EACBE5C003B113A /* BFTouchID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFTouchID.swift; path = Sources/BFKit/Apple/BFKit/BFTouchID.swift; sourceTree = SOURCE_ROOT; };
-		49768CC41EACBE6E003B113A /* UIBarButtonItemExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIBarButtonItemExtension.swift; path = ../../Apple/UIKit/UIBarButtonItemExtension.swift; sourceTree = "<group>"; };
-		49768CC51EACBE6E003B113A /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIButtonExtension.swift; path = ../../Apple/UIKit/UIButtonExtension.swift; sourceTree = "<group>"; };
-		49768CC61EACBE6E003B113A /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = ../../Apple/UIKit/UIColorExtension.swift; sourceTree = "<group>"; };
-		49768CC71EACBE6E003B113A /* UIDeviceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIDeviceExtension.swift; path = ../../Apple/UIKit/UIDeviceExtension.swift; sourceTree = "<group>"; };
-		49768CC81EACBE6E003B113A /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIFontExtension.swift; path = ../../Apple/UIKit/UIFontExtension.swift; sourceTree = "<group>"; };
-		49768CC91EACBE6E003B113A /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageExtension.swift; path = ../../Apple/UIKit/UIImageExtension.swift; sourceTree = "<group>"; };
-		49768CCA1EACBE6E003B113A /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageViewExtension.swift; path = ../../Apple/UIKit/UIImageViewExtension.swift; sourceTree = "<group>"; };
-		49768CCB1EACBE6E003B113A /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UILabelExtension.swift; path = ../../Apple/UIKit/UILabelExtension.swift; sourceTree = "<group>"; };
-		49768CCC1EACBE6E003B113A /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UINavigationBarExtension.swift; path = ../../Apple/UIKit/UINavigationBarExtension.swift; sourceTree = "<group>"; };
-		49768CCD1EACBE6E003B113A /* UIPasteboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIPasteboardExtension.swift; path = ../../Apple/UIKit/UIPasteboardExtension.swift; sourceTree = "<group>"; };
-		49768CCE1EACBE6E003B113A /* UIScreenExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIScreenExtension.swift; path = ../../Apple/UIKit/UIScreenExtension.swift; sourceTree = "<group>"; };
-		49768CCF1EACBE6E003B113A /* UIScrollViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIScrollViewExtension.swift; path = ../../Apple/UIKit/UIScrollViewExtension.swift; sourceTree = "<group>"; };
-		49768CD01EACBE6E003B113A /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITableViewExtension.swift; path = ../../Apple/UIKit/UITableViewExtension.swift; sourceTree = "<group>"; };
-		49768CD11EACBE6E003B113A /* UITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITextFieldExtension.swift; path = ../../Apple/UIKit/UITextFieldExtension.swift; sourceTree = "<group>"; };
-		49768CD21EACBE6E003B113A /* UITextViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITextViewExtension.swift; path = ../../Apple/UIKit/UITextViewExtension.swift; sourceTree = "<group>"; };
-		49768CD31EACBE6E003B113A /* UIToolbarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIToolbarExtension.swift; path = ../../Apple/UIKit/UIToolbarExtension.swift; sourceTree = "<group>"; };
-		49768CD41EACBE6E003B113A /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = ../../Apple/UIKit/UIViewControllerExtension.swift; sourceTree = "<group>"; };
-		49768CD51EACBE6E003B113A /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = ../../Apple/UIKit/UIViewExtension.swift; sourceTree = "<group>"; };
-		49768CD61EACBE6E003B113A /* UIWebViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIWebViewExtension.swift; path = ../../Apple/UIKit/UIWebViewExtension.swift; sourceTree = "<group>"; };
-		49768CD71EACBE6E003B113A /* UIWindowExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIWindowExtension.swift; path = ../../Apple/UIKit/UIWindowExtension.swift; sourceTree = "<group>"; };
 		49768CEC1EACBE84003B113A /* FileManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileManagerExtension.swift; path = Sources/BFKit/Apple/Foundation/FileManagerExtension.swift; sourceTree = SOURCE_ROOT; };
 		49768CEE1EACBE9B003B113A /* BFButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFButtonTests.swift; path = Tests/BFKitTests/Apple/BFKit/BFButtonTests.swift; sourceTree = SOURCE_ROOT; };
 		49768CEF1EACBE9B003B113A /* BFSystemSoundTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFSystemSoundTests.swift; path = Tests/BFKitTests/Apple/BFKit/BFSystemSoundTests.swift; sourceTree = SOURCE_ROOT; };
@@ -189,6 +166,26 @@
 		49768D091EACBEBC003B113A /* UIWindowExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIWindowExtensionTests.swift; path = Tests/BFKitTests/Apple/UIKit/UIWindowExtensionTests.swift; sourceTree = SOURCE_ROOT; };
 		49768D1E1EACBECD003B113A /* FileManagerExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileManagerExtensionTests.swift; path = Tests/BFKitTests/Apple/Foundation/FileManagerExtensionTests.swift; sourceTree = SOURCE_ROOT; };
 		49768D251EACBF83003B113A /* WKInterfaceControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKInterfaceControllerExtension.swift; sourceTree = "<group>"; };
+		49768D9F1EAD2BC1003B113A /* UIBarButtonItemExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIBarButtonItemExtension.swift; path = Sources/BFKit/Apple/UIKit/UIBarButtonItemExtension.swift; sourceTree = SOURCE_ROOT; };
+		49768DA01EAD2BC1003B113A /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIButtonExtension.swift; path = Sources/BFKit/Apple/UIKit/UIButtonExtension.swift; sourceTree = SOURCE_ROOT; };
+		49768DA11EAD2BC1003B113A /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = Sources/BFKit/Apple/UIKit/UIColorExtension.swift; sourceTree = SOURCE_ROOT; };
+		49768DA21EAD2BC1003B113A /* UIDeviceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIDeviceExtension.swift; path = Sources/BFKit/Apple/UIKit/UIDeviceExtension.swift; sourceTree = SOURCE_ROOT; };
+		49768DA31EAD2BC1003B113A /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIFontExtension.swift; path = Sources/BFKit/Apple/UIKit/UIFontExtension.swift; sourceTree = SOURCE_ROOT; };
+		49768DA41EAD2BC1003B113A /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageExtension.swift; path = Sources/BFKit/Apple/UIKit/UIImageExtension.swift; sourceTree = SOURCE_ROOT; };
+		49768DA51EAD2BC1003B113A /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageViewExtension.swift; path = Sources/BFKit/Apple/UIKit/UIImageViewExtension.swift; sourceTree = SOURCE_ROOT; };
+		49768DA61EAD2BC1003B113A /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UILabelExtension.swift; path = Sources/BFKit/Apple/UIKit/UILabelExtension.swift; sourceTree = SOURCE_ROOT; };
+		49768DA71EAD2BC1003B113A /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UINavigationBarExtension.swift; path = Sources/BFKit/Apple/UIKit/UINavigationBarExtension.swift; sourceTree = SOURCE_ROOT; };
+		49768DA81EAD2BC1003B113A /* UIPasteboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIPasteboardExtension.swift; path = Sources/BFKit/Apple/UIKit/UIPasteboardExtension.swift; sourceTree = SOURCE_ROOT; };
+		49768DA91EAD2BC1003B113A /* UIScreenExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIScreenExtension.swift; path = Sources/BFKit/Apple/UIKit/UIScreenExtension.swift; sourceTree = SOURCE_ROOT; };
+		49768DAA1EAD2BC1003B113A /* UIScrollViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIScrollViewExtension.swift; path = Sources/BFKit/Apple/UIKit/UIScrollViewExtension.swift; sourceTree = SOURCE_ROOT; };
+		49768DAB1EAD2BC1003B113A /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITableViewExtension.swift; path = Sources/BFKit/Apple/UIKit/UITableViewExtension.swift; sourceTree = SOURCE_ROOT; };
+		49768DAC1EAD2BC1003B113A /* UITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITextFieldExtension.swift; path = Sources/BFKit/Apple/UIKit/UITextFieldExtension.swift; sourceTree = SOURCE_ROOT; };
+		49768DAD1EAD2BC1003B113A /* UITextViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITextViewExtension.swift; path = Sources/BFKit/Apple/UIKit/UITextViewExtension.swift; sourceTree = SOURCE_ROOT; };
+		49768DAE1EAD2BC1003B113A /* UIToolbarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIToolbarExtension.swift; path = Sources/BFKit/Apple/UIKit/UIToolbarExtension.swift; sourceTree = SOURCE_ROOT; };
+		49768DAF1EAD2BC1003B113A /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = Sources/BFKit/Apple/UIKit/UIViewControllerExtension.swift; sourceTree = SOURCE_ROOT; };
+		49768DB01EAD2BC1003B113A /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = Sources/BFKit/Apple/UIKit/UIViewExtension.swift; sourceTree = SOURCE_ROOT; };
+		49768DB11EAD2BC1003B113A /* UIWebViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIWebViewExtension.swift; path = Sources/BFKit/Apple/UIKit/UIWebViewExtension.swift; sourceTree = SOURCE_ROOT; };
+		49768DB21EAD2BC1003B113A /* UIWindowExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIWindowExtension.swift; path = Sources/BFKit/Apple/UIKit/UIWindowExtension.swift; sourceTree = SOURCE_ROOT; };
 		497E51101DE647A600EB95D0 /* NSObjectExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensionTests.swift; sourceTree = "<group>"; };
 		4998657A1DE53AE4000D252A /* BFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BFKit.swift; path = Sources/BFKit/Linux/BFKit/BFKit.swift; sourceTree = SOURCE_ROOT; };
 		4998657C1DE61825000D252A /* NumberExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NumberExtensionTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -316,26 +313,26 @@
 		49F0DC5B1DBD15AC00C9AE18 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				49768CC41EACBE6E003B113A /* UIBarButtonItemExtension.swift */,
-				49768CC51EACBE6E003B113A /* UIButtonExtension.swift */,
-				49768CC61EACBE6E003B113A /* UIColorExtension.swift */,
-				49768CC71EACBE6E003B113A /* UIDeviceExtension.swift */,
-				49768CC81EACBE6E003B113A /* UIFontExtension.swift */,
-				49768CC91EACBE6E003B113A /* UIImageExtension.swift */,
-				49768CCA1EACBE6E003B113A /* UIImageViewExtension.swift */,
-				49768CCB1EACBE6E003B113A /* UILabelExtension.swift */,
-				49768CCC1EACBE6E003B113A /* UINavigationBarExtension.swift */,
-				49768CCD1EACBE6E003B113A /* UIPasteboardExtension.swift */,
-				49768CCE1EACBE6E003B113A /* UIScreenExtension.swift */,
-				49768CCF1EACBE6E003B113A /* UIScrollViewExtension.swift */,
-				49768CD01EACBE6E003B113A /* UITableViewExtension.swift */,
-				49768CD11EACBE6E003B113A /* UITextFieldExtension.swift */,
-				49768CD21EACBE6E003B113A /* UITextViewExtension.swift */,
-				49768CD31EACBE6E003B113A /* UIToolbarExtension.swift */,
-				49768CD41EACBE6E003B113A /* UIViewControllerExtension.swift */,
-				49768CD51EACBE6E003B113A /* UIViewExtension.swift */,
-				49768CD61EACBE6E003B113A /* UIWebViewExtension.swift */,
-				49768CD71EACBE6E003B113A /* UIWindowExtension.swift */,
+				49768D9F1EAD2BC1003B113A /* UIBarButtonItemExtension.swift */,
+				49768DA01EAD2BC1003B113A /* UIButtonExtension.swift */,
+				49768DA11EAD2BC1003B113A /* UIColorExtension.swift */,
+				49768DA21EAD2BC1003B113A /* UIDeviceExtension.swift */,
+				49768DA31EAD2BC1003B113A /* UIFontExtension.swift */,
+				49768DA41EAD2BC1003B113A /* UIImageExtension.swift */,
+				49768DA51EAD2BC1003B113A /* UIImageViewExtension.swift */,
+				49768DA61EAD2BC1003B113A /* UILabelExtension.swift */,
+				49768DA71EAD2BC1003B113A /* UINavigationBarExtension.swift */,
+				49768DA81EAD2BC1003B113A /* UIPasteboardExtension.swift */,
+				49768DA91EAD2BC1003B113A /* UIScreenExtension.swift */,
+				49768DAA1EAD2BC1003B113A /* UIScrollViewExtension.swift */,
+				49768DAB1EAD2BC1003B113A /* UITableViewExtension.swift */,
+				49768DAC1EAD2BC1003B113A /* UITextFieldExtension.swift */,
+				49768DAD1EAD2BC1003B113A /* UITextViewExtension.swift */,
+				49768DAE1EAD2BC1003B113A /* UIToolbarExtension.swift */,
+				49768DAF1EAD2BC1003B113A /* UIViewControllerExtension.swift */,
+				49768DB01EAD2BC1003B113A /* UIViewExtension.swift */,
+				49768DB11EAD2BC1003B113A /* UIWebViewExtension.swift */,
+				49768DB21EAD2BC1003B113A /* UIWindowExtension.swift */,
 			);
 			name = UIKit;
 			path = iOS/UIKit;
@@ -603,7 +600,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49768D211EACBF4D003B113A /* UIColorExtension.swift in Sources */,
 				49381D611EAA091C00DBFC89 /* BFLog.swift in Sources */,
 				49381D491EAA08C600DBFC89 /* ArrayExtension.swift in Sources */,
 				49381D601EAA091C00DBFC89 /* BFKit.swift in Sources */,
@@ -613,10 +609,8 @@
 				49381D4D1EAA08C600DBFC89 /* DictionaryExtension.swift in Sources */,
 				49381D4B1EAA08C600DBFC89 /* DataExtension.swift in Sources */,
 				49381D5D1EAA091C00DBFC89 /* BFApp.swift in Sources */,
-				49768D221EACBF4F003B113A /* UIFontExtension.swift in Sources */,
 				49381D4F1EAA08C600DBFC89 /* NumberExtension.swift in Sources */,
 				49381D4A1EAA08C600DBFC89 /* CollectionExtension.swift in Sources */,
-				49768D231EACBF52003B113A /* UIImageExtension.swift in Sources */,
 				49381D621EAA091C00DBFC89 /* BFPassword.swift in Sources */,
 				49381D531EAA08C600DBFC89 /* ThreadExtension.swift in Sources */,
 				49768D271EACC032003B113A /* WKInterfaceControllerExtension.swift in Sources */,
@@ -631,44 +625,44 @@
 			buildActionMask = 2147483647;
 			files = (
 				49F0DC931DBD15B400C9AE18 /* DataExtension.swift in Sources */,
-				49768CE51EACBE6E003B113A /* UITextFieldExtension.swift in Sources */,
-				49768CE21EACBE6E003B113A /* UIScreenExtension.swift in Sources */,
-				49768CDC1EACBE6E003B113A /* UIFontExtension.swift in Sources */,
+				49768DC51EAD2BC1003B113A /* UIWebViewExtension.swift in Sources */,
+				49768DC21EAD2BC1003B113A /* UIToolbarExtension.swift in Sources */,
+				49768DB41EAD2BC1003B113A /* UIButtonExtension.swift in Sources */,
 				49F0DCA01DBD15B400C9AE18 /* ThreadExtension.swift in Sources */,
-				49768CE41EACBE6E003B113A /* UITableViewExtension.swift in Sources */,
-				49768CDE1EACBE6E003B113A /* UIImageViewExtension.swift in Sources */,
 				4913372C1DF9714D00BD8B0F /* BFPassword.swift in Sources */,
+				49768DBD1EAD2BC1003B113A /* UIScreenExtension.swift in Sources */,
+				49768DC01EAD2BC1003B113A /* UITextFieldExtension.swift in Sources */,
+				49768DBA1EAD2BC1003B113A /* UILabelExtension.swift in Sources */,
+				49768DB51EAD2BC1003B113A /* UIColorExtension.swift in Sources */,
+				49768DBC1EAD2BC1003B113A /* UIPasteboardExtension.swift in Sources */,
+				49768DB91EAD2BC1003B113A /* UIImageViewExtension.swift in Sources */,
 				49F0DC951DBD15B400C9AE18 /* CollectionExtension.swift in Sources */,
 				49768CC21EACBE5C003B113A /* BFTouchID.swift in Sources */,
-				49768CD91EACBE6E003B113A /* UIButtonExtension.swift in Sources */,
-				49768CE71EACBE6E003B113A /* UIToolbarExtension.swift in Sources */,
 				49768CED1EACBE84003B113A /* FileManagerExtension.swift in Sources */,
 				49F0DC941DBD15B400C9AE18 /* DateExtension.swift in Sources */,
-				49768CE11EACBE6E003B113A /* UIPasteboardExtension.swift in Sources */,
-				49768CEB1EACBE6E003B113A /* UIWindowExtension.swift in Sources */,
+				49768DC11EAD2BC1003B113A /* UITextViewExtension.swift in Sources */,
+				49768DB81EAD2BC1003B113A /* UIImageExtension.swift in Sources */,
 				4922E8891DFC425400C5BD3A /* ProcessInfoExtension.swift in Sources */,
 				49F0DC921DBD15B400C9AE18 /* ArrayExtension.swift in Sources */,
-				49768CE91EACBE6E003B113A /* UIViewExtension.swift in Sources */,
-				49768CDB1EACBE6E003B113A /* UIDeviceExtension.swift in Sources */,
+				49768DB71EAD2BC1003B113A /* UIFontExtension.swift in Sources */,
+				49768DC61EAD2BC1003B113A /* UIWindowExtension.swift in Sources */,
 				49F0DC9B1DBD15B400C9AE18 /* NumberExtension.swift in Sources */,
-				49768CE31EACBE6E003B113A /* UIScrollViewExtension.swift in Sources */,
-				49768CDA1EACBE6E003B113A /* UIColorExtension.swift in Sources */,
 				4913372B1DF9714D00BD8B0F /* BFLog.swift in Sources */,
-				49768CE61EACBE6E003B113A /* UITextViewExtension.swift in Sources */,
-				49768CDD1EACBE6E003B113A /* UIImageExtension.swift in Sources */,
-				49768CEA1EACBE6E003B113A /* UIWebViewExtension.swift in Sources */,
+				49768DB31EAD2BC1003B113A /* UIBarButtonItemExtension.swift in Sources */,
 				49768CC01EACBE5C003B113A /* BFSystemSound.swift in Sources */,
-				49768CE81EACBE6E003B113A /* UIViewControllerExtension.swift in Sources */,
-				49768CDF1EACBE6E003B113A /* UILabelExtension.swift in Sources */,
+				49768DC31EAD2BC1003B113A /* UIViewControllerExtension.swift in Sources */,
 				4998657B1DE53AE4000D252A /* BFKit.swift in Sources */,
 				49F0DC9F1DBD15B400C9AE18 /* StringExtension.swift in Sources */,
 				49768CC11EACBE5C003B113A /* BFTextField.swift in Sources */,
-				49768CD81EACBE6E003B113A /* UIBarButtonItemExtension.swift in Sources */,
 				491337281DF9713F00BD8B0F /* BFApp.swift in Sources */,
 				49768CBF1EACBE5C003B113A /* BFButton.swift in Sources */,
 				49F0DC5A1DBD159D00C9AE18 /* BFDataStructures.swift in Sources */,
-				49768CE01EACBE6E003B113A /* UINavigationBarExtension.swift in Sources */,
+				49768DBF1EAD2BC1003B113A /* UITableViewExtension.swift in Sources */,
+				49768DC41EAD2BC1003B113A /* UIViewExtension.swift in Sources */,
+				49768DBE1EAD2BC1003B113A /* UIScrollViewExtension.swift in Sources */,
+				49768DB61EAD2BC1003B113A /* UIDeviceExtension.swift in Sources */,
 				49F0DC9C1DBD15B400C9AE18 /* NSObjectExtension.swift in Sources */,
+				49768DBB1EAD2BC1003B113A /* UINavigationBarExtension.swift in Sources */,
 				49F0DC981DBD15B400C9AE18 /* DictionaryExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
