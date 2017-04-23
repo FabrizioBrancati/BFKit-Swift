@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 2.x Releases
-- `2.2.x` Releases - [2.2.0](#220---cryptographically-first) | [2.2.1](#221---better-log) | [2.2.2](#222---swift-31-ready)
+- `2.2.x` Releases - [2.2.0](#220---cryptographically-first) | [2.2.1](#221---better-log) | [2.2.2](#222---swift-31-ready) | [2.3.0](#230---minor-breaking-changes)
 - `2.1.x` Releases - [2.1.0](#210---napalm-explosion)
 - `2.0.x` Releases - [2.0.0](#200---a-new-beginning) | [2.0.1](#201---linux-compatibility) | [2.0.2](#202---linux-doesnt-like-emoji)
 
@@ -26,13 +26,14 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## Master
+## [2.3.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.3.0) - Minor (Breaking) Changes
+### 23 Apr 2017
 ### Added
 - Added `dateString(format:)` in Date extension
 - Added `replacingOccurrences(of:, with:)` in String extension
 
 ### Improved
-- Changing Sound and Fonts enums to be more Swifty (Xcode hints will help)
+- Changing Sound and Font enums to be more Swifty (Xcode hints will help)
 - Updated with Swift 3.1 compatibility
 - Updated SwiftLint to 0.18.1
 - Improved tests
@@ -104,7 +105,7 @@ Thanks to [@calebkleveter](https://github.com/calebkleveter) for this release
 
 ---
 
-## [2.0.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.0.1) - Linux Compatibilit
+## [2.0.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.0.1) - Linux Compatibility
 ### 10 Dec 2016
 ### Fixed
 - Fixed a bug for Linux on BFApp class
