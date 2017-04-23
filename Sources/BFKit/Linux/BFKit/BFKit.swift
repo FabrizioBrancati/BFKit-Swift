@@ -27,7 +27,7 @@
 import Foundation
 
 /// BFKit version string.
-public let BFKitVersion = "2.3.0"
+public let BFKitVersion = "2.4.0"
 
 /// BFKit author string.
 public let BFKitAuthor = "Fabrizio Brancati"
