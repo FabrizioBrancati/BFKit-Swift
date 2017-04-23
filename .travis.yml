@@ -71,6 +71,6 @@ script:
     fi
 
 after_success:
-  - if [ "$CODECOV" == "osx" ]; then
+  - if [ "$CODECOV" == "YES" ]; then
       bash <(curl -s https://codecov.io/bash);
     fi
