@@ -91,26 +91,28 @@ class BFLogTests: XCTestCase {
         XCTAssertEqual(BFLog.logged, "")
     }
     
-    func testSaveLog() {
-        do {
-            BFLog.clear()
-            
-            let filenameWithoutExtension = URL(string: String(describing: NSString(utf8String: #file)!))!.deletingPathExtension().lastPathComponent
-            let function = #function
-            let line = #line + 2
-            
-            BFLog.log("Test")
-            
-            try BFLog.saveLog(in: .documents, filename: "Test.log")
-            
-            guard let log = try FileManager.default.read(file: "Test.log", from: .documents) else {
+    #if !os(Linux)
+        func testSaveLog() {
+            do {
+                BFLog.clear()
+                
+                let filenameWithoutExtension = URL(string: String(describing: NSString(utf8String: #file)!))!.deletingPathExtension().lastPathComponent
+                let function = #function
+                let line = #line + 2
+                
+                BFLog.log("Test")
+                
+                try BFLog.saveLog(in: .documents, filename: "Test.log")
+                
+                guard let log = try FileManager.default.read(file: "Test.log", from: .documents) else {
+                    XCTFail()
+                    return
+                }
+                
+                XCTAssertEqual(log, "\(filenameWithoutExtension):\(line) \(function): Test\n")
+            } catch {
                 XCTFail()
-                return
             }
-            
-            XCTAssertEqual(log, "\(filenameWithoutExtension):\(line) \(function): Test\n")
-        } catch {
-            XCTFail()
         }
-    }
+    #endif
 }
