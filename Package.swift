@@ -29,7 +29,7 @@ import PackageDescription
 let package = Package(
     name: "BFKit",
     exclude: [
-        "Sources/BFKit/iOS",
-        "Tests/BFKitTests/iOS"
+        "Sources/BFKit/Apple",
+        "Tests/BFKitTests/Apple"
     ]
 )

@@ -37,7 +37,7 @@ What does it do
 ===============
 BFKit-Swift is a collection of useful classes, structs and extensions to **develop Apps faster**.<br>
 For example you can use every **iOS font with just an enum!**<br>
-It also adds some useful functions with **Custom** classes and extends **Foundation** and **UIKit** classes.
+It also adds some useful functions with **Custom** classes and extends **Foundation**, **UIKit** and **WatchKit** classes.
 
 Compatibility
 =============
@@ -90,6 +90,12 @@ Compatibility
 | [UIViewController](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/Sources/BFKit/iOS/UIKit/UIViewControllerExtension.swift) | ![✓]       |             |            |
 | [UIWebView](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIWebView.html)                                    | ![✓]       |             |            |
 | [UIWindow](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIWindow.html)                                      | ![✓]       |             | &nbsp;     |
+
+### WatchKit
+
+|                                                                                                                                         | **iOS**    | **watchOS** | **Linux**  |
+|----------------------------------------------------------------------------------------------------------------------------|------------|-------------|------------|
+| [WKInterfaceController](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/WKInterfaceController.html) |            | ![✓]        |            |
 
 Requirements
 ============
