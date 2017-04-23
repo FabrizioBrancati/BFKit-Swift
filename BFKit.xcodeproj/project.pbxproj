@@ -149,7 +149,7 @@
 		49381D411EAA084C00DBFC89 /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49707FF71DF8BA6400EC73DB /* FileManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileManagerExtension.swift; path = Sources/BFKit/iOS/Foundation/FileManagerExtension.swift; sourceTree = SOURCE_ROOT; };
 		497186411D2339040032A98E /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4971864B1D2339040032A98E /* BFKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BFKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4971864B1D2339040032A98E /* BFKitTests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BFKitTests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		497186651D2339210032A98E /* BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BFKit.h; path = Sources/BFKit.h; sourceTree = SOURCE_ROOT; };
 		4971868C1D2339210032A98E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = SOURCE_ROOT; };
 		497186CA1D2339290032A98E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -257,7 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				497186411D2339040032A98E /* BFKit.framework */,
-				4971864B1D2339040032A98E /* BFKitTests.xctest */,
+				4971864B1D2339040032A98E /* BFKitTests iOS.xctest */,
 				49381D411EAA084C00DBFC89 /* BFKit.framework */,
 			);
 			name = Products;
@@ -469,9 +469,9 @@
 			productReference = 497186411D2339040032A98E /* BFKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4971864A1D2339040032A98E /* BFKitTests */ = {
+		4971864A1D2339040032A98E /* BFKitTests iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 497186581D2339040032A98E /* Build configuration list for PBXNativeTarget "BFKitTests" */;
+			buildConfigurationList = 497186581D2339040032A98E /* Build configuration list for PBXNativeTarget "BFKitTests iOS" */;
 			buildPhases = (
 				497186471D2339040032A98E /* Sources */,
 				497186481D2339040032A98E /* Frameworks */,
@@ -482,9 +482,9 @@
 			dependencies = (
 				4971864E1D2339040032A98E /* PBXTargetDependency */,
 			);
-			name = BFKitTests;
+			name = "BFKitTests iOS";
 			productName = BFKitTests;
-			productReference = 4971864B1D2339040032A98E /* BFKitTests.xctest */;
+			productReference = 4971864B1D2339040032A98E /* BFKitTests iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -541,7 +541,7 @@
 			targets = (
 				497186401D2339040032A98E /* BFKit iOS */,
 				49381D401EAA084C00DBFC89 /* BFKit watchOS */,
-				4971864A1D2339040032A98E /* BFKitTests */,
+				4971864A1D2339040032A98E /* BFKitTests iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -962,7 +962,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		497186581D2339040032A98E /* Build configuration list for PBXNativeTarget "BFKitTests" */ = {
+		497186581D2339040032A98E /* Build configuration list for PBXNativeTarget "BFKitTests iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				497186591D2339040032A98E /* Debug */,
