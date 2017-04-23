@@ -37,6 +37,7 @@ public extension WKInterfaceController {
     ///   - group: WKInterfaceGroup to apply shake effect.
     ///   - duration: Shake duration. Default is 0.15.
     ///   - translation: Shake translation. Default is 10.
+    @available(watchOS 3.0, *)
     public func shake(group: WKInterfaceGroup, duration: TimeInterval = 0.15, translation: Float = 10) {
         self.animate(withDuration: duration, animations: {
             group.setContentInset(UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0))

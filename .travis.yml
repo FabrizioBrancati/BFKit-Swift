@@ -73,5 +73,4 @@ script:
 after_success:
   - if [ "$CODECOV" == "osx" ]; then
       bash <(curl -s https://codecov.io/bash);
-      sleep 5;
     fi
