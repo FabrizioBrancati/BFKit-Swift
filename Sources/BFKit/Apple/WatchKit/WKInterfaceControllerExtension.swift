@@ -39,13 +39,13 @@ public extension WKInterfaceController {
     ///   - translation: Shake translation. Default is 10.
     @available(watchOS 3.0, *)
     public func shake(group: WKInterfaceGroup, duration: TimeInterval = 0.15, translation: Float = 10) {
-        self.animate(withDuration: duration, animations: {
+        self.animate(withDuration: duration / 3, animations: {
             group.setContentInset(UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0))
-            Timer.scheduledTimer(withTimeInterval: duration, repeats: false, block: { _ in
-                self.animate(withDuration: duration, animations: {
+            Timer.scheduledTimer(withTimeInterval: duration / 3, repeats: false, block: { _ in
+                self.animate(withDuration: duration / 3, animations: {
                     group.setContentInset(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10))
-                    Timer.scheduledTimer(withTimeInterval: duration, repeats: false, block: { _ in
-                        self.animate(withDuration: duration, animations: {
+                    Timer.scheduledTimer(withTimeInterval: duration / 3, repeats: false, block: { _ in
+                        self.animate(withDuration: duration / 3, animations: {
                             group.setContentInset(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
                         })
                     })
