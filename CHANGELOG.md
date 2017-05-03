@@ -30,7 +30,7 @@ All notable changes to this project will be documented in this file.<br>
 ## watchOS Support
 ### Added
 - Added watchOS support (For specific classes, structs and extensions support refer to [compatibility](https://github.com/FabrizioBrancati/BFKit-Swift/tree/master#compatibility) table)
-- Added `saveLog(in:, filename:)` in BFLog struct to save log in a file 
+- Added `saveLog(in:, filename:)` in BFLog struct to save log in a file
 
 ### Improved
 - Changed Travis CI builds
@@ -53,7 +53,7 @@ All notable changes to this project will be documented in this file.<br>
 - `mainBundlePath` in FileManager extension will now return the main bundle path if no file is specified [#27](https://github.com/FabrizioBrancati/BFKit-Swift/issue/27)
 
 ### Fixed
-- Fixed an issue with `randomInt()` function on Number extension [#26](https://github.com/FabrizioBrancati/BFKit-Swift/issue/26)
+- Fixed an issue with `randomInt()` function in Number extension [#26](https://github.com/FabrizioBrancati/BFKit-Swift/issue/26)
 
 Thanks to [@on123](https://github.com/on123) & [@jiongge](https://github.com/jiongge) for this release
 
