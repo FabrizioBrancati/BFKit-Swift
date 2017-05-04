@@ -40,15 +40,16 @@ install:
     fi
 
 script:
+  - set -o pipefail
+
   - swift -version
 
   - if [ "$TRAVIS_OS_NAME" == "linux" ]; then
       swift build;
-      swift test;
+      swift test --parallel;
     fi
 
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then
-      set -o pipefail;
       xcodebuild -version;
       xcodebuild -showsdks;
     fi
