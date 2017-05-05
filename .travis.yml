@@ -26,7 +26,7 @@ matrix:
       language: objective-c
       osx_image: xcode8.3
       env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=3.2,name=Apple Watch - 42mm" SCHEME="$WATCHOS_SCHEME" RUN_TESTS="NO"  LINT="NO"  CODECOV="NO"  EXAMPLE="NO"
-     os: osx
+    - os: osx
       language: objective-c
       osx_image: xcode8.3
       env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=2.0,name=Apple Watch - 38mm" SCHEME="$WATCHOS_SCHEME" RUN_TESTS="NO"  LINT="NO"  CODECOV="NO"  EXAMPLE="NO"
