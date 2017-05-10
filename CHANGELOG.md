@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 2.x Releases
+- `2.4.x` Releases - [2.4.0](#240)
 - `2.3.x` Releases - [2.3.0](#230---minor-breaking-changes)
 - `2.2.x` Releases - [2.2.0](#220---cryptographically-first) | [2.2.1](#221---better-log) | [2.2.2](#222---swift-31-ready)
 - `2.1.x` Releases - [2.1.0](#210---napalm-explosion)
