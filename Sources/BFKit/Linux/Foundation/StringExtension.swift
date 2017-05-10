@@ -456,7 +456,7 @@ public extension String {
             var characterInt: UInt32 = 0
             
             #if os(Linux)
-                Scanner(string: character).scanHexInt(&characterInt)
+                _ = Scanner(string: character).scanHexInt(&characterInt)
             #else
                 Scanner(string: character).scanHexInt32(&characterInt)
             #endif
