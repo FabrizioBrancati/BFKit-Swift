@@ -34,7 +34,9 @@ import Foundation
 #if os(iOS)
     /// Get AppDelegate. To use it, cast to AppDelegate with "as! AppDelegate".
     public let appDelegate: UIApplicationDelegate? = UIApplication.shared.delegate
+#endif
 
+#if !os(Linux)
     // MARK: - Global functions
 
     /// NSLocalizedString without comment parameter.
