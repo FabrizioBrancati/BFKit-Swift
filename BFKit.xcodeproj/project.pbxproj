@@ -90,6 +90,9 @@
 		497E51111DE647A600EB95D0 /* NSObjectExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497E51101DE647A600EB95D0 /* NSObjectExtensionTests.swift */; };
 		4998657B1DE53AE4000D252A /* BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4998657A1DE53AE4000D252A /* BFKit.swift */; };
 		4998657D1DE61825000D252A /* NumberExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4998657C1DE61825000D252A /* NumberExtensionTests.swift */; };
+		49D0CD041EC59E9B0046C39C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DA11EAD2BC1003B113A /* UIColorExtension.swift */; };
+		49D0CD051EC59E9D0046C39C /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DA41EAD2BC1003B113A /* UIImageExtension.swift */; };
+		49D0CD061EC59EA00046C39C /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DA31EAD2BC1003B113A /* UIFontExtension.swift */; };
 		49D524C21DDD2B5000418942 /* CollectionExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D524C11DDD2B5000418942 /* CollectionExtensionTests.swift */; };
 		49D524C41DDE60B000418942 /* DictionaryExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D524C31DDE60B000418942 /* DictionaryExtensionTests.swift */; };
 		49F0DC5A1DBD159D00C9AE18 /* BFDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0DC591DBD159D00C9AE18 /* BFDataStructures.swift */; };
@@ -605,6 +608,8 @@
 				49381D601EAA091C00DBFC89 /* BFKit.swift in Sources */,
 				49381D521EAA08C600DBFC89 /* StringExtension.swift in Sources */,
 				49381D511EAA08C600DBFC89 /* ProcessInfoExtension.swift in Sources */,
+				49D0CD041EC59E9B0046C39C /* UIColorExtension.swift in Sources */,
+				49D0CD061EC59EA00046C39C /* UIFontExtension.swift in Sources */,
 				49381D4C1EAA08C600DBFC89 /* DateExtension.swift in Sources */,
 				49381D4D1EAA08C600DBFC89 /* DictionaryExtension.swift in Sources */,
 				49381D4B1EAA08C600DBFC89 /* DataExtension.swift in Sources */,
@@ -612,6 +617,7 @@
 				49381D4F1EAA08C600DBFC89 /* NumberExtension.swift in Sources */,
 				49381D4A1EAA08C600DBFC89 /* CollectionExtension.swift in Sources */,
 				49381D621EAA091C00DBFC89 /* BFPassword.swift in Sources */,
+				49D0CD051EC59E9D0046C39C /* UIImageExtension.swift in Sources */,
 				49381D531EAA08C600DBFC89 /* ThreadExtension.swift in Sources */,
 				49768D271EACC032003B113A /* WKInterfaceControllerExtension.swift in Sources */,
 				49768D201EACBF39003B113A /* FileManagerExtension.swift in Sources */,

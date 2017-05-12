@@ -598,24 +598,24 @@ public extension UIImage {
         return newImage
     }
     
-    #if os(iOS)
-        /// Invert the color of the image.
-        ///
-        /// - Returns: Returns the transformed image.
-        public func invertColors() -> UIImage {
-            UIGraphicsBeginImageContextWithOptions(self.size, false, UIImage.screenScale())
-            UIGraphicsGetCurrentContext()?.setBlendMode(.copy)
-            self.draw(in: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
-            UIGraphicsGetCurrentContext()?.setBlendMode(.difference)
-            UIGraphicsGetCurrentContext()?.setFillColor(UIColor.white.cgColor)
-            UIGraphicsGetCurrentContext()?.fill(CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
-            
-            let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-            UIGraphicsEndImageContext()
-            
-            return newImage
-        }
+    /// Invert the color of the image.
+    ///
+    /// - Returns: Returns the transformed image.
+    public func invertColors() -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(self.size, false, UIImage.screenScale())
+        UIGraphicsGetCurrentContext()?.setBlendMode(.copy)
+        self.draw(in: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
+        UIGraphicsGetCurrentContext()?.setBlendMode(.difference)
+        UIGraphicsGetCurrentContext()?.setFillColor(UIColor.white.cgColor)
+        UIGraphicsGetCurrentContext()?.fill(CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
         
+        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+    
+    #if os(iOS)
         /// Rotate the image to the given radians.
         ///
         /// - Parameter radians: Radians to rotate to
