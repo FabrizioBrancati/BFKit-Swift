@@ -5,9 +5,10 @@
 [![codebeat](https://codebeat.co/badges/ba18628d-f16b-4cd4-81f7-f75e81d97b38)](https://codebeat.co/projects/github-com-fabriziobrancati-bfkit-swift)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/BFKit-Swift.svg?style=flat)][Documentation]
+[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)
+<br>
 [![Language](https://img.shields.io/badge/language-Swift%203.0%20/%203.1-orange.svg)](https://developer.apple.com/swift/)
 [![Platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20watchOS%20%7C%20Linux-ffc713.svg)][Documentation]
-[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)
 
 ---
 
