@@ -32,6 +32,13 @@ import Foundation
 public extension Array {
     // MARK: - Functions
     
+    /// A Bool value indicating whether the collection is not empty.
+    ///
+    /// - Returns: Returns a Bool value indicating whether the collection is not empty.
+    public func isNotEmpty() -> Bool {
+        return !self.isEmpty
+    }
+    
     /// Simulates the array as a circle. When it is out of range, begins again.
     ///
     /// - Parameter index: The index.

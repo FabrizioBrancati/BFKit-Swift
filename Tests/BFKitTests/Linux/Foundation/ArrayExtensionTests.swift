@@ -49,6 +49,10 @@ class ArrayExtensionTests: XCTestCase {
         super.tearDown()
     }
     
+    func testIsNotEmpty() {
+        XCTAssertTrue(array.isNotEmpty())
+    }
+    
     func testCircleObjectAt() {
         let objectRight = array.circleObject(at: 6)
         let objectLeft = array.circleObject(at: -6)
