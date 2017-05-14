@@ -50,7 +50,7 @@ class ArrayExtensionTests: XCTestCase {
     }
     
     func testIsNotEmpty() {
-        XCTAssertTrue(array.isNotEmpty())
+        XCTAssertTrue(array.isNotEmpty)
     }
     
     func testCircleObjectAt() {

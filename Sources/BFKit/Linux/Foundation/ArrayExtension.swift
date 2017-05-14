@@ -35,7 +35,7 @@ public extension Array {
     /// A Bool value indicating whether the collection is not empty.
     ///
     /// - Returns: Returns a Bool value indicating whether the collection is not empty.
-    public func isNotEmpty() -> Bool {
+    public var isNotEmpty: Bool {
         return !self.isEmpty
     }
     
