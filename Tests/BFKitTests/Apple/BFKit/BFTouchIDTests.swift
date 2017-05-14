@@ -38,8 +38,16 @@ class BFTouchIDTests: XCTestCase {
     }
     
     func testShowTouchID() {
+        let testExpectation = expectation(description: "Show Touch ID")
+        
         BFTouchID.showTouchID(reason: "Testing", fallbackTitle: "Password") { _ in 
-             XCTAssertTrue(true)
+            XCTAssertTrue(true)
+            
+            testExpectation.fulfill()
         }
+        
+        waitForExpectations(timeout: 5, handler: { error in
+            XCTAssertNil(error, "Something went horribly wrong.")
+        })
     }
 }
