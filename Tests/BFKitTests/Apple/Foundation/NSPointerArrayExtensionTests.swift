@@ -32,7 +32,7 @@ class NSPointerArrayExtensionTests: XCTestCase {
     static let allTests = [
         ("testAdd", testAdd),
         ("testInsert", testInsert),
-        ("testReplace", testRepace),
+        ("testReplace", testReplace),
         ("testGet", testGet),
         ("testRemove", testRemove)
     ]
