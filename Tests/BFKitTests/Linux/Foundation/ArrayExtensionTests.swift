@@ -30,6 +30,7 @@ import Foundation
 
 class ArrayExtensionTests: XCTestCase {
     static let allTests = [
+        ("testIsNotEmpty", testIsNotEmpty),
         ("testCircleObjectAt", testCircleObjectAt),
         ("testRandom", testRandom),
         ("testRemove", testRemove),
