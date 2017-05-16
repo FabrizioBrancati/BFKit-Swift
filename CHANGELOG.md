@@ -29,7 +29,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ## watchOS Support
-### Added
+### Added
 - Added watchOS support (For specific classes, structs and extensions support refer to [compatibility](https://github.com/FabrizioBrancati/BFKit-Swift/tree/master#compatibility) table)
 - Added `WKInterfaceController` class extension for watchOS
 - Added `NSPointerArray` class extension
