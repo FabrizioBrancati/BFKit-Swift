@@ -30,11 +30,11 @@ import Foundation
 
 /// This extension adds some useful functions to NSPointerArray.
 /// https://marcosantadev.com/swift-arrays-holding-elements-weak-references/
-extension NSPointerArray {
+public extension NSPointerArray {
     /// Adds an object to the array.
     ///
     /// - Parameter object: Object to be added.
-    func add(_ object: AnyObject?) {
+    public func add(_ object: AnyObject?) {
         guard let strongObject = object else {
             return
         }
@@ -48,7 +48,7 @@ extension NSPointerArray {
     /// - Parameters:
     ///   - object: Object to be inserted.
     ///   - index: Index.
-    func insert(_ object: AnyObject?, at index: Int) {
+    public func insert(_ object: AnyObject?, at index: Int) {
         guard index < count, let strongObject = object else {
             return
         }
@@ -62,7 +62,7 @@ extension NSPointerArray {
     /// - Parameters:
     ///   - index: Index.
     ///   - object: Replacing object.
-    func replace(at index: Int, with object: AnyObject?) {
+    public func replace(at index: Int, with object: AnyObject?) {
         guard index < count, let strongObject = object else {
             return
         }
@@ -75,7 +75,7 @@ extension NSPointerArray {
     ///
     /// - Parameter index: Index.
     /// - Returns: Returns an object at index.
-    func object(at index: Int) -> AnyObject? {
+    public func object(at index: Int) -> AnyObject? {
         guard index < count, let pointer = self.pointer(at: index) else {
             return nil
         }
@@ -86,7 +86,7 @@ extension NSPointerArray {
     /// Remove an object at a given index.
     ///
     /// - Parameter index: Index.
-    func remove(at index: Int) {
+    public func remove(at index: Int) {
         guard index < count else {
             return
         }
