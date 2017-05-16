@@ -92,6 +92,7 @@
 		497E51111DE647A600EB95D0 /* NSObjectExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497E51101DE647A600EB95D0 /* NSObjectExtensionTests.swift */; };
 		4998657B1DE53AE4000D252A /* BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4998657A1DE53AE4000D252A /* BFKit.swift */; };
 		4998657D1DE61825000D252A /* NumberExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4998657C1DE61825000D252A /* NumberExtensionTests.swift */; };
+		49C03B401ECAF15000B13E0B /* NSPointerArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493CD8111ECA6E8900B5178D /* NSPointerArrayExtension.swift */; };
 		49D0CD041EC59E9B0046C39C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DA11EAD2BC1003B113A /* UIColorExtension.swift */; };
 		49D0CD051EC59E9D0046C39C /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DA41EAD2BC1003B113A /* UIImageExtension.swift */; };
 		49D0CD061EC59EA00046C39C /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768DA31EAD2BC1003B113A /* UIFontExtension.swift */; };
@@ -622,6 +623,7 @@
 				49381D5D1EAA091C00DBFC89 /* BFApp.swift in Sources */,
 				49381D4F1EAA08C600DBFC89 /* NumberExtension.swift in Sources */,
 				49381D4A1EAA08C600DBFC89 /* CollectionExtension.swift in Sources */,
+				49C03B401ECAF15000B13E0B /* NSPointerArrayExtension.swift in Sources */,
 				49381D621EAA091C00DBFC89 /* BFPassword.swift in Sources */,
 				49D0CD051EC59E9D0046C39C /* UIImageExtension.swift in Sources */,
 				49381D531EAA08C600DBFC89 /* ThreadExtension.swift in Sources */,
