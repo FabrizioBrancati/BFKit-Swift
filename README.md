@@ -42,7 +42,10 @@ It also adds some useful functions with **Custom** classes and extends **Foundat
 
 Compatibility
 =============
-### BFKit
+
+<details>
+<summary><strong>BFKit</strong></summary>
+
 |                                                                                                           | **iOS**    | **watchOS** | **Linux**  |
 |-----------------------------------------------------------------------------------------------------------|------------|-------------|------------|
 | [BFApp](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/BFApp.html)                 | ![✓]       | ![✓]        | ![✓]       |
@@ -54,7 +57,11 @@ Compatibility
 | [BFTextField](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Classes/BFTextField.html)     | ![✓]       |             |            |
 | [BFTouchID](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/BFTouchID.html)         | ![✓]       |             | &nbsp;     |
 
-### Foundation
+</details>
+
+<details>
+<summary><strong>Foundation</strong></summary>
+
 |                                                                                                                | **iOS**    | **watchOS** | **Linux**  |
 |----------------------------------------------------------------------------------------------------------------|------------|-------------|------------|
 | [Array](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Array.html)                   | ![✓]       | ![✓]        | ![✓]       |
@@ -69,7 +76,11 @@ Compatibility
 | [String](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/String.html)                 | ![✓]       | ![✓]        | ![✓]       |
 | [Thread](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Functions.html)                         | ![✓]       | ![✓]        | ![✓]       |
 
-### UIKit
+</details>
+
+<details>
+<summary><strong>UIKit</strong></summary>
+
 |                                                                                                                                         | **iOS**    | **watchOS** | **Linux**  |
 |-----------------------------------------------------------------------------------------------------------------------------------------|------------|-------------|------------|
 | [UIBarButtonItem](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIBarButtonItem.html)                        | ![✓]       |             |            |
@@ -93,11 +104,16 @@ Compatibility
 | [UIWebView](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIWebView.html)                                    | ![✓]       |             |            |
 | [UIWindow](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIWindow.html)                                      | ![✓]       |             | &nbsp;     |
 
-### WatchKit
+</details>
+
+<details>
+<summary><strong>WatchKit</strong></summary>
 
 |                                                                                                                                         | **iOS**    | **watchOS** | **Linux**  |
 |----------------------------------------------------------------------------------------------------------------------------|------------|-------------|------------|
 | [WKInterfaceController](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/WKInterfaceController.html) |            | ![✓]        |            |
+
+</details>
 
 Requirements
 ============
