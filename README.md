@@ -15,7 +15,7 @@
 <p align="center">
     <a href="#objective-c-">Objective-C Version</a> &bull;
     <a href="#what-does-it-do">What does it do</a> &bull;
-    <a href="#classes-and-extensions-lists">Classes and Extensions Lists</a> &bull;
+    <a href="#classes-and-extensions-compatibility">Classes and Extensions Compatibility</a> &bull;
     <a href="#requirements">Requirements</a> &bull;
     <a href="#communication">Communication</a> &bull;
     <a href="#contributing">Contributing</a> &bull;
@@ -40,8 +40,8 @@ BFKit-Swift is a collection of useful classes, structs and extensions to **devel
 For example you can use every **iOS font with just an enum!**<br>
 It also adds some useful functions with **Custom** classes and extends **Foundation**, **UIKit** and **WatchKit** classes.
 
-Classes and Extensions Lists
-============================
+Classes and Extensions Compatibility
+====================================
 
 <details>
 <summary><strong>BFKit</strong></summary>
