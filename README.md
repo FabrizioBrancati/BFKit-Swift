@@ -152,11 +152,11 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
 - Create a **Podfile** in your **project directory** and write into:
 
     ```ruby
-        platform :ios, '8.0'
-        xcodeproj 'Project.xcodeproj'
-        use_frameworks!
+    platform :ios, '8.0'
+    xcodeproj 'Project.xcodeproj'
+    use_frameworks!
 
-        pod 'BFKit-Swift'
+    pod 'BFKit-Swift'
     ```
 - Change **"Project"**  with your **real project name**
 - Open **Terminal**, go to your **project directory** and type: ```pod install```
@@ -167,20 +167,20 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
 - Create a **Cartfile** in your **project directory** and write into:
 
     ```ruby
-        github "FabrizioBrancati/BFKit-Swift"
+    github "FabrizioBrancati/BFKit-Swift"
     ```
 - Open **Terminal**, go to **project directory** and type: ```carthage update```
 - **Include the created Framework** in your project
 - **Add Build Phase** with the following contents:
 
     ```sh
-        /usr/local/bin/carthage copy-frameworks
+    /usr/local/bin/carthage copy-frameworks
     ```
 
     and add the paths to the BFKit Swift framework under **Input Files**
 
     ```sh
-        $(SRCROOT)/Carthage/Build/iOS/BFKit.framework
+    $(SRCROOT)/Carthage/Build/iOS/BFKit.framework
     ```
     This script works around an [App Store submission bug](http://www.openradar.me/radar?id=6409498411401216) triggered by universal binaries and ensures that necessary bitcode-related files are copied when archiving
 - Import the framework with ```import BFKit```
@@ -211,7 +211,7 @@ Documentation
 
 Changelog
 =========
-To see what has changed in recent version of BFKit Swift, see the **[CHANGELOG.md](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/CHANGELOG.md)** file.
+To see what has changed in recent versions of BFKit Swift, see the **[CHANGELOG.md](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/CHANGELOG.md)** file.
 
 Example
 =======
