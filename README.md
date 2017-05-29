@@ -62,19 +62,20 @@ Classes and Extensions Compatibility
 <details>
 <summary><strong>Foundation</strong></summary>
 
-|                                                                                                                | **iOS**    | **watchOS** | **Linux**  |
-|----------------------------------------------------------------------------------------------------------------|------------|-------------|------------|
-| [Array](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Array.html)                   | ![✓]       | ![✓]        | ![✓]       |
-| [Collection](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Collection.html)         | ![✓]       | ![✓]        | ![✓]       |
-| [Data](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Data.html)                     | ![✓]       | ![✓]        | ![✓]       |
-| [Date](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Date.html)                     | ![✓]       | ![✓]        | ![✓]       |
-| [FileManager](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/FileManager.html)       | ![✓]       | ![✓]        |            |
-| [Number](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Functions.html)                         | ![✓]       | ![✓]        | ![✓]       |
-| [NSObject](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/NSObject.html)             | ![✓]       | ![✓]        | ![✓]       |
-| [NSPointerArray](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/NSPointerArray.html) | ![✓]       | ![✓]        |            |
-| [ProcessInfo](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/ProcessInfo.html)       | ![✓]       | ![✓]        | ![✓]       |
-| [String](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/String.html)                 | ![✓]       | ![✓]        | ![✓]       |
-| [Thread](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Functions.html)                         | ![✓]       | ![✓]        | ![✓]       |
+|                                                                                                                        | **iOS**    | **watchOS** | **Linux**  |
+|------------------------------------------------------------------------------------------------------------------------|------------|-------------|------------|
+| [Array](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Array.html)                           | ![✓]       | ![✓]        | ![✓]       |
+| [Collection](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Collection.html)                 | ![✓]       | ![✓]        | ![✓]       |
+| [Data](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Data.html)                             | ![✓]       | ![✓]        | ![✓]       |
+| [Date](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Date.html)                             | ![✓]       | ![✓]        | ![✓]       |
+| [FileManager](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/FileManager.html)               | ![✓]       | ![✓]        |            |
+| [Number](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Functions.html)                                 | ![✓]       | ![✓]        | ![✓]       |
+| [NSObject](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/NSObject.html)                     | ![✓]       | ![✓]        | ![✓]       |
+| [NSAttributedString](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/NSAttributedString.html) | ![✓]       | ![✓]        |            |
+| [NSPointerArray](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/NSPointerArray.html)         | ![✓]       | ![✓]        |            |
+| [ProcessInfo](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/ProcessInfo.html)               | ![✓]       | ![✓]        | ![✓]       |
+| [String](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/String.html)                         | ![✓]       | ![✓]        | ![✓]       |
+| [Thread](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Functions.html)                                 | ![✓]       | ![✓]        | ![✓]       |
 
 </details>
 

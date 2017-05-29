@@ -94,10 +94,8 @@ public extension UILabel {
         guard let text = self.text else {
             return
         }
-        let string = NSMutableAttributedString(string: text)
-        string.addAttribute(NSFontAttributeName, value: font, range: NSRange(location: fromIndex, length: toIndex - fromIndex))
         
-        self.attributedText = string
+        self.attributedText = text.attributedString.font(font, range: NSRange(location: fromIndex, length: toIndex - fromIndex))
     }
     
     /// Sets a custom font from a character at an index to character at another index.
@@ -111,9 +109,7 @@ public extension UILabel {
         guard let text = self.text else {
             return
         }
-        let string = NSMutableAttributedString(string: text)
-        string.addAttribute(NSFontAttributeName, value: UIFont(fontName: font, size: fontSize), range: NSRange(location: fromIndex, length: toIndex - fromIndex))
         
-        self.attributedText = string
+        self.attributedText = text.attributedString.font(UIFont(fontName: font, size: fontSize), range: NSRange(location: fromIndex, length: toIndex - fromIndex))
     }
 }
