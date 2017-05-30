@@ -171,18 +171,19 @@ public extension NSAttributedString {
         return mutableAttributedString as NSAttributedString
     }
     
-    /// NSShadow, default nil means no shadow.
-    ///
-    /// - Parameters:
-    ///   - shadow: NSShadow, default nil means no shadow.
-    ///   - range: Application range. Default is all the String.
-    /// - Returns: Returns a NSAttributedString.
-    @available(watchOS, unavailable)
-    public func shadow(_ shadow: NSShadow, range: NSRange? = nil) -> NSAttributedString {
-        let mutableAttributedString = NSMutableAttributedString(string: self.string)
-        mutableAttributedString.addAttribute(NSShadowAttributeName, value: shadow, range: attributedStringRange(range))
-        return mutableAttributedString as NSAttributedString
-    }
+    #if !os(watchOS)
+        /// NSShadow, default nil means no shadow.
+        ///
+        /// - Parameters:
+        ///   - shadow: NSShadow, default nil means no shadow.
+        ///   - range: Application range. Default is all the String.
+        /// - Returns: Returns a NSAttributedString.
+        public func shadow(_ shadow: NSShadow, range: NSRange? = nil) -> NSAttributedString {
+            let mutableAttributedString = NSMutableAttributedString(string: self.string)
+            mutableAttributedString.addAttribute(NSShadowAttributeName, value: shadow, range: attributedStringRange(range))
+            return mutableAttributedString as NSAttributedString
+        }
+    #endif
     
     /// Default nil means no text effect.
     ///
@@ -196,17 +197,19 @@ public extension NSAttributedString {
         return mutableAttributedString as NSAttributedString
     }
     
-    /// NSTextAttachment, default is nil.
-    ///
-    /// - Parameters:
-    ///   - attachment: NSTextAttachment, default is nil.
-    ///   - range: Application range. Default is all the String.
-    /// - Returns: Returns a NSAttributedString.
-    public func attachment(_ attachment: NSTextAttachment, range: NSRange? = nil) -> NSAttributedString {
-        let mutableAttributedString = NSMutableAttributedString(string: self.string)
-        mutableAttributedString.addAttribute(NSAttachmentAttributeName, value: attachment, range: attributedStringRange(range))
-        return mutableAttributedString as NSAttributedString
-    }
+    #if !os(watchOS)
+        /// NSTextAttachment, default is nil.
+        ///
+        /// - Parameters:
+        ///   - attachment: NSTextAttachment, default is nil.
+        ///   - range: Application range. Default is all the String.
+        /// - Returns: Returns a NSAttributedString.
+        public func attachment(_ attachment: NSTextAttachment, range: NSRange? = nil) -> NSAttributedString {
+            let mutableAttributedString = NSMutableAttributedString(string: self.string)
+            mutableAttributedString.addAttribute(NSAttachmentAttributeName, value: attachment, range: attributedStringRange(range))
+            return mutableAttributedString as NSAttributedString
+        }
+    #endif
     
     /// NSURL.
     ///
@@ -316,7 +319,7 @@ public extension NSAttributedString {
     /// - Parameter range: Given NSRange.
     /// - Returns: Returns self NSRange if the given NSRange is nil.
     private func attributedStringRange(_ range: NSRange?) -> NSRange {
-        return attributedStringRange(range)
+        return range ?? NSRange(location: 0, length: self.string.length)
     }
     
     /// Sum two NSAttributedString.
