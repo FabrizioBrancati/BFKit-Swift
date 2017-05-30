@@ -35,11 +35,11 @@ public extension String {
     /// With that variable you can customize a String with a style.
     /// Example:
     ///
-    ///   `string.attributedString.font(UIFont(fontName: .helveticaNeue, size: 20))`
+    ///     string.attributedString.font(UIFont(fontName: .helveticaNeue, size: 20))
     ///
     /// You can even concatenate two or more styles:
     ///
-    ///   `string.attributedString.font(UIFont(fontName: .helveticaNeue, size: 20)).backgroundColor(UIColor.red)`
+    ///     string.attributedString.font(UIFont(fontName: .helveticaNeue, size: 20)).backgroundColor(UIColor.red)
     public var attributedString: NSAttributedString {
         return NSAttributedString(string: self)
     }
@@ -286,10 +286,10 @@ public extension NSAttributedString {
     /// Array of Int representing the nested levels of writing direction overrides as defined by Unicode LRE, RLE, LRO, and RLO characters.
     /// The control characters can be obtained by masking NSWritingDirection and NSWritingDirectionFormatType values.
     /// Remeber to use `.rawValue`, because the attribute wants an Int.
-    /// - LRE: NSWritingDirectionLeftToRight | NSWritingDirectionEmbedding.
-    /// - RLE: NSWritingDirectionRightToLeft | NSWritingDirectionEmbedding.
-    /// - LRO: NSWritingDirectionLeftToRight | NSWritingDirectionOverride.
-    /// - RLO: NSWritingDirectionRightToLeft | NSWritingDirectionOverride.
+    /// - LRE: NSWritingDirection.leftToRight, NSWritingDirectionFormatType.embedding.
+    /// - RLE: NSWritingDirection.rightToLeft, NSWritingDirectionFormatType.embedding.
+    /// - LRO: NSWritingDirection.leftToRight, NSWritingDirectionFormatType.override.
+    /// - RLO: NSWritingDirection.rightToLeft, NSWritingDirectionFormatType.override.
     ///
     /// - Parameters:
     ///   - writingDirection: Array of Int representing the nested levels of writing direction overrides as defined by Unicode LRE, RLE, LRO, and RLO characters.
@@ -305,7 +305,7 @@ public extension NSAttributedString {
     /// In iOS, horizontal text is always used and specifying a different value is undefined.
     ///
     /// - Parameters:
-    ///   - verticalGlyphForm: The value 0 indicates horizontal text, the value 1 indicates vertical text.
+    ///   - verticalGlyphForm: The value false indicates horizontal text, the value true indicates vertical text.
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
     public func verticalGlyphForm(_ verticalGlyphForm: Bool, range: NSRange? = nil) -> NSAttributedString {
@@ -320,17 +320,5 @@ public extension NSAttributedString {
     /// - Returns: Returns self NSRange if the given NSRange is nil.
     private func attributedStringRange(_ range: NSRange?) -> NSRange {
         return range ?? NSRange(location: 0, length: self.string.length)
-    }
-    
-    /// Sum two NSAttributedString.
-    ///
-    /// - Parameters:
-    ///   - lhs: Left NSAttributedString.
-    ///   - rhs: Right NSAttributedString.
-    /// - Returns: Returns a NSAttributedString.
-    static public func + (lhs: NSAttributedString, rhs: NSAttributedString) -> NSAttributedString {
-        let mutableAttributedString: NSMutableAttributedString = NSMutableAttributedString(attributedString: lhs)
-        mutableAttributedString.append(rhs)
-        return mutableAttributedString as NSAttributedString
     }
 }

@@ -79,8 +79,8 @@ class StringExtensionTests: XCTestCase {
         ("testOptionalDefaultValue", testOptionalDefaultValue)
     ]
     
-    var string = ""
-    var path = ""
+    var string: String = ""
+    var path: String = ""
     
     override func setUp() {
         super.setUp()

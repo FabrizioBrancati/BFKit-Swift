@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		49199B1E1EDD6EFD00450CE1 /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49199B1C1EDD6EFD00450CE1 /* NSAttributedString.swift */; };
+		49199B1E1EDD6EFD00450CE1 /* NSAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49199B1C1EDD6EFD00450CE1 /* NSAttributedStringExtension.swift */; };
 		49199B1F1EDD6EFD00450CE1 /* NSPointerArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49199B1D1EDD6EFD00450CE1 /* NSPointerArrayExtension.swift */; };
 		49768D721EACF5A4003B113A /* BFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768D431EACF5A4003B113A /* BFButton.swift */; };
 		49768D731EACF5A4003B113A /* BFSystemSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768D441EACF5A4003B113A /* BFSystemSound.swift */; };
@@ -60,7 +60,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		49199B1C1EDD6EFD00450CE1 /* NSAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedString.swift; sourceTree = "<group>"; };
+		49199B1C1EDD6EFD00450CE1 /* NSAttributedStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtension.swift; sourceTree = "<group>"; };
 		49199B1D1EDD6EFD00450CE1 /* NSPointerArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPointerArrayExtension.swift; sourceTree = "<group>"; };
 		49768D431EACF5A4003B113A /* BFButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFButton.swift; sourceTree = "<group>"; };
 		49768D441EACF5A4003B113A /* BFSystemSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFSystemSound.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 		49768D471EACF5A4003B113A /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				49199B1C1EDD6EFD00450CE1 /* NSAttributedString.swift */,
+				49199B1C1EDD6EFD00450CE1 /* NSAttributedStringExtension.swift */,
 				49199B1D1EDD6EFD00450CE1 /* NSPointerArrayExtension.swift */,
 				49768D481EACF5A4003B113A /* FileManagerExtension.swift */,
 			);
@@ -386,7 +386,7 @@
 				49FB86821DF34B5500AC7E4A /* BFKitViewController.swift in Sources */,
 				49768D9A1EACF5A4003B113A /* ThreadExtension.swift in Sources */,
 				49199B1F1EDD6EFD00450CE1 /* NSPointerArrayExtension.swift in Sources */,
-				49199B1E1EDD6EFD00450CE1 /* NSAttributedString.swift in Sources */,
+				49199B1E1EDD6EFD00450CE1 /* NSAttributedStringExtension.swift in Sources */,
 				49768D7F1EACF5A4003B113A /* UINavigationBarExtension.swift in Sources */,
 				49768D731EACF5A4003B113A /* BFSystemSound.swift in Sources */,
 				49768D8F1EACF5A4003B113A /* BFLog.swift in Sources */,
