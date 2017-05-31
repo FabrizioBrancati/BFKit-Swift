@@ -34,7 +34,9 @@ import Foundation
 #if os(iOS)
     /// Get AppDelegate. To use it, cast to AppDelegate with "as! AppDelegate".
     public let appDelegate: UIApplicationDelegate? = UIApplication.shared.delegate
+#endif
 
+#if !os(Linux)
     // MARK: - Global functions
 
     /// NSLocalizedString without comment parameter.
@@ -117,7 +119,7 @@ public struct BFApp {
         block(!hasBeenOpened)
     }
     
-    #if os(iOS)
+    #if !os(Linux)
         /// Set the App setting for a given object and key. The file will be saved in the Library directory.
         ///
         /// - Parameters:

@@ -25,15 +25,19 @@
 //  SOFTWARE.
 
 import Foundation
-#if os(Linux)
-    import Glibc
-#endif
 
 // MARK: - Array extension
 
 /// This extension adds some useful functions to Array.
 public extension Array {
     // MARK: - Functions
+    
+    /// A Bool value indicating whether the collection is not empty.
+    ///
+    /// - Returns: Returns a Bool value indicating whether the collection is not empty.
+    public var isNotEmpty: Bool {
+        return !self.isEmpty
+    }
     
     /// Simulates the array as a circle. When it is out of range, begins again.
     ///
@@ -117,11 +121,7 @@ public extension Array {
     /// Shuffle the elements of `self` in-place.
     public mutating func shuffle() {
         for i in 0..<(count - 1) {
-            #if os(Linux)
-                let j = Int(Int(Glibc.random()) % Int(count - i)) + i
-            #else
-                let j = Int(arc4random_uniform(UInt32(count - i))) + i
-            #endif
+            let j = Int(randomInt(range: 0...Int(count - i))) + i
             self.swap(from: i, to: j)
         }
     }

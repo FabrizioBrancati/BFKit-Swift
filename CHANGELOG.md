@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 2.x Releases
+- `2.4.x` Releases - [2.4.0](#240)
 - `2.3.x` Releases - [2.3.0](#230---minor-breaking-changes)
 - `2.2.x` Releases - [2.2.0](#220---cryptographically-first) | [2.2.1](#221---better-log) | [2.2.2](#222---swift-31-ready)
 - `2.1.x` Releases - [2.1.0](#210---napalm-explosion)
@@ -27,6 +28,23 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+## watchOS Support
+### Added
+- Added watchOS support (For specific classes, structs and extensions support refer to [compatibility](https://github.com/FabrizioBrancati/BFKit-Swift/tree/master#compatibility) table)
+- Added `WKInterfaceController` class extension for watchOS
+- Added `NSAttributedString` class extension
+- Added `NSPointerArray` class extension
+- Added `isNotEmpty` in Array extension
+- Added `saveLog(in:, filename:)` in BFLog struct to save log in a file
+
+### Improved
+- Changed Travis CI builds
+- Use of `randomInt()` in UIColor and Array extensions
+- Removed Glibc library for Linux
+- Updated SwiftLint to 0.19.0
+
+---
+
 ## [2.3.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.3.0) - Minor (Breaking) Changes
 ### 23 Apr 2017
 ### Added
@@ -41,7 +59,7 @@ All notable changes to this project will be documented in this file.<br>
 - `mainBundlePath` in FileManager extension will now return the main bundle path if no file is specified [#27](https://github.com/FabrizioBrancati/BFKit-Swift/issue/27)
 
 ### Fixed
-- Fixed an issue with `randomInt()` function on Number extension [#26](https://github.com/FabrizioBrancati/BFKit-Swift/issue/26)
+- Fixed an issue with `randomInt()` function in Number extension [#26](https://github.com/FabrizioBrancati/BFKit-Swift/issue/26)
 
 Thanks to [@on123](https://github.com/on123) & [@jiongge](https://github.com/jiongge) for this release
 

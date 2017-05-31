@@ -30,6 +30,7 @@ import Foundation
 
 class ArrayExtensionTests: XCTestCase {
     static let allTests = [
+        ("testIsNotEmpty", testIsNotEmpty),
         ("testCircleObjectAt", testCircleObjectAt),
         ("testRandom", testRandom),
         ("testRemove", testRemove),
@@ -47,6 +48,10 @@ class ArrayExtensionTests: XCTestCase {
     
     override func tearDown() {
         super.tearDown()
+    }
+    
+    func testIsNotEmpty() {
+        XCTAssertTrue(array.isNotEmpty)
     }
     
     func testCircleObjectAt() {

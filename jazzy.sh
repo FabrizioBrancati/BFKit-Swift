@@ -2,7 +2,7 @@
 
 # Creates documentation using Jazzy.
 
-FRAMEWORK_VERSION=2.3.0
+FRAMEWORK_VERSION=2.4.0
 
 jazzy \
   --clean \
@@ -11,7 +11,7 @@ jazzy \
   --github_url https://github.com/FabrizioBrancati/BFKit-Swift \
   --github-file-prefix https://github.com/FabrizioBrancati/BFKit-Swift/tree/$FRAMEWORK_VERSION \
   --module-version $FRAMEWORK_VERSION \
-  --xcodebuild-arguments -scheme,BFKit \
+  --xcodebuild-arguments -scheme,"BFKit iOS" \
   --module BFKit \
   --root-url https://github.com/FabrizioBrancati/BFKit-Swift \
   --output Docs/

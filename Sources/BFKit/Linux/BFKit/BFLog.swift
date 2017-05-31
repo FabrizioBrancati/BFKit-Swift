@@ -61,7 +61,7 @@ public struct BFLog {
             self.logged += _message
             
             let filenameWithoutExtension = NSURL(string: String(describing: NSString(utf8String: filename)!))!.deletingPathExtension!.lastPathComponent
-            let log = "(\(filenameWithoutExtension):\(line) (\(function)) \(_message)"
+            let log = "\(filenameWithoutExtension):\(line) \(function): \(_message)"
             let timestamp = Date().description(dateSeparator: "-", usFormat: true, nanosecond: true)
             print("\(timestamp) \(filenameWithoutExtension):\(line) \(function): \(_message)", terminator: "")
             
@@ -126,4 +126,16 @@ public struct BFLog {
         logged = ""
         detailedLog = ""
     }
+    
+    #if !os(Linux)
+        /// Save the Log in a file.
+        ///
+        /// - Parameters:
+        ///   - path: Save path.
+        ///   - filename: Log filename.
+        /// - Throws: write(toFile:, atomically:, encoding:) errors.
+        public static func saveLog(in path: FileManager.PathType, filename: String) throws {
+            try FileManager.default.save(file: filename, in: path, content: self.detailedLog)
+        }
+    #endif
 }

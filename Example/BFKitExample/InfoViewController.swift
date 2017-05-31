@@ -42,15 +42,15 @@ class InfoViewController : UIViewController {
         let logoImage: UIImageView = UIImageView(image: UIImage(named: "Logo2")!, size: CGSize(width: 80, height: 80), center: CGPoint(x: profileImage.frame.origin.x + profileImage.frame.size.width - 30, y: profileImage.frame.origin.y + profileImage.frame.size.height - 30))
         scrollView.addSubview(logoImage)
         
-        let nameLabel: UILabel = UILabel(frame: CGRect(x: 0, y: profileImage.frame.origin.y + profileImage.frame.size.height + 50, width: UIScreen.screenWidth, height: 30), text: "Fabrizio Brancati", font: .HelveticaNeueMedium, fontSize: 25, color: UIColor.black, alignment: .center, lines: 1)
+        let nameLabel: UILabel = UILabel(frame: CGRect(x: 0, y: profileImage.frame.origin.y + profileImage.frame.size.height + 50, width: UIScreen.screenWidth, height: 30), text: "Fabrizio Brancati", font: .helveticaNeueMedium, fontSize: 25, color: UIColor.black, alignment: .center, lines: 1)
         scrollView.addSubview(nameLabel)
         
-        let workLabel: UILabel = UILabel(frame: CGRect(x: 0, y: nameLabel.frame.origin.y + nameLabel.frame.size.height + 40, width: UIScreen.screenWidth, height: 80), text: "iOS Developer\n&\nWeb Developer", font: .HelveticaNeue, fontSize: 22, color: UIColor.black, alignment: .center, lines: 3)
+        let workLabel: UILabel = UILabel(frame: CGRect(x: 0, y: nameLabel.frame.origin.y + nameLabel.frame.size.height + 40, width: UIScreen.screenWidth, height: 80), text: "iOS Developer\n&\nWeb Developer", font: .helveticaNeue, fontSize: 22, color: UIColor.black, alignment: .center, lines: 3)
         scrollView.addSubview(workLabel)
         
         let siteButton: UIButton = UIButton(frame: CGRect(x: 0, y: workLabel.frame.origin.y + workLabel.frame.size.height + 35, width: UIScreen.screenWidth, height: 44), title: "www.fabriziobrancati.com")
         siteButton.setTitleColor(UIColor ( red: 0.8934, green: 0.3935, blue: 0.0746, alpha: 1.0 ))
-        siteButton.setTitleFont(.HelveticaNeueMedium, size: 20)
+        siteButton.setTitleFont(.helveticaNeueMedium, size: 20)
         siteButton.addTarget(self, action: #selector(InfoViewController.openWebsite), for: .touchDown)
         scrollView.addSubview(siteButton)
         
