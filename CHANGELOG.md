@@ -28,6 +28,12 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+## Master
+### Fixed
+- Fixed Swift Package Manager build on macOS
+
+---
+
 ## [2.4.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.4.0) - watchOS Support
 ### 31 May 2017
 ### Added

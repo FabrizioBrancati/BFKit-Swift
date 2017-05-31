@@ -119,7 +119,7 @@ public struct BFApp {
         block(!hasBeenOpened)
     }
     
-    #if !os(Linux)
+    #if !os(Linux) && !os(macOS)
         /// Set the App setting for a given object and key. The file will be saved in the Library directory.
         ///
         /// - Parameters:

@@ -127,7 +127,7 @@ public struct BFLog {
         detailedLog = ""
     }
     
-    #if !os(Linux)
+    #if !os(Linux) && !os(macOS)
         /// Save the Log in a file.
         ///
         /// - Parameters:

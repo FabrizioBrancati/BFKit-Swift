@@ -10,6 +10,11 @@ matrix:
       language: generic
       sudo: required
       dist: trusty
+      env: SPM="YES"
+    - os: osx
+      language: objective-c
+      osx_image: xcode8.3
+      env: SPM="YES"
     - os: osx
       language: objective-c
       osx_image: xcode8.3
@@ -52,7 +57,7 @@ script:
 
   - swift -version
 
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then
+  - if [ "$SPM" == "YES" ]; then
       swift build;
       swift test --parallel;
     fi
