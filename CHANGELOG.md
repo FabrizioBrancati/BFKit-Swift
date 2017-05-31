@@ -31,7 +31,7 @@ All notable changes to this project will be documented in this file.<br>
 ## [2.4.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.4.0) - watchOS Support
 ### 31 May 2017
 ### Added
-- Added watchOS support (For specific classes, structs and extensions support refer to [compatibility](https://github.com/FabrizioBrancati/BFKit-Swift/tree/master#compatibility) table)
+- Added watchOS support (For specific classes, structs and extensions support refer to [compatibility](https://github.com/FabrizioBrancati/BFKit-Swift/tree/master#classes-and-extensions-compatibility) table)
 - Added `WKInterfaceController` class extension for watchOS
 - Added `NSAttributedString` class extension
 - Added `NSPointerArray` class extension
