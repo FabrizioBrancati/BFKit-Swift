@@ -91,7 +91,7 @@ class BFLogTests: XCTestCase {
         XCTAssertEqual(BFLog.logged, "")
     }
     
-    #if !os(Linux)
+    #if !os(Linux) && !os(macOS)
         func testSaveLog() {
             do {
                 BFLog.clear()

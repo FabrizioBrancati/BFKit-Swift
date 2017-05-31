@@ -90,7 +90,7 @@ class BFAppTests: XCTestCase {
         }
     }
     
-    #if !os(Linux)
+    #if !os(Linux) && !os(macOS)
         func testAppSetting() {
             BFApp.setAppSetting(object: "Test", forKey: "Test")
             
