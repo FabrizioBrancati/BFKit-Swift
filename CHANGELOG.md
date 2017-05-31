@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 2.x Releases
-- `2.4.x` Releases - [2.4.0](#240---watchos-support)
+- `2.4.x` Releases - [2.4.0](#240---watchos-support) | [2.4.1](#241---swift-package-manager-returns)
 - `2.3.x` Releases - [2.3.0](#230---minor-breaking-changes)
 - `2.2.x` Releases - [2.2.0](#220---cryptographically-first) | [2.2.1](#221---better-log) | [2.2.2](#222---swift-31-ready)
 - `2.1.x` Releases - [2.1.0](#210---napalm-explosion)
@@ -29,6 +29,11 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ## Master
+
+---
+
+## [2.4.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.4.1) - Swift Package Manager Returns
+### 1 Jun 2017
 ### Fixed
 - Fixed Swift Package Manager build on macOS
 
@@ -89,7 +94,7 @@ Thanks to [@ianrahman](https://github.com/ianrahman) for this release
 ---
 
 ## [2.2.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.2.0) - Cryptographically First
-### 09 Jan 2017
+### 9 Jan 2017
 ### Added
 - Added new cryptographically secure random numbers generator with `random()` function in Number extension
     - Available to all Integer types, Float and Double
