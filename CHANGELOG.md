@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 2.x Releases
-- `2.4.x` Releases - [2.4.0](#240)
+- `2.4.x` Releases - [2.4.0](#240---watchos-support)
 - `2.3.x` Releases - [2.3.0](#230---minor-breaking-changes)
 - `2.2.x` Releases - [2.2.0](#220---cryptographically-first) | [2.2.1](#221---better-log) | [2.2.2](#222---swift-31-ready)
 - `2.1.x` Releases - [2.1.0](#210---napalm-explosion)
@@ -28,7 +28,8 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## watchOS Support
+## [2.4.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.4.0) - watchOS Support
+### 31 May 2017
 ### Added
 - Added watchOS support (For specific classes, structs and extensions support refer to [compatibility](https://github.com/FabrizioBrancati/BFKit-Swift/tree/master#compatibility) table)
 - Added `WKInterfaceController` class extension for watchOS
