@@ -33,8 +33,8 @@ All notable changes to this project will be documented in this file.<br>
 - Added `init?(iso8601:)` to create a Date from an ISO 8601 String in Date extension
 
 ### Improved
-- Now `dateString(format: = default)` has a new `locale` parameter with a `default` value, so no changes are required
-- Now `init?(parse dateString:, format: = default)` has a new `locale` parameter with a `default` value, so no changes are required
+- Now `dateString(format: = default)` in Date extension has a new `locale` parameter with a `default` value, so no changes are required
+- Now `init?(parse dateString:, format: = default)` in Date extension has a new `locale` parameter with a `default` value, so no changes are required
 
 ---
 
