@@ -314,6 +314,56 @@ public extension NSAttributedString {
         return mutableAttributedString as NSAttributedString
     }
     
+    /// Set text alignment to left.
+    ///
+    /// - Returns: Returns a NSAttributedString.
+    public func textAlignmentLeft() -> NSAttributedString {
+        let leftText = NSMutableParagraphStyle()
+        leftText.alignment = .left
+        
+        return self.paragraphStyle(leftText)
+    }
+    
+    /// Set text alignment to right.
+    ///
+    /// - Returns: Returns a NSAttributedString.
+    public func textAlignmentRight() -> NSAttributedString {
+        let leftText = NSMutableParagraphStyle()
+        leftText.alignment = .right
+        
+        return self.paragraphStyle(leftText)
+    }
+    
+    /// Set text alignment to center.
+    ///
+    /// - Returns: Returns a NSAttributedString.
+    public func textAlignmentCenter() -> NSAttributedString {
+        let leftText = NSMutableParagraphStyle()
+        leftText.alignment = .center
+        
+        return self.paragraphStyle(leftText)
+    }
+    
+    /// Set text alignment to justified.
+    ///
+    /// - Returns: Returns a NSAttributedString.
+    public func textAlignmentJustified() -> NSAttributedString {
+        let leftText = NSMutableParagraphStyle()
+        leftText.alignment = .justified
+        
+        return self.paragraphStyle(leftText)
+    }
+    
+    /// Set text alignment to natural.
+    ///
+    /// - Returns: Returns a NSAttributedString.
+    public func textAlignmentNatural() -> NSAttributedString {
+        let leftText = NSMutableParagraphStyle()
+        leftText.alignment = .natural
+        
+        return self.paragraphStyle(leftText)
+    }
+    
     /// Returns self NSRange if the given NSRange is nil.
     ///
     /// - Parameter range: Given NSRange.

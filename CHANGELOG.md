@@ -31,6 +31,7 @@ All notable changes to this project will be documented in this file.<br>
 ## Master
 ### Added
 - Added `init?(iso8601:)` to create a Date from an ISO 8601 String in Date extension
+- Added new functions in NSAttributedString extension to handle left, right, center, justified and natural text alignment
 
 ### Improved
 - Now `dateString(format: = default)` in Date extension has a new `locale` parameter with a `default` value, so no changes are required
