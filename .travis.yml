@@ -18,7 +18,7 @@ matrix:
     - os: osx
       language: objective-c
       osx_image: xcode8.3
-      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=10.3,name=iPhone 7 Plus"     SCHEME="$IOS_SCHEME"     RUN_TESTS="YES" LINT="YES" CODECOV="YES" EXAMPLE="NO"
+      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=10.3.1,name=iPhone 7 Plus"     SCHEME="$IOS_SCHEME"     RUN_TESTS="YES" LINT="YES" CODECOV="YES" EXAMPLE="NO"
     - os: osx
       language: objective-c
       osx_image: xcode8.3
@@ -34,7 +34,7 @@ matrix:
     - os: osx
       language: objective-c
       osx_image: xcode8.3
-      env: PROJ="Example/BFKitExample.xcodeproj" DESTINATION="OS=10.3,name=iPhone 7 Plus"     SCHEME="$EXAMPLE_SCHEME" RUN_TESTS="NO"  LINT="NO"  CODECOV="NO"  EXAMPLE="YES"
+      env: PROJ="Example/BFKitExample.xcodeproj" DESTINATION="OS=10.3.1,name=iPhone 7 Plus"     SCHEME="$EXAMPLE_SCHEME" RUN_TESTS="NO"  LINT="NO"  CODECOV="NO"  EXAMPLE="YES"
 
 before_install:
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then

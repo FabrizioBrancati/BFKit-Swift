@@ -188,7 +188,6 @@ class DateExtensionTests: XCTestCase {
         XCTAssertEqual(date.hour, 10 + TimeZone.current.secondsFromGMT() / 60 / 60)
         XCTAssertEqual(date.minute, 30)
         XCTAssertEqual(date.second, 45)
-        XCTAssertEqual(date.nanosecond, 500000000)
     }
     
     func testDaysBetween() {
