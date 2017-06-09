@@ -29,7 +29,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ## Master
-### Added
+### Added
 - Added `init?(iso8601:)` to create a Date from an ISO 8601 String in Date extension
 
 ### Improved
