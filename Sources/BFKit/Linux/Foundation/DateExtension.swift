@@ -247,8 +247,10 @@ public extension Date {
     /// - Parameters:
     ///   - dateString: Date String.
     ///   - format: Date String format. Default is "yyyy-MM-dd". Example: "2014-05-20".
-    public init?(parse dateString: String, format: String="yyyy-MM-dd") {
+    ///   - locale: Locale, default is "en_US_POSIX".
+    public init?(parse dateString: String, format: String = "yyyy-MM-dd", locale: String = "en_US_POSIX") {
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: locale)
         dateFormatter.timeZone = TimeZone.current
         dateFormatter.dateFormat = format
         guard let parsed = dateFormatter.date(from: dateString) else {
@@ -279,6 +281,17 @@ public extension Date {
             return nil
         }
         self = parsed
+    }
+    
+    /// Create an ISO 8601 date string.
+    ///
+    /// - Parameter date: ISO 8601 String.
+    public init?(iso8601: String) {
+        guard let date = Date(parse: iso8601, format: "yyyy-MM-dd'T'HH:mm:ss.SSSZ") else {
+            return nil
+        }
+        
+        self = date
     }
     
     /// Get the months number between self and another date.
@@ -351,10 +364,13 @@ public extension Date {
     
     /// Get the String date from self.
     ///
-    /// - Parameter format: Date format.
+    /// - Parameters:
+    ///   - format: Date format, default is "yyyy-MM-dd".
+    ///   - locale: Locale, default is "en_US_POSIX".
     /// - Returns: Returns the String data from self.
-    public func dateString(format: String = "yyyy-MM-dd") -> String {
+    public func dateString(format: String = "yyyy-MM-dd", locale: String = "en_US_POSIX") -> String {
         let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: locale)
         dateFormatter.dateFormat = format
         
         return dateFormatter.string(from: self)

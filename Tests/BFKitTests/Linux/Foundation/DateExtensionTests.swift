@@ -40,6 +40,7 @@ class DateExtensionTests: XCTestCase {
         ("testInitYearMonthDayHourMinuteSecond", testInitYearMonthDayHourMinuteSecond),
         ("testInitParseFormat", testInitParseFormat),
         ("testInitDateTime", testInitDateTime),
+        ("testInit8601", testInit8601),
         ("testDaysBetween", testDaysBetween),
         ("testIsToday", testIsToday),
         ("testIsSameDay", testIsSameDay),
@@ -172,6 +173,22 @@ class DateExtensionTests: XCTestCase {
         XCTAssertEqual(composed.day, 9)
         XCTAssertEqual(composed.hour, 10)
         XCTAssertEqual(composed.minute, 9)
+    }
+    
+    func testInit8601() {
+        let iso8601: String = "2016-10-09T10:30:45.500Z"
+        guard let date = Date(iso8601: iso8601) else {
+            XCTFail()
+            return
+        }
+        
+        XCTAssertEqual(date.year, 2016)
+        XCTAssertEqual(date.month, 10)
+        XCTAssertEqual(date.day, 9)
+        XCTAssertEqual(date.hour, 10 + TimeZone.current.secondsFromGMT() / 60 / 60)
+        XCTAssertEqual(date.minute, 30)
+        XCTAssertEqual(date.second, 45)
+        XCTAssertEqual(date.nanosecond, 500000000)
     }
     
     func testDaysBetween() {
