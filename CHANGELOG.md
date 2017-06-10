@@ -28,6 +28,12 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+## Swift 4
+### Added
+- Added support to Swift 4 and Xcode 9
+
+---
+
 ## Master
 ### Added
 - Added `init?(iso8601:)` to create a Date from an ISO 8601 String in Date extension
