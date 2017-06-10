@@ -771,7 +771,7 @@ public extension UIFont {
     public static func calculateHeight(width: CGFloat, font: UIFont, text: String) -> CGFloat {
         var size: CGSize = CGSize.zero
         if text.length > 0 {
-            let frame: CGRect = text.boundingRect(with: CGSize(width: width, height: 999999), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+            let frame: CGRect = text.boundingRect(with: CGSize(width: width, height: 999999), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
             size = CGSize(width: frame.size.width, height: frame.size.height + 1)
         }
         return size.height

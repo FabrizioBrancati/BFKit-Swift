@@ -134,8 +134,8 @@ private struct Randomizer {
 
 // MARK: - Extensions
 
-/// This extension adds some useful function to Integer.
-public extension Integer {
+/// This extension adds some useful function to Numeric.
+public extension Numeric {
     /// Creates a random integer number.
     ///
     /// - Returns: Returns the creates a random integer number.
