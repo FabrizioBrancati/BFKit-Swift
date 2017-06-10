@@ -240,4 +240,40 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSVerticalGlyphFormAttributeName] as? Bool, verticalGlyphForm)
     }
+    
+    func testTextAlignmentLeft() {
+        var textAlignment = NSMutableParagraphStyle().alignment
+        textAlignment = .left
+        attributedString = string.attributedString.textAlignmentLeft()
+        
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
+        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle)?.alignment, textAlignment)
+    }
+    
+    func testTextAlignmentRight() {
+        var textAlignment = NSMutableParagraphStyle().alignment
+        textAlignment = .right
+        attributedString = string.attributedString.textAlignmentRight()
+        
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
+        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle)?.alignment, textAlignment)
+    }
+    
+    func testTextAlignmentCenter() {
+        var textAlignment = NSMutableParagraphStyle().alignment
+        textAlignment = .center
+        attributedString = string.attributedString.textAlignmentCenter()
+        
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
+        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle)?.alignment, textAlignment)
+    }
+    
+    func testTextAlignmentJustified() {
+        var textAlignment = NSMutableParagraphStyle().alignment
+        textAlignment = .justified
+        attributedString = string.attributedString.textAlignmentJustified()
+        
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
+        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle)?.alignment, textAlignment)
+    }
 }
