@@ -27,6 +27,7 @@
 import Foundation
 import UIKit
 import QuartzCore
+import CoreGraphics
 
 // MARK: - UIView extension
 
@@ -185,6 +186,78 @@ public extension UIView {
             gradient.endPoint = endPoint
         }
         self.layer.insertSublayer(gradient, at:0)
+    }
+    
+    /// Create a smooth linear gradient, requires more computational time than 
+    ///
+    ///     gradient(colors:,direction:)
+    ///
+    /// - Parameters:
+    ///   - colors: Array of UIColor instances.
+    ///   - direction: Direction of the gradient.
+    public func smoothLinearGradient(colors: [UIColor], direction: UIViewLinearGradientDirection) {
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIImage.screenScale())
+        guard let context: CGContext = UIGraphicsGetCurrentContext() else {
+            return
+        }
+        
+        let colorSpace: CGColorSpace = CGColorSpaceCreateDeviceRGB()
+        var locations: [CGFloat] = [0.0, 1.0]
+        var components: [CGFloat] = []
+        
+        for (index, color) in colors.enumerated() {
+            if index != 0 && index != 1 {
+                locations.insert(CGFloat(1 / colors.count - 1), at: 1)
+            }
+            
+            components.append(color.redComponent)
+            components.append(color.greenComponent)
+            components.append(color.blueComponent)
+            components.append(color.alpha)
+        }
+        
+        var startPoint: CGPoint
+        var endPoint: CGPoint
+        
+        switch direction {
+        case .vertical:
+            startPoint = CGPoint(x: self.bounds.midX, y: 0.0)
+            endPoint = CGPoint(x: self.bounds.midX, y: self.bounds.height)
+        case .horizontal:
+            startPoint = CGPoint(x: 0.0, y: self.bounds.midY)
+            endPoint = CGPoint(x: self.bounds.width, y: self.bounds.midY)
+        case .diagonalLeftToRightAndTopToDown:
+            startPoint = CGPoint(x: 0.0, y: 0.0)
+            endPoint = CGPoint(x: self.bounds.width, y: self.bounds.height)
+        case .diagonalLeftToRightAndDownToTop:
+            startPoint = CGPoint(x: 0.0, y: self.bounds.height)
+            endPoint = CGPoint(x: self.bounds.width, y: 0.0)
+        case .diagonalRightToLeftAndTopToDown:
+            startPoint = CGPoint(x: self.bounds.width, y: 0.0)
+            endPoint = CGPoint(x: 0.0, y: self.bounds.height)
+        case .diagonalRightToLeftAndDownToTop:
+            startPoint = CGPoint(x: self.bounds.width, y: self.bounds.height)
+            endPoint = CGPoint(x: 0.0, y: 0.0)
+        case .custom(let customStartPoint, let customEndPoint):
+            startPoint = customStartPoint
+            endPoint = customEndPoint
+        }
+        
+        guard let gradient: CGGradient = CGGradient(colorSpace: colorSpace, colorComponents: components, locations: locations, count: locations.count) else {
+            return
+        }
+        
+        context.drawLinearGradient(gradient, start: startPoint, end: endPoint, options: .drawsBeforeStartLocation)
+        
+        guard let image: UIImage = UIGraphicsGetImageFromCurrentImageContext() else {
+            UIGraphicsEndImageContext()
+            return
+        }
+        
+        UIGraphicsEndImageContext()
+        
+        let imageView: UIImageView = UIImageView(image: image)
+        self.insertSubview(imageView, at: 0)
     }
     
     /// Adds a motion effect to the view.

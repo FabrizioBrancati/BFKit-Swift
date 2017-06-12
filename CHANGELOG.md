@@ -32,16 +32,30 @@ All notable changes to this project will be documented in this file.<br>
 ### Added
 - Added support to Swift 4 and Xcode 9
 
+### Improved
+- Nothing
+
+### Fixed
+- Nothing
+
+### Changed
+- Nothing
+
 ---
 
 ## Master
 ### Added
 - Added `init?(iso8601:)` to create a Date from an ISO 8601 String in Date extension
 - Added new functions in NSAttributedString extension to handle left, right, center, justified and natural text alignment
+- Added `smoothLinearGradient(colors:, direction:)` function in UIView extension that uses `CGGradient` instead of `CAGradientLayer`
 
 ### Improved
 - Now `dateString(format: = default)` in Date extension has a new `locale` parameter with a `default` value, so no changes are required
 - Now `init?(parse dateString:, format: = default)` in Date extension has a new `locale` parameter with a `default` value, so no changes are required
+- Removed `textAlignmentRight` API on `NSAttributedString` class extension because doesn't work on iOS
+
+### Fixed
+- Fixed a bug where you cannot concatenate multiple attributed strings
 
 ---
 

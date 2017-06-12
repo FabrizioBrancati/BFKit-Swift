@@ -136,17 +136,17 @@ public extension UIImage {
         let textSize: CGSize = maskedText.size(withAttributes: textAttributes)
         
         UIGraphicsBeginImageContextWithOptions(imageSize, false, UIImage.screenScale())
-        guard let ctx: CGContext = UIGraphicsGetCurrentContext() else {
+        guard let context: CGContext = UIGraphicsGetCurrentContext() else {
             return nil
         }
         
-        ctx.setFillColor(backgroundColor.cgColor)
+        context.setFillColor(backgroundColor.cgColor)
         
         let path: UIBezierPath = UIBezierPath(rect: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
-        ctx.addPath(path.cgPath)
-        ctx.fillPath()
+        context.addPath(path.cgPath)
+        context.fillPath()
         
-        ctx.setBlendMode(.destinationOut)
+        context.setBlendMode(.destinationOut)
         let center: CGPoint = CGPoint(x: imageSize.width / 2 - textSize.width / 2, y: imageSize.height / 2 - textSize.height / 2)
         maskedText.draw(at: center, withAttributes: textAttributes)
         
@@ -192,7 +192,7 @@ public extension UIImage {
     /// Returns the screen scale, based on the device.
     ///
     /// - Returns: Returns the screen scale, based on the device.
-    private static func screenScale() -> CGFloat {
+    public static func screenScale() -> CGFloat {
         #if os(iOS)
             return UIScreen.main.scale
         #elseif os(watchOS)

@@ -50,7 +50,12 @@ class NSAttributedStringExtensionTests: XCTestCase {
         ("testObliqueness", testObliqueness),
         ("testExpansion", testExpansion),
         ("testWritingDirection", testWritingDirection),
-        ("testVerticalGlyphForm", testVerticalGlyphForm)
+        ("testVerticalGlyphForm", testVerticalGlyphForm),
+        ("testTextAlignmentLeft", testTextAlignmentLeft),
+        ("testTextAlignmentRight", testTextAlignmentRight),
+        ("testTextAlignmentCenter", testTextAlignmentCenter),
+        ("testTextAlignmentJustified", testTextAlignmentJustified),
+        ("testMultipleAttributes", testMultipleAttributes)
     ]
     
     var string: String = ""
@@ -275,5 +280,16 @@ class NSAttributedStringExtensionTests: XCTestCase {
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
         XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle)?.alignment, textAlignment)
+    }
+    
+    func testMultipleAttributes() {
+        var textAlignment = NSMutableParagraphStyle().alignment
+        textAlignment = .center
+        let font = UIFont.systemFont(ofSize: 18)
+        attributedString = string.attributedString.textAlignmentCenter().font(font)
+        
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 2)
+        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle)?.alignment, textAlignment)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSFontAttributeName] as? UIFont, font)
     }
 }

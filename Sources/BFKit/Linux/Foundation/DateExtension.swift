@@ -247,7 +247,7 @@ public extension Date {
     /// - Parameters:
     ///   - dateString: Date String.
     ///   - format: Date String format. Default is "yyyy-MM-dd". Example: "2014-05-20".
-    ///   - locale: Locale, default is "en_US_POSIX".
+    ///   - locale: Locale, default is "en_US_POSIX". You can use Locale.current.identifier.
     public init?(parse dateString: String, format: String = "yyyy-MM-dd", locale: String = "en_US_POSIX") {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: locale)

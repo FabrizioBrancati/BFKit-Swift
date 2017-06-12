@@ -80,7 +80,9 @@ public extension UILabel {
     ///
     /// - Returns: Returns calculated height.
     public func calculateHeight() -> CGFloat {
-        let text: String = self.text!
+        guard let text = self.text else {
+            return 0
+        }
         return UIFont.calculateHeight(width: self.frame.size.width, font: self.font, text: text)
     }
     
