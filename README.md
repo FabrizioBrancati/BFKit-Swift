@@ -33,7 +33,7 @@
 
 Swift 4
 =======
-If you need Swift 4 support, please switch to (swift-4)[https://github.com/FabrizioBrancati/BFKit-Swift/tree/swift-4] branch.
+If you need Swift 4 support, please switch to [swift-4](https://github.com/FabrizioBrancati/BFKit-Swift/tree/swift-4) branch.
 
 Objective-C Version <img src="http://github.fabriziobrancati.com/bfkit/resources/objc-icon.png" height="25" width="25">
 ===================
