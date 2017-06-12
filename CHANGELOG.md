@@ -39,7 +39,8 @@ All notable changes to this project will be documented in this file.<br>
 - Nothing
 
 ### Changed
-- Nothing
+- Changed `UIViewLinearGradientDirection` to `UIViewGradientDirection` enum name and properties in UIView extension. Easy transition, rename only
+- Changed `smoothLinearGradient(colors:, direction:)` to `smoothLinearGradient(colors:, direction:, type: = default)` to allow radial gradients in UIView extension. Easy transition, thanks to default value
 
 ---
 

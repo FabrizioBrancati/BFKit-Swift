@@ -7,13 +7,13 @@
 [![Version](https://img.shields.io/cocoapods/v/BFKit-Swift.svg?style=flat)][Documentation]
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)
 <br>
-[![Language](https://img.shields.io/badge/language-Swift%203.0%20/%203.1%20/%204.0-orange.svg)](https://developer.apple.com/swift/)
+[![Language](https://img.shields.io/badge/language-Swift%204.0-orange.svg)](https://developer.apple.com/swift/)
 [![Platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20watchOS%20%7C%20Linux-ffc713.svg)][Documentation]
 
 ---
 
 <p align="center">
-    <a href="#swift-4">Swift 4</a> &bull;
+    <a href="#swift-3">Swift 3</a> &bull;
     <a href="#objective-c-version-">Objective-C Version</a> &bull;
     <a href="#what-does-it-do">What does it do</a> &bull;
     <a href="#classes-and-extensions-compatibility">Classes and Extensions Compatibility</a> &bull;
@@ -31,9 +31,9 @@
 
 ---
 
-Swift 4
+Swift 3
 =======
-If you need Swift 4 support, please switch to [swift-4](https://github.com/FabrizioBrancati/BFKit-Swift/tree/swift-4) branch.
+If you need Swift 3 support, please switch to [master](https://github.com/FabrizioBrancati/BFKit-Swift) branch.
 
 Objective-C Version <img src="http://github.fabriziobrancati.com/bfkit/resources/objc-icon.png" height="25" width="25">
 ===================

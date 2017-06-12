@@ -57,22 +57,31 @@ public extension UIView {
         case rightToLeft
     }
     
-    /// Direction of the linear gradient
+    /// Direction of the linear gradient.
     ///
-    /// - vertical: Linear gradient vertical
-    /// - horizontal: Linear gradient horizontal
-    /// - diagonalLeftToRightAndTopToDown: Linear gradient from left to right and top to down
-    /// - diagonalLeftToRightAndDownToTop: Linear gradient from left to right and down to top
-    /// - diagonalRightToLeftAndTopToDown: Linear gradient from right to left and top to down
-    /// - diagonalRightToLeftAndDownToTop: Linear gradient from right to left and down to top
-    public enum UIViewLinearGradientDirection {
+    /// - vertical: Linear gradient vertical.
+    /// - horizontal: Linear gradient horizontal.
+    /// - diagonalLeftToRightAndTopToDown: Linear gradient from left top to right down.
+    /// - diagonalLeftToRightAndDownToTop: Linear gradient from left down to right top.
+    /// - diagonalRightToLeftAndTopToDown: Linear gradient from right top to left down.
+    /// - diagonalRightToLeftAndDownToTop: Linear gradient from right down to left top.
+    public enum UIViewGradientDirection {
         case vertical
         case horizontal
-        case diagonalLeftToRightAndTopToDown
-        case diagonalLeftToRightAndDownToTop
-        case diagonalRightToLeftAndTopToDown
-        case diagonalRightToLeftAndDownToTop
+        case diagonalLeftTopToRightDown
+        case diagonalLeftDownToRightTop
+        case diagonalRightTopToLeftDown
+        case diagonalRightDownToLeftTop
         case custom(startPoint: CGPoint, endPoint: CGPoint)
+    }
+    
+    /// Type of gradient.
+    ///
+    /// - linear: Linear gradient.
+    /// - radial: Radial gradient.
+    public enum UIViewGradientType {
+        case linear
+        case radial
     }
     
     // MARK: - Functions
@@ -151,7 +160,7 @@ public extension UIView {
     /// - Parameters:
     ///   - colors: Array of UIColor instances.
     ///   - direction: Direction of the gradient.
-    public func gradient(colors: [UIColor], direction: UIViewLinearGradientDirection) {
+    public func gradient(colors: [UIColor], direction: UIViewGradientDirection) {
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
         
@@ -169,16 +178,16 @@ public extension UIView {
         case .horizontal:
             gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
             gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
-        case .diagonalLeftToRightAndTopToDown:
+        case .diagonalLeftTopToRightDown:
             gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
             gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
-        case .diagonalLeftToRightAndDownToTop:
+        case .diagonalLeftDownToRightTop:
             gradient.startPoint = CGPoint(x: 0.0, y: 1.0)
             gradient.endPoint = CGPoint(x: 1.0, y: 0.0)
-        case .diagonalRightToLeftAndTopToDown:
+        case .diagonalRightTopToLeftDown:
             gradient.startPoint = CGPoint(x: 1.0, y: 0.0)
             gradient.endPoint = CGPoint(x: 0.0, y: 1.0)
-        case .diagonalRightToLeftAndDownToTop:
+        case .diagonalRightDownToLeftTop:
             gradient.startPoint = CGPoint(x: 1.0, y: 1.0)
             gradient.endPoint = CGPoint(x: 0.0, y: 0.0)
         case .custom(let startPoint, let endPoint):
@@ -195,7 +204,7 @@ public extension UIView {
     /// - Parameters:
     ///   - colors: Array of UIColor instances.
     ///   - direction: Direction of the gradient.
-    public func smoothLinearGradient(colors: [UIColor], direction: UIViewLinearGradientDirection) {
+    public func smoothLinearGradient(colors: [UIColor], direction: UIViewGradientDirection, type: UIViewGradientType = .linear) {
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIImage.screenScale())
         guard let context: CGContext = UIGraphicsGetCurrentContext() else {
             return
@@ -226,16 +235,16 @@ public extension UIView {
         case .horizontal:
             startPoint = CGPoint(x: 0.0, y: self.bounds.midY)
             endPoint = CGPoint(x: self.bounds.width, y: self.bounds.midY)
-        case .diagonalLeftToRightAndTopToDown:
+        case .diagonalLeftTopToRightDown:
             startPoint = CGPoint(x: 0.0, y: 0.0)
             endPoint = CGPoint(x: self.bounds.width, y: self.bounds.height)
-        case .diagonalLeftToRightAndDownToTop:
+        case .diagonalLeftDownToRightTop:
             startPoint = CGPoint(x: 0.0, y: self.bounds.height)
             endPoint = CGPoint(x: self.bounds.width, y: 0.0)
-        case .diagonalRightToLeftAndTopToDown:
+        case .diagonalRightTopToLeftDown:
             startPoint = CGPoint(x: self.bounds.width, y: 0.0)
             endPoint = CGPoint(x: 0.0, y: self.bounds.height)
-        case .diagonalRightToLeftAndDownToTop:
+        case .diagonalRightDownToLeftTop:
             startPoint = CGPoint(x: self.bounds.width, y: self.bounds.height)
             endPoint = CGPoint(x: 0.0, y: 0.0)
         case .custom(let customStartPoint, let customEndPoint):
@@ -247,7 +256,12 @@ public extension UIView {
             return
         }
         
-        context.drawLinearGradient(gradient, start: startPoint, end: endPoint, options: .drawsBeforeStartLocation)
+        switch type {
+        case .linear:
+            context.drawLinearGradient(gradient, start: startPoint, end: endPoint, options: .drawsBeforeStartLocation)
+        case .radial:
+            context.drawRadialGradient(gradient, startCenter: startPoint, startRadius: 0.0, endCenter: endPoint, endRadius: 1.0, options: .drawsBeforeStartLocation)
+        }
         
         guard let image: UIImage = UIGraphicsGetImageFromCurrentImageContext() else {
             UIGraphicsEndImageContext()
