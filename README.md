@@ -1,19 +1,20 @@
 <p align="center"><img src="https://github.fabriziobrancati.com/bfkit/resources/banner-swift-new.png" alt="BFKit Swift Banner"></p>
 
-[![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit-Swift.svg)](https://travis-ci.org/FabrizioBrancati/BFKit-Swift)
+[![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit-Swift.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit-Swift)
 [![Codecov](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift/branch/master/graph/badge.svg)](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift)
 [![codebeat](https://codebeat.co/badges/ba18628d-f16b-4cd4-81f7-f75e81d97b38)](https://codebeat.co/projects/github-com-fabriziobrancati-bfkit-swift)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/BFKit-Swift.svg?style=flat)][Documentation]
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)
 <br>
-[![Language](https://img.shields.io/badge/language-Swift%203.0%20/%203.1-orange.svg)](https://developer.apple.com/swift/)
+[![Language](https://img.shields.io/badge/language-Swift%203.0%20/%203.1%20/%204.0-orange.svg)](https://developer.apple.com/swift/)
 [![Platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20watchOS%20%7C%20Linux-ffc713.svg)][Documentation]
 
 ---
 
 <p align="center">
-    <a href="#objective-c-">Objective-C Version</a> &bull;
+    <a href="#swift-4">Swift 4</a> &bull;
+    <a href="#objective-c-version-">Objective-C Version</a> &bull;
     <a href="#what-does-it-do">What does it do</a> &bull;
     <a href="#classes-and-extensions-compatibility">Classes and Extensions Compatibility</a> &bull;
     <a href="#requirements">Requirements</a> &bull;
@@ -29,6 +30,10 @@
 </p>
 
 ---
+
+Swift 4
+=======
+If you need Swift 4 support, please switch to [swift-4](https://github.com/FabrizioBrancati/BFKit-Swift/tree/swift-4) branch.
 
 Objective-C Version <img src="http://github.fabriziobrancati.com/bfkit/resources/objc-icon.png" height="25" width="25">
 ===================
