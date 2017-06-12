@@ -417,7 +417,7 @@ class DetailViewController: UIViewController {
             toolbar.setTransparent(true, translucent: true)
             self.view.addSubview(toolbar)
         case .UIView:
-            scrollView.contentSize = CGSize(width: UIScreen.screenWidth, height: 240 + UIScreen.screenWidth)
+            scrollView.contentSize = CGSize(width: UIScreen.screenWidth, height: 260 + UIScreen.screenWidth + UIScreen.screenWidth)
             
             let borderedView: UIView = UIView(frame: CGRect(x: 20, y: 20, width: UIScreen.screenWidth - 40, height: 44), backgroundColor: UIColor(red: 0.9218, green: 0.565, blue: 0.139, alpha: 1.0))
             borderedView.border(color: UIColor(red: 0.8934, green: 0.3935, blue: 0.0746, alpha: 1.0), radius: 10, width: 3)
@@ -441,6 +441,12 @@ class DetailViewController: UIViewController {
             let gradientLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 20, width: UIScreen.screenWidth - 40, height: 25), text: "Gradient View", font: .helveticaNeue, fontSize: 16, color: UIColor.white, alignment: .center, lines: 1, shadowColor: UIColor.black)
             gradientView.addSubview(gradientLabel)
             scrollView.addSubview(gradientView)
+            
+            let smoothGradientView: UIView = UIView(frame: CGRect(x: 20, y: 260 + UIScreen.screenWidth, width: UIScreen.screenWidth - 40, height: UIScreen.screenWidth - 40))
+            smoothGradientView.smoothLinearGradient(colors: [UIColor.blue, UIColor.red], direction: .diagonalRightToLeftAndTopToDown)
+            let smoothGradientLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 20, width: UIScreen.screenWidth - 40, height: 25), text: "Smooth Gradient View", font: .helveticaNeue, fontSize: 16, color: UIColor.white, alignment: .center, lines: 1, shadowColor: UIColor.black)
+            smoothGradientView.addSubview(smoothGradientLabel)
+            scrollView.addSubview(smoothGradientView)
         case .UIWebView:
             scrollView.removeFromSuperview()
             
