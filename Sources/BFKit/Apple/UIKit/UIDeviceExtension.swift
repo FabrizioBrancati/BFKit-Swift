@@ -185,6 +185,11 @@ public extension UIDevice {
         // iPad Pro 12.9
         case "iPad6,7":         return "iPad Pro 12.9 (WiFi)"
         case "iPad6,8":         return "iPad Pro 12.9 (Cellular)"
+        case "iPad7,1":         return "iPad Pro 12.9 2nd Generation (WiFi)"
+        case "iPad7,2":         return "iPad Pro 12.9 2nd Generation (Cellular)"
+        // iPad Pro 10.5
+        case "iPad6,7":         return "iPad Pro 10.5 (WiFi)"
+        case "iPad6,8":         return "iPad Pro 10.5 (Cellular)"
         // Apple TV
         case "AppleTV2,1":      return "Apple TV 2G"
         case "AppleTV3,1":      return "Apple TV 3G"
