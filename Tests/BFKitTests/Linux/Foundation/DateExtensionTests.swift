@@ -319,14 +319,14 @@ class DateExtensionTests: XCTestCase {
             let date = Date(timeIntervalSinceReferenceDate: 0)
             let localizedWeekday = date.localizedWeekday()
             
-            XCTAssertEqual(localizedWeekday, "Monday")
+            XCTAssert(localizedWeekday == "Monday" || localizedWeekday == "Lunedì")
         }
         
         func testLocalizedMonth() {
             let date = Date(timeIntervalSinceReferenceDate: 0)
             let localizedMonth = date.localizedMonth()
             
-            XCTAssertEqual(localizedMonth, "January")
+            XCTAssert(localizedMonth == "January" || localizedMonth == "Gennaio")
         }
     #endif
 }
