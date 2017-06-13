@@ -39,18 +39,48 @@ public extension WKInterfaceController {
     ///   - translation: Shake translation. Default is 10.
     @available(watchOS 3.0, *)
     public func shake(group: WKInterfaceGroup, duration: TimeInterval = 0.15, translation: Float = 10) {
-        self.animate(withDuration: duration / 3, animations: {
+        self.animate(withDuration: duration / 3) {
             group.setContentInset(UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0))
-            Timer.scheduledTimer(withTimeInterval: duration / 3, repeats: false, block: { _ in
-                self.animate(withDuration: duration / 3, animations: {
+            Timer.scheduledTimer(withTimeInterval: duration / 3, repeats: false) { _ in
+                self.animate(withDuration: duration / 3) {
                     group.setContentInset(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10))
-                    Timer.scheduledTimer(withTimeInterval: duration / 3, repeats: false, block: { _ in
-                        self.animate(withDuration: duration / 3, animations: {
+                    Timer.scheduledTimer(withTimeInterval: duration / 3, repeats: false) { _ in
+                        self.animate(withDuration: duration / 3) {
                             group.setContentInset(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
-                        })
-                    })
-                })
-            })
-        })
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    /// Create a fade effect an a label.
+    ///
+    /// - Parameters:
+    ///   - label: WKInterfaceLabel to apply fade effect.
+    ///   - duration: Fade duration. Default is 0.2.
+    ///   - string: String to fade to.
+    @available(watchOS 3.0, *)
+    public func fade(label: WKInterfaceLabel, duration: TimeInterval = 0.2, toString string: String) {
+        self.fade(label: label, duration: duration, toAttributedString: string.attributedString)
+    }
+    
+    /// Create a fade effect an a label.
+    ///
+    /// - Parameters:
+    ///   - label: WKInterfaceLabel to apply fade effect.
+    ///   - duration: Fade duration. Default is 0.2.
+    ///   - string: String to fade to.
+    @available(watchOS 3.0, *)
+    public func fade(label: WKInterfaceLabel, duration: TimeInterval = 0.15, toAttributedString string: NSAttributedString) {
+        self.animate(withDuration: duration / 2) { 
+            label.setAlpha(0)
+            Timer.scheduledTimer(withTimeInterval: duration / 2, repeats: false) { _ in
+                label.setAttributedText(string)
+                self.animate(withDuration: duration / 2) {
+                    label.setAlpha(1)
+                }
+            }
+        }
     }
 }
