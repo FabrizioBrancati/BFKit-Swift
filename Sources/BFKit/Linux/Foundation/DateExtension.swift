@@ -250,12 +250,14 @@ public extension Date {
     ///   - locale: Locale, default is "en_US_POSIX". You can use Locale.current.identifier.
     public init?(parse dateString: String, format: String = "yyyy-MM-dd", locale: String = "en_US_POSIX") {
         let dateFormatter = DateFormatter()
+        dateFormatter.calendar = Calendar(identifier: .iso8601)
         dateFormatter.locale = Locale(identifier: locale)
         dateFormatter.timeZone = TimeZone.current
         dateFormatter.dateFormat = format
         guard let parsed = dateFormatter.date(from: dateString) else {
             return nil
         }
+        
         self = parsed
     }
     
@@ -292,6 +294,19 @@ public extension Date {
         }
         
         self = date
+    }
+    
+    /// Creates an ISO 8601 String form self.
+    ///
+    /// - Returns: Returns an ISO 8601 String form self.
+    public func iso8601() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.calendar = Calendar(identifier: .iso8601)
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        
+        return dateFormatter.string(from: self)
     }
     
     /// Get the months number between self and another date.
