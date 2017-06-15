@@ -296,21 +296,21 @@ public extension Date {
         self = date
     }
     
-    /// Creates an ISO 8601 String form self.
-    ///
-    /// - Returns: Returns an ISO 8601 String form self.
-    public func iso8601() -> String {
-        let dateFormatter = DateFormatter()
-        #if !os(Linux)
+    #if !os(Linux)
+        /// Creates an ISO 8601 String form self.
+        ///
+        /// - Returns: Returns an ISO 8601 String form self.
+        public func iso8601() -> String {
+            let dateFormatter = DateFormatter()
             dateFormatter.calendar = Calendar(identifier: .iso8601)
-        #endif
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
-        
-        return dateFormatter.string(from: self)
-    }
-    
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+            dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
+            
+            return dateFormatter.string(from: self)
+        }
+    #endif
+
     /// Get the months number between self and another date.
     ///
     /// - Parameter toDate: The another date.
