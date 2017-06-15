@@ -250,7 +250,7 @@ public extension Date {
     ///   - locale: Locale, default is "en_US_POSIX". You can use Locale.current.identifier.
     public init?(parse dateString: String, format: String = "yyyy-MM-dd", locale: String = "en_US_POSIX") {
         let dateFormatter = DateFormatter()
-        dateFormatter.calendar = Calendar(identifier: .iso8601)
+        dateFormatter.calendar = Calendar.autoupdatingCurrent
         dateFormatter.locale = Locale(identifier: locale)
         dateFormatter.timeZone = TimeZone.current
         dateFormatter.dateFormat = format
