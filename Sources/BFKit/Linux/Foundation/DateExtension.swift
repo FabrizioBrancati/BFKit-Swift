@@ -301,7 +301,9 @@ public extension Date {
     /// - Returns: Returns an ISO 8601 String form self.
     public func iso8601() -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.calendar = Calendar(identifier: .iso8601)
+        #if !os(Linux)
+            dateFormatter.calendar = Calendar(identifier: .iso8601)
+        #endif
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
