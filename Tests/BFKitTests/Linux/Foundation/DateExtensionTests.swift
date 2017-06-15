@@ -192,9 +192,11 @@ class DateExtensionTests: XCTestCase {
     }
     
     func testISO8601() {
-        let iso8601: String = date.iso8601()
-        
-        XCTAssertEqual(iso8601, "\(date.year)-\(date.month)-0\(date.day)T0\(date.hour - TimeZone.current.secondsFromGMT() / 60 / 60):0\(date.minute):\(date.second).00\(date.nanosecond)Z")
+        var isoDate = date
+        isoDate.hour = 12
+        let iso8601: String = isoDate.iso8601()
+            
+        XCTAssertEqual(iso8601, "\(isoDate.year)-\(isoDate.month)-0\(isoDate.day)T\(isoDate.hour - TimeZone.current.secondsFromGMT() / 60 / 60):0\(isoDate.minute):\(isoDate.second).00\(isoDate.nanosecond)Z")
     }
     
     func testDaysBetween() {
