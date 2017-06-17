@@ -38,6 +38,9 @@
 		49381D621EAA091C00DBFC89 /* BFPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4913372A1DF9714D00BD8B0F /* BFPassword.swift */; };
 		493CD8121ECA6E8900B5178D /* NSPointerArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493CD8111ECA6E8900B5178D /* NSPointerArrayExtension.swift */; };
 		493CD8131ECA6EA100B5178D /* NSPointerArrayExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493CD80F1ECA6E7600B5178D /* NSPointerArrayExtensionTests.swift */; };
+		4963C2C51EF57FE400C5CAEB /* SetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4963C2C41EF57FE400C5CAEB /* SetExtension.swift */; };
+		4963C2C61EF57FE400C5CAEB /* SetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4963C2C41EF57FE400C5CAEB /* SetExtension.swift */; };
+		4963C2C81EF5801E00C5CAEB /* SetExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4963C2C71EF5801E00C5CAEB /* SetExtensionTests.swift */; };
 		4971864C1D2339040032A98E /* BFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 497186411D2339040032A98E /* BFKit.framework */; };
 		497186A21D2339210032A98E /* BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 497186651D2339210032A98E /* BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49768CBF1EACBE5C003B113A /* BFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768CBB1EACBE5C003B113A /* BFButton.swift */; };
@@ -143,6 +146,8 @@
 		49381D411EAA084C00DBFC89 /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		493CD80F1ECA6E7600B5178D /* NSPointerArrayExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSPointerArrayExtensionTests.swift; path = Tests/BFKitTests/Apple/Foundation/NSPointerArrayExtensionTests.swift; sourceTree = SOURCE_ROOT; };
 		493CD8111ECA6E8900B5178D /* NSPointerArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSPointerArrayExtension.swift; path = Sources/BFKit/Apple/Foundation/NSPointerArrayExtension.swift; sourceTree = SOURCE_ROOT; };
+		4963C2C41EF57FE400C5CAEB /* SetExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetExtension.swift; sourceTree = "<group>"; };
+		4963C2C71EF5801E00C5CAEB /* SetExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetExtensionTests.swift; sourceTree = "<group>"; };
 		497186411D2339040032A98E /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4971864B1D2339040032A98E /* BFKitTests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BFKitTests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		497186651D2339210032A98E /* BFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BFKit.h; path = Sources/BFKit.h; sourceTree = SOURCE_ROOT; };
@@ -365,6 +370,7 @@
 				49F0DC8D1DBD15B400C9AE18 /* NSObjectExtension.swift */,
 				493CD8111ECA6E8900B5178D /* NSPointerArrayExtension.swift */,
 				4922E8881DFC425400C5BD3A /* ProcessInfoExtension.swift */,
+				4963C2C41EF57FE400C5CAEB /* SetExtension.swift */,
 				49F0DC901DBD15B400C9AE18 /* StringExtension.swift */,
 				49F0DC911DBD15B400C9AE18 /* ThreadExtension.swift */,
 			);
@@ -402,6 +408,7 @@
 				497E51101DE647A600EB95D0 /* NSObjectExtensionTests.swift */,
 				493CD80F1ECA6E7600B5178D /* NSPointerArrayExtensionTests.swift */,
 				4922E88A1DFC42F800C5BD3A /* ProcessInfoExtensionTests.swift */,
+				4963C2C71EF5801E00C5CAEB /* SetExtensionTests.swift */,
 				49FB86071DE6598900AC7E4A /* StringExtensionTests.swift */,
 				49FB86051DE6561300AC7E4A /* ThreadExtensionTests.swift */,
 			);
@@ -633,6 +640,7 @@
 				49381D4A1EAA08C600DBFC89 /* CollectionExtension.swift in Sources */,
 				49C03B401ECAF15000B13E0B /* NSPointerArrayExtension.swift in Sources */,
 				49381D621EAA091C00DBFC89 /* BFPassword.swift in Sources */,
+				4963C2C61EF57FE400C5CAEB /* SetExtension.swift in Sources */,
 				49D0CD051EC59E9D0046C39C /* UIImageExtension.swift in Sources */,
 				49381D531EAA08C600DBFC89 /* ThreadExtension.swift in Sources */,
 				49768D271EACC032003B113A /* WKInterfaceControllerExtension.swift in Sources */,
@@ -664,6 +672,7 @@
 				49768CED1EACBE84003B113A /* FileManagerExtension.swift in Sources */,
 				49F0DC941DBD15B400C9AE18 /* DateExtension.swift in Sources */,
 				49768DC11EAD2BC1003B113A /* UITextViewExtension.swift in Sources */,
+				4963C2C51EF57FE400C5CAEB /* SetExtension.swift in Sources */,
 				49768DB81EAD2BC1003B113A /* UIImageExtension.swift in Sources */,
 				4922E8891DFC425400C5BD3A /* ProcessInfoExtension.swift in Sources */,
 				49F0DC921DBD15B400C9AE18 /* ArrayExtension.swift in Sources */,
@@ -721,6 +730,7 @@
 				49199B211EDE203800450CE1 /* NSAttributedStringExtensionTests.swift in Sources */,
 				49768D3A1EACC4A4003B113A /* UITextFieldExtensionTests.swift in Sources */,
 				49F0DCBA1DBD172300C9AE18 /* BFDataStructuresTests.swift in Sources */,
+				4963C2C81EF5801E00C5CAEB /* SetExtensionTests.swift in Sources */,
 				49768D341EACC4A4003B113A /* UILabelExtensionTests.swift in Sources */,
 				491337821DF971A200BD8B0F /* BFPasswordTests.swift in Sources */,
 				49768D2F1EACC4A4003B113A /* UIColorExtensionTests.swift in Sources */,
