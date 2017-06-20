@@ -41,6 +41,7 @@ All notable changes to this project will be documented in this file.<br>
 - Now `dateString(format: = default)` in Date extension has a new `locale` parameter with a `default` value, so no changes are required
 - Now `init?(parse dateString:, format: = default)` in Date extension has a new `locale` parameter with a `default` value, so no changes are required
 - Removed `textAlignmentRight` API on `NSAttributedString` class extension because doesn't work on iOS
+- Updated SwiftLint to 0.20.0
 
 ### Fixed
 - Fixed a bug where you cannot concatenate multiple attributed strings
