@@ -33,7 +33,7 @@ class DictionaryExtensionTests: XCTestCase {
         ("testSafeObjectForKey", testSafeObjectForKey)
     ]
     
-    let dictionary = ["1": 1, "2": 2, "3": 3, "4": 4, "5": 5]
+    var dictionary = ["1": 1, "2": 2, "3": 3, "4": 4, "5": 5]
     
     override func setUp() {
         super.setUp()
@@ -49,5 +49,12 @@ class DictionaryExtensionTests: XCTestCase {
         
         XCTAssertEqual(object, 4)
         XCTAssertNil(objectNil)
+    }
+    
+    func testAppendValueForKey() {
+        dictionary.append(6, forKey: "6")
+        
+        XCTAssertEqual(dictionary.count, 6)
+        XCTAssertEqual(dictionary["6"], 6)
     }
 }
