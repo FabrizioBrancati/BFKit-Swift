@@ -37,10 +37,12 @@ If you need Swift 3 support, please switch to [master](https://github.com/Fabriz
 
 Objective-C Version <img src="http://github.fabriziobrancati.com/bfkit/resources/objc-icon.png" height="25" width="25">
 ===================
+
 If you are looking for Objective-C version check it out here: **[BFKit](https://github.com/FabrizioBrancati/BFKit)**.
 
 What does it do
 ===============
+
 BFKit-Swift is a collection of useful classes, structs and extensions to **develop Apps faster**.<br>
 For example you can use every **iOS font with just an enum!**<br>
 It also adds some useful functions with **Custom** classes and extends **Foundation**, **UIKit** and **WatchKit** classes.
@@ -123,6 +125,7 @@ Classes and Extensions Compatibility
 
 Requirements
 ============
+
 | **Swift** | **Xcode** | **BFKit Swift** | **iOS** | **watchOS** | **Linux** |
 |-----------|-----------|-----------------|---------|-------------|-----------|
 | 1.2       | 6.3       | 1.0.0...1.4.1   | 7.0+    |             |           |
@@ -135,6 +138,7 @@ Requirements
 
 Communication
 =============
+
 - If you need help, use Stack Overflow.
 - If you found a bug, open an issue.
 - If you have a feature request, open an issue.
@@ -142,6 +146,7 @@ Communication
 
 Contributing
 ============
+
 See [CONTRIBUTING.md](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/.github/CONTRIBUTING.md) file.
 
 Installing and Usage
@@ -213,19 +218,23 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
 
 Documentation
 =============
+
 ### [Documentation]
 100% Documented
 
 Changelog
 =========
+
 To see what has changed in recent versions of BFKit Swift, see the **[CHANGELOG.md](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/CHANGELOG.md)** file.
 
 Example
 =======
+
 Open and run the BFKitExample project in Example folder in this repo, with Xcode and see BFKit Swift in action!
 
 Todo
 ====
+
 - [ ] Add macOS and tvOS support
 - [ ] Create a new Example App that shows all the functionalities of BFKit Swift
 - [ ] 100% of code coverage with Unit Tests
@@ -239,6 +248,7 @@ Todo
 
 Author
 ======
+
 **Fabrizio Brancati**
 
 [Website: https://www.fabriziobrancati.com](https://www.fabriziobrancati.com)
@@ -247,6 +257,7 @@ Author
 
 License
 =======
+
 BFKit-Swift is available under the MIT license. See the **[LICENSE](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)** file for more info.
 
 [Documentation]: https://github.fabriziobrancati.com/documentation/BFKit-Swift/
