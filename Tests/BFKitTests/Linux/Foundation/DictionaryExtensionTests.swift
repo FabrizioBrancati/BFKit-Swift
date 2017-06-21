@@ -30,7 +30,8 @@ import Foundation
 
 class DictionaryExtensionTests: XCTestCase {
     static let allTests = [
-        ("testSafeObjectForKey", testSafeObjectForKey)
+        ("testSafeObjectForKey", testSafeObjectForKey),
+        ("testAppendValueForKey", testAppendValueForKey)
     ]
     
     var dictionary = ["1": 1, "2": 2, "3": 3, "4": 4, "5": 5]
