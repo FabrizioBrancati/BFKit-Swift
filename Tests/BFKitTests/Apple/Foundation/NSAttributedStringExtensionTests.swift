@@ -171,7 +171,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.textEffect(textEffect.rawValue)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.textEffect] as? String, textEffect)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.textEffect] as? NSAttributedString.TextEffectStyle, textEffect)
     }
     
     func testAttachment() {
@@ -252,7 +252,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.textAlignmentLeft()
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle)?.alignment, textAlignment)
+        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle)?.alignment, textAlignment)
     }
     
     func testTextAlignmentRight() {
@@ -261,7 +261,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.textAlignmentRight()
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle)?.alignment, textAlignment)
+        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle)?.alignment, textAlignment)
     }
     
     func testTextAlignmentCenter() {
@@ -270,7 +270,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.textAlignmentCenter()
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle)?.alignment, textAlignment)
+        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle)?.alignment, textAlignment)
     }
     
     func testTextAlignmentJustified() {
@@ -279,7 +279,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.textAlignmentJustified()
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle)?.alignment, textAlignment)
+        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle)?.alignment, textAlignment)
     }
     
     func testMultipleAttributes() {
@@ -289,7 +289,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.textAlignmentCenter().font(font)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 2)
-        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle)?.alignment, textAlignment)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSFontAttributeName] as? UIFont, font)
+        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle)?.alignment, textAlignment)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.font] as? UIFont, font)
     }
 }

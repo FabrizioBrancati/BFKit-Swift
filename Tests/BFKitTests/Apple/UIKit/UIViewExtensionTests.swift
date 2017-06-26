@@ -99,7 +99,7 @@ class UIViewExtensionTests: XCTestCase {
     }
     
     func testSmoothGradientColorsDirectionTypeGradient() {
-        view.smoothGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .custom(startPoint: CGPoint(x: 10, y: 10), endPoint: CGPoint(x: 90, y: 90)), type: .gradient)
+        view.smoothGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .custom(startPoint: CGPoint(x: 10, y: 10), endPoint: CGPoint(x: 90, y: 90)), type: .linear)
         
         XCTAssertEqual(view.frame, CGRect(x: 0, y: 0, width: 200, height: 100))
     }

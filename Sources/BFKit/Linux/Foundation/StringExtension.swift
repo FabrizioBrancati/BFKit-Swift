@@ -630,7 +630,7 @@ public extension String {
             let hashtags = detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withoutAnchoringBounds, range: NSRange(location: 0, length: length)).map { $0 }
             
             return hashtags.map({
-                (self as NSString).substring(with: $0.rangeAt(1))
+                (self as NSString).substring(with: $0.range(at: 1))
             })
         }
     
@@ -643,7 +643,7 @@ public extension String {
             let mentions = detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withoutAnchoringBounds, range: NSRange(location: 0, length: length)).map { $0 }
             
             return mentions.map({
-                (self as NSString).substring(with: $0.rangeAt(1))
+                (self as NSString).substring(with: $0.range(at: 1))
             })
         }
     #endif
