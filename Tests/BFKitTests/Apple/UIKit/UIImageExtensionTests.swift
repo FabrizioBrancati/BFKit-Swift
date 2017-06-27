@@ -108,6 +108,18 @@ class UIImageExtensionTests: XCTestCase {
         XCTAssertGreaterThan(image.size.height, 0)
     }
     
+    func testInitView() {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        
+        guard let image = UIImage(view: view) else {
+            XCTFail()
+            return
+        }
+        
+        XCTAssertEqual(image.size.width, 100)
+        XCTAssertEqual(image.size.height, 100)
+    }
+    
     func testBlendImageBlendMode() {
         guard var image = UIImage(dummyImage: "100x100.red"), let imageBlend = UIImage(color: UIColor.blue) else {
             XCTFail()

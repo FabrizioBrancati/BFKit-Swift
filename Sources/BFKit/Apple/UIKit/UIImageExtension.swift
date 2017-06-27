@@ -189,6 +189,20 @@ public extension UIImage {
         self.init(data: data)
     }
     
+    /// Creates an image from an UIView.
+    ///
+    /// - Parameter view: UIView.
+    public convenience init?(view: UIView) {
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        guard let cgImage = image?.cgImage else {
+            return nil
+        }
+        self.init(cgImage: cgImage)
+    }
+    
     /// Returns the screen scale, based on the device.
     ///
     /// - Returns: Returns the screen scale, based on the device.
