@@ -53,6 +53,7 @@ All notable changes to this project will be documented in this file.<br>
 - Added `fade(label:, duration: = default, toString:)` and `fade(label:, duration: = default, toAttributedString:)` animation functions in WKInterfaceController extension
 - Added `Set` struct extension
 - Added `append(_ value:, key:)` function in Dictionary extension
+- Added `init?(view:)` function in UIImage extension
 
 ### Improved
 - Now `dateString(format: = default)` in Date extension has a new `locale` parameter with a `default` value, so no changes are required
