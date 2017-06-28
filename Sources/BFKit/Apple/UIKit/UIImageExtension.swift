@@ -194,7 +194,10 @@ public extension UIImage {
     /// - Parameter view: UIView.
     public convenience init?(view: UIView) {
         UIGraphicsBeginImageContext(view.frame.size)
-        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return nil
+        }
+        view.layer.render(in: context)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         guard let cgImage = image?.cgImage else {
