@@ -189,23 +189,6 @@ public extension UIImage {
         self.init(data: data)
     }
     
-    /// Creates an image from an UIView.
-    ///
-    /// - Parameter view: UIView.
-    public convenience init?(view: UIView) {
-        UIGraphicsBeginImageContext(view.frame.size)
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return nil
-        }
-        view.layer.render(in: context)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        guard let cgImage = image?.cgImage else {
-            return nil
-        }
-        self.init(cgImage: cgImage)
-    }
-    
     /// Returns the screen scale, based on the device.
     ///
     /// - Returns: Returns the screen scale, based on the device.
@@ -633,6 +616,23 @@ public extension UIImage {
     }
     
     #if os(iOS)
+        /// Creates an image from an UIView.
+        ///
+        /// - Parameter view: UIView.
+        public convenience init?(view: UIView) {
+            UIGraphicsBeginImageContext(view.frame.size)
+            guard let context = UIGraphicsGetCurrentContext() else {
+                return nil
+            }
+            view.layer.render(in: context)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            guard let cgImage = image?.cgImage else {
+                return nil
+            }
+            self.init(cgImage: cgImage)
+        }
+    
         /// Rotate the image to the given radians.
         ///
         /// - Parameter radians: Radians to rotate to
