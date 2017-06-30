@@ -29,8 +29,11 @@ import PackageDescription
 
 let package = Package(
     name: "BFKit",
-    exclude: [
-        "Sources/BFKit/Apple",
-        "Tests/BFKitTests/Apple"
+    targets: [
+        .target(name: "BFKit", dependencies: [], exclude: exclude: [
+            "Sources/BFKit/Apple",
+            "Tests/BFKitTests/Apple"
+        ]),
+        .testTarget(name: "BFKitTests", dependencies: ["BFKit"])
     ]
 )
