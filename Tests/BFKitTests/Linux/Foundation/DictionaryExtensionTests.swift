@@ -30,7 +30,6 @@ import Foundation
 
 class DictionaryExtensionTests: XCTestCase {
     static let allTests = [
-        ("testSafeObjectForKey", testSafeObjectForKey),
         ("testAppendValueForKey", testAppendValueForKey)
     ]
     
@@ -42,14 +41,6 @@ class DictionaryExtensionTests: XCTestCase {
     
     override func tearDown() {
         super.tearDown()
-    }
-    
-    func testSafeObjectForKey() {
-        let object: Int = dictionary.safeObject(forKey: "4") as! Int // swiftlint:disable:this force_cast
-        let objectNil = dictionary.safeObject(forKey: "6")
-        
-        XCTAssertEqual(object, 4)
-        XCTAssertNil(objectNil)
     }
     
     func testAppendValueForKey() {

@@ -32,19 +32,6 @@ import Foundation
 public extension Dictionary {
     // MARK: - Functions
     
-    /// Returns an object if key exists or nil if not
-    ///
-    /// - Parameter key: Key to get value of.
-    /// - Returns: Value for the key Or nil.
-    @available(*, deprecated: 3.0, message: "Use the `[]` subscript instead.")
-    public func safeObject(forKey key: Key) -> Any? {
-        if let value = self[key] {
-            return value
-        } else {
-            return nil
-        }
-    }
-    
     /// Append a Value for a given Key in the Dictionary.
     /// If the Key already exist it will be ovrewritten.
     ///
