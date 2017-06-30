@@ -454,13 +454,7 @@ public extension String {
             let character: String = hex.substring(to: hex.index(hex.startIndex, offsetBy: 2))
             hex = hex.substring(from: hex.index(hex.startIndex, offsetBy: 2))
             var characterInt: UInt32 = 0
-            
-            #if os(Linux)
-                _ = Scanner(string: character).scanHexInt(&characterInt)
-            #else
-                Scanner(string: character).scanHexInt32(&characterInt)
-            #endif
-            
+            _ = Scanner(string: character).scanHexInt32(&characterInt)
             string += String(format: "%c", characterInt)
         }
         return string
