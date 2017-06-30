@@ -31,9 +31,10 @@ let package = Package(
     name: "BFKit",
     targets: [
         .target(name: "BFKit", dependencies: [], exclude: [
-            "Sources/BFKit/Apple",
-            "Tests/BFKitTests/Apple"
+            "Apple"
         ]),
-        .testTarget(name: "BFKitTests", dependencies: ["BFKit"])
+        .testTarget(name: "BFKitTests", dependencies: ["BFKit"], exclude: [
+            "Apple"
+        ])
     ]
 )
