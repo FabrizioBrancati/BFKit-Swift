@@ -207,7 +207,7 @@ public extension UIView {
         
         for (index, color) in colors.enumerated() {
             if index != 0 && index != 1 {
-                locations.insert(CGFloat(1 / colors.count - 1), at: 1)
+                locations.insert(CGFloat(Float(1) / Float(colors.count - 1)), at: 1)
             }
             
             components.append(color.redComponent)
