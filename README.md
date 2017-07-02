@@ -82,6 +82,7 @@ Classes and Extensions Compatibility
 | [NSAttributedString](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/NSAttributedString.html) | ![✓]       | ![✓]        |            |
 | [NSPointerArray](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/NSPointerArray.html)         | ![✓]       | ![✓]        |            |
 | [ProcessInfo](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/ProcessInfo.html)               | ![✓]       | ![✓]        | ![✓]       |
+| [Set](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Set.html)                         | ![✓]       | ![✓]        | ![✓]       |
 | [String](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/String.html)                         | ![✓]       | ![✓]        | ![✓]       |
 | [Thread](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Functions.html)                                 | ![✓]       | ![✓]        | ![✓]       |
 
