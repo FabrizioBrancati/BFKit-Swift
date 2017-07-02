@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.fabriziobrancati.com/bfkit/resources/banner-swift-new.png" alt="BFKit Swift Banner"></p>
+<p align="center"><img src="https://github.fabriziobrancati.com/bfkit/resources/banner-swift-new.png" alt="BFKit-Swift Banner"></p>
 
 [![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit-Swift.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit-Swift)
 [![Codecov](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift/branch/master/graph/badge.svg)](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift)
@@ -126,7 +126,7 @@ Classes and Extensions Compatibility
 Requirements
 ============
 
-| **Swift** | **Xcode** | **BFKit Swift** | **iOS** | **watchOS** | **Linux** |
+| **Swift** | **Xcode** | **BFKit-Swift** | **iOS** | **watchOS** | **Linux** |
 |-----------|-----------|-----------------|---------|-------------|-----------|
 | 1.2       | 6.3       | 1.0.0...1.4.1   | 7.0+    |             |           |
 | 2.0...2.1 | 7.0       | 1.5.0...1.6.2   | 7.0+    |             |           |
@@ -152,7 +152,7 @@ See [CONTRIBUTING.md](https://github.com/FabrizioBrancati/BFKit-Swift/blob/maste
 Installing and Usage
 ====================
 
-See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements) section to check Swift, Xcode, BFKit Swift and OS versions.
+See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements) section to check Swift, Xcode, BFKit-Swift and OS versions.
 
 ### Manual
 - Open and build the framework from the project (**BFKit.xcodeproj**)
@@ -189,7 +189,7 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
     /usr/local/bin/carthage copy-frameworks
     ```
 
-    and add the paths to the BFKit Swift framework under **Input Files**
+    and add the paths to the BFKit-Swift framework under **Input Files**
 
     ```sh
     $(SRCROOT)/Carthage/Build/iOS/BFKit.framework
@@ -225,18 +225,18 @@ Documentation
 Changelog
 =========
 
-To see what has changed in recent versions of BFKit Swift, see the **[CHANGELOG.md](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/CHANGELOG.md)** file.
+To see what has changed in recent versions of BFKit-Swift, see the **[CHANGELOG.md](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/CHANGELOG.md)** file.
 
 Example
 =======
 
-Open and run the BFKitExample project in Example folder in this repo, with Xcode and see BFKit Swift in action!
+Open and run the BFKitExample project in Example folder in this repo, with Xcode and see BFKit-Swift in action!
 
 Todo
 ====
 
 - [ ] Add macOS and tvOS support
-- [ ] Create a new Example App that shows all the functionalities of BFKit Swift
+- [ ] Create a new Example App that shows all the functionalities of BFKit-Swift
 - [ ] 100% of code coverage with Unit Tests
 - [ ] Improve code to get an _A_ from codebeat
 - [x] Add watchOS support

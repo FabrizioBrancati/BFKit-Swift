@@ -443,7 +443,7 @@ class DetailViewController: UIViewController {
             scrollView.addSubview(gradientView)
             
             let smoothGradientView: UIView = UIView(frame: CGRect(x: 20, y: 260 + UIScreen.screenWidth, width: UIScreen.screenWidth - 40, height: UIScreen.screenWidth - 40))
-            smoothGradientView.smoothLinearGradient(colors: [UIColor.blue, UIColor.red], direction: .diagonalRightToLeftAndTopToDown)
+            smoothGradientView.smoothLinearGradient(colors: [UIColor.blue, UIColor.green, UIColor.red], direction: .diagonalRightToLeftAndTopToDown)
             let smoothGradientLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 20, width: UIScreen.screenWidth - 40, height: 25), text: "Smooth Gradient View", font: .helveticaNeue, fontSize: 16, color: UIColor.white, alignment: .center, lines: 1, shadowColor: UIColor.black)
             smoothGradientView.addSubview(smoothGradientLabel)
             scrollView.addSubview(smoothGradientView)

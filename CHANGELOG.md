@@ -4,7 +4,7 @@ Changelog
 ---
 
 All notable changes to this project will be documented in this file.<br>
-`BFKit Swift` adheres to [Semantic Versioning](http://semver.org/).
+`BFKit-Swift` adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
