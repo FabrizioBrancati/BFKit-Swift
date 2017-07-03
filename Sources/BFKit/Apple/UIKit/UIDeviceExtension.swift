@@ -310,7 +310,12 @@ public extension UIDevice {
     ///
     /// - Returns: Returns true if current device is jailbroken, otherwise false.
     public static func isJailbroken() -> Bool {
-        return UIApplication.shared.canOpenURL(URL(string: "cydia://")!) || FileManager.default.fileExists(atPath: "/bin/bash")
+        let canReadBinBash = FileManager.default.fileExists(atPath: "/bin/bash")
+        if let canOpenCydia = (UIApplication.value(forKey: "sharedApplication") as? UIApplication)?.canOpenURL(URL(string: "cydia://")!) {
+            return canOpenCydia || canReadBinBash
+        } else {
+            return canReadBinBash
+        }
     }
     
     /// Returns system uptime.

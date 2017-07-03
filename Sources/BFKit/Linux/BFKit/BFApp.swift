@@ -31,14 +31,7 @@ import Foundation
 
 // MARK: - Global variables
 
-#if os(iOS)
-    /// Get AppDelegate. To use it, cast to AppDelegate with "as! AppDelegate".
-    public let appDelegate: UIApplicationDelegate? = UIApplication.shared.delegate
-#endif
-
 #if !os(Linux)
-    // MARK: - Global functions
-
     /// NSLocalizedString without comment parameter.
     ///
     /// - Parameter key: The key of the localized string.

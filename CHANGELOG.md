@@ -31,6 +31,7 @@ All notable changes to this project will be documented in this file.<br>
 ## Swift 4
 ### Added
 - Added support to Swift 4 and Xcode 9
+- Added support to App Extensions
 
 ### Improved
 - Nothing

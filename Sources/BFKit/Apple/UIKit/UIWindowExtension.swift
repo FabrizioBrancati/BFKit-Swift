@@ -43,7 +43,7 @@ public var customTouchImage: UIImage?
 
 /// Show touch on screen.
 public func showTouchOnScreen() {
-    guard let window = UIApplication.shared.keyWindow else {
+    guard let window = (UIApplication.value(forKey: "sharedApplication") as? UIApplication)?.keyWindow else {
         return
     }
     window.activateTouch()
@@ -51,7 +51,7 @@ public func showTouchOnScreen() {
 
 /// Hide touch on screen.
 public func hideTouchOnScreen() {
-    guard let window = UIApplication.shared.keyWindow else {
+    guard let window = (UIApplication.value(forKey: "sharedApplication") as? UIApplication)?.keyWindow else {
         return
     }
     window.deactivateTouch()
@@ -70,7 +70,9 @@ public extension UIWindow {
     public func windowScreenshot(save: Bool = false) -> UIImage? {
         let ignoreOrientation: Bool = osVersionGreaterThanOrEqual("8.0")
         
-        let orientation: UIInterfaceOrientation = UIApplication.shared.statusBarOrientation
+        guard let orientation: UIInterfaceOrientation = (UIApplication.value(forKey: "sharedApplication") as? UIApplication)?.statusBarOrientation else {
+            return nil
+        }
         
         var imageSize: CGSize = CGSize.zero
         if UIInterfaceOrientationIsPortrait(orientation) || ignoreOrientation {
