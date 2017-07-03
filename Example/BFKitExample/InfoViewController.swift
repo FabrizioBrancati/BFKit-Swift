@@ -61,7 +61,7 @@ class InfoViewController : UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func openWebsite() {
+    @objc func openWebsite() {
         UIApplication.shared.openURL(URL(string: "http://www.fabriziobrancati.com")!)
     }
 }

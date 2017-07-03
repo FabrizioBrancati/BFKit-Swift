@@ -77,7 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Functions
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        UINavigationBar.appearance().titleTextAttributes = [ NSForegroundColorAttributeName : UIColor(red: 0.9218, green: 0.565, blue: 0.139, alpha: 1.0)]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue : UIColor(red: 0.9218, green: 0.565, blue: 0.139, alpha: 1.0)]
         UINavigationBar.appearance().tintColor = UIColor(red: 0.9218, green: 0.565, blue: 0.139, alpha: 1.0)
         UITabBar.appearance().tintColor = UIColor(red: 0.9218, green: 0.565, blue: 0.139, alpha: 1.0)
         UIBarButtonItem.appearance().tintColor = UIColor(red: 0.9218, green: 0.565, blue: 0.139, alpha: 1.0)

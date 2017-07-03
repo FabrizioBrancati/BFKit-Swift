@@ -437,13 +437,13 @@ class DetailViewController: UIViewController {
             scrollView.addSubview(shakeButton)
             
             let gradientView: UIView = UIView(frame: CGRect(x: 20, y: 260, width: UIScreen.screenWidth - 40, height: UIScreen.screenWidth - 40))
-            gradientView.gradient(colors: [UIColor.blue, UIColor.red], direction: .diagonalRightToLeftAndTopToDown)
+            gradientView.gradient(colors: [UIColor.blue, UIColor.red], direction: .diagonalLeftDownToRightTop)
             let gradientLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 20, width: UIScreen.screenWidth - 40, height: 25), text: "Gradient View", font: .helveticaNeue, fontSize: 16, color: UIColor.white, alignment: .center, lines: 1, shadowColor: UIColor.black)
             gradientView.addSubview(gradientLabel)
             scrollView.addSubview(gradientView)
             
             let smoothGradientView: UIView = UIView(frame: CGRect(x: 20, y: 260 + UIScreen.screenWidth, width: UIScreen.screenWidth - 40, height: UIScreen.screenWidth - 40))
-            smoothGradientView.smoothLinearGradient(colors: [UIColor.blue, UIColor.green, UIColor.red], direction: .diagonalRightToLeftAndTopToDown)
+            smoothGradientView.smoothGradient(colors: [UIColor.blue, UIColor.green, UIColor.red], direction: .diagonalLeftDownToRightTop)
             let smoothGradientLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 20, width: UIScreen.screenWidth - 40, height: 25), text: "Smooth Gradient View", font: .helveticaNeue, fontSize: 16, color: UIColor.white, alignment: .center, lines: 1, shadowColor: UIColor.black)
             smoothGradientView.addSubview(smoothGradientLabel)
             scrollView.addSubview(smoothGradientView)
@@ -617,11 +617,11 @@ class DetailViewController: UIViewController {
         self.title = detailTypeString
     }
     
-    func shakeButtonAction(_ button: UIButton) {
+    @objc func shakeButtonAction(_ button: UIButton) {
         button.shake()
     }
     
-    func barButtonItemsAction(_ button: UIBarButtonItem) {
+    @objc func barButtonItemsAction(_ button: UIBarButtonItem) {
         BFLog.log("Bar button pressed")
     }
     
