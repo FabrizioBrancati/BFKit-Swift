@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "490314541F0C27CB00499354"
-               BuildableName = "BFKit macOS.framework"
+               BuildableName = "BFKit.framework"
                BlueprintName = "BFKit macOS"
                ReferencedContainer = "container:BFKit.xcodeproj">
             </BuildableReference>
@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4903145C1F0C27CC00499354"
-               BuildableName = "BFKit macOSTests.xctest"
-               BlueprintName = "BFKit macOSTests"
+               BuildableName = "BFKitTests macOS.xctest"
+               BlueprintName = "BFKitTests macOS"
                ReferencedContainer = "container:BFKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "490314541F0C27CB00499354"
-            BuildableName = "BFKit macOS.framework"
+            BuildableName = "BFKit.framework"
             BlueprintName = "BFKit macOS"
             ReferencedContainer = "container:BFKit.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "490314541F0C27CB00499354"
-            BuildableName = "BFKit macOS.framework"
+            BuildableName = "BFKit.framework"
             BlueprintName = "BFKit macOS"
             ReferencedContainer = "container:BFKit.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "490314541F0C27CB00499354"
-            BuildableName = "BFKit macOS.framework"
+            BuildableName = "BFKit.framework"
             BlueprintName = "BFKit macOS"
             ReferencedContainer = "container:BFKit.xcodeproj">
          </BuildableReference>

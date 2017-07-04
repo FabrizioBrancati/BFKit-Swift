@@ -175,7 +175,7 @@
 
 /* Begin PBXFileReference section */
 		490314551F0C27CB00499354 /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4903145D1F0C27CC00499354 /* BFKit macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BFKit macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4903145D1F0C27CC00499354 /* BFKitTests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BFKitTests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		490314781F0C2EA600499354 /* BFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFButton.swift; sourceTree = "<group>"; };
 		490314791F0C2EA600499354 /* BFSystemSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFSystemSound.swift; sourceTree = "<group>"; };
 		4903147A1F0C2EA600499354 /* BFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFTextField.swift; sourceTree = "<group>"; };
@@ -576,7 +576,7 @@
 				4971864B1D2339040032A98E /* BFKitTests iOS.xctest */,
 				49381D411EAA084C00DBFC89 /* BFKit.framework */,
 				490314551F0C27CB00499354 /* BFKit.framework */,
-				4903145D1F0C27CC00499354 /* BFKit macOSTests.xctest */,
+				4903145D1F0C27CC00499354 /* BFKitTests macOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -630,9 +630,9 @@
 			productReference = 490314551F0C27CB00499354 /* BFKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4903145C1F0C27CC00499354 /* BFKit macOSTests */ = {
+		4903145C1F0C27CC00499354 /* BFKitTests macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4903146B1F0C27CC00499354 /* Build configuration list for PBXNativeTarget "BFKit macOSTests" */;
+			buildConfigurationList = 4903146B1F0C27CC00499354 /* Build configuration list for PBXNativeTarget "BFKitTests macOS" */;
 			buildPhases = (
 				490314591F0C27CC00499354 /* Sources */,
 				4903145A1F0C27CC00499354 /* Frameworks */,
@@ -643,9 +643,9 @@
 			dependencies = (
 				490314601F0C27CC00499354 /* PBXTargetDependency */,
 			);
-			name = "BFKit macOSTests";
+			name = "BFKitTests macOS";
 			productName = "BFKit macOSTests";
-			productReference = 4903145D1F0C27CC00499354 /* BFKit macOSTests.xctest */;
+			productReference = 4903145D1F0C27CC00499354 /* BFKitTests macOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		49381D401EAA084C00DBFC89 /* BFKit watchOS */ = {
@@ -768,7 +768,7 @@
 				49381D401EAA084C00DBFC89 /* BFKit watchOS */,
 				4971864A1D2339040032A98E /* BFKitTests iOS */,
 				490314541F0C27CB00499354 /* BFKit macOS */,
-				4903145C1F0C27CC00499354 /* BFKit macOSTests */,
+				4903145C1F0C27CC00499354 /* BFKitTests macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -1350,14 +1350,16 @@
 				490314671F0C27CC00499354 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		4903146B1F0C27CC00499354 /* Build configuration list for PBXNativeTarget "BFKit macOSTests" */ = {
+		4903146B1F0C27CC00499354 /* Build configuration list for PBXNativeTarget "BFKitTests macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				490314681F0C27CC00499354 /* Debug */,
 				490314691F0C27CC00499354 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49381D481EAA084D00DBFC89 /* Build configuration list for PBXNativeTarget "BFKit watchOS" */ = {
 			isa = XCConfigurationList;
