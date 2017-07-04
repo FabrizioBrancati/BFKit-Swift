@@ -1,4 +1,6 @@
-<p align="center"><img src="https://github.fabriziobrancati.com/bfkit/resources/banner-swift-new.png" alt="BFKit-Swift Banner"></p>
+<p align="center">
+
+<img src="https://github.fabriziobrancati.com/bfkit/resources/banner-swift-new.png" alt="BFKit-Swift Banner">
 
 [![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit-Swift.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit-Swift)
 [![Codecov](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift/branch/master/graph/badge.svg)](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift)
@@ -9,6 +11,8 @@
 <br>
 [![Language](https://img.shields.io/badge/language-Swift%204.0-orange.svg)](https://developer.apple.com/swift/)
 [![Platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20watchOS%20%7C%20Linux-ffc713.svg)][Documentation]
+
+</p>
 
 ---
 
