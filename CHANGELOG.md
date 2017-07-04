@@ -49,7 +49,7 @@ All notable changes to this project will be documented in this file.<br>
 ## Master
 ### Added
 - Added `init?(iso8601:)` and `iso8601()` functions to create a Date from an ISO 8601 String and vice-versa in Date extension
-- Added new functions in NSAttributedString extension to handle left, right, center, justified and natural text alignment
+- Added new functions in NSAttributedString extension to handle left, right, center and justified text alignment
 - Added `smoothLinearGradient(colors:, direction:)` function in UIView extension that uses `CGGradient` instead of `CAGradientLayer`
 - Added iPad Pro 12.9 2nd Generation and iPad Pro 10.5 devices in UIDevice extension
 - Added `fade(label:, duration: = default, toString:)` and `fade(label:, duration: = default, toAttributedString:)` animation functions in WKInterfaceController extension
@@ -60,7 +60,6 @@ All notable changes to this project will be documented in this file.<br>
 ### Improved
 - Now `dateString(format: = default)` in Date extension has a new `locale` parameter with a `default` value, so no changes are required
 - Now `init?(parse dateString:, format: = default)` in Date extension has a new `locale` parameter with a `default` value, so no changes are required
-- Removed `textAlignmentRight` API on `NSAttributedString` class extension because doesn't work on iOS
 - Updated SwiftLint to 0.20.0
 
 ### Fixed
