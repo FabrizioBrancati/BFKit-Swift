@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 2.x Releases
+- `2.5.x` Releases - [2.5.0](#250---better-gradients-and-dates)
 - `2.4.x` Releases - [2.4.0](#240---watchos-support) | [2.4.1](#241---swift-package-manager-returns)
 - `2.3.x` Releases - [2.3.0](#230---minor-breaking-changes)
 - `2.2.x` Releases - [2.2.0](#220---cryptographically-first) | [2.2.1](#221---better-log) | [2.2.2](#222---swift-31-ready)
@@ -29,6 +30,19 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ## Master
+### Added
+- Nothing
+
+### Improved
+- Nothing
+
+### Fixed
+- Nothing
+
+---
+
+## [2.5.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.5.0) - Better Gradients And Dates
+### 4 Jul 2017
 ### Added
 - Added `init?(iso8601:)` and `iso8601()` functions to create a Date from an ISO 8601 String and vice-versa in Date & String extensions
 - Added new functions in NSAttributedString extension to handle left, right, center and justified text alignment
