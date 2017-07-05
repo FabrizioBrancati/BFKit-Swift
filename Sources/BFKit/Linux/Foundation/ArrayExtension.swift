@@ -26,6 +26,39 @@
 
 import Foundation
 
+// MARK: - Global functions
+
+/// Creates a flatten array.
+///
+/// Example:
+///
+///     [1, 2, [3, [4]]] -> [1, 2, 3, 4]
+///
+/// - Parameter array: Array bo te flattened.
+/// - Returns: Returns a flatten array.
+public func flatten<T>(_ array: [T]) -> [T] {
+    /// Returned flattened array.
+    var flattened: [T] = []
+    
+    /// For every element inside the array.
+    for element in array {
+        /// If it's a nested array, safely cast.
+        if let subarray = element as? [T] {
+            /// For every subarray call the `flatten` function.
+            for subelement in flatten(subarray) {
+                /// We are now sure that this is an element
+                /// and we can add it to `flattened`.
+                flattened.append(subelement)
+            }
+        } else {
+            /// Otherwise is an element and add it to `flattened`.
+            flattened.append(element)
+        }
+    }
+    
+    return flattened
+}
+
 // MARK: - Array extension
 
 /// This extension adds some useful functions to Array.

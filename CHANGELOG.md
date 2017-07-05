@@ -49,7 +49,7 @@ All notable changes to this project will be documented in this file.<br>
 
 ## Master
 ### Added
-- Nothing
+- Added `flatten<T>(_ array:)` generic global function in Array extension
 
 ### Improved
 - Nothing
