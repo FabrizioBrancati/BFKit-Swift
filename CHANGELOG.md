@@ -41,6 +41,18 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+## macOS Support
+### Added
+- Added macOS Support
+
+### Improved
+- Nothing
+
+### Fixed
+- Nothing
+
+---
+
 ## [2.5.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.5.0) - Better Gradients And Dates
 ### 4 Jul 2017
 ### Added
