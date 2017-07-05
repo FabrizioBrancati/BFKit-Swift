@@ -30,6 +30,10 @@ import Foundation
 
 class ArrayExtensionTests: XCTestCase {
     static let allTests = [
+        ("testFlattenEmpty", testFlattenEmpty),
+        ("testFlattenOneElement", testFlattenOneElement),
+        ("testFlattenNestedElements", testFlattenNestedElements),
+        ("testFlattenMixed", testFlattenMixed),
         ("testIsNotEmpty", testIsNotEmpty),
         ("testCircleObjectAt", testCircleObjectAt),
         ("testRandom", testRandom),
@@ -48,6 +52,41 @@ class ArrayExtensionTests: XCTestCase {
     
     override func tearDown() {
         super.tearDown()
+    }
+    
+    func testFlattenEmpty() {
+        let flattened: [Int]? = flatten([]) as? [Int]
+        
+        XCTAssertNotNil(flattened)
+        XCTAssertEqual(flattened ?? [], [])
+    }
+    
+    func testFlattenOneElement() {
+        let flattened: [Int]? = flatten([1])
+        
+        XCTAssertNotNil(flattened)
+        XCTAssertEqual(flattened ?? [], [1])
+    }
+    
+    func testFlattenNestedElements() {
+        let flattened: [Int]? = flatten([1, 2, [3, 4, [5, 6]], 7, [[[[[8]]]]]]) as? [Int]
+        
+        XCTAssertNotNil(flattened)
+        XCTAssertEqual(flattened ?? [], [1, 2, 3, 4, 5, 6, 7, 8])
+    }
+    
+    func testFlattenMixed() {
+        let flattened: [Any]? = flatten([1, 2.0, ["3", true, [5, 6]], 7, [[[[[8]]]]]])
+        
+        XCTAssertNotNil(flattened)
+        XCTAssertEqual(flattened?[0] as? Int, 1)
+        XCTAssertEqual(flattened?[1] as? Double, 2.0)
+        XCTAssertEqual(flattened?[2] as? String, "3")
+        XCTAssertEqual(flattened?[3] as? Bool, true)
+        XCTAssertEqual(flattened?[4] as? Int, 5)
+        XCTAssertEqual(flattened?[5] as? Int, 6)
+        XCTAssertEqual(flattened?[6] as? Int, 7)
+        XCTAssertEqual(flattened?[7] as? Int, 8)
     }
     
     func testIsNotEmpty() {
