@@ -236,10 +236,11 @@ Open and run the BFKitExample project in Example folder in this repo, with Xcode
 Todo
 ====
 
-- [ ] Add macOS and tvOS support
+- [ ] Add tvOS support
 - [ ] Create a new Example App that shows all the functionalities of BFKit-Swift
 - [ ] 100% of code coverage with Unit Tests
 - [ ] Improve code to get an _A_ from codebeat
+- [x] Add macOS support
 - [x] Add watchOS support
 - [x] Create Unit Tests and add Codecov badge
 - [x] Add Linux support (Foundation extensions only)
