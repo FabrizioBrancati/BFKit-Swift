@@ -7,7 +7,7 @@
 [![Version](https://img.shields.io/cocoapods/v/BFKit-Swift.svg?style=flat)][Documentation]
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)
 <br>
-[![Language](https://img.shields.io/badge/language-Swift%203.0%20/%203.1%20/%204.0-orange.svg)](https://developer.apple.com/swift/)
+[![Language](https://img.shields.io/badge/language-Swift%203.0%20/%203.1%20/%204.0-orange.svg)](https://swift.org/)
 [![Platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20watchOS%20%7C%20Linux-ffc713.svg)][Documentation]
 
 ---
