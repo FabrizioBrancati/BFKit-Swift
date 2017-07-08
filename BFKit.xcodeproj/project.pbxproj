@@ -153,6 +153,8 @@
 		490315741F0C358600499354 /* ThreadExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314E01F0C2EA600499354 /* ThreadExtensionTests.swift */; };
 		490315751F0C3A9F00499354 /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903147D1F0C2EA600499354 /* FileManagerExtension.swift */; };
 		490315771F0C3A9F00499354 /* NSPointerArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903147F1F0C2EA600499354 /* NSPointerArrayExtension.swift */; };
+		493868011F10F98700A793F7 /* NSAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903147E1F0C2EA600499354 /* NSAttributedStringExtension.swift */; };
+		493868021F10FA3900A793F7 /* NSAttributedStringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314B81F0C2EA600499354 /* NSAttributedStringExtensionTests.swift */; };
 		4971864C1D2339040032A98E /* BFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 497186411D2339040032A98E /* BFKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -842,6 +844,7 @@
 				490315391F0C350F00499354 /* SetExtension.swift in Sources */,
 				4903152D1F0C350F00499354 /* BFDataStructures.swift in Sources */,
 				490315341F0C350F00499354 /* DateExtension.swift in Sources */,
+				493868011F10F98700A793F7 /* NSAttributedStringExtension.swift in Sources */,
 				490315311F0C350F00499354 /* ArrayExtension.swift in Sources */,
 				490315331F0C350F00499354 /* DataExtension.swift in Sources */,
 				490315351F0C350F00499354 /* DictionaryExtension.swift in Sources */,
@@ -856,6 +859,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				490315661F0C358600499354 /* BFAppTests.swift in Sources */,
+				493868021F10FA3900A793F7 /* NSAttributedStringExtensionTests.swift in Sources */,
 				490315701F0C358600499354 /* NumberExtensionTests.swift in Sources */,
 				490315741F0C358600499354 /* ThreadExtensionTests.swift in Sources */,
 				490315731F0C358600499354 /* StringExtensionTests.swift in Sources */,
