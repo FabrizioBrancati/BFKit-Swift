@@ -155,6 +155,8 @@
 		490315771F0C3A9F00499354 /* NSPointerArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903147F1F0C2EA600499354 /* NSPointerArrayExtension.swift */; };
 		493868011F10F98700A793F7 /* NSAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903147E1F0C2EA600499354 /* NSAttributedStringExtension.swift */; };
 		493868021F10FA3900A793F7 /* NSAttributedStringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314B81F0C2EA600499354 /* NSAttributedStringExtensionTests.swift */; };
+		493868031F10FE0300A793F7 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314831F0C2EA600499354 /* UIColorExtension.swift */; };
+		493868041F113C2800A793F7 /* UIColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314BD1F0C2EA600499354 /* UIColorExtensionTests.swift */; };
 		4971864C1D2339040032A98E /* BFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 497186411D2339040032A98E /* BFKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -839,6 +841,7 @@
 				490315371F0C350F00499354 /* NumberExtension.swift in Sources */,
 				490315751F0C3A9F00499354 /* FileManagerExtension.swift in Sources */,
 				4903153B1F0C350F00499354 /* ThreadExtension.swift in Sources */,
+				493868031F10FE0300A793F7 /* UIColorExtension.swift in Sources */,
 				4903152C1F0C350F00499354 /* BFApp.swift in Sources */,
 				490315361F0C350F00499354 /* NSObjectExtension.swift in Sources */,
 				490315391F0C350F00499354 /* SetExtension.swift in Sources */,
@@ -862,6 +865,7 @@
 				493868021F10FA3900A793F7 /* NSAttributedStringExtensionTests.swift in Sources */,
 				490315701F0C358600499354 /* NumberExtensionTests.swift in Sources */,
 				490315741F0C358600499354 /* ThreadExtensionTests.swift in Sources */,
+				493868041F113C2800A793F7 /* UIColorExtensionTests.swift in Sources */,
 				490315731F0C358600499354 /* StringExtensionTests.swift in Sources */,
 				4903156F1F0C358600499354 /* NSObjectExtensionTests.swift in Sources */,
 				4903156D1F0C358600499354 /* DateExtensionTests.swift in Sources */,
