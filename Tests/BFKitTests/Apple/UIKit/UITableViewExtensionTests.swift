@@ -58,4 +58,15 @@ class UITableViewExtensionTests: XCTestCase {
         
         XCTAssertNil(indexPath)
     }
+    
+    func testInitFrameStyleCellSparatorStyleSeparatorInsetDataSourceDelegate() {
+        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: 320, height: 500), style: .grouped, cellSeparatorStyle: .singleLine, separatorInset: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), dataSource: nil, delegate: nil)
+        
+        XCTAssertEqual(tableView.frame, CGRect(x: 0, y: 0, width: 320, height: 500))
+        XCTAssertEqual(tableView.style, .grouped)
+        XCTAssertEqual(tableView.separatorStyle, .singleLine)
+        XCTAssertEqual(tableView.separatorInset, UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+        XCTAssertNil(tableView.delegate)
+        XCTAssertNil(tableView.dataSource)
+    }
 }

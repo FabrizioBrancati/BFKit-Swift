@@ -159,11 +159,7 @@ class DateExtensionTests: XCTestCase {
     }
     
     func testInitDateTime() {
-        guard let newDate = Date(year: 2016, month: 10, day: 9) else {
-            XCTFail()
-            return
-        }
-        guard let composed = Date(date: newDate, time: date) else {
+        guard let newDate = Date(year: 2016, month: 10, day: 9), let composed = Date(date: newDate, time: date) else {
             XCTFail()
             return
         }
@@ -177,17 +173,19 @@ class DateExtensionTests: XCTestCase {
     
     func testInitISO8601() {
         let iso8601: String = "2016-10-09T10:30:45.500Z"
-        guard let date = Date(iso8601: iso8601) else {
-            XCTFail()
-            return
-        }
+        let date = Date(iso8601: iso8601)
         
-        XCTAssertEqual(date.year, 2016)
-        XCTAssertEqual(date.month, 10)
-        XCTAssertEqual(date.day, 9)
-        XCTAssertEqual(date.hour, 10 + TimeZone.current.secondsFromGMT() / 60 / 60)
-        XCTAssertEqual(date.minute, 30)
-        XCTAssertEqual(date.second, 45)
+        XCTAssertEqual(date?.year, 2016)
+        XCTAssertEqual(date?.month, 10)
+        XCTAssertEqual(date?.day, 9)
+        XCTAssertEqual(date?.hour, 10 + TimeZone.current.secondsFromGMT() / 60 / 60)
+        XCTAssertEqual(date?.minute, 30)
+        XCTAssertEqual(date?.second, 45)
+        
+        let iso8601Empty: String = ""
+        let dateNil = Date(iso8601: iso8601Empty)
+        
+        XCTAssertNil(dateNil)
     }
     
     func testDaysBetween() {

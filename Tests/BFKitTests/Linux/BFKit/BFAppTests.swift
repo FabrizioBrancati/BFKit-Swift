@@ -64,7 +64,7 @@ class BFAppTests: XCTestCase {
             XCTAssertTrue(isFirstStart == true || isFirstStart == false)
         }
         
-        let isFirstStartVersion = BFApp.isFirstStart(version: "3.0.0")
+        let isFirstStartVersion = BFApp.isFirstStart(version: "4.0.0")
         BFApp.debug {
             XCTAssertTrue(isFirstStartVersion == true || isFirstStartVersion == false)
         }
@@ -79,7 +79,7 @@ class BFAppTests: XCTestCase {
             XCTAssertTrue(isFirstStart == true || isFirstStart == false)
         }
         
-        BFApp.onFirstStart(version: "3.0.0") { isFirstStart in
+        BFApp.onFirstStart(version: "4.0.0") { isFirstStart in
             XCTAssertTrue(isFirstStart == true || isFirstStart == false)
         }
     }

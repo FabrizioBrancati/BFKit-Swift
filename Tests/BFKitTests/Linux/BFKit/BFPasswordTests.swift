@@ -30,7 +30,13 @@ import Foundation
 
 class BFPasswordTests: XCTestCase {
     static let allTests = [
-        ("testStrength", testStrength)
+        ("testStrengthVeryWeak", testStrengthVeryWeak),
+        ("testStrengthWeak", testStrengthWeak),
+        ("testStrengthAverage", testStrengthAverage),
+        ("testStrengthStrong", testStrengthStrong),
+        ("testStrengthVeryStrong", testStrengthVeryStrong),
+        ("testStrengthSecure", testStrengthSecure),
+        ("testStrengthVerySecure", testStrengthVerySecure)
     ]
     
     override func setUp() {
@@ -41,10 +47,69 @@ class BFPasswordTests: XCTestCase {
         super.tearDown()
     }
     
-    func testStrength() {
+    func testEmpty() {
+        let password = ""
+        let strength = BFPassword.strength(password: password)
+        
+        XCTAssertEqual(strength, .veryWeak)
+    }
+    
+    func testStrengthVeryWeak() {
+        let password = "Test9"
+        let strength = BFPassword.strength(password: password)
+        
+        XCTAssertEqual(strength, .veryWeak)
+        
+        let password2 = "te"
+        let strength2 = BFPassword.strength(password: password2)
+        
+        XCTAssertEqual(strength2, .veryWeak)
+        
+        let password3 = "t!"
+        let strength3 = BFPassword.strength(password: password3)
+        
+        XCTAssertEqual(strength3, .veryWeak)
+    }
+    
+    func testStrengthWeak() {
+        let password = "Test992"
+        let strength = BFPassword.strength(password: password)
+        
+        XCTAssertEqual(strength, .weak)
+    }
+    
+    func testStrengthAverage() {
         let password = "TestPassword92"
         let strength = BFPassword.strength(password: password)
         
         XCTAssertEqual(strength, .average)
+    }
+    
+    func testStrengthStrong() {
+        let password = "TestPassword9!!"
+        let strength = BFPassword.strength(password: password)
+        
+        XCTAssertEqual(strength, .strong)
+    }
+    
+    func testStrengthVeryStrong() {
+        let password = "TestPassword92!?="
+        let strength = BFPassword.strength(password: password)
+        
+        XCTAssertEqual(strength, .veryStrong)
+    }
+    
+    func testStrengthSecure() {
+        let password = "TestPassword992!!!!"
+        let strength = BFPassword.strength(password: password)
+        
+        XCTAssertEqual(strength, .secure)
+    }
+    
+    func testStrengthVerySecure() {
+        let password = "TestPasswordP992=?!)"
+        let strength = BFPassword.strength(password: password)
+        
+        XCTAssertEqual(strength, .verySecure)
     }
 }
