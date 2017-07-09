@@ -32,6 +32,18 @@ All notable changes to this project will be documented in this file.<br>
 ## Master
 ### Added
 - Added `flatten<T>(_ array:)` generic global function in Array extension
+
+### Improved
+- Nothing
+
+### Fixed
+- Nothing
+
+---
+
+## macOS Support
+### Added
+- Added macOS Support
 - Added `dateSeparator` and `timeSeparator` to `init?(date:, time:)` with a `default` value, so no changes are required
 
 ### Improved
@@ -42,18 +54,7 @@ All notable changes to this project will be documented in this file.<br>
 
 ### Fixed
 - Fixed missing style in `init(frame:, style:, cellSeparatorStyle:, separatorInset:, dataSource:, delegate:)` in UITableView extension
-
----
-
-## macOS Support
-### Added
-- Added macOS Support
-
-### Improved
-- Nothing
-
-### Fixed
-- Nothing
+- Fixing `animate(path:, count: = default, duration:, autoreverses: = default)` autoreverses
 
 ---
 
