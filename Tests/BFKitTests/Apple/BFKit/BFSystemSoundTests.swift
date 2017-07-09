@@ -62,7 +62,7 @@ class BFSystemSoundTests: XCTestCase {
     
     func testDisposeSoundNotExist() {
         do {
-            try BFSystemSound.disposeSound(id: SystemSoundID(99999999))
+            try BFSystemSound.disposeSound(soundID: SystemSoundID(99999999))
             
             XCTFail()
         } catch {
