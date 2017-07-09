@@ -223,10 +223,10 @@ public extension Color {
     
     /// Create a color from a HEX string.
     /// It supports the following type:
-    /// - #ARGB, ARGB if irstIsAlpha is true. #RGBA, RGBA if firstIsAlpha is false.
+    /// - #ARGB, ARGB if alphaFirst is true. #RGBA, RGBA if alphaFirst is false.
     /// - #ARGB.
     /// - #RRGGBB.
-    /// - #AARRGGBB, AARRGGBB if irstIsAlpha is true. #RRGGBBAA, RRGGBBAA if firstIsAlpha is false.
+    /// - #AARRGGBB, AARRGGBB if alphaFirst is true. #RRGGBBAA, RRGGBBAA if firstIsAlpha is false.
     ///
     /// - Parameters:
     ///   - hexString: HEX string.
@@ -241,7 +241,7 @@ public extension Color {
             red = Color.colorComponent(fromString: colorString, range: 0..<1)
             green = Color.colorComponent(fromString: colorString, range: 1..<2)
             blue = Color.colorComponent(fromString: colorString, range: 2..<3)
-        case 4: /// ARGB if irstIsAlpha is true, otherwise RGBA.
+        case 4: /// ARGB if alphaFirst is true, otherwise RGBA.
             if alphaFirst {
                 alpha = Color.colorComponent(fromString: colorString, range: 0..<1)
                 red = Color.colorComponent(fromString: colorString, range: 1..<2)
@@ -258,7 +258,7 @@ public extension Color {
             red = Color.colorComponent(fromString: colorString, range: 0..<2)
             green = Color.colorComponent(fromString: colorString, range: 2..<4)
             blue = Color.colorComponent(fromString: colorString, range: 4..<6)
-        case 8: /// AARRGGBB if irstIsAlpha is true, otherwise RRGGBBAA.
+        case 8: /// AARRGGBB if alphaFirst is true, otherwise RRGGBBAA.
             if alphaFirst {
                 alpha = Color.colorComponent(fromString: colorString, range: 0..<2)
                 red = Color.colorComponent(fromString: colorString, range: 2..<4)
