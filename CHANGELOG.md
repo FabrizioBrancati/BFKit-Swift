@@ -54,7 +54,7 @@ All notable changes to this project will be documented in this file.<br>
 
 ### Fixed
 - Fixed missing style in `init(frame:, style:, cellSeparatorStyle:, separatorInset:, dataSource:, delegate:)` in UITableView extension
-- Fixing `animate(path:, count: = default, duration:, autoreverses: = default)` autoreverses
+- Fixed `animate(path:, count: = default, duration:, autoreverses: = default)` autoreverses
 
 ---
 
