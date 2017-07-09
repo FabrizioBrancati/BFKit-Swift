@@ -649,6 +649,7 @@ public extension String {
     #endif
 }
 
+/// Infix operator `???` with NilCoalescingPrecedence.
 infix operator ???: NilCoalescingPrecedence
 
 /// Returns defaultValue if optional is nil, otherwise returns optional.
