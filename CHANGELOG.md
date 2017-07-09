@@ -32,12 +32,16 @@ All notable changes to this project will be documented in this file.<br>
 ## Master
 ### Added
 - Added `flatten<T>(_ array:)` generic global function in Array extension
+- Added `dateSeparator` and `timeSeparator` to `init?(date:, time:)` with a `default` value, so no changes are required
 
 ### Improved
-- Nothing
+- Removed Apple Watch device from UIDevice extension (Can't be used)
+- Removed support for iOS 7 in UIImage extension (Refuse)
+- Improved BFPassword struct
+- Improved tests
 
 ### Fixed
-- Nothing
+- Fixed missing style in `init(frame:, style:, cellSeparatorStyle:, separatorInset:, dataSource:, delegate:)` in UITableView extension
 
 ---
 
