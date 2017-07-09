@@ -130,8 +130,8 @@ class UIColorExtensionTests: XCTestCase {
     
     func testInitHexAlphaFirst() {
         let color = Color(hex: "0FF")
-        let _ = Color(hex: "00FF", alphaFirst: true)
-        let _ = Color(hex: "0FF0")
+        _ = Color(hex: "00FF", alphaFirst: true)
+        _ = Color(hex: "0FF0")
         let color4 = Color(hex: "00FFFF")
         let color5 = Color(hex: "#00FFFFFF", alphaFirst: false)
         let color6 = Color(hex: "#FF00FFFF", alphaFirst: true)
@@ -171,9 +171,9 @@ class UIColorExtensionTests: XCTestCase {
     }
     
     func testColorString() {
-        let _ = Color.color(string: "black")
-        let _ = Color.color(string: "darkGray")
-        let _ = Color.color(string: "lightGray")
+        _ = Color.color(string: "black")
+        _ = Color.color(string: "darkGray")
+        _ = Color.color(string: "lightGray")
         let white = Color.color(string: "white")
         let gray = Color.color(string: "gray")
         let red = Color.color(string: "red")
@@ -203,7 +203,7 @@ class UIColorExtensionTests: XCTestCase {
         XCTAssertEqual(brown, Color.brown)
         XCTAssertEqual(clear, Color.clear)
         
-        let _ = Color.color(string: "darkOrange")
+        _ = Color.color(string: "darkOrange")
         let color3 = Color.color(string: "")
         
         //XCTAssertEqual(color2, Color.black)
