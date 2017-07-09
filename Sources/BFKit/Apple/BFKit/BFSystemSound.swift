@@ -284,7 +284,7 @@ public class BFSystemSound {
         case vibrate = 4095
     }
     
-    // MARK: - Functions -
+    // MARK: - Functions
     
     /// Play a system sound from the ID.
     ///
