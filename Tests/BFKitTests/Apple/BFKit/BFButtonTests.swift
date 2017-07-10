@@ -40,6 +40,13 @@ class BFButtonTests: XCTestCase {
         super.tearDown()
     }
     
+    func testEncodeDecode() {
+        FileManager.default.savePlist(object: button, in: .cache, filename: "BFButton")
+        let decoded = FileManager.default.readPlist(from: .cache, filename: "BFButton") as? BFButton
+        
+        XCTAssertEqual(decoded?.frame, CGRect(x: 0, y: 0, width: 100, height: 44))
+    }
+    
     func testIsHighlighted() {
         button.isHighlighted = true
         XCTAssertTrue(button.isHighlighted, "isHighlighted is not true")
@@ -53,14 +60,6 @@ class BFButtonTests: XCTestCase {
         
         XCTAssertNotNil(button.overlayImageView.image)
     }
-    
-    /*func testDecode() {
-        
-    }*/
-    
-    /*func testEncode() {
- 
-    }*/
     
     func testInitFrame() {
         XCTAssertTrue(!button.isHighlighted)
