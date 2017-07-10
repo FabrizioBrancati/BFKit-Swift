@@ -55,6 +55,7 @@ All notable changes to this project will be documented in this file.<br>
 ### Fixed
 - Fixed missing style in `init(frame:, style:, cellSeparatorStyle:, separatorInset:, dataSource:, delegate:)` in UITableView extension
 - Fixed `animate(path:, count: = default, duration:, autoreverses: = default)` autoreverses
+- Fixed BFButton with a default `fadeDuration` value
 
 ---
 
