@@ -17,7 +17,7 @@
 <p align="center">
     <a href="#swift-3">Swift 3</a> &bull;
     <a href="#objective-c-version-">Objective-C Version</a> &bull;
-    <a href="#what-does-it-do">What does it do</a> &bull;
+    <a href="#features">Features</a> &bull;
     <a href="#classes-and-extensions-compatibility">Classes and Extensions Compatibility</a> &bull;
     <a href="#requirements">Requirements</a> &bull;
     <a href="#communication">Communication</a> &bull;
@@ -42,8 +42,8 @@ Objective-C Version <img src="http://github.fabriziobrancati.com/bfkit/resources
 
 If you are looking for Objective-C version check it out here: **[BFKit](https://github.com/FabrizioBrancati/BFKit)**.
 
-What does it do
-===============
+Features
+========
 
 BFKit-Swift is a collection of useful classes, structs and extensions to **develop Apps faster**.<br>
 For example you can use every **iOS font with just an enum!**<br>
@@ -235,7 +235,7 @@ To see what has changed in recent versions of BFKit-Swift, see the **[CHANGELOG.
 Example
 =======
 
-Open and run the BFKitExample project in Example folder in this repo, with Xcode and see BFKit-Swift in action!
+Open and run the BFKitExample project in Example folder in this repo with Xcode and see BFKit-Swift in action!
 
 Todo
 ====
