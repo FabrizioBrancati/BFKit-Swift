@@ -72,7 +72,7 @@ public extension WKInterfaceController {
     ///   - duration: Fade duration. Default is 0.2.
     ///   - string: String to fade to.
     @available(watchOS 3.0, *)
-    public func fade(label: WKInterfaceLabel, duration: TimeInterval = 0.15, toAttributedString string: NSAttributedString) {
+    public func fade(label: WKInterfaceLabel, duration: TimeInterval = 0.5, toAttributedString string: NSAttributedString) {
         self.animate(withDuration: duration / 2) { 
             label.setAlpha(0)
             Timer.scheduledTimer(withTimeInterval: duration / 2, repeats: false) { _ in
