@@ -74,10 +74,9 @@
 		490315241F0C31BE00499354 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314851F0C2EA600499354 /* UIFontExtension.swift */; };
 		490315251F0C31BE00499354 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314861F0C2EA600499354 /* UIImageExtension.swift */; };
 		490315261F0C31EC00499354 /* WKInterfaceControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314961F0C2EA600499354 /* WKInterfaceControllerExtension.swift */; };
-		490315271F0C338D00499354 /* BFKit-iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 490314AB1F0C2EA600499354 /* BFKit-iOS.h */; };
-		490315291F0C343C00499354 /* BFKit-watchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 490315281F0C343C00499354 /* BFKit-watchOS.h */; };
-		4903152A1F0C348B00499354 /* BFKit-watchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 490315281F0C343C00499354 /* BFKit-watchOS.h */; };
-		4903152B1F0C34D100499354 /* BFKit-macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 490314AA1F0C2EA600499354 /* BFKit-macOS.h */; };
+		490315271F0C338D00499354 /* BFKit-iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 490314AB1F0C2EA600499354 /* BFKit-iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4903152A1F0C348B00499354 /* BFKit-watchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 490315281F0C343C00499354 /* BFKit-watchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4903152B1F0C34D100499354 /* BFKit-macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 490314AA1F0C2EA600499354 /* BFKit-macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4903152C1F0C350F00499354 /* BFApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314991F0C2EA600499354 /* BFApp.swift */; };
 		4903152D1F0C350F00499354 /* BFDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903149A1F0C2EA600499354 /* BFDataStructures.swift */; };
 		4903152E1F0C350F00499354 /* BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903149B1F0C2EA600499354 /* BFKit.swift */; };
@@ -609,7 +608,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				490315271F0C338D00499354 /* BFKit-iOS.h in Headers */,
-				490315291F0C343C00499354 /* BFKit-watchOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
