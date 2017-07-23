@@ -82,7 +82,7 @@ Classes and Extensions Compatibility
 | [NSAttributedString](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/NSAttributedString.html) | ![✓]       | ![✓]        |            |
 | [NSPointerArray](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/NSPointerArray.html)         | ![✓]       | ![✓]        |            |
 | [ProcessInfo](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/ProcessInfo.html)               | ![✓]       | ![✓]        | ![✓]       |
-| [Set](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Set.html)                         | ![✓]       | ![✓]        | ![✓]       |
+| [Set](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Set.html)                               | ![✓]       | ![✓]        | ![✓]       |
 | [String](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/String.html)                         | ![✓]       | ![✓]        | ![✓]       |
 | [Thread](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Functions.html)                                 | ![✓]       | ![✓]        | ![✓]       |
 
@@ -119,8 +119,8 @@ Classes and Extensions Compatibility
 <details>
 <summary><strong>WatchKit</strong></summary>
 
-|                                                                                                                                         | **iOS**    | **watchOS** | **Linux**  |
-|----------------------------------------------------------------------------------------------------------------------------|------------|-------------|------------|
+|                                                                                                                              | **iOS**    | **watchOS** | **Linux**  |
+|------------------------------------------------------------------------------------------------------------------------------|------------|-------------|------------|
 | [WKInterfaceController](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/WKInterfaceController.html) |            | ![✓]        |            |
 
 </details>
@@ -199,7 +199,7 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
 - Import the framework with ```import BFKit```
 - Enjoy!
 
-### Swift Package Manager (Linux)
+### Swift Package Manager
 - Create a **Package.swift** file in your **project directory** and write into:
 
     ```swift
