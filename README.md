@@ -200,7 +200,7 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
 - Import the framework with ```import BFKit```
 - Enjoy!
 
-### Swift Package Manager (Linux)
+### Swift Package Manager
 - Create a **Package.swift** file in your **project directory** and write into:
 
     ```swift
