@@ -74,9 +74,7 @@
 		490315241F0C31BE00499354 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314851F0C2EA600499354 /* UIFontExtension.swift */; };
 		490315251F0C31BE00499354 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314861F0C2EA600499354 /* UIImageExtension.swift */; };
 		490315261F0C31EC00499354 /* WKInterfaceControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314961F0C2EA600499354 /* WKInterfaceControllerExtension.swift */; };
-		490315271F0C338D00499354 /* BFKit-iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 490314AB1F0C2EA600499354 /* BFKit-iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4903152A1F0C348B00499354 /* BFKit-watchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 490315281F0C343C00499354 /* BFKit-watchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4903152B1F0C34D100499354 /* BFKit-macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 490314AA1F0C2EA600499354 /* BFKit-macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		490315271F0C338D00499354 /* BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 490314AB1F0C2EA600499354 /* BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4903152C1F0C350F00499354 /* BFApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314991F0C2EA600499354 /* BFApp.swift */; };
 		4903152D1F0C350F00499354 /* BFDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903149A1F0C2EA600499354 /* BFDataStructures.swift */; };
 		4903152E1F0C350F00499354 /* BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903149B1F0C2EA600499354 /* BFKit.swift */; };
@@ -152,6 +150,9 @@
 		490315741F0C358600499354 /* ThreadExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314E01F0C2EA600499354 /* ThreadExtensionTests.swift */; };
 		490315751F0C3A9F00499354 /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903147D1F0C2EA600499354 /* FileManagerExtension.swift */; };
 		490315771F0C3A9F00499354 /* NSPointerArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903147F1F0C2EA600499354 /* NSPointerArrayExtension.swift */; };
+		491537001F269C9F007C8338 /* Info-watchOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 491536FF1F269C9F007C8338 /* Info-watchOS.plist */; };
+		491537011F269CF0007C8338 /* BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 490314AB1F0C2EA600499354 /* BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		491537021F269CF0007C8338 /* BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 490314AB1F0C2EA600499354 /* BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		493868011F10F98700A793F7 /* NSAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903147E1F0C2EA600499354 /* NSAttributedStringExtension.swift */; };
 		493868021F10FA3900A793F7 /* NSAttributedStringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314B81F0C2EA600499354 /* NSAttributedStringExtensionTests.swift */; };
 		493868031F10FE0300A793F7 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314831F0C2EA600499354 /* UIColorExtension.swift */; };
@@ -223,8 +224,7 @@
 		490314A71F0C2EA600499354 /* SetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetExtension.swift; sourceTree = "<group>"; };
 		490314A81F0C2EA600499354 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		490314A91F0C2EA600499354 /* ThreadExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadExtension.swift; sourceTree = "<group>"; };
-		490314AA1F0C2EA600499354 /* BFKit-macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BFKit-macOS.h"; sourceTree = "<group>"; };
-		490314AB1F0C2EA600499354 /* BFKit-iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BFKit-iOS.h"; sourceTree = "<group>"; };
+		490314AB1F0C2EA600499354 /* BFKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFKit.h; sourceTree = "<group>"; };
 		490314AC1F0C2EA600499354 /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
 		490314AD1F0C2EA600499354 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		490314B21F0C2EA600499354 /* BFButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFButtonTests.swift; sourceTree = "<group>"; };
@@ -272,7 +272,7 @@
 		490314E11F0C2EA600499354 /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
 		490314E21F0C2EA600499354 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		490314E31F0C2EA600499354 /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
-		490315281F0C343C00499354 /* BFKit-watchOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BFKit-watchOS.h"; sourceTree = "<group>"; };
+		491536FF1F269C9F007C8338 /* Info-watchOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
 		49381D411EAA084C00DBFC89 /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		497186411D2339040032A98E /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4971864B1D2339040032A98E /* BFKitTests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BFKitTests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -323,11 +323,10 @@
 			isa = PBXGroup;
 			children = (
 				490314751F0C2EA600499354 /* BFKit */,
-				490314AB1F0C2EA600499354 /* BFKit-iOS.h */,
-				490314AA1F0C2EA600499354 /* BFKit-macOS.h */,
-				490315281F0C343C00499354 /* BFKit-watchOS.h */,
-				490314AC1F0C2EA600499354 /* Info-macOS.plist */,
+				490314AB1F0C2EA600499354 /* BFKit.h */,
 				490314AD1F0C2EA600499354 /* Info-iOS.plist */,
+				490314AC1F0C2EA600499354 /* Info-macOS.plist */,
+				491536FF1F269C9F007C8338 /* Info-watchOS.plist */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -591,7 +590,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4903152B1F0C34D100499354 /* BFKit-macOS.h in Headers */,
+				491537011F269CF0007C8338 /* BFKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,7 +598,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4903152A1F0C348B00499354 /* BFKit-watchOS.h in Headers */,
+				491537021F269CF0007C8338 /* BFKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,7 +606,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				490315271F0C338D00499354 /* BFKit-iOS.h in Headers */,
+				490315271F0C338D00499354 /* BFKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -765,9 +764,9 @@
 			projectRoot = "";
 			targets = (
 				497186401D2339040032A98E /* BFKit iOS */,
+				490314541F0C27CB00499354 /* BFKit macOS */,
 				49381D401EAA084C00DBFC89 /* BFKit watchOS */,
 				4971864A1D2339040032A98E /* BFKitTests iOS */,
-				490314541F0C27CB00499354 /* BFKit macOS */,
 				4903145C1F0C27CC00499354 /* BFKitTests macOS */,
 			);
 		};
@@ -799,6 +798,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				491537001F269C9F007C8338 /* Info-watchOS.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
