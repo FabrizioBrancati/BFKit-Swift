@@ -25,12 +25,25 @@
 //  SOFTWARE.
 
 import Foundation
+#if os(iOS) || os(watchOS)
+    import UIKit
+#elseif os(macOS)
+    import AppKit
+#endif
 
 /// BFKit version string.
 public let BFKitVersion = "2.5.0"
 
 /// BFKit author string.
 public let BFKitAuthor = "Fabrizio Brancati"
+
+#if os(iOS) || os(watchOS)
+    public typealias Font = UIFont
+    public typealias Color = UIColor
+#elseif os(macOS)
+    public typealias Font = NSFont
+    public typealias Color = NSColor
+#endif
 
 /// BFKit errors enum.
 ///

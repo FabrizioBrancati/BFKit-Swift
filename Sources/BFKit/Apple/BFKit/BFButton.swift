@@ -33,7 +33,7 @@ open class BFButton: UIButton {
     // MARK: - Variables
     
     /// The fade duration.
-    public var fadeDuration: Float!
+    public var fadeDuration: Float = 0
     
     /// The animation on highlighted status.
     open override var isHighlighted: Bool {

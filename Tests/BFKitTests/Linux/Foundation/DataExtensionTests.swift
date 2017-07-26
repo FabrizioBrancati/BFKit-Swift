@@ -31,7 +31,8 @@ import Foundation
 class DataExtensionTests: XCTestCase {
     static let allTests = [
         ("testUTF8", testUTF8),
-        ("testASCII", testASCII)
+        ("testASCII", testASCII),
+        ("testReadableUUID", testReadableUUID)
     ]
     
     let data = Data(base64Encoded: "VGhpcyBpcyBhIHRlc3Q=")!
@@ -62,7 +63,9 @@ class DataExtensionTests: XCTestCase {
         XCTAssertEqual(ascii, "This is a test")
     }
     
-    /*func testReadableUUID() {
+    func testReadableUUID() {
+        let uuid = "<EFCE4D7D 539A 42C2 80DB 934ACBA28AD3>".data(using: String.Encoding.utf8)?.readableUUID()
         
-    }*/
+        XCTAssertNotNil(uuid)
+    }
 }

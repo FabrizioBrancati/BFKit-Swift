@@ -90,7 +90,7 @@ public extension UIDevice {
     /// Example: 9.
     public static var osMajorVersion: Int {
         let subVersion = UIDevice.current.systemVersion.substring(to: ".")
-        guard  let intSubVersion = Int(subVersion) else {
+        guard let intSubVersion = Int(subVersion) else {
             return 0
         }
         return intSubVersion
@@ -195,13 +195,6 @@ public extension UIDevice {
         case "AppleTV3,1":      return "Apple TV 3G"
         case "AppleTV3,2":      return "Apple TV 3G"
         case "AppleTV5,3":      return "Apple TV 4G"
-        // Apple Watch
-        case "Watch1,1":        return "Apple Watch 38mm"
-        case "Watch1,2":        return "Apple Watch 42mm"
-        case "Watch2,3":        return "Apple Watch Series 2 38mm"
-        case "Watch2,4":        return "Apple Watch Series 2 42mm"
-        case "Watch2,6":        return "Apple Watch Series 1 38mm"
-        case "Watch2,7":        return "Apple Watch Series 1 42mm"
         // Simulator
         case "i386", "x86_64":  return "Simulator"
         default:
@@ -388,18 +381,9 @@ public extension UIDevice {
         var oldUUID: String? = nil
         var isValid = false, needsUpdate = false
         
-        if uniqueIdentifier is Data {
-            let data: Data = uniqueIdentifier as! Data // swiftlint:disable:this force_cast
-            guard let newUUID = data.utf8() else {
-                return
-            }
-            isValid = newUUID.isUUIDForAPNS()
-        } else if uniqueIdentifier is NSString {
-            let string: String = uniqueIdentifier as! String // swiftlint:disable:this force_cast
-            newUUID = string.readableUUID()
-            isValid = newUUID.isUUIDForAPNS()
-        } else if uniqueIdentifier is String {
-            let string: String = uniqueIdentifier as! String // swiftlint:disable:this force_cast
+        if uniqueIdentifier is Data, let data: Data = uniqueIdentifier as? Data, let newUUIDData = data.utf8() {
+            isValid = newUUIDData.isUUIDForAPNS()
+        } else if uniqueIdentifier is String, let string: String = uniqueIdentifier as? String {
             newUUID = string.readableUUID()
             isValid = newUUID.isUUIDForAPNS()
         }

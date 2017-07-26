@@ -65,9 +65,13 @@ class UILabelExtensionTests: XCTestCase {
     func testCalculateHeight() {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30))
         label.text = "This is a test"
-        let height = label.calculateHeight()
+        var height = label.calculateHeight()
         
         XCTAssertGreaterThan(height, 0)
+        
+        label.text = nil
+        height = label.calculateHeight()
+        XCTAssertEqual(height, 0)
     }
     
     func testSetFontFromIndexToIndex() {

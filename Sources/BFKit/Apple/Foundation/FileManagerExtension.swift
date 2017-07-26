@@ -203,7 +203,7 @@ public extension FileManager {
     ///   - file: Filename.
     ///   - path: Path of the file.
     /// - Returns: Returns the file size.
-    /// - Throws: Throws FileManager.default.attributesOfItem(atPath: ) errors.
+    /// - Throws: Throws FileManager.default.attributesOfItem(atPath:) errors.
     public func size(file: String, from path: PathType) throws -> Float? {
         if !file.characters.isEmpty {
             guard let path = FileManager.default.pathFor(path) else {
@@ -226,7 +226,7 @@ public extension FileManager {
     /// - Parameters:
     ///   - file: File to delete.
     ///   - path: Path of the file.
-    /// - Throws: Throws FileManager.default.removeItem(atPath: ) errors.
+    /// - Throws: Throws FileManager.default.removeItem(atPath:) errors.
     public func delete(file: String, from path: PathType) throws {
         if !file.characters.isEmpty {
             guard let path = FileManager.default.pathFor(path) else {

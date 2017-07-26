@@ -41,6 +41,25 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+## macOS Support
+### Added
+- Added macOS Support
+- Added `dateSeparator` and `timeSeparator` to `init?(date:, time:)` with a `default` value, so no changes are required
+
+### Improved
+- Removed Apple Watch device from UIDevice extension (Can't be used)
+- Removed support for iOS 7 in UIImage extension (Refuse)
+- Improved BFPassword struct
+- Improved tests
+
+### Fixed
+- Fixed missing style in `init(frame:, style:, cellSeparatorStyle:, separatorInset:, dataSource:, delegate:)` in UITableView extension
+- Fixed `animate(path:, count: = default, duration:, autoreverses: = default)` autoreverses
+- Fixed BFButton with a default `fadeDuration` value
+- Fixed wrong default duration in `fade(label:, duration:, toAttributedString:)` in WKInterfaceController extension
+
+---
+
 ## [2.5.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/2.5.0) - Better Gradients And Dates
 ### 4 Jul 2017
 ### Added

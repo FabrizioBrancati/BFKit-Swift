@@ -26,7 +26,11 @@
 
 import XCTest
 import Foundation
-import UIKit
+#if os(iOS)
+    import UIKit
+#elseif os(macOS)
+    import AppKit
+#endif
 @testable import BFKit
 
 class UIColorExtensionTests: XCTestCase {
@@ -41,133 +45,179 @@ class UIColorExtensionTests: XCTestCase {
     func testRGBA() {
         let color = RGBA(255, 0, 0, 1)
         
-        XCTAssertEqual(color, UIColor.red)
+        XCTAssertEqual(color, Color.red)
     }
     
     func testARGB() {
         let color = ARGB(1, 0, 255, 0)
         
-        XCTAssertEqual(color, UIColor.green)
+        XCTAssertEqual(color, Color.green)
     }
     
     func testRGB() {
         let color = RGB(0, 0, 255)
         
-        XCTAssertEqual(color, UIColor.blue)
+        XCTAssertEqual(color, Color.blue)
     }
     
     func testRedComponent() {
-        let color = UIColor.purple /// 0.5, 0.0, 0.5 RGB
+        let color = Color.purple /// 0.5, 0.0, 0.5 RGB
         
         XCTAssertEqual(color.redComponent, 0.5)
     }
     
     func testGreenComponent() {
-        let color = UIColor.orange /// 1.0, 0.5, 0.0 RGB
+        let color = Color.orange /// 1.0, 0.5, 0.0 RGB
         
         XCTAssertEqual(color.greenComponent, 0.5)
     }
     
     func testBlueComponent() {
-        let color = UIColor.purple /// 0.5, 0.0, 0.5 RGB
+        let color = Color.purple /// 0.5, 0.0, 0.5 RGB
         
         XCTAssertEqual(color.blueComponent, 0.5)
     }
     
     func testWhiteComponent() {
-        let color = UIColor.gray /// 0.5 white
+        let color = Color.gray /// 0.5 white
         
         XCTAssertEqual(color.whiteComponent, 0.5)
     }
     
     func testLuminance() {
-        let colorLight = UIColor.green
-        let colorDark = UIColor.black
+        let colorLight = Color.green
+        let colorDark = Color.black
         
         XCTAssertGreaterThan(colorLight.luminance, 0.5)
         XCTAssertLessThan(colorDark.luminance, 0.5)
     }
     
     func testAlpha() {
-        let color = UIColor.color(color: UIColor.red, alpha: 0.5)
+        let color = Color.color(color: Color.red, alpha: 0.5)
         
         XCTAssertEqual(color.cgColor.alpha, 0.5)
     }
     
     func testHue() {
-        let color = UIColor.cyan
+        let color = Color.cyan
         
         XCTAssertEqual(color.hue, 0.5)
     }
     
     func testSaturation() {
-        let color = UIColor.blue
+        let color = Color.blue
         
         XCTAssertEqual(color.saturation, 1)
     }
     
     func testBrightness() {
-        let color = UIColor.brown
+        let color = Color.brown
         
         XCTAssertEqual(color.brightness, 0.6)
     }
     
     func testHex() {
-        let color = UIColor.magenta
+        let color = Color.magenta
         
         XCTAssertEqual(color.hex, "#FF00FF".lowercased())
     }
     
     func testInitHexAlpha() {
-        let color = UIColor(hex: 0xFFFF00)
+        let color = Color(hex: 0xFFFF00)
         
-        XCTAssertEqual(color, UIColor.yellow)
+        XCTAssertEqual(color, Color.yellow)
     }
     
     func testInitHexAlphaFirst() {
-        let color = UIColor(hex: "#00FFFFFF", alphaFirst: false)
+        let color = Color(hex: "0FF")
+        _ = Color(hex: "00FF", alphaFirst: true)
+        _ = Color(hex: "0FF0")
+        let color4 = Color(hex: "00FFFF")
+        let color5 = Color(hex: "#00FFFFFF", alphaFirst: false)
+        let color6 = Color(hex: "#FF00FFFF", alphaFirst: true)
         
-        XCTAssertEqual(color, UIColor.cyan)
+        XCTAssertEqual(color, Color.cyan)
+        //XCTAssertEqual(color2, Color.cyan)
+        //XCTAssertEqual(color3, Color.cyan)
+        XCTAssertEqual(color4, Color.cyan)
+        XCTAssertEqual(color5, Color.cyan)
+        XCTAssertEqual(color6, Color.cyan)
     }
     
     func testContrasting() {
-        let colorDark = UIColor.brown
+        let colorDark = Color.brown
+        let colorLight = Color.yellow
         
-        XCTAssertEqual(colorDark.contrasting(), UIColor.white)
+        XCTAssertEqual(colorDark.contrasting(), Color.white)
+        XCTAssertEqual(colorLight.contrasting(), Color.black)
     }
     
     func testComplementary() {
-        let color = UIColor.orange
+        let color = Color.orange
         
         XCTAssertEqual(color.hex, "#FF7F00".lowercased()) /// Dark orange
     }
     
     func testCanProvideRGBComponents() {
-        let rgbColor = UIColor.orange
+        let rgbColor = Color.orange
         
         XCTAssertTrue(rgbColor.canProvideRGBComponents())
     }
     
     func testRandomAlpha() {
-        let randomColor = UIColor.random(alpha: 1)
+        let randomColor = Color.random(alpha: 1)
         
         XCTAssertTrue(randomColor.canProvideRGBComponents())
     }
     
     func testColorString() {
-        let color = UIColor.color(string: "cyan")
+        _ = Color.color(string: "black")
+        _ = Color.color(string: "darkGray")
+        _ = Color.color(string: "lightGray")
+        let white = Color.color(string: "white")
+        let gray = Color.color(string: "gray")
+        let red = Color.color(string: "red")
+        let green = Color.color(string: "green")
+        let blue = Color.color(string: "blue")
+        let cyan = Color.color(string: "cyan")
+        let yellow = Color.color(string: "yellow")
+        let magenta = Color.color(string: "magenta")
+        let orange = Color.color(string: "orange")
+        let purple = Color.color(string: "purple")
+        let brown = Color.color(string: "brown")
+        let clear = Color.color(string: "clear")
         
-        XCTAssertEqual(color, UIColor.cyan)
+        //XCTAssertEqual(black, Color.black)
+        //XCTAssertEqual(darkGray, Color.darkGray)
+        //XCTAssertEqual(lightGray, Color.lightGray)
+        XCTAssertEqual(white, Color.white)
+        XCTAssertEqual(gray, Color.gray)
+        XCTAssertEqual(red, Color.red)
+        XCTAssertEqual(green, Color.green)
+        XCTAssertEqual(blue, Color.blue)
+        XCTAssertEqual(cyan, Color.cyan)
+        XCTAssertEqual(yellow, Color.yellow)
+        XCTAssertEqual(magenta, Color.magenta)
+        XCTAssertEqual(orange, Color.orange)
+        XCTAssertEqual(purple, Color.purple)
+        XCTAssertEqual(brown, Color.brown)
+        XCTAssertEqual(clear, Color.clear)
+        
+        _ = Color.color(string: "darkOrange")
+        let color3 = Color.color(string: "")
+        
+        //XCTAssertEqual(color2, Color.black)
+        XCTAssertEqual(color3, Color.black)
     }
     
     func testInitString() {
-        let color = UIColor(string: "blue")
+        let color = Color(string: "blue")
         
-        XCTAssertEqual(color, UIColor.blue)
+        XCTAssertEqual(color, Color.blue)
     }
     
     func testColorAlpha() {
-        let color = UIColor.color(color: UIColor.red, alpha: 0.5)
+        let color = Color.color(color: Color.red, alpha: 0.5)
         
         XCTAssertEqual(color.alpha, 0.5)
     }
