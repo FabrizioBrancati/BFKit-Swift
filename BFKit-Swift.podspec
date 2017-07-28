@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name              = 'BFKit-Swift'
   s.module_name       = 'BFKit'
-  s.version           = '2.5.0'
+  s.version           = '2.6.0'
   s.summary           = 'BFKit-Swift is a collection of useful classes, structs and extensions to develop Apps faster.'
   s.homepage          = 'https://github.com/FabrizioBrancati/BFKit-Swift'
   s.screenshots       = 'https://github.fabriziobrancati.com/bfkit/resources/screenshot-swift.png'
@@ -14,6 +14,12 @@ Pod::Spec.new do |s|
   s.ios.deployment_target     = '8.0'
   s.ios.source_files          = 'Sources/**/*.swift'
   s.ios.exclude_files         = 'Sources/BFKit/Apple/WatchKit/*.swift'
+
+  s.osx.deployment_target = '10.10'
+  s.osx.source_files      =
+    'Sources/BFKit/Linux/**/*.swift',
+    'Sources/BFKit/Apple/Foundation/*.swift',
+    'Sources/BFKit/Apple/UIKit/UIColor.swift'
 
   s.watchos.deployment_target = '2.0'
   s.watchos.source_files      =

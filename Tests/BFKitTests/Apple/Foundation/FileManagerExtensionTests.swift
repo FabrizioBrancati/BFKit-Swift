@@ -37,7 +37,9 @@ class FileManagerExtensionTests: XCTestCase {
             try FileManager.default.delete(file: "Test.plist", from: .documents)
             try FileManager.default.delete(file: "Test2.plist", from: .documents)
             try FileManager.default.delete(file: "Test.plist", from: .library)
-        } catch {}
+        } catch {
+            /// It's only for testing purpose.
+        }
     }
     
     override func tearDown() {
@@ -45,9 +47,17 @@ class FileManagerExtensionTests: XCTestCase {
     }
     
     func testPathFor() {
-        let path = FileManager.default.pathFor(.documents)
+        let mainBundlePath = FileManager.default.pathFor(.mainBundle)
+        let documentsPath = FileManager.default.pathFor(.documents)
+        let libraryPath = FileManager.default.pathFor(.library)
+        let cachePath = FileManager.default.pathFor(.cache)
+        let applicationSupportPath = FileManager.default.pathFor(.applicationSupport)
         
-        XCTAssertNotEqual(path, "")
+        XCTAssertNotEqual(mainBundlePath, "")
+        XCTAssertNotEqual(documentsPath, "")
+        XCTAssertNotEqual(libraryPath, "")
+        XCTAssertNotEqual(cachePath, "")
+        XCTAssertNotEqual(applicationSupportPath, "")
     }
     
     func testReadFileOfType() {
@@ -110,6 +120,10 @@ class FileManagerExtensionTests: XCTestCase {
             let size = try FileManager.default.size(file: "Test.plist", from: .documents)
             
             XCTAssertNotNil(size)
+            
+            let sizeNil = try FileManager.default.size(file: "TestNil.plist", from: .documents)
+            
+            XCTAssertNil(sizeNil)
         } catch {
             XCTFail()
         }
@@ -148,6 +162,18 @@ class FileManagerExtensionTests: XCTestCase {
             XCTAssertTrue(true)
         } catch {
             XCTFail()
+        }
+    }
+    
+    func testCopyFileFromToMainBundle() {
+        FileManager.default.savePlist(object: ["1", "2", "3", "4", "5"], in: .documents, filename: "Test")
+        
+        do {
+            try FileManager.default.copy(file: "Test.plist", from: .documents, to: .mainBundle)
+            
+            XCTFail()
+        } catch {
+            XCTAssertTrue(true)
         }
     }
     

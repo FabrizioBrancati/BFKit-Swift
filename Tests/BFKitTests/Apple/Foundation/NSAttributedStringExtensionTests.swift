@@ -72,41 +72,45 @@ class NSAttributedStringExtensionTests: XCTestCase {
     }
     
     func testAttributedString() {
-        attributedString = string.attributedString.font(UIFont.systemFont(ofSize: 18))
+        attributedString = string.attributedString.font(Font.systemFont(ofSize: 18))
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
     }
     
     func testFont() {
-        let font = UIFont.systemFont(ofSize: 18)
+        let font = Font.systemFont(ofSize: 18)
         attributedString = string.attributedString.font(font)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.font] as? UIFont, font)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.font] as? Font, font)
     }
     
     func testParagraphStyle() {
-        let paragraphStyle = NSParagraphStyle.default
+        #if os(iOS)
+            let paragraphStyle = NSParagraphStyle.default
+        #elseif os(macOS)
+            let paragraphStyle = NSParagraphStyle.default()
+        #endif
         attributedString = string.attributedString.paragraphStyle(paragraphStyle)
-        
+            
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.paragraphStyle] as? NSParagraphStyle, paragraphStyle)
     }
     
     func testForegroundColor() {
-        let foregroundColor = UIColor.red
+        let foregroundColor = Color.red
         attributedString = string.attributedString.foregroundColor(foregroundColor)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.foregroundColor] as? UIColor, foregroundColor)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.foregroundColor] as? Color, foregroundColor)
     }
     
     func testBackgroundColor() {
-        let backgroundColor = UIColor.blue
+        let backgroundColor = Color.blue
         attributedString = string.attributedString.backgroundColor(backgroundColor)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.backgroundColor] as? UIColor, backgroundColor)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.backgroundColor] as? Color, backgroundColor)
     }
     
     func testLigature() {
@@ -142,11 +146,11 @@ class NSAttributedStringExtensionTests: XCTestCase {
     }
     
     func testStrokeColor() {
-        let strokeColor = UIColor.green
+        let strokeColor = Color.green
         attributedString = string.attributedString.strokeColor(strokeColor)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.strokeColor] as? UIColor, strokeColor)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.strokeColor] as? Color, strokeColor)
     }
     
     func testStrokeWidth() {
@@ -199,19 +203,19 @@ class NSAttributedStringExtensionTests: XCTestCase {
     }
     
     func testUnderlineColor() {
-        let underlineColor = UIColor.black
+        let underlineColor = Color.black
         attributedString = string.attributedString.underlineColor(underlineColor)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.underlineColor] as? UIColor, underlineColor)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.underlineColor] as? Color, underlineColor)
     }
     
     func testStrikethroughColor() {
-        let strikethroughColor = UIColor.gray
+        let strikethroughColor = Color.gray
         attributedString = string.attributedString.strikethroughColor(strikethroughColor)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.strikethroughColor] as? UIColor, strikethroughColor)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.strikethroughColor] as? Color, strikethroughColor)
     }
     
     func testObliqueness() {
@@ -285,11 +289,11 @@ class NSAttributedStringExtensionTests: XCTestCase {
     func testMultipleAttributes() {
         var textAlignment = NSMutableParagraphStyle().alignment
         textAlignment = .center
-        let font = UIFont.systemFont(ofSize: 18)
+        let font = Font.systemFont(ofSize: 18)
         attributedString = string.attributedString.textAlignmentCenter().font(font)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 2)
         XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle)?.alignment, textAlignment)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.font] as? UIFont, font)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.font] as? Font, font)
     }
 }

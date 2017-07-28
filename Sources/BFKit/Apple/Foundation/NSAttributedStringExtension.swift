@@ -25,7 +25,11 @@
 //  SOFTWARE.
 
 import Foundation
-import UIKit
+#if os(iOS) || os(watchOS)
+    import UIKit
+#elseif os(macOS)
+    import AppKit
+#endif
 
 // MARK: - String extension
 
@@ -49,13 +53,13 @@ public extension String {
 
 /// This extension adds some useful functions to NSAttributedString.
 public extension NSAttributedString {
-    /// UIFont, default Helvetica(Neue) 12.
+    /// UIFont or NSFont, default Helvetica(Neue) 12.
     ///
     /// - Parameters:
-    ///   - font: UIFont, default Helvetica(Neue) 12.
+    ///   - font: UIFont or NSFont, default Helvetica(Neue) 12.
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
-    public func font(_ font: UIFont, range: NSRange? = nil) -> NSAttributedString {
+    public func font(_ font: Font, range: NSRange? = nil) -> NSAttributedString {
         let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.font, value: font, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
@@ -73,25 +77,25 @@ public extension NSAttributedString {
         return mutableAttributedString as NSAttributedString
     }
     
-    /// UIColor, default black.
+    /// UIColor or NSColor, default black.
     ///
     /// - Parameters:
-    ///   - foregroundColor: UIColor, default black.
+    ///   - foregroundColor: UIColor or NSColor, default black.
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
-    public func foregroundColor(_ foregroundColor: UIColor, range: NSRange? = nil) -> NSAttributedString {
+    public func foregroundColor(_ foregroundColor: Color, range: NSRange? = nil) -> NSAttributedString {
         let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: foregroundColor, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
     }
     
-    /// UIColor, default nil means no background.
+    /// UIColor or NSColor, default nil means no background.
     ///
     /// - Parameters:
-    ///   - backgroundColor: UIColor, default nil means no background.
+    ///   - backgroundColor: UIColor or NSColor, default nil means no background.
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
-    public func backgroundColor(_ backgroundColor: UIColor, range: NSRange? = nil) -> NSAttributedString {
+    public func backgroundColor(_ backgroundColor: Color, range: NSRange? = nil) -> NSAttributedString {
         let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.backgroundColor, value: backgroundColor, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
@@ -146,13 +150,13 @@ public extension NSAttributedString {
         return mutableAttributedString as NSAttributedString
     }
     
-    /// UIColor, default nil means same as foreground color.
+    /// UIColor or NSColor, default nil means same as foreground color.
     ///
     /// - Parameters:
-    ///   - strokeColor: UIColor, default nil means same as foreground color.
+    ///   - strokeColor: UIColor or NSColor, default nil means same as foreground color.
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
-    public func strokeColor(_ strokeColor: UIColor, range: NSRange? = nil) -> NSAttributedString {
+    public func strokeColor(_ strokeColor: Color, range: NSRange? = nil) -> NSAttributedString {
         let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.strokeColor, value: strokeColor, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
@@ -235,25 +239,25 @@ public extension NSAttributedString {
         return mutableAttributedString as NSAttributedString
     }
     
-    /// UIColor, default nil means same as foreground color.
+    /// UIColor or NSColor, default nil means same as foreground color.
     ///
     /// - Parameters:
-    ///   - underlineColor: UIColor, default nil means same as foreground color.
+    ///   - underlineColor: UIColor or NSColor, default nil means same as foreground color.
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
-    public func underlineColor(_ underlineColor: UIColor, range: NSRange? = nil) -> NSAttributedString {
+    public func underlineColor(_ underlineColor: Color, range: NSRange? = nil) -> NSAttributedString {
         let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.underlineColor, value: underlineColor, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
     }
     
-    /// UIColor, default nil means same as foreground color.
+    /// UIColor or NSColor, default nil means same as foreground color.
     ///
     /// - Parameters:
-    ///   - strikethroughColor: UIColor, default nil means same as foreground color.
+    ///   - strikethroughColor: UIColor or NSColor, default nil means same as foreground color.
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
-    public func strikethroughColor(_ strikethroughColor: UIColor, range: NSRange? = nil) -> NSAttributedString {
+    public func strikethroughColor(_ strikethroughColor: Color, range: NSRange? = nil) -> NSAttributedString {
         let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.strikethroughColor, value: strikethroughColor, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString

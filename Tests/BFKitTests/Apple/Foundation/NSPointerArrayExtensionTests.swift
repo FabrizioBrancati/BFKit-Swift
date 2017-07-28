@@ -53,6 +53,7 @@ class NSPointerArrayExtensionTests: XCTestCase {
         
         array.add(array1)
         array.add(array2)
+        array.add(nil)
         
         let array1Test: NSArray = array.object(at: 0) as! NSArray // swiftlint:disable:this force_cast
         let array2Test: NSArray = array.object(at: 1) as! NSArray // swiftlint:disable:this force_cast
@@ -67,6 +68,7 @@ class NSPointerArrayExtensionTests: XCTestCase {
         
         array.add(array1)
         array.insert(array2, at: 0)
+        array.insert(nil, at: 0)
         
         let array1Test: NSArray = array.object(at: 0) as! NSArray // swiftlint:disable:this force_cast
         let array2Test: NSArray = array.object(at: 1) as! NSArray // swiftlint:disable:this force_cast
@@ -81,6 +83,7 @@ class NSPointerArrayExtensionTests: XCTestCase {
         
         array.add(array1)
         array.replace(at: 0, with: array2)
+        array.replace(at: 0, with: nil)
         
         let array1Test: NSArray = array.object(at: 0) as! NSArray // swiftlint:disable:this force_cast
         
@@ -93,8 +96,10 @@ class NSPointerArrayExtensionTests: XCTestCase {
         array.add(array1)
         
         let array1Test: NSArray = array.object(at: 0) as! NSArray // swiftlint:disable:this force_cast
+        let arrayNil = array.object(at: 10)
         
         XCTAssertEqual(array1Test, array1)
+        XCTAssertNil(arrayNil)
     }
     
     func testRemove() {
@@ -104,6 +109,7 @@ class NSPointerArrayExtensionTests: XCTestCase {
         array.add(array1)
         array.add(array2)
         array.remove(at: 0)
+        array.remove(at: 10)
         
         let array2Test: NSArray = array.object(at: 0) as! NSArray // swiftlint:disable:this force_cast
         

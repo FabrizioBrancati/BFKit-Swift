@@ -30,7 +30,7 @@ import UIKit
 @testable import BFKit
 
 class BFTextFieldTests: XCTestCase {
-    var textField: BFTextField? = BFTextField(frame: CGRect(x: 0, y: 0, width: 320, height: 30))
+    weak var textField: BFTextField? = BFTextField(frame: CGRect(x: 0, y: 0, width: 320, height: 30))
     
     override func setUp() {
         super.setUp()
@@ -40,27 +40,26 @@ class BFTextFieldTests: XCTestCase {
         super.tearDown()
     }
     
-    /*func testDecode() {
-    
-    }*/
-    
-    /*func testEncode() {
-    
-    }*/
+    func testEncodeDecode() {
+        FileManager.default.savePlist(object: textField!, in: .cache, filename: "BFTextField")
+        let decoded = FileManager.default.readPlist(from: .cache, filename: "BFTextField") as? BFTextField
+        
+        XCTAssertEqual(decoded?.frame, CGRect(x: 0, y: 0, width: 320, height: 30))
+    }
     
     func testInitFrame() {
-        XCTAssertEqual(textField!.maxNumberOfCharacters, 0)
-        XCTAssertEqual(textField!.frame.size.width, 320)
+        XCTAssertEqual(textField?.maxNumberOfCharacters, 0)
+        XCTAssertEqual(textField?.frame.size.width, 320)
     }
     
     func testTextFieldDidChange() {
-        textField!.maxNumberOfCharacters = 20
-        textField!.text = "Testing"
+        textField?.maxNumberOfCharacters = 20
+        textField?.text = "Testing"
         
-        XCTAssertEqual(textField!.text, "Testing")
+        XCTAssertEqual(textField?.text, "Testing")
         
-        textField!.text = "TestingMoreThan20Characters"
-        NotificationCenter.default.post(name: Notification.Name.UITextFieldTextDidChange, object: textField)
+        textField?.text = "TestingMoreThan20Characters"
+        NotificationCenter.default.post(name: .UITextFieldTextDidChange, object: textField)
         
         XCTAssertEqual(textField!.text?.characters.count, 20)
     }

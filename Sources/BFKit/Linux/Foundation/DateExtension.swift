@@ -268,16 +268,18 @@ public extension Date {
     /// - Parameters:
     ///   - date: The first date for date.
     ///   - time: The second date for time.
-    public init?(date: Date, time: Date) {
+    ///   - dateSeparator: Date separator, default is "-".
+    ///   - timeSeparator: Time separator, default is ":".
+    public init?(date: Date, time: Date, dateSeparator: String = "-", timeSeparator: String = ":") {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "yyyy\(dateSeparator)MM\(dateSeparator)dd"
         let datePortion: String = dateFormatter.string(from: date)
         
-        dateFormatter.dateFormat = "HH:mm"
+        dateFormatter.dateFormat = "HH\(timeSeparator)mm"
         let timePortion: String = dateFormatter.string(from: time)
         
         let dateTime = "\(datePortion) \(timePortion)"
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        dateFormatter.dateFormat = "yyyy\(dateSeparator)MM\(dateSeparator)dd HH\(timeSeparator)mm"
         
         guard let parsed = dateFormatter.date(from: dateTime) else {
             return nil
@@ -285,7 +287,7 @@ public extension Date {
         self = parsed
     }
     
-    /// Create an ISO 8601 date string.
+    /// Create an ISO 8601 date from a String.
     ///
     /// - Parameter date: ISO 8601 String.
     public init?(iso8601: String) {

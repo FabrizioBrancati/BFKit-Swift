@@ -59,7 +59,7 @@ public struct BFPassword {
     /// - Returns: Returns the password strength level with value from enum PasswordStrengthLevel.
     public static func strength(password: String) -> PasswordStrengthLevel {
         switch lengthScore(password) + numbersScore(password) + symbolsScore(password) + lowercasedCharactersScore(password) + uppercasedCharactersScore(password) {
-        case 0...49:
+        case 1...49:
             return .veryWeak
         case 50...59:
             return .weak
@@ -71,7 +71,7 @@ public struct BFPassword {
             return .veryStrong
         case 90...99:
             return .secure
-        case 100:
+        case 100...Int.max:
             return .verySecure
         default:
             return .veryWeak
@@ -86,7 +86,7 @@ public struct BFPassword {
         let lenght = password.length
         
         switch lenght {
-        case 0...4:
+        case 1...4:
             return 5
         case 5...8:
             return 10

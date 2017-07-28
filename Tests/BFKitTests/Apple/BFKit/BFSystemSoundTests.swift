@@ -26,6 +26,7 @@
 
 import XCTest
 import Foundation
+import AudioToolbox
 @testable import BFKit
 
 class BFSystemSoundTests: XCTestCase {
@@ -49,13 +50,23 @@ class BFSystemSoundTests: XCTestCase {
         XCTAssertTrue(true)
     }
     
-    /*func testPlaySound() {
-        
-    }*/
+    func testPlaySoundNotExist() {
+        do {
+            _ = try BFSystemSound.playSound(soundURL: URL(fileURLWithPath: ""))
+            
+            XCTFail()
+        } catch {
+            XCTAssertTrue(true)
+        }
+    }
     
-    /*func testDisposeSound() {
-        let disposedSound = BFSystemSound.disposeSound(SystemSoundID(BFSystemSound.AudioID.alarm.rawValue))
-        
-        XCTAssert(disposedSound)
-    }*/
+    func testDisposeSoundNotExist() {
+        do {
+            try BFSystemSound.disposeSound(soundID: SystemSoundID(99999999))
+            
+            XCTFail()
+        } catch {
+            XCTAssertTrue(true)
+        }
+    }
 }

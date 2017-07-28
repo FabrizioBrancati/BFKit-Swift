@@ -86,6 +86,16 @@ public extension UIView {
     
     // MARK: - Functions
     
+    /// Create an UIView with the given frame and background color.
+    ///
+    /// - Parameters:
+    ///   - frame: UIView frame.
+    ///   - backgroundColor: UIView background color.
+    public convenience init(frame: CGRect, backgroundColor: UIColor) {
+        self.init(frame: frame)
+        self.backgroundColor = backgroundColor
+    }
+    
     /// Creates a border around the UIView.
     ///
     /// - Parameters:
@@ -316,19 +326,9 @@ public extension UIView {
     
     /// Removes all subviews from current view
     public func removeAllSubviews() {
-        self.subviews.forEach { (subview) -> Void in
+        self.subviews.forEach { subview in
             subview.removeFromSuperview()
         }
-    }
-    
-    /// Create an UIView with the given frame and background color.
-    ///
-    /// - Parameters:
-    ///   - frame: UIView frame.
-    ///   - backgroundColor: UIView background color.
-    public convenience init(frame: CGRect, backgroundColor: UIColor) {
-        self.init(frame: frame)
-        self.backgroundColor = backgroundColor
     }
 }
 
@@ -467,7 +467,7 @@ extension UIView {
         animation.path = path.cgPath
         animation.repeatCount = count
         animation.duration = duration
-        animation.autoreverses = false
+        animation.autoreverses = autoreverses
         
         self.layer.add(animation, forKey: "animateAlongPath")
     }
@@ -493,7 +493,7 @@ extension UIView {
     @IBInspectable public var borderColor: UIColor {
         get {
             guard let borderColor = self.layer.borderColor else {
-                return UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+                return UIColor.clear
             }
             return UIColor(cgColor: borderColor)
         }
@@ -534,7 +534,7 @@ extension UIView {
     @IBInspectable public var shadowColor: UIColor {
         get {
             guard let shadowColor = self.layer.shadowColor else {
-                return UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+                return UIColor.clear
             }
             return UIColor(cgColor: shadowColor)
         }
