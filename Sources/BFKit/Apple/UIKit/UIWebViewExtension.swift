@@ -33,18 +33,6 @@ import UIKit
 public extension UIWebView {
     // MARK: - Functions
     
-    /// Remove the background shadow of the UIWebView.
-    @available(*, deprecated: 3.0, message: "`removeBackgroundShadow` will be removed in BFKit-Swift 3.0.")
-    public func removeBackgroundShadow() {
-        for i in 0 ..< self.scrollView.subviews.count {
-            let singleSubview: UIView = self.scrollView.subviews[i]
-            if singleSubview.isKind(of: UIImageView.self) {
-                singleSubview.isHidden = true
-                singleSubview.removeFromSuperview()
-            }
-        }
-    }
-    
     /// Load the requested website.
     ///
     /// - Parameter website: Website to load.

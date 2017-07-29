@@ -42,12 +42,6 @@ class UIWebViewExtensionTests: XCTestCase {
         super.tearDown()
     }
     
-    func testRemoveBackgroundShadow() {
-        webView.removeBackgroundShadow()
-        
-        XCTAssertFalse(webView.scrollView.subviews.isEmpty)
-    }
-    
     func testLoadWebsite() {
         webView.loadWebsite("https://www.fabriziobrancati.com")
         

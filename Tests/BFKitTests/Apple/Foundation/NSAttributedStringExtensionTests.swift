@@ -86,11 +86,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
     }
     
     func testParagraphStyle() {
-        #if os(iOS)
-            let paragraphStyle = NSParagraphStyle.default
-        #elseif os(macOS)
-            let paragraphStyle = NSParagraphStyle.default()
-        #endif
+        let paragraphStyle = NSParagraphStyle.default
         attributedString = string.attributedString.paragraphStyle(paragraphStyle)
             
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
