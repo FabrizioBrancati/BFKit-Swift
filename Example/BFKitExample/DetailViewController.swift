@@ -178,6 +178,7 @@ class DetailViewController: UIViewController {
             
             let textField: BFTextField = BFTextField(frame: CGRect(x: 20, y: 20, width: UIScreen.screenWidth - 40, height: 25))
             textField.borderStyle = .bezel
+            textField.clearButtonMode = .always
             textField.maxNumberOfCharacters = 5
             
             scrollView.addSubview(textField)
