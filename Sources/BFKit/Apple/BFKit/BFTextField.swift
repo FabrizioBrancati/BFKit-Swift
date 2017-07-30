@@ -79,7 +79,7 @@ open class BFTextField: UITextField {
             return
         }
         if self.maxNumberOfCharacters != 0, text.length >= self.maxNumberOfCharacters {
-            self.text = text.substring(to: self.maxNumberOfCharacters - 1)
+            self.text = text.substring(to: self.maxNumberOfCharacters)
         }
     }
     

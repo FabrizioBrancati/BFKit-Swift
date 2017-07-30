@@ -113,7 +113,7 @@ public extension String {
     /// - Parameter index: The index.
     /// - Returns: Returns the substring to index.
     public func substring(to index: Int) -> String {
-        guard self.length > index else {
+        guard index <= self.length else {
             return ""
         }
         return self.substring(to: self.characters.index(self.startIndex, offsetBy: index))
