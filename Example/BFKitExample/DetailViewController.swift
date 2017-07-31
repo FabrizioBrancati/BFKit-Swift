@@ -322,26 +322,28 @@ class DetailViewController: UIViewController {
             blurredImageView.addSubview(blurredLabel)
             scrollView.addSubview(blurredImageView)
             
+            let distance = 20 + blendOverlayImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20 + invertedImageView.frame.size.height + 20
+            
             let bumpedImage: UIImage = #imageLiteral(resourceName: "Logo").bumpDistortionLinear(center: CIVector(x: UIScreen.screenWidth - 40, y:UIScreen.screenWidth - 40), radius: 100, scale: 2, angle: Float.pi)
-            let bumpedImageView: UIImageView = UIImageView(frame: CGRect(x: 20, y: 20 + blendOverlayImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20 + invertedImageView.frame.size.height + 20 + blurredImageView.frame.size.height + 20, width: UIScreen.screenWidth - 40, height: UIScreen.screenWidth - 40), image: bumpedImage)
+            let bumpedImageView: UIImageView = UIImageView(frame: CGRect(x: 20, y: distance + blurredImageView.frame.size.height + 20, width: UIScreen.screenWidth - 40, height: UIScreen.screenWidth - 40), image: bumpedImage)
             let bumpedLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 20, width: UIScreen.screenWidth - 40, height: 25), text: "Bump Distortion Linear Image", font: .helveticaNeue, fontSize: 16, color: UIColor.white, alignment: .center, lines: 1, shadowColor: UIColor.black)
             bumpedImageView.addSubview(bumpedLabel)
             scrollView.addSubview(bumpedImageView)
             
             let sepiaImage: UIImage = #imageLiteral(resourceName: "Logo").sepiaTone(intensity: 1)
-            let sepiaImageView: UIImageView = UIImageView(frame: CGRect(x: 20, y: 20 + blendOverlayImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20 + invertedImageView.frame.size.height + 20 + blurredImageView.frame.size.height + 20 + bumpedImageView.frame.size.height + 20, width: UIScreen.screenWidth - 40, height: UIScreen.screenWidth - 40), image: sepiaImage)
+            let sepiaImageView: UIImageView = UIImageView(frame: CGRect(x: 20, y: distance + blurredImageView.frame.size.height + 20 + bumpedImageView.frame.size.height + 20, width: UIScreen.screenWidth - 40, height: UIScreen.screenWidth - 40), image: sepiaImage)
             let sepiaLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 20, width: UIScreen.screenWidth - 40, height: 25), text: "Sepia Tone Image", font: .helveticaNeue, fontSize: 16, color: UIColor.white, alignment: .center, lines: 1, shadowColor: UIColor.black)
             sepiaImageView.addSubview(sepiaLabel)
             scrollView.addSubview(sepiaImageView)
             
             let colorImage: UIImage = UIImage(color: UIColor(red: 0.8784, green: 0.7106, blue: 0.0, alpha: 1.0 ))!
-            let colorImageView: UIImageView = UIImageView(frame: CGRect(x: 20, y: 20 + blendOverlayImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20 + invertedImageView.frame.size.height + 20 + blurredImageView.frame.size.height + 20 + bumpedImageView.frame.size.height + 20 + sepiaImageView.frame.size.height + 20, width: UIScreen.screenWidth - 40, height: UIScreen.screenWidth - 40), image: colorImage)
+            let colorImageView: UIImageView = UIImageView(frame: CGRect(x: 20, y: distance + blurredImageView.frame.size.height + 20 + bumpedImageView.frame.size.height + 20 + sepiaImageView.frame.size.height + 20, width: UIScreen.screenWidth - 40, height: UIScreen.screenWidth - 40), image: colorImage)
             let colorLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 20, width: UIScreen.screenWidth - 40, height: 25), text: "Color Image", font: .helveticaNeue, fontSize: 16, color: UIColor.white, alignment: .center, lines: 1, shadowColor: UIColor.black)
             colorImageView.addSubview(colorLabel)
             scrollView.addSubview(colorImageView)
             
             let dummyImage: UIImage = UIImage(dummyImage: "200x200.#ECB11E")!
-            let dummyImageView: UIImageView = UIImageView(frame: CGRect(x: 20, y: 20 + blendOverlayImageView.frame.size.height + 20 + imageAtRectImageView.frame.size.height + 20 + rotatedImageView.frame.size.height + 20 + filledImageView.frame.size.height + 20 + invertedImageView.frame.size.height + 20 + blurredImageView.frame.size.height + 20 + bumpedImageView.frame.size.height + 20 + sepiaImageView.frame.size.height + 20 + colorImageView.frame.size.height + 20, width: UIScreen.screenWidth - 40, height: UIScreen.screenWidth - 40), image: dummyImage)
+            let dummyImageView: UIImageView = UIImageView(frame: CGRect(x: 20, y: distance + blurredImageView.frame.size.height + 20 + bumpedImageView.frame.size.height + 20 + sepiaImageView.frame.size.height + 20 + colorImageView.frame.size.height + 20, width: UIScreen.screenWidth - 40, height: UIScreen.screenWidth - 40), image: dummyImage)
             let dummyLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 20, width: UIScreen.screenWidth - 40, height: 25), text: "Dummy Image", font: .helveticaNeue, fontSize: 16, color: UIColor.white, alignment: .center, lines: 1, shadowColor: UIColor.black)
             dummyImageView.addSubview(dummyLabel)
             scrollView.addSubview(dummyImageView)
