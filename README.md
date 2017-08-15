@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit-Swift.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit-Swift)
 [![Codecov](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift/branch/master/graph/badge.svg)](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift)
 [![codebeat](https://codebeat.co/badges/ba18628d-f16b-4cd4-81f7-f75e81d97b38)](https://codebeat.co/projects/github-com-fabriziobrancati-bfkit-swift)
+[![Swift Package Manager Compatible](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/BFKit-Swift.svg?style=flat)][Documentation]
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)
@@ -46,7 +47,7 @@ Features
 
 BFKit-Swift is a collection of useful classes, structs and extensions to **develop Apps faster**.<br>
 For example you can use every **iOS font with just an enum!**<br>
-It also adds some useful functions with **Custom** classes and extends **Foundation**, **UIKit** and **WatchKit** classes.
+It also adds some useful functions with **Custom** classes and extends **Foundation**, **UIKit**, **AppKit** and **WatchKit** classes.
 
 Classes and Extensions Compatibility
 ====================================
@@ -89,7 +90,7 @@ Classes and Extensions Compatibility
 </details>
 
 <details>
-<summary><strong>UIKit</strong></summary>
+<summary><strong>UIKit / AppKit</strong></summary>
 
 |                                                                                                                                         | **iOS** | **macOS** | **watchOS** | **Linux** |
 |-----------------------------------------------------------------------------------------------------------------------------------------|---------|-----------|-------------|-----------|
