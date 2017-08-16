@@ -116,7 +116,7 @@ public extension String {
         guard index <= self.length else {
             return ""
         }
-        return String(self[...self.characters.index(self.startIndex, offsetBy: index)])
+        return String(self[..<self.characters.index(self.startIndex, offsetBy: index)])
     }
     
     /// Creates a substring to the given character.
@@ -451,7 +451,7 @@ public extension String {
         hex = hex.replacingOccurrences(of: " ", with: "")
         var string: String = ""
         while !hex.characters.isEmpty {
-            let character: String = String(hex[...hex.index(hex.startIndex, offsetBy: 2)])
+            let character: String = String(hex[..<hex.index(hex.startIndex, offsetBy: 2)])
             hex = String(hex[hex.index(hex.startIndex, offsetBy: 2)...])
             var characterInt: UInt32 = 0
             _ = Scanner(string: character).scanHexInt32(&characterInt)
