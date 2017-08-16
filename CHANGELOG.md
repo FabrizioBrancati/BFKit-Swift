@@ -53,7 +53,7 @@ All notable changes to this project will be documented in this file.<br>
 - Nothing
 
 ### Improved
-- Nothing
+- Updated SwiftLint to 0.21.0
 
 ### Fixed
 - Fixed a bug on `substring(to:)` function on String extension [#32](https://github.com/FabrizioBrancati/BFKit-Swift/issue/32)
