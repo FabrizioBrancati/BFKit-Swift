@@ -93,7 +93,7 @@ public extension String {
     /// - Parameter index: The index.
     /// - Returns: Returns the substring from index.
     public func substring(from index: Int) -> String {
-        return self.substring(from: self.characters.index(self.startIndex, offsetBy: index))
+        return String(self[self.characters.index(self.startIndex, offsetBy: index)...])
     }
     
     /// Creates a substring from the given character.
@@ -116,7 +116,7 @@ public extension String {
         guard index <= self.length else {
             return ""
         }
-        return self.substring(to: self.characters.index(self.startIndex, offsetBy: index))
+        return String(self[...self.characters.index(self.startIndex, offsetBy: index)])
     }
     
     /// Creates a substring to the given character.
@@ -139,7 +139,7 @@ public extension String {
         let start = self.characters.index(self.startIndex, offsetBy: range.lowerBound)
         let end = self.characters.index(self.startIndex, offsetBy: range.upperBound)
 
-        return self.substring(with: start..<end)
+        return String(self[start..<end])
     }
     
     /// Creates a substring with a given range.
@@ -451,8 +451,8 @@ public extension String {
         hex = hex.replacingOccurrences(of: " ", with: "")
         var string: String = ""
         while !hex.characters.isEmpty {
-            let character: String = hex.substring(to: hex.index(hex.startIndex, offsetBy: 2))
-            hex = hex.substring(from: hex.index(hex.startIndex, offsetBy: 2))
+            let character: String = String(hex[...hex.index(hex.startIndex, offsetBy: 2)])
+            hex = String(hex[hex.index(hex.startIndex, offsetBy: 2)...])
             var characterInt: UInt32 = 0
             _ = Scanner(string: character).scanHexInt32(&characterInt)
             string += String(format: "%c", characterInt)
