@@ -131,8 +131,9 @@ public extension UIWindow {
             return
         }
         
-        let sendEvent = class_getInstanceMethod(object_getClass(self), #selector(UIApplication.sendEvent(_:)))
-        let exchangedSendEvent = class_getInstanceMethod(object_getClass(self), #selector(UIWindow.exchangedSendEvent(_:)))
+        guard let sendEvent = class_getInstanceMethod(object_getClass(self), #selector(UIApplication.sendEvent(_:))), let exchangedSendEvent = class_getInstanceMethod(object_getClass(self), #selector(UIWindow.exchangedSendEvent(_:))) else {
+            return
+        }
         method_exchangeImplementations(sendEvent, exchangedSendEvent)
         
         sendEventExchanged = true
@@ -144,8 +145,9 @@ public extension UIWindow {
             return
         }
         
-        let sendEvent = class_getInstanceMethod(object_getClass(self), #selector(UIApplication.sendEvent(_:)))
-        let exchangedSendEvent = class_getInstanceMethod(object_getClass(self), #selector(UIWindow.exchangedSendEvent(_:)))
+        guard let sendEvent = class_getInstanceMethod(object_getClass(self), #selector(UIApplication.sendEvent(_:))), let exchangedSendEvent = class_getInstanceMethod(object_getClass(self), #selector(UIWindow.exchangedSendEvent(_:))) else {
+            return
+        }
         method_exchangeImplementations(exchangedSendEvent, sendEvent)
         
         sendEventExchanged = false
