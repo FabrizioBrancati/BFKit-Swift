@@ -39,6 +39,7 @@ All notable changes to this project will be documented in this file.<br>
 
 ### Fixed
 - Fixed a bug on `substring(to:)` function on String extension [#32](https://github.com/FabrizioBrancati/BFKit-Swift/issue/32)
+- Fixed non designable `UIView`s
 
 Thanks to [@wdcurry](https://github.com/wdcurry) for this release
 

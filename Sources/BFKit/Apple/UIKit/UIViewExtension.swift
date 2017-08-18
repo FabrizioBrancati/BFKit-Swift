@@ -462,6 +462,7 @@ extension UIView {
 // MARK: - UIView inspectable extension
 
 /// Extends UIView with inspectable variables.
+@IBDesignable
 extension UIView {
     // MARK: - Variables
     
