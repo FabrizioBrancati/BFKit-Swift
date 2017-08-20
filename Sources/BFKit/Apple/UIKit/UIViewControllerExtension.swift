@@ -63,11 +63,11 @@ public extension UIViewController {
     /// - parameter actions: An array of actions that will be added to the UIAlertController.
     /// - parameter alertType: The style of the UIAlertController.
     public func present(title: String, message: String, actions: [UIAlertAction], alertType: UIAlertControllerStyle = .alert) {
-        let errorAlert = UIAlertController(title: title, message: message, preferredStyle: alertType)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: alertType)
         for action in actions {
-            errorAlert.addAction(action)
+            alert.addAction(action)
         }
-        self.present(errorAlert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
     /// Sets the tab bar visible or not.
@@ -76,7 +76,7 @@ public extension UIViewController {
     /// - Parameters:
     ///   - visible: Set if visible.
     ///   - animated: Set if the transition must be animated.
-    public func setTabBarVisible(_ visible: Bool, animated: Bool) {
+    public func setTabBarVisible(_ visible: Bool, animated: Bool, duration: TimeInterval = 0.3) {
         let frame = self.tabBarController?.tabBar.frame
         
         guard self.isTabBarVisible() != visible, let height = frame?.size.height else {
@@ -85,7 +85,7 @@ public extension UIViewController {
         
         let offsetY = (visible ? -height : height)
         
-        let duration: TimeInterval = (animated ? 4 : 0.0)
+        let duration: TimeInterval = (animated ? duration : 0.0)
         
         if frame != nil {
             UIView.animate(withDuration: duration) {
