@@ -32,7 +32,7 @@ All notable changes to this project will be documented in this file.<br>
 
 ## Master
 ### Added
-- Added `setTabBarVisible(_:, animated:)` and `isTabBarVisible` in UIViewController extension
+- Added `setTabBarVisible(_:, animated:, duration:)` and `isTabBarVisible` in UIViewController extension
 
 ### Improved
 - Updated SwiftLint to 0.21.0
