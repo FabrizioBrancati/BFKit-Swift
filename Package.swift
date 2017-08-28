@@ -29,6 +29,9 @@ import PackageDescription
 
 let package = Package(
     name: "BFKit",
+    products: [
+        .library(name: "BFKit", targets: ["BFKit"])
+    ],
     targets: [
         .target(name: "BFKit", dependencies: [], exclude: [
             "Apple"
