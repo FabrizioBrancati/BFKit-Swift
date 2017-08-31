@@ -161,7 +161,9 @@ public extension UIView {
     /// - Parameters:
     ///   - colors: Array of UIColor instances.
     ///   - direction: Direction of the gradient.
-    public func gradient(colors: [UIColor], direction: UIViewLinearGradientDirection) {
+    /// - Returns: Returns the created CAGradientLayer.
+    @discardableResult
+    public func gradient(colors: [UIColor], direction: UIViewLinearGradientDirection) -> CAGradientLayer {
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
         
@@ -196,6 +198,8 @@ public extension UIView {
             gradient.endPoint = endPoint
         }
         self.layer.insertSublayer(gradient, at:0)
+        
+        return gradient
     }
     
     /// Create a smooth linear gradient, requires more computational time than 

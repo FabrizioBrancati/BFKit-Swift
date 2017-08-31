@@ -36,6 +36,7 @@ All notable changes to this project will be documented in this file.<br>
 
 ### Improved
 - Updated SwiftLint to 0.21.0
+- Now `gradient(colors:, direction:)` returns a `CAGradientLayer` as a `@discardableResult`, so no changes are required
 
 ### Fixed
 - Fixed a bug on `substring(to:)` function on String extension [#32](https://github.com/FabrizioBrancati/BFKit-Swift/issue/32)
