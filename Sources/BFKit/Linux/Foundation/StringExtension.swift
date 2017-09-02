@@ -282,7 +282,7 @@ public extension String {
     ///                                 "?noitcnuf siht yrt S'tel"
     ///
     /// - returns: Returns the reversed String.
-    public func reversed(preserveFormat: Bool = false) -> String {
+    public func reversed(preserveFormat: Bool) -> String {
         guard !self.isEmpty else {
             return ""
         }
