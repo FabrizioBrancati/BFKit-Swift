@@ -30,11 +30,11 @@ import UIKit
 // MARK: - UIViewController extension
 
 /// This extesion adds some useful functions to UIViewController.
-extension UIViewController {
+public extension UIViewController {
     /// Use this in viewWillAppear(_:)
     ///
     /// - Parameter tableView: UITableView to be delected.
-    func smoothlyDeselectRows(tableView: UITableView) {
+    public func smoothlyDeselectRows(tableView: UITableView) {
         let selectedIndexPaths = tableView.indexPathsForSelectedRows ?? []
         
         if let coordinator = transitionCoordinator {
@@ -63,10 +63,45 @@ extension UIViewController {
     /// - parameter actions: An array of actions that will be added to the UIAlertController.
     /// - parameter alertType: The style of the UIAlertController.
     public func present(title: String, message: String, actions: [UIAlertAction], alertType: UIAlertControllerStyle = .alert) {
-        let errorAlert = UIAlertController(title: title, message: message, preferredStyle: alertType)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: alertType)
         for action in actions {
-            errorAlert.addAction(action)
+            alert.addAction(action)
         }
-        self.present(errorAlert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    /// Sets the tab bar visible or not.
+    /// This cannot be called before viewDidLayoutSubviews(), because the frame is not set before this time.
+    ///
+    /// - Parameters:
+    ///   - visible: Set if visible.
+    ///   - animated: Set if the transition must be animated.
+    public func setTabBarVisible(_ visible: Bool, animated: Bool, duration: TimeInterval = 0.3) {
+        let frame = self.tabBarController?.tabBar.frame
+        
+        guard self.isTabBarVisible() != visible, let height = frame?.size.height else {
+            return
+        }
+        
+        let offsetY = (visible ? -height : height)
+        
+        let duration: TimeInterval = (animated ? duration : 0.0)
+        
+        if frame != nil {
+            UIView.animate(withDuration: duration) {
+                self.tabBarController?.tabBar.frame = frame!.offsetBy(dx: 0, dy: offsetY)
+                return
+            }
+        }
+    }
+    
+    /// Returns if the tab bar is visible.
+    ///
+    /// - Returns: Returns if the tab bar is visible.
+    public func isTabBarVisible() -> Bool {
+        guard let tabBarOriginY = self.tabBarController?.tabBar.frame.origin.y else {
+            return false
+        }
+        return tabBarOriginY < self.view.frame.maxY
     }
 }

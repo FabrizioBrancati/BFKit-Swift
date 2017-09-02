@@ -41,4 +41,12 @@ class UIViewControllerExtensionTests: XCTestCase {
     /*func testSmootlyDeselectRowsTableView() {
         
     }*/
+    
+    func testSetTabBarVisibleAnimated() {
+        let viewController = UITabBarController()
+        
+        viewController.setTabBarVisible(false, animated: true)
+        
+        XCTAssertFalse(viewController.isTabBarVisible())
+    }
 }

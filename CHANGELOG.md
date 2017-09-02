@@ -50,13 +50,15 @@ All notable changes to this project will be documented in this file.<br>
 
 ## Master
 ### Added
-- Nothing
+- Added `setTabBarVisible(_:, animated:, duration:)` and `isTabBarVisible` in UIViewController extension
 
 ### Improved
 - Updated SwiftLint to 0.21.0
+- Now `gradient(colors:, direction:)` returns a `CAGradientLayer` as a `@discardableResult`, so no changes are required
 
 ### Fixed
 - Fixed a bug on `substring(to:)` function on String extension [#32](https://github.com/FabrizioBrancati/BFKit-Swift/issue/32)
+- Fixed non designable `UIView`s
 
 Thanks to [@wdcurry](https://github.com/wdcurry) for this release
 
