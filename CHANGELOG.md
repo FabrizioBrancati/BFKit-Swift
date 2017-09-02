@@ -45,6 +45,7 @@ All notable changes to this project will be documented in this file.<br>
 - Changed `UIViewLinearGradientDirection` to `UIViewGradientDirection` enum name and properties in UIView extension. Easy transition, rename only
 - Changed `smoothLinearGradient(colors:, direction:)` to `smoothGradient(colors:, direction:, type: = default)` to allow radial gradients in UIView extension. Easy transition, thanks to default value
 - Removed `appDelegate` global variable
+- Changed `reversed(preserveFormat: = default)` to `eversed(preserveFormat:)` in String extension because is used instead of `reversed()` original String function
 
 ---
 
