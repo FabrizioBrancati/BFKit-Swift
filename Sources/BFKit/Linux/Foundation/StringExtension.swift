@@ -348,7 +348,6 @@ public extension String {
     /// - returns: Remove double or more duplicated spaces.
     public func removeExtraSpaces() -> String {
         let squashed = self.replacingOccurrences(of: "[ ]+", with: " ", options: .regularExpression, range: nil)
-
         #if os(Linux) // Caused by a Linux bug with emoji.
             return squashed
         #else
@@ -615,7 +614,7 @@ public extension String {
                     return date.date!
             }
         }
-
+    
         /// Returns an array of String with all the hashtags in self.
         ///
         /// - Returns: Returns an array of String with all the hashtags in self.
@@ -628,7 +627,7 @@ public extension String {
                 (self as NSString).substring(with: $0.range(at: 1))
             })
         }
-
+    
         /// Returns an array of String with all the mentions in self.
         ///
         /// - Returns: Returns an array of String with all the mentions in self.

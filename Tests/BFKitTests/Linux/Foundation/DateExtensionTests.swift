@@ -53,7 +53,7 @@ class DateExtensionTests: XCTestCase {
         ("testIsLessThan", testIsLessThan),
         ("testIsEqual", testIsEqual),
         ("testYesterday", testYesterday),
-        ("testDecriptionDateSeparatorUSFormatNanosecond", testDecriptionDateSeparatorUSFormatNanosecond),
+        ("testDecriptionDateSeparatorUSFormatNanosecond", testDecriptionDateSeparatorUSFormatNanosecond)
         //("testISO8601", testISO8601),
         //("testNanosecond", testNanosecond),
         //("testMonthsBetween", testMonthsBetween),
@@ -303,39 +303,41 @@ class DateExtensionTests: XCTestCase {
         XCTAssertEqual(description, "10-09-2016 10:09:30")
     }
     
-    func testISO8601() {
-        var isoDate = date
-        isoDate.hour = 12
-        let iso8601: String = isoDate.iso8601()
-        
-        XCTAssertEqual(iso8601, "\(isoDate.year)-\(isoDate.month)-0\(isoDate.day)T\(isoDate.hour - TimeZone.current.secondsFromGMT() / 60 / 60):0\(isoDate.minute):\(isoDate.second).00\(isoDate.nanosecond)Z")
-    }
-    
-    func testNanosecond() {
-        XCTAssertEqual(date.nanosecond, 0)
-    }
-
-    func testMonthsBetween() {
-        guard let newDate = Date(year: 2016, month: 5, day: 9) else {
-            XCTFail("`testMonthsBetween` error")
-            return
+    #if !os(Linux)
+        func testISO8601() {
+            var isoDate = date
+            isoDate.hour = 12
+            let iso8601: String = isoDate.iso8601()
+            
+            XCTAssertEqual(iso8601, "\(isoDate.year)-\(isoDate.month)-0\(isoDate.day)T\(isoDate.hour - TimeZone.current.secondsFromGMT() / 60 / 60):0\(isoDate.minute):\(isoDate.second).00\(isoDate.nanosecond)Z")
         }
-        let monthsBetween = newDate.monthsBetween(date)
-        
-        XCTAssertEqual(monthsBetween, 5)
-    }
-
-    func testLocalizedWeekday() {
-        let date = Date(timeIntervalSinceReferenceDate: 0)
-        let localizedWeekday = date.localizedWeekday()
-        
-        XCTAssert(localizedWeekday == "Monday" || localizedWeekday == "Lunedì")
-    }
     
-    func testLocalizedMonth() {
-        let date = Date(timeIntervalSinceReferenceDate: 0)
-        let localizedMonth = date.localizedMonth()
+        func testNanosecond() {
+            XCTAssertEqual(date.nanosecond, 0)
+        }
+    
+        func testMonthsBetween() {
+            guard let newDate = Date(year: 2016, month: 5, day: 9) else {
+                XCTFail("`testMonthsBetween` error")
+                return
+            }
+            let monthsBetween = newDate.monthsBetween(date)
+            
+            XCTAssertEqual(monthsBetween, 5)
+        }
+    
+        func testLocalizedWeekday() {
+            let date = Date(timeIntervalSinceReferenceDate: 0)
+            let localizedWeekday = date.localizedWeekday()
+            
+            XCTAssert(localizedWeekday == "Monday" || localizedWeekday == "Lunedì")
+        }
         
-        XCTAssert(localizedMonth == "January" || localizedMonth == "Gennaio")
-    }
+        func testLocalizedMonth() {
+            let date = Date(timeIntervalSinceReferenceDate: 0)
+            let localizedMonth = date.localizedMonth()
+            
+            XCTAssert(localizedMonth == "January" || localizedMonth == "Gennaio")
+        }
+    #endif
 }

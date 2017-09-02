@@ -487,6 +487,5 @@ class StringExtensionTests: XCTestCase {
                 XCTFail("`testMentions` error")
             }
         }
-    
     #endif
 }
