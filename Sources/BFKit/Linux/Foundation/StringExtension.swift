@@ -349,7 +349,11 @@ public extension String {
     public func removeExtraSpaces() -> String {
         let squashed = self.replacingOccurrences(of: "[ ]+", with: " ", options: .regularExpression, range: nil)
 
-        return squashed.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        #if os(Linux) // Caused by a Linux bug with emoji.
+            return squashed
+        #else
+            return squashed.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        #endif
     }
     
     /// Returns a new string in which all occurrences of a target strings in a specified range of the String are replaced by another given string.
