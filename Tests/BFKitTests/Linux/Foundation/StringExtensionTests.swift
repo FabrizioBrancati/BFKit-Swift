@@ -77,15 +77,9 @@ class StringExtensionTests: XCTestCase {
         ("testSubsriptIndexInt", testSubsriptIndexInt),
         ("testSubscriptRange", testSubscriptRange),
         ("testOptionalDefaultValue", testOptionalDefaultValue),
-        ("testLocalize", testLocalize),
         ("testIsEmail", testIsEmail),
         ("testIsUUID", testIsUUID),
         ("testIsUUIDForAPNS", testIsUUIDForAPNS),
-        ("testReplacingMatchesRegexWith", testReplacingMatchesRegexWith),
-        ("testLinks", testLinks),
-        ("testDates", testDates),
-        ("testHacktags", testHashtags),
-        ("testMentions", testMentions)
     ]
     
     var string: String = ""
@@ -420,12 +414,6 @@ class StringExtensionTests: XCTestCase {
         XCTAssertEqual(testNotNil, "Test")
     }
     
-    func testLocalize() {
-        let localized = string.localize()
-        
-        XCTAssertEqual(localized, "This is a test")
-    }
-
     func testIsEmail() {
         let isNotEmail = string.isEmail()
         let isEmail = "test@test.test".isEmail()
@@ -433,7 +421,7 @@ class StringExtensionTests: XCTestCase {
         XCTAssertFalse(isNotEmail)
         XCTAssertTrue(isEmail)
     }
-
+    
     func testIsUUID() {
         let isUUID = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUID()
         
@@ -446,53 +434,62 @@ class StringExtensionTests: XCTestCase {
         XCTAssertFalse(isUUIDForAPNS)
     }
     
-    func testReplacingMatchesRegexWith() {
-        do {
-            let replaced = try string.replacingMatches(regex: "\\s", with: "A")
+    #if !os(Linux)
+        func testLocalize() {
+            let localized = string.localize()
             
-            XCTAssertEqual(replaced, "Thisisatest")
-        } catch {
-            XCTFail()
+            XCTAssertEqual(localized, "This is a test")
         }
-    }
-
-    func testLinks() {
-        do {
-            let links = try "http://www.fabriziobrancati.com www.fabriziobrancati.com".links()
-            
-            XCTAssertEqual(links.count, 2)
-        } catch {
-            XCTFail()
-        }
-    }
-
-    func testDates() {
-        do {
-            let dates = try "5/12/1992 28/02/16".dates()
-            
-            XCTAssertEqual(dates.count, 2)
-        } catch {
-            XCTFail()
-        }
-    }
-
-    func testHashtags() {
-        do {
-            let hashtags = try "#FabrizioBrancati #BrancatiFabrizio".hashtags()
-            
-            XCTAssertEqual(hashtags.count, 2)
-        } catch {
-            XCTFail()
-        }
-    }
     
-    func testMentions() {
-        do {
-            let mentions = try "@FabrizioBrancati @BrancatiFabrizio".mentions()
-            
-            XCTAssertEqual(mentions.count, 2)
-        } catch {
-            XCTFail()
+        func testReplacingMatchesRegexWith() {
+            do {
+                let replaced = try string.replacingMatches(regex: "\\s", with: "A")
+                
+                XCTAssertEqual(replaced, "Thisisatest")
+            } catch {
+                XCTFail()
+            }
         }
-    }
+
+        func testLinks() {
+            do {
+                let links = try "http://www.fabriziobrancati.com www.fabriziobrancati.com".links()
+                
+                XCTAssertEqual(links.count, 2)
+            } catch {
+                XCTFail()
+            }
+        }
+
+        func testDates() {
+            do {
+                let dates = try "5/12/1992 28/02/16".dates()
+                
+                XCTAssertEqual(dates.count, 2)
+            } catch {
+                XCTFail()
+            }
+        }
+
+        func testHashtags() {
+            do {
+                let hashtags = try "#FabrizioBrancati #BrancatiFabrizio".hashtags()
+                
+                XCTAssertEqual(hashtags.count, 2)
+            } catch {
+                XCTFail()
+            }
+        }
+    
+        func testMentions() {
+            do {
+                let mentions = try "@FabrizioBrancati @BrancatiFabrizio".mentions()
+                
+                XCTAssertEqual(mentions.count, 2)
+            } catch {
+                XCTFail()
+            }
+        }
+    
+    #endif
 }
