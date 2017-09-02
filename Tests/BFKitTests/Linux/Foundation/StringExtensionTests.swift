@@ -367,7 +367,7 @@ class StringExtensionTests: XCTestCase {
     }*/
     
     func testIsAnagramOf() {
-        let anagram = string.reversed()
+        let anagram = string.reversed(preserveFormat: false)
         
         XCTAssertTrue(string.isAnagram(of: anagram))
     }
