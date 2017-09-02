@@ -521,32 +521,6 @@ public extension String {
         return substring(with: range)
     }
     
-    /// Returns if self is a valid UUID or not.
-    ///
-    /// - Returns: Returns if self is a valid UUID or not.
-    public func isUUID() -> Bool {
-        do {
-            let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", options: .caseInsensitive)
-            let matches: Int = regex.numberOfMatches(in: self, options: .reportCompletion, range: NSRange(location: 0, length: self.length))
-            return matches == 1
-        } catch {
-            return false
-        }
-    }
-    
-    /// Returns if self is a valid UUID for APNS (Apple Push Notification System) or not.
-    ///
-    /// - Returns: Returns if self is a valid UUID for APNS (Apple Push Notification System) or not.
-    public func isUUIDForAPNS() -> Bool {
-        do {
-            let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{32}$", options: .caseInsensitive)
-            let matches: Int = regex.numberOfMatches(in: self, options: .reportCompletion, range: NSRange(location: 0, length: self.length))
-            return matches == 1
-        } catch {
-            return false
-        }
-    }
-    
     // MARK: - Functions not available on Linux
     
     #if !os(Linux)
@@ -555,6 +529,32 @@ public extension String {
         /// - Returns: Returns localized String using self as key.
         func localize() -> String {
             return NSLocalizedString(self, comment: "")
+        }
+    
+        /// Returns if self is a valid UUID or not.
+        ///
+        /// - Returns: Returns if self is a valid UUID or not.
+        public func isUUID() -> Bool {
+            do {
+                let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", options: .caseInsensitive)
+                let matches: Int = regex.numberOfMatches(in: self, options: .reportCompletion, range: NSRange(location: 0, length: self.length))
+                return matches == 1
+            } catch {
+                return false
+            }
+        }
+        
+        /// Returns if self is a valid UUID for APNS (Apple Push Notification System) or not.
+        ///
+        /// - Returns: Returns if self is a valid UUID for APNS (Apple Push Notification System) or not.
+        public func isUUIDForAPNS() -> Bool {
+            do {
+                let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{32}$", options: .caseInsensitive)
+                let matches: Int = regex.numberOfMatches(in: self, options: .reportCompletion, range: NSRange(location: 0, length: self.length))
+                return matches == 1
+            } catch {
+                return false
+            }
         }
     
         /// Check if self is an email.

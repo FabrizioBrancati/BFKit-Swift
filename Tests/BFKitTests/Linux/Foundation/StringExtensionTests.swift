@@ -76,9 +76,7 @@ class StringExtensionTests: XCTestCase {
         ("testSubscriptCharacter", testSubscriptCharacter),
         ("testSubsriptIndexInt", testSubsriptIndexInt),
         ("testSubscriptRange", testSubscriptRange),
-        ("testOptionalDefaultValue", testOptionalDefaultValue),
-        ("testIsUUID", testIsUUID),
-        ("testIsUUIDForAPNS", testIsUUIDForAPNS)
+        ("testOptionalDefaultValue", testOptionalDefaultValue)
     ]
     
     var string: String = ""
@@ -413,23 +411,23 @@ class StringExtensionTests: XCTestCase {
         XCTAssertEqual(testNotNil, "Test")
     }
     
-    func testIsUUID() {
-        let isUUID = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUID()
-        
-        XCTAssertTrue(isUUID)
-    }
-    
-    func testIsUUIDForAPNS() {
-        let isUUIDForAPNS = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUIDForAPNS()
-        
-        XCTAssertFalse(isUUIDForAPNS)
-    }
-    
     #if !os(Linux)
         func testLocalize() {
             let localized = string.localize()
             
             XCTAssertEqual(localized, "This is a test")
+        }
+    
+        func testIsUUID() {
+            let isUUID = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUID()
+            
+            XCTAssertTrue(isUUID)
+        }
+    
+        func testIsUUIDForAPNS() {
+            let isUUIDForAPNS = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUIDForAPNS()
+            
+            XCTAssertFalse(isUUIDForAPNS)
         }
     
         func testIsEmail() {
