@@ -143,7 +143,7 @@ class DateExtensionTests: XCTestCase {
     
     func testInitYearMonthDayHourMinuteSecond() {
         guard let newDate = Date(year: 2016, month: 10, day: 9) else {
-            XCTFail()
+            XCTFail("`testInitYearMonthDayHourMinuteSecond` error")
             return
         }
         
@@ -154,7 +154,7 @@ class DateExtensionTests: XCTestCase {
     
     func testInitParseFormat() {
         guard let parsed = Date(parse: "2016-10-09") else {
-            XCTFail()
+            XCTFail("`testInitParseFormat` error")
             return
         }
         
@@ -165,7 +165,7 @@ class DateExtensionTests: XCTestCase {
     
     func testInitDateTime() {
         guard let newDate = Date(year: 2016, month: 10, day: 9), let composed = Date(date: newDate, time: date) else {
-            XCTFail()
+            XCTFail("`testInitDateTime` error")
             return
         }
         
@@ -195,7 +195,7 @@ class DateExtensionTests: XCTestCase {
     
     func testDaysBetween() {
         guard let newDate = Date(year: 2016, month: 9, day: 9) else {
-            XCTFail()
+            XCTFail("`testDaysBetween` error")
             return
         }
         let daysBetween = newDate.daysBetween(date)
@@ -211,7 +211,7 @@ class DateExtensionTests: XCTestCase {
     
     func testIsSameDay() {
         guard let newDate = Date(year: 2016, month: 10, day: 9) else {
-            XCTFail()
+            XCTFail("`testIsSameDay` error")
             return
         }
         let isSame = newDate.isSame(date)
@@ -221,7 +221,7 @@ class DateExtensionTests: XCTestCase {
     
     func testAddingDays() {
         guard let dateAdded = date.addingDays(10) else {
-            XCTFail()
+            XCTFail("`testAddingDays` error")
             return
         }
         date = dateAdded
@@ -261,7 +261,7 @@ class DateExtensionTests: XCTestCase {
     
     func testIsGreaterThan() {
         guard let newDate = Date(year: 2016, month: 11, day: 9) else {
-            XCTFail()
+            XCTFail("`testIsGreaterThan` error")
             return
         }
         let isGreaterThan = newDate.isGreaterThan(date)
@@ -271,7 +271,7 @@ class DateExtensionTests: XCTestCase {
     
     func testIsLessThan() {
         guard let newDate = Date(year: 2016, month: 9, day: 9) else {
-            XCTFail()
+            XCTFail("`testIsLessThan` error")
             return
         }
         let isLessThan = newDate.isLessThan(date)
@@ -281,7 +281,7 @@ class DateExtensionTests: XCTestCase {
     
     func testIsEqual() {
         guard let newDate = Date(year: 2016, month: 10, day: 9) else {
-            XCTFail()
+            XCTFail("`testIsEqual` error")
             return
         }
         let isEqual = newDate.isEqual(date)
@@ -317,7 +317,7 @@ class DateExtensionTests: XCTestCase {
 
     func testMonthsBetween() {
         guard let newDate = Date(year: 2016, month: 5, day: 9) else {
-            XCTFail()
+            XCTFail("`testMonthsBetween` error")
             return
         }
         let monthsBetween = newDate.monthsBetween(date)

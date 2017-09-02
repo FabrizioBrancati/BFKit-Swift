@@ -46,7 +46,7 @@ class UIWebViewExtensionTests: XCTestCase {
         webView.loadWebsite("https://www.fabriziobrancati.com")
         
         guard let html = webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('html')[0].innerHTML") else {
-            XCTFail()
+            XCTFail("`testLoadWebsite` error")
             return
         }
         

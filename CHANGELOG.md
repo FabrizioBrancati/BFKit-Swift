@@ -36,7 +36,7 @@ All notable changes to this project will be documented in this file.<br>
 - Added support to App Extensions
 
 ### Improved
-- Nothing
+- Updated SwiftLint to 0.22.0
 
 ### Fixed
 - Nothing

@@ -79,7 +79,7 @@ class StringExtensionTests: XCTestCase {
         ("testOptionalDefaultValue", testOptionalDefaultValue),
         ("testIsEmail", testIsEmail),
         ("testIsUUID", testIsUUID),
-        ("testIsUUIDForAPNS", testIsUUIDForAPNS),
+        ("testIsUUIDForAPNS", testIsUUIDForAPNS)
     ]
     
     var string: String = ""
@@ -115,7 +115,7 @@ class StringExtensionTests: XCTestCase {
     
     func testDataValue() {
         guard string.dataValue != nil else {
-            XCTFail()
+            XCTFail("`testDataValue` error")
             return
         }
         
@@ -447,7 +447,7 @@ class StringExtensionTests: XCTestCase {
                 
                 XCTAssertEqual(replaced, "Thisisatest")
             } catch {
-                XCTFail()
+                XCTFail("`testReplacingMatchesRegexWith` error")
             }
         }
 
@@ -457,7 +457,7 @@ class StringExtensionTests: XCTestCase {
                 
                 XCTAssertEqual(links.count, 2)
             } catch {
-                XCTFail()
+                XCTFail("`testLinks` error")
             }
         }
 
@@ -467,7 +467,7 @@ class StringExtensionTests: XCTestCase {
                 
                 XCTAssertEqual(dates.count, 2)
             } catch {
-                XCTFail()
+                XCTFail("`testDates` error")
             }
         }
 
@@ -477,7 +477,7 @@ class StringExtensionTests: XCTestCase {
                 
                 XCTAssertEqual(hashtags.count, 2)
             } catch {
-                XCTFail()
+                XCTFail("`testHashtags` error")
             }
         }
     
@@ -487,7 +487,7 @@ class StringExtensionTests: XCTestCase {
                 
                 XCTAssertEqual(mentions.count, 2)
             } catch {
-                XCTFail()
+                XCTFail("`testMentions` error")
             }
         }
     

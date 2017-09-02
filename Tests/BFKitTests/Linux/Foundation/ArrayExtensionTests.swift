@@ -111,27 +111,27 @@ class ArrayExtensionTests: XCTestCase {
         if random.contains(1) {
             XCTAssertTrue(true)
         } else {
-            XCTFail()
+            XCTFail("`testRandom` error")
         }
         if random.contains(2) {
             XCTAssertTrue(true)
         } else {
-            XCTFail()
+            XCTFail("`testRandom` error")
         }
         if random.contains(3) {
             XCTAssertTrue(true)
         } else {
-            XCTFail()
+            XCTFail("`testRandom` error")
         }
         if random.contains(4) {
             XCTAssertTrue(true)
         } else {
-            XCTFail()
+            XCTFail("`testRandom` error")
         }
         if random.contains(5) {
             XCTAssertTrue(true)
         } else {
-            XCTFail()
+            XCTFail("`testRandom` error")
         }
     }
     

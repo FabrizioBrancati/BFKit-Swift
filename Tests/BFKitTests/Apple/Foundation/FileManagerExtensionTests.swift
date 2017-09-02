@@ -67,7 +67,7 @@ class FileManagerExtensionTests: XCTestCase {
             
             XCTAssertNotNil(file)
         } catch {
-            XCTFail()
+            XCTFail("`testReadFileOfType` error")
         }
     }
     
@@ -125,7 +125,7 @@ class FileManagerExtensionTests: XCTestCase {
             
             XCTAssertNil(sizeNil)
         } catch {
-            XCTFail()
+            XCTFail("`testSizeFileFrom` error")
         }
     }
     
@@ -137,7 +137,7 @@ class FileManagerExtensionTests: XCTestCase {
             
             XCTAssertTrue(true)
         } catch {
-            XCTFail()
+            XCTFail("`testDeleteFileFrom` error")
         }
     }
     
@@ -149,7 +149,7 @@ class FileManagerExtensionTests: XCTestCase {
             
             XCTAssertTrue(true)
         } catch {
-            XCTFail()
+            XCTFail("`testMoveFileFromTo` error")
         }
     }
     
@@ -161,7 +161,7 @@ class FileManagerExtensionTests: XCTestCase {
             
             XCTAssertTrue(true)
         } catch {
-            XCTFail()
+            XCTFail("`testCopyFileFromTo` error")
         }
     }
     
@@ -171,7 +171,7 @@ class FileManagerExtensionTests: XCTestCase {
         do {
             try FileManager.default.copy(file: "Test.plist", from: .documents, to: .mainBundle)
             
-            XCTFail()
+            XCTFail("`testCopyFileFromToMainBundle` error")
         } catch {
             XCTAssertTrue(true)
         }
@@ -185,7 +185,7 @@ class FileManagerExtensionTests: XCTestCase {
             
             XCTAssertTrue(true)
         } catch {
-            XCTFail()
+            XCTFail("`testRenameFileInFromTo` error")
         }
     }
     

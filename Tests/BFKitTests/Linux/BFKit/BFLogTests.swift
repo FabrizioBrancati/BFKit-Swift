@@ -105,13 +105,13 @@ class BFLogTests: XCTestCase {
                 try BFLog.saveLog(in: .documents, filename: "Test.log")
                 
                 guard let log = try FileManager.default.read(file: "Test.log", from: .documents) else {
-                    XCTFail()
+                    XCTFail("`testSaveLog` error")
                     return
                 }
                 
                 XCTAssertEqual(log, "\(filenameWithoutExtension):\(line) \(function): Test\n")
             } catch {
-                XCTFail()
+                XCTFail("`testSaveLog` error")
             }
         }
     #endif

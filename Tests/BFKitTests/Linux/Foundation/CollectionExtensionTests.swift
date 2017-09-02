@@ -49,7 +49,7 @@ class CollectionExtensionTests: XCTestCase {
             
             XCTAssertEqual(json, "[1,2,3,4,5]")
         } catch {
-            XCTFail()
+            XCTFail("`testJSON` error")
         }
         
         let dictionary = ["1": 1, "2": 2, "3": 3, "4": 4, "5": 5]
@@ -65,7 +65,7 @@ class CollectionExtensionTests: XCTestCase {
             XCTAssertTrue(braceRight == 1)
             XCTAssertTrue(quotationMarks == 10)
         } catch {
-            XCTFail()
+            XCTFail("`testJSON` error")
         }
     }
 }

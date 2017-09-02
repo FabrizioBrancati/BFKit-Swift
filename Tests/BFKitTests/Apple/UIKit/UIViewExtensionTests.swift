@@ -131,7 +131,7 @@ class UIViewExtensionTests: XCTestCase {
     
     func testScreenshotSave() {
         guard let screenshot = view.screenshot(save: true) else {
-            XCTFail()
+            XCTFail("`testScreenshotSave` error")
             return
         }
         

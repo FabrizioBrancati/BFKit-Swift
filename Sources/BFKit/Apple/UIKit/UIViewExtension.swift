@@ -445,19 +445,19 @@ extension UIView {
         
         UIView.animate(withDuration: TimeInterval(duration / 2), delay: 1, options: UIViewAnimationOptions(), animations: {
             self.center = CGPoint(x: endPosition, y: self.center.y)
-        }) { finished in
+        }, completion: { finished in
             if finished {
                 UIView.animate(withDuration: TimeInterval(duration / 2), delay: 1, options: UIViewAnimationOptions(), animations: {
                     self.center = CGPoint(x: startPosition, y: self.center.y)
-                }) { finished in
+                }, completion: { finished in
                     if finished {
                         if repeatAnimation {
                             self.translateAround(topView: topView, duration: duration, direction: direction, repeatAnimation: repeatAnimation, startFromEdge: startFromEdge)
                         }
                     }
-                }
+                })
             }
-        }
+        })
     }
     
     /// Animate along path.
