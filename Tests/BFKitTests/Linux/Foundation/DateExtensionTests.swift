@@ -54,11 +54,11 @@ class DateExtensionTests: XCTestCase {
         ("testIsEqual", testIsEqual),
         ("testYesterday", testYesterday),
         ("testDecriptionDateSeparatorUSFormatNanosecond", testDecriptionDateSeparatorUSFormatNanosecond),
-        ("testISO8601", testISO8601),
+        //("testISO8601", testISO8601),
         //("testNanosecond", testNanosecond),
-        ("testMonthsBetween", testMonthsBetween),
-        ("testLocalizedWeekday", testLocalizedWeekday),
-        ("testLocalizedMonth", testLocalizedMonth)
+        //("testMonthsBetween", testMonthsBetween),
+        //("testLocalizedWeekday", testLocalizedWeekday),
+        //("testLocalizedMonth", testLocalizedMonth)
     ]
     
     var date = Date(year: 2016, month: 10, day: 9, hour: 10, minute: 9, second: 30)!

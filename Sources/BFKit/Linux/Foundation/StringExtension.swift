@@ -480,7 +480,7 @@ public extension String {
     func isAnagram(of string: String) -> Bool {
         let lowerSelf = self.lowercased().replacingOccurrences(of: " ", with: "")
         let lowerOther = string.lowercased().replacingOccurrences(of: " ", with: "")
-        return lowerSelf.sorted() == lowerOther.characters.sorted()
+        return lowerSelf.sorted() == lowerOther.sorted()
     }
     
     /// Returns if self is palindrome.
