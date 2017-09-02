@@ -521,17 +521,6 @@ public extension String {
         return substring(with: range)
     }
     
-    /// Check if self is an email.
-    ///
-    /// - Returns: Returns true if it is an email, otherwise false.
-    public func isEmail() -> Bool {
-        let emailRegEx: String = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
-        
-        let regExPredicate: NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-        
-        return regExPredicate.evaluate(with: self.lowercased())
-    }
-    
     /// Returns if self is a valid UUID or not.
     ///
     /// - Returns: Returns if self is a valid UUID or not.
@@ -566,6 +555,17 @@ public extension String {
         /// - Returns: Returns localized String using self as key.
         func localize() -> String {
             return NSLocalizedString(self, comment: "")
+        }
+    
+        /// Check if self is an email.
+        ///
+        /// - Returns: Returns true if it is an email, otherwise false.
+        public func isEmail() -> Bool {
+            let emailRegEx: String = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+            
+            let regExPredicate: NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+            
+            return regExPredicate.evaluate(with: self.lowercased())
         }
     
         /// Returns a new string containing matching regular expressions replaced with the template string.

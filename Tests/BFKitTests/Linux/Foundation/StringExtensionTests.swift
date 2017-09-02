@@ -77,7 +77,6 @@ class StringExtensionTests: XCTestCase {
         ("testSubsriptIndexInt", testSubsriptIndexInt),
         ("testSubscriptRange", testSubscriptRange),
         ("testOptionalDefaultValue", testOptionalDefaultValue),
-        ("testIsEmail", testIsEmail),
         ("testIsUUID", testIsUUID),
         ("testIsUUIDForAPNS", testIsUUIDForAPNS)
     ]
@@ -414,14 +413,6 @@ class StringExtensionTests: XCTestCase {
         XCTAssertEqual(testNotNil, "Test")
     }
     
-    func testIsEmail() {
-        let isNotEmail = string.isEmail()
-        let isEmail = "test@test.test".isEmail()
-        
-        XCTAssertFalse(isNotEmail)
-        XCTAssertTrue(isEmail)
-    }
-    
     func testIsUUID() {
         let isUUID = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUID()
         
@@ -439,6 +430,14 @@ class StringExtensionTests: XCTestCase {
             let localized = string.localize()
             
             XCTAssertEqual(localized, "This is a test")
+        }
+    
+        func testIsEmail() {
+            let isNotEmail = string.isEmail()
+            let isEmail = "test@test.test".isEmail()
+            
+            XCTAssertFalse(isNotEmail)
+            XCTAssertTrue(isEmail)
         }
     
         func testReplacingMatchesRegexWith() {
