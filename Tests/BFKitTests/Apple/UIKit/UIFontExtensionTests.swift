@@ -82,7 +82,7 @@ class UIFontExtensionTests: XCTestCase {
     }
     
     func testFontsNameFamily() {
-        let fonts = UIFont.fontsName(family: .helvetica)
+        let fonts = UIFont.fontNames(for: .helvetica)
         
         XCTAssertFalse(fonts.isEmpty)
     }
