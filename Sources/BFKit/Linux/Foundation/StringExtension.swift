@@ -348,11 +348,8 @@ public extension String {
     /// - returns: Remove double or more duplicated spaces.
     public func removeExtraSpaces() -> String {
         let squashed = self.replacingOccurrences(of: "[ ]+", with: " ", options: .regularExpression, range: nil)
-        #if os(Linux) // Caused by a Linux bug with emoji.
-            return squashed
-        #else
-            return squashed.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        #endif
+
+        return squashed.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
     
     /// Returns a new string in which all occurrences of a target strings in a specified range of the String are replaced by another given string.
@@ -526,121 +523,119 @@ public extension String {
     
     // MARK: - Functions not available on Linux
     
-    #if !os(Linux)
-        /// Localize current String using self as key.
-        ///
-        /// - Returns: Returns localized String using self as key.
-        func localize() -> String {
-            return NSLocalizedString(self, comment: "")
-        }
-        
-        /// Check if self is an email.
-        ///
-        /// - Returns: Returns true if it is an email, otherwise false.
-        public func isEmail() -> Bool {
-            let emailRegEx: String = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
-            
-            let regExPredicate: NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-            
-            return regExPredicate.evaluate(with: self.lowercased())
-        }
+    /// Localize current String using self as key.
+    ///
+    /// - Returns: Returns localized String using self as key.
+    func localize() -> String {
+        return NSLocalizedString(self, comment: "")
+    }
     
-        /// Returns if self is a valid UUID or not.
-        ///
-        /// - Returns: Returns if self is a valid UUID or not.
-        public func isUUID() -> Bool {
-            do {
-                let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", options: .caseInsensitive)
-                let matches: Int = regex.numberOfMatches(in: self, options: .reportCompletion, range: NSRange(location: 0, length: self.length))
-                return matches == 1
-            } catch {
-                return false
-            }
-        }
+    /// Check if self is an email.
+    ///
+    /// - Returns: Returns true if it is an email, otherwise false.
+    public func isEmail() -> Bool {
+        let emailRegEx: String = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
         
-        /// Returns if self is a valid UUID for APNS (Apple Push Notification System) or not.
-        ///
-        /// - Returns: Returns if self is a valid UUID for APNS (Apple Push Notification System) or not.
-        public func isUUIDForAPNS() -> Bool {
-            do {
-                let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{32}$", options: .caseInsensitive)
-                let matches: Int = regex.numberOfMatches(in: self, options: .reportCompletion, range: NSRange(location: 0, length: self.length))
-                return matches == 1
-            } catch {
-                return false
-            }
-        }
+        let regExPredicate: NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         
-        /// Returns a new string containing matching regular expressions replaced with the template string.
-        ///
-        /// - Parameters:
-        ///   - regexString: The regex string.
-        ///   - replacement: The replacement string.
-        /// - Returns: Returns a new string containing matching regular expressions replaced with the template string.
-        /// - Throws: Throws NSRegularExpression(pattern:, options:) errors.
-        public func replacingMatches(regex regexString: String, with replacement: String) throws -> String {
-            let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString, options: .caseInsensitive)
-            return regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: self.length), withTemplate: "")
+        return regExPredicate.evaluate(with: self.lowercased())
+    }
+
+    /// Returns if self is a valid UUID or not.
+    ///
+    /// - Returns: Returns if self is a valid UUID or not.
+    public func isUUID() -> Bool {
+        do {
+            let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", options: .caseInsensitive)
+            let matches: Int = regex.numberOfMatches(in: self, options: .reportCompletion, range: NSRange(location: 0, length: self.length))
+            return matches == 1
+        } catch {
+            return false
         }
+    }
+    
+    /// Returns if self is a valid UUID for APNS (Apple Push Notification System) or not.
+    ///
+    /// - Returns: Returns if self is a valid UUID for APNS (Apple Push Notification System) or not.
+    public func isUUIDForAPNS() -> Bool {
+        do {
+            let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{32}$", options: .caseInsensitive)
+            let matches: Int = regex.numberOfMatches(in: self, options: .reportCompletion, range: NSRange(location: 0, length: self.length))
+            return matches == 1
+        } catch {
+            return false
+        }
+    }
+    
+    /// Returns a new string containing matching regular expressions replaced with the template string.
+    ///
+    /// - Parameters:
+    ///   - regexString: The regex string.
+    ///   - replacement: The replacement string.
+    /// - Returns: Returns a new string containing matching regular expressions replaced with the template string.
+    /// - Throws: Throws NSRegularExpression(pattern:, options:) errors.
+    public func replacingMatches(regex regexString: String, with replacement: String) throws -> String {
+        let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString, options: .caseInsensitive)
+        return regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: self.length), withTemplate: "")
+    }
+    
+    /// Returns an array of String with all the links in self.
+    ///
+    /// - Returns: Returns an array of String with all the links in self.
+    /// - Throws: Throws NSDataDetector errors.
+    func links() throws -> [String] {
+        let detector = try NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
         
-        /// Returns an array of String with all the links in self.
-        ///
-        /// - Returns: Returns an array of String with all the links in self.
-        /// - Throws: Throws NSDataDetector errors.
-        func links() throws -> [String] {
-            let detector = try NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
-            
-            let links = detector.matches(in: self, options: NSRegularExpression.MatchingOptions.reportCompletion, range: NSRange(location: 0, length: length)).map { $0 }
-            
-            return links.filter { link in
-                return link.url != nil
-            }.map { link -> String in
-                    return link.url!.absoluteString
-            }
+        let links = detector.matches(in: self, options: NSRegularExpression.MatchingOptions.reportCompletion, range: NSRange(location: 0, length: length)).map { $0 }
+        
+        return links.filter { link in
+            return link.url != nil
+        }.map { link -> String in
+                return link.url!.absoluteString
         }
-    
-        /// Returns an array of Date with all the dates in self.
-        ///
-        /// - Returns: Returns an array of Date with all the date in self.
-        /// - Throws: Throws NSDataDetector errors.
-        func dates() throws -> [Date] {
-            let detector = try NSDataDetector(types: NSTextCheckingResult.CheckingType.date.rawValue)
-            
-            let dates = detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withTransparentBounds, range: NSRange(location: 0, length: length)).map { $0 }
-            
-            return dates.filter { date in
-                return date.date != nil
-            }.map { date -> Date in
-                    return date.date!
-            }
+    }
+
+    /// Returns an array of Date with all the dates in self.
+    ///
+    /// - Returns: Returns an array of Date with all the date in self.
+    /// - Throws: Throws NSDataDetector errors.
+    func dates() throws -> [Date] {
+        let detector = try NSDataDetector(types: NSTextCheckingResult.CheckingType.date.rawValue)
+        
+        let dates = detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withTransparentBounds, range: NSRange(location: 0, length: length)).map { $0 }
+        
+        return dates.filter { date in
+            return date.date != nil
+        }.map { date -> Date in
+                return date.date!
         }
-    
-        /// Returns an array of String with all the hashtags in self.
-        ///
-        /// - Returns: Returns an array of String with all the hashtags in self.
-        /// - Throws: Throws NSRegularExpression errors.
-        func hashtags() throws -> [String] {
-            let detector = try NSRegularExpression(pattern: "#(\\w+)", options: NSRegularExpression.Options.caseInsensitive)
-            let hashtags = detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withoutAnchoringBounds, range: NSRange(location: 0, length: length)).map { $0 }
-            
-            return hashtags.map({
-                (self as NSString).substring(with: $0.range(at: 1))
-            })
-        }
-    
-        /// Returns an array of String with all the mentions in self.
-        ///
-        /// - Returns: Returns an array of String with all the mentions in self.
-        /// - Throws: Throws NSRegularExpression errors.
-        func mentions() throws -> [String] {
-            let detector = try NSRegularExpression(pattern: "@(\\w+)", options: NSRegularExpression.Options.caseInsensitive)
-            let mentions = detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withoutAnchoringBounds, range: NSRange(location: 0, length: length)).map { $0 }
-            
-            return mentions.map({
-                (self as NSString).substring(with: $0.range(at: 1))
-            })
-        }
-    #endif
+    }
+
+    /// Returns an array of String with all the hashtags in self.
+    ///
+    /// - Returns: Returns an array of String with all the hashtags in self.
+    /// - Throws: Throws NSRegularExpression errors.
+    func hashtags() throws -> [String] {
+        let detector = try NSRegularExpression(pattern: "#(\\w+)", options: NSRegularExpression.Options.caseInsensitive)
+        let hashtags = detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withoutAnchoringBounds, range: NSRange(location: 0, length: length)).map { $0 }
+        
+        return hashtags.map({
+            (self as NSString).substring(with: $0.range(at: 1))
+        })
+    }
+
+    /// Returns an array of String with all the mentions in self.
+    ///
+    /// - Returns: Returns an array of String with all the mentions in self.
+    /// - Throws: Throws NSRegularExpression errors.
+    func mentions() throws -> [String] {
+        let detector = try NSRegularExpression(pattern: "@(\\w+)", options: NSRegularExpression.Options.caseInsensitive)
+        let mentions = detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withoutAnchoringBounds, range: NSRange(location: 0, length: length)).map { $0 }
+        
+        return mentions.map({
+            (self as NSString).substring(with: $0.range(at: 1))
+        })
+    }
 }
 
 /// Infix operator `???` with NilCoalescingPrecedence.
