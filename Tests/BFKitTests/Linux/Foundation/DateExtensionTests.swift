@@ -55,7 +55,7 @@ class DateExtensionTests: XCTestCase {
         ("testYesterday", testYesterday),
         ("testDecriptionDateSeparatorUSFormatNanosecond", testDecriptionDateSeparatorUSFormatNanosecond),
         ("testISO8601", testISO8601),
-        ("testNanosecond", testNanosecond),
+        //("testNanosecond", testNanosecond),
         ("testMonthsBetween", testMonthsBetween),
         ("testLocalizedWeekday", testLocalizedWeekday),
         ("testLocalizedMonth", testLocalizedMonth)
@@ -310,7 +310,7 @@ class DateExtensionTests: XCTestCase {
         
         XCTAssertEqual(iso8601, "\(isoDate.year)-\(isoDate.month)-0\(isoDate.day)T\(isoDate.hour - TimeZone.current.secondsFromGMT() / 60 / 60):0\(isoDate.minute):\(isoDate.second).00\(isoDate.nanosecond)Z")
     }
-
+    
     func testNanosecond() {
         XCTAssertEqual(date.nanosecond, 0)
     }

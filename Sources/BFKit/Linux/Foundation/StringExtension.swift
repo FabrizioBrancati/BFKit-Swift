@@ -263,14 +263,14 @@ public extension String {
     ///
     /// - returns: Returns string with the first character uppercased.
     public func uppercasedFirst() -> String {
-        return String(self.characters.prefix(1)).uppercased() + String(self.characters.dropFirst())
+        return String(self.prefix(1)).uppercased() + String(self.dropFirst())
     }
     
     /// Returns string with the first character lowercased.
     ///
     /// - returns: Returns string with the first character lowercased.
     public func lowercasedFirst() -> String {
-        return String(self.characters.prefix(1)).lowercased() + String(self.characters.dropFirst())
+        return String(self.prefix(1)).lowercased() + String(self.dropFirst())
     }
     
     /// Returns the reversed String.
@@ -283,11 +283,11 @@ public extension String {
     ///
     /// - returns: Returns the reversed String.
     public func reversed(preserveFormat: Bool = false) -> String {
-        guard !self.characters.isEmpty else {
+        guard !self.isEmpty else {
             return ""
         }
 
-        var reversed = String(self.removeExtraSpaces().characters.reversed())
+        var reversed = String(self.removeExtraSpaces().reversed())
 
         if !preserveFormat {
             return reversed
@@ -447,7 +447,7 @@ public extension String {
         var hex = self
         hex = hex.replacingOccurrences(of: " ", with: "")
         var string: String = ""
-        while !hex.characters.isEmpty {
+        while !hex.isEmpty {
             let character: String = String(hex[..<hex.index(hex.startIndex, offsetBy: 2)])
             hex = String(hex[hex.index(hex.startIndex, offsetBy: 2)...])
             var characterInt: UInt32 = 0
@@ -480,7 +480,7 @@ public extension String {
     func isAnagram(of string: String) -> Bool {
         let lowerSelf = self.lowercased().replacingOccurrences(of: " ", with: "")
         let lowerOther = string.lowercased().replacingOccurrences(of: " ", with: "")
-        return lowerSelf.characters.sorted() == lowerOther.characters.sorted()
+        return lowerSelf.sorted() == lowerOther.characters.sorted()
     }
     
     /// Returns if self is palindrome.
@@ -488,7 +488,7 @@ public extension String {
     /// - Returns: Returns true if self is palindrome, otherwise false.
     func isPalindrome() -> Bool {
         let selfString = self.lowercased().replacingOccurrences(of: " ", with: "")
-        let otherString = String(selfString.characters.reversed())
+        let otherString = String(selfString.reversed())
         return selfString == otherString
     }
     
@@ -496,7 +496,7 @@ public extension String {
     ///
     /// - Parameter index: Returns the character at the given index.
     public subscript(index: Int) -> Character {
-        return self[self.characters.index(self.startIndex, offsetBy: index)]
+        return self[self.index(self.startIndex, offsetBy: index)]
     }
     
     /// Returns the index of the given character, -1 if not found.
