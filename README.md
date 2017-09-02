@@ -213,8 +213,14 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
 
     let package = Package(
         name: "Project",
+        products: [
+            .executable(name: "Project", targets: ["Project"])
+        ],
         dependencies: [
-            .Package(url: "https://github.com/FabrizioBrancati/BFKit-Swift.git", majorVersion: 2)
+            .package(url: "https://github.com/FabrizioBrancati/BFKit-Swift.git", .upToNextMajor(from: "3.0.0"))
+        ],
+        targets: [
+            .target(name: "Project", dependencies: ["BFKit"])
         ]
     )
     ```
