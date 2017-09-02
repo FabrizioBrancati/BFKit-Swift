@@ -318,8 +318,10 @@ class StringExtensionTests: XCTestCase {
     
     func testRemoveExtraSpaces() {
         let extraSpacedString = "This    is   a   test".removeExtraSpaces()
+        let extraSpacedEmojiString = "😜   This    is   a   test     😁".removeExtraSpaces()
         
         XCTAssertEqual(extraSpacedString, "This is a test")
+        XCTAssertEqual(extraSpacedEmojiString, "😜 This is a test 😁")
     }
     
     func testReplacingOccurrencesOfWith() {
