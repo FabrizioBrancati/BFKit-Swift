@@ -16,7 +16,6 @@
 ---
 
 <p align="center">
-    <a href="#swift-3">Swift 3</a> &bull;
     <a href="#objective-c-version-">Objective-C Version</a> &bull;
     <a href="#features">Features</a> &bull;
     <a href="#classes-and-extensions-compatibility">Classes and Extensions Compatibility</a> &bull;
@@ -33,10 +32,6 @@
 </p>
 
 ---
-
-Swift 3
-=======
-If you need Swift 3 support, please switch to [master](https://github.com/FabrizioBrancati/BFKit-Swift) branch.
 
 Objective-C Version <img src="http://github.fabriziobrancati.com/bfkit/resources/objc-icon.png" height="25" width="25">
 ===================
@@ -146,7 +141,7 @@ Requirements
 Communication
 =============
 
-- If you need help, use Stack Overflow.
+- If you need help, open an issue
 - If you found a bug, open an issue.
 - If you have a feature request, open an issue.
 - If you want to contribute, see [Contributing](https://github.com/FabrizioBrancati/BFKit-Swift#contributing) section.
