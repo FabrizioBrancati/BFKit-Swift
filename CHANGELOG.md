@@ -8,6 +8,9 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+### 3.x Releases
+- `3.0.x` Releases - [3.0.0](#300---swift-4-support)
+
 ### 2.x Releases
 - `2.6.x` Releases - [2.6.0](#260---macos-support)
 - `2.5.x` Releases - [2.5.0](#250---better-gradients-and-dates)
@@ -30,36 +33,26 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## Swift 4
+## [3.0.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/3.0.0) - Swift 4 Support
+### 23 Sep 2017
 ### Added
 - Added support to Swift 4 and Xcode 9
 - Added support to App Extensions
+- Added `setTabBarVisible(_:, animated:, duration:)` and `isTabBarVisible` in UIViewController extension
 
 ### Improved
 - Updated SwiftLint to 0.22.0
+- Now `gradient(colors:, direction:)` returns a `CAGradientLayer` as a `@discardableResult`, so no changes are required
 
 ### Fixed
-- Nothing
+- Fixed a bug on `substring(to:)` function on String extension [#32](https://github.com/FabrizioBrancati/BFKit-Swift/issue/32)
+- Fixed non designable `UIView`s
 
 ### Changed
 - Changed `UIViewLinearGradientDirection` to `UIViewGradientDirection` enum name and properties in UIView extension. Easy transition, rename only
 - Changed `smoothLinearGradient(colors:, direction:)` to `smoothGradient(colors:, direction:, type: = default)` to allow radial gradients in UIView extension. Easy transition, thanks to default value
 - Removed `appDelegate` global variable
 - Changed `reversed(preserveFormat: = default)` to `eversed(preserveFormat:)` in String extension because is used instead of `reversed()` original String function
-
----
-
-## Master
-### Added
-- Added `setTabBarVisible(_:, animated:, duration:)` and `isTabBarVisible` in UIViewController extension
-
-### Improved
-- Updated SwiftLint to 0.21.0
-- Now `gradient(colors:, direction:)` returns a `CAGradientLayer` as a `@discardableResult`, so no changes are required
-
-### Fixed
-- Fixed a bug on `substring(to:)` function on String extension [#32](https://github.com/FabrizioBrancati/BFKit-Swift/issue/32)
-- Fixed non designable `UIView`s
 
 Thanks to [@wdcurry](https://github.com/wdcurry) for this release
 
