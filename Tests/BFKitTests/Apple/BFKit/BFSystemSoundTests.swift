@@ -54,7 +54,7 @@ class BFSystemSoundTests: XCTestCase {
         do {
             _ = try BFSystemSound.playSound(soundURL: URL(fileURLWithPath: ""))
             
-            XCTFail()
+            XCTFail("`testPlaySoundNotExist` error")
         } catch {
             XCTAssertTrue(true)
         }
@@ -64,7 +64,7 @@ class BFSystemSoundTests: XCTestCase {
         do {
             try BFSystemSound.disposeSound(soundID: SystemSoundID(99999999))
             
-            XCTFail()
+            XCTFail("`testDisposeSoundNotExist` error")
         } catch {
             XCTAssertTrue(true)
         }

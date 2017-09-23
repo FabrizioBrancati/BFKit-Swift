@@ -43,7 +43,7 @@ public var customTouchImage: UIImage?
 
 /// Show touch on screen.
 public func showTouchOnScreen() {
-    guard let window = UIApplication.shared.keyWindow else {
+    guard let window = (UIApplication.value(forKey: "sharedApplication") as? UIApplication)?.keyWindow else {
         return
     }
     window.activateTouch()
@@ -51,7 +51,7 @@ public func showTouchOnScreen() {
 
 /// Hide touch on screen.
 public func hideTouchOnScreen() {
-    guard let window = UIApplication.shared.keyWindow else {
+    guard let window = (UIApplication.value(forKey: "sharedApplication") as? UIApplication)?.keyWindow else {
         return
     }
     window.deactivateTouch()
@@ -68,7 +68,9 @@ public extension UIWindow {
     /// - Parameter save: Set to true to save, otherwise false.
     /// - Returns: Returns the screenshot as an UIImage.
     public func windowScreenshot(save: Bool = false) -> UIImage? {
-        let orientation: UIInterfaceOrientation = UIApplication.shared.statusBarOrientation
+        guard let orientation: UIInterfaceOrientation = (UIApplication.value(forKey: "sharedApplication") as? UIApplication)?.statusBarOrientation else {
+            return nil
+        }
         
         var imageSize: CGSize = CGSize.zero
         if UIInterfaceOrientationIsPortrait(orientation) {
@@ -129,8 +131,9 @@ public extension UIWindow {
             return
         }
         
-        let sendEvent = class_getInstanceMethod(object_getClass(self), #selector(UIApplication.sendEvent(_:)))
-        let exchangedSendEvent = class_getInstanceMethod(object_getClass(self), #selector(UIWindow.exchangedSendEvent(_:)))
+        guard let sendEvent = class_getInstanceMethod(object_getClass(self), #selector(UIApplication.sendEvent(_:))), let exchangedSendEvent = class_getInstanceMethod(object_getClass(self), #selector(UIWindow.exchangedSendEvent(_:))) else {
+            return
+        }
         method_exchangeImplementations(sendEvent, exchangedSendEvent)
         
         sendEventExchanged = true
@@ -142,8 +145,9 @@ public extension UIWindow {
             return
         }
         
-        let sendEvent = class_getInstanceMethod(object_getClass(self), #selector(UIApplication.sendEvent(_:)))
-        let exchangedSendEvent = class_getInstanceMethod(object_getClass(self), #selector(UIWindow.exchangedSendEvent(_:)))
+        guard let sendEvent = class_getInstanceMethod(object_getClass(self), #selector(UIApplication.sendEvent(_:))), let exchangedSendEvent = class_getInstanceMethod(object_getClass(self), #selector(UIWindow.exchangedSendEvent(_:))) else {
+            return
+        }
         method_exchangeImplementations(exchangedSendEvent, sendEvent)
         
         sendEventExchanged = false

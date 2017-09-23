@@ -47,7 +47,7 @@ class DataExtensionTests: XCTestCase {
     
     func testUTF8() {
         guard let utf8: String = data.utf8() else {
-            XCTFail()
+            XCTFail("`testUTF8` error")
             return
         }
         
@@ -56,7 +56,7 @@ class DataExtensionTests: XCTestCase {
     
     func testASCII() {
         guard let ascii: String = data.ascii() else {
-            XCTFail()
+            XCTFail("`testASCII` error")
             return
         }
         

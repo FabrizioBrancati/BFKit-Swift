@@ -45,25 +45,25 @@ class UIDeviceExtensionTests: XCTestCase {
     }
     
     func testOsVersionGreater() {
-        let osVersion = osVersionGreaterThan("9.2")
+        let osVersion = osVersionGreaterThan("10.2")
         
         XCTAssertTrue(osVersion)
     }
     
     func testOsVersionGreaterOrEqual() {
-        let osVersion = osVersionGreaterThanOrEqual("9.2")
+        let osVersion = osVersionGreaterThanOrEqual("10.2")
         
         XCTAssertTrue(osVersion)
     }
     
     func testOsVersionLess() {
-        let osVersion = osVersionLessThan("11.0")
+        let osVersion = osVersionLessThan("12.0")
         
         XCTAssertTrue(osVersion)
     }
     
     func testOsVersionLessOrEqual() {
-        let osVersion = osVersionLessThanOrEqual("11.0")
+        let osVersion = osVersionLessThanOrEqual("12.0")
         
         XCTAssertTrue(osVersion)
     }
@@ -71,13 +71,13 @@ class UIDeviceExtensionTests: XCTestCase {
     func testOsVersion() {
         let osVersion = UIDevice.osVersion.substring(to: ".")
         
-        XCTAssertEqual(osVersion, "10")
+        XCTAssertEqual(osVersion, "11")
     }
     
     func testOsMajorVersion() {
         let osVersion = UIDevice.osMajorVersion
         
-        XCTAssertEqual(osVersion, 10)
+        XCTAssertEqual(osVersion, 11)
     }
     
     func testHardwareModel() {

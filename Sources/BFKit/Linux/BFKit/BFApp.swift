@@ -31,15 +31,7 @@ import Foundation
 
 // MARK: - Global variables
 
-#if os(iOS)
-    /// Get AppDelegate. To use it, cast to AppDelegate with "as! AppDelegate".
-    @available(*, deprecated: 3.0, message: "`appDelegate` will be removed in BFKit-Swift 3.0.")
-    public let appDelegate: UIApplicationDelegate? = UIApplication.shared.delegate
-#endif
-
 #if !os(Linux)
-    // MARK: - Global functions
-
     /// NSLocalizedString without comment parameter.
     ///
     /// - Parameter key: The key of the localized string.

@@ -103,10 +103,11 @@ public extension UIDevice {
     /// - Returns: Returns the device platform string.
     public static var hardwareModel: String {
         var name: [Int32] = [CTL_HW, HW_MACHINE]
+        var nameCopy = name
         var size: Int = 2
-        sysctl(&name, 2, nil, &size, &name, 0)
+        sysctl(&nameCopy, 2, nil, &size, &name, 0)
         var hw_machine = [CChar](repeating: 0, count: Int(size))
-        sysctl(&name, 2, &hw_machine, &size, &name, 0)
+        sysctl(&nameCopy, 2, &hw_machine, &size, &name, 0)
         
         let hardware: String = String(cString: hw_machine)
         return hardware
@@ -246,7 +247,7 @@ public extension UIDevice {
     /// Executes a block everytime low power mode is enabled o disabled.
     ///
     /// - Parameter block: Block to be executed.
-    @available(iOS 9.0, *)
+    @objc @available(iOS 9.0, *)
     public static func lowPowerModeChanged(_ block: @escaping (_ isLowPowerModeEnabled: Bool) -> Void) {
         if !lowPowerModeObserver {
             NotificationCenter.default.addObserver(self, selector: #selector(lowPowerModeChanged(_:)), name: .NSProcessInfoPowerStateDidChange, object: nil)
@@ -302,7 +303,12 @@ public extension UIDevice {
     ///
     /// - Returns: Returns true if current device is jailbroken, otherwise false.
     public static func isJailbroken() -> Bool {
-        return UIApplication.shared.canOpenURL(URL(string: "cydia://")!) || FileManager.default.fileExists(atPath: "/bin/bash")
+        let canReadBinBash = FileManager.default.fileExists(atPath: "/bin/bash")
+        if let canOpenCydia = (UIApplication.value(forKey: "sharedApplication") as? UIApplication)?.canOpenURL(URL(string: "cydia://")!) {
+            return canOpenCydia || canReadBinBash
+        } else {
+            return canReadBinBash
+        }
     }
     
     /// Returns system uptime.
@@ -349,10 +355,11 @@ public extension UIDevice {
     /// - Returns: Return sysyem info.
     fileprivate static func getSysInfo(_ typeSpecifier: Int32) -> Int {
         var name: [Int32] = [CTL_HW, typeSpecifier]
+        var nameCopy = name
         var size: Int = 2
-        sysctl(&name, 2, nil, &size, &name, 0)
+        sysctl(&nameCopy, 2, nil, &size, &name, 0)
         var results: Int = 0
-        sysctl(&name, 2, &results, &size, &name, 0)
+        sysctl(&nameCopy, 2, &results, &size, &name, 0)
         
         return results
     }

@@ -29,265 +29,7 @@ import UIKit
 
 // MARK: - Global variables
 
-/// All font names for all family available from iOS 7.0 to iOS 10.0.
-///
-/// - academyEngravedLetPlain: AcademyEngravedLetPlain.
-/// - alNile: AlNile.
-/// - alNileBold: AlNile Bold.
-/// - americanTypewriter: AmericanTypewriter.
-/// - americanTypewriterBold: AmericanTypewriter Bold.
-/// - americanTypewriterCondensed: AmericanTypewriter Condensed.
-/// - americanTypewriterCondensedBold: AmericanTypewriter Condensed Bold.
-/// - americanTypewriterCondensedLight: AmericanTypewriter Condensed Light.
-/// - americanTypewriterLight: AmericanTypewriter Light.
-/// - americanTypewriterSemiBold: AmericanTypewriter Semi Bold.
-/// - appleColorEmoji: AppleColorEmoji.
-/// - appleSDGothicNeoBold: AppleSDGothicNeo Bold.
-/// - appleSDGothicNeoLight: AppleSDGothicNeo Light.
-/// - appleSDGothicNeoMedium: AppleSDGothicNeo Medium.
-/// - appleSDGothicNeoRegular: AppleSDGothicNeo Regular.
-/// - appleSDGothicNeoSemiBold: AppleSDGothicNeo Semi Bold.
-/// - appleSDGothicNeoThin: AppleSDGothicNeo Thin.
-/// - appleSDGothicNeoUltraLight: AppleSDGothicNeo Ultra Light.
-/// - arialBoldItalicMT: Arial Bold Italic MT.
-/// - arialBoldMT: Arial Bold MT.
-/// - arialHebrew: ArialHebrew.
-/// - arialHebrewBold: ArialHebrew Bold.
-/// - arialHebrewLight: ArialHebrew Light.
-/// - arialItalicMT: Arial Italic MT.
-/// - arialMT: Arial MT.
-/// - arialRoundedMTBold: Arial Rounded MT Bold.
-/// - astHeitiLight: ASTHeiti Light.
-/// - astHeitiMedium: ASTHeiti Medium.
-/// - avenirBlack: AvenirBlack.
-/// - avenirBlackOblique: AvenirBlack Oblique.
-/// - avenirBook: AvenirBook.
-/// - avenirBookOblique: AvenirBook Oblique.
-/// - avenirHeavy: AvenirHeavy.
-/// - avenirHeavyOblique: AvenirHeavy Oblique.
-/// - avenirLight: AvenirLight.
-/// - avenirLightOblique: AvenirLight Oblique.
-/// - avenirMedium: AvenirMedium.
-/// - avenirMediumOblique: AvenirMedium Oblique.
-/// - avenirNextBold: AvenirNext Bold.
-/// - avenirNextBoldItalic: AvenirNext Bold Italic.
-/// - avenirNextCondensedBold: AvenirNextCondensed Bold.
-/// - avenirNextCondensedBoldItalic: AvenirNextCondensed Bold Italic.
-/// - avenirNextCondensedDemiBold: AvenirNextCondensed Demi Bold.
-/// - avenirNextCondensedDemiBoldItalic: AvenirNextCondensed Demi Bold Italic.
-/// - aAvenirNextCondensedHeavy: AvenirNextCondensed Heavy.
-/// - avenirNextCondensedHeavyItalic: AvenirNextCondensed Heavy Italic.
-/// - avenirNextCondensedItalic: AvenirNextCondensed Italic.
-/// - avenirNextCondensedMedium: AvenirNextCondensed Medium.
-/// - avenirNextCondensedMediumItalic: AvenirNextCondensed Medium Italic.
-/// - avenirNextCondensedRegular: AvenirNextCondensed Regular.
-/// - avenirNextCondensedUltraLight: AvenirNextCondensed Ultra Light.
-/// - avenirNextCondensedUltraLightItalic: AvenirNextCondensed Ultra Light Italic.
-/// - avenirNextDemiBold: AvenirNextDemi Bold.
-/// - avenirNextDemiBoldItalic: AvenirNextDemi Bold Italic.
-/// - avenirNextHeavy: AvenirNext Heavy.
-/// - avenirNextItalic: AvenirNext Italic.
-/// - avenirNextMedium: AvenirNext Medium.
-/// - avenirNextMediumItalic: AvenirNext Medium Italic.
-/// - avenirNextRegular: AvenirNext Regular.
-/// - avenirNextUltraLight: AvenirNext Ultra Light.
-/// - avenirNextUltraLightItalic: AvenirNext Ultra Light Italic.
-/// - avenirOblique: Avenir Oblique.
-/// - avenirRoman: Avenir Roman.
-/// - baskerville: Baskerville.
-/// - baskervilleBold: Baskerville Bold.
-/// - baskervilleBoldItalic: Baskerville Bold Italic.
-/// - baskervilleItalic: Baskerville Italic.
-/// - baskervilleSemiBold: Baskerville Semi Bold.
-/// - baskervilleSemiBoldItalic: Baskerville Semi Bold Italic.
-/// - bodoniOrnamentsITCTT: BodoniOrnamentsITCTT.
-/// - bodoniSvtyTwoITCTTBold: BodoniSvtyTwoITCTT Bold.
-/// - bodoniSvtyTwoITCTTBook: BodoniSvtyTwoITCTT Book.
-/// - bodoniSvtyTwoITCTTBookIta: BodoniSvtyTwoITCTT Book Ita.
-/// - bodoniSvtyTwoOSITCTTBold: BodoniSvtyTwoOSITCTT Bold.
-/// - bodoniSvtyTwoOSITCTTBook: BodoniSvtyTwoOSITCTT Book.
-/// - bodoniSvtyTwoOSITCTTBookIt: BodoniSvtyTwoOSITCTT Book It.
-/// - bodoniSvtyTwoSCITCTTBook: BodoniSvtyTwoSCITCTT Book.
-/// - bradleyHandITCTTBold: BradleyHandITCTT Bold.
-/// - chalkboardSEBold: ChalkboardSE Bold.
-/// - chalkboardSELight: ChalkboardSE Light.
-/// - chalkboardSERegular: ChalkboardSE Regular.
-/// - chalkduster: Chalkduster.
-/// - cochin: Cochin.
-/// - cochinBold: Cochin Bold.
-/// - cochinBoldItalic: Cochin Bold Italic.
-/// - cochinItalic: Cochin Italic.
-/// - copperplate: Copperplate.
-/// - copperplateBold: Copperplate Bold.
-/// - copperplateLight: Copperplate Light.
-/// - courier: Courier.
-/// - courierBold: Courier Bold.
-/// - courierBoldOblique: Courier Bold Oblique.
-/// - courierNewPSBoldItalicMT: CourierNewPS Bold Italic MT.
-/// - courierNewPSBoldMT: CourierNewPS Bold MT.
-/// - courierNewPSItalicMT: CourierNewPS Italic MT.
-/// - courierNewPSMT: CourierNewPS MT.
-/// - courierOblique: Courier Oblique.
-/// - damascus: Damascus.
-/// - damascusBold: Damascus Bold.
-/// - damascusMedium: Damascus Medium.
-/// - damascusSemiBold: Damascus Semi Bold.
-/// - devanagariSangamMN: DevanagariSangamMN.
-/// - devanagariSangamMNBold: DevanagariSangamMN Bold.
-/// - didot: Didot.
-/// - didotBold: Didot Bold.
-/// - didotItalic: Didot Italic.
-/// - diwanMishafi: DiwanMishafi..
-/// - euphemiaUCAS: EuphemiaUCAS.
-/// - euphemiaUCASBold: EuphemiaUCAS Bold.
-/// - euphemiaUCASItalic: EuphemiaUCAS Italic.
-/// - farah: Farah.
-/// - futuraBold: Futura Bold.
-/// - futuraCondensedExtraBold: Futura Condensed Extra Bold.
-/// - futuraCondensedMedium: Futura Condensed Medium.
-/// - futuraMedium: Futura Medium.
-/// - futuraMediumItalic: Futura Medium Italic.
-/// - geezaPro: GeezaPro.
-/// - geezaProBold: GeezaPro Bold.
-/// - geezaProLight: GeezaPro Light.
-/// - georgia: Georgia.
-/// - georgiaBold: Georgia Bold.
-/// - georgiaBoldItalic: Georgia Bold Italic.
-/// - georgiaItalic: Georgia Italic.
-/// - gillSans: GillSans.
-/// - gillSansBold: GillSans Bold.
-/// - gillSansBoldItalic: GillSans Bold Italic.
-/// - gillSansItalic: GillSans Italic.
-/// - gillSansLight: GillSans Light.
-/// - gillSansLightItalic: GillSans Light Italic.
-/// - gillSansSemiBold: GillSans Semi Bold.
-/// - gillSansSemiBoldItalic: GillSans Semi Bold Italic.
-/// - gillSansUltraBold: GillSans Ultra Bold.
-/// - gujaratiSangamMN: GujaratiSangamMN.
-/// - gujaratiSangamMNBold: GujaratiSangamMN Bold.
-/// - gurmukhiMN: GurmukhiMN.
-/// - gurmukhiMNBold: GurmukhiMN Bold.
-/// - helvetica: Helvetica.
-/// - helveticaBold: Helvetica Bold.
-/// - helveticaBoldOblique: Helvetica Bold Oblique.
-/// - helveticaLight: Helvetica Light.
-/// - helveticaLightOblique: Helvetica Light Oblique.
-/// - helveticaNeue: HelveticaNeue.
-/// - helveticaNeueBold: HelveticaNeue Bold.
-/// - helveticaNeueBoldItalic: HelveticaNeue Bold Italic.
-/// - helveticaNeueCondensedBlack: HelveticaNeue Condensed Black.
-/// - helveticaNeueCondensedBold: HelveticaNeue Condensed Bold.
-/// - helveticaNeueItalic: HelveticaNeue Italic.
-/// - helveticaNeueLight: HelveticaNeue Light.
-/// - helveticaNeueMedium: HelveticaNeue Medium.
-/// - helveticaNeueMediumItalic: HelveticaNeue Medium Italic.
-/// - helveticaNeueThin: HelveticaNeue Thin.
-/// - helveticaNeueThinItalic: HelveticaNeue Thin Italic.
-/// - helveticaNeueUltraLight: HelveticaNeue Ultra Light.
-/// - helveticaNeueUltraLightItalic: HelveticaNeue Ultra Light Italic.
-/// - helveticaOblique: Helvetica Oblique.
-/// - hiraginoSansW3: HiraginoSansW3.
-/// - hiraginoSansW6: HiraginoSansW6.
-/// - hiraKakuProNW3: HiraKakuProNW3.
-/// - hiraKakuProNW6: HiraKakuProNW6.
-/// - hiraMinProNW3: HiraMinProNW3.
-/// - hiraMinProNW6: HiraMinProNW6.
-/// - hoeflerTextBlack: HoeflerTextBlack.
-/// - hoeflerTextBlackItalic: HoeflerTextBlack Italic.
-/// - hoeflerTextItalic: HoeflerText Italic.
-/// - hoeflerTextRegular: HoeflerText Regular.
-/// - kailasa: Kailasa.
-/// - kailasaBold: Kailasa Bold.
-/// - kannadaSangamMN: KannadaSangamMN.
-/// - kannadaSangamMNBold: KannadaSangamMN Bold.
-/// - khmerSangamMN: KhmerSangamMN.
-/// - kohinoorBanglaLight: KohinoorBangla Light.
-/// - kohinoorBanglaMedium: KohinoorBangla Medium.
-/// - kohinoorBanglaRegular: KohinoorBangla Regular.
-/// - kohinoorBanglaSemiBold: KohinoorBangla Semi Bold.
-/// - kohinoorDevanagariBook: KohinoorDevanagari Book.
-/// - kohinoorDevanagariLight: KohinoorDevanagari Light.
-/// - kohinoorDevanagariMedium: KohinoorDevanagari Medium.
-/// - ohinoorDevanagariRegular KohinoorDevanagari Regular.
-/// - kohinoorDevanagariSemiBold KohinoorDevanagari Semi Bold.
-/// - kohinoorTeluguLight: KohinoorTelugu Light.
-/// - kohinoorTeluguMedium: KohinoorTelugu Medium.
-/// - kohinoorTeluguRegular: KohinoorTelugu Regular.
-/// - laoSangamMN: LaoSangamMN.
-/// - malayalamSangamMN: MalayalamSangamMN.
-/// - malayalamSangamMNBold: MalayalamSangamMN Bold.
-/// - markerFeltThin: MarkerFelt Thin.
-/// - markerFeltWide: MarkerFelt Wide.
-/// - menloBold: MenloBold.
-/// - menloBoldItalic: MenloBold Italic.
-/// - menloItalic: Menlo Italic.
-/// - menloRegular: Menlo Regular.
-/// - myanmarSangamMN: MyanmarSangamMN.
-/// - myanmarSangamMNBold: MyanmarSangamMN Bold.
-/// - noteworthyBold: Noteworthy Bold.
-/// - noteworthyLight: Noteworthy Light.
-/// - optimaBold: Optima Bold.
-/// - optimaBoldItalic: Optima Bold Italic.
-/// - optimaExtraBlack: Optima Extra Black.
-/// - optimaItalic: Optima Italic.
-/// - optimaRegular: Optima Regular.
-/// - oriyaSangamMN: OriyaSangamMN.
-/// - oriyaSangamMNBold: OriyaSangamMN Bold.
-/// - palatinoBold: Palatino Bold.
-/// - palatinoBoldItalic: Palatino Bold Italic.
-/// - palatinoItalic: Palatino Italic.
-/// - palatinoRoman: Palatino Roman.
-/// - papyrus: Papyrus.
-/// - papyrusCondensed: Papyrus Condensed.
-/// - partyLetPlain: PartyLetPlain.
-/// - pingFangHKLight: PingFangHK Light.
-/// - pingFangHKMedium: PingFangHK Medium.
-/// - pingFangHKRegular: PingFangHK Regular.
-/// - pingFangHKSemiBold: PingFangHK Semi Bold.
-/// - pingFangHKThin: PingFangHK Thin.
-/// - pingFangHKUltraLight: PingFangHK Ultra Light.
-/// - pingFangSCLight: PingFangSC Light.
-/// - pingFangSCMedium: PingFangSC Medium.
-/// - pingFangSCRegular: PingFangSC Regular.
-/// - pingFangSCSemiBold: PingFangSC Semi Bold.
-/// - pingFangSCThin: PingFangSC Thin.
-/// - pingFangSCUltraLight: PingFangSC Ultra Light.
-/// - pingFangTCLight: PingFangTC Light.
-/// - pingFangTCMedium: PingFangTC Medium.
-/// - pingFangTCRegular: PingFangTC Regular.
-/// - pingFangTCSemiBold: PingFangTC Semi Bold.
-/// - pingFangTCThin: PingFangTC Thin.
-/// - pingFangTCUltraLight: PingFangTC Ultra Light.
-/// - savoyeLetPlain: SavoyeLetPlain.
-/// - sinhalaSangamMN: SinhalaSangamMN.
-/// - sinhalaSangamMNBold: SinhalaSangamMN Bold.
-/// - snellRoundhand: SnellRoundhand.
-/// - snellRoundhandBlack: SnellRoundhand Black.
-/// - snellRoundhandBold: SnellRoundhand Bold.
-/// - stHeitiSCLight: STHeitiSC Light.
-/// - stHeitiSCMedium: STHeitiSC Medium.
-/// - stHeitiTCLight: STHeitiTC Light.
-/// - stHeitiTCMedium: STHeitiTC Medium.
-/// - symbol: Symbol.
-/// - tamilSangamMN: TamilSangamMN.
-/// - tamilSangamMNBold: TamilSangamMN Bold.
-/// - teluguSangamMN: TeluguSangamMN.
-/// - teluguSangamMNBold: TeluguSangamMN Bold.
-/// - thonburi: Thonburi.
-/// - thonburiBold: Thonburi Bold.
-/// - thonburiLight: Thonburi Light.
-/// - timesNewRomanPSBoldItalicMT: TimesNewRomanPS Bold Italic MT.
-/// - timesNewRomanPSBoldMT: TimesNewRomanPS Bold MT.
-/// - timesNewRomanPSItalicMT: TimesNewRomanPS Italic MT.
-/// - timesNewRomanPSMT: TimesNewRomanPS MT.
-/// - trebuchetBoldItalic: Trebuchet Bold Italic.
-/// - trebuchetMS: TrebuchetMS.
-/// - trebuchetMSBold: TrebuchetMS Bold.
-/// - trebuchetMSItalic: TrebuchetMS Italic.
-/// - verdana: Verdana.
-/// - verdanaBold: Verdana Bold.
-/// - verdanaBoldItalic: Verdana Bold Italic.
-/// - verdanaItalic: Verdana Italic.
+/// All font names for all family available from iOS 7.0 to iOS 11.0.
 public enum FontName: String {
     case academyEngravedLetPlain = "AcademyEngravedLetPlain"
     case alNile = "AlNile"
@@ -344,6 +86,7 @@ public enum FontName: String {
     case avenirNextDemiBold = "AvenirNext-DemiBold"
     case avenirNextDemiBoldItalic = "AvenirNext-DemiBoldItalic"
     case avenirNextHeavy = "AvenirNext-Heavy"
+    case avenirNextHeavyItalic = "AvenirNext-HeavyItalic"
     case avenirNextItalic = "AvenirNext-Italic"
     case avenirNextMedium = "AvenirNext-Medium"
     case avenirNextMediumItalic = "AvenirNext-MediumItalic"
@@ -407,7 +150,6 @@ public enum FontName: String {
     case futuraMediumItalic = "Futura-MediumItalic"
     case geezaPro = "GeezaPro"
     case geezaProBold = "GeezaPro-Bold"
-    case geezaProLight = "GeezaPro-Light"
     case georgia = "Georgia"
     case georgiaBold = "Georgia-Bold"
     case georgiaBoldItalic = "Georgia-BoldItalic"
@@ -437,6 +179,7 @@ public enum FontName: String {
     case helveticaNeueCondensedBold = "HelveticaNeue-CondensedBold"
     case helveticaNeueItalic = "HelveticaNeue-Italic"
     case helveticaNeueLight = "HelveticaNeue-Light"
+    case helveticaNeueLightItalic = "HelveticaNeue-LightItalic"
     case helveticaNeueMedium = "HelveticaNeue-Medium"
     case helveticaNeueMediumItalic = "HelveticaNeue-MediumItalic"
     case helveticaNeueThin = "HelveticaNeue-Thin"
@@ -446,8 +189,7 @@ public enum FontName: String {
     case helveticaOblique = "Helvetica-Oblique"
     case hiraginoSansW3 = "HiraginoSans-W3"
     case hiraginoSansW6 = "HiraginoSans-W6"
-    case hiraKakuProNW3 = "HiraKakuProN-W3"
-    case hiraKakuProNW6 = "HiraKakuProN-W6"
+    case hiraMaruProNW4 = "HiraMaruProN-W4"
     case hiraMinProNW3 = "HiraMinProN-W3"
     case hiraMinProNW6 = "HiraMinProN-W6"
     case hoeflerTextBlack = "HoeflerText-Black"
@@ -458,14 +200,12 @@ public enum FontName: String {
     case kailasaBold = "Kailasa-Bold"
     case kannadaSangamMN = "KannadaSangamMN"
     case kannadaSangamMNBold = "KannadaSangamMN-Bold"
+    case kefaRegular = "Kefa-Regular"
     case khmerSangamMN = "KhmerSangamMN"
     case kohinoorBanglaLight = "KohinoorBangla-Light"
-    case kohinoorBanglaMedium = "KohinoorBangla-Medium"
     case kohinoorBanglaRegular = "KohinoorBangla-Regular"
     case kohinoorBanglaSemiBold = "KohinoorBangla-SemiBold"
-    case kohinoorDevanagariBook = "KohinoorDevanagari-Book"
     case kohinoorDevanagariLight = "KohinoorDevanagari-Light"
-    case kohinoorDevanagariMedium = "KohinoorDevanagari-Medium"
     case kohinoorDevanagariRegular = "KohinoorDevanagari-Regular"
     case kohinoorDevanagariSemiBold = "KohinoorDevanagari-SemiBold"
     case kohinoorTeluguLight = "KohinoorTelugu-Light"
@@ -484,6 +224,7 @@ public enum FontName: String {
     case myanmarSangamMNBold = "MyanmarSangamMN-Bold"
     case noteworthyBold = "Noteworthy-Bold"
     case noteworthyLight = "Noteworthy-Light"
+    case notoNastaliqUrdu = "NotoNastaliqUrdu"
     case optimaBold = "Optima-Bold"
     case optimaBoldItalic = "Optima-BoldItalic"
     case optimaExtraBlack = "Optima-ExtraBold"
@@ -534,8 +275,8 @@ public enum FontName: String {
     case thonburi = "Thonburi"
     case thonburiBold = "Thonburi-Bold"
     case thonburiLight = "Thonburi-Light"
-    case timesNewRomanPSBoldItalicMT = "TimesNewRomanPS-BoldItalic"
-    case timesNewRomanPSBoldMT = "TimesNewRomanPS-Bold"
+    case timesNewRomanPSBoldItalicMT = "TimesNewRomanPS-BoldItalicMT"
+    case timesNewRomanPSBoldMT = "TimesNewRomanPS-BoldMT"
     case timesNewRomanPSItalicMT = "TimesNewRomanPS-ItalicMT"
     case timesNewRomanPSMT = "TimesNewRomanPSMT"
     case trebuchetBoldItalic = "Trebuchet-BoldItalic"
@@ -546,6 +287,7 @@ public enum FontName: String {
     case verdanaBold = "Verdana-Bold"
     case verdanaBoldItalic = "Verdana-BoldItalic"
     case verdanaItalic = "Verdana-Italic"
+    case zapfDingbatsITC = "ZapfDingbatsITC"
 }
 
 // MARK: - UIFont extension
@@ -554,90 +296,7 @@ public enum FontName: String {
 public extension UIFont {
     // MARK: - Variables
     
-    /// All font family names available from iOS 7.0 to iOS 10.0.
-    ///
-    /// - academyEngravedLET: AcademyEngravedLET.
-    /// - alNile: AlNile.
-    /// - americanTypewriter: AmericanTypewriter.
-    /// - appleColorEmoji: AppleColorEmoji.
-    /// - appleSDGothicNeo: AppleSDGothicNeo.
-    /// - arial: Arial.
-    /// - arialHebrew: ArialHebrew.
-    /// - arialRoundedMTBold: ArialRoundedMTBold.
-    /// - avenir: Avenir.
-    /// - avenirNext: AvenirNext.
-    /// - avenirNextCondensed: AvenirNextCondensed.
-    /// - banglaSangamMN: BanglaSangamMN.
-    /// - baskerville: Baskerville.
-    /// - bodoni72: Bodoni72.
-    /// - bodoni72Oldstyle: Bodoni72Oldstyle.
-    /// - bodoni72Smallcaps: Bodoni72Smallcaps.
-    /// - bodoniOrnaments: BodoniOrnaments.
-    /// - bradleyHand: BradleyHand.
-    /// - chalkboardSE: ChalkboardSE.
-    /// - chalkduster: Chalkduster.
-    /// - cochin: Cochin.
-    /// - copperplate: Copperplate.
-    /// - courier: Courier.
-    /// - courierNew: CourierNew.
-    /// - damascus: Damascus.
-    /// - devanagariSangamMN: DevanagariSangamMN.
-    /// - didot: Didot.
-    /// - dINAlternate: DINAlternate.
-    /// - dINCondensed: DINCondensed.
-    /// - euphemiaUCAS: EuphemiaUCAS.
-    /// - farah: Farah.
-    /// - futura: Futura.
-    /// - geezaPro: GeezaPro.
-    /// - georgia: Georgia.
-    /// - gillSans: GillSans.
-    /// - gujaratiSangamMN: GujaratiSangamMN.
-    /// - gurmukhiMN: GurmukhiMN.
-    /// - heitiSC: HeitiSC.
-    /// - heitiTC: HeitiTC.
-    /// - helvetica: Helvetica.
-    /// - helveticaNeue: HelveticaNeue.
-    /// - hiraginoKakuGothicProN: HiraginoKakuGothicProN.
-    /// - hiraginoMinchoProN: HiraginoMinchoProN.
-    /// - hiraginoSansW3: HiraginoSansW3.
-    /// - hiraginoSansW6: HiraginoSansW6.
-    /// - hoeflerText: HoeflerText.
-    /// - iowanOldStyle: IowanOldStyle.
-    /// - kailasa: Kailasa.
-    /// - kannadaSangamMN: KannadaSangamMN.
-    /// - khmerSangamMN: KhmerSangamMN.
-    /// - kohinoorBangla: KohinoorBangla.
-    /// - kohinoorDevanagari: KohinoorDevanagari.
-    /// - kohinoorTelugu KohinoorTelugu.
-    /// - laoSangamMN: LaoSangamMN.
-    /// - malayalamSangamMN: MalayalamSangamMN.
-    /// - marion: Marion.
-    /// - markerFelt: MarkerFelt.
-    /// - menlo: Menlo.
-    /// - mishafi: Mishafi.
-    /// - myanmarSangamMN: MyanmarSangamMN.
-    /// - noteworthy: Noteworthy.
-    /// - optima: Optima.
-    /// - oriyaSangamMN: OriyaSangamMN.
-    /// - palatino: Palatino.
-    /// - papyrus: Papyrus.
-    /// - partyLET: PartyLET.
-    /// - pingFangHK: PingFangHK.
-    /// - pingFangSC: PingFangSC.
-    /// - pingFangTC: PingFangTC.
-    /// - savoyeLET: SavoyeLET.
-    /// - sinhalaSangamMN: SinhalaSangamMN.
-    /// - snellRoundhand: SnellRoundhand.
-    /// - superclarendon: Superclarendon.
-    /// - symbol: Symbol.
-    /// - tamilSangamMN: TamilSangamMN.
-    /// - teluguSangamMN: TeluguSangamMN.
-    /// - thonburi: Thonburi.
-    /// - timesNewRoman: TimesNewRoman.
-    /// - trebuchetMS: TrebuchetMS.
-    /// - verdana: Verdana.
-    /// - zapfDingbats: ZapfDingbats.
-    /// - zapfino: Zapfino.
+    /// All font family names available from iOS 7.0 to iOS 11.0.
     public enum FamilyFontName: String {
         case academyEngravedLET = "Academy Engraved LET"
         case alNile = "Al Nile"
@@ -650,6 +309,7 @@ public extension UIFont {
         case avenir = "Avenir"
         case avenirNext = "Avenir Next"
         case avenirNextCondensed = "Avenir Next Condensed"
+        case banglaSangamMN = "Bangla Sangam MN"
         case baskerville = "Baskerville"
         case bodoni72 = "Bodoni 72"
         case bodoni72Oldstyle = "Bodoni 72 Oldstyle"
@@ -677,13 +337,13 @@ public extension UIFont {
         case heitiTC = "Heiti TC"
         case helvetica = "Helvetica"
         case helveticaNeue = "Helvetica Neue"
-        case hiraginoKakuGothicProN = "Hiragino Kaku Gothic ProN"
+        case hiraginoKakuGothicProN = "Hiragino Maru Gothic ProN"
         case hiraginoMinchoProN = "Hiragino Mincho ProN"
-        case hiraginoSansW3 = "Hiragino Sans W3"
-        case hiraginoSansW6 = "Hiragino Sans W6"
+        case hiraginoSansW3 = "Hiragino Sans"
         case hoeflerText = "Hoefler Text"
         case kailasa = "Kailasa"
         case kannadaSangamMN = "Kannada Sangam MN"
+        case kefa = "Kefa"
         case khmerSangamMN = "Khmer Sangam MN"
         case kohinoorBangla = "Kohinoor Bangla"
         case kohinoorDevanagari = "Kohinoor Devanagari"
@@ -695,14 +355,15 @@ public extension UIFont {
         case mishafi = "Mishafi"
         case myanmarSangamMN = "Myanmar Sangam MN"
         case noteworthy = "Noteworthy"
+        case notoNastaliqUrdu = "Noto Nastaliq Urdu"
         case optima = "Optima"
         case oriyaSangamMN = "Oriya Sangam MN"
         case palatino = "Palatino"
         case papyrus = "Papyrus"
         case partyLET = "Party LET"
-        case pingFangHK = "PingFangHK"
-        case pingFangSC = "PingFangSC"
-        case pingFangTC = "PingFangTC"
+        case pingFangHK = "PingFang HK"
+        case pingFangSC = "PingFang SC"
+        case pingFangTC = "PingFang TC"
         case savoyeLET = "Savoye LET"
         case sinhalaSangamMN = "Sinhala Sangam MN"
         case snellRoundhand = "Snell Roundhand"
@@ -746,15 +407,14 @@ public extension UIFont {
     /// Print in console all family and font names.
     ///
     /// - Returns: Returns all the font family names.
-    public static func allFonts() -> [String: [Any]] {
+    public static func allFonts() -> [String: [String]] {
         var fontFamilies = UIFont.familyNames
-        fontFamilies.sort { $0 > $1 }
+        fontFamilies.sort { $0 < $1 }
         
-        var fontFamilyDictionary: [String: [Any]] = Dictionary()
+        var fontFamilyDictionary: [String: [String]] = [:]
         
-        for i in 0 ..< fontFamilies.count {
-            let fontFamily: String = fontFamilies[i]
-            let fontNames: Array = UIFont.fontNames(forFamilyName: fontFamily)
+        for fontFamily in fontFamilies {
+            let fontNames: [String] = UIFont.fontNames(forFamilyName: fontFamily).sorted { $0 < $1 }
             fontFamilyDictionary[fontFamily] = fontNames
         }
         
@@ -771,7 +431,7 @@ public extension UIFont {
     public static func calculateHeight(width: CGFloat, font: UIFont, text: String) -> CGFloat {
         var size: CGSize = CGSize.zero
         if text.length > 0 {
-            let frame: CGRect = text.boundingRect(with: CGSize(width: width, height: 999999), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+            let frame: CGRect = text.boundingRect(with: CGSize(width: width, height: 999999), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
             size = CGSize(width: frame.size.width, height: frame.size.height + 1)
         }
         return size.height
@@ -794,7 +454,7 @@ public extension UIFont {
     ///
     /// - Parameter familyFontName: Family fonts.
     /// - Returns: Returns all fonts for the given family.
-    public static func fontsName(family: FamilyFontName) -> [Any] {
+    public static func fontNames(for family: FamilyFontName) -> [Any] {
         return UIFont.fontNames(forFamilyName: family.rawValue)
     }
 }

@@ -44,7 +44,7 @@ class FoundationViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func showInfo(_ sender: UIButton) {
+    @objc func showInfo(_ sender: UIButton) {
         self.performSegue(withIdentifier: InfoViewControllerSegueID, sender: self.navigationItem.rightBarButtonItem)
     }
     

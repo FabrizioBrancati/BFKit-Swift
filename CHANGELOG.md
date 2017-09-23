@@ -30,6 +30,25 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+## Swift 4
+### Added
+- Added support to Swift 4 and Xcode 9
+- Added support to App Extensions
+
+### Improved
+- Updated SwiftLint to 0.22.0
+
+### Fixed
+- Nothing
+
+### Changed
+- Changed `UIViewLinearGradientDirection` to `UIViewGradientDirection` enum name and properties in UIView extension. Easy transition, rename only
+- Changed `smoothLinearGradient(colors:, direction:)` to `smoothGradient(colors:, direction:, type: = default)` to allow radial gradients in UIView extension. Easy transition, thanks to default value
+- Removed `appDelegate` global variable
+- Changed `reversed(preserveFormat: = default)` to `eversed(preserveFormat:)` in String extension because is used instead of `reversed()` original String function
+
+---
+
 ## Master
 ### Added
 - Added `setTabBarVisible(_:, animated:, duration:)` and `isTabBarVisible` in UIViewController extension

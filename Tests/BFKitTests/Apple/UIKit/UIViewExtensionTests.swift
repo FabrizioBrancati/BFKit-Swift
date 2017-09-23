@@ -96,23 +96,29 @@ class UIViewExtensionTests: XCTestCase {
     func testGradientColorsDirection() {
         view.gradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .vertical)
         view.gradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .horizontal)
-        view.gradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalLeftToRightAndDownToTop)
-        view.gradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalLeftToRightAndTopToDown)
-        view.gradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalRightToLeftAndDownToTop)
-        view.gradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalRightToLeftAndTopToDown)
+        view.gradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalLeftTopToRightDown)
+        view.gradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalRightTopToLeftDown)
+        view.gradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalLeftDownToRightTop)
+        view.gradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalRightDownToLeftTop)
         view.gradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .custom(startPoint: CGPoint(x: 10, y: 10), endPoint: CGPoint(x: 90, y: 90)))
         
         XCTAssertEqual(view.frame, CGRect(x: 0, y: 0, width: 200, height: 100))
     }
     
-    func testSmoothLinearGradientColorsDirection() {
-        view.smoothLinearGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .vertical)
-        view.smoothLinearGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .horizontal)
-        view.smoothLinearGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalRightToLeftAndTopToDown)
-        view.smoothLinearGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalLeftToRightAndTopToDown)
-        view.smoothLinearGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalRightToLeftAndDownToTop)
-        view.smoothLinearGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalRightToLeftAndTopToDown)
-        view.smoothLinearGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .custom(startPoint: CGPoint(x: 10, y: 10), endPoint: CGPoint(x: 90, y: 90)))
+    func testSmoothGradientColorsDirectionTypeLinear() {
+        view.smoothGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .custom(startPoint: CGPoint(x: 10, y: 10), endPoint: CGPoint(x: 90, y: 90)), type: .linear)
+        
+        XCTAssertEqual(view.frame, CGRect(x: 0, y: 0, width: 200, height: 100))
+    }
+    
+    func testSmoothGradientColorsDirectionTypeGradient() {
+        view.smoothGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .vertical, type: .linear)
+        view.smoothGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .horizontal, type: .linear)
+        view.smoothGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalLeftTopToRightDown, type: .linear)
+        view.smoothGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalRightTopToLeftDown, type: .linear)
+        view.smoothGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalLeftDownToRightTop, type: .linear)
+        view.smoothGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalRightDownToLeftTop, type: .linear)
+        view.smoothGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .custom(startPoint: CGPoint(x: 10, y: 10), endPoint: CGPoint(x: 90, y: 90)), type: .linear)
         
         XCTAssertEqual(view.frame, CGRect(x: 0, y: 0, width: 200, height: 100))
     }
@@ -125,7 +131,7 @@ class UIViewExtensionTests: XCTestCase {
     
     func testScreenshotSave() {
         guard let screenshot = view.screenshot(save: true) else {
-            XCTFail()
+            XCTFail("`testScreenshotSave` error")
             return
         }
         

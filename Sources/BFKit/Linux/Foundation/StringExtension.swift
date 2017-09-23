@@ -34,7 +34,7 @@ public extension String {
 
     /// Gets the individual characters and puts them in an array as Strings.
     var array: [String] {
-        return description.characters.map { String($0) }
+        return description.map { String($0) }
     }
     
     /// Returns the Float value
@@ -77,7 +77,7 @@ public extension String {
     
     /// Returns the lenght of the string.
     public var length: Int {
-        return self.characters.count
+        return self.count
     }
     
     /// Get the character at a given index.
@@ -85,7 +85,7 @@ public extension String {
     /// - Parameter index: The index.
     /// - Returns: Returns the character at a given index, starts from 0.
     public func character(at index: Int) -> Character {
-        return self[self.characters.index(self.startIndex, offsetBy: index)]
+        return self[self.index(self.startIndex, offsetBy: index)]
     }
     
     /// Returns a new string containing the characters of the String from the one at a given index to the end.
@@ -93,7 +93,7 @@ public extension String {
     /// - Parameter index: The index.
     /// - Returns: Returns the substring from index.
     public func substring(from index: Int) -> String {
-        return self.substring(from: self.characters.index(self.startIndex, offsetBy: index))
+        return String(self[self.index(self.startIndex, offsetBy: index)...])
     }
     
     /// Creates a substring from the given character.
@@ -116,7 +116,7 @@ public extension String {
         guard index <= self.length else {
             return ""
         }
-        return self.substring(to: self.characters.index(self.startIndex, offsetBy: index))
+        return String(self[..<self.index(self.startIndex, offsetBy: index)])
     }
     
     /// Creates a substring to the given character.
@@ -136,10 +136,10 @@ public extension String {
     /// - Parameter range: The range.
     /// - Returns: Returns the string between the range.
     public func substring(with range: Range<Int>) -> String {
-        let start = self.characters.index(self.startIndex, offsetBy: range.lowerBound)
-        let end = self.characters.index(self.startIndex, offsetBy: range.upperBound)
+        let start = self.index(self.startIndex, offsetBy: range.lowerBound)
+        let end = self.index(self.startIndex, offsetBy: range.upperBound)
 
-        return self.substring(with: start..<end)
+        return String(self[start..<end])
     }
     
     /// Creates a substring with a given range.
@@ -155,8 +155,8 @@ public extension String {
     /// - Parameter character: The character to search.
     /// - Returns: Returns the index of the given character, -1 if not found.
     public func index(of character: Character) -> Int {
-        if let index = self.characters.index(of: character) {
-            return self.characters.distance(from: self.startIndex, to: index)
+        if let index: Index = self.index(of: character) {
+            return self.distance(from: self.startIndex, to: index)
         }
         return -1
     }
@@ -263,14 +263,14 @@ public extension String {
     ///
     /// - returns: Returns string with the first character uppercased.
     public func uppercasedFirst() -> String {
-        return String(self.characters.prefix(1)).uppercased() + String(self.characters.dropFirst())
+        return String(self.prefix(1)).uppercased() + String(self.dropFirst())
     }
     
     /// Returns string with the first character lowercased.
     ///
     /// - returns: Returns string with the first character lowercased.
     public func lowercasedFirst() -> String {
-        return String(self.characters.prefix(1)).lowercased() + String(self.characters.dropFirst())
+        return String(self.prefix(1)).lowercased() + String(self.dropFirst())
     }
     
     /// Returns the reversed String.
@@ -282,12 +282,12 @@ public extension String {
     ///                                 "?noitcnuf siht yrt S'tel"
     ///
     /// - returns: Returns the reversed String.
-    public func reversed(preserveFormat: Bool = false) -> String {
-        guard !self.characters.isEmpty else {
+    public func reversed(preserveFormat: Bool) -> String {
+        guard !self.isEmpty else {
             return ""
         }
 
-        var reversed = String(self.removeExtraSpaces().characters.reversed())
+        var reversed = String(self.removeExtraSpaces().reversed())
 
         if !preserveFormat {
             return reversed
@@ -348,11 +348,7 @@ public extension String {
     /// - returns: Remove double or more duplicated spaces.
     public func removeExtraSpaces() -> String {
         let squashed = self.replacingOccurrences(of: "[ ]+", with: " ", options: .regularExpression, range: nil)
-        #if os(Linux) // Caused by a Linux bug with emoji.
-            return squashed
-        #else
-            return squashed.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        #endif
+        return squashed.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
     
     /// Returns a new string in which all occurrences of a target strings in a specified range of the String are replaced by another given string.
@@ -450,17 +446,11 @@ public extension String {
         var hex = self
         hex = hex.replacingOccurrences(of: " ", with: "")
         var string: String = ""
-        while !hex.characters.isEmpty {
-            let character: String = hex.substring(to: hex.index(hex.startIndex, offsetBy: 2))
-            hex = hex.substring(from: hex.index(hex.startIndex, offsetBy: 2))
+        while !hex.isEmpty {
+            let character: String = String(hex[..<hex.index(hex.startIndex, offsetBy: 2)])
+            hex = String(hex[hex.index(hex.startIndex, offsetBy: 2)...])
             var characterInt: UInt32 = 0
-            
-            #if os(Linux)
-                _ = Scanner(string: character).scanHexInt(&characterInt)
-            #else
-                Scanner(string: character).scanHexInt32(&characterInt)
-            #endif
-            
+            _ = Scanner(string: character).scanHexInt32(&characterInt)
             string += String(format: "%c", characterInt)
         }
         return string
@@ -489,7 +479,7 @@ public extension String {
     func isAnagram(of string: String) -> Bool {
         let lowerSelf = self.lowercased().replacingOccurrences(of: " ", with: "")
         let lowerOther = string.lowercased().replacingOccurrences(of: " ", with: "")
-        return lowerSelf.characters.sorted() == lowerOther.characters.sorted()
+        return lowerSelf.sorted() == lowerOther.sorted()
     }
     
     /// Returns if self is palindrome.
@@ -497,7 +487,7 @@ public extension String {
     /// - Returns: Returns true if self is palindrome, otherwise false.
     func isPalindrome() -> Bool {
         let selfString = self.lowercased().replacingOccurrences(of: " ", with: "")
-        let otherString = String(selfString.characters.reversed())
+        let otherString = String(selfString.reversed())
         return selfString == otherString
     }
     
@@ -505,7 +495,7 @@ public extension String {
     ///
     /// - Parameter index: Returns the character at the given index.
     public subscript(index: Int) -> Character {
-        return self[self.characters.index(self.startIndex, offsetBy: index)]
+        return self[self.index(self.startIndex, offsetBy: index)]
     }
     
     /// Returns the index of the given character, -1 if not found.
@@ -539,17 +529,6 @@ public extension String {
         func localize() -> String {
             return NSLocalizedString(self, comment: "")
         }
-        
-        /// Check if self is an email.
-        ///
-        /// - Returns: Returns true if it is an email, otherwise false.
-        public func isEmail() -> Bool {
-            let emailRegEx: String = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
-            
-            let regExPredicate: NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-            
-            return regExPredicate.evaluate(with: self.lowercased())
-        }
     
         /// Returns if self is a valid UUID or not.
         ///
@@ -576,7 +555,18 @@ public extension String {
                 return false
             }
         }
-        
+    
+        /// Check if self is an email.
+        ///
+        /// - Returns: Returns true if it is an email, otherwise false.
+        public func isEmail() -> Bool {
+            let emailRegEx: String = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+            
+            let regExPredicate: NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+            
+            return regExPredicate.evaluate(with: self.lowercased())
+        }
+    
         /// Returns a new string containing matching regular expressions replaced with the template string.
         ///
         /// - Parameters:
@@ -588,7 +578,7 @@ public extension String {
             let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString, options: .caseInsensitive)
             return regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: self.length), withTemplate: "")
         }
-        
+    
         /// Returns an array of String with all the links in self.
         ///
         /// - Returns: Returns an array of String with all the links in self.
@@ -604,7 +594,7 @@ public extension String {
                     return link.url!.absoluteString
             }
         }
-    
+
         /// Returns an array of Date with all the dates in self.
         ///
         /// - Returns: Returns an array of Date with all the date in self.
@@ -630,7 +620,7 @@ public extension String {
             let hashtags = detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withoutAnchoringBounds, range: NSRange(location: 0, length: length)).map { $0 }
             
             return hashtags.map({
-                (self as NSString).substring(with: $0.rangeAt(1))
+                (self as NSString).substring(with: $0.range(at: 1))
             })
         }
     
@@ -643,7 +633,7 @@ public extension String {
             let mentions = detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withoutAnchoringBounds, range: NSRange(location: 0, length: length)).map { $0 }
             
             return mentions.map({
-                (self as NSString).substring(with: $0.rangeAt(1))
+                (self as NSString).substring(with: $0.range(at: 1))
             })
         }
     #endif

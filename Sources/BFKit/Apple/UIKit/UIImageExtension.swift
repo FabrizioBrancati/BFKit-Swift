@@ -68,7 +68,7 @@ public extension UIImage {
         let style: NSMutableParagraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle // swiftlint:disable:this force_cast
         style.alignment = .center
         style.minimumLineHeight = size.height / 2
-        let attributes: Dictionary = [NSParagraphStyleAttributeName: style]
+        let attributes: Dictionary = [NSAttributedStringKey.paragraphStyle: style]
         sizeString.draw(in: rect, withAttributes:attributes)
         
         if let result = UIGraphicsGetImageFromCurrentImageContext() {
@@ -109,7 +109,7 @@ public extension UIImage {
     public convenience init?(text: String, font: FontName, fontSize: CGFloat, imageSize: CGSize) {
         UIGraphicsBeginImageContextWithOptions(imageSize, false, UIImage.screenScale())
         
-        text.draw(at: CGPoint(x: 0.0, y: 0.0), withAttributes: [NSFontAttributeName: UIFont(fontName: font, size:fontSize)])
+        text.draw(at: CGPoint(x: 0.0, y: 0.0), withAttributes: [NSAttributedStringKey.font: UIFont(fontName: font, size:fontSize)])
         
         guard let image: UIImage = UIGraphicsGetImageFromCurrentImageContext() else {
             UIGraphicsEndImageContext()
@@ -131,9 +131,9 @@ public extension UIImage {
     ///   - backgroundColor: Image background color.
     public convenience init?(maskedText: String, font: FontName, fontSize: CGFloat, imageSize: CGSize, backgroundColor: UIColor) {
         let fontName: UIFont = UIFont(fontName: font, size: fontSize)
-        let textAttributes = [NSFontAttributeName: fontName]
+        let textAttributes = [NSAttributedStringKey.font: fontName]
         
-        let textSize: CGSize = maskedText.size(attributes: textAttributes)
+        let textSize: CGSize = maskedText.size(withAttributes: textAttributes)
         
         UIGraphicsBeginImageContextWithOptions(imageSize, false, UIImage.screenScale())
         guard let context: CGContext = UIGraphicsGetCurrentContext() else {
@@ -571,7 +571,7 @@ public extension UIImage {
         let rect: CGRect = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
         
         let colorSpace: CGColorSpace = CGColorSpaceCreateDeviceGray()
-        let context: CGContext = CGContext(data: nil, width: Int(self.size.width), height: Int(self.size.height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: .allZeros)!
+        let context: CGContext = CGContext(data: nil, width: Int(self.size.width), height: Int(self.size.height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: 0)!
 
         context.draw(self.cgImage!, in: rect)
         
@@ -586,7 +586,7 @@ public extension UIImage {
     /// - Returns: Returns the transformed image.
     public func toBlackAndWhite() -> UIImage {
         let colorSpace: CGColorSpace = CGColorSpaceCreateDeviceGray()
-        let context: CGContext = CGContext(data: nil, width: Int(self.size.width), height: Int(self.size.height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: .allZeros)!
+        let context: CGContext = CGContext(data: nil, width: Int(self.size.width), height: Int(self.size.height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: 0)!
         
         context.interpolationQuality = .high
         context.setShouldAntialias(false)
@@ -815,8 +815,9 @@ public extension UIImage {
                 var effectOutBuffer = vImage_Buffer(data: effectOutContext.data, height: UInt(effectOutContext.height), width: UInt(effectOutContext.width), rowBytes: effectOutContext.bytesPerRow)
                 
                 if hasBlur {
-                    let inputRadius = blurRadius * UIImage.screenScale()
-                    var radius = UInt32(floor(inputRadius * 3.0 * CGFloat(sqrt(2 * Double.pi)) / 4 + 0.5))
+                    var inputRadius = blurRadius * UIImage.screenScale()
+                    inputRadius = inputRadius * 3.0 * CGFloat(sqrt(2 * Double.pi)) / 4 + 0.5
+                    var radius = UInt32(floor(inputRadius))
                     if radius % 2 != 1 {
                         radius += 1
                     }

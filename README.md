@@ -1,4 +1,6 @@
-<p align="center"><img src="https://github.fabriziobrancati.com/bfkit/resources/banner-swift.png" alt="BFKit-Swift Banner"></p>
+<p align="center">
+<img src="https://github.fabriziobrancati.com/bfkit/resources/banner-swift-new.png" alt="BFKit-Swift Banner">
+</p>
 
 [![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit-Swift.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit-Swift)
 [![Codecov](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift/branch/master/graph/badge.svg)](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift)
@@ -8,13 +10,12 @@
 [![Version](https://img.shields.io/cocoapods/v/BFKit-Swift.svg?style=flat)][Documentation]
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)
 <br>
-[![Language](https://img.shields.io/badge/language-Swift%203.0%20/%203.1%20/%203.2%20/%204.0-orange.svg)](https://swift.org/)
+[![Language](https://img.shields.io/badge/language-Swift%204.0-orange.svg)](https://swift.org/)
 [![Platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20watchOS%20%7C%20Linux-ffc713.svg)][Documentation]
 
 ---
 
 <p align="center">
-    <a href="#swift-4">Swift 4</a> &bull;
     <a href="#objective-c-version-">Objective-C Version</a> &bull;
     <a href="#features">Features</a> &bull;
     <a href="#classes-and-extensions-compatibility">Classes and Extensions Compatibility</a> &bull;
@@ -31,11 +32,6 @@
 </p>
 
 ---
-
-Swift 4
-=======
-
-If you need Swift 4 support, please switch to [swift-4](https://github.com/FabrizioBrancati/BFKit-Swift/tree/swift-4) branch.
 
 Objective-C Version <img src="http://github.fabriziobrancati.com/bfkit/resources/objc-icon.png" height="25" width="25">
 ===================
@@ -129,20 +125,23 @@ Classes and Extensions Compatibility
 Requirements
 ============
 
-| **Swift** | **Xcode** | **BFKit-Swift** | **iOS** | **macOS** | **watchOS** | **Linux** |
-|-----------|-----------|-----------------|---------|-----------|-------------|-----------|
-| 1.2       | 6.3       | 1.0.0...1.4.1   | 7.0+    |           |             |           |
-| 2.0...2.1 | 7.0       | 1.5.0...1.6.2   | 7.0+    |           |             |           |
-| 2.2       | 7.3       | 1.6.3...1.7.0   | 7.0+    |           |             |           |
-| 2.3       | 8.0       | 1.8.0           | 7.0+    |           |             |           |
-| 3.0...3.1 | 8.0...8.3 | 2.0.0...2.3.0   | 8.0+    |           |             | ![✓]      |
-| 3.0...3.1 | 8.0...8.3 | 2.4.0...2.5.0   | 8.0+    |           | 2.0+        | ![✓]      |
-| 3.0...3.2 | 8.0...9.0 | 2.6.0           | 8.0+    | 10.10+    | 2.0+        | ![✓]      |
+| **Swift** | **Xcode** | **BFKit-Swift** | **iOS**  | **macOS**  | **watchOS** | **Linux** |
+|-----------|-----------|-----------------|----------|------------|-------------|-----------|
+| 1.2       | 6.3       | 1.0.0...1.4.1   | 7.0+     |            |             |           |
+| 2.0...2.1 | 7.0       | 1.5.0...1.6.2   | 7.0+     |            |             |           |
+| 2.2       | 7.3       | 1.6.3...1.7.0   | 7.0+     |            |             |           |
+| 2.3       | 8.0       | 1.8.0           | 7.0+     |            |             |           |
+| 3.0...3.1 | 8.0...8.3 | 2.0.0...2.3.0   | 8.0+     |            |             | ![✓]      |
+| 3.0...3.1 | 8.0...8.3 | 2.4.0...2.5.0   | 8.0+     |            | 2.0+        | ![✓]      |
+| 3.0...3.2 | 8.0...9.0 | 2.6.0           | 8.0+     | 10.10+     | 2.0+        | ![✓]      |
+| 4.0       | 9.0       | 3.0.0           | 8.0+ `*` | 10.10+ `*` | 2.0+ `*`    | ![✓]      |
+
+> `*` With App Extension Support
 
 Communication
 =============
 
-- If you need help, use Stack Overflow.
+- If you need help, open an issue
 - If you found a bug, open an issue.
 - If you have a feature request, open an issue.
 - If you want to contribute, see [Contributing](https://github.com/FabrizioBrancati/BFKit-Swift#contributing) section.
@@ -209,8 +208,14 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
 
     let package = Package(
         name: "Project",
+        products: [
+            .executable(name: "Project", targets: ["Project"])
+        ],
         dependencies: [
-            .Package(url: "https://github.com/FabrizioBrancati/BFKit-Swift.git", majorVersion: 2)
+            .package(url: "https://github.com/FabrizioBrancati/BFKit-Swift.git", .upToNextMajor(from: "3.0.0"))
+        ],
+        targets: [
+            .target(name: "Project", dependencies: ["BFKit"])
         ]
     )
     ```

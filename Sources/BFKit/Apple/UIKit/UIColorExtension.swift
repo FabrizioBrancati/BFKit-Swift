@@ -201,7 +201,8 @@ public extension Color {
         
         self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
         
-        let rgb: Int = (Int)(red * 255) << 16 | (Int)(green * 255) << 8 | (Int)(blue * 255) << 0
+        var rgb: Int = (Int)(red * 255) << 16 | (Int)(green * 255) << 8
+        rgb = rgb | (Int)(blue * 255) << 0
         
         return String(format:"#%06x", rgb)
     }

@@ -40,7 +40,7 @@ class UIImageViewExtensionTests: XCTestCase {
     
     func testInitFrameImage() {
         guard let image = UIImage(dummyImage: "200x100") else {
-            XCTFail()
+            XCTFail("`testInitFrameImage` error")
             return
         }
         
@@ -52,7 +52,7 @@ class UIImageViewExtensionTests: XCTestCase {
     
     func testInitImageSizeCenter() {
         guard let image = UIImage(dummyImage: "200x100") else {
-            XCTFail()
+            XCTFail("`testInitImageSizeCenter` error")
             return
         }
         
@@ -64,7 +64,7 @@ class UIImageViewExtensionTests: XCTestCase {
     
     func testInitImageCenter() {
         guard let image = UIImage(dummyImage: "200x100") else {
-            XCTFail()
+            XCTFail("`testInitImageCenter` error")
             return
         }
         
@@ -76,7 +76,7 @@ class UIImageViewExtensionTests: XCTestCase {
     
     func testImageTemplateTintColor() {
         guard let image = UIImage(dummyImage: "200x100") else {
-            XCTFail()
+            XCTFail("`testImageTemplateTintColor` error")
             return
         }
         
@@ -88,7 +88,7 @@ class UIImageViewExtensionTests: XCTestCase {
     
     func testShadowColorRadiusOffsetOpacity() {
         guard let image = UIImage(dummyImage: "200x100") else {
-            XCTFail()
+            XCTFail("`testShadowColorRadiusOffsetOpacity` error")
             return
         }
         
@@ -101,7 +101,7 @@ class UIImageViewExtensionTests: XCTestCase {
     
     func testMaskImage() {
         guard let image = UIImage(dummyImage: "200x100"), let mask = UIImage(dummyImage: "50x50") else {
-            XCTFail()
+            XCTFail("`testMaskImage` error")
             return
         }
         

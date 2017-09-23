@@ -71,12 +71,12 @@ class NumberExtensionTests: XCTestCase {
         if random.contains(0) {
             XCTAssertTrue(true)
         } else {
-            XCTFail()
+            XCTFail("`testRandomIntMinMax` error")
         }
         if random.contains(1) {
             XCTAssertTrue(true)
         } else {
-            XCTFail()
+            XCTFail("`testRandomIntMinMax` error")
         }
     }
     
@@ -90,12 +90,12 @@ class NumberExtensionTests: XCTestCase {
         if random.contains(0) {
             XCTAssertTrue(true)
         } else {
-            XCTFail()
+            XCTFail("`testRandomIntRange` error")
         }
         if random.contains(1) {
             XCTAssertTrue(true)
         } else {
-            XCTFail()
+            XCTFail("`testRandomIntRange` error")
         }
     }
     

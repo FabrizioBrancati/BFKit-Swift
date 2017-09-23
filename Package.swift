@@ -1,3 +1,4 @@
+// swift-tools-version:4.0
 //
 //  Package.swift
 //  BFKit
@@ -28,8 +29,15 @@ import PackageDescription
 
 let package = Package(
     name: "BFKit",
-    exclude: [
-        "Sources/BFKit/Apple",
-        "Tests/BFKitTests/Apple"
+    products: [
+        .library(name: "BFKit", targets: ["BFKit"])
+    ],
+    targets: [
+        .target(name: "BFKit", dependencies: [], exclude: [
+            "Apple"
+        ]),
+        .testTarget(name: "BFKitTests", dependencies: ["BFKit"], exclude: [
+            "Apple"
+        ])
     ]
 )

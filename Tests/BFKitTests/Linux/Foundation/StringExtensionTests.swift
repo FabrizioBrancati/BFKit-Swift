@@ -112,7 +112,7 @@ class StringExtensionTests: XCTestCase {
     
     func testDataValue() {
         guard string.dataValue != nil else {
-            XCTFail()
+            XCTFail("`testDataValue` error")
             return
         }
         
@@ -318,8 +318,10 @@ class StringExtensionTests: XCTestCase {
     
     func testRemoveExtraSpaces() {
         let extraSpacedString = "This    is   a   test".removeExtraSpaces()
+        let extraSpacedEmojiString = "😜   This    is   a   test     😁".removeExtraSpaces()
         
         XCTAssertEqual(extraSpacedString, "This is a test")
+        XCTAssertEqual(extraSpacedEmojiString, "😜 This is a test 😁")
     }
     
     func testReplacingOccurrencesOfWith() {
@@ -367,7 +369,7 @@ class StringExtensionTests: XCTestCase {
     }*/
     
     func testIsAnagramOf() {
-        let anagram = string.reversed()
+        let anagram = string.reversed(preserveFormat: false)
         
         XCTAssertTrue(string.isAnagram(of: anagram))
     }
@@ -418,6 +420,18 @@ class StringExtensionTests: XCTestCase {
             XCTAssertEqual(localized, "This is a test")
         }
     
+        func testIsUUID() {
+            let isUUID = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUID()
+            
+            XCTAssertTrue(isUUID)
+        }
+    
+        func testIsUUIDForAPNS() {
+            let isUUIDForAPNS = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUIDForAPNS()
+            
+            XCTAssertFalse(isUUIDForAPNS)
+        }
+    
         func testIsEmail() {
             let isNotEmail = string.isEmail()
             let isEmail = "test@test.test".isEmail()
@@ -426,65 +440,53 @@ class StringExtensionTests: XCTestCase {
             XCTAssertTrue(isEmail)
         }
     
-        func testIsUUID() {
-            let isUUID = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUID()
-            
-            XCTAssertTrue(isUUID)
-        }
-        
-        func testIsUUIDForAPNS() {
-            let isUUIDForAPNS = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUIDForAPNS()
-            
-            XCTAssertFalse(isUUIDForAPNS)
-        }
-        
         func testReplacingMatchesRegexWith() {
             do {
                 let replaced = try string.replacingMatches(regex: "\\s", with: "A")
                 
                 XCTAssertEqual(replaced, "Thisisatest")
             } catch {
-                XCTFail()
+                XCTFail("`testReplacingMatchesRegexWith` error")
             }
         }
-    
+
         func testLinks() {
             do {
                 let links = try "http://www.fabriziobrancati.com www.fabriziobrancati.com".links()
                 
                 XCTAssertEqual(links.count, 2)
             } catch {
-                XCTFail()
+                XCTFail("`testLinks` error")
             }
         }
-    
+
         func testDates() {
             do {
                 let dates = try "5/12/1992 28/02/16".dates()
                 
                 XCTAssertEqual(dates.count, 2)
             } catch {
-                XCTFail()
+                XCTFail("`testDates` error")
             }
         }
-    
+
         func testHashtags() {
             do {
                 let hashtags = try "#FabrizioBrancati #BrancatiFabrizio".hashtags()
                 
                 XCTAssertEqual(hashtags.count, 2)
             } catch {
-                XCTFail()
+                XCTFail("`testHashtags` error")
             }
         }
-        
+    
         func testMentions() {
             do {
                 let mentions = try "@FabrizioBrancati @BrancatiFabrizio".mentions()
                 
                 XCTAssertEqual(mentions.count, 2)
             } catch {
-                XCTFail()
+                XCTFail("`testMentions` error")
             }
         }
     #endif

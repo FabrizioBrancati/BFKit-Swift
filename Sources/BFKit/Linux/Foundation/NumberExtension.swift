@@ -134,8 +134,8 @@ private struct Randomizer {
 
 // MARK: - Extensions
 
-/// This extension adds some useful function to Integer.
-public extension Integer {
+/// This extension adds some useful function to Numeric.
+public extension Numeric {
     /// Creates a random integer number.
     ///
     /// - Returns: Returns the creates a random integer number.
@@ -153,7 +153,7 @@ public extension Integer {
 public extension Double {
     /// Gets the individual numbers, and puts them into an array. All negative numbers will start with 0.
     var array: [Int] {
-        return description.characters.map { Int(String($0)) ?? 0 }
+        return description.map { Int(String($0)) ?? 0 }
     }
     
     /// Creates a random Double number.
@@ -168,7 +168,7 @@ public extension Double {
 public extension Float {
     /// Gets the individual numbers, and puts them into an array. All negative numbers will start with 0.
     var array: [Int] {
-        return description.characters.map { Int(String($0)) ?? 0 }
+        return description.map { Int(String($0)) ?? 0 }
     }
     
     /// Creates a random Float number.
@@ -183,6 +183,6 @@ public extension Float {
 public extension Int {
     /// Gets the individual numbers, and puts them into an array. All negative numbers will start with 0.
     var array: [Int] {
-        return description.characters.map { Int(String($0)) ?? 0 }
+        return description.map { Int(String($0)) ?? 0 }
     }
 }
