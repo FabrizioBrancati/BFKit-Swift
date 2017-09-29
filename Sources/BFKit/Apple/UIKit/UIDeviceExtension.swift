@@ -123,37 +123,56 @@ public extension UIDevice {
         let platform: String = self.hardwareModel
         
         switch platform {
-        // iPhone
+        // iPhone 2G
         case "iPhone1,1":       return "iPhone 2G"
+        // iPhone 3G
         case "iPhone1,2":       return "iPhone 3G"
+        // iPhone 3GS
         case "iPhone2,1":       return "iPhone 3GS"
+        // iPhone 4
         case "iPhone3,1":       return "iPhone 4 (GSM)"
         case "iPhone3,2":       return "iPhone 4 (Rev. A)"
         case "iPhone3,3":       return "iPhone 4 (CDMA)"
+        // iPhone 4S
         case "iPhone4,1":       return "iPhone 4S"
+        // iPhone 5
         case "iPhone5,1":       return "iPhone 5 (GSM)"
         case "iPhone5,2":       return "iPhone 5 (CDMA)"
+        // iPhone 5c
         case "iPhone5,3":       return "iPhone 5c (GSM)"
         case "iPhone5,4":       return "iPhone 5c (Global)"
+        // iPhone 5s
         case "iPhone6,1":       return "iPhone 5s (GSM)"
         case "iPhone6,2":       return "iPhone 5s (Global)"
+        // iPhone 6 / 6 Plus
         case "iPhone7,1":       return "iPhone 6 Plus"
         case "iPhone7,2":       return "iPhone 6"
+        // iPhone 6s / 6s Plus
         case "iPhone8,1":       return "iPhone 6s"
         case "iPhone8,2":       return "iPhone 6s Plus"
+        // iPhone SE
         case "iPhone8,4":       return "iPhone SE"
+        // iPhone 7 / 7 Plus
         case "iPhone9,1":       return "iPhone 7"
         case "iPhone9,2":       return "iPhone 7 Plus"
         case "iPhone9,3":       return "iPhone 7"
         case "iPhone9,4":       return "iPhone 7 Plus"
-        // iPod
+        // iPhone 8 / 8 Plus
+        case "iPhone10,1":      return "iPhone 8"
+        case "iPhone10,2":      return "iPhone 8 Plus"
+        case "iPhone10,4":      return "iPhone 8"
+        case "iPhone10,5":      return "iPhone 8 Plus"
+        // iPhone X
+        case "iPhone10,3":      return "iPhone X"
+        case "iPhone10,6":      return "iPhone X"
+        // iPod touch
         case "iPod1,1":         return "iPod touch 1G"
         case "iPod2,1":         return "iPod touch 2G"
         case "iPod3,1":         return "iPod touch 3G"
         case "iPod4,1":         return "iPod touch 4G"
         case "iPod5,1":         return "iPod touch 5G"
         case "iPod7,1":         return "iPod touch 6G"
-        // iPad
+        // iPad / iPad Air
         case "iPad1,1":         return "iPad 1"
         case "iPad2,1":         return "iPad 2 (WiFi)"
         case "iPad2,2":         return "iPad 2 (GSM)"
@@ -170,6 +189,8 @@ public extension UIDevice {
         case "iPad4,3":         return "iPad Air (China)"
         case "iPad5,3":         return "iPad Air 2 (WiFi)"
         case "iPad5,4":         return "iPad Air 2 (Cellular)"
+        case "iPad6,11":         return "iPad Air 2 (Cellular)"
+        case "iPad6,12":         return "iPad Air 2 (Cellular)"
         // iPad mini
         case "iPad2,5":         return "iPad mini (WiFi)"
         case "iPad2,6":         return "iPad mini (GSM)"
@@ -189,13 +210,14 @@ public extension UIDevice {
         case "iPad7,1":         return "iPad Pro 12.9 2nd Generation (WiFi)"
         case "iPad7,2":         return "iPad Pro 12.9 2nd Generation (Cellular)"
         // iPad Pro 10.5
-        case "iPad6,7":         return "iPad Pro 10.5 (WiFi)"
-        case "iPad6,8":         return "iPad Pro 10.5 (Cellular)"
+        case "iPad7,3":         return "iPad Pro 10.5 (WiFi)"
+        case "iPad7,4":         return "iPad Pro 10.5 (Cellular)"
         // Apple TV
         case "AppleTV2,1":      return "Apple TV 2G"
         case "AppleTV3,1":      return "Apple TV 3G"
         case "AppleTV3,2":      return "Apple TV 3G"
         case "AppleTV5,3":      return "Apple TV 4G"
+        case "AppleTV6,2":      return "Apple TV 4K"
         // Simulator
         case "i386", "x86_64":  return "Simulator"
         default:
