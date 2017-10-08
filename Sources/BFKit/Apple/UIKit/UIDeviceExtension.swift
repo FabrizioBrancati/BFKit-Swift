@@ -31,6 +31,8 @@ import UIKit
 
 /// Used to store BFAPNSIdentifier in defaults.
 private let BFAPNSIdentifierDefaultsKey = "BFAPNSIdentifier"
+/// Used to store BFDeviceIdentifier in defaults.
+private let BFDeviceIdentifierDefaultsKey = "BFDeviceIdentifier"
 
 // MARK: - Global functions
 
@@ -389,7 +391,18 @@ public extension UIDevice {
     /// Used to create an UUID as String.
     ///
     /// - Returns: Returns the created UUID string.
-    public static func generateUniqueIdentifier() -> String {
+    public static func generateUniqueIdentifier(save: Bool = false) -> String {
+        if save {
+            let defaults: UserDefaults = UserDefaults.standard
+            guard let identifier = defaults.string(forKey: BFDeviceIdentifierDefaultsKey) else {
+                let identifier = UUID().uuidString
+                defaults.set(identifier, forKey: BFDeviceIdentifierDefaultsKey)
+                defaults.synchronize()
+                return identifier
+            }
+            return identifier
+        }
+        
         return UUID().uuidString
     }
     

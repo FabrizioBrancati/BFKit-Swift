@@ -33,6 +33,12 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+## Master
+### Improved
+- Changed `generateUniqueIdentifier()` to `generateUniqueIdentifier(save: Bool = default)` in UIDevice extension to be able to keep the generated identifier across multiple sessions, defaults to `false` so no changes are required
+
+---
+
 ## [3.0.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/3.0.0) - Swift 4 Support
 ### 23 Sep 2017
 ### Added

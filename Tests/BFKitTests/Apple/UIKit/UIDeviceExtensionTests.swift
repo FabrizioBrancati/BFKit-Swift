@@ -222,6 +222,11 @@ class UIDeviceExtensionTests: XCTestCase {
         
         XCTAssertEqual(uuid.length, 36)
         XCTAssertNotEqual(uuid, uuid2)
+        
+        let uuid3 = UIDevice.generateUniqueIdentifier(save: true)
+        let uuid4 = UIDevice.generateUniqueIdentifier(save: true)
+        
+        XCTAssertEqual(uuid3, uuid4)
     }
     
     func testSaveAPNSIdentifier() {
