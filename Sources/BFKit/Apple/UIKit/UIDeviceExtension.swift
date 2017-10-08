@@ -388,9 +388,12 @@ public extension UIDevice {
         return results
     }
     
-    /// Used to create an UUID as String.
+    /// When `save` is false, a new UUID will be created every time.
+    /// When `save` is true, a new UUID will be created and saved in the user defatuls.
+    /// It will be retrieved on next calls.
     ///
-    /// - Returns: Returns the created UUID string.
+    /// - Parameter save: If true the UUID will be saved, otherview not.
+    /// - Returns: Returns the created (`save` = false`) or retrieved (`save` = true) UUID String.
     public static func generateUniqueIdentifier(save: Bool = false) -> String {
         if save {
             let defaults: UserDefaults = UserDefaults.standard
