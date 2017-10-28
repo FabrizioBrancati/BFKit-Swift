@@ -400,7 +400,7 @@ public extension Date {
     /// - Returns: Date after removing all components but not year, month and day.
     public func shortDate() -> Date {
         let calendar = Calendar.autoupdatingCurrent
-        let components = calendar.dateComponents([.year, .month, .day], from:self)
+        let components = calendar.dateComponents([.year, .month, .day], from: self)
         
         return calendar.date(from: components)!
     }

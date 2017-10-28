@@ -69,7 +69,7 @@ public extension UIImage {
         style.alignment = .center
         style.minimumLineHeight = size.height / 2
         let attributes: Dictionary = [NSAttributedStringKey.paragraphStyle: style]
-        sizeString.draw(in: rect, withAttributes:attributes)
+        sizeString.draw(in: rect, withAttributes: attributes)
         
         if let result = UIGraphicsGetImageFromCurrentImageContext() {
             UIGraphicsEndImageContext()
@@ -109,7 +109,7 @@ public extension UIImage {
     public convenience init?(text: String, font: FontName, fontSize: CGFloat, imageSize: CGSize) {
         UIGraphicsBeginImageContextWithOptions(imageSize, false, UIImage.screenScale())
         
-        text.draw(at: CGPoint(x: 0.0, y: 0.0), withAttributes: [NSAttributedStringKey.font: UIFont(fontName: font, size:fontSize)])
+        text.draw(at: CGPoint(x: 0.0, y: 0.0), withAttributes: [NSAttributedStringKey.font: UIFont(fontName: font, size: fontSize)])
         
         guard let image: UIImage = UIGraphicsGetImageFromCurrentImageContext() else {
             UIGraphicsEndImageContext()

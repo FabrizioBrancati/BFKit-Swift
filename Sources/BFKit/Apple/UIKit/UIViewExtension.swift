@@ -206,7 +206,7 @@ public extension UIView {
             gradient.startPoint = startPoint
             gradient.endPoint = endPoint
         }
-        self.layer.insertSublayer(gradient, at:0)
+        self.layer.insertSublayer(gradient, at: 0)
         
         return gradient
     }

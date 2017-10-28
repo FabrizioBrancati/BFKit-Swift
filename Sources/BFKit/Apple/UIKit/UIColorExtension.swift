@@ -204,7 +204,7 @@ public extension Color {
         var rgb: Int = (Int)(red * 255) << 16 | (Int)(green * 255) << 8
         rgb = rgb | (Int)(blue * 255) << 0
         
-        return String(format:"#%06x", rgb)
+        return String(format: "#%06x", rgb)
     }
     
     // MARK: - Functions
@@ -276,9 +276,9 @@ public extension Color {
         }
         
         #if os(iOS) || os(watchOS)
-            self.init(red:red, green:green, blue:blue, alpha:alpha)
+            self.init(red: red, green: green, blue: blue, alpha: alpha)
         #elseif os(macOS)
-            self.init(calibratedRed:red, green:green, blue:blue, alpha:alpha)
+            self.init(calibratedRed: red, green: green, blue: blue, alpha: alpha)
         #endif
     }
     

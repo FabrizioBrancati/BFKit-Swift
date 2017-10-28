@@ -36,6 +36,7 @@ All notable changes to this project will be documented in this file.<br>
 ## Master
 ### Improved
 - Changed `generateUniqueIdentifier()` to `generateUniqueIdentifier(save: Bool = default)` in UIDevice extension to be able to keep the generated identifier across multiple sessions, defaults to `false` so no changes are required
+- Updated SwiftLint to 0.23.1
 
 ---
 
