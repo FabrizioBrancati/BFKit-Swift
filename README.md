@@ -10,7 +10,7 @@
 [![Version](https://img.shields.io/cocoapods/v/BFKit-Swift.svg?style=flat)][Documentation]
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)
 <br>
-[![Language](https://img.shields.io/badge/language-Swift%204.0-orange.svg)](https://swift.org/)
+[![Language](https://img.shields.io/badge/language-Swift%204.0%20/%204.1-orange.svg)](https://swift.org/)
 [![Platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20watchOS%20%7C%20Linux-ffc713.svg)][Documentation]
 
 ---
@@ -134,7 +134,7 @@ Requirements
 | 3.0...3.1 | 8.0...8.3 | 2.0.0...2.3.0   | 8.0+     |            |             | ![✓]      |
 | 3.0...3.1 | 8.0...8.3 | 2.4.0...2.5.0   | 8.0+     |            | 2.0+        | ![✓]      |
 | 3.0...3.2 | 8.0...9.0 | 2.6.0           | 8.0+     | 10.10+     | 2.0+        | ![✓]      |
-| 4.0       | 9.0       | 3.0.0           | 8.0+ `*` | 10.10+ `*` | 2.0+ `*`    | ![✓]      |
+| 4.0...4.1 | 9.0...9.1 | 3.0.0           | 8.0+ `*` | 10.10+ `*` | 2.0+ `*`    | ![✓]      |
 
 > `*` With App Extension Support
 
