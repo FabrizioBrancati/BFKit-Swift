@@ -29,7 +29,7 @@ matrix:
     - os: osx
       language: objective-c
       osx_image: xcode9.1
-      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=11.1,name=iPhone X"                     SCHEME="$IOS_SCHEME"     RUN_TESTS="YES" LINT="NO"  CODECOV="YES"
+      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=11.1,name=iPhone X"                     SCHEME="$IOS_SCHEME"     RUN_TESTS="NO"  LINT="NO"  CODECOV="NO"  EXAMPLE="NO"
     - os: osx
       language: objective-c
       osx_image: xcode9.1
