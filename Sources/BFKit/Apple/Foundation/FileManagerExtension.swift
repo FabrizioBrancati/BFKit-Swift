@@ -205,7 +205,7 @@ public extension FileManager {
     /// - Returns: Returns the file size.
     /// - Throws: Throws FileManager.default.attributesOfItem(atPath:) errors.
     public func size(file: String, from path: PathType) throws -> Float? {
-        if !file.characters.isEmpty {
+        if !file.isEmpty {
             guard let path = FileManager.default.pathFor(path) else {
                 return nil
             }
@@ -228,7 +228,7 @@ public extension FileManager {
     ///   - path: Path of the file.
     /// - Throws: Throws FileManager.default.removeItem(atPath:) errors.
     public func delete(file: String, from path: PathType) throws {
-        if !file.characters.isEmpty {
+        if !file.isEmpty {
             guard let path = FileManager.default.pathFor(path) else {
                 throw BFKitError.pathNotExist
             }
