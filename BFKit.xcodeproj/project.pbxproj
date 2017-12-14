@@ -158,6 +158,7 @@
 		493868031F10FE0300A793F7 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314831F0C2EA600499354 /* UIColorExtension.swift */; };
 		493868041F113C2800A793F7 /* UIColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314BD1F0C2EA600499354 /* UIColorExtensionTests.swift */; };
 		4971864C1D2339040032A98E /* BFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 497186411D2339040032A98E /* BFKit.framework */; };
+		49B9259C1FE33218002F0F17 /* BFBiometrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B9259B1FE33217002F0F17 /* BFBiometrics.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -276,6 +277,7 @@
 		49381D411EAA084C00DBFC89 /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		497186411D2339040032A98E /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4971864B1D2339040032A98E /* BFKitTests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BFKitTests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49B9259B1FE33217002F0F17 /* BFBiometrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFBiometrics.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,6 +356,7 @@
 		490314771F0C2EA600499354 /* BFKit */ = {
 			isa = PBXGroup;
 			children = (
+				49B9259B1FE33217002F0F17 /* BFBiometrics.swift */,
 				490314781F0C2EA600499354 /* BFButton.swift */,
 				490314791F0C2EA600499354 /* BFSystemSound.swift */,
 				4903147A1F0C2EA600499354 /* BFTextField.swift */,
@@ -923,6 +926,7 @@
 				490314F21F0C2F3C00499354 /* BFKit.swift in Sources */,
 				490314FC1F0C2F4600499354 /* UIBarButtonItemExtension.swift in Sources */,
 				490314ED1F0C2F2000499354 /* StringExtension.swift in Sources */,
+				49B9259C1FE33218002F0F17 /* BFBiometrics.swift in Sources */,
 				4903150B1F0C2F4600499354 /* UIToolbarExtension.swift in Sources */,
 				490315041F0C2F4600499354 /* UINavigationBarExtension.swift in Sources */,
 				490314E71F0C2F2000499354 /* DateExtension.swift in Sources */,

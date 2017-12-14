@@ -71,19 +71,5 @@ public struct BFBiometrics {
         case faceID
     }
     
-    @available(iOS 11.0, *)
-    public static var biometryType: BiometryType {
-        let context: LAContext = LAContext()
-        
-        switch context.biometryType {
-        case .none:
-            return .none
-        case .typeTouchID:
-            return .touchID
-        case .typeFaceID:
-            return .faceID
-        }
-    }
-    
     // MARK: - Functions
 }
