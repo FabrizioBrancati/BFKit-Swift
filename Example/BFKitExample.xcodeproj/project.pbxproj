@@ -153,11 +153,11 @@
 		49768D421EACF5A4003B113A /* BFKit */ = {
 			isa = PBXGroup;
 			children = (
+				491A83831FD0CB55006CE51A /* BFBiometrics.swift */,
 				49768D431EACF5A4003B113A /* BFButton.swift */,
 				49768D441EACF5A4003B113A /* BFSystemSound.swift */,
 				49768D451EACF5A4003B113A /* BFTextField.swift */,
 				49768D461EACF5A4003B113A /* BFTouchID.swift */,
-				491A83831FD0CB55006CE51A /* BFBiometrics.swift */,
 			);
 			path = BFKit;
 			sourceTree = "<group>";

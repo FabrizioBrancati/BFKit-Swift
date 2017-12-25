@@ -34,6 +34,7 @@ class DetailViewController: UIViewController {
     
     enum DetailType : String {
         case BFApp = "BFApp"
+        case BFBiometric = "BFBiometric"
         case BFButton = "BFButton"
         case BFDataStructures = "BFDataStructures"
         case BFLog = "BFLog"
@@ -94,6 +95,21 @@ class DetailViewController: UIViewController {
             
             let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLog.logged, font: .helveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
             self.view.addSubview(textView)
+        case .BFBiometric:
+            scrollView.contentSize = CGSize(width: UIScreen.screenWidth, height: UIScreen.screenHeight - 120)
+            
+            let normalLabel: UILabel = UILabel(frame: CGRect(x: 20, y: 20, width: UIScreen.screenWidth - 40, height: 50), text: "Waiting for Biometric...", font: .helveticaNeue, fontSize: 16, color: UIColor.black, alignment: .center, lines: 2)
+            scrollView.addSubview(normalLabel)
+            
+            BFBiometrics.useBiometric(localizedReason: "This is a test", completion: { result in
+                runOnMainThread {
+                    if result == .success {
+                        normalLabel.text = "Success"
+                    } else {
+                        normalLabel.text = "\(result.rawValue)"
+                    }
+                }
+            })
         case .BFButton:
             scrollView.removeFromSuperview()
             
