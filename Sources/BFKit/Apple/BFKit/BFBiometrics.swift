@@ -27,14 +27,14 @@
 import Foundation
 import LocalAuthentication
 
-// MARK: - BFTouchID struct
+// MARK: - BFBiometrics struct
 
 /// This struct adds some useful functions to use biometric authentications.
 public struct BFBiometrics {
     // MARK: - Variables
     
     /// Biometric result enum.
-    public enum Result: Int {
+    public enum Result: String {
         /// Success.
         case success
         /// Authentication Failed.
@@ -57,19 +57,124 @@ public struct BFBiometrics {
         case appCancel
         /// Invalid Context.
         case invalidContext
+        /// Not Interactive.
+        case notInteractive
         /// Error.
         case error
     }
     
-    /// Biometry type enum.
-    public enum BiometryType: Int {
-        /// No biometric.
-        case none
-        /// Biometric type Touch ID.
-        case touchID
-        /// Biometric type Face ID.
-        case faceID
+    // MARK: - Functions
+    
+    public static func canUseBiometric() -> Result {
+        let context: LAContext = LAContext()
+        var error: NSError?
+        
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            return .success
+        } else {
+            return handleError(error)
+        }
     }
     
-    // MARK: - Functions
+    public static func useBiometric(localizedReason: String, completion: @escaping (_ result: Result) -> Void) {
+        let context: LAContext = LAContext()
+        
+        let canUseBiometric = self.canUseBiometric()
+        if canUseBiometric == .success {
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: localizedReason, reply: { success, error in
+                if success == true, error == nil {
+                    completion(.success)
+                } else {
+                    completion(self.handleError(error as NSError?))
+                }
+            })
+        } else {
+            completion(canUseBiometric)
+        }
+    }
+    
+    private static func handleError(_ error: NSError?) -> BFBiometrics.Result {
+        guard let error = error else {
+            return .error
+        }
+        
+        if #available(iOS 9.0, *) {
+            if #available(iOS 11.0, *) {
+                switch error {
+                case LAError.authenticationFailed:
+                    return .authenticationFailed
+                case LAError.userCancel:
+                    return .userCancel
+                case LAError.userFallback:
+                    return .userFallback
+                case LAError.systemCancel:
+                    return .systemCancel
+                case LAError.passcodeNotSet:
+                    return .passcodeNotSet
+                case LAError.biometryNotAvailable:
+                    return .notAvailable
+                case LAError.biometryNotEnrolled:
+                    return .notEnrolled
+                case LAError.biometryLockout:
+                    return .lockout
+                case LAError.appCancel:
+                    return .appCancel
+                case LAError.invalidContext:
+                    return .invalidContext
+                case LAError.notInteractive:
+                    return .notInteractive
+                default:
+                    return .error
+                }
+            } else {
+                switch error {
+                case LAError.authenticationFailed:
+                    return .authenticationFailed
+                case LAError.userCancel:
+                    return .userCancel
+                case LAError.userFallback:
+                    return .userFallback
+                case LAError.systemCancel:
+                    return .systemCancel
+                case LAError.passcodeNotSet:
+                    return .passcodeNotSet
+                case LAError.touchIDNotAvailable:
+                    return .notAvailable
+                case LAError.touchIDNotEnrolled:
+                    return .notEnrolled
+                case LAError.touchIDLockout:
+                    return .lockout
+                case LAError.appCancel:
+                    return .appCancel
+                case LAError.invalidContext:
+                    return .invalidContext
+                case LAError.notInteractive:
+                    return .notInteractive
+                default:
+                    return .error
+                }
+            }
+        } else {
+            switch error {
+            case LAError.authenticationFailed:
+                return .authenticationFailed
+            case LAError.userCancel:
+                return .userCancel
+            case LAError.userFallback:
+                return .userFallback
+            case LAError.systemCancel:
+                return .systemCancel
+            case LAError.passcodeNotSet:
+                return .passcodeNotSet
+            case LAError.touchIDNotAvailable:
+                return .notAvailable
+            case LAError.touchIDNotEnrolled:
+                return .notEnrolled
+            case LAError.notInteractive:
+                return .notInteractive
+            default:
+                return .error
+            }
+        }
+    }
 }
