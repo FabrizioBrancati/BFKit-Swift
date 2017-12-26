@@ -47,12 +47,14 @@ class BFAppTests: XCTestCase {
     }
     
     func testDebug() {
+        BFApp.isDebug = true
         BFApp.debug {
             XCTAssertTrue(true)
         }
     }
     
     func testRelease() {
+        BFApp.isDebug = false
         BFApp.release {
             XCTAssertTrue(true)
         }

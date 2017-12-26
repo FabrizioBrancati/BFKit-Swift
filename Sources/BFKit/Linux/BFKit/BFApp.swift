@@ -50,6 +50,10 @@ public struct BFApp {
     /// Used to store the BFHasBeenOpened in defaults.
     private static let BFAppHasBeenOpened = "BFAppHasBeenOpened"
     
+    /// Use this var to set you DEBUG or not builds.
+    /// More info on how to use it [here](http://stackoverflow.com/questions/26890537/disabling-nslog-for-production-in-swift-project/26891797#26891797).
+    public static var isDebug = false
+    
     // MARK: - Functions
     
     /// Executes a block only if in DEBUG mode.
@@ -58,9 +62,9 @@ public struct BFApp {
     ///
     /// - Parameter block: The block to be executed.
     public static func debug(_ block: () -> Void) {
-        #if DEBUG
+        if isDebug {
             block()
-        #endif
+        }
     }
 
     /// Executes a block only if NOT in DEBUG mode.
@@ -69,9 +73,9 @@ public struct BFApp {
     ///
     /// - Parameter block: The block to be executed.
     public static func release(_ block: () -> Void) {
-        #if !DEBUG
+        if !isDebug {
             block()
-        #endif
+        }
     }
     
     /// If version is set returns if is first start for that version,
