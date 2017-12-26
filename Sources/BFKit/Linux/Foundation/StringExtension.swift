@@ -558,32 +558,6 @@ public extension String {
         return regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: self.length), withTemplate: "")
     }
     
-    /// Returns an array of String with all the hashtags in self.
-    ///
-    /// - Returns: Returns an array of String with all the hashtags in self.
-    /// - Throws: Throws NSRegularExpression errors.
-    func hashtags() throws -> [String] {
-        let detector = try NSRegularExpression(pattern: "#(\\w+)", options: NSRegularExpression.Options.caseInsensitive)
-        let hashtags = detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withoutAnchoringBounds, range: NSRange(location: 0, length: length)).map { $0 }
-        
-        return hashtags.map({
-            (self as NSString).substring(with: $0.range(at: 1))
-        })
-    }
-    
-    /// Returns an array of String with all the mentions in self.
-    ///
-    /// - Returns: Returns an array of String with all the mentions in self.
-    /// - Throws: Throws NSRegularExpression errors.
-    func mentions() throws -> [String] {
-        let detector = try NSRegularExpression(pattern: "@(\\w+)", options: NSRegularExpression.Options.caseInsensitive)
-        let mentions = detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withoutAnchoringBounds, range: NSRange(location: 0, length: length)).map { $0 }
-        
-        return mentions.map({
-            (self as NSString).substring(with: $0.range(at: 1))
-        })
-    }
-    
     // MARK: - Functions not available on Linux
     
     #if !os(Linux)
@@ -635,6 +609,32 @@ public extension String {
             }.map { date -> Date in
                 return date.date!
             }
+        }
+    
+        /// Returns an array of String with all the hashtags in self.
+        ///
+        /// - Returns: Returns an array of String with all the hashtags in self.
+        /// - Throws: Throws NSRegularExpression errors.
+        func hashtags() throws -> [String] {
+            let detector = try NSRegularExpression(pattern: "#(\\w+)", options: NSRegularExpression.Options.caseInsensitive)
+            let hashtags = detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withoutAnchoringBounds, range: NSRange(location: 0, length: length)).map { $0 }
+            
+            return hashtags.map({
+                (self as NSString).substring(with: $0.range(at: 1))
+            })
+        }
+    
+        /// Returns an array of String with all the mentions in self.
+        ///
+        /// - Returns: Returns an array of String with all the mentions in self.
+        /// - Throws: Throws NSRegularExpression errors.
+        func mentions() throws -> [String] {
+            let detector = try NSRegularExpression(pattern: "@(\\w+)", options: NSRegularExpression.Options.caseInsensitive)
+            let mentions = detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withoutAnchoringBounds, range: NSRange(location: 0, length: length)).map { $0 }
+            
+            return mentions.map({
+                (self as NSString).substring(with: $0.range(at: 1))
+            })
         }
     #endif
 }

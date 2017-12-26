@@ -452,26 +452,6 @@ class StringExtensionTests: XCTestCase {
         }
     }
     
-    func testHashtags() {
-        do {
-            let hashtags = try "#FabrizioBrancati #BrancatiFabrizio".hashtags()
-            
-            XCTAssertEqual(hashtags.count, 2)
-        } catch {
-            XCTFail("`testHashtags` error")
-        }
-    }
-    
-    func testMentions() {
-        do {
-            let mentions = try "@FabrizioBrancati @BrancatiFabrizio".mentions()
-            
-            XCTAssertEqual(mentions.count, 2)
-        } catch {
-            XCTFail("`testMentions` error")
-        }
-    }
-    
     #if !os(Linux)
         func testLocalize() {
             let localized = string.localize()
@@ -504,6 +484,26 @@ class StringExtensionTests: XCTestCase {
                 XCTAssertEqual(dates.count, 2)
             } catch {
                 XCTFail("`testDates` error")
+            }
+        }
+    
+        func testHashtags() {
+            do {
+                let hashtags = try "#FabrizioBrancati #BrancatiFabrizio".hashtags()
+                
+                XCTAssertEqual(hashtags.count, 2)
+            } catch {
+                XCTFail("`testHashtags` error")
+            }
+        }
+    
+        func testMentions() {
+            do {
+                let mentions = try "@FabrizioBrancati @BrancatiFabrizio".mentions()
+                
+                XCTAssertEqual(mentions.count, 2)
+            } catch {
+                XCTFail("`testMentions` error")
             }
         }
     #endif
