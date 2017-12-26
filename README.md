@@ -176,7 +176,7 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
     /usr/local/bin/carthage copy-frameworks
     ```
 
-    Add the paths to the Queuer framework under **Input Files**
+    Add the paths to the BFKit-Swift framework under **Input Files**
 
     ```sh
     $(SRCROOT)/Carthage/Build/iOS/BFKit.framework

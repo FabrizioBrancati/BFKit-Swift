@@ -30,7 +30,7 @@ import UIKit
 // MARK: - Global variables
 
 let BFKitArray = [  "BFApp",
-                    "BFBiometric",
+                    "BFBiometrics",
                     "BFButton",
                     "BFDataStructures",
                     "BFLog",
