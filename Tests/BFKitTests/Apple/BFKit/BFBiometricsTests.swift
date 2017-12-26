@@ -1,5 +1,5 @@
 //
-//  BFTextFieldTests.swift
+//  BFBiometricsTests.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -26,12 +26,9 @@
 
 import XCTest
 import Foundation
-import UIKit
 @testable import BFKit
 
-class BFTextFieldTests: XCTestCase {
-    weak var textField: BFTextField? = BFTextField(frame: CGRect(x: 0, y: 0, width: 320, height: 30))
-    
+class BFBiometricsTests: XCTestCase {
     override func setUp() {
         super.setUp()
     }
@@ -40,32 +37,17 @@ class BFTextFieldTests: XCTestCase {
         super.tearDown()
     }
     
-    func testEncodeDecode() {
-        FileManager.default.savePlist(object: textField!, in: .cache, filename: "BFTextField")
-        let decoded = FileManager.default.readPlist(from: .cache, filename: "BFTextField") as? BFTextField
+    func testShowBiometrics() {
+        let testExpectation = expectation(description: "Show Biometrics")
         
-        XCTAssertEqual(decoded?.frame, CGRect(x: 0, y: 0, width: 320, height: 30))
-    }
-    
-    func testInitFrame() {
-        XCTAssertEqual(textField?.maxNumberOfCharacters, 0)
-        XCTAssertEqual(textField?.frame.size.width, 320)
-    }
-    
-    func testTextFieldDidChange() {
-        textField?.maxNumberOfCharacters = 20
-        textField?.text = "Testing"
+        BFBiometrics.useBiometric(localizedReason: "Testing", fallbackTitle: "Password") { _ in
+            XCTAssertTrue(true)
+            
+            testExpectation.fulfill()
+        }
         
-        XCTAssertEqual(textField?.text, "Testing")
-        
-        textField?.text = "TestingMoreThan20Characters"
-        NotificationCenter.default.post(name: .UITextFieldTextDidChange, object: textField)
-        
-        XCTAssertEqual(textField!.text?.count, 20)
-    }
-    
-    func testDeinit() {
-        textField = nil
-        XCTAssertNil(textField)
+        waitForExpectations(timeout: 5, handler: { error in
+            XCTAssertNil(error, "Something went horribly wrong.")
+        })
     }
 }

@@ -159,6 +159,7 @@
 		493868041F113C2800A793F7 /* UIColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314BD1F0C2EA600499354 /* UIColorExtensionTests.swift */; };
 		4971864C1D2339040032A98E /* BFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 497186411D2339040032A98E /* BFKit.framework */; };
 		49B9259C1FE33218002F0F17 /* BFBiometrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B9259B1FE33217002F0F17 /* BFBiometrics.swift */; };
+		49B925D71FF29296002F0F17 /* BFBiometricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B925D51FF290E3002F0F17 /* BFBiometricsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -278,6 +279,7 @@
 		497186411D2339040032A98E /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4971864B1D2339040032A98E /* BFKitTests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BFKitTests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B9259B1FE33217002F0F17 /* BFBiometrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFBiometrics.swift; sourceTree = "<group>"; };
+		49B925D51FF290E3002F0F17 /* BFBiometricsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFBiometricsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -482,6 +484,7 @@
 		490314B11F0C2EA600499354 /* BFKit */ = {
 			isa = PBXGroup;
 			children = (
+				49B925D51FF290E3002F0F17 /* BFBiometricsTests.swift */,
 				490314B21F0C2EA600499354 /* BFButtonTests.swift */,
 				490314B31F0C2EA600499354 /* BFSystemSoundTests.swift */,
 				490314B41F0C2EA600499354 /* BFTextFieldTests.swift */,
@@ -1007,6 +1010,7 @@
 				490315531F0C358000499354 /* UIViewControllerExtensionTests.swift in Sources */,
 				490315511F0C358000499354 /* UITextViewExtensionTests.swift in Sources */,
 				490315471F0C358000499354 /* UIFontExtensionTests.swift in Sources */,
+				49B925D71FF29296002F0F17 /* BFBiometricsTests.swift in Sources */,
 				4903155C1F0C358000499354 /* CollectionExtensionTests.swift in Sources */,
 				490315421F0C358000499354 /* NSPointerArrayExtensionTests.swift in Sources */,
 			);
