@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 3.x Releases
+- `3.1.x` Releases - [3.1.0](#310---face-id-support)
 - `3.0.x` Releases - [3.0.0](#300---swift-4-support)
 
 ### 2.x Releases
@@ -33,10 +34,21 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## Master
+## [3.1.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/3.1.0) - Face ID Support
+### 26 Dec 2017
+### Added
+- Added BFBiometrics struct to help handling Face ID and / or Touch ID
+- Added two new custom operators on Number extension: `<>` and `<=>` to check if a number is included in a tuple of values
+- Added `isUUID()`, `isUUIDForAPNS()` and `replacingMatches(regex:, with:)` to Linux in String extension
+
 ### Improved
+- Improved compilation time in `blur()` function in UIImage extension
+- Improved `debug` and `release` code execution on BFApp struct
 - Changed `generateUniqueIdentifier()` to `generateUniqueIdentifier(save: Bool = default)` in UIDevice extension to be able to keep the generated identifier across multiple sessions, defaults to `false` so no changes are required
-- Updated SwiftLint to 0.23.1
+- Updated SwiftLint to 0.24.0
+- Updated README.md to latest Carthage changes
+
+Thanks to [@tomasz-czyzak](https://github.com/tomasz-czyzak) for this release
 
 ---
 

@@ -211,7 +211,7 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
             .executable(name: "Project", targets: ["Project"])
         ],
         dependencies: [
-            .package(url: "https://github.com/FabrizioBrancati/BFKit-Swift.git", .upToNextMajor(from: "3.0.0"))
+            .package(url: "https://github.com/FabrizioBrancati/BFKit-Swift.git", .upToNextMajor(from: "3.1.0"))
         ],
         targets: [
             .target(name: "Project", dependencies: ["BFKit"])
