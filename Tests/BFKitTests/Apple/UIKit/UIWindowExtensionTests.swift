@@ -85,7 +85,7 @@ class UIWindowExtensionTests: XCTestCase {
     func testTouchImage() {
         let image = window.touchImage()
         
-        XCTAssert(image.size.height > 58 && image.size.height < 59)
-        XCTAssert(image.size.width > 58 && image.size.width < 59)
+        XCTAssert(image.size.height <> (50, 60))
+        XCTAssert(image.size.width <> (50, 60))
     }
 }

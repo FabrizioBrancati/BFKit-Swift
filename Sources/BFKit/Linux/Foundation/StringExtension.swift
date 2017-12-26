@@ -642,6 +642,12 @@ public extension String {
 /// Infix operator `???` with NilCoalescingPrecedence.
 infix operator ???: NilCoalescingPrecedence
 
+/// Infix operator `<>` with ComparisonPrecedence.
+infix operator <>: ComparisonPrecedence
+
+/// Infix operator `<=>` with ComparisonPrecedence.
+infix operator <=>: ComparisonPrecedence
+
 /// Returns defaultValue if optional is nil, otherwise returns optional.
 ///
 /// - Parameters:
@@ -650,4 +656,25 @@ infix operator ???: NilCoalescingPrecedence
 /// - Returns: Returns defaultValue if optional is nil, otherwise returns optional.
 public func ??? <T>(optional: T?, defaultValue: @autoclosure () -> String) -> String {
     return optional.map { String(describing: $0) } ?? defaultValue()
+}
+
+/// Returns true if `left` it is in `right` range but not equal.
+/// If you want to check if its even equal use the `<=>` operator.
+///
+/// - Parameters:
+///   - left: Left number to be compared.
+///   - right: Right tuple to be compared (Number, Number).
+/// - Returns: Returns true if `left` it is in `right` range but not equal.
+public func <> <T: Comparable>(left: T, right: (T, T)) -> Bool {
+    return left > right.0 && left < right.1
+}
+
+/// Returns true if `left` is in `right` range or equal.
+///
+/// - Parameters:
+///   - left: Left number to be compared.
+///   - right: Right tuple to be compared (Number, Number).
+/// - Returns: Returns true if `left` it is in `right` range or equal.
+public func <=> <T: Comparable>(left: T, right: (T, T)) -> Bool {
+    return left >= right.0 && left <= right.1
 }
