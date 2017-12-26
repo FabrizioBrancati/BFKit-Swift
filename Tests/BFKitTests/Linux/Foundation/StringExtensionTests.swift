@@ -413,23 +413,6 @@ class StringExtensionTests: XCTestCase {
         XCTAssertEqual(testNotNil, "Test")
     }
     
-    func testComparisionMajorMinorButNotEqual() {
-        let number = 10
-        
-        XCTAssertTrue(number <> (9, 11))
-        XCTAssertFalse(number <> (9, 10))
-        XCTAssertFalse(number <> (11, 12))
-    }
-    
-    func testComparisionMajorMinorEqual() {
-        let number = 10
-        
-        XCTAssertTrue(number <=> (10, 11))
-        XCTAssertTrue(number <=> (10, 10))
-        XCTAssertFalse(number <=> (1, 9))
-        XCTAssertFalse(number <=> (11, 19))
-    }
-    
     func testIsUUID() {
         let isUUID = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUID()
         

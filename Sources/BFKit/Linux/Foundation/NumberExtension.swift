@@ -158,7 +158,7 @@ public extension Double {
     
     /// Creates a random Double number.
     ///
-    /// - Returns: Returns the creates a random Double number.
+    /// - Returns: Returns the created a random Double number.
     static func random() -> Double {
         return Double(Int.random()) / Double(Int.max)
     }
@@ -173,7 +173,7 @@ public extension Float {
     
     /// Creates a random Float number.
     ///
-    /// - Returns: Returns the creates a random Float number.
+    /// - Returns: Returns the created a random Float number.
     static func random() -> Float {
         return Float(Double.random())
     }
@@ -185,4 +185,31 @@ public extension Int {
     var array: [Int] {
         return description.map { Int(String($0)) ?? 0 }
     }
+}
+
+/// Infix operator `<>` with ComparisonPrecedence.
+infix operator <>: ComparisonPrecedence
+
+/// Infix operator `<=>` with ComparisonPrecedence.
+infix operator <=>: ComparisonPrecedence
+
+/// Returns true if `left` it is in `right` range but not equal.
+/// If you want to check if its even equal use the `<=>` operator.
+///
+/// - Parameters:
+///   - left: Left number to be compared.
+///   - right: Right tuple to be compared (Number, Number).
+/// - Returns: Returns true if `left` it is in `right` range but not equal.
+public func <> <T: Comparable>(left: T, right: (T, T)) -> Bool {
+    return left > right.0 && left < right.1
+}
+
+/// Returns true if `left` is in `right` range or equal.
+///
+/// - Parameters:
+///   - left: Left number to be compared.
+///   - right: Right tuple to be compared (Number, Number).
+/// - Returns: Returns true if `left` it is in `right` range or equal.
+public func <=> <T: Comparable>(left: T, right: (T, T)) -> Bool {
+    return left >= right.0 && left <= right.1
 }

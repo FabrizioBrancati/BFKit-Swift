@@ -127,4 +127,21 @@ class NumberExtensionTests: XCTestCase {
         let double: Double = 832.746201
         XCTAssertEqual(double.array, [8, 3, 2, 0, 7, 4, 6, 2, 0, 1])
     }
+    
+    func testComparisionMajorMinorButNotEqual() {
+        let number = 10
+        
+        XCTAssertTrue(number <> (9, 11))
+        XCTAssertFalse(number <> (9, 10))
+        XCTAssertFalse(number <> (11, 12))
+    }
+    
+    func testComparisionMajorMinorEqual() {
+        let number = 10
+        
+        XCTAssertTrue(number <=> (10, 11))
+        XCTAssertTrue(number <=> (10, 10))
+        XCTAssertFalse(number <=> (1, 9))
+        XCTAssertFalse(number <=> (11, 19))
+    }
 }
