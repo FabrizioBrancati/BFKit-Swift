@@ -48,12 +48,11 @@ It also adds some useful functions with **Custom** classes and extends **Foundat
 Classes and Extensions Compatibility
 ====================================
 
-<details>
-<summary><strong>BFKit</strong></summary>
-
+### BFKit
 |                                                                                                           | **iOS** | **macOS** | **watchOS** | **Linux** |
 |-----------------------------------------------------------------------------------------------------------|---------|-----------|-------------|-----------|
 | [BFApp](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/BFApp.html)                 | ![✓]    | ![✓]      | ![✓]        | ![✓]      |
+| [BFBiometric](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/BFBiometric.html)     | ![✓]    |           |             | &nbsp;    |
 | [BFButton](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Classes/BFButton.html)           | ![✓]    |           |             |           |
 | BFDataStructures<br>([List](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/List.html) - [Queue](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/Queue.html) - [Stack](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/Stack.html))                  | ![✓]    | ![✓]      | ![✓]        | ![✓]      |
 | [BFLog](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/BFLog.html)                 | ![✓]    | ![✓]      | ![✓]        | ![✓]      |
@@ -62,11 +61,7 @@ Classes and Extensions Compatibility
 | [BFTextField](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Classes/BFTextField.html)     | ![✓]    |           |             |           |
 | [BFTouchID](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Structs/BFTouchID.html)         | ![✓]    |           |             | &nbsp;    |
 
-</details>
-
-<details>
-<summary><strong>Foundation</strong></summary>
-
+### Foundation
 |                                                                                                                        | **iOS** | **macOS** | **watchOS** | **Linux** |
 |------------------------------------------------------------------------------------------------------------------------|---------|-----------|-------------|-----------|
 | [Array](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Array.html)                           | ![✓]    | ![✓]      | ![✓]        | ![✓]      |
@@ -83,11 +78,7 @@ Classes and Extensions Compatibility
 | [String](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/String.html)                         | ![✓]    | ![✓]      | ![✓]        | ![✓]      |
 | [Thread](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Functions.html)                                 | ![✓]    | ![✓]      | ![✓]        | ![✓]      |
 
-</details>
-
-<details>
-<summary><strong>UIKit / AppKit</strong></summary>
-
+### UIKit / AppKit
 |                                                                                                                                         | **iOS** | **macOS** | **watchOS** | **Linux** |
 |-----------------------------------------------------------------------------------------------------------------------------------------|---------|-----------|-------------|-----------|
 | [UIBarButtonItem](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIBarButtonItem.html)                        | ![✓]    |           |             |           |
@@ -111,16 +102,10 @@ Classes and Extensions Compatibility
 | [UIWebView](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIWebView.html)                                    | ![✓]    |           |             |           |
 | [UIWindow](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIWindow.html)                                      | ![✓]    |           |             | &nbsp;    |
 
-</details>
-
-<details>
-<summary><strong>WatchKit</strong></summary>
-
+### WatchKit
 |                                                                                                                              | **iOS** | **macOS** | **watchOS** | **Linux** |
 |------------------------------------------------------------------------------------------------------------------------------|---------|-----------|-------------|-----------|
 | [WKInterfaceController](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/WKInterfaceController.html) |         |           | ![✓]        |           |
-
-</details>
 
 Requirements
 ============
@@ -134,7 +119,7 @@ Requirements
 | 3.0...3.1 | 8.0...8.3 | 2.0.0...2.3.0   | 8.0+     |            |             | ![✓]      |
 | 3.0...3.1 | 8.0...8.3 | 2.4.0...2.5.0   | 8.0+     |            | 2.0+        | ![✓]      |
 | 3.0...3.2 | 8.0...9.0 | 2.6.0           | 8.0+     | 10.10+     | 2.0+        | ![✓]      |
-| 4.0       | 9.0...9.1 | 3.0.0           | 8.0+ `*` | 10.10+ `*` | 2.0+ `*`    | ![✓]      |
+| 4.0       | 9.0...9.2 | 3.0.0...3.1.0   | 8.0+ `*` | 10.10+ `*` | 2.0+ `*`    | ![✓]      |
 
 > `*` With App Extension Support
 
@@ -191,12 +176,26 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
     /usr/local/bin/carthage copy-frameworks
     ```
 
-    and add the paths to the BFKit-Swift framework under **Input Files**
+    Add the paths to the Queuer framework under **Input Files**
 
     ```sh
     $(SRCROOT)/Carthage/Build/iOS/BFKit.framework
     ```
+
+    Add the paths to the copied frameworks to the **Output Files**
+
+    ```sh
+    $(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/BFKit.framework
+    ```
+
     This script works around an [App Store submission bug](http://www.openradar.me/radar?id=6409498411401216) triggered by universal binaries and ensures that necessary bitcode-related files are copied when archiving
+- **(Optional)** Add Build Phase with the following contents
+
+    ```sh
+    /usr/local/bin/carthage outdated --xcode-warnings
+    ```
+
+    To automatically warn you when one of your dependencies is out of date
 - Import the framework with ```import BFKit```
 - Enjoy!
 

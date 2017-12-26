@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		49199B1E1EDD6EFD00450CE1 /* NSAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49199B1C1EDD6EFD00450CE1 /* NSAttributedStringExtension.swift */; };
 		49199B1F1EDD6EFD00450CE1 /* NSPointerArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49199B1D1EDD6EFD00450CE1 /* NSPointerArrayExtension.swift */; };
+		491A83841FD0CB55006CE51A /* BFBiometrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A83831FD0CB55006CE51A /* BFBiometrics.swift */; };
 		493C175C1F0ACADF007DF371 /* SetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493C175B1F0ACADF007DF371 /* SetExtension.swift */; };
 		49768D721EACF5A4003B113A /* BFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768D431EACF5A4003B113A /* BFButton.swift */; };
 		49768D731EACF5A4003B113A /* BFSystemSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49768D441EACF5A4003B113A /* BFSystemSound.swift */; };
@@ -63,6 +64,7 @@
 /* Begin PBXFileReference section */
 		49199B1C1EDD6EFD00450CE1 /* NSAttributedStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtension.swift; sourceTree = "<group>"; };
 		49199B1D1EDD6EFD00450CE1 /* NSPointerArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPointerArrayExtension.swift; sourceTree = "<group>"; };
+		491A83831FD0CB55006CE51A /* BFBiometrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFBiometrics.swift; sourceTree = "<group>"; };
 		493C175B1F0ACADF007DF371 /* SetExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetExtension.swift; sourceTree = "<group>"; };
 		49768D431EACF5A4003B113A /* BFButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFButton.swift; sourceTree = "<group>"; };
 		49768D441EACF5A4003B113A /* BFSystemSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFSystemSound.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		49768D421EACF5A4003B113A /* BFKit */ = {
 			isa = PBXGroup;
 			children = (
+				491A83831FD0CB55006CE51A /* BFBiometrics.swift */,
 				49768D431EACF5A4003B113A /* BFButton.swift */,
 				49768D441EACF5A4003B113A /* BFSystemSound.swift */,
 				49768D451EACF5A4003B113A /* BFTextField.swift */,
@@ -371,6 +374,7 @@
 				49768D7A1EACF5A4003B113A /* UIDeviceExtension.swift in Sources */,
 				49FB86831DF34B5500AC7E4A /* DetailViewController.swift in Sources */,
 				49768D7C1EACF5A4003B113A /* UIImageExtension.swift in Sources */,
+				491A83841FD0CB55006CE51A /* BFBiometrics.swift in Sources */,
 				49768D921EACF5A4003B113A /* CollectionExtension.swift in Sources */,
 				49768D971EACF5A4003B113A /* NumberExtension.swift in Sources */,
 				49768D831EACF5A4003B113A /* UITableViewExtension.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  UIWindowExtensionTests.swift
+//  BFBiometricsTests.swift
 //  BFKit
 //
 //  The MIT License (MIT)
@@ -26,66 +26,28 @@
 
 import XCTest
 import Foundation
-import UIKit
 @testable import BFKit
 
-class UIWindowExtensionTests: XCTestCase {
-    var window: UIWindow = UIWindow()
-    
+class BFBiometricsTests: XCTestCase {
     override func setUp() {
         super.setUp()
-        
-        window = UIWindow(frame: CGRect(x: 0, y: 0, width: 320, height: 500))
     }
     
     override func tearDown() {
         super.tearDown()
     }
     
-    func testShowTouchOnScreen() {
-        showTouchOnScreen()
-    }
-    
-    func testHideTouchOnScreen() {
-        hideTouchOnScreen()
-    }
-    
-    func testWindowScreenshotSave() {
-        _ = window.windowScreenshot(save: true)
-//        guard let screenshot = window.windowScreenshot(save: true) else {
-//            XCTFail()
-//            return
-//        }
-            
-//        XCTAssertNotNil(screenshot)
-    }
-    
-    func testWindowScreenshotDelaySaveCompletion() {
-//        let testExpectation = expectation(description: "Window Screenshot")
+    func testShowBiometrics() {
+        let testExpectation = expectation(description: "Show Biometrics")
         
-        window.windowScreenshot(delay: 2, save: true) { _ in
-//            XCTAssertNotNil(screenshot)
-//
-//            testExpectation.fulfill()
+        BFBiometrics.useBiometric(localizedReason: "Testing", fallbackTitle: "Password") { _ in
+            XCTAssertTrue(true)
+            
+            testExpectation.fulfill()
         }
         
-//        waitForExpectations(timeout: 5, handler: { error in
-//            XCTAssertNil(error, "Something went horribly wrong.")
-//        })
-    }
-    
-    func testActivateTouch() {
-        window.activateTouch()
-    }
-    
-    func testDeactivateTouch() {
-        window.deactivateTouch()
-    }
-    
-    func testTouchImage() {
-        let image = window.touchImage()
-        
-        XCTAssert(image.size.height <> (50, 60))
-        XCTAssert(image.size.width <> (50, 60))
+        waitForExpectations(timeout: 5, handler: { error in
+            XCTAssertNil(error, "Something went horribly wrong.")
+        })
     }
 }

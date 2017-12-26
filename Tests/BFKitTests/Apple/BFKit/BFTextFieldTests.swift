@@ -61,7 +61,7 @@ class BFTextFieldTests: XCTestCase {
         textField?.text = "TestingMoreThan20Characters"
         NotificationCenter.default.post(name: .UITextFieldTextDidChange, object: textField)
         
-        XCTAssertEqual(textField!.text?.characters.count, 20)
+        XCTAssertEqual(textField!.text?.count, 20)
     }
     
     func testDeinit() {
