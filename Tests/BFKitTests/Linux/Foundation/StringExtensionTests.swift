@@ -430,23 +430,53 @@ class StringExtensionTests: XCTestCase {
         XCTAssertFalse(number <=> (11, 19))
     }
     
+    func testIsUUID() {
+        let isUUID = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUID()
+        
+        XCTAssertTrue(isUUID)
+    }
+    
+    func testIsUUIDForAPNS() {
+        let isUUIDForAPNS = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUIDForAPNS()
+        
+        XCTAssertFalse(isUUIDForAPNS)
+    }
+    
+    func testReplacingMatchesRegexWith() {
+        do {
+            let replaced = try string.replacingMatches(regex: "\\s", with: "A")
+            
+            XCTAssertEqual(replaced, "Thisisatest")
+        } catch {
+            XCTFail("`testReplacingMatchesRegexWith` error")
+        }
+    }
+    
+    func testHashtags() {
+        do {
+            let hashtags = try "#FabrizioBrancati #BrancatiFabrizio".hashtags()
+            
+            XCTAssertEqual(hashtags.count, 2)
+        } catch {
+            XCTFail("`testHashtags` error")
+        }
+    }
+    
+    func testMentions() {
+        do {
+            let mentions = try "@FabrizioBrancati @BrancatiFabrizio".mentions()
+            
+            XCTAssertEqual(mentions.count, 2)
+        } catch {
+            XCTFail("`testMentions` error")
+        }
+    }
+    
     #if !os(Linux)
         func testLocalize() {
             let localized = string.localize()
             
             XCTAssertEqual(localized, "This is a test")
-        }
-    
-        func testIsUUID() {
-            let isUUID = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUID()
-            
-            XCTAssertTrue(isUUID)
-        }
-    
-        func testIsUUIDForAPNS() {
-            let isUUIDForAPNS = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".isUUIDForAPNS()
-            
-            XCTAssertFalse(isUUIDForAPNS)
         }
     
         func testIsEmail() {
@@ -455,16 +485,6 @@ class StringExtensionTests: XCTestCase {
             
             XCTAssertFalse(isNotEmail)
             XCTAssertTrue(isEmail)
-        }
-    
-        func testReplacingMatchesRegexWith() {
-            do {
-                let replaced = try string.replacingMatches(regex: "\\s", with: "A")
-                
-                XCTAssertEqual(replaced, "Thisisatest")
-            } catch {
-                XCTFail("`testReplacingMatchesRegexWith` error")
-            }
         }
 
         func testLinks() {
@@ -484,26 +504,6 @@ class StringExtensionTests: XCTestCase {
                 XCTAssertEqual(dates.count, 2)
             } catch {
                 XCTFail("`testDates` error")
-            }
-        }
-
-        func testHashtags() {
-            do {
-                let hashtags = try "#FabrizioBrancati #BrancatiFabrizio".hashtags()
-                
-                XCTAssertEqual(hashtags.count, 2)
-            } catch {
-                XCTFail("`testHashtags` error")
-            }
-        }
-    
-        func testMentions() {
-            do {
-                let mentions = try "@FabrizioBrancati @BrancatiFabrizio".mentions()
-                
-                XCTAssertEqual(mentions.count, 2)
-            } catch {
-                XCTFail("`testMentions` error")
             }
         }
     #endif
