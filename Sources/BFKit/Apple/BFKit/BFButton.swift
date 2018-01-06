@@ -33,7 +33,7 @@ open class BFButton: UIButton {
     // MARK: - Variables
     
     /// The fade duration.
-    public var fadeDuration: Float = 0
+    public var fadeDuration: TimeInterval = 0
     
     /// The animation on highlighted status.
     open override var isHighlighted: Bool {
@@ -42,13 +42,13 @@ open class BFButton: UIButton {
                 self.addSubview(self.overlayImageView)
                 self.overlayImageView.alpha = 0
                 
-                UIView.animate(withDuration: TimeInterval(self.fadeDuration), animations: {
+                UIView.animate(withDuration: self.fadeDuration, animations: {
                     self.overlayImageView.alpha = 1
                 })
             } else {
-                UIView.animate(withDuration: TimeInterval(self.fadeDuration), animations: {
+                UIView.animate(withDuration: self.fadeDuration, animations: {
                     self.overlayImageView.alpha = 0
-                    }, completion: { (completed) in
+                    }, completion: { completed in
                         if completed {
                             self.overlayImageView.removeFromSuperview()
                         }
@@ -80,7 +80,7 @@ open class BFButton: UIButton {
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.fadeDuration = aDecoder.decodeFloat(forKey: "FadeDuration")
+        self.fadeDuration = aDecoder.decodeDouble(forKey: "FadeDuration")
         self.overlayImageView = aDecoder.decodeObject(forKey: "OverlayImageView") as! UIImageView // swiftlint:disable:this force_cast
         self.overlayImageView.frame = self.imageView!.frame
         self.overlayImageView.bounds = self.imageView!.bounds
@@ -105,7 +105,7 @@ open class BFButton: UIButton {
     ///   - image: Button image.
     ///   - highlightedImage: Button highlighted image.
     ///   - fadeDuration: Fade duration.
-    public init(frame: CGRect, image: UIImage, highlightedImage: UIImage, fadeDuration: Float) {
+    public init(frame: CGRect, image: UIImage, highlightedImage: UIImage, fadeDuration: TimeInterval) {
         self.fadeDuration = fadeDuration
         
         super.init(frame: frame)
