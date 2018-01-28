@@ -123,6 +123,8 @@ public extension UIView {
     }
     
     /// Set the corner radius of UIView only at the given corner.
+    /// Currently doesn't support `frame` property changes.
+    /// If you change the frame, you have to call this function again.
     ///
     /// - Parameters:
     ///   - corners: Corners to apply radius.
@@ -133,6 +135,17 @@ public extension UIView {
         rectShape.position = self.center
         rectShape.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius)).cgPath
         self.layer.mask = rectShape
+    }
+    
+    /// Set the corner radius of UIView for all corners.
+    /// This function supports `frame` property changes,
+    /// it's different from `cornerRadius(corners: UIRectCorner, radius: CGFloat)`
+    /// that doesn't support it.
+    ///
+    /// - Parameter radius: Radius value.
+    public func cornerRadius(_ radius: CGFloat) {
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
     }
     
     /// Create a shadow on the UIView.

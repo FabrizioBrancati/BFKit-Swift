@@ -72,6 +72,12 @@ class UIViewExtensionTests: XCTestCase {
         XCTAssertNotNil(view.layer.mask)
     }
     
+    func testCornerRadiusRadius() {
+        view.cornerRadius(5)
+        
+        XCTAssertEqual(view.layer.cornerRadius, 5)
+    }
+    
     func testShadowOffsetOpacityRadiusCornerRadiusColor() {
         view.shadow(offset: CGSize(width: 5, height: 5), opacity: 0.5, radius: 5, cornerRadius: 5, color: UIColor.red)
         
