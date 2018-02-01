@@ -14,6 +14,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target     = '8.0'
   s.ios.source_files          = 'Sources/**/*.swift'
   s.ios.exclude_files         = 'Sources/BFKit/Apple/WatchKit/*.swift'
+  s.swift_version             = '4.0'
 
   s.osx.deployment_target = '10.10'
   s.osx.source_files      =
