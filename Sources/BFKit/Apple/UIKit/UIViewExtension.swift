@@ -130,11 +130,35 @@ public extension UIView {
     ///   - corners: Corners to apply radius.
     ///   - radius: Radius value.
     public func cornerRadius(corners: UIRectCorner, radius: CGFloat) {
-        let rectShape = CAShapeLayer()
-        rectShape.bounds = self.frame
-        rectShape.position = self.center
-        rectShape.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius)).cgPath
-        self.layer.mask = rectShape
+        if #available(iOS 11, *) {
+            var cornerMask: CACornerMask = []
+            if corners.contains(.allCorners) {
+                cornerMask = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner]
+            } else {
+                if corners.contains(.bottomLeft) {
+                    cornerMask.update(with: .layerMinXMinYCorner)
+                }
+                if corners.contains(.bottomRight) {
+                    cornerMask.update(with: .layerMaxXMinYCorner)
+                }
+                if corners.contains(.topLeft) {
+                    cornerMask.update(with: .layerMinXMaxYCorner)
+                }
+                if corners.contains(.topRight) {
+                    cornerMask.update(with: .layerMaxXMaxYCorner)
+                }
+            }
+            
+            self.layer.cornerRadius = radius
+            self.layer.masksToBounds = true
+            self.layer.maskedCorners = cornerMask
+        } else {
+            let rectShape = CAShapeLayer()
+            rectShape.bounds = self.frame
+            rectShape.position = self.center
+            rectShape.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius)).cgPath
+            self.layer.mask = rectShape
+        }
     }
     
     /// Set the corner radius of UIView for all corners.
