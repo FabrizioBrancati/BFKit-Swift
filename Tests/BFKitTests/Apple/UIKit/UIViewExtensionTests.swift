@@ -69,7 +69,12 @@ class UIViewExtensionTests: XCTestCase {
     func testCornerRadiusCornersRadius() {
         view.cornerRadius(corners: .allCorners, radius: 5)
         
-        XCTAssertNotNil(view.layer.mask)
+        if #available(iOS 11, *) {
+            XCTAssertEqual(view.layer.cornerRadius, 5)
+            XCTAssertEqual(view.layer.maskedCorners, [.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner])
+        } else {
+            XCTAssertNotNil(view.layer.mask)
+        }
     }
     
     func testCornerRadiusRadius() {
