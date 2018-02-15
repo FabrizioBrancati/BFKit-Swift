@@ -39,14 +39,14 @@ All notable changes to this project will be documented in this file.<br>
 - Added Hound CI
 - Added `swift_version` property in podspec file for CocoaPods 1.4.0
 
-### Fixed
-- Now Swift Package Manager correctly builds BFKit-Swift with Swift 4
-
 ### Improved
 - Now `cornerRadius(corners:, radius:)` function in UIView extension uses `maskedCorners` for iOS 11 only
 - `fadeDuration` in BFButton class is now a TimeInterval
 - Updated device names based on [The iPhone Wiki](https://www.theiphonewiki.com/wiki/Models)
 - Updated SwiftLint to 0.25.0
+
+### Fixed
+- Now Swift Package Manager correctly builds BFKit-Swift with Swift 4
 
 ---
 
