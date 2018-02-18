@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 3.x Releases
-- `3.1.x` Releases - [3.1.0](#310---face-id-support)
+- `3.1.x` Releases - [3.1.0](#310---face-id-support) | [3.1.1](#311---some-improvements)
 - `3.0.x` Releases - [3.0.0](#300---swift-4-support)
 
 ### 2.x Releases
@@ -35,9 +35,14 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ## Develop
+
+---
+
+## [3.1.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/3.1.1) - Some Improvements
+### 18 Feb 2017
 ### Added
-- Added Hound CI
 - Added `swift_version` property in podspec file for CocoaPods 1.4.0
+- Added Hound CI
 
 ### Improved
 - Now `cornerRadius(corners:, radius:)` function in UIView extension uses `maskedCorners` for iOS 11 only
