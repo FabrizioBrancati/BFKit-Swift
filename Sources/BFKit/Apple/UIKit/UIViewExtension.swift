@@ -214,9 +214,9 @@ public extension UIView {
         gradient.frame = self.bounds
         
         var mutableColors: [Any] = colors
-        for i in 0 ..< colors.count {
-            let currentColor: UIColor = colors[i]
-            mutableColors[i] = currentColor.cgColor
+        for index in 0 ..< colors.count {
+            let currentColor: UIColor = colors[index]
+            mutableColors[index] = currentColor.cgColor
         }
         gradient.colors = mutableColors
         

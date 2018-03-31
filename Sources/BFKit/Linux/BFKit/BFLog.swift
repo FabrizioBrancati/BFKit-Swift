@@ -53,17 +53,17 @@ public struct BFLog {
     ///   - line: Line number. Default is #line.
     public static func log(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
         if self.active {
-            var _message = message
-            if _message.hasSuffix("\n") == false {
-                _message += "\n"
+            var newMessage = message
+            if newMessage.hasSuffix("\n") == false {
+                newMessage += "\n"
             }
             
-            self.logged += _message
+            self.logged += newMessage
             
             let filenameWithoutExtension = NSURL(string: String(describing: NSString(utf8String: filename)!))!.deletingPathExtension!.lastPathComponent
-            let log = "\(filenameWithoutExtension):\(line) \(function): \(_message)"
+            let log = "\(filenameWithoutExtension):\(line) \(function): \(newMessage)"
             let timestamp = Date().description(dateSeparator: "-", usFormat: true, nanosecond: true)
-            print("\(timestamp) \(filenameWithoutExtension):\(line) \(function): \(_message)", terminator: "")
+            print("\(timestamp) \(filenameWithoutExtension):\(line) \(function): \(newMessage)", terminator: "")
             
             self.detailedLog += log
         }

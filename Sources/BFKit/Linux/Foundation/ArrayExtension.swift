@@ -92,8 +92,8 @@ public extension Array {
     /// - parameter object: The element that is removed from self.
     public mutating func remove(_ object: Element) {
         var array: [String] = []
-        for i in self {
-            array.append("\(i)")
+        for index in self {
+            array.append("\(index)")
         }
         let index = array.index(of: "\(object)")
         if index != nil {
@@ -119,16 +119,16 @@ public extension Array {
     ///   - maxSize: Max size of the array.
     /// - Returns: Returns the right index.
     private func superCircle(at index: Int, size maxSize: Int) -> Int {
-        var _index = index
-        if _index < 0 {
-            _index = _index % maxSize
-            _index += maxSize
+        var newIndex = index
+        if newIndex < 0 {
+            newIndex = newIndex % maxSize
+            newIndex += maxSize
         }
-        if _index >= maxSize {
-            _index = _index % maxSize
+        if newIndex >= maxSize {
+            newIndex = newIndex % maxSize
         }
         
-        return _index
+        return newIndex
     }
     
     /// Move object from an index to another.
@@ -153,9 +153,9 @@ public extension Array {
     
     /// Shuffle the elements of `self` in-place.
     public mutating func shuffle() {
-        for i in 0..<(count - 1) {
-            let j = Int(randomInt(range: 0...Int(count - i))) + i
-            self.swap(from: i, to: j)
+        for index in 0..<(count - 1) {
+            let newIndex = Int(randomInt(range: 0...Int(count - index))) + index
+            self.swap(from: index, to: newIndex)
         }
     }
     

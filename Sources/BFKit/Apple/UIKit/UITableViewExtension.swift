@@ -40,8 +40,8 @@ public extension UITableView {
     public func indexPaths(section: Int) -> [IndexPath] {
         var indexPaths: [IndexPath] = []
         let rows: Int = self.numberOfRows(inSection: section)
-        for i in 0 ..< rows {
-            let indexPath: IndexPath = IndexPath(row: i, section: section)
+        for index in 0 ..< rows {
+            let indexPath: IndexPath = IndexPath(row: index, section: section)
             indexPaths.append(indexPath)
         }
         

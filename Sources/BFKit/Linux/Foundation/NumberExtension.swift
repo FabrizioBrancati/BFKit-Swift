@@ -121,7 +121,7 @@ private struct Randomizer {
             var data = UnsafeMutablePointer<UInt8>.allocate(capacity: capacity)
             var secure: Int32 = 0
             defer {
-                data.deallocate(capacity: capacity)
+                data.deallocate()
             }
             _ = queue.sync {
                 secure = SecRandomCopyBytes(kSecRandomDefault, capacity, data)

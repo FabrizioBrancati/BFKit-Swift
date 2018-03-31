@@ -76,9 +76,9 @@ public extension UIImageView {
     ///   - tintColor: Template color.
     /// - Returns: Returns the created UIImageView.
     public convenience init(imageTemplate: UIImage, tintColor: UIColor) {
-        var _imageTemplate = imageTemplate
-        self.init(image: _imageTemplate)
-        _imageTemplate = _imageTemplate.withRenderingMode(.alwaysTemplate)
+        var newImageTemplate = imageTemplate
+        self.init(image: newImageTemplate)
+        newImageTemplate = newImageTemplate.withRenderingMode(.alwaysTemplate)
         self.tintColor = tintColor
     }
     

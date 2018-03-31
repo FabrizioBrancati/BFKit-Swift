@@ -108,10 +108,10 @@ public extension UIDevice {
         var nameCopy = name
         var size: Int = 2
         sysctl(&nameCopy, 2, nil, &size, &name, 0)
-        var hw_machine = [CChar](repeating: 0, count: Int(size))
-        sysctl(&nameCopy, 2, &hw_machine, &size, &name, 0)
+        var hwMachine = [CChar](repeating: 0, count: Int(size))
+        sysctl(&nameCopy, 2, &hwMachine, &size, &name, 0)
         
-        let hardware: String = String(cString: hw_machine)
+        let hardware: String = String(cString: hwMachine)
         return hardware
     }
     

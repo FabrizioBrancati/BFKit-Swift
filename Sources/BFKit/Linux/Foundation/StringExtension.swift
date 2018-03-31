@@ -371,8 +371,8 @@ public extension String {
     /// - Returns: Number of lowercase characters.
     public func countLowercasedCharacters() -> Int {
         var countChar = 0
-        for i in 0 ..< self.length {
-            guard let character = UnicodeScalar((NSString(string: self)).character(at: i)) else {
+        for index in 0 ..< self.length {
+            guard let character = UnicodeScalar((NSString(string: self)).character(at: index)) else {
                 return 0
             }
             let isLowercase = CharacterSet.lowercaseLetters.contains(character)
@@ -389,8 +389,8 @@ public extension String {
     /// - Returns: Number of uppercase characters.
     public func countUppercasedCharacters() -> Int {
         var countChar = 0
-        for i in 0 ..< self.length {
-            guard let character = UnicodeScalar((NSString(string: self)).character(at: i)) else {
+        for index in 0 ..< self.length {
+            guard let character = UnicodeScalar((NSString(string: self)).character(at: index)) else {
                 return 0
             }
             let isUppercase = CharacterSet.uppercaseLetters.contains(character)
@@ -407,8 +407,8 @@ public extension String {
     /// - Returns: Number of numbers.
     public func countNumbers() -> Int {
         var countNumber = 0
-        for i in 0 ..< self.length {
-            guard let character = UnicodeScalar((NSString(string: self)).character(at: i)) else {
+        for index in 0 ..< self.length {
+            guard let character = UnicodeScalar((NSString(string: self)).character(at: index)) else {
                 return 0
             }
             let isNumber = CharacterSet(charactersIn: "0123456789").contains(character)
@@ -425,8 +425,8 @@ public extension String {
     /// - Returns: Number of symbols.
     public func countSymbols() -> Int {
         var countSymbol = 0
-        for i in 0 ..< self.length {
-            guard let character = UnicodeScalar((NSString(string: self)).character(at: i)) else {
+        for index in 0 ..< self.length {
+            guard let character = UnicodeScalar((NSString(string: self)).character(at: index)) else {
                 return 0
             }
             let isSymbol = CharacterSet(charactersIn: "`~!?@#$€£¥§%^&*()_+-={}[]:\";.,<>'•\\|/").contains(character)
