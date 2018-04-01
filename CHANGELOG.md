@@ -38,6 +38,13 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+## [3.1.2](https://github.com/FabrizioBrancati/Queuer/releases/tag/3.1.2) - Swift 4.1 Support
+### 1 Apr 2018
+### Added
+- Added support to Xcode 9.3 and Swift 4.1
+
+---
+
 ## [3.1.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/3.1.1) - Some Improvements
 ### 18 Feb 2017
 ### Added

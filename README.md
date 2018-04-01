@@ -212,7 +212,7 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
             .executable(name: "Project", targets: ["Project"])
         ],
         dependencies: [
-            .package(url: "https://github.com/FabrizioBrancati/BFKit-Swift.git", .upToNextMajor(from: "3.1.1"))
+            .package(url: "https://github.com/FabrizioBrancati/BFKit-Swift.git", .upToNextMajor(from: "3.1.2"))
         ],
         targets: [
             .target(name: "Project", dependencies: ["BFKit"])
