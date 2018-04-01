@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 3.x Releases
-- `3.1.x` Releases - [3.1.0](#310---face-id-support) | [3.1.1](#311---some-improvements)
+- `3.1.x` Releases - [3.1.0](#310---face-id-support) | [3.1.1](#311---some-improvements) | [3.1.2](#311---swift-41-support)
 - `3.0.x` Releases - [3.0.0](#300---swift-4-support)
 
 ### 2.x Releases
