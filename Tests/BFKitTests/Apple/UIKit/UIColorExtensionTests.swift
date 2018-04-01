@@ -34,6 +34,20 @@ import Foundation
 @testable import BFKit
 
 class UIColorExtensionTests: XCTestCase {
+    #if os(iOS)
+        let red = Color.red
+        let green = Color.green
+        let blue = Color.blue
+        let yellow = Color.yellow
+        let cyan = Color.cyan
+    #elseif os(macOS)
+        let red = Color.init(colorSpace: NSColorSpace.genericRGB, components: [1, 0, 0, 1], count: 4)
+        let green = Color.init(colorSpace: NSColorSpace.genericRGB, components: [0, 1, 0, 1], count: 4)
+        let blue = Color.init(colorSpace: NSColorSpace.genericRGB, components: [0, 0, 1, 1], count: 4)
+        let yellow = Color.init(colorSpace: NSColorSpace.genericRGB, components: [1, 1, 0, 1], count: 4)
+        let cyan = Color.init(colorSpace: NSColorSpace.genericRGB, components: [0, 1, 1, 1], count: 4)
+    #endif
+    
     override func setUp() {
         super.setUp()
     }
@@ -45,19 +59,19 @@ class UIColorExtensionTests: XCTestCase {
     func testRGBA() {
         let color = RGBA(255, 0, 0, 1)
         
-        XCTAssertEqual(color, Color.red)
+        XCTAssertEqual(color, red)
     }
     
     func testARGB() {
         let color = ARGB(1, 0, 255, 0)
         
-        XCTAssertEqual(color, Color.green)
+        XCTAssertEqual(color, green)
     }
     
     func testRGB() {
         let color = RGB(0, 0, 255)
         
-        XCTAssertEqual(color, Color.blue)
+        XCTAssertEqual(color, blue)
     }
     
     func testRedComponent() {
@@ -125,23 +139,23 @@ class UIColorExtensionTests: XCTestCase {
     func testInitHexAlpha() {
         let color = Color(hex: 0xFFFF00)
         
-        XCTAssertEqual(color, Color.yellow)
+        XCTAssertEqual(color, yellow)
     }
     
     func testInitHexAlphaFirst() {
         let color = Color(hex: "0FF")
-        _ = Color(hex: "00FF", alphaFirst: true)
-        _ = Color(hex: "0FF0")
+        let color2 = Color(hex: "00FF", alphaFirst: true)
+        let color3 = Color(hex: "0FF0")
         let color4 = Color(hex: "00FFFF")
         let color5 = Color(hex: "#00FFFFFF", alphaFirst: false)
         let color6 = Color(hex: "#FF00FFFF", alphaFirst: true)
         
-        XCTAssertEqual(color, Color.cyan)
-        //XCTAssertEqual(color2, Color.cyan)
-        //XCTAssertEqual(color3, Color.cyan)
-        XCTAssertEqual(color4, Color.cyan)
-        XCTAssertEqual(color5, Color.cyan)
-        XCTAssertEqual(color6, Color.cyan)
+        XCTAssertEqual(color, cyan)
+        XCTAssertEqual(color2, cyan.withAlphaComponent(0))
+        XCTAssertEqual(color3, cyan.withAlphaComponent(0))
+        XCTAssertEqual(color4, cyan)
+        XCTAssertEqual(color5, cyan)
+        XCTAssertEqual(color6, cyan)
     }
     
     func testContrasting() {
