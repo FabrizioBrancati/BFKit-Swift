@@ -35,6 +35,8 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ## Develop
+### Added
+- Added `force` attribute to `generateUniqueIdentifier(save: Bool = default, force: Bool = default)` with a default value, hence no changes are required
 
 ---
 
@@ -72,7 +74,7 @@ All notable changes to this project will be documented in this file.<br>
 ### Improved
 - Improved compilation time in `blur()` function in UIImage extension
 - Improved `debug` and `release` code execution on BFApp struct
-- Changed `generateUniqueIdentifier()` to `generateUniqueIdentifier(save: Bool = default)` in UIDevice extension to be able to keep the generated identifier across multiple sessions, defaults to `false` so no changes are required
+- Changed `generateUniqueIdentifier()` to `generateUniqueIdentifier(save: Bool = default)` in UIDevice extension to be able to keep the generated identifier across multiple sessions, defaults to `false`, so no changes are required
 - Updated SwiftLint to 0.24.0
 - Updated README.md to latest Carthage changes
 

@@ -32,7 +32,7 @@ import UIKit
 /// Used to store BFAPNSIdentifier in defaults.
 private let BFAPNSIdentifierDefaultsKey = "BFAPNSIdentifier"
 /// Used to store BFDeviceIdentifier in defaults.
-private let BFDeviceIdentifierDefaultsKey = "BFDeviceIdentifier"
+internal let BFDeviceIdentifierDefaultsKey = "BFDeviceIdentifier"
 
 // MARK: - Global functions
 
@@ -392,17 +392,27 @@ public extension UIDevice {
     /// When `save` is true, a new UUID will be created and saved in the user defatuls.
     /// It will be retrieved on next calls.
     ///
-    /// - Parameter save: If true the UUID will be saved, otherview not.
+    /// - Parameters:
+    ///   - save: If true the UUID will be saved, otherview not.
+    ///   - force: If true a new UUID will be forced, even there is a saved one.
     /// - Returns: Returns the created (`save` = false`) or retrieved (`save` = true) UUID String.
-    public static func generateUniqueIdentifier(save: Bool = false) -> String {
+    public static func generateUniqueIdentifier(save: Bool = false, force: Bool = false) -> String {
         if save {
             let defaults: UserDefaults = UserDefaults.standard
+            guard !force else {
+                let identifier = UUID().uuidString
+                defaults.set(identifier, forKey: BFDeviceIdentifierDefaultsKey)
+                defaults.synchronize()
+                return identifier
+            }
+            
             guard let identifier = defaults.string(forKey: BFDeviceIdentifierDefaultsKey) else {
                 let identifier = UUID().uuidString
                 defaults.set(identifier, forKey: BFDeviceIdentifierDefaultsKey)
                 defaults.synchronize()
                 return identifier
             }
+            
             return identifier
         }
         

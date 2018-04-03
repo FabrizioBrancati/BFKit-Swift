@@ -217,16 +217,39 @@ class UIDeviceExtensionTests: XCTestCase {
     }
     
     func testGenerateUniqueIdentifier() {
-        let uuid = UIDevice.generateUniqueIdentifier()
-        let uuid2 = UIDevice.generateUniqueIdentifier()
+        var uuid = UIDevice.generateUniqueIdentifier()
+        var uuid2 = UIDevice.generateUniqueIdentifier()
         
         XCTAssertEqual(uuid.length, 36)
         XCTAssertNotEqual(uuid, uuid2)
         
-        let uuid3 = UIDevice.generateUniqueIdentifier(save: true)
-        let uuid4 = UIDevice.generateUniqueIdentifier(save: true)
+        UserDefaults.standard.set(nil, forKey: BFDeviceIdentifierDefaultsKey)
         
-        XCTAssertEqual(uuid3, uuid4)
+        uuid = UIDevice.generateUniqueIdentifier(save: true)
+        uuid2 = UIDevice.generateUniqueIdentifier(save: true)
+        
+        XCTAssertEqual(uuid, uuid2)
+        
+        UserDefaults.standard.set(nil, forKey: BFDeviceIdentifierDefaultsKey)
+        
+        uuid = UIDevice.generateUniqueIdentifier(save: true, force: true)
+        uuid2 = UIDevice.generateUniqueIdentifier(save: true, force: true)
+        
+        XCTAssertNotEqual(uuid, uuid2)
+        
+        UserDefaults.standard.set(nil, forKey: BFDeviceIdentifierDefaultsKey)
+        
+        uuid = UIDevice.generateUniqueIdentifier(save: true, force: true)
+        uuid2 = UIDevice.generateUniqueIdentifier(save: true)
+        
+        XCTAssertEqual(uuid, uuid2)
+        
+        UserDefaults.standard.set(nil, forKey: BFDeviceIdentifierDefaultsKey)
+        
+        uuid = UIDevice.generateUniqueIdentifier(save: true)
+        uuid2 = UIDevice.generateUniqueIdentifier(save: true, force: true)
+        
+        XCTAssertNotEqual(uuid, uuid2)
     }
     
     func testSaveAPNSIdentifier() {
