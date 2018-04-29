@@ -35,8 +35,12 @@ class BFAppTests: XCTestCase {
         ("testIsFirstStart", testIsFirstStart),
         ("testIsFirstStartVersion", testIsFirstStartVersion),
         ("testOnFirstStart", testOnFirstStart),
-        ("testOnFirstStartVersion", testOnFirstStartVersion)
+        ("testOnFirstStartVersion", testOnFirstStartVersion),
+        ("testResetFirstStart", testResetFirstStart),
+        ("testResetFirstStartVersion", testResetFirstStartVersion)
     ]
+    
+    let testVersion = "10.0.0"
     
     override func setUp() {
         super.setUp()
@@ -66,7 +70,7 @@ class BFAppTests: XCTestCase {
             XCTAssertTrue(isFirstStart == true || isFirstStart == false)
         }
         
-        let isFirstStartVersion = BFApp.isFirstStart(version: "4.0.0")
+        let isFirstStartVersion = BFApp.isFirstStart(version: testVersion)
         BFApp.debug {
             XCTAssertTrue(isFirstStartVersion == true || isFirstStartVersion == false)
         }
@@ -81,7 +85,7 @@ class BFAppTests: XCTestCase {
             XCTAssertTrue(isFirstStart == true || isFirstStart == false)
         }
         
-        BFApp.onFirstStart(version: "4.0.0") { isFirstStart in
+        BFApp.onFirstStart(version: testVersion) { isFirstStart in
             XCTAssertTrue(isFirstStart == true || isFirstStart == false)
         }
     }
@@ -90,6 +94,18 @@ class BFAppTests: XCTestCase {
         BFApp.onFirstStart(version: BFApp.version) { isFirstStart in
             XCTAssertTrue(isFirstStart == true || isFirstStart == false)
         }
+    }
+    
+    func testResetFirstStart() {
+        BFApp.resetFirstStart()
+        
+        XCTAssertFalse(UserDefaults.standard.bool(forKey: BFApp.BFAppHasBeenOpened))
+    }
+    
+    func testResetFirstStartVersion() {
+        BFApp.resetFirstStart(version: testVersion)
+        
+        XCTAssertFalse(UserDefaults.standard.bool(forKey: BFApp.BFAppHasBeenOpened + testVersion))
     }
     
     #if !os(Linux) && !os(macOS)

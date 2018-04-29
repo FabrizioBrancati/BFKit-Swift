@@ -36,7 +36,11 @@ All notable changes to this project will be documented in this file.<br>
 
 ## Develop
 ### Added
-- Added `force` attribute to `generateUniqueIdentifier(save: Bool = default, force: Bool = default)` with a default value, hence no changes are required
+- Added `force` attribute to `generateUniqueIdentifier(save: Bool = default, force: Bool = default)` in UIDevice extension with a default value, hence no changes are required
+- Added `resetFirstStart(version: String = default)` in BFApp struct, to reset the App like has never been started 
+
+### Improved
+- Improved BFApp struct
 
 ---
 

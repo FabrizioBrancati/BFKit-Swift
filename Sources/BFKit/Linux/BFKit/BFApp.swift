@@ -25,9 +25,6 @@
 //  SOFTWARE.
 
 import Foundation
-#if os(iOS)
-    import UIKit
-#endif
 
 // MARK: - Global variables
 
@@ -48,7 +45,7 @@ public struct BFApp {
     // MARK: - Variables
     
     /// Used to store the BFHasBeenOpened in defaults.
-    private static let BFAppHasBeenOpened = "BFAppHasBeenOpened"
+    internal static let BFAppHasBeenOpened = "BFAppHasBeenOpened"
     
     /// Use this var to set you DEBUG or not builds.
     /// More info on how to use it [here](http://stackoverflow.com/questions/26890537/disabling-nslog-for-production-in-swift-project/26891797#26891797).
@@ -58,8 +55,6 @@ public struct BFApp {
     
     /// Executes a block only if in DEBUG mode.
     ///
-    /// More info on how to use it [here](http://stackoverflow.com/questions/26890537/disabling-nslog-for-production-in-swift-project/26891797#26891797).
-    ///
     /// - Parameter block: The block to be executed.
     public static func debug(_ block: () -> Void) {
         if isDebug {
@@ -68,8 +63,6 @@ public struct BFApp {
     }
 
     /// Executes a block only if NOT in DEBUG mode.
-    ///
-    /// More info on how to use it [here](http://stackoverflow.com/questions/26890537/disabling-nslog-for-production-in-swift-project/26891797#26891797).
     ///
     /// - Parameter block: The block to be executed.
     public static func release(_ block: () -> Void) {
@@ -81,10 +74,10 @@ public struct BFApp {
     /// If version is set returns if is first start for that version,
     /// otherwise returns if is first start of the App.
     ///
-    /// - Parameter version: Version to be checked, you can use the variable BFApp.version to pass the current App version.
+    /// - Parameter version: Version to be checked, you can use the variable `BFApp.version` to pass the current App version.
     /// - Returns: Returns if is first start of the App or for custom version.
     public static func isFirstStart(version: String = "") -> Bool {
-        let key: String = BFAppHasBeenOpened + "\(version)"
+        let key: String = BFAppHasBeenOpened + version
         
         let defaults = UserDefaults.standard
         let hasBeenOpened: Bool = defaults.bool(forKey: key)
@@ -97,15 +90,10 @@ public struct BFApp {
     /// Remember to execute UI instuctions on main thread.
     ///
     /// - Parameters:
-    ///   - version: Version to be checked, you can use the variable BFApp.version to pass the current App version.
+    ///   - version: Version to be checked, you can use the variable `BFApp.version` to pass the current App version.
     ///   - block: The block to execute, returns isFirstStart.
     public static func onFirstStart(version: String = "", block: (_ isFirstStart: Bool) -> Void) {
-        let key: String
-        if version == "" {
-            key = BFAppHasBeenOpened
-        } else {
-            key = BFAppHasBeenOpened + "\(version)"
-        }
+        let key: String = BFAppHasBeenOpened + version
         
         let defaults = UserDefaults.standard
         let hasBeenOpened: Bool = defaults.bool(forKey: key)
@@ -114,6 +102,16 @@ public struct BFApp {
         }
         
         block(!hasBeenOpened)
+    }
+    
+    /// Reset the App like has never been started.
+    ///
+    /// - Parameter version: Version to be checked, you can use the variable `BFApp.version` to pass the current App version.
+    public static func resetFirstStart(version: String = "") {
+        let key: String = BFAppHasBeenOpened + version
+        
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: key)
     }
     
     #if !os(Linux) && !os(macOS)
