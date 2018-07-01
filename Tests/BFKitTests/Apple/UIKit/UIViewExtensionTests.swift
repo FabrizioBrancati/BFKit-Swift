@@ -107,13 +107,13 @@ internal class UIViewExtensionTests: XCTestCase {
         view.gradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalRightTopToLeftDown)
         view.gradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalLeftDownToRightTop)
         view.gradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalRightDownToLeftTop)
-        view.gradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .custom(startPoint: CGPoint(x: 10, y: 10), endPoint: CGPoint(x: 90, y: 90)))
+        view.gradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .custom(CGPoint(x: 10, y: 10), CGPoint(x: 90, y: 90)))
         
         XCTAssertEqual(view.frame, CGRect(x: 0, y: 0, width: 200, height: 100))
     }
     
     internal func testSmoothGradientColorsDirectionTypeLinear() {
-        view.smoothGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .custom(startPoint: CGPoint(x: 10, y: 10), endPoint: CGPoint(x: 90, y: 90)), type: .linear)
+        view.smoothGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .custom(CGPoint(x: 10, y: 10), CGPoint(x: 90, y: 90)), type: .linear)
         
         XCTAssertEqual(view.frame, CGRect(x: 0, y: 0, width: 200, height: 100))
     }
@@ -125,7 +125,7 @@ internal class UIViewExtensionTests: XCTestCase {
         view.smoothGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalRightTopToLeftDown, type: .linear)
         view.smoothGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalLeftDownToRightTop, type: .linear)
         view.smoothGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalRightDownToLeftTop, type: .linear)
-        view.smoothGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .custom(startPoint: CGPoint(x: 10, y: 10), endPoint: CGPoint(x: 90, y: 90)), type: .linear)
+        view.smoothGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .custom(CGPoint(x: 10, y: 10), CGPoint(x: 90, y: 90)), type: .linear)
         
         XCTAssertEqual(view.frame, CGRect(x: 0, y: 0, width: 200, height: 100))
     }

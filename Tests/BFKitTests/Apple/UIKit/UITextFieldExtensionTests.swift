@@ -50,7 +50,7 @@ internal class UITextFieldExtensionTests: XCTestCase {
     }
     
     internal func testInitFramePlaceholderFontTextColorReturnKeyTypeKeyboardTypeSecureBorderStyleAutocapitalizationKeyboardAppearanceEnablesReturnKeyAutomaticallyClearButtonModeAutocorrectionTypeDelegate() {
-        let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 320, height: 35), placeholder: "This is a test", font: UIFont(fontName: .helvetica, size: 20), textColor: UIColor.black, returnKeyType: .done, keyboardType: .default, secure: false, borderStyle: .roundedRect, autocapitalizationType: .sentences, keyboardAppearance: .dark, enablesReturnKeyAutomatically: true, clearButtonMode: .whileEditing, autocorrectionType: .default, delegate: nil)
+        let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 320, height: 35), placeholder: "This is a test", font: UIFont(fontName: .helvetica, size: 20)!, textColor: UIColor.black, returnKeyType: .done, keyboardType: .default, secure: false, borderStyle: .roundedRect, autocapitalizationType: .sentences, keyboardAppearance: .dark, enablesReturnKeyAutomatically: true, clearButtonMode: .whileEditing, autocorrectionType: .default, delegate: nil) // swiftlint:disable:this force_unwrapping
         
         XCTAssertEqual(textField.frame, CGRect(x: 0, y: 0, width: 320, height: 35))
         XCTAssertEqual(textField.placeholder, "This is a test")

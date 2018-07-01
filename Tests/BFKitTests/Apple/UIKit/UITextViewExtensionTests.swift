@@ -31,7 +31,7 @@ import XCTest
 
 internal class UITextViewExtensionTests: XCTestCase {
     internal func testInitFrameTextFontTextColorAlignmentDataDetectorTypesEditableSelectableReturnKeyTypeKeyboardTypeSecureAutocapitalizationTypeKeyboardAppearenceEnablesReturnKeyAutomaticallyAutocorrectionTypeDelegate() {
-        let textView = UITextView(frame: CGRect(x: 0, y: 0, width: 320, height: 500), text: "This is a test", font: UIFont(fontName: .helvetica, size: 20), textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: true, selectable: true, returnKeyType: .done, keyboardType: .default, secure: false, autocapitalizationType: .sentences, keyboardAppearance: .light, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
+        let textView = UITextView(frame: CGRect(x: 0, y: 0, width: 320, height: 500), text: "This is a test", font: UIFont(fontName: .helvetica, size: 20)!, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: true, selectable: true, returnKeyType: .done, keyboardType: .default, secure: false, autocapitalizationType: .sentences, keyboardAppearance: .light, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil) // swiftlint:disable:this force_unwrapping
         
         XCTAssertEqual(textView.frame, CGRect(x: 0, y: 0, width: 320, height: 500))
         XCTAssertEqual(textView.text, "This is a test")

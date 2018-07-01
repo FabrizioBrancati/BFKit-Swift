@@ -470,7 +470,7 @@ public extension String {
     ///
     /// - parameter spacing: Will add a space between every HEX number.
     /// - Returns: HEX string.
-    /*public func hex(spacing: Bool = false) -> String {
+    public func hex(spacing: Bool = false) -> String {
         var hexString = ""
         let space = spacing ? " " : ""
         
@@ -479,7 +479,7 @@ public extension String {
         }
         
         return hexString
-    }*/
+    }
     
     /// Return if self is anagram of another String.
     ///
