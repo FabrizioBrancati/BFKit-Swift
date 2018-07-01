@@ -41,6 +41,7 @@ All notable changes to this project will be documented in this file.<br>
 
 ### Improved
 - Improved BFApp struct
+- Updated SwiftLint to 0.26.0
 
 ---
 
