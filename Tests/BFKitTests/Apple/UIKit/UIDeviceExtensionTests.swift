@@ -49,13 +49,13 @@ internal class UIDeviceExtensionTests: XCTestCase {
     }
     
     internal func testOsVersionLess() {
-        let osVersion = osVersionLessThan("12.0")
+        let osVersion = osVersionLessThan("15.0")
         
         XCTAssertTrue(osVersion)
     }
     
     internal func testOsVersionLessOrEqual() {
-        let osVersion = osVersionLessThanOrEqual("12.0")
+        let osVersion = osVersionLessThanOrEqual("15.0")
         
         XCTAssertTrue(osVersion)
     }

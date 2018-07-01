@@ -32,14 +32,10 @@ internal class FileManagerExtensionTests: XCTestCase {
     override internal func setUp() {
         super.setUp()
         
-        do {
-            try FileManager.default.delete(file: "Test.txt", from: .documents)
-            try FileManager.default.delete(file: "Test.plist", from: .documents)
-            try FileManager.default.delete(file: "Test2.plist", from: .documents)
-            try FileManager.default.delete(file: "Test.plist", from: .library)
-        } catch {
-            /// It's only for testing purpose.
-        }
+        try? FileManager.default.delete(file: "Test.txt", from: .documents)
+        try? FileManager.default.delete(file: "Test.plist", from: .documents)
+        try? FileManager.default.delete(file: "Test2.plist", from: .documents)
+        try? FileManager.default.delete(file: "Test.plist", from: .library)
     }
     
     internal func testPathFor() {

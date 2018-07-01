@@ -453,12 +453,15 @@ public extension String {
     /// - Returns: Readable string.
     public func stringFromHEX() -> String {
         var hex = self
-        hex = hex.replacingOccurrences(of: " ", with: "")
         var string: String = ""
+        
+        hex = hex.replacingOccurrences(of: " ", with: "")
+        
         while !hex.isEmpty {
             let character = String(hex[..<hex.index(hex.startIndex, offsetBy: 2)])
-            hex = String(hex[hex.index(hex.startIndex, offsetBy: 2)...])
             var characterInt: UInt32 = 0
+            
+            hex = String(hex[hex.index(hex.startIndex, offsetBy: 2)...])
             _ = Scanner(string: character).scanHexInt32(&characterInt)
             string += String(format: "%c", characterInt)
         }
@@ -474,8 +477,8 @@ public extension String {
         var hexString = ""
         let space = spacing ? " " : ""
         
-        for index in 0 ..< self.length {
-            hexString = hexString.appendingFormat("%02x%@", self[index..<index + 1], space)
+        for index in 0 ..< self.count {
+            hexString = hexString.appendingFormat("%02x%@", self[index..<index + 1], index == self.count - 1 ? "" : space)
         }
         
         return hexString

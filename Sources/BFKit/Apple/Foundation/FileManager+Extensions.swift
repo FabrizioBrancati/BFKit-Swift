@@ -113,6 +113,7 @@ public extension FileManager {
         guard !path.exist else {
             return NSKeyedArchiver.archiveRootObject(object, toFile: path.path)
         }
+        
         return false
     }
     
@@ -128,6 +129,7 @@ public extension FileManager {
         guard !path.exist else {
             return NSKeyedUnarchiver.unarchiveObject(withFile: path.path)
         }
+        
         return nil
     }
     
@@ -161,6 +163,7 @@ public extension FileManager {
         guard let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             return nil
         }
+        
         return documentsURL.path.appendingPathComponent(file)
     }
     
@@ -172,6 +175,7 @@ public extension FileManager {
         guard let libraryURL = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).first else {
             return nil
         }
+        
         return libraryURL.path.appendingPathComponent(file)
     }
     
@@ -183,6 +187,7 @@ public extension FileManager {
         guard let cacheURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first else {
             return nil
         }
+        
         return cacheURL.path.appendingPathComponent(file)
     }
     
@@ -194,6 +199,7 @@ public extension FileManager {
         guard let applicationSupportURL = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else {
             return nil
         }
+        
         return applicationSupportURL.path.appendingPathComponent(file)
     }
     
