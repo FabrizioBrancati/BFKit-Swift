@@ -23,31 +23,23 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
-import Foundation
 @testable import BFKit
+import Foundation
+import XCTest
 
-class ProcessInfoExtensionTests: XCTestCase {
-    static let allTests = [
+internal class ProcessInfoExtensionTests: XCTestCase {
+    internal static let allTests = [
         ("testUptime", testUptime),
         ("testUptimeDate", testUptimeDate)
     ]
     
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testUptime() {
+    internal func testUptime() {
         let uptime = ProcessInfo.uptime()
         
         XCTAssertGreaterThan(uptime, 0)
     }
     
-    func testUptimeDate() {
+    internal func testUptimeDate() {
         let uptimeDate = ProcessInfo.uptimeDate()
         
         XCTAssertLessThan(uptimeDate, Date())

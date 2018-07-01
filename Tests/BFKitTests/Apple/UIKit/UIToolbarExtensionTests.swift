@@ -24,21 +24,13 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
+@testable import BFKit
 import Foundation
 import UIKit
-@testable import BFKit
+import XCTest
 
-class UIToolbarExtensionTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testSetTrasparentTraslucent() {
+internal class UIToolbarExtensionTests: XCTestCase {
+    internal func testSetTrasparentTraslucent() {
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         toolbar.setTransparent(true, translucent: false)
         

@@ -24,21 +24,13 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
+@testable import BFKit
 import Foundation
 import UIKit
-@testable import BFKit
+import XCTest
 
-class UILabelExtensionTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testInitFrameTextFontColorAlignmentLinesShadowColor() {
+internal class UILabelExtensionTests: XCTestCase {
+    internal func testInitFrameTextFontColorAlignmentLinesShadowColor() {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30), text: "This is a test", font: UIFont(fontName: .helveticaNeue, size: 20), color: UIColor.black, alignment: .left, lines: 1, shadowColor: UIColor.white)
         
         XCTAssertEqual(label.frame, CGRect(x: 0, y: 0, width: 100, height: 30))
@@ -50,7 +42,7 @@ class UILabelExtensionTests: XCTestCase {
         XCTAssertEqual(label.shadowColor, UIColor.white)
     }
     
-    func testInitFrameTextFontFontSizeColorAlignmentLinesShadowColor() {
+    internal func testInitFrameTextFontFontSizeColorAlignmentLinesShadowColor() {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30), text: "This is a test", font: .helveticaNeue, fontSize: 20, color: UIColor.black, alignment: .left, lines: 1, shadowColor: UIColor.white)
         
         XCTAssertEqual(label.frame, CGRect(x: 0, y: 0, width: 100, height: 30))
@@ -62,7 +54,7 @@ class UILabelExtensionTests: XCTestCase {
         XCTAssertEqual(label.shadowColor, UIColor.white)
     }
     
-    func testCalculateHeight() {
+    internal func testCalculateHeight() {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30))
         label.text = "This is a test"
         var height = label.calculateHeight()
@@ -74,7 +66,7 @@ class UILabelExtensionTests: XCTestCase {
         XCTAssertEqual(height, 0)
     }
     
-    func testSetFontFromIndexToIndex() {
+    internal func testSetFontFromIndexToIndex() {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30))
         label.text = "This is a test"
         label.setFont(UIFont(fontName: .helveticaNeueUltraLight, size: 12), fromIndex: 0, toIndex: 4)
@@ -88,7 +80,7 @@ class UILabelExtensionTests: XCTestCase {
         XCTAssertNil(label.attributedText)
     }
     
-    func testSetFontFontSizeFromIndexToIndex() {
+    internal func testSetFontFontSizeFromIndexToIndex() {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30))
         label.text = "This is a test"
         label.setFont(.helveticaNeueUltraLight, fontSize: 12, fromIndex: 0, toIndex: 4)

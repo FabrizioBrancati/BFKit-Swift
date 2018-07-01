@@ -24,26 +24,18 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
-import Foundation
 @testable import BFKit
+import Foundation
+import XCTest
 
-class SetExtensionTests: XCTestCase {
-    static let allTests = [
+internal class SetExtensionTests: XCTestCase {
+    internal static let allTests = [
         ("testRandom", testRandom)
     ]
     
-    var set: Set<Int> = [1, 2, 3, 4, 5]
+    internal var set: Set<Int> = [1, 2, 3, 4, 5]
 
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testRandom() {
+    internal func testRandom() {
         var random: Set<Int> = []
         
         for _ in 1...100 {

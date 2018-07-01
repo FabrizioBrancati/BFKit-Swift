@@ -38,10 +38,14 @@ public let BFKitVersion = "3.1.2"
 public let BFKitAuthor = "Fabrizio Brancati"
 
 #if os(iOS) || os(watchOS)
+    /// Font typealias.
     public typealias Font = UIFont
+    /// Color typealias.
     public typealias Color = UIColor
 #elseif os(macOS)
+    /// Font typealias.
     public typealias Font = NSFont
+    /// Color typealias.
     public typealias Color = NSColor
 #endif
 

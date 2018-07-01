@@ -29,7 +29,7 @@ import Foundation
 // MARK: - Global functions
 
 /// The private BFLogClass created to manage the log strings.
-public struct BFLog {
+public enum BFLog {
     // MARK: - Variables
     
     /// Activate or not BFLog.
@@ -60,7 +60,7 @@ public struct BFLog {
             
             self.logged += newMessage
             
-            let filenameWithoutExtension = NSURL(string: String(describing: NSString(utf8String: filename)!))!.deletingPathExtension!.lastPathComponent
+            let filenameWithoutExtension = URL(string: String(describing: NSString(utf8String: filename)))?.deletingPathExtension().lastPathComponent ?? "Unknown file"
             let log = "\(filenameWithoutExtension):\(line) \(function): \(newMessage)"
             let timestamp = Date().description(dateSeparator: "-", usFormat: true, nanosecond: true)
             print("\(timestamp) \(filenameWithoutExtension):\(line) \(function): \(newMessage)", terminator: "")

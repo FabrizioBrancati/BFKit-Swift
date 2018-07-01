@@ -24,12 +24,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
-import Foundation
 @testable import BFKit
+import Foundation
+import XCTest
 
-class FileManagerExtensionTests: XCTestCase {
-    override func setUp() {
+internal class FileManagerExtensionTests: XCTestCase {
+    override internal func setUp() {
         super.setUp()
         
         do {
@@ -42,11 +42,7 @@ class FileManagerExtensionTests: XCTestCase {
         }
     }
     
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testPathFor() {
+    internal func testPathFor() {
         let mainBundlePath = FileManager.default.pathFor(.mainBundle)
         let documentsPath = FileManager.default.pathFor(.documents)
         let libraryPath = FileManager.default.pathFor(.library)
@@ -60,7 +56,7 @@ class FileManagerExtensionTests: XCTestCase {
         XCTAssertNotEqual(applicationSupportPath, "")
     }
     
-    func testReadFileOfType() {
+    internal func testReadFileOfType() {
         do {
             try FileManager.default.save(file: "Test.txt", in: .documents, content: "Test")
             let file = try FileManager.default.read(file: "Test.txt", from: .documents)
@@ -71,50 +67,50 @@ class FileManagerExtensionTests: XCTestCase {
         }
     }
     
-    func testSavePlistObjectInFilename() {
+    internal func testSavePlistObjectInFilename() {
         let saved = FileManager.default.savePlist(object: ["1", "2", "3", "4", "5"], in: .documents, filename: "Test")
         
         XCTAssertTrue(saved)
     }
     
-    func testReadPlistFromFilename() {
+    internal func testReadPlistFromFilename() {
         FileManager.default.savePlist(object: ["1", "2", "3", "4", "5"], in: .documents, filename: "Test")
         let readed = FileManager.default.readPlist(from: .documents, filename: "Test")
         
         XCTAssertNotNil(readed)
     }
     
-    func testMainBundlePathFile() {
+    internal func testMainBundlePathFile() {
         let path = FileManager.default.mainBundlePath()
         
         XCTAssertNotNil(path)
     }
     
-    func testDocumentsPathFile() {
+    internal func testDocumentsPathFile() {
         let path = FileManager.default.documentsPath()
         
         XCTAssertNotNil(path)
     }
     
-    func testLibraryPathFile() {
+    internal func testLibraryPathFile() {
         let path = FileManager.default.libraryPath()
         
         XCTAssertNotNil(path)
     }
     
-    func testCachePathFile() {
+    internal func testCachePathFile() {
         let path = FileManager.default.cachePath()
         
         XCTAssertNotNil(path)
     }
     
-    func testApplicationSupportPathFile() {
+    internal func testApplicationSupportPathFile() {
         let path = FileManager.default.applicationSupportPath()
         
         XCTAssertNotNil(path)
     }
     
-    func testSizeFileFrom() {
+    internal func testSizeFileFrom() {
         FileManager.default.savePlist(object: ["1", "2", "3", "4", "5"], in: .documents, filename: "Test")
         do {
             let size = try FileManager.default.size(file: "Test.plist", from: .documents)
@@ -129,7 +125,7 @@ class FileManagerExtensionTests: XCTestCase {
         }
     }
     
-    func testDeleteFileFrom() {
+    internal func testDeleteFileFrom() {
         FileManager.default.savePlist(object: ["1", "2", "3", "4", "5"], in: .documents, filename: "Test")
         
         do {
@@ -141,7 +137,7 @@ class FileManagerExtensionTests: XCTestCase {
         }
     }
     
-    func testMoveFileFromTo() {
+    internal func testMoveFileFromTo() {
         FileManager.default.savePlist(object: ["1", "2", "3", "4", "5"], in: .documents, filename: "Test")
         
         do {
@@ -153,7 +149,7 @@ class FileManagerExtensionTests: XCTestCase {
         }
     }
     
-    func testCopyFileFromTo() {
+    internal func testCopyFileFromTo() {
         FileManager.default.savePlist(object: ["1", "2", "3", "4", "5"], in: .documents, filename: "Test")
         
         do {
@@ -165,7 +161,7 @@ class FileManagerExtensionTests: XCTestCase {
         }
     }
     
-    func testCopyFileFromToMainBundle() {
+    internal func testCopyFileFromToMainBundle() {
         FileManager.default.savePlist(object: ["1", "2", "3", "4", "5"], in: .documents, filename: "Test")
         
         do {
@@ -177,7 +173,7 @@ class FileManagerExtensionTests: XCTestCase {
         }
     }
     
-    func testRenameFileInFromTo() {
+    internal func testRenameFileInFromTo() {
         FileManager.default.savePlist(object: ["1", "2", "3", "4", "5"], in: .documents, filename: "Test")
         
         do {
@@ -189,13 +185,13 @@ class FileManagerExtensionTests: XCTestCase {
         }
     }
     
-    func testSetSettingsFilenameObjectForKey() {
+    internal func testSetSettingsFilenameObjectForKey() {
         let settings = FileManager.default.setSettings(filename: "Test", object: ["1", "2", "3", "4", "5"], forKey: "Test")
         
         XCTAssertTrue(settings)
     }
     
-    func testGetSettingsFilenameForKey() {
+    internal func testGetSettingsFilenameForKey() {
         FileManager.default.setSettings(filename: "Test", object: ["1", "2", "3", "4", "5"], forKey: "Test")
         let settings = FileManager.default.getSettings(filename: "Test", forKey: "Test")
         

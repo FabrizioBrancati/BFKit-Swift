@@ -24,33 +24,25 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
-import Foundation
 import AudioToolbox
 @testable import BFKit
+import Foundation
+import XCTest
 
-class BFSystemSoundTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testPlaySystemSound() {
+internal class BFSystemSoundTests: XCTestCase {
+    internal func testPlaySystemSound() {
         BFSystemSound.playSystemSound(audioID: .alarm)
         
         XCTAssertTrue(true)
     }
     
-    func testVibrate() {
+    internal func testVibrate() {
         BFSystemSound.vibrate()
         
         XCTAssertTrue(true)
     }
     
-    func testPlaySoundNotExist() {
+    internal func testPlaySoundNotExist() {
         do {
             _ = try BFSystemSound.playSound(soundURL: URL(fileURLWithPath: ""))
             
@@ -60,9 +52,9 @@ class BFSystemSoundTests: XCTestCase {
         }
     }
     
-    func testDisposeSoundNotExist() {
+    internal func testDisposeSoundNotExist() {
         do {
-            try BFSystemSound.disposeSound(soundID: SystemSoundID(99999999))
+            try BFSystemSound.disposeSound(soundID: SystemSoundID(99_999_999))
             
             XCTFail("`testDisposeSoundNotExist` error")
         } catch {

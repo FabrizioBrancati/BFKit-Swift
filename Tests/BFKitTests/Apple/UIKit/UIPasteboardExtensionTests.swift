@@ -24,27 +24,19 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
+@testable import BFKit
 import Foundation
 import UIKit
-@testable import BFKit
+import XCTest
 
-class UIPasteboardExtensionTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testCopy() {
+internal class UIPasteboardExtensionTests: XCTestCase {
+    internal func testCopy() {
         UIPasteboard.copy(text: "This is a test")
         
         XCTAssertEqual(UIPasteboard.general.string, "This is a test")
     }
     
-    func testGet() {
+    internal func testGet() {
         let pasteboard = UIPasteboard.getString()
         UIPasteboard.general.items = [[:]]
         let pasteboardEmpty = UIPasteboard.getString()

@@ -179,7 +179,7 @@ public struct Stack<Element: Equatable>: CustomStringConvertible {
     ///
     /// - Returns: Returns the removed element.
     public mutating func pop() -> Element? {
-        var element: Element? = nil
+        var element: Element?
         if !self.empty() {
             element = stack[stack.count - 1]
             stack.remove(at: stack.count - 1)

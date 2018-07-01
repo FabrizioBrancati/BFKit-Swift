@@ -24,15 +24,15 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import Foundation
 import AudioToolbox
+import Foundation
 
 // MARK: - BFSystemSound struct
 
 /// This struct adds some useful functions to play system sounds.
-public class BFSystemSound {
+public enum BFSystemSound {
     // MARK: - Variables
-    
+
     /// Audio IDs enum.
     ///
     /// More info [here](http://iphonedevwiki.net/index.php/AudioServices).

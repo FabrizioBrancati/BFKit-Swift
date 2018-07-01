@@ -24,25 +24,17 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
-import Foundation
 @testable import BFKit
+import Foundation
+import XCTest
 
-class ThreadExtensionTests: XCTestCase {
-    static let allTests = [
+internal class ThreadExtensionTests: XCTestCase {
+    internal static let allTests = [
         ("testRunOnMainThread", testRunOnMainThread),
         ("testRunInBackgroun", testRunInBackgroun)
     ]
     
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testRunOnMainThread() {
+    internal func testRunOnMainThread() {
         let testExpectation = expectation(description: "Run on Main Thread")
         
         runOnMainThread {
@@ -51,12 +43,12 @@ class ThreadExtensionTests: XCTestCase {
             testExpectation.fulfill()
         }
         
-        waitForExpectations(timeout: 5, handler: { error in
+        waitForExpectations(timeout: 5) { error in
             XCTAssertNil(error, "Something went horribly wrong.")
-        })
+        }
     }
     
-    func testRunInBackgroun() {
+    internal func testRunInBackgroun() {
         let testExpectation = expectation(description: "Run in Background")
         
         runInBackground {
@@ -65,8 +57,8 @@ class ThreadExtensionTests: XCTestCase {
             testExpectation.fulfill()
         }
         
-        waitForExpectations(timeout: 5, handler: { error in
+        waitForExpectations(timeout: 5) { error in
             XCTAssertNil(error, "Something went horribly wrong.")
-        })
+        }
     }
 }

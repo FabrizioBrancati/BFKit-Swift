@@ -1,7 +1,7 @@
 #if os(Linux)
 
-import XCTest
 @testable import BFKitTests
+import XCTest
 
 XCTMain([
     testCase(BFAppTests.allTests),

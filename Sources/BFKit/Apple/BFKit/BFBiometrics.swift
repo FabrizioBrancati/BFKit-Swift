@@ -30,7 +30,7 @@ import LocalAuthentication
 // MARK: - BFBiometrics struct
 
 /// This struct adds some useful functions to use biometric authentications.
-public struct BFBiometrics {
+public enum BFBiometrics {
     // MARK: - Variables
     
     /// Biometric result enum.
@@ -69,7 +69,7 @@ public struct BFBiometrics {
     ///
     /// - Returns: Returns an error code as Result enum.
     public static func canUseBiometric() -> Result {
-        let context: LAContext = LAContext()
+        let context = LAContext()
         var error: NSError?
         
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
@@ -87,19 +87,19 @@ public struct BFBiometrics {
     ///   - completion:    Completion handler.
     ///   - result:        Returns the Biometrics result, from the Result enum.
     public static func useBiometric(localizedReason: String, fallbackTitle: String? = nil, completion: @escaping (_ result: Result) -> Void) {
-        let context: LAContext = LAContext()
+        let context = LAContext()
         
         context.localizedFallbackTitle = fallbackTitle
         
         let canUseBiometric = self.canUseBiometric()
         if canUseBiometric == .success {
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: localizedReason, reply: { success, error in
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: localizedReason) { success, error in
                 if success == true, error == nil {
                     completion(.success)
                 } else {
                     completion(self.handleError(error as NSError?))
                 }
-            })
+            }
         } else {
             completion(canUseBiometric)
         }

@@ -24,21 +24,13 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
+@testable import BFKit
 import Foundation
 import UIKit
-@testable import BFKit
+import XCTest
 
-class UIButtonExtensionTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testInitFrameTitleBackgroundImageHighlightedBackgroundImage() {
+internal class UIButtonExtensionTests: XCTestCase {
+    internal func testInitFrameTitleBackgroundImageHighlightedBackgroundImage() {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 320, height: 44), title: "Test", backgroundImage: UIImage(color: UIColor.red), highlightedBackgroundImage: UIImage(color: UIColor.blue))
         
         XCTAssertEqual(button.frame.origin.x, 0)
@@ -48,7 +40,7 @@ class UIButtonExtensionTests: XCTestCase {
         XCTAssertEqual(button.title(for: .normal), "Test")
     }
     
-    func testInitFrameTitleColor() {
+    internal func testInitFrameTitleColor() {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 320, height: 44), title: "Test", color: UIColor.red)
         
         XCTAssertEqual(button.frame.origin.x, 0)
@@ -58,7 +50,7 @@ class UIButtonExtensionTests: XCTestCase {
         XCTAssertEqual(button.title(for: .normal), "Test")
     }
     
-    func testInitFrameTitleColorHighlightedColor() {
+    internal func testInitFrameTitleColorHighlightedColor() {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 320, height: 44), title: "Test", color: UIColor.red, highlightedColor: UIColor.blue)
         
         XCTAssertEqual(button.frame.origin.x, 0)
@@ -68,8 +60,8 @@ class UIButtonExtensionTests: XCTestCase {
         XCTAssertEqual(button.title(for: .normal), "Test")
     }
     
-    func testInitFrameImageHighlightedImage() {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 320, height: 44), image: UIImage(color: UIColor.red)!, highlightedImage: UIImage(color: UIColor.blue))
+    internal func testInitFrameImageHighlightedImage() {
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 320, height: 44), image: UIImage(color: UIColor.red)!, highlightedImage: UIImage(color: UIColor.blue)) // swiftlint:disable:this force_unwrapping
         
         XCTAssertEqual(button.frame.origin.x, 0)
         XCTAssertEqual(button.frame.origin.y, 0)
@@ -77,7 +69,7 @@ class UIButtonExtensionTests: XCTestCase {
         XCTAssertEqual(button.frame.size.height, 44)
     }
     
-    func testSetTitleFont() {
+    internal func testSetTitleFont() {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 320, height: 44), title: "Test")
         button.setTitleFont(.helvetica, size: 18)
         
@@ -86,11 +78,11 @@ class UIButtonExtensionTests: XCTestCase {
         XCTAssertEqual(button.frame.size.width, 320)
         XCTAssertEqual(button.frame.size.height, 44)
         XCTAssertEqual(button.title(for: .normal), "Test")
-        XCTAssertEqual(button.titleLabel?.font!.fontName, "Helvetica")
-        XCTAssertEqual(button.titleLabel?.font!.pointSize, 18)
+        XCTAssertEqual(button.titleLabel?.font?.fontName, "Helvetica")
+        XCTAssertEqual(button.titleLabel?.font?.pointSize, 18)
     }
     
-    func testSetTitleColor() {
+    internal func testSetTitleColor() {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 320, height: 44), title: "Test")
         button.setTitleColor(UIColor.red)
         
@@ -102,7 +94,7 @@ class UIButtonExtensionTests: XCTestCase {
         XCTAssertEqual(button.titleColor(for: .normal), UIColor.red)
     }
     
-    func testSetTitleColorHighlightedColor() {
+    internal func testSetTitleColorHighlightedColor() {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 320, height: 44), title: "Test")
         button.setTitleColor(UIColor.red, highlightedColor: UIColor.blue)
         

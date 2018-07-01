@@ -24,24 +24,16 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
-import Foundation
 @testable import BFKit
+import Foundation
+import XCTest
 
-class NSObjectExtensionTests: XCTestCase {
-    static let allTests = [
+internal class NSObjectExtensionTests: XCTestCase {
+    internal static let allTests = [
         ("testIsValid", testIsValid)
     ]
     
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testIsValid() {
+    internal func testIsValid() {
         let object = NSObject()
         let nullObject = NSNull()
         

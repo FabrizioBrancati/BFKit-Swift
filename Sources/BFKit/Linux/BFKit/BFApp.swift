@@ -41,7 +41,7 @@ import Foundation
 // MARK: - BFApp struct
 
 /// This class adds some useful functions for the App.
-public struct BFApp {
+public enum BFApp {
     // MARK: - Variables
     
     /// Used to store the BFHasBeenOpened in defaults.
@@ -114,26 +114,24 @@ public struct BFApp {
         defaults.removeObject(forKey: key)
     }
     
-    #if !os(Linux) && !os(macOS)
-        /// Set the App setting for a given object and key. The file will be saved in the Library directory.
-        ///
-        /// - Parameters:
-        ///   - object: Object to set.
-        ///   - objectKey: Key to set the object.
-        /// - Returns: Returns true if the operation was successful, otherwise false.
-        @discardableResult
-        public static func setAppSetting(object: Any, forKey objectKey: String) -> Bool {
-            return FileManager.default.setSettings(filename: BFApp.name, object: object, forKey: objectKey)
-        }
-        
-        /// Get the App setting for a given key.
-        ///
-        /// - Parameter objectKey: Key to get the object.
-        /// - Returns: Returns the object for the given key.
-        public static func getAppSetting(objectKey: String) -> Any? {
-            return FileManager.default.getSettings(filename: BFApp.name, forKey: objectKey)
-        }
-    #endif
+    @discardableResult
+    /// Set the App setting for a given object and key. The file will be saved in the Library directory.
+    ///
+    /// - Parameters:
+    ///   - object: Object to set.
+    ///   - objectKey: Key to set the object.
+    /// - Returns: Returns true if the operation was successful, otherwise false.
+    public static func setAppSetting(object: Any, forKey objectKey: String) -> Bool {
+        return FileManager.default.setSettings(filename: BFApp.name, object: object, forKey: objectKey)
+    }
+    
+    /// Get the App setting for a given key.
+    ///
+    /// - Parameter objectKey: Key to get the object.
+    /// - Returns: Returns the object for the given key.
+    public static func getAppSetting(objectKey: String) -> Any? {
+        return FileManager.default.getSettings(filename: BFApp.name, forKey: objectKey)
+    }
 }
 
 // MARK: - BFApp extension

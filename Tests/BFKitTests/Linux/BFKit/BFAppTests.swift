@@ -24,12 +24,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
-import Foundation
 @testable import BFKit
+import Foundation
+import XCTest
 
-class BFAppTests: XCTestCase {
-    static let allTests = [
+internal class BFAppTests: XCTestCase {
+    internal static let allTests = [
         ("testDebug", testDebug),
         ("testRelease", testRelease),
         ("testIsFirstStart", testIsFirstStart),
@@ -40,31 +40,23 @@ class BFAppTests: XCTestCase {
         ("testResetFirstStartVersion", testResetFirstStartVersion)
     ]
     
-    let testVersion = "10.0.0"
+    internal let testVersion = "10.0.0"
     
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testDebug() {
+    internal func testDebug() {
         BFApp.isDebug = true
         BFApp.debug {
             XCTAssertTrue(true)
         }
     }
     
-    func testRelease() {
+    internal func testRelease() {
         BFApp.isDebug = false
         BFApp.release {
             XCTAssertTrue(true)
         }
     }
     
-    func testIsFirstStart() {
+    internal func testIsFirstStart() {
         let isFirstStart = BFApp.isFirstStart()
         BFApp.debug {
             XCTAssertTrue(isFirstStart == true || isFirstStart == false)
@@ -76,11 +68,11 @@ class BFAppTests: XCTestCase {
         }
     }
     
-    func testIsFirstStartVersion() {
+    internal func testIsFirstStartVersion() {
         XCTAssertTrue(BFApp.isFirstStart(version: BFApp.version) == true || BFApp.isFirstStart(version: BFApp.version) == false)
     }
     
-    func testOnFirstStart() {
+    internal func testOnFirstStart() {
         BFApp.onFirstStart { isFirstStart in
             XCTAssertTrue(isFirstStart == true || isFirstStart == false)
         }
@@ -90,33 +82,31 @@ class BFAppTests: XCTestCase {
         }
     }
     
-    func testOnFirstStartVersion() {
+    internal func testOnFirstStartVersion() {
         BFApp.onFirstStart(version: BFApp.version) { isFirstStart in
             XCTAssertTrue(isFirstStart == true || isFirstStart == false)
         }
     }
     
-    func testResetFirstStart() {
+    internal func testResetFirstStart() {
         BFApp.resetFirstStart()
         
         XCTAssertFalse(UserDefaults.standard.bool(forKey: BFApp.BFAppHasBeenOpened))
     }
     
-    func testResetFirstStartVersion() {
+    internal func testResetFirstStartVersion() {
         BFApp.resetFirstStart(version: testVersion)
         
         XCTAssertFalse(UserDefaults.standard.bool(forKey: BFApp.BFAppHasBeenOpened + testVersion))
     }
     
-    #if !os(Linux) && !os(macOS)
-        func testAppSetting() {
-            BFApp.setAppSetting(object: "Test", forKey: "Test")
-            
-            XCTAssertEqual((BFApp.getAppSetting(objectKey: "Test") as! String), "Test") // swiftlint:disable:this force_cast
-        }
-    
-        func testNSLocalizedString() {
-            XCTAssertEqual(NSLocalizedString(""), "")
-        }
-    #endif
+    internal func testAppSetting() {
+        BFApp.setAppSetting(object: "Test", forKey: "Test")
+        
+        XCTAssertEqual((BFApp.getAppSetting(objectKey: "Test") as! String), "Test") // swiftlint:disable:this force_cast
+    }
+
+    internal func testNSLocalizedString() {
+        XCTAssertEqual(NSLocalizedString(""), "")
+    }
 }

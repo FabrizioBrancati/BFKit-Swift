@@ -29,7 +29,7 @@ import Foundation
 // MARK: - BFPassword struct
 
 /// This struct adds some useful functions to manage passwords.
-public struct BFPassword {
+public enum BFPassword {
     // MARK: - Variables
     
     /// Password strength level enum, from 0 (min) to 6 (max).

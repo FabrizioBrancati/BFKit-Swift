@@ -24,65 +24,61 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
+@testable import BFKit
 import Foundation
 import UIKit
-@testable import BFKit
+import XCTest
 
-class UIWindowExtensionTests: XCTestCase {
-    var window: UIWindow = UIWindow()
+internal class UIWindowExtensionTests: XCTestCase {
+    internal var window = UIWindow()
     
-    override func setUp() {
+    override internal func setUp() {
         super.setUp()
         
         window = UIWindow(frame: CGRect(x: 0, y: 0, width: 320, height: 500))
     }
     
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testShowTouchOnScreen() {
+    internal func testShowTouchOnScreen() {
         showTouchOnScreen()
     }
     
-    func testHideTouchOnScreen() {
+    internal func testHideTouchOnScreen() {
         hideTouchOnScreen()
     }
     
-    func testWindowScreenshotSave() {
+    internal func testWindowScreenshotSave() {
         _ = window.windowScreenshot(save: true)
-//        guard let screenshot = window.windowScreenshot(save: true) else {
-//            XCTFail()
-//            return
-//        }
-            
-//        XCTAssertNotNil(screenshot)
-    }
-    
-    func testWindowScreenshotDelaySaveCompletion() {
-//        let testExpectation = expectation(description: "Window Screenshot")
-        
-        window.windowScreenshot(delay: 2, save: true) { _ in
-//            XCTAssertNotNil(screenshot)
-//
-//            testExpectation.fulfill()
+        guard let screenshot = window.windowScreenshot(save: true) else {
+            XCTFail("testWindowScreenshotSave test failed")
+            return
         }
         
-//        waitForExpectations(timeout: 5, handler: { error in
-//            XCTAssertNil(error, "Something went horribly wrong.")
-//        })
+        XCTAssertNotNil(screenshot)
     }
     
-    func testActivateTouch() {
+    internal func testWindowScreenshotDelaySaveCompletion() {
+        let testExpectation = expectation(description: "Window Screenshot")
+        
+        window.windowScreenshot(delay: 2, save: true) { screenshot in
+            XCTAssertNotNil(screenshot)
+
+            testExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5) { error in
+            XCTAssertNil(error, "Something went horribly wrong.")
+        }
+    }
+    
+    internal func testActivateTouch() {
         window.activateTouch()
     }
     
-    func testDeactivateTouch() {
+    internal func testDeactivateTouch() {
         window.deactivateTouch()
     }
     
-    func testTouchImage() {
+    internal func testTouchImage() {
         let image = window.touchImage()
         
         XCTAssert(image.size.height <> (50, 60))

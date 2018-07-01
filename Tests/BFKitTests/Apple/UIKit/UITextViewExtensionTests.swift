@@ -24,21 +24,13 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
+@testable import BFKit
 import Foundation
 import UIKit
-@testable import BFKit
+import XCTest
 
-class UITextViewExtensionTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testInitFrameTextFontTextColorAlignmentDataDetectorTypesEditableSelectableReturnKeyTypeKeyboardTypeSecureAutocapitalizationTypeKeyboardAppearenceEnablesReturnKeyAutomaticallyAutocorrectionTypeDelegate() {
+internal class UITextViewExtensionTests: XCTestCase {
+    internal func testInitFrameTextFontTextColorAlignmentDataDetectorTypesEditableSelectableReturnKeyTypeKeyboardTypeSecureAutocapitalizationTypeKeyboardAppearenceEnablesReturnKeyAutomaticallyAutocorrectionTypeDelegate() {
         let textView = UITextView(frame: CGRect(x: 0, y: 0, width: 320, height: 500), text: "This is a test", font: UIFont(fontName: .helvetica, size: 20), textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: true, selectable: true, returnKeyType: .done, keyboardType: .default, secure: false, autocapitalizationType: .sentences, keyboardAppearance: .light, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
         
         XCTAssertEqual(textView.frame, CGRect(x: 0, y: 0, width: 320, height: 500))
@@ -59,7 +51,7 @@ class UITextViewExtensionTests: XCTestCase {
         XCTAssertNil(textView.delegate)
     }
     
-    func testInitFrameTextFontFontSizeTextColorAlignmentDataDetectorTypesEditableSelectableReturnKeyTypeKeyboardTypeSecureAutocapitalizationTypeKeyboardAppearenceEnablesReturnKeyAutomaticallyAutocorrectionTypeDelegate() {
+    internal func testInitFrameTextFontFontSizeTextColorAlignmentDataDetectorTypesEditableSelectableReturnKeyTypeKeyboardTypeSecureAutocapitalizationTypeKeyboardAppearenceEnablesReturnKeyAutomaticallyAutocorrectionTypeDelegate() {
         let textView = UITextView(frame: CGRect(x: 0, y: 0, width: 320, height: 500), text: "This is a test", font: .helvetica, fontSize: 20, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: true, selectable: true, returnKeyType: .done, keyboardType: .default, secure: false, autocapitalizationType: .sentences, keyboardAppearance: .light, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
         
         XCTAssertEqual(textView.frame, CGRect(x: 0, y: 0, width: 320, height: 500))
@@ -80,7 +72,7 @@ class UITextViewExtensionTests: XCTestCase {
         XCTAssertNil(textView.delegate)
     }
     
-    func testPasteFromPasteboard() {
+    internal func testPasteFromPasteboard() {
         let textView = UITextView(frame: CGRect(x: 0, y: 0, width: 320, height: 35))
         UIPasteboard.copy(text: "This is a test")
         textView.pasteFromPasteboard()
@@ -88,7 +80,7 @@ class UITextViewExtensionTests: XCTestCase {
         XCTAssertEqual(textView.text, "This is a test")
     }
     
-    func testCopyToPasteboard() {
+    internal func testCopyToPasteboard() {
         let textView = UITextView(frame: CGRect(x: 0, y: 0, width: 320, height: 35))
         textView.text = "This is a test!"
         textView.copyToPasteboard()

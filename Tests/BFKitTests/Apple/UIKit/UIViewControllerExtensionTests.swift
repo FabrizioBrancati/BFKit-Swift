@@ -24,25 +24,17 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
+@testable import BFKit
 import Foundation
 import UIKit
-@testable import BFKit
+import XCTest
 
-class UIViewControllerExtensionTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-    }
+internal class UIViewControllerExtensionTests: XCTestCase {
+//    internal func testSmootlyDeselectRowsTableView() {
+//        
+//    }
     
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    /*func testSmootlyDeselectRowsTableView() {
-        
-    }*/
-    
-    func testSetTabBarVisibleAnimated() {
+    internal func testSetTabBarVisibleAnimated() {
         let viewController = UITabBarController()
         
         viewController.setTabBarVisible(false, animated: true)

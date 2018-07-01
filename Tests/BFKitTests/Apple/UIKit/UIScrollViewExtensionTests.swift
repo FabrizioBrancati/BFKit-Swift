@@ -24,21 +24,13 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
+@testable import BFKit
 import Foundation
 import UIKit
-@testable import BFKit
+import XCTest
 
-class UIScrollViewExtensionTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testInitFrameContentSizeClipsToBoundsPagingEnabledShowScrollIndicatorsDelegate() {
+internal class UIScrollViewExtensionTests: XCTestCase {
+    internal func testInitFrameContentSizeClipsToBoundsPagingEnabledShowScrollIndicatorsDelegate() {
         let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: 320, height: 500), contentSize: CGSize(width: 500, height: 750), clipsToBounds: true, pagingEnabled: false, showScrollIndicators: true, delegate: nil)
         
         XCTAssertEqual(scrollView.frame, CGRect(x: 0, y: 0, width: 320, height: 500))

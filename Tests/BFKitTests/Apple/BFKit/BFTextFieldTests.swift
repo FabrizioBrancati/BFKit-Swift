@@ -24,48 +24,35 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
+@testable import BFKit
 import Foundation
 import UIKit
-@testable import BFKit
+import XCTest
 
-class BFTextFieldTests: XCTestCase {
-    weak var textField: BFTextField? = BFTextField(frame: CGRect(x: 0, y: 0, width: 320, height: 30))
+internal class BFTextFieldTests: XCTestCase {
+    internal var textField = BFTextField(frame: CGRect(x: 0, y: 0, width: 320, height: 30))
     
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testEncodeDecode() {
-        FileManager.default.savePlist(object: textField!, in: .cache, filename: "BFTextField")
+    internal func testEncodeDecode() {
+        FileManager.default.savePlist(object: textField, in: .cache, filename: "BFTextField")
         let decoded = FileManager.default.readPlist(from: .cache, filename: "BFTextField") as? BFTextField
         
         XCTAssertEqual(decoded?.frame, CGRect(x: 0, y: 0, width: 320, height: 30))
     }
     
-    func testInitFrame() {
-        XCTAssertEqual(textField?.maxNumberOfCharacters, 0)
-        XCTAssertEqual(textField?.frame.size.width, 320)
+    internal func testInitFrame() {
+        XCTAssertEqual(textField.maxNumberOfCharacters, 0)
+        XCTAssertEqual(textField.frame.size.width, 320)
     }
     
-    func testTextFieldDidChange() {
-        textField?.maxNumberOfCharacters = 20
-        textField?.text = "Testing"
+    internal func testTextFieldDidChange() {
+        textField.maxNumberOfCharacters = 20
+        textField.text = "Testing"
         
-        XCTAssertEqual(textField?.text, "Testing")
+        XCTAssertEqual(textField.text, "Testing")
         
-        textField?.text = "TestingMoreThan20Characters"
+        textField.text = "TestingMoreThan20Characters"
         NotificationCenter.default.post(name: .UITextFieldTextDidChange, object: textField)
         
-        XCTAssertEqual(textField!.text?.count, 20)
-    }
-    
-    func testDeinit() {
-        textField = nil
-        XCTAssertNil(textField)
+        XCTAssertEqual(textField.text?.count, 20)
     }
 }

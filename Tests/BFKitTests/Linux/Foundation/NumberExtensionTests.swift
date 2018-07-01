@@ -24,12 +24,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
-import Foundation
 @testable import BFKit
+import Foundation
+import XCTest
 
-class NumberExtensionTests: XCTestCase {
-    static let allTests = [
+internal class NumberExtensionTests: XCTestCase {
+    internal static let allTests = [
         ("testDegreesToRadians", testDegreesToRadians),
         ("testRadiansToDegrees", testRadiansToDegrees),
         ("testRandomIntMinMax", testRandomIntMinMax),
@@ -41,27 +41,19 @@ class NumberExtensionTests: XCTestCase {
         ("testDoubleArray", testDoubleArray)
     ]
     
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testDegreesToRadians() {
+    internal func testDegreesToRadians() {
         let radians = degreesToRadians(180)
         
         XCTAssert(radians > 3.14 && radians < 3.15)
     }
     
-    func testRadiansToDegrees() {
+    internal func testRadiansToDegrees() {
         let degrees = radiansToDegrees(Float.pi)
         
         XCTAssert(degrees >= 179 && degrees <= 181)
     }
     
-    func testRandomIntMinMax() {
+    internal func testRandomIntMinMax() {
         var random: [Int] = []
         
         for _ in 0...10 {
@@ -80,7 +72,7 @@ class NumberExtensionTests: XCTestCase {
         }
     }
     
-    func testRandomIntRange() {
+    internal func testRandomIntRange() {
         var random: [Int] = []
         
         for _ in 0...10 {
@@ -99,36 +91,36 @@ class NumberExtensionTests: XCTestCase {
         }
     }
     
-    func testRandomFloat() {
+    internal func testRandomFloat() {
         let random = randomFloat()
         
         XCTAssert(random >= 0.0 && random <= 1.0)
     }
     
-    func testRandomFloatMinMax() {
+    internal func testRandomFloatMinMax() {
         let random = randomFloat(min: 2.0, max: 2.5)
         
         XCTAssert(random >= 2.0 && random <= 2.5)
     }
     
-    func testIntArray() {
-        let int = 123456
+    internal func testIntArray() {
+        let int = 123_456
         let negInt = -3895
         XCTAssertEqual(int.array, [1, 2, 3, 4, 5, 6])
         XCTAssertEqual(negInt.array, [0, 3, 8, 9, 5])
     }
     
-    func testFloatArray() {
+    internal func testFloatArray() {
         let float: Float = 92.456
         XCTAssertEqual(float.array, [9, 2, 0, 4, 5, 6])
     }
     
-    func testDoubleArray() {
-        let double: Double = 832.746201
+    internal func testDoubleArray() {
+        let double: Double = 832.746_201
         XCTAssertEqual(double.array, [8, 3, 2, 0, 7, 4, 6, 2, 0, 1])
     }
     
-    func testComparisionMajorMinorButNotEqual() {
+    internal func testComparisionMajorMinorButNotEqual() {
         let number = 10
         
         XCTAssertTrue(number <> (9, 11))
@@ -136,7 +128,7 @@ class NumberExtensionTests: XCTestCase {
         XCTAssertFalse(number <> (11, 12))
     }
     
-    func testComparisionMajorMinorEqual() {
+    internal func testComparisionMajorMinorEqual() {
         let number = 10
         
         XCTAssertTrue(number <=> (10, 11))

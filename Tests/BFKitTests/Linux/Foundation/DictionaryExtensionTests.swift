@@ -24,26 +24,18 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
-import Foundation
 @testable import BFKit
+import Foundation
+import XCTest
 
-class DictionaryExtensionTests: XCTestCase {
-    static let allTests = [
+internal class DictionaryExtensionTests: XCTestCase {
+    internal static let allTests = [
         ("testAppendValueForKey", testAppendValueForKey)
     ]
     
-    var dictionary = ["1": 1, "2": 2, "3": 3, "4": 4, "5": 5]
+    internal var dictionary = ["1": 1, "2": 2, "3": 3, "4": 4, "5": 5]
     
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testAppendValueForKey() {
+    internal func testAppendValueForKey() {
         dictionary.append(6, forKey: "6")
         
         XCTAssertEqual(dictionary.count, 6)

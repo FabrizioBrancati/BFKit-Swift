@@ -36,37 +36,37 @@ open class BFButton: UIButton {
     public var fadeDuration: TimeInterval = 0
     
     /// The animation on highlighted status.
-    open override var isHighlighted: Bool {
+    override open var isHighlighted: Bool {
         didSet(highlighted) {
             if highlighted == false {
                 self.addSubview(self.overlayImageView)
                 self.overlayImageView.alpha = 0
                 
-                UIView.animate(withDuration: self.fadeDuration, animations: {
+                UIView.animate(withDuration: self.fadeDuration) {
                     self.overlayImageView.alpha = 1
-                })
+                }
             } else {
-                UIView.animate(withDuration: self.fadeDuration, animations: {
+                UIView.animate(withDuration: self.fadeDuration,
+                               animations: {
                     self.overlayImageView.alpha = 0
-                    }, completion: { completed in
-                        if completed {
-                            self.overlayImageView.removeFromSuperview()
-                        }
+                }, completion: { completed in
+                    if completed {
+                        self.overlayImageView.removeFromSuperview()
                     }
-                )
+                })
             }
         }
     }
     
     /// The overlay image, cannot be nil.
-    public var overlayImageView: UIImageView! {
+    public var overlayImageView: UIImageView! { // swiftlint:disable:this implicitly_unwrapped_optional
         didSet(newOverlayImageView) {
             if self.overlayImageView != newOverlayImageView, newOverlayImageView != nil {
                 self.overlayImageView = newOverlayImageView
             }
             
-            self.overlayImageView.frame = self.imageView!.frame
-            self.overlayImageView.bounds = self.imageView!.bounds
+            self.overlayImageView.frame = self.imageView?.frame ?? CGRect.zero
+            self.overlayImageView.bounds = self.imageView?.bounds ?? CGRect.zero
             self.overlayImageView.alpha = 0
         }
     }
@@ -81,9 +81,9 @@ open class BFButton: UIButton {
         super.init(coder: aDecoder)
         
         self.fadeDuration = aDecoder.decodeDouble(forKey: "FadeDuration")
-        self.overlayImageView = aDecoder.decodeObject(forKey: "OverlayImageView") as! UIImageView // swiftlint:disable:this force_cast
-        self.overlayImageView.frame = self.imageView!.frame
-        self.overlayImageView.bounds = self.imageView!.bounds
+        self.overlayImageView = (aDecoder.decodeObject(forKey: "OverlayImageView") as! UIImageView) // swiftlint:disable:this force_cast
+        self.overlayImageView.frame = self.imageView?.frame ?? CGRect.zero
+        self.overlayImageView.bounds = self.imageView?.bounds ?? CGRect.zero
         
         self.adjustsImageWhenHighlighted = false
     }
@@ -91,7 +91,7 @@ open class BFButton: UIButton {
     /// Encodes added variables.
     ///
     /// - Parameter aCoder: NSCoder.
-    open override func encode(with aCoder: NSCoder) {
+    override open func encode(with aCoder: NSCoder) {
         super.encode(with: aCoder)
         
         aCoder.encode(self.fadeDuration, forKey: "FadeDuration")
@@ -112,8 +112,8 @@ open class BFButton: UIButton {
         
         self.setImage(image, for: UIControlState())
         self.overlayImageView = UIImageView(image: highlightedImage)
-        self.overlayImageView.frame = self.imageView!.frame
-        self.overlayImageView.bounds = self.imageView!.bounds
+        self.overlayImageView.frame = self.imageView?.frame ?? CGRect.zero
+        self.overlayImageView.bounds = self.imageView?.bounds ?? CGRect.zero
         
         self.adjustsImageWhenHighlighted = false
     }
