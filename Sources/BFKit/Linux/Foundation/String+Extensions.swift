@@ -474,8 +474,8 @@ public extension String {
         var hexString = ""
         let space = spacing ? " " : ""
         
-        for i in 0 ..< self.length {
-            hexString = hexString.appendingFormat("%02x%@", self[i..<i + 1], space)
+        for index in 0 ..< self.length {
+            hexString = hexString.appendingFormat("%02x%@", self[index..<index + 1], space)
         }
         
         return hexString
