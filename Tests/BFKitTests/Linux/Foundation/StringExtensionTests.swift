@@ -359,12 +359,6 @@ internal class StringExtensionTests: XCTestCase {
         XCTAssertEqual(stringFromHEX, "hello")
     }
     
-    internal func testHEXSpacing() {
-        let hex = "hello".hex(spacing: true)
-        
-        XCTAssertEqual(hex, "5338d691 5338d641 5338d6d1 5338d6d1 5338d6e1")
-    }
-    
     internal func testIsAnagramOf() {
         let anagram = string.reversed(preserveFormat: false)
         

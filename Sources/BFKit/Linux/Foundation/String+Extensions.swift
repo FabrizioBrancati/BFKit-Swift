@@ -468,6 +468,7 @@ public extension String {
         return string
     }
     
+    @available(*, deprecated: 3.0, message: "`hex(spacing:)` is deprecated and will be removed in BFKit-Swift 4.")
     /// Convert string to HEX string.
     /// Example: "hello" -> "68656c6c6f"
     ///
