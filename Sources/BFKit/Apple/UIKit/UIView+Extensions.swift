@@ -72,7 +72,7 @@ public extension UIView {
         case diagonalLeftDownToRightTop
         case diagonalRightTopToLeftDown
         case diagonalRightDownToLeftTop
-        case custom(CGPoint, CGPoint)
+        case custom(startPoint: CGPoint, endPoint: CGPoint)
     }
     
     /// Type of gradient.

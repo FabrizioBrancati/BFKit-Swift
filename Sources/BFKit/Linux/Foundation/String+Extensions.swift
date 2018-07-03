@@ -489,7 +489,7 @@ public extension String {
     ///
     /// - Parameter string: Other String.
     /// - Returns: Return true if self is anagram of another String, otherwise false.
-    func isAnagram(of string: String) -> Bool {
+    public func isAnagram(of string: String) -> Bool {
         let lowerSelf = self.lowercased().replacingOccurrences(of: " ", with: "")
         let lowerOther = string.lowercased().replacingOccurrences(of: " ", with: "")
         return lowerSelf.sorted() == lowerOther.sorted()
@@ -498,7 +498,7 @@ public extension String {
     /// Returns if self is palindrome.
     ///
     /// - Returns: Returns true if self is palindrome, otherwise false.
-    func isPalindrome() -> Bool {
+    public func isPalindrome() -> Bool {
         let selfString = self.lowercased().replacingOccurrences(of: " ", with: "")
         let otherString = String(selfString.reversed())
         return selfString == otherString
@@ -596,7 +596,7 @@ public extension String {
         ///
         /// - Returns: Returns an array of String with all the links in self.
         /// - Throws: Throws NSDataDetector errors.
-        func links() throws -> [String] {
+        public func links() throws -> [String] {
             let detector = try NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
             
             let links = Array(detector.matches(in: self, options: NSRegularExpression.MatchingOptions.reportCompletion, range: NSRange(location: 0, length: length)))
@@ -608,7 +608,7 @@ public extension String {
         ///
         /// - Returns: Returns an array of Date with all the date in self.
         /// - Throws: Throws NSDataDetector errors.
-        func dates() throws -> [Date] {
+        public func dates() throws -> [Date] {
             let detector = try NSDataDetector(types: NSTextCheckingResult.CheckingType.date.rawValue)
             
             let dates = Array(detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withTransparentBounds, range: NSRange(location: 0, length: length)))
@@ -620,7 +620,7 @@ public extension String {
         ///
         /// - Returns: Returns an array of String with all the hashtags in self.
         /// - Throws: Throws NSRegularExpression errors.
-        func hashtags() throws -> [String] {
+        public func hashtags() throws -> [String] {
             let detector = try NSRegularExpression(pattern: "#(\\w+)", options: NSRegularExpression.Options.caseInsensitive)
             let hashtags = Array(detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withoutAnchoringBounds, range: NSRange(location: 0, length: length)))
             
@@ -631,7 +631,7 @@ public extension String {
         ///
         /// - Returns: Returns an array of String with all the mentions in self.
         /// - Throws: Throws NSRegularExpression errors.
-        func mentions() throws -> [String] {
+        public func mentions() throws -> [String] {
             let detector = try NSRegularExpression(pattern: "@(\\w+)", options: NSRegularExpression.Options.caseInsensitive)
             let mentions = Array(detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withoutAnchoringBounds, range: NSRange(location: 0, length: length)))
             
