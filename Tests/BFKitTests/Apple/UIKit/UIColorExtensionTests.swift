@@ -26,21 +26,21 @@
 
 import Foundation
 import XCTest
-#if os(iOS)
+#if canImport(UIKit)
     import UIKit
-#elseif os(macOS)
+#elseif canImport(AppKit)
     import AppKit
 #endif
 @testable import BFKit
 
 internal class UIColorExtensionTests: XCTestCase {
-    #if os(iOS)
+    #if canImport(UIKit)
         internal let red = Color.red
         internal let green = Color.green
         internal let blue = Color.blue
         internal let yellow = Color.yellow
         internal let cyan = Color.cyan
-    #elseif os(macOS)
+    #elseif canImport(AppKit)
         internal let red = Color(colorSpace: NSColorSpace.genericRGB, components: [1, 0, 0, 1], count: 4)
         internal let green = Color(colorSpace: NSColorSpace.genericRGB, components: [0, 1, 0, 1], count: 4)
         internal let blue = Color(colorSpace: NSColorSpace.genericRGB, components: [0, 0, 1, 1], count: 4)

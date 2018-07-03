@@ -28,15 +28,13 @@ import Foundation
 
 // MARK: - Global variables
 
-#if !os(Linux)
-    /// NSLocalizedString without comment parameter.
-    ///
-    /// - Parameter key: The key of the localized string.
-    /// - Returns: Returns a localized string.
-    public func NSLocalizedString(_ key: String) -> String {
-        return NSLocalizedString(key, comment: "")
-    }
-#endif
+/// NSLocalizedString without comment parameter.
+///
+/// - Parameter key: The key of the localized string.
+/// - Returns: Returns a localized string.
+public func NSLocalizedString(_ key: String) -> String {
+    return NSLocalizedString(key, comment: "")
+}
 
 // MARK: - BFApp struct
 

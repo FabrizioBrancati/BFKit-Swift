@@ -25,9 +25,9 @@
 //  SOFTWARE.
 
 import Foundation
-#if os(iOS) || os(watchOS)
+#if canImport(UIKit)
     import UIKit
-#elseif os(macOS)
+#elseif canImport(AppKit)
     import AppKit
 #endif
 

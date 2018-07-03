@@ -25,9 +25,9 @@
 //  SOFTWARE.
 
 import Foundation
-#if os(iOS) || os(watchOS)
+#if canImport(UIKit)
     import UIKit
-#elseif os(macOS)
+#elseif canImport(AppKit)
     import AppKit
 #endif
 
@@ -37,12 +37,12 @@ public let BFKitVersion = "3.1.2"
 /// BFKit author string.
 public let BFKitAuthor = "Fabrizio Brancati"
 
-#if os(iOS) || os(watchOS)
+#if canImport(UIKit)
     /// Font typealias.
     public typealias Font = UIFont
     /// Color typealias.
     public typealias Color = UIColor
-#elseif os(macOS)
+#elseif canImport(AppKit)
     /// Font typealias.
     public typealias Font = NSFont
     /// Color typealias.

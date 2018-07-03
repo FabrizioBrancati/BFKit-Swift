@@ -426,13 +426,13 @@ internal class StringExtensionTests: XCTestCase {
         }
     }
     
-    #if !os(Linux)
-        internal func testLocalize() {
-            let localized = string.localize()
-            
-            XCTAssertEqual(localized, "This is a test")
-        }
+    internal func testLocalize() {
+        let localized = string.localize()
+        
+        XCTAssertEqual(localized, "This is a test")
+    }
     
+    #if !os(Linux)
         internal func testIsEmail() {
             let isNotEmail = string.isEmail()
             let isEmail = "test@test.test".isEmail()

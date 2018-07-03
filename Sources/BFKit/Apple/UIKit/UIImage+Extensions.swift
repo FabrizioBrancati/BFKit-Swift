@@ -27,12 +27,13 @@
 import CoreGraphics
 import Foundation
 import UIKit
-#if os(watchOS)
-    import WatchKit
-#elseif os(iOS)
+#if canImport(CoreImage)
     import Accelerate
     import CoreImage
+#elseif canImport(WatchKit)
+    import WatchKit
 #endif
+
 
 // MARK: - UIImage extension
 
@@ -199,9 +200,9 @@ public extension UIImage {
     ///
     /// - Returns: Returns the screen scale, based on the device.
     public static func screenScale() -> CGFloat {
-        #if os(iOS)
+        #if canImport(CoreImage)
             return UIScreen.main.scale
-        #elseif os(watchOS)
+        #elseif canImport(WatchKit)
             return WKInterfaceDevice.current().screenScale
         #endif
     }
@@ -649,7 +650,7 @@ public extension UIImage {
         return newImage
     }
     
-    #if os(iOS)
+    #if canImport(CoreImage)
         /// Creates an image from an UIView.
         ///
         /// - Parameter view: UIView.

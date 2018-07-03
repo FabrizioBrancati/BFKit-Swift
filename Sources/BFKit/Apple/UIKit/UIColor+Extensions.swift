@@ -25,9 +25,9 @@
 //  SOFTWARE.
 
 import Foundation
-#if os(iOS) || os(watchOS)
+#if canImport(UIKit)
     import UIKit
-#elseif os(macOS)
+#elseif canImport(AppKit)
     import AppKit
 #endif
 
@@ -42,9 +42,9 @@ import Foundation
 ///   - alpha: Alpha value.
 /// - Returns: Returns the created UIColor or NSColor.
 public func RGBA(_ red: Int, _ green: Int, _ blue: Int, _ alpha: Float) -> Color {
-    #if os(iOS) || os(watchOS)
+    #if canImport(UIKit)
         return Color(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: CGFloat(alpha))
-    #elseif os(macOS)
+    #elseif canImport(AppKit)
         return Color(calibratedRed: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: CGFloat(alpha))
     #endif
 }
@@ -69,9 +69,9 @@ public func ARGB( _ alpha: Float, _ red: Int, _ green: Int, _ blue: Int) -> Colo
 ///   - blue: Blue value.
 /// - Returns: Returns the created UIColor or NSColor.
 public func RGB(_ red: Int, _ green: Int, _ blue: Int) -> Color {
-    #if os(iOS) || os(watchOS)
+    #if canImport(UIKit)
         return Color(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
-    #elseif os(macOS)
+    #elseif canImport(AppKit)
         return Color(calibratedRed: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
     #endif
 }
@@ -82,7 +82,7 @@ public func RGB(_ red: Int, _ green: Int, _ blue: Int) -> Color {
 public extension Color {
     // MARK: - Variables
     
-    #if !os(macOS)
+    #if canImport(UIKit)
         /// RGB properties: red.
         public var redComponent: CGFloat {
             guard self.canProvideRGBComponents(), let component = self.cgColor.__unsafeComponents else {
@@ -131,9 +131,9 @@ public extension Color {
         if self.canProvideRGBComponents() {
             var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0, alpha: CGFloat = 0.0
             
-            #if os(iOS) || os(watchOS)
+            #if canImport(UIKit)
                 self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-            #elseif os(macOS)
+            #elseif canImport(AppKit)
                 if self.colorSpace.colorSpaceModel == .RGB {
                     self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
                 } else if self.colorSpace.colorSpaceModel == .gray {
@@ -211,9 +211,9 @@ public extension Color {
     ///   - hex: HEX value.
     ///   - alpha: Alpha value.
     public convenience init(hex: Int, alpha: CGFloat = 1.0) {
-        #if os(iOS) || os(watchOS)
+        #if canImport(UIKit)
             self.init(red: CGFloat(((hex & 0xFF0000) >> 16)) / 255.0, green: CGFloat(((hex & 0xFF00) >> 8)) / 255.0, blue: CGFloat((hex & 0xFF)) / 255.0, alpha: alpha)
-        #elseif os(macOS)
+        #elseif canImport(AppKit)
             self.init(calibratedRed: CGFloat(((hex & 0xFF0000) >> 16)) / 255.0, green: CGFloat(((hex & 0xFF00) >> 8)) / 255.0, blue: CGFloat((hex & 0xFF)) / 255.0, alpha: alpha)
         #endif
     }
@@ -271,9 +271,9 @@ public extension Color {
             break
         }
         
-        #if os(iOS) || os(watchOS)
+        #if canImport(UIKit)
             self.init(red: red, green: green, blue: blue, alpha: alpha)
-        #elseif os(macOS)
+        #elseif canImport(AppKit)
             self.init(calibratedRed: red, green: green, blue: blue, alpha: alpha)
         #endif
     }
@@ -291,11 +291,11 @@ public extension Color {
     public func complementary() -> Color? {
         var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
         
-        #if os(iOS) || os(watchOS)
+        #if canImport(UIKit)
             guard self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) else {
                 return nil
             }
-        #elseif os(macOS)
+        #elseif canImport(AppKit)
             self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
         #endif
         
@@ -366,7 +366,7 @@ public extension Color {
         }
     }
     
-    #if os(iOS) || os(watchOS)
+    #if canImport(UIKit)
         /// Create an UIColor from a given string like "blue" or an hex string.
         ///
         /// - Parameter color: String with color.
@@ -377,7 +377,7 @@ public extension Color {
                 self.init(hex: color)
             }
         }
-    #elseif os(macOS)
+    #elseif canImport(AppKit)
         /// Create a NSColor from a given string like "blue" or an hex string.
         ///
         /// - Parameter color: String with color.

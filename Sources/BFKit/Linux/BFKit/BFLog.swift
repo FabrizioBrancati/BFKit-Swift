@@ -127,15 +127,13 @@ public enum BFLog {
         detailedLog = ""
     }
     
-    #if !os(Linux) && !os(macOS)
-        /// Save the Log in a file.
-        ///
-        /// - Parameters:
-        ///   - path: Save path.
-        ///   - filename: Log filename.
-        /// - Throws: write(toFile:, atomically:, encoding:) errors.
-        public static func saveLog(in path: FileManager.PathType, filename: String) throws {
-            try FileManager.default.save(file: filename, in: path, content: self.detailedLog)
-        }
-    #endif
+    /// Save the Log in a file.
+    ///
+    /// - Parameters:
+    ///   - path: Save path.
+    ///   - filename: Log filename.
+    /// - Throws: write(toFile:, atomically:, encoding:) errors.
+    public static func saveLog(in path: FileManager.PathType, filename: String) throws {
+        try FileManager.default.save(file: filename, in: path, content: self.detailedLog)
+    }
 }

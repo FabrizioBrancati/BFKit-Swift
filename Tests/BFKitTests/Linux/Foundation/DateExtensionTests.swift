@@ -303,33 +303,33 @@ internal class DateExtensionTests: XCTestCase {
             
             XCTAssertEqual(iso8601, "\(isoDate.year)-\(isoDate.month)-0\(isoDate.day)T\(isoDate.hour - TimeZone.current.secondsFromGMT() / 60 / 60):0\(isoDate.minute):\(isoDate.second).00\(isoDate.nanosecond)Z")
         }
-    
-        internal func testNanosecond() {
-            XCTAssertEqual(date.nanosecond, 0)
-        }
-    
-        internal func testMonthsBetween() {
-            guard let newDate = Date(year: 2016, month: 5, day: 9) else {
-                XCTFail("`testMonthsBetween` error")
-                return
-            }
-            let monthsBetween = newDate.monthsBetween(date)
-            
-            XCTAssertEqual(monthsBetween, 5)
-        }
-    
-        internal func testLocalizedWeekday() {
-            let date = Date(timeIntervalSinceReferenceDate: 0)
-            let localizedWeekday = date.localizedWeekday()
-            
-            XCTAssert(localizedWeekday == "Monday" || localizedWeekday == "Lunedì")
-        }
-        
-        internal func testLocalizedMonth() {
-            let date = Date(timeIntervalSinceReferenceDate: 0)
-            let localizedMonth = date.localizedMonth()
-            
-            XCTAssert(localizedMonth == "January" || localizedMonth == "Gennaio")
-        }
     #endif
+    
+    internal func testNanosecond() {
+        XCTAssertEqual(date.nanosecond, 0)
+    }
+
+    internal func testMonthsBetween() {
+        guard let newDate = Date(year: 2016, month: 5, day: 9) else {
+            XCTFail("`testMonthsBetween` error")
+            return
+        }
+        let monthsBetween = newDate.monthsBetween(date)
+        
+        XCTAssertEqual(monthsBetween, 5)
+    }
+
+    internal func testLocalizedWeekday() {
+        let date = Date(timeIntervalSinceReferenceDate: 0)
+        let localizedWeekday = date.localizedWeekday()
+        
+        XCTAssert(localizedWeekday == "Monday" || localizedWeekday == "Lunedì")
+    }
+    
+    internal func testLocalizedMonth() {
+        let date = Date(timeIntervalSinceReferenceDate: 0)
+        let localizedMonth = date.localizedMonth()
+        
+        XCTAssert(localizedMonth == "January" || localizedMonth == "Gennaio")
+    }
 }

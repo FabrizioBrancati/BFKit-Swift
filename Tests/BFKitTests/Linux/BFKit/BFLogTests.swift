@@ -91,28 +91,26 @@ internal class BFLogTests: XCTestCase {
         XCTAssertEqual(BFLog.logged, "")
     }
     
-    #if !os(Linux) && !os(macOS)
-        internal func testSaveLog() {
-            do {
-                BFLog.clear()
-                
-                let filenameWithoutExtension = URL(string: String(describing: NSString(utf8String: #file)!))!.deletingPathExtension().lastPathComponent // swiftlint:disable:this force_unwrapping
-                let function = #function
-                let line = #line + 2
-                
-                BFLog.log("Test")
-                
-                try BFLog.saveLog(in: .documents, filename: "Test.log")
-                
-                guard let log = try FileManager.default.read(file: "Test.log", from: .documents) else {
-                    XCTFail("`testSaveLog` error")
-                    return
-                }
-                
-                XCTAssertEqual(log, "\(filenameWithoutExtension):\(line) \(function): Test\n")
-            } catch {
+    internal func testSaveLog() {
+        do {
+            BFLog.clear()
+            
+            let filenameWithoutExtension = URL(string: String(describing: NSString(utf8String: #file)!))!.deletingPathExtension().lastPathComponent // swiftlint:disable:this force_unwrapping
+            let function = #function
+            let line = #line + 2
+            
+            BFLog.log("Test")
+            
+            try BFLog.saveLog(in: .documents, filename: "Test.log")
+            
+            guard let log = try FileManager.default.read(file: "Test.log", from: .documents) else {
                 XCTFail("`testSaveLog` error")
+                return
             }
+            
+            XCTAssertEqual(log, "\(filenameWithoutExtension):\(line) \(function): Test\n")
+        } catch {
+            XCTFail("`testSaveLog` error")
         }
-    #endif
+    }
 }
