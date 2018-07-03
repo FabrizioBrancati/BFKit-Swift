@@ -83,7 +83,7 @@ public enum BFPassword {
     /// - Parameter password: Password to be scored.
     /// - Returns: Return the score based on password length.
     private static func lengthScore(_ password: String) -> Int {
-        let lenght = password.length
+        let lenght = password.count
         
         switch lenght {
         case 1...4:

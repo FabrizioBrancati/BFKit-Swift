@@ -351,6 +351,6 @@ public extension NSAttributedString {
     /// - Parameter range: Given NSRange.
     /// - Returns: Returns self NSRange if the given NSRange is nil.
     private func attributedStringRange(_ range: NSRange?) -> NSRange {
-        return range ?? NSRange(location: 0, length: self.string.length)
+        return range ?? NSRange(location: 0, length: self.string.count)
     }
 }

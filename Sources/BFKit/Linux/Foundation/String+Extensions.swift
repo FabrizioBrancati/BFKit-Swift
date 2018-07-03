@@ -75,6 +75,7 @@ public extension String {
     
     // MARK: - Functions
     
+    @available(*, deprecated: 3.2, message: "`length` is deprecated and will be removed in BFKit-Swift 4.")
     /// Returns the lenght of the string.
     public var length: Int {
         return self.count
@@ -113,7 +114,7 @@ public extension String {
     /// - Parameter index: The index.
     /// - Returns: Returns the substring to index.
     public func substring(to index: Int) -> String {
-        guard index <= self.length else {
+        guard index <= self.count else {
             return ""
         }
         return String(self[..<self.index(self.startIndex, offsetBy: index)])
@@ -199,7 +200,7 @@ public extension String {
     ///
     /// - Returns: Returns the capitalized sentence string.
     public func sentenceCapitalizedString() -> String {
-        guard self.length > 0 else {
+        guard self.count > 0 else {
             return ""
         }
         let uppercase: String = self.substring(to: 1).uppercased()
@@ -380,7 +381,7 @@ public extension String {
     /// - Returns: Number of lowercase characters.
     public func countLowercasedCharacters() -> Int {
         var countChar = 0
-        for index in 0 ..< self.length {
+        for index in 0 ..< self.count {
             guard let character = UnicodeScalar((NSString(string: self)).character(at: index)) else {
                 return 0
             }
@@ -398,7 +399,7 @@ public extension String {
     /// - Returns: Number of uppercase characters.
     public func countUppercasedCharacters() -> Int {
         var countChar = 0
-        for index in 0 ..< self.length {
+        for index in 0 ..< self.count {
             guard let character = UnicodeScalar((NSString(string: self)).character(at: index)) else {
                 return 0
             }
@@ -416,7 +417,7 @@ public extension String {
     /// - Returns: Number of numbers.
     public func countNumbers() -> Int {
         var countNumber = 0
-        for index in 0 ..< self.length {
+        for index in 0 ..< self.count {
             guard let character = UnicodeScalar((NSString(string: self)).character(at: index)) else {
                 return 0
             }
@@ -434,7 +435,7 @@ public extension String {
     /// - Returns: Number of symbols.
     public func countSymbols() -> Int {
         var countSymbol = 0
-        for index in 0 ..< self.length {
+        for index in 0 ..< self.count {
             guard let character = UnicodeScalar((NSString(string: self)).character(at: index)) else {
                 return 0
             }
@@ -466,23 +467,6 @@ public extension String {
             string += String(format: "%c", characterInt)
         }
         return string
-    }
-    
-    @available(*, deprecated: 3.0, message: "`hex(spacing:)` is deprecated and will be removed in BFKit-Swift 4.")
-    /// Convert string to HEX string.
-    /// Example: "hello" -> "68656c6c6f"
-    ///
-    /// - parameter spacing: Will add a space between every HEX number.
-    /// - Returns: HEX string.
-    public func hex(spacing: Bool = false) -> String {
-        var hexString = ""
-        let space = spacing ? " " : ""
-        
-        for index in 0 ..< self.count {
-            hexString = hexString.appendingFormat("%02x%@", self[index..<index + 1], index == self.count - 1 ? "" : space)
-        }
-        
-        return hexString
     }
     
     /// Return if self is anagram of another String.
@@ -539,7 +523,7 @@ public extension String {
     public func isUUID() -> Bool {
         do {
             let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", options: .caseInsensitive)
-            let matches: Int = regex.numberOfMatches(in: self, options: .reportCompletion, range: NSRange(location: 0, length: self.length))
+            let matches: Int = regex.numberOfMatches(in: self, options: .reportCompletion, range: NSRange(location: 0, length: self.count))
             return matches == 1
         } catch {
             return false
@@ -552,7 +536,7 @@ public extension String {
     public func isUUIDForAPNS() -> Bool {
         do {
             let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{32}$", options: .caseInsensitive)
-            let matches: Int = regex.numberOfMatches(in: self, options: .reportCompletion, range: NSRange(location: 0, length: self.length))
+            let matches: Int = regex.numberOfMatches(in: self, options: .reportCompletion, range: NSRange(location: 0, length: self.count))
             return matches == 1
         } catch {
             return false
@@ -568,7 +552,7 @@ public extension String {
     /// - Throws: Throws NSRegularExpression(pattern:, options:) errors.
     public func replacingMatches(regex regexString: String, with replacement: String) throws -> String {
         let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString, options: .caseInsensitive)
-        return regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: self.length), withTemplate: "")
+        return regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: self.count), withTemplate: "")
     }
     
     /// Localize current String using self as key.
@@ -599,7 +583,7 @@ public extension String {
         public func links() throws -> [String] {
             let detector = try NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
             
-            let links = Array(detector.matches(in: self, options: NSRegularExpression.MatchingOptions.reportCompletion, range: NSRange(location: 0, length: length)))
+            let links = Array(detector.matches(in: self, options: NSRegularExpression.MatchingOptions.reportCompletion, range: NSRange(location: 0, length: count)))
             
             return links.filter { $0.url != nil }.map { $0.url?.absoluteString ?? "" }
         }
@@ -611,7 +595,7 @@ public extension String {
         public func dates() throws -> [Date] {
             let detector = try NSDataDetector(types: NSTextCheckingResult.CheckingType.date.rawValue)
             
-            let dates = Array(detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withTransparentBounds, range: NSRange(location: 0, length: length)))
+            let dates = Array(detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withTransparentBounds, range: NSRange(location: 0, length: count)))
             
             return dates.filter { $0.date != nil }.map { $0.date ?? Date() }
         }
@@ -622,7 +606,7 @@ public extension String {
         /// - Throws: Throws NSRegularExpression errors.
         public func hashtags() throws -> [String] {
             let detector = try NSRegularExpression(pattern: "#(\\w+)", options: NSRegularExpression.Options.caseInsensitive)
-            let hashtags = Array(detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withoutAnchoringBounds, range: NSRange(location: 0, length: length)))
+            let hashtags = Array(detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withoutAnchoringBounds, range: NSRange(location: 0, length: count)))
             
             return hashtags.map { (self as NSString).substring(with: $0.range(at: 1)) }
         }
@@ -633,7 +617,7 @@ public extension String {
         /// - Throws: Throws NSRegularExpression errors.
         public func mentions() throws -> [String] {
             let detector = try NSRegularExpression(pattern: "@(\\w+)", options: NSRegularExpression.Options.caseInsensitive)
-            let mentions = Array(detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withoutAnchoringBounds, range: NSRange(location: 0, length: length)))
+            let mentions = Array(detector.matches(in: self, options: NSRegularExpression.MatchingOptions.withoutAnchoringBounds, range: NSRange(location: 0, length: count)))
             
             return mentions.map { (self as NSString).substring(with: $0.range(at: 1)) }
         }

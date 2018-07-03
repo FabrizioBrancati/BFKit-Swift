@@ -29,7 +29,7 @@ import LocalAuthentication
 
 // MARK: - BFTouchID struct
 
-@available(*, deprecated: 3.0, message: "BFTouchID is deprecated and will be removed in BFKit-Swift 4. Please use BFBiometrics struct instead.")
+@available(*, deprecated: 3.2, message: "BFTouchID is deprecated and will be removed in BFKit-Swift 4. Please use BFBiometrics struct instead.")
 /// This struct adds some useful functions to use TouchID.
 public enum BFTouchID {
     // MARK: - Variables

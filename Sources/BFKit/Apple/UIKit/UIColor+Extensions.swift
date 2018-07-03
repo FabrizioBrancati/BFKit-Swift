@@ -232,7 +232,7 @@ public extension Color {
         let colorString: String = hex.replacingOccurrences(of: "#", with: "").uppercased()
         var alpha: CGFloat = 1.0, red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0
         
-        switch colorString.length {
+        switch colorString.count {
         case 3: /// RGB
             alpha = 1.0
             red = Color.colorComponent(fromString: colorString, range: 0..<1)
@@ -355,7 +355,7 @@ public extension Color {
     /// - Parameter color: String with color.
     /// - Returns: Returns the created UIColor or NSColor.
     public static func color(string color: String) -> Color {
-        if color.length >= 3 {
+        if color.count >= 3 {
             if Color.responds(to: Selector(color.lowercased() + "Color")) {
                 return self.convertColor(string: color)
             } else {
