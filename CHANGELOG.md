@@ -37,11 +37,18 @@ All notable changes to this project will be documented in this file.<br>
 ## Develop
 ### Added
 - Added `force` attribute to `generateUniqueIdentifier(save: Bool = default, force: Bool = default)` in UIDevice extension with a default value, hence no changes are required
-- Added `resetFirstStart(version: String = default)` in BFApp struct, to reset the App like has never been started 
+- Added `resetFirstStart(version: String = default)` in BFApp struct, to reset the App like has never been started
+- Added FileManager extension to Linux
 
 ### Improved
 - Improved BFApp struct
 - Updated SwiftLint to 0.26.0
+- Use of `canImport()` instead of `os()`
+
+### Deprecated
+- BFTouchID struct in favour of BFBiometrics enum
+- `lightFont`, `mediumFont` and `boldFont` from UIFont extension
+- `length` in favour of `count` in String extension
 
 ---
 
