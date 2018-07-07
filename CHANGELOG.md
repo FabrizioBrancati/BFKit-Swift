@@ -34,16 +34,20 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## Develop
+## [3.2.0](https://github.com/FabrizioBrancati/Queuer/releases/tag/3.2.0) - XXX
+### XX Jul 2018
 ### Added
 - Added `force` attribute to `generateUniqueIdentifier(save: Bool = default, force: Bool = default)` in UIDevice extension with a default value, hence no changes are required
-- Added `resetFirstStart(version: String = default)` in BFApp struct, to reset the App like has never been started
+- Added `resetFirstStart(version: String = default)` in BFApp struct, to reset the App like has never been opened
 - Added FileManager extension to Linux
 
 ### Improved
-- Improved BFApp struct
+- Improved code of a lot of classes / structs and enums
 - Updated SwiftLint to 0.26.0
 - Use of `canImport()` instead of `os()`
+- Converted static only structs to enums to avoid initialization
+- Removed all force unwrapping to avoid possible crashes
+- Fixing some memory leaks
 
 ### Deprecated
 - BFTouchID struct in favour of BFBiometrics enum
