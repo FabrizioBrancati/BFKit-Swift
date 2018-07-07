@@ -34,7 +34,6 @@
 		495BD20320F0D9DC005DF1CB /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495BD1D220F0D9DB005DF1CB /* UIViewController+Extensions.swift */; };
 		495BD20420F0D9DC005DF1CB /* UIWebView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495BD1D320F0D9DB005DF1CB /* UIWebView+Extensions.swift */; };
 		495BD20520F0D9DC005DF1CB /* UIWindow+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495BD1D420F0D9DB005DF1CB /* UIWindow+Extensions.swift */; };
-		495BD20620F0D9DC005DF1CB /* WKInterfaceController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495BD1D620F0D9DB005DF1CB /* WKInterfaceController+Extensions.swift */; };
 		495BD20720F0D9DC005DF1CB /* BFApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495BD1D920F0D9DB005DF1CB /* BFApp.swift */; };
 		495BD20820F0D9DC005DF1CB /* BFDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495BD1DA20F0D9DB005DF1CB /* BFDataStructures.swift */; };
 		495BD20920F0D9DC005DF1CB /* BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495BD1DB20F0D9DB005DF1CB /* BFKit.swift */; };
@@ -388,7 +387,6 @@
 				495BD20320F0D9DC005DF1CB /* UIViewController+Extensions.swift in Sources */,
 				495BD1ED20F0D9DB005DF1CB /* BFSystemSound.swift in Sources */,
 				495BD1EE20F0D9DB005DF1CB /* BFTextField.swift in Sources */,
-				495BD20620F0D9DC005DF1CB /* WKInterfaceController+Extensions.swift in Sources */,
 				495BD20420F0D9DC005DF1CB /* UIWebView+Extensions.swift in Sources */,
 				495BD1F920F0D9DC005DF1CB /* UILabel+Extensions.swift in Sources */,
 				49FB86881DF34B5500AC7E4A /* UserInterfaceViewController.swift in Sources */,
