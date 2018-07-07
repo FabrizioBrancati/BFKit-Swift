@@ -68,7 +68,7 @@ Classes and Extensions Compatibility
 | [Collection](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Collection.html)                 | ![✓]    | ![✓]      | ![✓]        | ![✓]      |
 | [Data](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Data.html)                             | ![✓]    | ![✓]      | ![✓]        | ![✓]      |
 | [Date](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Date.html)                             | ![✓]    | ![✓]      | ![✓]        | ![✓]      |
-| [FileManager](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/FileManager.html)               | ![✓]    | ![✓]      | ![✓]        |           |
+| [FileManager](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/FileManager.html)               | ![✓]    | ![✓]      | ![✓]        | ![✓]      |
 | [Number](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Functions.html)                                 | ![✓]    | ![✓]      | ![✓]        | ![✓]      |
 | [NSObject](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/NSObject.html)                     | ![✓]    | ![✓]      | ![✓]        | ![✓]      |
 | [NSAttributedString](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/NSAttributedString.html) | ![✓]    | ![✓]      | ![✓]        |           |
