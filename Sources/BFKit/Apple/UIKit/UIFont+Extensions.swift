@@ -1,6 +1,6 @@
 //
 //  UIFont+Extensions.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -434,7 +434,7 @@ public extension UIFont {
     public static func calculateHeight(width: CGFloat, font: UIFont, text: String) -> CGFloat {
         var size = CGSize.zero
         
-        if text.count > 0 {
+        if !text.isEmpty {
             let frame: CGRect = text.boundingRect(with: CGSize(width: width, height: 999_999), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
             size = CGSize(width: frame.size.width, height: frame.size.height + 1)
         }

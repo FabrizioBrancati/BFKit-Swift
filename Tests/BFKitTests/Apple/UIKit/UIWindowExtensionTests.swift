@@ -1,6 +1,6 @@
 //
 //  UIWindowExtensionTests.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -51,7 +51,7 @@ internal class UIWindowExtensionTests: XCTestCase {
 //            XCTFail("testWindowScreenshotSave test failed")
 //            return
 //        }
-//        
+//
 //        XCTAssertNotNil(screenshot)
 //    }
     

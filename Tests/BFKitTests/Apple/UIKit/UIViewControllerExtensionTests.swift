@@ -1,6 +1,6 @@
 //
-//  UIViewExtensionTests.swift
-//  BFKit
+//  UIViewControllerExtensionTests.swift
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //

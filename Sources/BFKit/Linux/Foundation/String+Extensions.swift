@@ -1,6 +1,6 @@
 //
 //  String+Extensions.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -200,7 +200,7 @@ public extension String {
     ///
     /// - Returns: Returns the capitalized sentence string.
     public func sentenceCapitalizedString() -> String {
-        guard count > 0 else {
+        guard !isEmpty else {
             return ""
         }
         let uppercase: String = substring(to: 1).uppercased()

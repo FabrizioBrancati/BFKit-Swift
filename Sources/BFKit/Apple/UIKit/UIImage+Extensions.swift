@@ -1,6 +1,6 @@
 //
 //  UIImage+Extensions.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -33,7 +33,6 @@ import UIKit
 #elseif canImport(WatchKit)
     import WatchKit
 #endif
-
 
 // MARK: - UIImage extension
 

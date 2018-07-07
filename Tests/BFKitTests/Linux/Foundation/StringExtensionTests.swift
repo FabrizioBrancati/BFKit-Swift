@@ -1,6 +1,6 @@
 //
 //  StringExtensionTests.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //

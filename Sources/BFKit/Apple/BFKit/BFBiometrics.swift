@@ -1,6 +1,6 @@
 //
-//  BFTouchID.swift
-//  BFKit
+//  BFBiometrics.swift
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
