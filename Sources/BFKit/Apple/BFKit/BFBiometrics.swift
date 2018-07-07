@@ -97,7 +97,7 @@ public enum BFBiometrics {
                 if success == true, error == nil {
                     completion(.success)
                 } else {
-                    completion(self.handleError(error as NSError?))
+                    completion(handleError(error as NSError?))
                 }
             }
         } else {

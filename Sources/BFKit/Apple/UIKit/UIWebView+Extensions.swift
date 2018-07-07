@@ -41,6 +41,6 @@ public extension UIWebView {
             return
         }
         
-        self.loadRequest(URLRequest(url: url))
+        loadRequest(URLRequest(url: url))
     }
 }

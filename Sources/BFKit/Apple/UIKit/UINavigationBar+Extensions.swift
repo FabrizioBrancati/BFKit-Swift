@@ -40,13 +40,13 @@ public extension UINavigationBar {
     ///   - translucent: A Boolean value indicating whether the navigation bar is translucent or not.
     public func setTransparent(_ transparent: Bool, translucent: Bool = true) {
         if transparent {
-            self.setBackgroundImage(UIImage(), for: .default)
-            self.shadowImage = UIImage()
-            self.isTranslucent = translucent
+            setBackgroundImage(UIImage(), for: .default)
+            shadowImage = UIImage()
+            isTranslucent = translucent
         } else {
-            self.setBackgroundImage(nil, for: .default)
-            self.shadowImage = nil
-            self.isTranslucent = translucent
+            setBackgroundImage(nil, for: .default)
+            shadowImage = nil
+            isTranslucent = translucent
         }
     }
 }

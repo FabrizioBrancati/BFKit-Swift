@@ -85,7 +85,7 @@ public extension Color {
     #if canImport(UIKit)
         /// RGB properties: red.
         public var redComponent: CGFloat {
-            guard self.canProvideRGBComponents(), let component = self.cgColor.__unsafeComponents else {
+            guard canProvideRGBComponents(), let component = cgColor.__unsafeComponents else {
                 return 0.0
             }
             
@@ -94,11 +94,11 @@ public extension Color {
         
         /// RGB properties: green.
         public var greenComponent: CGFloat {
-            guard self.canProvideRGBComponents(), let component = self.cgColor.__unsafeComponents else {
+            guard canProvideRGBComponents(), let component = cgColor.__unsafeComponents else {
                 return 0.0
             }
             
-            guard self.cgColor.colorSpace?.model == CGColorSpaceModel.monochrome else {
+            guard cgColor.colorSpace?.model == CGColorSpaceModel.monochrome else {
                 return component[1]
             }
             return component[0]
@@ -106,11 +106,11 @@ public extension Color {
         
         /// RGB properties: blue.
         public var blueComponent: CGFloat {
-            guard self.canProvideRGBComponents(), let component = self.cgColor.__unsafeComponents else {
+            guard canProvideRGBComponents(), let component = cgColor.__unsafeComponents else {
                 return 0.0
             }
             
-            guard self.cgColor.colorSpace?.model == CGColorSpaceModel.monochrome else {
+            guard cgColor.colorSpace?.model == CGColorSpaceModel.monochrome else {
                 return component[2]
             }
             return component[0]
@@ -118,7 +118,7 @@ public extension Color {
     
         /// RGB properties: white.
         public var whiteComponent: CGFloat {
-            guard self.cgColor.colorSpace?.model == CGColorSpaceModel.monochrome, let component = self.cgColor.__unsafeComponents else {
+            guard cgColor.colorSpace?.model == CGColorSpaceModel.monochrome, let component = cgColor.__unsafeComponents else {
                 return 0.0
             }
             
@@ -128,17 +128,17 @@ public extension Color {
     
     /// RGB properties: luminance.
     public var luminance: CGFloat {
-        if self.canProvideRGBComponents() {
+        if canProvideRGBComponents() {
             var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0, alpha: CGFloat = 0.0
             
             #if canImport(UIKit)
-                self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+                getRed(&red, green: &green, blue: &blue, alpha: &alpha)
             #elseif canImport(AppKit)
-                if self.colorSpace.colorSpaceModel == .RGB {
-                    self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-                } else if self.colorSpace.colorSpaceModel == .gray {
+                if colorSpace.colorSpaceModel == .RGB {
+                    getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+                } else if colorSpace.colorSpaceModel == .gray {
                     var white: CGFloat = 0.0
-                    self.getWhite(&white, alpha: &alpha)
+                    getWhite(&white, alpha: &alpha)
                     red = white
                     green = white
                     blue = white
@@ -152,15 +152,15 @@ public extension Color {
     
     /// RGBA properties: alpha.
     public var alpha: CGFloat {
-        return self.cgColor.alpha
+        return cgColor.alpha
     }
     
     /// HSB properties: hue.
     public var hue: CGFloat {
-        if self.canProvideRGBComponents() {
+        if canProvideRGBComponents() {
             var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
             
-            self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+            getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
             return hue
         }
         return 0.0
@@ -168,10 +168,10 @@ public extension Color {
     
     /// HSB properties: saturation.
     public var saturation: CGFloat {
-        if self.canProvideRGBComponents() {
+        if canProvideRGBComponents() {
             var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
             
-            self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+            getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
             return saturation
         }
         return 0.0
@@ -179,10 +179,10 @@ public extension Color {
     
     /// HSB properties: brightness.
     public var brightness: CGFloat {
-        if self.canProvideRGBComponents() {
+        if canProvideRGBComponents() {
             var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
             
-            self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+            getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
             return brightness
         }
         return 0.0
@@ -195,7 +195,7 @@ public extension Color {
         var blue: CGFloat = 0
         var alpha: CGFloat = 0
         
-        self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        getRed(&red, green: &green, blue: &blue, alpha: &alpha)
         
         var rgb: Int = (Int)(red * 255) << 16 | (Int)(green * 255) << 8
         rgb = rgb | (Int)(blue * 255) << 0
@@ -282,7 +282,7 @@ public extension Color {
     ///
     /// - Returns: Returns the color.
     public func contrasting() -> Color {
-        return self.luminance > 0.5 ? Color.black : Color.white
+        return luminance > 0.5 ? Color.black : Color.white
     }
     
     /// A complementary color that should look good.
@@ -292,11 +292,11 @@ public extension Color {
         var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
         
         #if canImport(UIKit)
-            guard self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) else {
+            guard getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) else {
                 return nil
             }
         #elseif canImport(AppKit)
-            self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+            getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
         #endif
         
         hue += 180
@@ -311,7 +311,7 @@ public extension Color {
     ///
     /// - Returns: Returns if the color is in RGB format.
     public func canProvideRGBComponents() -> Bool {
-        guard let colorSpace = self.cgColor.colorSpace else {
+        guard let colorSpace = cgColor.colorSpace else {
             return false
         }
         switch colorSpace.model {
@@ -357,7 +357,7 @@ public extension Color {
     public static func color(string color: String) -> Color {
         if color.count >= 3 {
             if Color.responds(to: Selector(color.lowercased() + "Color")) {
-                return self.convertColor(string: color)
+                return convertColor(string: color)
             } else {
                 return Color(hex: color)
             }

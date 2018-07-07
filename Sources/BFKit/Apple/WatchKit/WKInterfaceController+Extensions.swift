@@ -39,13 +39,13 @@ public extension WKInterfaceController {
     ///   - duration: Shake duration. Default is 0.15.
     ///   - translation: Shake translation. Default is 10.
     public func shake(group: WKInterfaceGroup, duration: TimeInterval = 0.15, translation: Float = 10) {
-        self.animate(withDuration: duration / 3) {
+        animate(withDuration: duration / 3) {
             group.setContentInset(UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0))
-            Timer.scheduledTimer(withTimeInterval: duration / 3, repeats: false) { _ in
-                self.animate(withDuration: duration / 3) {
+            Timer.scheduledTimer(withTimeInterval: duration / 3, repeats: false) { [weak self] _ in
+                self?.animate(withDuration: duration / 3) {
                     group.setContentInset(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10))
-                    Timer.scheduledTimer(withTimeInterval: duration / 3, repeats: false) { _ in
-                        self.animate(withDuration: duration / 3) {
+                    Timer.scheduledTimer(withTimeInterval: duration / 3, repeats: false) { [weak self] _ in
+                        self?.animate(withDuration: duration / 3) {
                             group.setContentInset(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
                         }
                     }
@@ -62,7 +62,7 @@ public extension WKInterfaceController {
     ///   - duration: Fade duration. Default is 0.5.
     ///   - string: String to fade to.
     public func fade(label: WKInterfaceLabel, duration: TimeInterval = 0.5, toString string: String) {
-        self.fade(label: label, duration: duration, toAttributedString: string.attributedString)
+        fade(label: label, duration: duration, toAttributedString: string.attributedString)
     }
     
     @available(watchOS 3.0, *)
@@ -73,11 +73,11 @@ public extension WKInterfaceController {
     ///   - duration: Fade duration. Default is 0.2.
     ///   - string: String to fade to.
     public func fade(label: WKInterfaceLabel, duration: TimeInterval = 0.5, toAttributedString string: NSAttributedString) {
-        self.animate(withDuration: duration / 2) { 
+        animate(withDuration: duration / 2) {
             label.setAlpha(0)
-            Timer.scheduledTimer(withTimeInterval: duration / 2, repeats: false) { _ in
+            Timer.scheduledTimer(withTimeInterval: duration / 2, repeats: false) { [weak self] _ in
                 label.setAttributedText(string)
-                self.animate(withDuration: duration / 2) {
+                self?.animate(withDuration: duration / 2) {
                     label.setAlpha(1)
                 }
             }

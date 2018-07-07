@@ -67,7 +67,7 @@ public extension UIViewController {
         for action in actions {
             alert.addAction(action)
         }
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
     /// Sets the tab bar visible or not.
@@ -77,9 +77,9 @@ public extension UIViewController {
     ///   - visible: Set if visible.
     ///   - animated: Set if the transition must be animated.
     public func setTabBarVisible(_ visible: Bool, animated: Bool, duration: TimeInterval = 0.3) {
-        let frame = self.tabBarController?.tabBar.frame
+        let frame = tabBarController?.tabBar.frame
         
-        guard self.isTabBarVisible() != visible, let height = frame?.size.height else {
+        guard isTabBarVisible() != visible, let height = frame?.size.height else {
             return
         }
         
@@ -99,10 +99,10 @@ public extension UIViewController {
     ///
     /// - Returns: Returns if the tab bar is visible.
     public func isTabBarVisible() -> Bool {
-        guard let tabBarOriginY = self.tabBarController?.tabBar.frame.origin.y else {
+        guard let tabBarOriginY = tabBarController?.tabBar.frame.origin.y else {
             return false
         }
         
-        return tabBarOriginY < self.view.frame.maxY
+        return tabBarOriginY < view.frame.maxY
     }
 }

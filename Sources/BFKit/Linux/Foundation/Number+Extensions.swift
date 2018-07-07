@@ -143,7 +143,7 @@ public extension Numeric {
         let numbers = Randomizer.get(count: MemoryLayout<Self>.size)
         return numbers.withUnsafeBufferPointer { bufferPointer in
             if let baseAddress = bufferPointer.baseAddress {
-                return baseAddress.withMemoryRebound(to: Self.self, capacity: 1) {
+                return baseAddress.withMemoryRebound(to: self, capacity: 1) {
                     return $0.pointee
                 }
             }

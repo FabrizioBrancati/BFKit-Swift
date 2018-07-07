@@ -451,7 +451,7 @@ public extension UIFont {
     /// - Returns: Returns calculated height of string within width using given font
     public static func calculateHeight(width: CGFloat, font: FontName, fontSize: CGFloat, text: String) -> CGFloat {
         let font = UIFont(fontName: font, size: fontSize) ?? UIFont()
-        return self.calculateHeight(width: width, font: font, text: text)
+        return calculateHeight(width: width, font: font, text: text)
     }
     
     /// Print in console all font names for a given family.

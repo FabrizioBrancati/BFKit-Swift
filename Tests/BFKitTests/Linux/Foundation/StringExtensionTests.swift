@@ -276,7 +276,7 @@ internal class StringExtensionTests: XCTestCase {
     internal func testReadableUUID() {
         let readable = "FB0B0EBF-A783-41E5-87B0-6BE16B19585D".readableUUID()
         
-        XCTAssertEqual(readable.length, 32)
+        XCTAssertEqual(readable.count, 32)
     }
     
     internal func testUppercasedFirst() {

@@ -49,12 +49,12 @@ public extension String {
 
     /// Convert self to a Data.
     public var dataValue: Data? {
-        return self.data(using: .utf8)
+        return data(using: .utf8)
     }
     
     /// Encoded string to Base64.
     public var base64encoded: String {
-        guard let data: Data = self.data(using: .utf8) else {
+        guard let data: Data = data(using: .utf8) else {
             return ""
         }
         return data.base64EncodedString()
@@ -70,7 +70,7 @@ public extension String {
     
     /// Encode self to an encoded url string.
     public var urlEncoded: String? {
-        return self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)
+        return addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)
     }
     
     // MARK: - Functions
@@ -78,7 +78,7 @@ public extension String {
     @available(*, deprecated: 3.2, renamed: "count", message: "`length` is deprecated and will be removed in BFKit-Swift 4.")
     /// Returns the lenght of the string.
     public var length: Int {
-        return self.count
+        return count
     }
     
     /// Get the character at a given index.
@@ -86,7 +86,7 @@ public extension String {
     /// - Parameter index: The index.
     /// - Returns: Returns the character at a given index, starts from 0.
     public func character(at index: Int) -> Character {
-        return self[self.index(self.startIndex, offsetBy: index)]
+        return self[self.index(startIndex, offsetBy: index)]
     }
     
     /// Returns a new string containing the characters of the String from the one at a given index to the end.
@@ -94,7 +94,7 @@ public extension String {
     /// - Parameter index: The index.
     /// - Returns: Returns the substring from index.
     public func substring(from index: Int) -> String {
-        return String(self[self.index(self.startIndex, offsetBy: index)...])
+        return String(self[self.index(startIndex, offsetBy: index)...])
     }
     
     /// Creates a substring from the given character.
@@ -114,10 +114,10 @@ public extension String {
     /// - Parameter index: The index.
     /// - Returns: Returns the substring to index.
     public func substring(to index: Int) -> String {
-        guard index <= self.count else {
+        guard index <= count else {
             return ""
         }
-        return String(self[..<self.index(self.startIndex, offsetBy: index)])
+        return String(self[..<self.index(startIndex, offsetBy: index)])
     }
     
     /// Creates a substring to the given character.
@@ -137,8 +137,8 @@ public extension String {
     /// - Parameter range: The range.
     /// - Returns: Returns the string between the range.
     public func substring(with range: Range<Int>) -> String {
-        let start = self.index(self.startIndex, offsetBy: range.lowerBound)
-        let end = self.index(self.startIndex, offsetBy: range.upperBound)
+        let start = index(startIndex, offsetBy: range.lowerBound)
+        let end = index(startIndex, offsetBy: range.upperBound)
 
         return String(self[start..<end])
     }
@@ -148,7 +148,7 @@ public extension String {
     /// - Parameter range: The range.
     /// - Returns: Returns the string between the range.
     public func substring(with range: CountableClosedRange<Int>) -> String {
-        return self.substring(with: Range(uncheckedBounds: (lower: range.lowerBound, upper: range.upperBound + 1)))
+        return substring(with: Range(uncheckedBounds: (lower: range.lowerBound, upper: range.upperBound + 1)))
     }
     
     /// Returns the index of the given character.
@@ -156,11 +156,11 @@ public extension String {
     /// - Parameter character: The character to search.
     /// - Returns: Returns the index of the given character, -1 if not found.
     public func index(of character: Character) -> Int {
-        guard let index: Index = self.index(of: character) else {
+        guard let index: Index = index(of: character) else {
             return -1
         }
         
-        return self.distance(from: self.startIndex, to: index)
+        return distance(from: startIndex, to: index)
     }
     
     /// Check if self has the given substring in case-sensitiv or case-insensitive.
@@ -170,7 +170,7 @@ public extension String {
     ///   - caseSensitive: If the search has to be case-sensitive or not.
     /// - Returns: Returns true if founded, otherwise false.
     public func range(of string: String, caseSensitive: Bool = true) -> Bool {
-        return caseSensitive ? (self.range(of: string) != nil) : (self.lowercased().range(of: string.lowercased()) != nil)
+        return caseSensitive ? (range(of: string) != nil) : (lowercased().range(of: string.lowercased()) != nil)
     }
     
     /// Check if self has the given substring in case-sensitiv or case-insensitive.
@@ -180,19 +180,19 @@ public extension String {
     ///   - caseSensitive: If the search has to be case-sensitive or not.
     /// - Returns: Returns true if founded, otherwise false.
     public func has(_ string: String, caseSensitive: Bool = true) -> Bool {
-        return self.range(of: string, caseSensitive: caseSensitive)
+        return range(of: string, caseSensitive: caseSensitive)
     }
     
-    /// Returns the number of occurrences of a String into self.
+    /// Returns the number of occurrences of a String into 
     ///
     /// - Parameter string: String of occurrences.
-    /// - Returns: Returns the number of occurrences of a String into self.
+    /// - Returns: Returns the number of occurrences of a String into 
     public func occurrences(of string: String, caseSensitive: Bool = true) -> Int {
         var string = string
         if !caseSensitive {
             string = string.lowercased()
         }
-        return self.lowercased().components(separatedBy: string).count - 1
+        return lowercased().components(separatedBy: string).count - 1
     }
     
     /// Conver self to a capitalized string.
@@ -200,11 +200,11 @@ public extension String {
     ///
     /// - Returns: Returns the capitalized sentence string.
     public func sentenceCapitalizedString() -> String {
-        guard self.count > 0 else {
+        guard count > 0 else {
             return ""
         }
-        let uppercase: String = self.substring(to: 1).uppercased()
-        let lowercase: String = self.substring(from: 1).lowercased()
+        let uppercase: String = substring(to: 1).uppercased()
+        let lowercase: String = substring(from: 1).lowercased()
 
         return uppercase + lowercase
     }
@@ -272,21 +272,21 @@ public extension String {
     ///
     /// - Returns: Converts self to an UUID APNS valid (No "<>" or "-" or spaces).
     public func readableUUID() -> String {
-        return self.trimmingCharacters(in: CharacterSet(charactersIn: "<>")).replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "-", with: "")
+        return trimmingCharacters(in: CharacterSet(charactersIn: "<>")).replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "-", with: "")
     }
     
     /// Returns string with the first character uppercased.
     ///
     /// - returns: Returns string with the first character uppercased.
     public func uppercasedFirst() -> String {
-        return String(self.prefix(1)).uppercased() + String(self.dropFirst())
+        return String(prefix(1)).uppercased() + String(dropFirst())
     }
     
     /// Returns string with the first character lowercased.
     ///
     /// - returns: Returns string with the first character lowercased.
     public func lowercasedFirst() -> String {
-        return String(self.prefix(1)).lowercased() + String(self.dropFirst())
+        return String(prefix(1)).lowercased() + String(dropFirst())
     }
     
     /// Returns the reversed String.
@@ -299,11 +299,11 @@ public extension String {
     ///
     /// - returns: Returns the reversed String.
     public func reversed(preserveFormat: Bool) -> String {
-        guard !self.isEmpty else {
+        guard !isEmpty else {
             return ""
         }
 
-        var reversed = String(self.removeExtraSpaces().reversed())
+        var reversed = String(removeExtraSpaces().reversed())
 
         guard preserveFormat else {
             return reversed
@@ -336,7 +336,7 @@ public extension String {
     /// - returns: Returns true if the String has at least one uppercase chatacter, otherwise false.
     public func hasUppercasedCharacters() -> Bool {
         var found = false
-        for character in self.unicodeScalars where CharacterSet.uppercaseLetters.contains(character) {
+        for character in unicodeScalars where CharacterSet.uppercaseLetters.contains(character) {
             found = true
         }
         return found
@@ -347,7 +347,7 @@ public extension String {
     /// - returns: Returns true if the String has at least one lowercase chatacter, otherwise false.
     public func hasLowercasedCharacters() -> Bool {
         var found = false
-        for character in self.unicodeScalars where CharacterSet.lowercaseLetters.contains(character) {
+        for character in unicodeScalars where CharacterSet.lowercaseLetters.contains(character) {
             found = true
         }
         return found
@@ -357,7 +357,7 @@ public extension String {
     ///
     /// - returns: Remove double or more duplicated spaces.
     public func removeExtraSpaces() -> String {
-        let squashed = self.replacingOccurrences(of: "[ ]+", with: " ", options: .regularExpression, range: nil)
+        let squashed = replacingOccurrences(of: "[ ]+", with: " ", options: .regularExpression, range: nil)
         return squashed.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
     
@@ -381,7 +381,7 @@ public extension String {
     /// - Returns: Number of lowercase characters.
     public func countLowercasedCharacters() -> Int {
         var countChar = 0
-        for index in 0 ..< self.count {
+        for index in 0 ..< count {
             guard let character = UnicodeScalar((NSString(string: self)).character(at: index)) else {
                 return 0
             }
@@ -399,7 +399,7 @@ public extension String {
     /// - Returns: Number of uppercase characters.
     public func countUppercasedCharacters() -> Int {
         var countChar = 0
-        for index in 0 ..< self.count {
+        for index in 0 ..< count {
             guard let character = UnicodeScalar((NSString(string: self)).character(at: index)) else {
                 return 0
             }
@@ -417,7 +417,7 @@ public extension String {
     /// - Returns: Number of numbers.
     public func countNumbers() -> Int {
         var countNumber = 0
-        for index in 0 ..< self.count {
+        for index in 0 ..< count {
             guard let character = UnicodeScalar((NSString(string: self)).character(at: index)) else {
                 return 0
             }
@@ -435,7 +435,7 @@ public extension String {
     /// - Returns: Number of symbols.
     public func countSymbols() -> Int {
         var countSymbol = 0
-        for index in 0 ..< self.count {
+        for index in 0 ..< count {
             guard let character = UnicodeScalar((NSString(string: self)).character(at: index)) else {
                 return 0
             }
@@ -474,7 +474,7 @@ public extension String {
     /// - Parameter string: Other String.
     /// - Returns: Return true if self is anagram of another String, otherwise false.
     public func isAnagram(of string: String) -> Bool {
-        let lowerSelf = self.lowercased().replacingOccurrences(of: " ", with: "")
+        let lowerSelf = lowercased().replacingOccurrences(of: " ", with: "")
         let lowerOther = string.lowercased().replacingOccurrences(of: " ", with: "")
         return lowerSelf.sorted() == lowerOther.sorted()
     }
@@ -483,7 +483,7 @@ public extension String {
     ///
     /// - Returns: Returns true if self is palindrome, otherwise false.
     public func isPalindrome() -> Bool {
-        let selfString = self.lowercased().replacingOccurrences(of: " ", with: "")
+        let selfString = lowercased().replacingOccurrences(of: " ", with: "")
         let otherString = String(selfString.reversed())
         return selfString == otherString
     }
@@ -492,14 +492,14 @@ public extension String {
     ///
     /// - Parameter index: Returns the character at the given index.
     public subscript(index: Int) -> Character {
-        return self[self.index(self.startIndex, offsetBy: index)]
+        return self[self.index(startIndex, offsetBy: index)]
     }
     
     /// Returns the index of the given character, -1 if not found.
     ///
     /// - Parameter character: Returns the index of the given character, -1 if not found.
     public subscript(character: Character) -> Int {
-        return self.index(of: character)
+        return index(of: character)
     }
     
     /// Returns the character at the given index as String.
@@ -523,7 +523,7 @@ public extension String {
     public func isUUID() -> Bool {
         do {
             let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", options: .caseInsensitive)
-            let matches: Int = regex.numberOfMatches(in: self, options: .reportCompletion, range: NSRange(location: 0, length: self.count))
+            let matches: Int = regex.numberOfMatches(in: self, options: .reportCompletion, range: NSRange(location: 0, length: count))
             return matches == 1
         } catch {
             return false
@@ -536,7 +536,7 @@ public extension String {
     public func isUUIDForAPNS() -> Bool {
         do {
             let regex: NSRegularExpression = try NSRegularExpression(pattern: "^[0-9a-f]{32}$", options: .caseInsensitive)
-            let matches: Int = regex.numberOfMatches(in: self, options: .reportCompletion, range: NSRange(location: 0, length: self.count))
+            let matches: Int = regex.numberOfMatches(in: self, options: .reportCompletion, range: NSRange(location: 0, length: count))
             return matches == 1
         } catch {
             return false
@@ -552,7 +552,7 @@ public extension String {
     /// - Throws: Throws NSRegularExpression(pattern:, options:) errors.
     public func replacingMatches(regex regexString: String, with replacement: String) throws -> String {
         let regex: NSRegularExpression = try NSRegularExpression(pattern: regexString, options: .caseInsensitive)
-        return regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: self.count), withTemplate: "")
+        return regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSRange(location: 0, length: count), withTemplate: "")
     }
     
     /// Localize current String using self as key.
@@ -573,12 +573,12 @@ public extension String {
             
             let regExPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
             
-            return regExPredicate.evaluate(with: self.lowercased())
+            return regExPredicate.evaluate(with: lowercased())
         }
     
-        /// Returns an array of String with all the links in self.
+        /// Returns an array of String with all the links in 
         ///
-        /// - Returns: Returns an array of String with all the links in self.
+        /// - Returns: Returns an array of String with all the links in 
         /// - Throws: Throws NSDataDetector errors.
         public func links() throws -> [String] {
             let detector = try NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
@@ -588,9 +588,9 @@ public extension String {
             return links.filter { $0.url != nil }.map { $0.url?.absoluteString ?? "" }
         }
 
-        /// Returns an array of Date with all the dates in self.
+        /// Returns an array of Date with all the dates in 
         ///
-        /// - Returns: Returns an array of Date with all the date in self.
+        /// - Returns: Returns an array of Date with all the date in 
         /// - Throws: Throws NSDataDetector errors.
         public func dates() throws -> [Date] {
             let detector = try NSDataDetector(types: NSTextCheckingResult.CheckingType.date.rawValue)
@@ -600,9 +600,9 @@ public extension String {
             return dates.filter { $0.date != nil }.map { $0.date ?? Date() }
         }
     
-        /// Returns an array of String with all the hashtags in self.
+        /// Returns an array of String with all the hashtags in 
         ///
-        /// - Returns: Returns an array of String with all the hashtags in self.
+        /// - Returns: Returns an array of String with all the hashtags in 
         /// - Throws: Throws NSRegularExpression errors.
         public func hashtags() throws -> [String] {
             let detector = try NSRegularExpression(pattern: "#(\\w+)", options: NSRegularExpression.Options.caseInsensitive)
@@ -611,9 +611,9 @@ public extension String {
             return hashtags.map { (self as NSString).substring(with: $0.range(at: 1)) }
         }
     
-        /// Returns an array of String with all the mentions in self.
+        /// Returns an array of String with all the mentions in 
         ///
-        /// - Returns: Returns an array of String with all the mentions in self.
+        /// - Returns: Returns an array of String with all the mentions in 
         /// - Throws: Throws NSRegularExpression errors.
         public func mentions() throws -> [String] {
             let detector = try NSRegularExpression(pattern: "@(\\w+)", options: NSRegularExpression.Options.caseInsensitive)

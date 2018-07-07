@@ -76,7 +76,7 @@ public extension NSPointerArray {
     /// - Parameter index: Index.
     /// - Returns: Returns an object at index.
     public func object(at index: Int) -> AnyObject? {
-        guard index < count, let pointer = self.pointer(at: index) else {
+        guard index < count, let pointer = pointer(at: index) else {
             return nil
         }
         

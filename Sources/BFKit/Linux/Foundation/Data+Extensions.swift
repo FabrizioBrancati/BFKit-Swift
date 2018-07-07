@@ -52,6 +52,6 @@ public extension Data {
     ///
     /// - Returns: Returns self as String from UUID.
     public func readableUUID() -> String {
-        return self.description.trimmingCharacters(in: CharacterSet(charactersIn: "<>")).replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "-", with: "")
+        return description.trimmingCharacters(in: CharacterSet(charactersIn: "<>")).replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "-", with: "")
     }
 }

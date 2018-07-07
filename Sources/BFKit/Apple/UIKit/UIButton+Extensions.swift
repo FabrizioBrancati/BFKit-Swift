@@ -43,9 +43,9 @@ public extension UIButton {
     public convenience init(frame: CGRect, title: String, backgroundImage: UIImage? = nil, highlightedBackgroundImage: UIImage? = nil) {
         self.init(frame: frame)
         self.frame = frame
-        self.setTitle(title, for: .normal)
-        self.setBackgroundImage(backgroundImage, for: .normal)
-        self.setBackgroundImage(highlightedBackgroundImage, for: .highlighted)
+        setTitle(title, for: .normal)
+        setBackgroundImage(backgroundImage, for: .normal)
+        setBackgroundImage(highlightedBackgroundImage, for: .highlighted)
     }
     
     /// Create an UIButton in a frame with a title and a color.
@@ -83,8 +83,8 @@ public extension UIButton {
     public convenience init(frame: CGRect, image: UIImage, highlightedImage: UIImage? = nil) {
         self.init(frame: frame)
         self.frame = frame
-        self.setImage(image, for: .normal)
-        self.setImage(highlightedImage, for: .highlighted)
+        setImage(image, for: .normal)
+        setImage(highlightedImage, for: .highlighted)
     }
     
     /// Set the title font with a size.
@@ -93,7 +93,7 @@ public extension UIButton {
     ///   - fontName: Font name from the FontName enum declared in UIFontExtension.
     ///   - size:Font size.
     public func setTitleFont(_ fontName: FontName, size: CGFloat) {
-        if let titleLabel = self.titleLabel {
+        if let titleLabel = titleLabel {
             titleLabel.font = UIFont(fontName: fontName, size: size)
         }
     }
@@ -102,7 +102,7 @@ public extension UIButton {
     ///
     /// - Parameter color: Font color, the highlighted color will be automatically created.
     public func setTitleColor(_ color: UIColor) {
-        self.setTitleColor(color, highlightedColor: color.withAlphaComponent(0.4))
+        setTitleColor(color, highlightedColor: color.withAlphaComponent(0.4))
     }
     
     /// Set the title color and highlighted color
@@ -111,7 +111,7 @@ public extension UIButton {
     ///   - color: Button color
     ///   - highlightedColor: Button highlighted color
     public func setTitleColor(_ color: UIColor, highlightedColor: UIColor) {
-        self.setTitleColor(color, for: .normal)
-        self.setTitleColor(highlightedColor, for: .highlighted)
+        setTitleColor(color, for: .normal)
+        setTitleColor(highlightedColor, for: .highlighted)
     }
 }

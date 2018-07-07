@@ -39,7 +39,7 @@ public extension UITableView {
     /// - Returns: Return an array with all the IndexPaths.
     public func indexPaths(section: Int) -> [IndexPath] {
         var indexPaths: [IndexPath] = []
-        let rows: Int = self.numberOfRows(inSection: section)
+        let rows: Int = numberOfRows(inSection: section)
         for index in 0 ..< rows {
             let indexPath = IndexPath(row: index, section: section)
             indexPaths.append(indexPath)
@@ -55,7 +55,7 @@ public extension UITableView {
     ///   - section: Section of the index path
     /// - Returns: Returns the next index path.
     public func nextIndexPath(row: Int, forSection section: Int) -> IndexPath? {
-        let indexPath: [IndexPath] = self.indexPaths(section: section)
+        let indexPath: [IndexPath] = indexPaths(section: section)
         guard indexPath != [] else {
             return nil
         }
@@ -70,7 +70,7 @@ public extension UITableView {
     ///   - section: Section of the index path.
     /// - Returns: Returns the previous index path.
     public func previousIndexPath(row: Int, forSection section: Int) -> IndexPath? {
-        let indexPath: [IndexPath] = self.indexPaths(section: section)
+        let indexPath: [IndexPath] = indexPaths(section: section)
         guard indexPath != [] else {
             return nil
         }
@@ -89,7 +89,7 @@ public extension UITableView {
     ///   - delegate: TableView delegate.
     public convenience init(frame: CGRect, style: UITableViewStyle, cellSeparatorStyle: UITableViewCellSeparatorStyle, separatorInset: UIEdgeInsets, dataSource: UITableViewDataSource?, delegate: UITableViewDelegate?) {
         self.init(frame: frame, style: style)
-        self.separatorStyle = cellSeparatorStyle
+        separatorStyle = cellSeparatorStyle
         self.separatorInset = separatorInset
         self.dataSource = dataSource
         self.delegate = delegate

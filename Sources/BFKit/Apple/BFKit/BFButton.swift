@@ -39,19 +39,18 @@ open class BFButton: UIButton {
     override open var isHighlighted: Bool {
         didSet(highlighted) {
             if highlighted == false {
-                self.addSubview(self.overlayImageView)
-                self.overlayImageView.alpha = 0
+                addSubview(overlayImageView)
+                overlayImageView.alpha = 0
                 
-                UIView.animate(withDuration: self.fadeDuration) {
-                    self.overlayImageView.alpha = 1
+                UIView.animate(withDuration: fadeDuration) { [weak self] in
+                    self?.overlayImageView.alpha = 1
                 }
             } else {
-                UIView.animate(withDuration: self.fadeDuration,
-                               animations: {
-                    self.overlayImageView.alpha = 0
-                }, completion: { completed in
+                UIView.animate(withDuration: fadeDuration, animations: { [weak self] in
+                    self?.overlayImageView.alpha = 0
+                }, completion: { [weak self] completed in
                     if completed {
-                        self.overlayImageView.removeFromSuperview()
+                        self?.overlayImageView.removeFromSuperview()
                     }
                 })
             }
@@ -61,13 +60,13 @@ open class BFButton: UIButton {
     /// The overlay image, cannot be nil.
     public var overlayImageView: UIImageView! { // swiftlint:disable:this implicitly_unwrapped_optional
         didSet(newOverlayImageView) {
-            if self.overlayImageView != newOverlayImageView, newOverlayImageView != nil {
-                self.overlayImageView = newOverlayImageView
+            if overlayImageView != newOverlayImageView, newOverlayImageView != nil {
+                overlayImageView = newOverlayImageView
             }
             
-            self.overlayImageView.frame = self.imageView?.frame ?? CGRect.zero
-            self.overlayImageView.bounds = self.imageView?.bounds ?? CGRect.zero
-            self.overlayImageView.alpha = 0
+            overlayImageView.frame = imageView?.frame ?? CGRect.zero
+            overlayImageView.bounds = imageView?.bounds ?? CGRect.zero
+            overlayImageView.alpha = 0
         }
     }
     
@@ -80,12 +79,12 @@ open class BFButton: UIButton {
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.fadeDuration = aDecoder.decodeDouble(forKey: "FadeDuration")
-        self.overlayImageView = (aDecoder.decodeObject(forKey: "OverlayImageView") as! UIImageView) // swiftlint:disable:this force_cast
-        self.overlayImageView.frame = self.imageView?.frame ?? CGRect.zero
-        self.overlayImageView.bounds = self.imageView?.bounds ?? CGRect.zero
+        fadeDuration = aDecoder.decodeDouble(forKey: "FadeDuration")
+        overlayImageView = (aDecoder.decodeObject(forKey: "OverlayImageView") as! UIImageView) // swiftlint:disable:this force_cast
+        overlayImageView.frame = imageView?.frame ?? CGRect.zero
+        overlayImageView.bounds = imageView?.bounds ?? CGRect.zero
         
-        self.adjustsImageWhenHighlighted = false
+        adjustsImageWhenHighlighted = false
     }
     
     /// Encodes added variables.
@@ -94,8 +93,8 @@ open class BFButton: UIButton {
     override open func encode(with aCoder: NSCoder) {
         super.encode(with: aCoder)
         
-        aCoder.encode(self.fadeDuration, forKey: "FadeDuration")
-        aCoder.encode(self.overlayImageView, forKey: "OverlayImageView")
+        aCoder.encode(fadeDuration, forKey: "FadeDuration")
+        aCoder.encode(overlayImageView, forKey: "OverlayImageView")
     }
     
     /// Create an UIButton with a fade animation from image to highlightedImage on touch.
@@ -110,11 +109,11 @@ open class BFButton: UIButton {
         
         super.init(frame: frame)
         
-        self.setImage(image, for: UIControlState())
-        self.overlayImageView = UIImageView(image: highlightedImage)
-        self.overlayImageView.frame = self.imageView?.frame ?? CGRect.zero
-        self.overlayImageView.bounds = self.imageView?.bounds ?? CGRect.zero
+        setImage(image, for: UIControlState())
+        overlayImageView = UIImageView(image: highlightedImage)
+        overlayImageView.frame = imageView?.frame ?? CGRect.zero
+        overlayImageView.bounds = imageView?.bounds ?? CGRect.zero
         
-        self.adjustsImageWhenHighlighted = false
+        adjustsImageWhenHighlighted = false
     }
 }

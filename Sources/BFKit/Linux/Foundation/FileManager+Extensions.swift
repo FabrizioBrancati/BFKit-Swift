@@ -57,15 +57,15 @@ public extension FileManager {
         
         switch path {
         case .mainBundle:
-            pathString = self.mainBundlePath()
+            pathString = mainBundlePath()
         case .library:
-            pathString = self.libraryPath()
+            pathString = libraryPath()
         case .documents:
-            pathString = self.documentsPath()
+            pathString = documentsPath()
         case .cache:
-            pathString = self.cachePath()
+            pathString = cachePath()
         case .applicationSupport:
-            pathString = self.applicationSupportPath()
+            pathString = applicationSupportPath()
         }
         
         return pathString

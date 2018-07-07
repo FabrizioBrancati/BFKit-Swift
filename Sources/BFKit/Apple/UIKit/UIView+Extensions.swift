@@ -103,23 +103,23 @@ public extension UIView {
     ///   - radius: Border radius.
     ///   - width: Border width.
     public func border(color: UIColor, radius: CGFloat, width: CGFloat) {
-        self.layer.borderWidth = width
-        self.layer.cornerRadius = radius
-        self.layer.shouldRasterize = false
-        self.layer.rasterizationScale = 2
-        self.clipsToBounds = true
-        self.layer.masksToBounds = true
+        layer.borderWidth = width
+        layer.cornerRadius = radius
+        layer.shouldRasterize = false
+        layer.rasterizationScale = 2
+        clipsToBounds = true
+        layer.masksToBounds = true
         
         let cgColor: CGColor = color.cgColor
-        self.layer.borderColor = cgColor
+        layer.borderColor = cgColor
     }
     
     /// Removes border around the UIView.
     public func removeBorder(maskToBounds: Bool = true) {
-        self.layer.borderWidth = 0
-        self.layer.cornerRadius = 0
-        self.layer.borderColor = nil
-        self.layer.masksToBounds = maskToBounds
+        layer.borderWidth = 0
+        layer.cornerRadius = 0
+        layer.borderColor = nil
+        layer.masksToBounds = maskToBounds
     }
     
     /// Set the corner radius of UIView only at the given corner.
@@ -149,15 +149,15 @@ public extension UIView {
                 }
             }
             
-            self.layer.cornerRadius = radius
-            self.layer.masksToBounds = true
-            self.layer.maskedCorners = cornerMask
+            layer.cornerRadius = radius
+            layer.masksToBounds = true
+            layer.maskedCorners = cornerMask
         } else {
             let rectShape = CAShapeLayer()
-            rectShape.bounds = self.frame
-            rectShape.position = self.center
-            rectShape.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius)).cgPath
-            self.layer.mask = rectShape
+            rectShape.bounds = frame
+            rectShape.position = center
+            rectShape.path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius)).cgPath
+            layer.mask = rectShape
         }
     }
     
@@ -168,8 +168,8 @@ public extension UIView {
     ///
     /// - Parameter radius: Radius value.
     public func cornerRadius(_ radius: CGFloat) {
-        self.layer.cornerRadius = radius
-        self.layer.masksToBounds = true
+        layer.cornerRadius = radius
+        layer.masksToBounds = true
     }
     
     /// Create a shadow on the UIView.
@@ -180,26 +180,26 @@ public extension UIView {
     ///   - radius: Shadow radius.
     ///   - color: Shadow color. Default is black.
     public func shadow(offset: CGSize, opacity: Float, radius: CGFloat, cornerRadius: CGFloat = 0, color: UIColor = UIColor.black) {
-        self.layer.shadowColor = color.cgColor
-        self.layer.shadowOpacity = opacity
-        self.layer.shadowOffset = offset
-        self.layer.shadowRadius = radius
+        layer.shadowColor = color.cgColor
+        layer.shadowOpacity = opacity
+        layer.shadowOffset = offset
+        layer.shadowRadius = radius
         if cornerRadius != 0 {
-            self.layer.cornerRadius = cornerRadius
-            self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: cornerRadius).cgPath
+            layer.cornerRadius = cornerRadius
+            layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
         }
-        self.layer.masksToBounds = false
+        layer.masksToBounds = false
     }
     
     /// Removes shadow around the UIView.
     public func removeShadow(maskToBounds: Bool = true) {
-        self.layer.shadowColor = nil
-        self.layer.shadowOpacity = 0.0
-        self.layer.shadowOffset = CGSize(width: 0, height: 0)
-        self.layer.shadowRadius = 0
-        self.layer.cornerRadius = 0
-        self.layer.shadowPath = nil
-        self.layer.masksToBounds = maskToBounds
+        layer.shadowColor = nil
+        layer.shadowOpacity = 0.0
+        layer.shadowOffset = CGSize(width: 0, height: 0)
+        layer.shadowRadius = 0
+        layer.cornerRadius = 0
+        layer.shadowPath = nil
+        layer.masksToBounds = maskToBounds
     }
     
     @discardableResult
@@ -211,7 +211,7 @@ public extension UIView {
     /// - Returns: Returns the created CAGradientLayer.
     public func gradient(colors: [UIColor], direction: UIViewGradientDirection) -> CAGradientLayer {
         let gradient = CAGradientLayer()
-        gradient.frame = self.bounds
+        gradient.frame = bounds
         
         var mutableColors: [Any] = colors
         for index in 0 ..< colors.count {
@@ -243,7 +243,7 @@ public extension UIView {
             gradient.startPoint = startPoint
             gradient.endPoint = endPoint
         }
-        self.layer.insertSublayer(gradient, at: 0)
+        layer.insertSublayer(gradient, at: 0)
         
         return gradient
     }
@@ -256,7 +256,7 @@ public extension UIView {
     ///   - colors: Array of UIColor instances.
     ///   - direction: Direction of the gradient.
     public func smoothGradient(colors: [UIColor], direction: UIViewGradientDirection, type: UIViewGradientType = .linear) {
-        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIImage.screenScale())
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIImage.screenScale())
         guard let context = UIGraphicsGetCurrentContext() else {
             return
         }
@@ -281,22 +281,22 @@ public extension UIView {
         
         switch direction {
         case .vertical:
-            startPoint = CGPoint(x: self.bounds.midX, y: 0.0)
-            endPoint = CGPoint(x: self.bounds.midX, y: self.bounds.height)
+            startPoint = CGPoint(x: bounds.midX, y: 0.0)
+            endPoint = CGPoint(x: bounds.midX, y: bounds.height)
         case .horizontal:
-            startPoint = CGPoint(x: 0.0, y: self.bounds.midY)
-            endPoint = CGPoint(x: self.bounds.width, y: self.bounds.midY)
+            startPoint = CGPoint(x: 0.0, y: bounds.midY)
+            endPoint = CGPoint(x: bounds.width, y: bounds.midY)
         case .diagonalLeftTopToRightDown:
             startPoint = CGPoint(x: 0.0, y: 0.0)
-            endPoint = CGPoint(x: self.bounds.width, y: self.bounds.height)
+            endPoint = CGPoint(x: bounds.width, y: bounds.height)
         case .diagonalLeftDownToRightTop:
-            startPoint = CGPoint(x: 0.0, y: self.bounds.height)
-            endPoint = CGPoint(x: self.bounds.width, y: 0.0)
+            startPoint = CGPoint(x: 0.0, y: bounds.height)
+            endPoint = CGPoint(x: bounds.width, y: 0.0)
         case .diagonalRightTopToLeftDown:
-            startPoint = CGPoint(x: self.bounds.width, y: 0.0)
-            endPoint = CGPoint(x: 0.0, y: self.bounds.height)
+            startPoint = CGPoint(x: bounds.width, y: 0.0)
+            endPoint = CGPoint(x: 0.0, y: bounds.height)
         case .diagonalRightDownToLeftTop:
-            startPoint = CGPoint(x: self.bounds.width, y: self.bounds.height)
+            startPoint = CGPoint(x: bounds.width, y: bounds.height)
             endPoint = CGPoint(x: 0.0, y: 0.0)
         case let .custom(customStartPoint, customEndPoint):
             startPoint = customStartPoint
@@ -322,7 +322,7 @@ public extension UIView {
         UIGraphicsEndImageContext()
         
         let imageView = UIImageView(image: image)
-        self.insertSubview(imageView, at: 0)
+        insertSubview(imageView, at: 0)
     }
     
     /// Adds a motion effect to the view.
@@ -339,7 +339,7 @@ public extension UIView {
         
         motionEffectGroup.motionEffects = [horizontalEffect, verticalEffect]
         
-        self.addMotionEffect(motionEffectGroup)
+        addMotionEffect(motionEffectGroup)
     }
     
     /// Take a screenshot of the current view
@@ -347,13 +347,13 @@ public extension UIView {
     /// - Parameter save: Save the screenshot in user pictures. Default is false.
     /// - Returns: Returns screenshot as UIImage
     public func screenshot(save: Bool = false) -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIScreen.main.scale)
         
         guard let context = UIGraphicsGetCurrentContext() else {
             return nil
         }
         
-        self.layer.render(in: context)
+        layer.render(in: context)
         
         guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
             return nil
@@ -370,7 +370,7 @@ public extension UIView {
     
     /// Removes all subviews from current view
     public func removeAllSubviews() {
-        self.subviews.forEach { subview in
+        subviews.forEach { subview in
             subview.removeFromSuperview()
         }
     }
@@ -394,7 +394,7 @@ public extension UIView {
         animation.autoreverses = true
         animation.byValue = translation
         
-        self.layer.add(animation, forKey: "shake")
+        layer.add(animation, forKey: "shake")
     }
     
     /// Create a pulse effect.
@@ -411,7 +411,7 @@ public extension UIView {
         animation.autoreverses = true
         animation.repeatCount = count
         
-        self.layer.add(animation, forKey: "pulse")
+        layer.add(animation, forKey: "pulse")
     }
     
     /// Create a heartbeat effect.
@@ -439,7 +439,7 @@ public extension UIView {
         animation.duration = durationPerBeat
         animation.repeatCount = count / Float(durationPerBeat)
         
-        self.layer.add(animation, forKey: "heartbeat")
+        layer.add(animation, forKey: "heartbeat")
     }
     
     /// Create a flip effect.
@@ -457,7 +457,7 @@ public extension UIView {
         transition.repeatCount = 1
         transition.autoreverses = true
         
-        self.layer.add(transition, forKey: "flip")
+        layer.add(transition, forKey: "flip")
     }
     
     /// Translate the UIView around the topView.
@@ -469,18 +469,18 @@ public extension UIView {
     ///   - repeatAnimation: If the animation must be repeat or no.
     ///   - startFromEdge: If the animation must start from the edge.
     public func translateAround(topView: UIView, duration: CGFloat, direction: UIViewAnimationTranslationDirection, repeatAnimation: Bool = true, startFromEdge: Bool = true) {
-        var startPosition: CGFloat = self.center.x, endPosition: CGFloat
+        var startPosition: CGFloat = center.x, endPosition: CGFloat
         switch direction {
         case .leftToRight:
-            startPosition = self.frame.size.width / 2
-            endPosition = -(self.frame.size.width / 2) + topView.frame.size.width
+            startPosition = frame.size.width / 2
+            endPosition = -(frame.size.width / 2) + topView.frame.size.width
         case .rightToLeft:
-            startPosition = -(self.frame.size.width / 2) + topView.frame.size.width
-            endPosition = self.frame.size.width / 2
+            startPosition = -(frame.size.width / 2) + topView.frame.size.width
+            endPosition = frame.size.width / 2
         }
         
         if startFromEdge {
-            self.center = CGPoint(x: startPosition, y: self.center.y)
+            center = CGPoint(x: startPosition, y: center.y)
         }
         
         UIView.animate(withDuration: TimeInterval(duration / 2), delay: 1, options: UIViewAnimationOptions(), animations: {
@@ -513,7 +513,7 @@ public extension UIView {
         animation.duration = duration
         animation.autoreverses = autoreverses
         
-        self.layer.add(animation, forKey: "animateAlongPath")
+        layer.add(animation, forKey: "animateAlongPath")
     }
 }
 
@@ -527,23 +527,23 @@ extension UIView {
     /// Inspectable border size.
     @IBInspectable public var borderWidth: CGFloat {
         get {
-            return self.layer.borderWidth
+            return layer.borderWidth
         }
         set {
-            self.layer.borderWidth = newValue
+            layer.borderWidth = newValue
         }
     }
     
     /// Inspectable border color.
     @IBInspectable public var borderColor: UIColor {
         get {
-            guard let borderColor = self.layer.borderColor else {
+            guard let borderColor = layer.borderColor else {
                 return UIColor.clear
             }
             return UIColor(cgColor: borderColor)
         }
         set {
-            self.layer.borderColor = newValue.cgColor
+            layer.borderColor = newValue.cgColor
         }
     }
     
@@ -554,10 +554,10 @@ extension UIView {
     /// Set it to false if you want to enable shadow.
     @IBInspectable public var maskToBounds: Bool {
         get {
-            return self.layer.masksToBounds
+            return layer.masksToBounds
         }
         set {
-            self.layer.masksToBounds = newValue
+            layer.masksToBounds = newValue
         }
     }
     
@@ -566,10 +566,10 @@ extension UIView {
     /// Remeber to set maskToBounds to true.
     @IBInspectable public var cornerRadius: CGFloat {
         get {
-            return self.layer.cornerRadius
+            return layer.cornerRadius
         }
         set {
-            self.layer.cornerRadius = newValue
+            layer.cornerRadius = newValue
         }
     }
     
@@ -578,13 +578,13 @@ extension UIView {
     /// Remeber to set maskToBounds to false.
     @IBInspectable public var shadowColor: UIColor {
         get {
-            guard let shadowColor = self.layer.shadowColor else {
+            guard let shadowColor = layer.shadowColor else {
                 return UIColor.clear
             }
             return UIColor(cgColor: shadowColor)
         }
         set {
-            self.layer.shadowColor = newValue.cgColor
+            layer.shadowColor = newValue.cgColor
         }
     }
     
@@ -593,10 +593,10 @@ extension UIView {
     /// Remeber to set maskToBounds to false.
     @IBInspectable public var shadowOpacity: Float {
         get {
-            return self.layer.shadowOpacity
+            return layer.shadowOpacity
         }
         set {
-            self.layer.shadowOpacity = newValue
+            layer.shadowOpacity = newValue
         }
     }
     
@@ -605,10 +605,10 @@ extension UIView {
     /// Remeber to set maskToBounds to false.
     @IBInspectable public var shadowOffsetX: CGFloat {
         get {
-            return self.layer.shadowOffset.width
+            return layer.shadowOffset.width
         }
         set {
-            self.layer.shadowOffset = CGSize(width: newValue, height: self.layer.shadowOffset.height)
+            layer.shadowOffset = CGSize(width: newValue, height: layer.shadowOffset.height)
         }
     }
     
@@ -617,10 +617,10 @@ extension UIView {
     /// Remeber to set maskToBounds to false.
     @IBInspectable public var shadowOffsetY: CGFloat {
         get {
-            return self.layer.shadowOffset.height
+            return layer.shadowOffset.height
         }
         set {
-            self.layer.shadowOffset = CGSize(width: self.layer.shadowOffset.width, height: newValue)
+            layer.shadowOffset = CGSize(width: layer.shadowOffset.width, height: newValue)
         }
     }
     
@@ -629,10 +629,10 @@ extension UIView {
     /// Remeber to set maskToBounds to false.
     @IBInspectable public var shadowRadius: CGFloat {
         get {
-            return self.layer.shadowRadius
+            return layer.shadowRadius
         }
         set {
-            self.layer.shadowRadius = newValue
+            layer.shadowRadius = newValue
         }
     }
 }

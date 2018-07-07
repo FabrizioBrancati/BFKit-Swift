@@ -124,7 +124,7 @@ public extension UIDevice {
     ///
     /// - Returns: Returns the user-friendly device platform string.
     public static var detailedModel: String {
-        let platform: String = self.hardwareModel
+        let platform: String = hardwareModel
         
         switch platform {
         // iPhone 2G
@@ -233,32 +233,32 @@ public extension UIDevice {
     
     /// Returns current device CPU frequency.
     public static var cpuFrequency: Int {
-        return self.getSysInfo(HW_CPU_FREQ)
+        return getSysInfo(HW_CPU_FREQ)
     }
     
     /// Returns current device BUS frequency.
     public static var busFrequency: Int {
-        return self.getSysInfo(HW_TB_FREQ)
+        return getSysInfo(HW_TB_FREQ)
     }
     
     /// Returns device RAM size.
     public static var ramSize: Int {
-        return self.getSysInfo(HW_MEMSIZE)
+        return getSysInfo(HW_MEMSIZE)
     }
     
     /// Returns device CPUs number.
     public static var cpusNumber: Int {
-        return self.getSysInfo(HW_NCPU)
+        return getSysInfo(HW_NCPU)
     }
     
     /// Returns device total memory.
     public static var totalMemory: Int {
-        return self.getSysInfo(HW_PHYSMEM)
+        return getSysInfo(HW_PHYSMEM)
     }
     
     /// Returns current device non-kernel memory.
     public static var userMemory: Int {
-        return self.getSysInfo(HW_USERMEM)
+        return getSysInfo(HW_USERMEM)
     }
     
     @available(iOS 9.0, *)
@@ -289,42 +289,42 @@ public extension UIDevice {
     ///
     /// - Returns: Returns true if it is an iPhone, otherwise false.
     public static func isPhone() -> Bool {
-        return self.hardwareModel.substring(to: 6) == "iPhone"
+        return hardwareModel.substring(to: 6) == "iPhone"
     }
     
     /// Check if current device is an iPad.
     ///
     /// - Returns: Returns true if it is an iPad, otherwise false.
     public static func isPad() -> Bool {
-        return self.hardwareModel.substring(to: 4) == "iPad"
+        return hardwareModel.substring(to: 4) == "iPad"
     }
     
     /// Check if current device is an iPod.
     ///
     /// - Returns: Returns true if it is an iPod, otherwise false.
     public static func isPod() -> Bool {
-        return self.hardwareModel.substring(to: 4) == "iPod"
+        return hardwareModel.substring(to: 4) == "iPod"
     }
     
     /// Check if current device is an Apple TV.
     ///
     /// - Returns: Returns true if it is an Apple TV, otherwise false.
     public static func isTV() -> Bool {
-        return self.hardwareModel.substring(to: 7) == "AppleTV"
+        return hardwareModel.substring(to: 7) == "AppleTV"
     }
     
     /// Check if current device is an Applw Watch.
     ///
     /// - Returns: Returns true if it is an Apple Watch, otherwise false.
     public static func isWatch() -> Bool {
-        return self.hardwareModel.substring(to: 5) == "Watch"
+        return hardwareModel.substring(to: 5) == "Watch"
     }
     
     /// Check if current device is a Simulator.
     ///
     /// - Returns: Returns true if it is a Simulator, otherwise false.
     public static func isSimulator() -> Bool {
-        return self.detailedModel == "Simulator"
+        return detailedModel == "Simulator"
     }
     
     /// Returns if current device is jailbroken.

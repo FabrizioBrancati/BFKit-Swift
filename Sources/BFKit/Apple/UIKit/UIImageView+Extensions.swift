@@ -90,11 +90,11 @@ public extension UIImageView {
     ///   - offset: Shadow offset.
     ///   - opacity: Shadow opacity.
     public func shadow(color: UIColor, radius: CGFloat, offset: CGSize, opacity: Float) {
-        self.layer.shadowColor = color.cgColor
-        self.layer.shadowRadius = radius
-        self.layer.shadowOffset = offset
-        self.layer.shadowOpacity = opacity
-        self.clipsToBounds = false
+        layer.shadowColor = color.cgColor
+        layer.shadowRadius = radius
+        layer.shadowOffset = offset
+        layer.shadowOpacity = opacity
+        clipsToBounds = false
     }
     
     /// Mask the current UIImageView with an UIImage.
@@ -103,8 +103,8 @@ public extension UIImageView {
     public func mask(image: UIImage) {
         let mask = CALayer()
         mask.contents = image.cgImage
-        mask.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
-        self.layer.mask = mask
-        self.layer.masksToBounds = false
+        mask.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
+        layer.mask = mask
+        layer.masksToBounds = false
     }
 }

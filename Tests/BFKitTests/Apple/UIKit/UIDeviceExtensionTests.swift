@@ -212,7 +212,7 @@ internal class UIDeviceExtensionTests: XCTestCase {
         var uuid = UIDevice.generateUniqueIdentifier()
         var uuid2 = UIDevice.generateUniqueIdentifier()
         
-        XCTAssertEqual(uuid.length, 36)
+        XCTAssertEqual(uuid.count, 36)
         XCTAssertNotEqual(uuid, uuid2)
         
         UserDefaults.standard.set(nil, forKey: BFDeviceIdentifierDefaultsKey)

@@ -85,17 +85,17 @@ public extension UIWindow {
             return nil
         }
         context.saveGState()
-        context.translateBy(x: self.center.x, y: self.center.y)
-        context.concatenate(self.transform)
-        context.translateBy(x: -self.bounds.size.width * self.layer.anchorPoint.x, y: -self.bounds.size.height * self.layer.anchorPoint.y)
+        context.translateBy(x: center.x, y: center.y)
+        context.concatenate(transform)
+        context.translateBy(x: -bounds.size.width * layer.anchorPoint.x, y: -bounds.size.height * layer.anchorPoint.y)
         
-        if self.responds(to: #selector(UIView.drawHierarchy(in:afterScreenUpdates:))) {
-            self.drawHierarchy(in: self.bounds, afterScreenUpdates: false)
+        if responds(to: #selector(UIView.drawHierarchy(in:afterScreenUpdates:))) {
+            drawHierarchy(in: bounds, afterScreenUpdates: false)
         } else {
             guard let context = UIGraphicsGetCurrentContext() else {
                 return nil
             }
-            self.layer.render(in: context)
+            layer.render(in: context)
         }
         
         context.restoreGState()
@@ -159,7 +159,7 @@ public extension UIWindow {
     ///
     /// - Parameter event: UIEvent.
     private func exchangedSendEvent(_ event: UIEvent) {
-        self.handleEvent(event)
+        handleEvent(event)
         exchangedSendEvent(event)
     }
     
@@ -176,9 +176,9 @@ public extension UIWindow {
             
             switch phase {
             case .began:
-                let touchImageView = UIImageView(image: self.touchImage())
+                let touchImageView = UIImageView(image: touchImage())
                 touchImageView.center = touch.location(in: self)
-                self.addSubview(touchImageView)
+                addSubview(touchImageView)
                 
                 touchImages[touch.hash] = touchImageView
                 

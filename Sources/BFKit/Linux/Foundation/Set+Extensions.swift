@@ -34,6 +34,6 @@ public extension Set {
     ///
     /// - returns: An element that was randomly selected from the set.
     public func random() -> Element {
-        return self[self.index(self.startIndex, offsetBy: randomInt(range: 0...self.count - 1))]
+        return self[index(startIndex, offsetBy: randomInt(range: 0...count - 1))]
     }
 }

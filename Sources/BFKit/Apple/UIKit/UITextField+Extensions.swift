@@ -61,7 +61,7 @@ public extension UITextField {
         self.textColor = textColor
         self.returnKeyType = returnKeyType
         self.enablesReturnKeyAutomatically = enablesReturnKeyAutomatically
-        self.isSecureTextEntry = secure
+        isSecureTextEntry = secure
         self.keyboardAppearance = keyboardAppearance
         self.font = font
         self.delegate = delegate
@@ -96,7 +96,7 @@ public extension UITextField {
         self.textColor = textColor
         self.returnKeyType = returnKeyType
         self.enablesReturnKeyAutomatically = enablesReturnKeyAutomatically
-        self.isSecureTextEntry = secure
+        isSecureTextEntry = secure
         self.keyboardAppearance = keyboardAppearance
         self.font = UIFont(fontName: font, size: fontSize)
         self.delegate = delegate
@@ -104,7 +104,7 @@ public extension UITextField {
     
     /// Paste the pasteboard text to UITextField.
     public func pasteFromPasteboard() {
-        self.text = UIPasteboard.getString()
+        text = UIPasteboard.getString()
     }
     
     /// Copy UITextField text to pasteboard.

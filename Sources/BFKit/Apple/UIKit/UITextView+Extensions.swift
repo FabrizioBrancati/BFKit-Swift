@@ -62,13 +62,13 @@ public extension UITextView {
         self.textColor = textColor
         self.returnKeyType = returnKeyType
         self.enablesReturnKeyAutomatically = enablesReturnKeyAutomatically
-        self.isSecureTextEntry = secure
+        isSecureTextEntry = secure
         self.keyboardAppearance = keyboardAppearance
         self.font = font
         self.delegate = delegate
         self.dataDetectorTypes = dataDetectorTypes
-        self.isEditable = editable
-        self.isSelectable = selectable
+        isEditable = editable
+        isSelectable = selectable
     }
     
     /// Create an UITextView and set some parameters.
@@ -95,28 +95,28 @@ public extension UITextView {
         self.init(frame: frame)
         self.text = text
         self.autocorrectionType = autocorrectionType
-        self.textAlignment = alignment
+        textAlignment = alignment
         self.keyboardType = keyboardType
         self.autocapitalizationType = autocapitalizationType
         self.textColor = textColor
         self.returnKeyType = returnKeyType
         self.enablesReturnKeyAutomatically = enablesReturnKeyAutomatically
-        self.isSecureTextEntry = secure
+        isSecureTextEntry = secure
         self.keyboardAppearance = keyboardAppearance
         self.font = UIFont(fontName: font, size: fontSize)
         self.delegate = delegate
         self.dataDetectorTypes = dataDetectorTypes
-        self.isEditable = editable
-        self.isSelectable = selectable
+        isEditable = editable
+        isSelectable = selectable
     }
     
     /// Paste the pasteboard text to UITextView
     public func pasteFromPasteboard() {
-        self.text = UIPasteboard.getString()
+        text = UIPasteboard.getString()
     }
     
     /// Copy UITextView text to pasteboard
     public func copyToPasteboard() {
-        UIPasteboard.copy(text: self.text)
+        UIPasteboard.copy(text: text)
     }
 }

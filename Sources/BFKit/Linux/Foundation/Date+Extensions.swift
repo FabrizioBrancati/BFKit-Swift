@@ -146,7 +146,7 @@ public extension Date {
         return nanosecond
     }
     
-    /// Get the weekday number from self.
+    /// Get the weekday number from 
     /// - 1 - Sunday.
     /// - 2 - Monday.
     /// - 3 - Tuerday.
@@ -299,9 +299,9 @@ public extension Date {
     }
     
     #if !os(Linux)
-        /// Creates an ISO 8601 String form self.
+        /// Creates an ISO 8601 String form 
         ///
-        /// - Returns: Returns an ISO 8601 String form self.
+        /// - Returns: Returns an ISO 8601 String form 
         public func iso8601() -> String {
             let dateFormatter = DateFormatter()
             dateFormatter.calendar = Calendar(identifier: .iso8601)
@@ -333,7 +333,7 @@ public extension Date {
     /// - Parameter anotherDate: The another date.
     /// - Returns: Returns the days between the two dates.
     public func daysBetween(_ anotherDate: Date) -> Int {
-        let time: TimeInterval = self.timeIntervalSince(anotherDate)
+        let time: TimeInterval = timeIntervalSince(anotherDate)
         return Int(abs(time / 60 / 60 / 24))
     }
     
@@ -341,7 +341,7 @@ public extension Date {
     ///
     /// - Returns: Returns if self is today.
     public func isToday() -> Bool {
-        return self.isSame(Date())
+        return isSame(Date())
     }
     
     /// Compare self with another date.
@@ -356,7 +356,7 @@ public extension Date {
         return componentsSelf.year == componentsAnotherDate.year && componentsSelf.month == componentsAnotherDate.month && componentsSelf.day == componentsAnotherDate.day
     }
     
-    /// Add days to self.
+    /// Add days to 
     ///
     /// - Parameter days: The number of days to add.
     /// - Returns: Returns self by adding the gived days number.
@@ -364,20 +364,20 @@ public extension Date {
         return Calendar.autoupdatingCurrent.date(byAdding: .day, value: days, to: self)
     }
     
-    /// Add days to self.
+    /// Add days to 
     ///
     /// - Parameter days: The number of days to add.
     public mutating func addDays(_ days: Int) {
-        guard let date = self.addingDays(days) else {
+        guard let date = addingDays(days) else {
             return
         }
         
         self = date
     }
     
-    /// Get the year string from self.
+    /// Get the year string from 
     ///
-    /// - Returns: Returns the year string from self.
+    /// - Returns: Returns the year string from 
     public func yearString() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy"
@@ -385,12 +385,12 @@ public extension Date {
         return dateFormatter.string(from: self)
     }
     
-    /// Get the String date from self.
+    /// Get the String date from 
     ///
     /// - Parameters:
     ///   - format: Date format, default is "yyyy-MM-dd".
     ///   - locale: Locale, default is "en_US_POSIX".
-    /// - Returns: Returns the String data from self.
+    /// - Returns: Returns the String data from 
     public func dateString(format: String = "yyyy-MM-dd", locale: String = "en_US_POSIX") -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: locale)
@@ -413,26 +413,26 @@ public extension Date {
         return date
     }
     
-    /// Check if the given date is less than self.
+    /// Check if the given date is less than 
     ///
     /// - Parameter date: Date to compare.
     /// - Returns: Returns a true if self is greater than another one, otherwise false.
     public func isGreaterThan(_ date: Date) -> Bool {
         var isGreater = false
-        if self.compare(date) == ComparisonResult.orderedDescending {
+        if compare(date) == ComparisonResult.orderedDescending {
             isGreater = true
         }
         
         return isGreater
     }
     
-    /// Check if the given date is greater than self.
+    /// Check if the given date is greater than 
     ///
     /// - Parameter date: Date to compare.
     /// - Returns: Returns a true if self is less than another one, otherwise false.
     public func isLessThan(_ date: Date) -> Bool {
         var isLess = false
-        if self.compare(date) == ComparisonResult.orderedAscending {
+        if compare(date) == ComparisonResult.orderedAscending {
             isLess = true
         }
         
@@ -444,7 +444,7 @@ public extension Date {
     /// - Parameter date: Date to compare.
     /// - Returns: Returns a true if self is equal to another one, otherwise false.
     public func isEqual(_ date: Date) -> Bool {
-        return self.isSame(date)
+        return isSame(date)
     }
     
     /// Create a Date with the yesterday date.
@@ -498,15 +498,15 @@ public extension Date {
         
         #if os(Linux)
             if usFormat {
-                description = String(format: "%04li-%02li-%02li %02li:%02li:%02li", self.year, self.month, self.day, self.hour, self.minute, self.second)
+                description = String(format: "%04li-%02li-%02li %02li:%02li:%02li", year, month, day, hour, minute, second)
             } else {
-                description = String(format: "%02li-%02li-%04li %02li:%02li:%02li", self.month, self.day, self.year, self.hour, self.minute, self.second)
+                description = String(format: "%02li-%02li-%04li %02li:%02li:%02li", month, day, year, hour, minute, second)
             }
         #else
             if usFormat {
-                description = String(format: "%04li%@%02li%@%02li %02li:%02li:%02li", self.year, dateSeparator, self.month, dateSeparator, self.day, self.hour, self.minute, self.second)
+                description = String(format: "%04li%@%02li%@%02li %02li:%02li:%02li", year, dateSeparator, month, dateSeparator, day, hour, minute, second)
             } else {
-                description = String(format: "%02li%@%02li%@%04li %02li:%02li:%02li", self.month, dateSeparator, self.day, dateSeparator, self.year, self.hour, self.minute, self.second)
+                description = String(format: "%02li%@%02li%@%04li %02li:%02li:%02li", month, dateSeparator, day, dateSeparator, year, hour, minute, second)
             }
         #endif
         

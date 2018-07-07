@@ -69,7 +69,7 @@ public extension Array {
     ///
     /// - Returns: Returns a Bool value indicating whether the collection is not empty.
     public var isNotEmpty: Bool {
-        return !self.isEmpty
+        return !isEmpty
     }
     
     /// Simulates the array as a circle. When it is out of range, begins again.
@@ -77,19 +77,19 @@ public extension Array {
     /// - Parameter index: The index.
     /// - Returns: Returns the object at a given index.
     public func circleObject(at index: Int) -> Element {
-        return self[self.superCircle(at: index, size: self.count)]
+        return self[superCircle(at: index, size: count)]
     }
     
     /// Randomly selects an element from self and returns it.
     ///
     /// - returns: An element that was randomly selected from the array.
     public func random() -> Element {
-        return self[randomInt(range: 0...self.count - 1)]
+        return self[randomInt(range: 0...count - 1)]
     }
     
     /// Removes the element from self that is passed in.
     /// 
-    /// - parameter object: The element that is removed from self.
+    /// - parameter object: The element that is removed from 
     public mutating func remove(_ object: Element) {
         var array: [String] = []
         for index in self {
@@ -97,7 +97,7 @@ public extension Array {
         }
         let index = array.index(of: "\(object)")
         if let index = index {
-            self.remove(at: index)
+            remove(at: index)
         }
     }
     
@@ -106,7 +106,7 @@ public extension Array {
     /// - Parameter index: The index.
     /// - Returns: Returns the object at a given index in safe mode (nil if self is empty or out of range).
     public func safeObject(at index: Int) -> Element? {
-        guard !self.isEmpty, self.count > index else {
+        guard !isEmpty, count > index else {
             return nil
         }
         
@@ -139,15 +139,15 @@ public extension Array {
     ///   - toIndex: The end index.
     public mutating func swap(from fromIndex: Int, to toIndex: Int) {
         if toIndex != fromIndex {
-            guard let object: Element = self.safeObject(at: fromIndex) else {
+            guard let object: Element = safeObject(at: fromIndex) else {
                 return
             }
-            self.remove(at: fromIndex)
+            remove(at: fromIndex)
             
-            if toIndex >= self.count {
-                self.append(object)
+            if toIndex >= count {
+                append(object)
             } else {
-                self.insert(object, at: toIndex)
+                insert(object, at: toIndex)
             }
         }
     }
@@ -156,7 +156,7 @@ public extension Array {
     public mutating func shuffle() {
         for index in 0..<(count - 1) {
             let newIndex = Int(randomInt(range: 0...Int(count - index))) + index
-            self.swap(from: index, to: newIndex)
+            swap(from: index, to: newIndex)
         }
     }
     

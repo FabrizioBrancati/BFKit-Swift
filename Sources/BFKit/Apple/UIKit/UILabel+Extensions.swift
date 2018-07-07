@@ -47,10 +47,10 @@ public extension UILabel {
         self.init(frame: frame)
         self.font = font
         self.text = text
-        self.backgroundColor = UIColor.clear
-        self.textColor = color
-        self.textAlignment = alignment
-        self.numberOfLines = lines
+        backgroundColor = UIColor.clear
+        textColor = color
+        textAlignment = alignment
+        numberOfLines = lines
         self.shadowColor = shadowColor
     }
     
@@ -69,10 +69,10 @@ public extension UILabel {
         self.init(frame: frame)
         self.font = UIFont(fontName: font, size: fontSize)
         self.text = text
-        self.backgroundColor = UIColor.clear
-        self.textColor = color
-        self.textAlignment = alignment
-        self.numberOfLines = lines
+        backgroundColor = UIColor.clear
+        textColor = color
+        textAlignment = alignment
+        numberOfLines = lines
         self.shadowColor = shadowColor
     }
     
@@ -80,10 +80,10 @@ public extension UILabel {
     ///
     /// - Returns: Returns calculated height.
     public func calculateHeight() -> CGFloat {
-        guard let text = self.text else {
+        guard let text = text else {
             return 0
         }
-        return UIFont.calculateHeight(width: self.frame.size.width, font: self.font, text: text)
+        return UIFont.calculateHeight(width: frame.size.width, font: font, text: text)
     }
     
     /// Sets a custom font from a character at an index to character at another index.
@@ -93,11 +93,11 @@ public extension UILabel {
     ///   - fromIndex: The start index.
     ///   - toIndex: The end index.
     public func setFont(_ font: UIFont, fromIndex: Int, toIndex: Int) {
-        guard let text = self.text else {
+        guard let text = text else {
             return
         }
         
-        self.attributedText = text.attributedString.font(font, range: NSRange(location: fromIndex, length: toIndex - fromIndex))
+        attributedText = text.attributedString.font(font, range: NSRange(location: fromIndex, length: toIndex - fromIndex))
     }
     
     /// Sets a custom font from a character at an index to character at another index.
@@ -108,10 +108,10 @@ public extension UILabel {
     ///   - fromIndex: The start index.
     ///   - toIndex: The end index.
     public func setFont(_ font: FontName, fontSize: CGFloat, fromIndex: Int, toIndex: Int) {
-        guard let text = self.text, let font = UIFont(fontName: font, size: fontSize) else {
+        guard let text = text, let font = UIFont(fontName: font, size: fontSize) else {
             return
         }
         
-        self.attributedText = text.attributedString.font(font, range: NSRange(location: fromIndex, length: toIndex - fromIndex))
+        attributedText = text.attributedString.font(font, range: NSRange(location: fromIndex, length: toIndex - fromIndex))
     }
 }

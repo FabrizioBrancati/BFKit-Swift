@@ -42,7 +42,7 @@ public extension NSAttributedString {
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
     public func font(_ font: Font, range: NSRange? = nil) -> NSAttributedString {
-        let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
+        let mutableAttributedString = NSMutableAttributedString(string: string, attributes: attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.font, value: font, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
     }
@@ -54,7 +54,7 @@ public extension NSAttributedString {
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
     public func paragraphStyle(_ paragraphStyle: NSParagraphStyle, range: NSRange? = nil) -> NSAttributedString {
-        let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
+        let mutableAttributedString = NSMutableAttributedString(string: string, attributes: attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
     }
@@ -66,7 +66,7 @@ public extension NSAttributedString {
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
     public func foregroundColor(_ foregroundColor: Color, range: NSRange? = nil) -> NSAttributedString {
-        let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
+        let mutableAttributedString = NSMutableAttributedString(string: string, attributes: attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: foregroundColor, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
     }
@@ -78,7 +78,7 @@ public extension NSAttributedString {
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
     public func backgroundColor(_ backgroundColor: Color, range: NSRange? = nil) -> NSAttributedString {
-        let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
+        let mutableAttributedString = NSMutableAttributedString(string: string, attributes: attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.backgroundColor, value: backgroundColor, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
     }
@@ -90,7 +90,7 @@ public extension NSAttributedString {
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
     public func ligature(_ ligature: Bool, range: NSRange? = nil) -> NSAttributedString {
-        let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
+        let mutableAttributedString = NSMutableAttributedString(string: string, attributes: attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.ligature, value: ligature, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
     }
@@ -103,7 +103,7 @@ public extension NSAttributedString {
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
     public func kern(_ kern: Float, range: NSRange? = nil) -> NSAttributedString {
-        let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
+        let mutableAttributedString = NSMutableAttributedString(string: string, attributes: attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.kern, value: kern, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
     }
@@ -115,7 +115,7 @@ public extension NSAttributedString {
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
     public func strikethroughStyle(_ strikethroughStyle: Int, range: NSRange? = nil) -> NSAttributedString {
-        let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
+        let mutableAttributedString = NSMutableAttributedString(string: string, attributes: attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.strikethroughStyle, value: strikethroughStyle, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
     }
@@ -127,7 +127,7 @@ public extension NSAttributedString {
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
     public func underlineStyle(_ underlineStyle: NSUnderlineStyle, range: NSRange? = nil) -> NSAttributedString {
-        let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
+        let mutableAttributedString = NSMutableAttributedString(string: string, attributes: attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.underlineStyle, value: underlineStyle, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
     }
@@ -139,7 +139,7 @@ public extension NSAttributedString {
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
     public func strokeColor(_ strokeColor: Color, range: NSRange? = nil) -> NSAttributedString {
-        let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
+        let mutableAttributedString = NSMutableAttributedString(string: string, attributes: attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.strokeColor, value: strokeColor, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
     }
@@ -152,7 +152,7 @@ public extension NSAttributedString {
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
     public func strokeWidth(_ strokeWidth: Float, range: NSRange? = nil) -> NSAttributedString {
-        let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
+        let mutableAttributedString = NSMutableAttributedString(string: string, attributes: attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.strokeWidth, value: strokeWidth, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
     }
@@ -165,7 +165,7 @@ public extension NSAttributedString {
         ///   - range: Application range. Default is all the String.
         /// - Returns: Returns a NSAttributedString.
         public func shadow(_ shadow: NSShadow, range: NSRange? = nil) -> NSAttributedString {
-            let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
+            let mutableAttributedString = NSMutableAttributedString(string: string, attributes: attributes())
             mutableAttributedString.addAttribute(NSAttributedStringKey.shadow, value: shadow, range: attributedStringRange(range))
             return mutableAttributedString as NSAttributedString
         }
@@ -178,7 +178,7 @@ public extension NSAttributedString {
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
     public func textEffect(_ textEffect: String, range: NSRange? = nil) -> NSAttributedString {
-        let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
+        let mutableAttributedString = NSMutableAttributedString(string: string, attributes: attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.textEffect, value: textEffect, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
     }
@@ -191,7 +191,7 @@ public extension NSAttributedString {
         ///   - range: Application range. Default is all the String.
         /// - Returns: Returns a NSAttributedString.
         public func attachment(_ attachment: NSTextAttachment, range: NSRange? = nil) -> NSAttributedString {
-            let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
+            let mutableAttributedString = NSMutableAttributedString(string: string, attributes: attributes())
             mutableAttributedString.addAttribute(NSAttributedStringKey.attachment, value: attachment, range: attributedStringRange(range))
             return mutableAttributedString as NSAttributedString
         }
@@ -204,7 +204,7 @@ public extension NSAttributedString {
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
     public func link(_ link: NSURL, range: NSRange? = nil) -> NSAttributedString {
-        let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
+        let mutableAttributedString = NSMutableAttributedString(string: string, attributes: attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.link, value: link, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
     }
@@ -216,7 +216,7 @@ public extension NSAttributedString {
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
     public func baselineOffset(_ baselineOffset: Float, range: NSRange? = nil) -> NSAttributedString {
-        let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
+        let mutableAttributedString = NSMutableAttributedString(string: string, attributes: attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.baselineOffset, value: baselineOffset, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
     }
@@ -228,7 +228,7 @@ public extension NSAttributedString {
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
     public func underlineColor(_ underlineColor: Color, range: NSRange? = nil) -> NSAttributedString {
-        let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
+        let mutableAttributedString = NSMutableAttributedString(string: string, attributes: attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.underlineColor, value: underlineColor, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
     }
@@ -240,7 +240,7 @@ public extension NSAttributedString {
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
     public func strikethroughColor(_ strikethroughColor: Color, range: NSRange? = nil) -> NSAttributedString {
-        let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
+        let mutableAttributedString = NSMutableAttributedString(string: string, attributes: attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.strikethroughColor, value: strikethroughColor, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
     }
@@ -252,7 +252,7 @@ public extension NSAttributedString {
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
     public func obliqueness(_ obliqueness: Float, range: NSRange? = nil) -> NSAttributedString {
-        let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
+        let mutableAttributedString = NSMutableAttributedString(string: string, attributes: attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.obliqueness, value: obliqueness, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
     }
@@ -264,7 +264,7 @@ public extension NSAttributedString {
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
     public func expansion(_ expansion: Float, range: NSRange? = nil) -> NSAttributedString {
-        let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
+        let mutableAttributedString = NSMutableAttributedString(string: string, attributes: attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.expansion, value: expansion, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
     }
@@ -282,7 +282,7 @@ public extension NSAttributedString {
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
     public func writingDirection(_ writingDirection: [Int], range: NSRange? = nil) -> NSAttributedString {
-        let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
+        let mutableAttributedString = NSMutableAttributedString(string: string, attributes: attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.writingDirection, value: writingDirection, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
     }
@@ -295,7 +295,7 @@ public extension NSAttributedString {
     ///   - range: Application range. Default is all the String.
     /// - Returns: Returns a NSAttributedString.
     public func verticalGlyphForm(_ verticalGlyphForm: Bool, range: NSRange? = nil) -> NSAttributedString {
-        let mutableAttributedString = NSMutableAttributedString(string: self.string, attributes: self.attributes())
+        let mutableAttributedString = NSMutableAttributedString(string: string, attributes: attributes())
         mutableAttributedString.addAttribute(NSAttributedStringKey.verticalGlyphForm, value: verticalGlyphForm, range: attributedStringRange(range))
         return mutableAttributedString as NSAttributedString
     }
@@ -304,35 +304,35 @@ public extension NSAttributedString {
     ///
     /// - Returns: Returns a NSAttributedString.
     public func textAlignmentLeft() -> NSAttributedString {
-        return self.textAlignment(.left)
+        return textAlignment(.left)
     }
     
     /// Set text alignment to right.
     ///
     /// - Returns: Returns a NSAttributedString.
     public func textAlignmentRight() -> NSAttributedString {
-        return self.textAlignment(.right)
+        return textAlignment(.right)
     }
     
     /// Set text alignment to center.
     ///
     /// - Returns: Returns a NSAttributedString.
     public func textAlignmentCenter() -> NSAttributedString {
-        return self.textAlignment(.center)
+        return textAlignment(.center)
     }
     
     /// Set text alignment to justified.
     ///
     /// - Returns: Returns a NSAttributedString.
     public func textAlignmentJustified() -> NSAttributedString {
-        return self.textAlignment(.justified)
+        return textAlignment(.justified)
     }
     
     /// Returns a list of all string attributes.
     ///
     /// - Returns: Returns a list of all string attributes.
     public func attributes() -> [NSAttributedStringKey: Any] {
-        return self.attributes(at: 0, longestEffectiveRange: nil, in: self.attributedStringRange(nil))
+        return attributes(at: 0, longestEffectiveRange: nil, in: attributedStringRange(nil))
     }
     
     /// Set text alignment.
@@ -343,7 +343,7 @@ public extension NSAttributedString {
         let textAlignment = NSMutableParagraphStyle()
         textAlignment.alignment = alignment
         
-        return self.paragraphStyle(textAlignment)
+        return paragraphStyle(textAlignment)
     }
     
     /// Returns self NSRange if the given NSRange is nil.
@@ -351,6 +351,6 @@ public extension NSAttributedString {
     /// - Parameter range: Given NSRange.
     /// - Returns: Returns self NSRange if the given NSRange is nil.
     private func attributedStringRange(_ range: NSRange?) -> NSRange {
-        return range ?? NSRange(location: 0, length: self.string.count)
+        return range ?? NSRange(location: 0, length: string.count)
     }
 }
