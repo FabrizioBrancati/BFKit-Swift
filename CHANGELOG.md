@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 3.x Releases
+- `3.2.x` Releases - [3.2.0](#320---???)
 - `3.1.x` Releases - [3.1.0](#310---face-id-support) | [3.1.1](#311---some-improvements) | [3.1.2](#311---swift-41-support)
 - `3.0.x` Releases - [3.0.0](#300---swift-4-support)
 
@@ -34,8 +35,8 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## [3.2.0](https://github.com/FabrizioBrancati/Queuer/releases/tag/3.2.0) - XXX
-### XX Jul 2018
+## [3.2.0](https://github.com/FabrizioBrancati/Queuer/releases/tag/3.2.0) - ???
+### ?? Jul 2018
 ### Added
 - Added `force` attribute to `generateUniqueIdentifier(save: Bool = default, force: Bool = default)` in UIDevice extension with a default value, hence no changes are required
 - Added `resetFirstStart(version: String = default)` in BFApp struct, to reset the App like has never been opened
