@@ -50,10 +50,13 @@ All notable changes to this project will be documented in this file.<br>
 - Removed all force unwrapping to avoid possible crashes
 - Fixing some memory leaks
 
-### Deprecated
+### Deprecated
 - BFTouchID struct in favour of BFBiometrics enum
 - `lightFont`, `mediumFont` and `boldFont` from UIFont extension
 - `length` in favour of `count` in String extension
+
+### Removed
+- Removed Hound CI
 
 ---
 
