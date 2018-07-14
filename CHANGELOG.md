@@ -35,6 +35,12 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+## Swift 4.2
+### Added
+- Added support to Xcode 10 and Swift 4.2
+
+---
+
 ## [3.2.0](https://github.com/FabrizioBrancati/Queuer/releases/tag/3.2.0) - Big Improvements
 ### 14 Jul 2018
 ### Added

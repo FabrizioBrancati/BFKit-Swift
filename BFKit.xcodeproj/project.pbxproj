@@ -752,16 +752,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				id,
-				it,
-				"pt-BR",
-				ru,
-				sv,
-				uk,
-				vi,
-				"zh-Hans",
-				"zh-Hant",
-				fr,
 			);
 			mainGroup = 497186371D2339040032A98E;
 			productRefGroup = 497186421D2339040032A98E /* Products */;
@@ -1089,7 +1079,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1111,7 +1100,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1220,7 +1208,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1277,7 +1265,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1342,8 +1330,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.FabrizioBrancati.BFKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1358,8 +1344,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.FabrizioBrancati.BFKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

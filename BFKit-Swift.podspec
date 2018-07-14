@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.source            = { :git => 'https://github.com/FabrizioBrancati/BFKit-Swift.git', :tag => s.version }
   s.documentation_url = 'https://github.fabriziobrancati.com/documentation/BFKit-Swift/'
 
-  s.swift_version             = '4.1'
+  s.swift_version             = '4.2'
 
   s.ios.deployment_target     = '8.0'
   s.ios.source_files          = 'Sources/**/*.swift'

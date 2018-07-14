@@ -78,7 +78,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.font(font)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.font] as? Font, font)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.font] as? Font, font)
     }
     
     internal func testParagraphStyle() {
@@ -86,7 +86,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.paragraphStyle(paragraphStyle)
             
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.paragraphStyle] as? NSParagraphStyle, paragraphStyle)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.paragraphStyle] as? NSParagraphStyle, paragraphStyle)
     }
     
     internal func testForegroundColor() {
@@ -94,7 +94,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.foregroundColor(foregroundColor)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.foregroundColor] as? Color, foregroundColor)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.foregroundColor] as? Color, foregroundColor)
     }
     
     internal func testBackgroundColor() {
@@ -102,7 +102,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.backgroundColor(backgroundColor)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.backgroundColor] as? Color, backgroundColor)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.backgroundColor] as? Color, backgroundColor)
     }
     
     internal func testLigature() {
@@ -110,7 +110,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.ligature(ligature)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.ligature] as? Bool, ligature)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.ligature] as? Bool, ligature)
     }
     
     internal func testKern() {
@@ -118,7 +118,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.kern(kern)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.kern] as? Float, kern)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.kern] as? Float, kern)
     }
     
     internal func testStrikethroughStyle() {
@@ -126,7 +126,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.strikethroughStyle(strikethroughStyle)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.strikethroughStyle] as? Int, strikethroughStyle)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.strikethroughStyle] as? Int, strikethroughStyle)
     }
     
     internal func testUnderlineStyle() {
@@ -134,7 +134,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.underlineStyle(underlineStyle)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.underlineStyle] as? NSUnderlineStyle, underlineStyle)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.underlineStyle] as? NSUnderlineStyle, underlineStyle)
     }
     
     internal func testStrokeColor() {
@@ -142,7 +142,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.strokeColor(strokeColor)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.strokeColor] as? Color, strokeColor)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.strokeColor] as? Color, strokeColor)
     }
     
     internal func testStrokeWidth() {
@@ -150,7 +150,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.strokeWidth(strokeWidth)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.strokeWidth] as? Float, strokeWidth)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.strokeWidth] as? Float, strokeWidth)
     }
     
     internal func testShadow() {
@@ -159,7 +159,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.shadow(shadow)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.shadow] as? NSShadow, shadow)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.shadow] as? NSShadow, shadow)
     }
     
     internal func testTextEffect() {
@@ -167,7 +167,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.textEffect(textEffect.rawValue)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.textEffect] as? NSAttributedString.TextEffectStyle, textEffect)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.textEffect] as? NSAttributedString.TextEffectStyle, textEffect)
     }
     
     internal func testAttachment() {
@@ -175,7 +175,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.attachment(attachment)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.attachment] as? NSTextAttachment, attachment)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.attachment] as? NSTextAttachment, attachment)
     }
     
     internal func testLink() {
@@ -183,7 +183,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.link(link)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.link] as? NSURL, link)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.link] as? NSURL, link)
     }
     
     internal func testBaselineOffset() {
@@ -191,7 +191,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.baselineOffset(baselineOffset)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.baselineOffset] as? Float, baselineOffset)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.baselineOffset] as? Float, baselineOffset)
     }
     
     internal func testUnderlineColor() {
@@ -199,7 +199,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.underlineColor(underlineColor)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.underlineColor] as? Color, underlineColor)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.underlineColor] as? Color, underlineColor)
     }
     
     internal func testStrikethroughColor() {
@@ -207,7 +207,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.strikethroughColor(strikethroughColor)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.strikethroughColor] as? Color, strikethroughColor)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.strikethroughColor] as? Color, strikethroughColor)
     }
     
     internal func testObliqueness() {
@@ -215,7 +215,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.obliqueness(obliqueness)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.obliqueness] as? Float, obliqueness)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.obliqueness] as? Float, obliqueness)
     }
     
     internal func testExpansion() {
@@ -223,7 +223,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.expansion(expansion)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.expansion] as? Float, expansion)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.expansion] as? Float, expansion)
     }
     
     internal func testWritingDirection() {
@@ -231,7 +231,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.writingDirection(writingDirection)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.writingDirection] as? [Int])!, writingDirection) // swiftlint:disable:this force_unwrapping
+        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.writingDirection] as? [Int])!, writingDirection) // swiftlint:disable:this force_unwrapping
     }
     
     internal func testVerticalGlyphForm() {
@@ -239,7 +239,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.verticalGlyphForm(verticalGlyphForm)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.verticalGlyphForm] as? Bool, verticalGlyphForm)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.verticalGlyphForm] as? Bool, verticalGlyphForm)
     }
     
     internal func testTextAlignmentLeft() {
@@ -248,7 +248,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.textAlignmentLeft()
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle)?.alignment, textAlignment)
+        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.paragraphStyle] as? NSMutableParagraphStyle)?.alignment, textAlignment)
     }
     
     internal func testTextAlignmentRight() {
@@ -257,7 +257,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.textAlignmentRight()
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle)?.alignment, textAlignment)
+        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.paragraphStyle] as? NSMutableParagraphStyle)?.alignment, textAlignment)
     }
     
     internal func testTextAlignmentCenter() {
@@ -266,7 +266,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.textAlignmentCenter()
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle)?.alignment, textAlignment)
+        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.paragraphStyle] as? NSMutableParagraphStyle)?.alignment, textAlignment)
     }
     
     internal func testTextAlignmentJustified() {
@@ -275,7 +275,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.textAlignmentJustified()
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle)?.alignment, textAlignment)
+        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.paragraphStyle] as? NSMutableParagraphStyle)?.alignment, textAlignment)
     }
     
     internal func testMultipleAttributes() {
@@ -285,7 +285,7 @@ internal class NSAttributedStringExtensionTests: XCTestCase {
         attributedString = string.attributedString.textAlignmentCenter().font(font)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 2)
-        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle)?.alignment, textAlignment)
-        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.font] as? Font, font)
+        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.paragraphStyle] as? NSMutableParagraphStyle)?.alignment, textAlignment)
+        XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedString.Key.font] as? Font, font)
     }
 }

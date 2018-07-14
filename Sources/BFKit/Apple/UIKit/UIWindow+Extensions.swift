@@ -74,7 +74,7 @@ public extension UIWindow {
         }
         
         var imageSize = CGSize.zero
-        if UIInterfaceOrientationIsPortrait(orientation) {
+        if orientation.isPortrait {
             imageSize = UIScreen.main.bounds.size
         } else {
             imageSize = CGSize(width: UIScreen.main.bounds.size.height, height: UIScreen.main.bounds.size.width)

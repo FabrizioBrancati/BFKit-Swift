@@ -37,7 +37,7 @@ internal class UIButtonExtensionTests: XCTestCase {
         XCTAssertEqual(button.frame.origin.y, 0)
         XCTAssertEqual(button.frame.size.width, 320)
         XCTAssertEqual(button.frame.size.height, 44)
-        XCTAssertEqual(button.title(for: .normal), "Test")
+        XCTAssertEqual(button.title(for: UIControl.State.normal), "Test")
     }
     
     internal func testInitFrameTitleColor() {
@@ -47,7 +47,7 @@ internal class UIButtonExtensionTests: XCTestCase {
         XCTAssertEqual(button.frame.origin.y, 0)
         XCTAssertEqual(button.frame.size.width, 320)
         XCTAssertEqual(button.frame.size.height, 44)
-        XCTAssertEqual(button.title(for: .normal), "Test")
+        XCTAssertEqual(button.title(for: UIControl.State.normal), "Test")
     }
     
     internal func testInitFrameTitleColorHighlightedColor() {
@@ -57,7 +57,7 @@ internal class UIButtonExtensionTests: XCTestCase {
         XCTAssertEqual(button.frame.origin.y, 0)
         XCTAssertEqual(button.frame.size.width, 320)
         XCTAssertEqual(button.frame.size.height, 44)
-        XCTAssertEqual(button.title(for: .normal), "Test")
+        XCTAssertEqual(button.title(for: UIControl.State.normal), "Test")
     }
     
     internal func testInitFrameImageHighlightedImage() {
@@ -77,7 +77,7 @@ internal class UIButtonExtensionTests: XCTestCase {
         XCTAssertEqual(button.frame.origin.y, 0)
         XCTAssertEqual(button.frame.size.width, 320)
         XCTAssertEqual(button.frame.size.height, 44)
-        XCTAssertEqual(button.title(for: .normal), "Test")
+        XCTAssertEqual(button.title(for: UIControl.State.normal), "Test")
         XCTAssertEqual(button.titleLabel?.font?.fontName, "Helvetica")
         XCTAssertEqual(button.titleLabel?.font?.pointSize, 18)
     }
@@ -90,8 +90,8 @@ internal class UIButtonExtensionTests: XCTestCase {
         XCTAssertEqual(button.frame.origin.y, 0)
         XCTAssertEqual(button.frame.size.width, 320)
         XCTAssertEqual(button.frame.size.height, 44)
-        XCTAssertEqual(button.title(for: .normal), "Test")
-        XCTAssertEqual(button.titleColor(for: .normal), UIColor.red)
+        XCTAssertEqual(button.title(for: UIControl.State.normal), "Test")
+        XCTAssertEqual(button.titleColor(for: UIControl.State.normal), UIColor.red)
     }
     
     internal func testSetTitleColorHighlightedColor() {
@@ -102,8 +102,8 @@ internal class UIButtonExtensionTests: XCTestCase {
         XCTAssertEqual(button.frame.origin.y, 0)
         XCTAssertEqual(button.frame.size.width, 320)
         XCTAssertEqual(button.frame.size.height, 44)
-        XCTAssertEqual(button.title(for: .normal), "Test")
-        XCTAssertEqual(button.titleColor(for: .normal), UIColor.red)
-        XCTAssertEqual(button.titleColor(for: .highlighted), UIColor.blue)
+        XCTAssertEqual(button.title(for: UIControl.State.normal), "Test")
+        XCTAssertEqual(button.titleColor(for: UIControl.State.normal), UIColor.red)
+        XCTAssertEqual(button.titleColor(for: UIControl.State.highlighted), UIColor.blue)
     }
 }

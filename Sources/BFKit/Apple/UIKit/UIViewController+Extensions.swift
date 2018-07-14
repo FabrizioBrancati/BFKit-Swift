@@ -62,7 +62,7 @@ public extension UIViewController {
     /// - parameter message: An optional String for the UIAlertController's message.
     /// - parameter actions: An array of actions that will be added to the UIAlertController.
     /// - parameter alertType: The style of the UIAlertController.
-    public func present(title: String, message: String, actions: [UIAlertAction], alertType: UIAlertControllerStyle = .alert) {
+    public func present(title: String, message: String, actions: [UIAlertAction], alertType: UIAlertController.Style = .alert) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: alertType)
         for action in actions {
             alert.addAction(action)

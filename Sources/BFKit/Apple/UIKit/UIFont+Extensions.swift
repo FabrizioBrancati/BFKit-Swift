@@ -435,7 +435,7 @@ public extension UIFont {
         var size = CGSize.zero
         
         if !text.isEmpty {
-            let frame: CGRect = text.boundingRect(with: CGSize(width: width, height: 999_999), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+            let frame: CGRect = text.boundingRect(with: CGSize(width: width, height: 999_999), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
             size = CGSize(width: frame.size.width, height: frame.size.height + 1)
         }
         return size.height

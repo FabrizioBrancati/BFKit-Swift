@@ -43,9 +43,9 @@ public extension UIButton {
     public convenience init(frame: CGRect, title: String, backgroundImage: UIImage? = nil, highlightedBackgroundImage: UIImage? = nil) {
         self.init(frame: frame)
         self.frame = frame
-        setTitle(title, for: .normal)
-        setBackgroundImage(backgroundImage, for: .normal)
-        setBackgroundImage(highlightedBackgroundImage, for: .highlighted)
+        setTitle(title, for: UIControl.State.normal)
+        setBackgroundImage(backgroundImage, for: UIControl.State.normal)
+        setBackgroundImage(highlightedBackgroundImage, for: UIControl.State.highlighted)
     }
     
     /// Create an UIButton in a frame with a title and a color.
@@ -83,8 +83,8 @@ public extension UIButton {
     public convenience init(frame: CGRect, image: UIImage, highlightedImage: UIImage? = nil) {
         self.init(frame: frame)
         self.frame = frame
-        setImage(image, for: .normal)
-        setImage(highlightedImage, for: .highlighted)
+        setImage(image, for: UIControl.State.normal)
+        setImage(highlightedImage, for: UIControl.State.highlighted)
     }
     
     /// Set the title font with a size.
@@ -111,7 +111,7 @@ public extension UIButton {
     ///   - color: Button color
     ///   - highlightedColor: Button highlighted color
     public func setTitleColor(_ color: UIColor, highlightedColor: UIColor) {
-        setTitleColor(color, for: .normal)
-        setTitleColor(highlightedColor, for: .highlighted)
+        setTitleColor(color, for: UIControl.State.normal)
+        setTitleColor(highlightedColor, for: UIControl.State.highlighted)
     }
 }

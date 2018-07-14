@@ -109,7 +109,7 @@ open class BFButton: UIButton {
         
         super.init(frame: frame)
         
-        setImage(image, for: UIControlState())
+        setImage(image, for: UIControl.State())
         overlayImageView = UIImageView(image: highlightedImage)
         overlayImageView.frame = imageView?.frame ?? CGRect.zero
         overlayImageView.bounds = imageView?.bounds ?? CGRect.zero

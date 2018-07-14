@@ -87,7 +87,7 @@ public extension UITableView {
     ///   - separatorInset: Cell separator inset.
     ///   - dataSource: TableView data source.
     ///   - delegate: TableView delegate.
-    public convenience init(frame: CGRect, style: UITableViewStyle, cellSeparatorStyle: UITableViewCellSeparatorStyle, separatorInset: UIEdgeInsets, dataSource: UITableViewDataSource?, delegate: UITableViewDelegate?) {
+    public convenience init(frame: CGRect, style: UITableView.Style, cellSeparatorStyle: UITableViewCell.SeparatorStyle, separatorInset: UIEdgeInsets, dataSource: UITableViewDataSource?, delegate: UITableViewDelegate?) {
         self.init(frame: frame, style: style)
         separatorStyle = cellSeparatorStyle
         self.separatorInset = separatorInset
