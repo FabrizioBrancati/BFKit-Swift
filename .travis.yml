@@ -1,8 +1,8 @@
 env:
   global:
     - IOS_SCHEME="BFKit iOS"
-    - WATCHOS_SCHEME="BFKit watchOS"
     - MACOS_SCHEME="BFKit macOS"
+    - WATCHOS_SCHEME="BFKit watchOS"
     - EXAMPLE_SCHEME="BFKitExample"
 
 matrix:
