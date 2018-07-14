@@ -1,6 +1,6 @@
 //
 //  BFTouchIDTests.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -24,30 +24,22 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
-import Foundation
 @testable import BFKit
+import Foundation
+import XCTest
 
-class BFTouchIDTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testShowTouchID() {
+internal class BFTouchIDTests: XCTestCase {    
+    internal func testShowTouchID() {
         let testExpectation = expectation(description: "Show Touch ID")
         
-        BFTouchID.showTouchID(reason: "Testing", fallbackTitle: "Password") { _ in 
+        BFTouchID.showTouchID(reason: "Testing", fallbackTitle: "Password") { _ in
             XCTAssertTrue(true)
             
             testExpectation.fulfill()
         }
         
-        waitForExpectations(timeout: 5, handler: { error in
+        waitForExpectations(timeout: 5) { error in
             XCTAssertNil(error, "Something went horribly wrong.")
-        })
+        }
     }
 }

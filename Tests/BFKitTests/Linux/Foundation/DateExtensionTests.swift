@@ -1,6 +1,6 @@
 //
 //  DateExtensionTests.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -24,12 +24,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
-import Foundation
 @testable import BFKit
+import Foundation
+import XCTest
 
-class DateExtensionTests: XCTestCase {
-    static let allTests = [
+internal class DateExtensionTests: XCTestCase {
+    internal static let allTests = [
         ("testYear", testYear),
         ("testMonth", testMonth),
         ("testDay", testDay),
@@ -54,24 +54,16 @@ class DateExtensionTests: XCTestCase {
         ("testIsEqual", testIsEqual),
         ("testYesterday", testYesterday),
         ("testDecriptionDateSeparatorUSFormatNanosecond", testDecriptionDateSeparatorUSFormatNanosecond)
-        //("testISO8601", testISO8601),
-        //("testNanosecond", testNanosecond),
-        //("testMonthsBetween", testMonthsBetween),
-        //("testLocalizedWeekday", testLocalizedWeekday),
-        //("testLocalizedMonth", testLocalizedMonth)
+//        ("testISO8601", testISO8601),
+//        ("testNanosecond", testNanosecond),
+//        ("testMonthsBetween", testMonthsBetween),
+//        ("testLocalizedWeekday", testLocalizedWeekday),
+//        ("testLocalizedMonth", testLocalizedMonth)
     ]
     
-    var date = Date(year: 2016, month: 10, day: 9, hour: 10, minute: 9, second: 30)!
+    internal var date = Date(year: 2016, month: 10, day: 9, hour: 10, minute: 9, second: 30)! // swiftlint:disable:this force_unwrapping
     
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testYear() {
+    internal func testYear() {
         date.year = 2017
         
         XCTAssertEqual(date.year, 2017)
@@ -82,7 +74,7 @@ class DateExtensionTests: XCTestCase {
         XCTAssertEqual(date.second, 30)
     }
     
-    func testMonth() {
+    internal func testMonth() {
         date.month = 11
         
         XCTAssertEqual(date.year, 2016)
@@ -93,7 +85,7 @@ class DateExtensionTests: XCTestCase {
         XCTAssertEqual(date.second, 30)
     }
     
-    func testDay() {
+    internal func testDay() {
         date.day = 10
         
         XCTAssertEqual(date.year, 2016)
@@ -104,7 +96,7 @@ class DateExtensionTests: XCTestCase {
         XCTAssertEqual(date.second, 30)
     }
     
-    func testHour() {
+    internal func testHour() {
         date.hour = 11
         
         XCTAssertEqual(date.year, 2016)
@@ -115,7 +107,7 @@ class DateExtensionTests: XCTestCase {
         XCTAssertEqual(date.second, 30)
     }
     
-    func testMinute() {
+    internal func testMinute() {
         date.minute = 10
         
         XCTAssertEqual(date.year, 2016)
@@ -126,7 +118,7 @@ class DateExtensionTests: XCTestCase {
         XCTAssertEqual(date.second, 30)
     }
     
-    func testSecond() {
+    internal func testSecond() {
         date.second = 40
         
         XCTAssertEqual(date.year, 2016)
@@ -137,11 +129,11 @@ class DateExtensionTests: XCTestCase {
         XCTAssertEqual(date.second, 40)
     }
     
-    func testWeekday() {
+    internal func testWeekday() {
         XCTAssertEqual(date.weekday, 1)
     }
     
-    func testInitYearMonthDayHourMinuteSecond() {
+    internal func testInitYearMonthDayHourMinuteSecond() {
         guard let newDate = Date(year: 2016, month: 10, day: 9) else {
             XCTFail("`testInitYearMonthDayHourMinuteSecond` error")
             return
@@ -152,7 +144,7 @@ class DateExtensionTests: XCTestCase {
         XCTAssertEqual(newDate.day, 9)
     }
     
-    func testInitParseFormat() {
+    internal func testInitParseFormat() {
         guard let parsed = Date(parse: "2016-10-09") else {
             XCTFail("`testInitParseFormat` error")
             return
@@ -163,7 +155,7 @@ class DateExtensionTests: XCTestCase {
         XCTAssertEqual(parsed.day, 9)
     }
     
-    func testInitDateTime() {
+    internal func testInitDateTime() {
         guard let newDate = Date(year: 2016, month: 10, day: 9), let composed = Date(date: newDate, time: date) else {
             XCTFail("`testInitDateTime` error")
             return
@@ -176,7 +168,7 @@ class DateExtensionTests: XCTestCase {
         XCTAssertEqual(composed.minute, 9)
     }
     
-    func testInitISO8601() {
+    internal func testInitISO8601() {
         let iso8601: String = "2016-10-09T10:30:45.500Z"
         let date = Date(iso8601: iso8601)
         
@@ -193,7 +185,7 @@ class DateExtensionTests: XCTestCase {
         XCTAssertNil(dateNil)
     }
     
-    func testDaysBetween() {
+    internal func testDaysBetween() {
         guard let newDate = Date(year: 2016, month: 9, day: 9) else {
             XCTFail("`testDaysBetween` error")
             return
@@ -203,13 +195,13 @@ class DateExtensionTests: XCTestCase {
         XCTAssertEqual(daysBetween, 30)
     }
     
-    func testIsToday() {
+    internal func testIsToday() {
         let isToday = date.isToday()
         
         XCTAssertFalse(isToday)
     }
     
-    func testIsSameDay() {
+    internal func testIsSameDay() {
         guard let newDate = Date(year: 2016, month: 10, day: 9) else {
             XCTFail("`testIsSameDay` error")
             return
@@ -219,7 +211,7 @@ class DateExtensionTests: XCTestCase {
         XCTAssertTrue(isSame)
     }
     
-    func testAddingDays() {
+    internal func testAddingDays() {
         guard let dateAdded = date.addingDays(10) else {
             XCTFail("`testAddingDays` error")
             return
@@ -231,7 +223,7 @@ class DateExtensionTests: XCTestCase {
         XCTAssertEqual(date.day, 19)
     }
     
-    func testAddDays() {
+    internal func testAddDays() {
         date.addDays(10)
         
         XCTAssertEqual(date.year, 2016)
@@ -239,19 +231,19 @@ class DateExtensionTests: XCTestCase {
         XCTAssertEqual(date.day, 19)
     }
     
-    func testYearString() {
+    internal func testYearString() {
         let year = date.yearString()
         
         XCTAssertEqual(year, "2016")
     }
     
-    func testDateString() {
+    internal func testDateString() {
         let dateString = date.dateString()
         
         XCTAssertEqual(dateString, "2016-10-09")
     }
     
-    func testShortDate() {
+    internal func testShortDate() {
         let shortDate = date.shortDate()
         
         XCTAssertEqual(shortDate.year, 2016)
@@ -259,7 +251,7 @@ class DateExtensionTests: XCTestCase {
         XCTAssertEqual(shortDate.day, 9)
     }
     
-    func testIsGreaterThan() {
+    internal func testIsGreaterThan() {
         guard let newDate = Date(year: 2016, month: 11, day: 9) else {
             XCTFail("`testIsGreaterThan` error")
             return
@@ -269,7 +261,7 @@ class DateExtensionTests: XCTestCase {
         XCTAssertTrue(isGreaterThan)
     }
     
-    func testIsLessThan() {
+    internal func testIsLessThan() {
         guard let newDate = Date(year: 2016, month: 9, day: 9) else {
             XCTFail("`testIsLessThan` error")
             return
@@ -279,7 +271,7 @@ class DateExtensionTests: XCTestCase {
         XCTAssertTrue(isLessThan)
     }
     
-    func testIsEqual() {
+    internal func testIsEqual() {
         guard let newDate = Date(year: 2016, month: 10, day: 9) else {
             XCTFail("`testIsEqual` error")
             return
@@ -289,7 +281,7 @@ class DateExtensionTests: XCTestCase {
         XCTAssertTrue(isEqual)
     }
     
-    func testYesterday() {
+    internal func testYesterday() {
         let yesterday = date.yesterday()
         
         XCTAssertEqual(yesterday.year, 2016)
@@ -297,47 +289,47 @@ class DateExtensionTests: XCTestCase {
         XCTAssertEqual(yesterday.day, 8)
     }
     
-    func testDecriptionDateSeparatorUSFormatNanosecond() {
+    internal func testDecriptionDateSeparatorUSFormatNanosecond() {
         let description = date.description(dateSeparator: "-", usFormat: false, nanosecond: false)
         
         XCTAssertEqual(description, "10-09-2016 10:09:30")
     }
     
     #if !os(Linux)
-        func testISO8601() {
+        internal func testISO8601() {
             var isoDate = date
             isoDate.hour = 12
             let iso8601: String = isoDate.iso8601()
             
             XCTAssertEqual(iso8601, "\(isoDate.year)-\(isoDate.month)-0\(isoDate.day)T\(isoDate.hour - TimeZone.current.secondsFromGMT() / 60 / 60):0\(isoDate.minute):\(isoDate.second).00\(isoDate.nanosecond)Z")
         }
-    
-        func testNanosecond() {
-            XCTAssertEqual(date.nanosecond, 0)
-        }
-    
-        func testMonthsBetween() {
-            guard let newDate = Date(year: 2016, month: 5, day: 9) else {
-                XCTFail("`testMonthsBetween` error")
-                return
-            }
-            let monthsBetween = newDate.monthsBetween(date)
-            
-            XCTAssertEqual(monthsBetween, 5)
-        }
-    
-        func testLocalizedWeekday() {
-            let date = Date(timeIntervalSinceReferenceDate: 0)
-            let localizedWeekday = date.localizedWeekday()
-            
-            XCTAssert(localizedWeekday == "Monday" || localizedWeekday == "Lunedì")
-        }
-        
-        func testLocalizedMonth() {
-            let date = Date(timeIntervalSinceReferenceDate: 0)
-            let localizedMonth = date.localizedMonth()
-            
-            XCTAssert(localizedMonth == "January" || localizedMonth == "Gennaio")
-        }
     #endif
+    
+    internal func testNanosecond() {
+        XCTAssertEqual(date.nanosecond, 0)
+    }
+
+    internal func testMonthsBetween() {
+        guard let newDate = Date(year: 2016, month: 5, day: 9) else {
+            XCTFail("`testMonthsBetween` error")
+            return
+        }
+        let monthsBetween = newDate.monthsBetween(date)
+        
+        XCTAssertEqual(monthsBetween, 5)
+    }
+
+    internal func testLocalizedWeekday() {
+        let date = Date(timeIntervalSinceReferenceDate: 0)
+        let localizedWeekday = date.localizedWeekday()
+        
+        XCTAssert(localizedWeekday == "Monday" || localizedWeekday == "Lunedì")
+    }
+    
+    internal func testLocalizedMonth() {
+        let date = Date(timeIntervalSinceReferenceDate: 0)
+        let localizedMonth = date.localizedMonth()
+        
+        XCTAssert(localizedMonth == "January" || localizedMonth == "Gennaio")
+    }
 }

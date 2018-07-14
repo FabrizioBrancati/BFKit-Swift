@@ -1,6 +1,6 @@
 //
 //  BFTouchID.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -29,9 +29,9 @@ import LocalAuthentication
 
 // MARK: - BFTouchID struct
 
+@available(*, deprecated: 3.2, message: "BFTouchID is deprecated and will be removed in BFKit-Swift 4. Please use BFBiometrics enum instead.")
 /// This struct adds some useful functions to use TouchID.
-@available(*, deprecated: 3.0, message: "BFTouchID is deprecated and will be removed in BFKit-Swift 4. Please use BFBiometrics struct instead.")
-public struct BFTouchID {
+public enum BFTouchID {
     // MARK: - Variables
     
     /// Touch result enum:
@@ -65,6 +65,8 @@ public struct BFTouchID {
     
     // MARK: - Functions
     
+    // swiftlint:disable cyclomatic_complexity
+    
     /// Shows the TouchID authentication.
     ///
     /// - Parameters:
@@ -73,18 +75,18 @@ public struct BFTouchID {
     ///   - completion:    Completion handler.
     ///   - result:        Returns the TouchID result, from the TouchIDResult enum.
     public static func showTouchID(reason: String, fallbackTitle: String? = nil, completion: @escaping (_ result: TouchIDResult) -> Void) {
-        let context: LAContext = LAContext()
+        let context = LAContext()
         
         context.localizedFallbackTitle = fallbackTitle
         
         var error: NSError?
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason, reply: { (success: Bool, error: Error?) -> Void in
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { (success: Bool, error: Error?) -> Void in
                 if success {
                     completion(.success)
-                } else {
+                } else if let error = error {
                     if #available(iOS 9.0, *) {
-                        switch error! {
+                        switch error {
                         case LAError.authenticationFailed:
                             completion(.authenticationFailed)
                         case LAError.userCancel:
@@ -103,7 +105,7 @@ public struct BFTouchID {
                             completion(.error)
                         }
                     } else {
-                        switch error! {
+                        switch error {
                         case LAError.authenticationFailed:
                             completion(.authenticationFailed)
                         case LAError.userCancel:
@@ -117,10 +119,15 @@ public struct BFTouchID {
                         }
                     }
                 }
-            })
+            }
         } else {
+            guard let error = error else {
+                completion(.error)
+                return
+            }
+            
             if #available(iOS 9.0, *) {
-                switch error! {
+                switch error {
                 case LAError.passcodeNotSet:
                     completion(.passcodeNotSet)
                 case LAError.touchIDNotAvailable:
@@ -137,7 +144,7 @@ public struct BFTouchID {
                     completion(.error)
                 }
             } else {
-                switch error! {
+                switch error {
                 case LAError.passcodeNotSet:
                     completion(.passcodeNotSet)
                 case LAError.touchIDNotAvailable:

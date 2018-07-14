@@ -1,6 +1,6 @@
 //
 //  UITextFieldExtensionTests.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -24,22 +24,13 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
+@testable import BFKit
 import Foundation
 import UIKit
-@testable import BFKit
+import XCTest
 
-class UITextFieldExtensionTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testInitFramePlaceholderFontFontSizeTextColorReturnKeyTypeKeyboardTypeSecureBorderStyleAutocapitalizationKeyboardAppearanceEnablesReturnKeyAutomaticallyClearButtonModeAutocorrectionTypeDelegate() {
+internal class UITextFieldExtensionTests: XCTestCase {
+    internal func testInitFramePlaceholderFontFontSizeTextColorReturnKeyTypeKeyboardTypeSecureBorderStyleAutocapitalizationKeyboardAppearanceEnablesReturnKeyAutomaticallyClearButtonModeAutocorrectionTypeDelegate() {
         let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 320, height: 35), placeholder: "This is a test", font: .helvetica, fontSize: 20, textColor: UIColor.black, returnKeyType: .done, keyboardType: .default, secure: false, borderStyle: .roundedRect, autocapitalizationType: .sentences, keyboardAppearance: .dark, enablesReturnKeyAutomatically: true, clearButtonMode: .whileEditing, autocorrectionType: .default, delegate: nil)
         
         XCTAssertEqual(textField.frame, CGRect(x: 0, y: 0, width: 320, height: 35))
@@ -58,8 +49,8 @@ class UITextFieldExtensionTests: XCTestCase {
         XCTAssertNil(textField.delegate)
     }
     
-    func testInitFramePlaceholderFontTextColorReturnKeyTypeKeyboardTypeSecureBorderStyleAutocapitalizationKeyboardAppearanceEnablesReturnKeyAutomaticallyClearButtonModeAutocorrectionTypeDelegate() {
-        let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 320, height: 35), placeholder: "This is a test", font: UIFont(fontName: .helvetica, size: 20), textColor: UIColor.black, returnKeyType: .done, keyboardType: .default, secure: false, borderStyle: .roundedRect, autocapitalizationType: .sentences, keyboardAppearance: .dark, enablesReturnKeyAutomatically: true, clearButtonMode: .whileEditing, autocorrectionType: .default, delegate: nil)
+    internal func testInitFramePlaceholderFontTextColorReturnKeyTypeKeyboardTypeSecureBorderStyleAutocapitalizationKeyboardAppearanceEnablesReturnKeyAutomaticallyClearButtonModeAutocorrectionTypeDelegate() {
+        let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 320, height: 35), placeholder: "This is a test", font: UIFont(fontName: .helvetica, size: 20)!, textColor: UIColor.black, returnKeyType: .done, keyboardType: .default, secure: false, borderStyle: .roundedRect, autocapitalizationType: .sentences, keyboardAppearance: .dark, enablesReturnKeyAutomatically: true, clearButtonMode: .whileEditing, autocorrectionType: .default, delegate: nil) // swiftlint:disable:this force_unwrapping
         
         XCTAssertEqual(textField.frame, CGRect(x: 0, y: 0, width: 320, height: 35))
         XCTAssertEqual(textField.placeholder, "This is a test")
@@ -77,7 +68,7 @@ class UITextFieldExtensionTests: XCTestCase {
         XCTAssertNil(textField.delegate)
     }
     
-    func testPasteFromPasteboard() {
+    internal func testPasteFromPasteboard() {
         let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 320, height: 35))
         UIPasteboard.copy(text: "This is a test")
         textField.pasteFromPasteboard()
@@ -85,7 +76,7 @@ class UITextFieldExtensionTests: XCTestCase {
         XCTAssertEqual(textField.text, "This is a test")
     }
     
-    func testCopyToPasteboard() {
+    internal func testCopyToPasteboard() {
         let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 320, height: 35))
         textField.text = "This is a test!"
         textField.copyToPasteboard()

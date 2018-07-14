@@ -1,6 +1,6 @@
 //
 //  BFPassword.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -29,7 +29,7 @@ import Foundation
 // MARK: - BFPassword struct
 
 /// This struct adds some useful functions to manage passwords.
-public struct BFPassword {
+public enum BFPassword {
     // MARK: - Variables
     
     /// Password strength level enum, from 0 (min) to 6 (max).
@@ -83,7 +83,7 @@ public struct BFPassword {
     /// - Parameter password: Password to be scored.
     /// - Returns: Return the score based on password length.
     private static func lengthScore(_ password: String) -> Int {
-        let lenght = password.length
+        let lenght = password.count
         
         switch lenght {
         case 1...4:

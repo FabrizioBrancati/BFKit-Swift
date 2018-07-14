@@ -1,6 +1,6 @@
 //
 //  UIScreenExtensionTests.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -24,45 +24,37 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
+@testable import BFKit
 import Foundation
 import UIKit
-@testable import BFKit
+import XCTest
 
-class UIScreenExtensionTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testScreenWidth() {
+internal class UIScreenExtensionTests: XCTestCase {
+    internal func testScreenWidth() {
         XCTAssertEqual(UIScreen.screenWidth, 414)
     }
     
-    func testScreenHeight() {
+    internal func testScreenHeight() {
         XCTAssertEqual(UIScreen.screenHeight, 736)
     }
     
-    func testMaxScreenLength() {
+    internal func testMaxScreenLength() {
         XCTAssertEqual(UIScreen.maxScreenLength, 736)
     }
     
-    func testMinScreenLength() {
+    internal func testMinScreenLength() {
         XCTAssertEqual(UIScreen.minScreenLength, 414)
     }
     
-    func testIsRetina() {
+    internal func testIsRetina() {
         XCTAssertFalse(UIScreen.isRetina())
     }
     
-    func testIsRetinaHD() {
+    internal func testIsRetinaHD() {
         XCTAssertTrue(UIScreen.isRetinaHD())
     }
     
-    func testFixedScreenSize() {
+    internal func testFixedScreenSize() {
         XCTAssertEqual(UIScreen.fixedScreenSize(), CGSize(width: 414, height: 736))
     }
 }

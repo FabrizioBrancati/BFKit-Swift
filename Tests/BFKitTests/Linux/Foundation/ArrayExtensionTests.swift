@@ -1,6 +1,6 @@
 //
 //  ArrayExtensionTests.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -24,12 +24,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
-import Foundation
 @testable import BFKit
+import Foundation
+import XCTest
 
-class ArrayExtensionTests: XCTestCase {
-    static let allTests = [
+internal class ArrayExtensionTests: XCTestCase {
+    internal static let allTests = [
         ("testFlattenEmpty", testFlattenEmpty),
         ("testFlattenOneElement", testFlattenOneElement),
         ("testFlattenNestedElements", testFlattenNestedElements),
@@ -44,38 +44,30 @@ class ArrayExtensionTests: XCTestCase {
         ("testShuffled", testShuffled)
     ]
     
-    var array = [1, 2, 3, 4, 5]
+    internal var array = [1, 2, 3, 4, 5]
     
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testFlattenEmpty() {
+    internal func testFlattenEmpty() {
         let flattened: [Int]? = flatten([]) as? [Int]
         
         XCTAssertNotNil(flattened)
         XCTAssertEqual(flattened ?? [], [])
     }
     
-    func testFlattenOneElement() {
+    internal func testFlattenOneElement() {
         let flattened: [Int]? = flatten([1])
         
         XCTAssertNotNil(flattened)
         XCTAssertEqual(flattened ?? [], [1])
     }
     
-    func testFlattenNestedElements() {
+    internal func testFlattenNestedElements() {
         let flattened: [Int]? = flatten([1, 2, [3, 4, [5, 6]], 7, [[[[[8]]]]]]) as? [Int]
         
         XCTAssertNotNil(flattened)
         XCTAssertEqual(flattened ?? [], [1, 2, 3, 4, 5, 6, 7, 8])
     }
     
-    func testFlattenMixed() {
+    internal func testFlattenMixed() {
         let flattened: [Any]? = flatten([1, 2.0, ["3", true, [5, 6]], 7, [[[[[8]]]]]])
         
         XCTAssertNotNil(flattened)
@@ -89,11 +81,11 @@ class ArrayExtensionTests: XCTestCase {
         XCTAssertEqual(flattened?[7] as? Int, 8)
     }
     
-    func testIsNotEmpty() {
+    internal func testIsNotEmpty() {
         XCTAssertTrue(array.isNotEmpty)
     }
     
-    func testCircleObjectAt() {
+    internal func testCircleObjectAt() {
         let objectRight = array.circleObject(at: 6)
         let objectLeft = array.circleObject(at: -6)
         
@@ -101,7 +93,7 @@ class ArrayExtensionTests: XCTestCase {
         XCTAssertEqual(objectLeft, 5)
     }
     
-    func testRandom() {
+    internal func testRandom() {
         var random: [Int] = []
         
         for _ in 1...100 {
@@ -135,13 +127,13 @@ class ArrayExtensionTests: XCTestCase {
         }
     }
     
-    func testRemove() {
+    internal func testRemove() {
         var arrayCopy = array
         arrayCopy.remove(4)
         XCTAssertEqual(arrayCopy, [1, 2, 3, 5])
     }
     
-    func testSafeObjectAt() {
+    internal func testSafeObjectAt() {
         let object = array.safeObject(at: 4)
         let objectNil = array.safeObject(at: 6)
         
@@ -149,7 +141,7 @@ class ArrayExtensionTests: XCTestCase {
         XCTAssertNil(objectNil)
     }
     
-    func testSwapFromTo() {
+    internal func testSwapFromTo() {
         array.swap(from: 0, to: 4)
         
         XCTAssertEqual(array[4], 1)
@@ -160,13 +152,13 @@ class ArrayExtensionTests: XCTestCase {
         XCTAssertEqual(array[0], 2)
     }
     
-    func testShuffle() {
+    internal func testShuffle() {
         array.shuffle()
         
         XCTAssertEqual(array.count, 5)
     }
     
-    func testShuffled() {
+    internal func testShuffled() {
         let shuffled = array.shuffled()
         
         XCTAssertEqual(shuffled.count, 5)

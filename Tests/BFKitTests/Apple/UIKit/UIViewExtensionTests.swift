@@ -1,6 +1,6 @@
 //
 //  UIViewExtensionTests.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -24,32 +24,28 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
+@testable import BFKit
 import Foundation
 import UIKit
-@testable import BFKit
+import XCTest
 
-class UIViewExtensionTests: XCTestCase {
-    var view: UIView = UIView()
+internal class UIViewExtensionTests: XCTestCase {
+    internal var view = UIView()
     
-    override func setUp() {
+    override internal func setUp() {
         super.setUp()
         
         view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
     }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testInitFrameBackgroundColor() {
+
+    internal func testInitFrameBackgroundColor() {
         let coloredView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 100), backgroundColor: UIColor.red)
         
         XCTAssertEqual(coloredView.frame, CGRect(x: 0, y: 0, width: 200, height: 100))
         XCTAssertEqual(coloredView.backgroundColor, UIColor.red)
     }
     
-    func testBorderColorRadiusWidth() {
+    internal func testBorderColorRadiusWidth() {
         view.border(color: UIColor.red, radius: 5, width: 2)
         
         XCTAssertEqual(view.layer.borderWidth, 2)
@@ -57,7 +53,7 @@ class UIViewExtensionTests: XCTestCase {
         XCTAssertEqual(view.layer.borderColor, UIColor.red.cgColor)
     }
     
-    func testRemoveBorder() {
+    internal func testRemoveBorder() {
         view.border(color: UIColor.red, radius: 5, width: 2)
         view.removeBorder()
         
@@ -66,7 +62,7 @@ class UIViewExtensionTests: XCTestCase {
         XCTAssertNil(view.layer.borderColor)
     }
     
-    func testCornerRadiusCornersRadius() {
+    internal func testCornerRadiusCornersRadius() {
         view.cornerRadius(corners: .allCorners, radius: 5)
         
         if #available(iOS 11, *) {
@@ -77,13 +73,13 @@ class UIViewExtensionTests: XCTestCase {
         }
     }
     
-    func testCornerRadiusRadius() {
+    internal func testCornerRadiusRadius() {
         view.cornerRadius(5)
         
         XCTAssertEqual(view.layer.cornerRadius, 5)
     }
     
-    func testShadowOffsetOpacityRadiusCornerRadiusColor() {
+    internal func testShadowOffsetOpacityRadiusCornerRadiusColor() {
         view.shadow(offset: CGSize(width: 5, height: 5), opacity: 0.5, radius: 5, cornerRadius: 5, color: UIColor.red)
         
         XCTAssertEqual(view.layer.shadowColor, UIColor.red.cgColor)
@@ -93,7 +89,7 @@ class UIViewExtensionTests: XCTestCase {
         XCTAssertEqual(view.layer.cornerRadius, 5)
     }
     
-    func testRemoveShadow() {
+    internal func testRemoveShadow() {
         view.shadow(offset: CGSize(width: 5, height: 5), opacity: 0.5, radius: 5, cornerRadius: 5, color: UIColor.red)
         view.removeShadow()
         
@@ -104,7 +100,7 @@ class UIViewExtensionTests: XCTestCase {
         XCTAssertEqual(view.layer.cornerRadius, 0)
     }
     
-    func testGradientColorsDirection() {
+    internal func testGradientColorsDirection() {
         view.gradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .vertical)
         view.gradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .horizontal)
         view.gradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalLeftTopToRightDown)
@@ -116,13 +112,13 @@ class UIViewExtensionTests: XCTestCase {
         XCTAssertEqual(view.frame, CGRect(x: 0, y: 0, width: 200, height: 100))
     }
     
-    func testSmoothGradientColorsDirectionTypeLinear() {
+    internal func testSmoothGradientColorsDirectionTypeLinear() {
         view.smoothGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .custom(startPoint: CGPoint(x: 10, y: 10), endPoint: CGPoint(x: 90, y: 90)), type: .linear)
         
         XCTAssertEqual(view.frame, CGRect(x: 0, y: 0, width: 200, height: 100))
     }
     
-    func testSmoothGradientColorsDirectionTypeGradient() {
+    internal func testSmoothGradientColorsDirectionTypeGradient() {
         view.smoothGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .vertical, type: .linear)
         view.smoothGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .horizontal, type: .linear)
         view.smoothGradient(colors: [UIColor.red, UIColor.green, UIColor.blue], direction: .diagonalLeftTopToRightDown, type: .linear)
@@ -134,13 +130,13 @@ class UIViewExtensionTests: XCTestCase {
         XCTAssertEqual(view.frame, CGRect(x: 0, y: 0, width: 200, height: 100))
     }
     
-    func testApplyMotionEffect() {
+    internal func testApplyMotionEffect() {
         view.applyMotionEffects()
         
         XCTAssertNotEqual(view.motionEffects, [])
     }
     
-    func testScreenshotSave() {
+    internal func testScreenshotSave() {
         guard let screenshot = view.screenshot(save: true) else {
             XCTFail("`testScreenshotSave` error")
             return
@@ -149,7 +145,7 @@ class UIViewExtensionTests: XCTestCase {
         XCTAssertNotNil(screenshot)
     }
     
-    func testRemoveAllSubviews() {
+    internal func testRemoveAllSubviews() {
         let view2 = UIView()
         view.addSubview(view2)
         
@@ -160,31 +156,31 @@ class UIViewExtensionTests: XCTestCase {
         XCTAssertEqual(view.subviews.count, 0)
     }
     
-    func testShakeCountDurationTranslation() {
+    internal func testShakeCountDurationTranslation() {
         view.shake(count: 5, duration: 1, translation: 10)
         
         XCTAssertNotNil(view.layer.animation(forKey: "shake"))
     }
     
-    func testPulseCountDuration() {
+    internal func testPulseCountDuration() {
         view.pulse(count: 5, duration: 1)
         
         XCTAssertNotNil(view.layer.animation(forKey: "pulse"))
     }
     
-    func testHeartbeatMaxSizeDurationPerBeat() {
+    internal func testHeartbeatMaxSizeDurationPerBeat() {
         view.heartbeat(count: 5, maxSize: 1.4, durationPerBeat: 1)
         
         XCTAssertNotNil(view.layer.animation(forKey: "heartbeat"))
     }
     
-    func testFlipDurationDirection() {
+    internal func testFlipDurationDirection() {
         view.flip(duration: 1, direction: .top)
         
-        //XCTAssertNotNil(view.layer.action(forKey: "flip"))
+//        XCTAssertNotNil(view.layer.action(forKey: "flip"))
     }
     
-    func testTranslateAroundTopViewDurationDIrectionRepeatAnimationStartFromEdge() {
+    internal func testTranslateAroundTopViewDurationDIrectionRepeatAnimationStartFromEdge() {
         let topView = UIView(frame: CGRect(x: 0, y: 0, width: 1000, height: 100))
         view.translateAround(topView: topView, duration: 1, direction: .leftToRight, repeatAnimation: true, startFromEdge: true)
         view.translateAround(topView: topView, duration: 1, direction: .rightToLeft, repeatAnimation: false, startFromEdge: false)
@@ -193,7 +189,7 @@ class UIViewExtensionTests: XCTestCase {
         XCTAssertEqual(view.frame.height, 100)
     }
     
-    func testAnimatePathCountDurationAutoreverses() {
+    internal func testAnimatePathCountDurationAutoreverses() {
         let path = UIBezierPath()
         path.addLine(to: CGPoint(x: 100, y: 100))
         view.animate(path: path, count: 1, duration: 1, autoreverses: false)
@@ -201,43 +197,43 @@ class UIViewExtensionTests: XCTestCase {
         XCTAssertNotNil(view.layer.animation(forKey: "animateAlongPath"))
     }
     
-    func testBorderWidth() {
+    internal func testBorderWidth() {
         view.borderWidth = 2
         
         XCTAssertEqual(view.borderWidth, 2)
     }
     
-    func testBorderColor() {
+    internal func testBorderColor() {
         view.borderColor = UIColor.red
         
         XCTAssertEqual(view.borderColor, UIColor.red)
     }
     
-    func testMaskToBounds() {
+    internal func testMaskToBounds() {
         view.maskToBounds = true
         
         XCTAssertTrue(view.maskToBounds)
     }
     
-    func testCornerRadius() {
+    internal func testCornerRadius() {
         view.cornerRadius = 5
         
         XCTAssertEqual(view.cornerRadius, 5)
     }
     
-    func testShadowColor() {
+    internal func testShadowColor() {
         view.shadowColor = UIColor.blue
         
         XCTAssertEqual(view.shadowColor, UIColor.blue)
     }
     
-    func testShadowOpacity() {
+    internal func testShadowOpacity() {
         view.shadowOpacity = 0.5
         
         XCTAssertEqual(view.shadowOpacity, 0.5)
     }
     
-    func testShadowOffsetX() {
+    internal func testShadowOffsetX() {
         view.shadowOffsetX = 2
         let shadowOffsetX = view.shadowOffsetX
         
@@ -245,7 +241,7 @@ class UIViewExtensionTests: XCTestCase {
         XCTAssertEqual(shadowOffsetX, 2)
     }
     
-    func testShadowOffsetY() {
+    internal func testShadowOffsetY() {
         view.shadowOffsetY = 2
         let shadowOffsetY = view.shadowOffsetY
         
@@ -253,7 +249,7 @@ class UIViewExtensionTests: XCTestCase {
         XCTAssertEqual(shadowOffsetY, 2)
     }
     
-    func testShadowRadius() {
+    internal func testShadowRadius() {
         view.shadowRadius = 5
         
         XCTAssertEqual(view.shadowRadius, 5)

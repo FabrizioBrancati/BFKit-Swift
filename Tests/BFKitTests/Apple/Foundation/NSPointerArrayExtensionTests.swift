@@ -1,6 +1,6 @@
 //
 //  NSPointerArrayExtensionTests.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -24,12 +24,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
-import Foundation
 @testable import BFKit
+import Foundation
+import XCTest
 
-class NSPointerArrayExtensionTests: XCTestCase {
-    static let allTests = [
+internal class NSPointerArrayExtensionTests: XCTestCase {
+    internal static let allTests = [
         ("testAdd", testAdd),
         ("testInsert", testInsert),
         ("testReplace", testReplace),
@@ -37,19 +37,11 @@ class NSPointerArrayExtensionTests: XCTestCase {
         ("testRemove", testRemove)
     ]
     
-    let array = NSPointerArray.weakObjects()
+    internal let array = NSPointerArray.weakObjects()
     
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testAdd() {
-        let array1: NSArray = NSArray(array: [1, 2])
-        let array2: NSArray = NSArray(array: [3, 4])
+    internal func testAdd() {
+        let array1 = NSArray(array: [1, 2])
+        let array2 = NSArray(array: [3, 4])
         
         array.add(array1)
         array.add(array2)
@@ -62,9 +54,9 @@ class NSPointerArrayExtensionTests: XCTestCase {
         XCTAssertEqual(array2Test, array2)
     }
     
-    func testInsert() {
-        let array1: NSArray = NSArray(array: [1, 2])
-        let array2: NSArray = NSArray(array: [3, 4])
+    internal func testInsert() {
+        let array1 = NSArray(array: [1, 2])
+        let array2 = NSArray(array: [3, 4])
         
         array.add(array1)
         array.insert(array2, at: 0)
@@ -77,9 +69,9 @@ class NSPointerArrayExtensionTests: XCTestCase {
         XCTAssertEqual(array2Test, array1)
     }
     
-    func testReplace() {
-        let array1: NSArray = NSArray(array: [1, 2])
-        let array2: NSArray = NSArray(array: [3, 4])
+    internal func testReplace() {
+        let array1 = NSArray(array: [1, 2])
+        let array2 = NSArray(array: [3, 4])
         
         array.add(array1)
         array.replace(at: 0, with: array2)
@@ -90,8 +82,8 @@ class NSPointerArrayExtensionTests: XCTestCase {
         XCTAssertEqual(array1Test, array2)
     }
     
-    func testGet() {
-        let array1: NSArray = NSArray(array: [1, 2])
+    internal func testGet() {
+        let array1 = NSArray(array: [1, 2])
         
         array.add(array1)
         
@@ -102,16 +94,16 @@ class NSPointerArrayExtensionTests: XCTestCase {
         XCTAssertNil(arrayNil)
     }
     
-    func testRemove() {
-        let array1: NSArray = NSArray(array: [1, 2])
-        let array2: NSArray = NSArray(array: [3, 4])
+    internal func testRemove() {
+        let array1 = NSArray(array: [1, 2])
+        let array2 = NSArray(array: [3, 4])
         
         array.add(array1)
         array.add(array2)
         array.remove(at: 0)
         array.remove(at: 10)
         
-        let array2Test: NSArray = array.object(at: 0) as! NSArray // swiftlint:disable:this force_cast
+        let array2Test = array.object(at: 0) as! NSArray // swiftlint:disable:this force_cast
         
         XCTAssertEqual(array2Test, array2)
     }

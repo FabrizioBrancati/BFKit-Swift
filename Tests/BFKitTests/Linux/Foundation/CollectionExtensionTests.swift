@@ -1,6 +1,6 @@
 //
 //  CollectionExtensionTests.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -24,24 +24,16 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
-import Foundation
 @testable import BFKit
+import Foundation
+import XCTest
 
-class CollectionExtensionTests: XCTestCase {
-    static let allTests = [
+internal class CollectionExtensionTests: XCTestCase {
+    internal static let allTests = [
         ("testJSON", testJSON)
     ]
     
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testJSON() {
+    internal func testJSON() {
         let array = [1, 2, 3, 4, 5]
         
         do {

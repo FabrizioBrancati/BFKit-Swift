@@ -1,6 +1,6 @@
 //
 //  DataExtensionTests.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -24,28 +24,20 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
-import Foundation
 @testable import BFKit
+import Foundation
+import XCTest
 
-class DataExtensionTests: XCTestCase {
-    static let allTests = [
+internal class DataExtensionTests: XCTestCase {
+    internal static let allTests = [
         ("testUTF8", testUTF8),
         ("testASCII", testASCII),
         ("testReadableUUID", testReadableUUID)
     ]
     
-    let data = Data(base64Encoded: "VGhpcyBpcyBhIHRlc3Q=")!
+    internal let data = Data(base64Encoded: "VGhpcyBpcyBhIHRlc3Q=")! // swiftlint:disable:this force_unwrapping
     
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testUTF8() {
+    internal func testUTF8() {
         guard let utf8: String = data.utf8() else {
             XCTFail("`testUTF8` error")
             return
@@ -54,7 +46,7 @@ class DataExtensionTests: XCTestCase {
         XCTAssertEqual(utf8, "This is a test")
     }
     
-    func testASCII() {
+    internal func testASCII() {
         guard let ascii: String = data.ascii() else {
             XCTFail("`testASCII` error")
             return
@@ -63,7 +55,7 @@ class DataExtensionTests: XCTestCase {
         XCTAssertEqual(ascii, "This is a test")
     }
     
-    func testReadableUUID() {
+    internal func testReadableUUID() {
         let uuid = "<EFCE4D7D 539A 42C2 80DB 934ACBA28AD3>".data(using: String.Encoding.utf8)?.readableUUID()
         
         XCTAssertNotNil(uuid)

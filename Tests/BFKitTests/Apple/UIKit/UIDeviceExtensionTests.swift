@@ -1,6 +1,6 @@
 //
 //  UIDeviceExtensionTests.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -24,119 +24,111 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
+@testable import BFKit
 import Foundation
 import UIKit
-@testable import BFKit
+import XCTest
 
-class UIDeviceExtensionTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testOsVersionEqual() {
+internal class UIDeviceExtensionTests: XCTestCase {
+    internal func testOsVersionEqual() {
         let osVersion = osVersionEqual("7.0")
         
         XCTAssertFalse(osVersion)
     }
     
-    func testOsVersionGreater() {
+    internal func testOsVersionGreater() {
         let osVersion = osVersionGreaterThan("10.2")
         
         XCTAssertTrue(osVersion)
     }
     
-    func testOsVersionGreaterOrEqual() {
+    internal func testOsVersionGreaterOrEqual() {
         let osVersion = osVersionGreaterThanOrEqual("10.2")
         
         XCTAssertTrue(osVersion)
     }
     
-    func testOsVersionLess() {
-        let osVersion = osVersionLessThan("12.0")
+    internal func testOsVersionLess() {
+        let osVersion = osVersionLessThan("15.0")
         
         XCTAssertTrue(osVersion)
     }
     
-    func testOsVersionLessOrEqual() {
-        let osVersion = osVersionLessThanOrEqual("12.0")
+    internal func testOsVersionLessOrEqual() {
+        let osVersion = osVersionLessThanOrEqual("15.0")
         
         XCTAssertTrue(osVersion)
     }
     
-    func testOsVersion() {
+    internal func testOsVersion() {
         let osVersion = UIDevice.osVersion.substring(to: ".")
         
         XCTAssertEqual(osVersion, "11")
     }
     
-    func testOsMajorVersion() {
+    internal func testOsMajorVersion() {
         let osVersion = UIDevice.osMajorVersion
         
         XCTAssertEqual(osVersion, 11)
     }
     
-    func testHardwareModel() {
+    internal func testHardwareModel() {
         let model = UIDevice.hardwareModel
         
         XCTAssert(model == "i386" || model == "x86_64")
     }
     
-    func testDetailedModel() {
+    internal func testDetailedModel() {
         let model = UIDevice.detailedModel
         
         XCTAssertEqual(model, "Simulator")
     }
     
-    func testCPUFrequency() {
+    internal func testCPUFrequency() {
         let frequency = UIDevice.cpuFrequency
         
         XCTAssertNotEqual(frequency, 0)
     }
     
-    func testBUSFrequency() {
+    internal func testBUSFrequency() {
         let frequency = UIDevice.busFrequency
         
         XCTAssertNotEqual(frequency, 0)
     }
     
-    func testRamSize() {
+    internal func testRamSize() {
         let ramSize = UIDevice.ramSize
         
         XCTAssertNotEqual(ramSize, 0)
     }
     
-    func testCPUSNumber() {
+    internal func testCPUSNumber() {
         let cpusNumber = UIDevice.cpusNumber
         
         XCTAssertNotEqual(cpusNumber, 0)
     }
     
-    func testTotalMemory() {
+    internal func testTotalMemory() {
         let totalMemory = UIDevice.totalMemory
         
         XCTAssertNotEqual(totalMemory, 0)
     }
     
-    func testUserMemory() {
+    internal func testUserMemory() {
         let userMemory = UIDevice.userMemory
         
         XCTAssertNotEqual(userMemory, 0)
     }
     
     @available(iOS 9.0, *)
-    func testIsLowPowerModeEnabled() {
+    internal func testIsLowPowerModeEnabled() {
         let isLowPowerMode = UIDevice.isLowPowerModeEnabled
         
         XCTAssertFalse(isLowPowerMode)
     }
     
     @available(iOS 9.0, *)
-    func testLowPowerModeChanged() {
+    internal func testLowPowerModeChanged() {
         let testExpectation = expectation(description: "Low Power Mode Changed")
         
         UIDevice.lowPowerModeChanged { isLowPowerModeEnabled in
@@ -145,104 +137,127 @@ class UIDeviceExtensionTests: XCTestCase {
             testExpectation.fulfill()
         }
         
-        waitForExpectations(timeout: 5, handler: { error in
+        waitForExpectations(timeout: 5) { error in
             XCTAssertNil(error, "Something went horribly wrong.")
-        })
+        }
     }
     
-    func testIsPhone() {
+    internal func testIsPhone() {
         let device = UIDevice.isPhone()
         
         XCTAssertFalse(device)
     }
     
-    func testIsPad() {
+    internal func testIsPad() {
         let device = UIDevice.isPad()
         
         XCTAssertFalse(device)
     }
     
-    func testIsPod() {
+    internal func testIsPod() {
         let device = UIDevice.isPod()
         
         XCTAssertFalse(device)
     }
     
-    func testIsTV() {
+    internal func testIsTV() {
         let device = UIDevice.isTV()
         
         XCTAssertFalse(device)
     }
     
-    func testIsWatch() {
+    internal func testIsWatch() {
         let device = UIDevice.isWatch()
         
         XCTAssertFalse(device)
     }
     
-    func testIsSimulator() {
+    internal func testIsSimulator() {
         let device = UIDevice.isSimulator()
         
         XCTAssertTrue(device)
     }
     
-    func testIsJailbroken() {
+    internal func testIsJailbroken() {
         let jailbroken = UIDevice.isJailbroken()
         
         XCTAssertTrue(jailbroken)
     }
     
-    func testUptime() {
+    internal func testUptime() {
         let uptime = UIDevice.uptime()
         
         XCTAssertGreaterThan(uptime, 0)
     }
     
-    func testUptimeDate() {
+    internal func testUptimeDate() {
         let uptimeDate = UIDevice.uptimeDate()
         
         XCTAssertLessThan(uptimeDate, Date())
     }
     
-    func testTotalDiskSpace() {
+    internal func testTotalDiskSpace() {
         let totalDiskSpace = UIDevice.totalDiskSpace()
         
         XCTAssertNotEqual(totalDiskSpace, 0.0)
     }
     
-    func testFreeDiskSpace() {
+    internal func testFreeDiskSpace() {
         let freeDiskSpace = UIDevice.freeDiskSpace()
         
         XCTAssertNotEqual(freeDiskSpace, 0.0)
     }
     
-    func testGenerateUniqueIdentifier() {
-        let uuid = UIDevice.generateUniqueIdentifier()
-        let uuid2 = UIDevice.generateUniqueIdentifier()
+    internal func testGenerateUniqueIdentifier() {
+        var uuid = UIDevice.generateUniqueIdentifier()
+        var uuid2 = UIDevice.generateUniqueIdentifier()
         
-        XCTAssertEqual(uuid.length, 36)
+        XCTAssertEqual(uuid.count, 36)
         XCTAssertNotEqual(uuid, uuid2)
         
-        let uuid3 = UIDevice.generateUniqueIdentifier(save: true)
-        let uuid4 = UIDevice.generateUniqueIdentifier(save: true)
+        UserDefaults.standard.set(nil, forKey: BFDeviceIdentifierDefaultsKey)
         
-        XCTAssertEqual(uuid3, uuid4)
+        uuid = UIDevice.generateUniqueIdentifier(save: true)
+        uuid2 = UIDevice.generateUniqueIdentifier(save: true)
+        
+        XCTAssertEqual(uuid, uuid2)
+        
+        UserDefaults.standard.set(nil, forKey: BFDeviceIdentifierDefaultsKey)
+        
+        uuid = UIDevice.generateUniqueIdentifier(save: true, force: true)
+        uuid2 = UIDevice.generateUniqueIdentifier(save: true, force: true)
+        
+        XCTAssertNotEqual(uuid, uuid2)
+        
+        UserDefaults.standard.set(nil, forKey: BFDeviceIdentifierDefaultsKey)
+        
+        uuid = UIDevice.generateUniqueIdentifier(save: true, force: true)
+        uuid2 = UIDevice.generateUniqueIdentifier(save: true)
+        
+        XCTAssertEqual(uuid, uuid2)
+        
+        UserDefaults.standard.set(nil, forKey: BFDeviceIdentifierDefaultsKey)
+        
+        uuid = UIDevice.generateUniqueIdentifier(save: true)
+        uuid2 = UIDevice.generateUniqueIdentifier(save: true, force: true)
+        
+        XCTAssertNotEqual(uuid, uuid2)
     }
     
-    func testSaveAPNSIdentifier() {
+    internal func testSaveAPNSIdentifier() {
         let testExpectation = expectation(description: "Save APNS Identifier")
         let uuid = UIDevice.generateUniqueIdentifier()
         
-        UIDevice.saveAPNSIdentifier(uuid, completion: { isValid, needsUpdate, _, newUUID in
+        UIDevice.saveAPNSIdentifier(uuid) { isValid, needsUpdate, _, newUUID in
             XCTAssertTrue(isValid)
             XCTAssertTrue(needsUpdate)
             XCTAssertNotNil(newUUID)
             
             testExpectation.fulfill()
-        })
+        }
         
-        waitForExpectations(timeout: 5, handler: { error in
+        waitForExpectations(timeout: 5) { error in
             XCTAssertNil(error, "Something went horribly wrong.")
-        })
+        }
     }
 }

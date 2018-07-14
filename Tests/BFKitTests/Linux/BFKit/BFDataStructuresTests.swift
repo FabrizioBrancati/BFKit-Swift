@@ -1,6 +1,6 @@
 //
 //  BFDataStructuresTests.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -24,12 +24,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
-import Foundation
 @testable import BFKit
+import Foundation
+import XCTest
 
-class BFDataStructuresTests: XCTestCase {
-    static let allTests = [
+internal class BFDataStructuresTests: XCTestCase {
+    internal static let allTests = [
         ("testListDescription", testListDescription),
         ("testListDeleteIndex", testListDeleteIndex),
         ("testListDeleteElement", testListDeleteElement),
@@ -47,11 +47,11 @@ class BFDataStructuresTests: XCTestCase {
         ("testStackPush", testStackPush)
     ]
     
-    var list = List<Int>()
-    var queue = Queue<Int>()
-    var stack = Stack<Int>()
+    internal var list = List<Int>()
+    internal var queue = Queue<Int>()
+    internal var stack = Stack<Int>()
     
-    override func setUp() {
+    override internal func setUp() {
         super.setUp()
         
         list.insert(1)
@@ -67,17 +67,13 @@ class BFDataStructuresTests: XCTestCase {
         stack.push(3)
     }
     
-    override func tearDown() {
-        super.tearDown()
-    }
-    
     // MARK: - List tests
     
-    func testListDescription() {
+    internal func testListDescription() {
         XCTAssertNotEqual(list.description, "")
     }
     
-    func testListDeleteIndex() {
+    internal func testListDeleteIndex() {
         list.delete(at: 0)
         
         XCTAssertEqual(list.count, 2, "List hasn't 2 elements")
@@ -85,7 +81,7 @@ class BFDataStructuresTests: XCTestCase {
         XCTAssertEqual(list.search(at: 1), 3, "Element 1 of the list is not 3")
     }
     
-    func testListDeleteElement() {
+    internal func testListDeleteElement() {
         XCTAssertTrue(list.delete(1), "Element delete error")
         XCTAssertEqual(list.count, 2, "List hasn't 2 elements")
         XCTAssertEqual(list.search(at: 0), 2, "Element 0 of the list is not 2")
@@ -93,66 +89,66 @@ class BFDataStructuresTests: XCTestCase {
         XCTAssertFalse(list.delete(4))
     }
     
-    func testListInsert() {
+    internal func testListInsert() {
         list.insert(4)
         
         XCTAssertEqual(list.count, 4)
     }
     
-    func testListSearchIndex() {
+    internal func testListSearchIndex() {
         XCTAssertEqual(list.search(at: 0), 1)
     }
     
-    func testListSearchElement() {
+    internal func testListSearchElement() {
         XCTAssertEqual(list.search(1), 0)
         XCTAssertNil(list.search(4))
     }
     
     // MARK: - Queue tests
     
-    func testQueueDescription() {
+    internal func testQueueDescription() {
         XCTAssertNotEqual(queue.description, "")
     }
     
-    func testQueueDequeue() {
+    internal func testQueueDequeue() {
         XCTAssertTrue(queue.dequeue())
         XCTAssertTrue(queue.dequeue())
         XCTAssertTrue(queue.dequeue())
         XCTAssertFalse(queue.dequeue())
     }
     
-    func testQueueEmpty() {
+    internal func testQueueEmpty() {
         queue.empty()
         XCTAssertFalse(queue.dequeue())
     }
     
-    func testQueueEnqueue() {
+    internal func testQueueEnqueue() {
         queue.enqueue(4)
         XCTAssertEqual(queue.count, 4)
     }
     
-    func testQueueTop() {
+    internal func testQueueTop() {
         XCTAssertEqual(queue.top(), 1)
     }
     
     // MARK: - Stack tests
     
-    func testStackDescription() {
+    internal func testStackDescription() {
         XCTAssertNotEqual(stack.description, "")
     }
     
-    func testStackEmpty() {
+    internal func testStackEmpty() {
         XCTAssertFalse(stack.empty())
     }
     
-    func testStackPop() {
+    internal func testStackPop() {
         let element = stack.pop()
         
         XCTAssertEqual(stack.count, 2)
         XCTAssertEqual(element, 3)
     }
     
-    func testStackPush() {
+    internal func testStackPush() {
         stack.push(4)
         
         XCTAssertEqual(stack.count, 4)

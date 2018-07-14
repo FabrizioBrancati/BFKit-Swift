@@ -1,6 +1,6 @@
 //
 //  UIWebViewExtensionTests.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -24,25 +24,21 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
+@testable import BFKit
 import Foundation
 import UIKit
-@testable import BFKit
+import XCTest
 
-class UIWebViewExtensionTests: XCTestCase {
-    var webView: UIWebView = UIWebView()
+internal class UIWebViewExtensionTests: XCTestCase {
+    internal var webView = UIWebView()
     
-    override func setUp() {
+    override internal func setUp() {
         super.setUp()
         
         webView = UIWebView(frame: CGRect(x: 0, y: 0, width: 320, height: 500))
     }
     
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testLoadWebsite() {
+    internal func testLoadWebsite() {
         webView.loadWebsite("https://www.fabriziobrancati.com")
         
         guard let html = webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('html')[0].innerHTML") else {

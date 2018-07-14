@@ -1,6 +1,6 @@
 //
 //  BFTextField.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -46,40 +46,41 @@ open class BFTextField: UITextField {
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.maxNumberOfCharacters = aDecoder.decodeInteger(forKey: "MaxNumberOfCharacters")
+        maxNumberOfCharacters = aDecoder.decodeInteger(forKey: "MaxNumberOfCharacters")
         NotificationCenter.default.addObserver(self, selector: #selector(BFTextField.textFieldDidChange(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: self)
     }
     
     /// Encodes added variables.
     ///
     /// - Parameter aCoder: NSCoder.
-    open override func encode(with aCoder: NSCoder) {
+    override open func encode(with aCoder: NSCoder) {
         super.encode(with: aCoder)
         
-        aCoder.encode(self.maxNumberOfCharacters, forKey: "MaxNumberOfCharacters")
+        aCoder.encode(maxNumberOfCharacters, forKey: "MaxNumberOfCharacters")
     }
     
     /// Override init with frame.
     ///
     /// - Parameter frame: TextField frame.
-    public override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.maxNumberOfCharacters = 0
+        maxNumberOfCharacters = 0
         NotificationCenter.default.addObserver(self, selector: #selector(BFTextField.textFieldDidChange(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: self)
     }
     
+    @objc
     /// Text field did change function.
     ///
     /// Called by observer.
     ///
     /// - Parameter notification: Notification object.
-    @objc private func textFieldDidChange(_ notification: Notification) {
-        guard let text = self.text else {
+    private func textFieldDidChange(_ notification: Notification) {
+        guard let text = text else {
             return
         }
-        if self.maxNumberOfCharacters != 0, text.length >= self.maxNumberOfCharacters {
-            self.text = text.substring(to: self.maxNumberOfCharacters)
+        if maxNumberOfCharacters != 0, text.count >= maxNumberOfCharacters {
+            self.text = text.substring(to: maxNumberOfCharacters)
         }
     }
     

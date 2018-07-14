@@ -1,6 +1,6 @@
 //
 //  BFBiometricsTests.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -24,20 +24,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
-import Foundation
 @testable import BFKit
+import Foundation
+import XCTest
 
-class BFBiometricsTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testShowBiometrics() {
+internal class BFBiometricsTests: XCTestCase {
+    internal func testShowBiometrics() {
         let testExpectation = expectation(description: "Show Biometrics")
         
         BFBiometrics.useBiometric(localizedReason: "Testing", fallbackTitle: "Password") { _ in
@@ -46,8 +38,8 @@ class BFBiometricsTests: XCTestCase {
             testExpectation.fulfill()
         }
         
-        waitForExpectations(timeout: 5, handler: { error in
+        waitForExpectations(timeout: 5) { error in
             XCTAssertNil(error, "Something went horribly wrong.")
-        })
+        }
     }
 }

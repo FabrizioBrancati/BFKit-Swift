@@ -1,6 +1,6 @@
 //
-//  NSAttributedStringTests.swift
-//  BFKit
+//  NSAttributedStringExtensionTests.swift
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -24,12 +24,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
-import Foundation
 @testable import BFKit
+import Foundation
+import XCTest
 
-class NSAttributedStringExtensionTests: XCTestCase {
-    static let allTests = [
+internal class NSAttributedStringExtensionTests: XCTestCase {
+    internal static let allTests = [
         ("testAttributedString", testAttributedString),
         ("testFont", testFont),
         ("testParagraphStyle", testParagraphStyle),
@@ -58,26 +58,22 @@ class NSAttributedStringExtensionTests: XCTestCase {
         ("testMultipleAttributes", testMultipleAttributes)
     ]
     
-    var string: String = ""
-    var attributedString: NSAttributedString = NSAttributedString()
+    internal var string = ""
+    internal var attributedString = NSAttributedString()
     
-    override func setUp() {
+    override internal func setUp() {
         super.setUp()
         
         string = "This is a test"
     }
     
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testAttributedString() {
+    internal func testAttributedString() {
         attributedString = string.attributedString.font(Font.systemFont(ofSize: 18))
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
     }
     
-    func testFont() {
+    internal func testFont() {
         let font = Font.systemFont(ofSize: 18)
         attributedString = string.attributedString.font(font)
         
@@ -85,7 +81,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.font] as? Font, font)
     }
     
-    func testParagraphStyle() {
+    internal func testParagraphStyle() {
         let paragraphStyle = NSParagraphStyle.default
         attributedString = string.attributedString.paragraphStyle(paragraphStyle)
             
@@ -93,7 +89,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.paragraphStyle] as? NSParagraphStyle, paragraphStyle)
     }
     
-    func testForegroundColor() {
+    internal func testForegroundColor() {
         let foregroundColor = Color.red
         attributedString = string.attributedString.foregroundColor(foregroundColor)
         
@@ -101,7 +97,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.foregroundColor] as? Color, foregroundColor)
     }
     
-    func testBackgroundColor() {
+    internal func testBackgroundColor() {
         let backgroundColor = Color.blue
         attributedString = string.attributedString.backgroundColor(backgroundColor)
         
@@ -109,7 +105,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.backgroundColor] as? Color, backgroundColor)
     }
     
-    func testLigature() {
+    internal func testLigature() {
         let ligature = true
         attributedString = string.attributedString.ligature(ligature)
         
@@ -117,7 +113,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.ligature] as? Bool, ligature)
     }
     
-    func testKern() {
+    internal func testKern() {
         let kern: Float = 10.0
         attributedString = string.attributedString.kern(kern)
         
@@ -125,7 +121,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.kern] as? Float, kern)
     }
     
-    func testStrikethroughStyle() {
+    internal func testStrikethroughStyle() {
         let strikethroughStyle = 5
         attributedString = string.attributedString.strikethroughStyle(strikethroughStyle)
         
@@ -133,7 +129,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.strikethroughStyle] as? Int, strikethroughStyle)
     }
     
-    func testUnderlineStyle() {
+    internal func testUnderlineStyle() {
         let underlineStyle = NSUnderlineStyle.patternDashDot
         attributedString = string.attributedString.underlineStyle(underlineStyle)
         
@@ -141,7 +137,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.underlineStyle] as? NSUnderlineStyle, underlineStyle)
     }
     
-    func testStrokeColor() {
+    internal func testStrokeColor() {
         let strokeColor = Color.green
         attributedString = string.attributedString.strokeColor(strokeColor)
         
@@ -149,7 +145,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.strokeColor] as? Color, strokeColor)
     }
     
-    func testStrokeWidth() {
+    internal func testStrokeWidth() {
         let strokeWidth: Float = 6.0
         attributedString = string.attributedString.strokeWidth(strokeWidth)
         
@@ -157,7 +153,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.strokeWidth] as? Float, strokeWidth)
     }
     
-    func testShadow() {
+    internal func testShadow() {
         let shadow = NSShadow()
         shadow.shadowOffset = CGSize(width: 10, height: 10)
         attributedString = string.attributedString.shadow(shadow)
@@ -166,7 +162,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.shadow] as? NSShadow, shadow)
     }
     
-    func testTextEffect() {
+    internal func testTextEffect() {
         let textEffect = NSAttributedString.TextEffectStyle.letterpressStyle
         attributedString = string.attributedString.textEffect(textEffect.rawValue)
         
@@ -174,7 +170,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.textEffect] as? NSAttributedString.TextEffectStyle, textEffect)
     }
     
-    func testAttachment() {
+    internal func testAttachment() {
         let attachment = NSTextAttachment(data: nil, ofType: "test")
         attributedString = string.attributedString.attachment(attachment)
         
@@ -182,7 +178,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.attachment] as? NSTextAttachment, attachment)
     }
     
-    func testLink() {
+    internal func testLink() {
         let link = NSURL(fileURLWithPath: "test/test.test")
         attributedString = string.attributedString.link(link)
         
@@ -190,7 +186,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.link] as? NSURL, link)
     }
     
-    func testBaselineOffset() {
+    internal func testBaselineOffset() {
         let baselineOffset: Float = 3.0
         attributedString = string.attributedString.baselineOffset(baselineOffset)
         
@@ -198,7 +194,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.baselineOffset] as? Float, baselineOffset)
     }
     
-    func testUnderlineColor() {
+    internal func testUnderlineColor() {
         let underlineColor = Color.black
         attributedString = string.attributedString.underlineColor(underlineColor)
         
@@ -206,7 +202,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.underlineColor] as? Color, underlineColor)
     }
     
-    func testStrikethroughColor() {
+    internal func testStrikethroughColor() {
         let strikethroughColor = Color.gray
         attributedString = string.attributedString.strikethroughColor(strikethroughColor)
         
@@ -214,7 +210,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.strikethroughColor] as? Color, strikethroughColor)
     }
     
-    func testObliqueness() {
+    internal func testObliqueness() {
         let obliqueness: Float = 7.0
         attributedString = string.attributedString.obliqueness(obliqueness)
         
@@ -222,7 +218,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.obliqueness] as? Float, obliqueness)
     }
     
-    func testExpansion() {
+    internal func testExpansion() {
         let expansion: Float = 9.0
         attributedString = string.attributedString.expansion(expansion)
         
@@ -230,15 +226,15 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.expansion] as? Float, expansion)
     }
     
-    func testWritingDirection() {
+    internal func testWritingDirection() {
         let writingDirection: [Int] = [NSWritingDirection.rightToLeft.rawValue]
         attributedString = string.attributedString.writingDirection(writingDirection)
         
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil).count, 1)
-        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.writingDirection] as? [Int])!, writingDirection)
+        XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.writingDirection] as? [Int])!, writingDirection) // swiftlint:disable:this force_unwrapping
     }
     
-    func testVerticalGlyphForm() {
+    internal func testVerticalGlyphForm() {
         let verticalGlyphForm = true
         attributedString = string.attributedString.verticalGlyphForm(verticalGlyphForm)
         
@@ -246,7 +242,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual(attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.verticalGlyphForm] as? Bool, verticalGlyphForm)
     }
     
-    func testTextAlignmentLeft() {
+    internal func testTextAlignmentLeft() {
         var textAlignment = NSMutableParagraphStyle().alignment
         textAlignment = .left
         attributedString = string.attributedString.textAlignmentLeft()
@@ -255,7 +251,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle)?.alignment, textAlignment)
     }
     
-    func testTextAlignmentRight() {
+    internal func testTextAlignmentRight() {
         var textAlignment = NSMutableParagraphStyle().alignment
         textAlignment = .right
         attributedString = string.attributedString.textAlignmentRight()
@@ -264,7 +260,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle)?.alignment, textAlignment)
     }
     
-    func testTextAlignmentCenter() {
+    internal func testTextAlignmentCenter() {
         var textAlignment = NSMutableParagraphStyle().alignment
         textAlignment = .center
         attributedString = string.attributedString.textAlignmentCenter()
@@ -273,7 +269,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle)?.alignment, textAlignment)
     }
     
-    func testTextAlignmentJustified() {
+    internal func testTextAlignmentJustified() {
         var textAlignment = NSMutableParagraphStyle().alignment
         textAlignment = .justified
         attributedString = string.attributedString.textAlignmentJustified()
@@ -282,7 +278,7 @@ class NSAttributedStringExtensionTests: XCTestCase {
         XCTAssertEqual((attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle)?.alignment, textAlignment)
     }
     
-    func testMultipleAttributes() {
+    internal func testMultipleAttributes() {
         var textAlignment = NSMutableParagraphStyle().alignment
         textAlignment = .center
         let font = Font.systemFont(ofSize: 18)

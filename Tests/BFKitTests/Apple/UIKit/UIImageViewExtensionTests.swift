@@ -1,6 +1,6 @@
 //
 //  UIImageViewExtensionTests.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -24,21 +24,13 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
+@testable import BFKit
 import Foundation
 import UIKit
-@testable import BFKit
+import XCTest
 
-class UIImageViewExtensionTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testInitFrameImage() {
+internal class UIImageViewExtensionTests: XCTestCase {
+    internal func testInitFrameImage() {
         guard let image = UIImage(dummyImage: "200x100") else {
             XCTFail("`testInitFrameImage` error")
             return
@@ -50,7 +42,7 @@ class UIImageViewExtensionTests: XCTestCase {
         XCTAssertEqual(imageView.image, image)
     }
     
-    func testInitImageSizeCenter() {
+    internal func testInitImageSizeCenter() {
         guard let image = UIImage(dummyImage: "200x100") else {
             XCTFail("`testInitImageSizeCenter` error")
             return
@@ -62,7 +54,7 @@ class UIImageViewExtensionTests: XCTestCase {
         XCTAssertEqual(imageView.image, image)
     }
     
-    func testInitImageCenter() {
+    internal func testInitImageCenter() {
         guard let image = UIImage(dummyImage: "200x100") else {
             XCTFail("`testInitImageCenter` error")
             return
@@ -74,7 +66,7 @@ class UIImageViewExtensionTests: XCTestCase {
         XCTAssertEqual(imageView.image, image)
     }
     
-    func testImageTemplateTintColor() {
+    internal func testImageTemplateTintColor() {
         guard let image = UIImage(dummyImage: "200x100") else {
             XCTFail("`testImageTemplateTintColor` error")
             return
@@ -86,7 +78,7 @@ class UIImageViewExtensionTests: XCTestCase {
         XCTAssertEqual(imageView.image, image)
     }
     
-    func testShadowColorRadiusOffsetOpacity() {
+    internal func testShadowColorRadiusOffsetOpacity() {
         guard let image = UIImage(dummyImage: "200x100") else {
             XCTFail("`testShadowColorRadiusOffsetOpacity` error")
             return
@@ -99,7 +91,7 @@ class UIImageViewExtensionTests: XCTestCase {
         XCTAssertEqual(imageView.image, image)
     }
     
-    func testMaskImage() {
+    internal func testMaskImage() {
         guard let image = UIImage(dummyImage: "200x100"), let mask = UIImage(dummyImage: "50x50") else {
             XCTFail("`testMaskImage` error")
             return

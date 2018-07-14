@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 3.x Releases
+- `3.2.x` Releases - [3.2.0](#320---???)
 - `3.1.x` Releases - [3.1.0](#310---face-id-support) | [3.1.1](#311---some-improvements) | [3.1.2](#311---swift-41-support)
 - `3.0.x` Releases - [3.0.0](#300---swift-4-support)
 
@@ -34,7 +35,28 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## Develop
+## [3.2.0](https://github.com/FabrizioBrancati/Queuer/releases/tag/3.2.0) - Big Improvements
+### 14 Jul 2018
+### Added
+- Added `force` attribute to `generateUniqueIdentifier(save: Bool = default, force: Bool = default)` in UIDevice extension with a default value, hence no changes are required
+- Added `resetFirstStart(version: String = default)` in BFApp struct, to reset the App like has never been opened
+- Added FileManager extension to Linux
+
+### Improved
+- Improved code of a lot of classes / structs and enums
+- Updated SwiftLint to 0.26.0
+- Use of `canImport()` instead of `os()`
+- Converted static only structs to enums to avoid initialization
+- Removed all force unwrapping to avoid possible crashes
+- Fixing some memory leaks
+
+### Deprecated
+- BFTouchID struct in favour of BFBiometrics enum
+- `lightFont`, `mediumFont` and `boldFont` from UIFont extension
+- `length` in favour of `count` in String extension
+
+### Removed
+- Removed Hound CI
 
 ---
 
@@ -72,7 +94,7 @@ All notable changes to this project will be documented in this file.<br>
 ### Improved
 - Improved compilation time in `blur()` function in UIImage extension
 - Improved `debug` and `release` code execution on BFApp struct
-- Changed `generateUniqueIdentifier()` to `generateUniqueIdentifier(save: Bool = default)` in UIDevice extension to be able to keep the generated identifier across multiple sessions, defaults to `false` so no changes are required
+- Changed `generateUniqueIdentifier()` to `generateUniqueIdentifier(save: Bool = default)` in UIDevice extension to be able to keep the generated identifier across multiple sessions, defaults to `false`, so no changes are required
 - Updated SwiftLint to 0.24.0
 - Updated README.md to latest Carthage changes
 

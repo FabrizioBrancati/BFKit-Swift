@@ -68,7 +68,7 @@ Classes and Extensions Compatibility
 | [Collection](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Collection.html)                 | ![✓]    | ![✓]      | ![✓]        | ![✓]      |
 | [Data](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Data.html)                             | ![✓]    | ![✓]      | ![✓]        | ![✓]      |
 | [Date](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/Date.html)                             | ![✓]    | ![✓]      | ![✓]        | ![✓]      |
-| [FileManager](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/FileManager.html)               | ![✓]    | ![✓]      | ![✓]        |           |
+| [FileManager](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/FileManager.html)               | ![✓]    | ![✓]      | ![✓]        | ![✓]      |
 | [Number](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Functions.html)                                 | ![✓]    | ![✓]      | ![✓]        | ![✓]      |
 | [NSObject](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/NSObject.html)                     | ![✓]    | ![✓]      | ![✓]        | ![✓]      |
 | [NSAttributedString](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/NSAttributedString.html) | ![✓]    | ![✓]      | ![✓]        |           |
@@ -120,7 +120,7 @@ Requirements
 | 3.0...3.1 | 8.0...8.3 | 2.4.0...2.5.0   | 8.0+     |            | 2.0+        | ![✓]      |
 | 3.0...3.2 | 8.0...9.0 | 2.6.0           | 8.0+     | 10.10+     | 2.0+        | ![✓]      |
 | 4.0       | 9.0...9.2 | 3.0.0...3.1.1   | 8.0+ `*` | 10.10+ `*` | 2.0+ `*`    | ![✓]      |
-| 4.1       | 9.3       | 3.1.2           | 8.0+ `*` | 10.10+ `*` | 2.0+ `*`    | ![✓]      |
+| 4.1       | 9.3...9.4 | 3.1.2...3.2.0   | 8.0+ `*` | 10.10+ `*` | 2.0+ `*`    | ![✓]      |
 
 > `*` With App Extension Support
 
@@ -213,7 +213,7 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
             .executable(name: "Project", targets: ["Project"])
         ],
         dependencies: [
-            .package(url: "https://github.com/FabrizioBrancati/BFKit-Swift.git", .upToNextMajor(from: "3.1.2"))
+            .package(url: "https://github.com/FabrizioBrancati/BFKit-Swift.git", .upToNextMajor(from: "3.2.0"))
         ],
         targets: [
             .target(name: "Project", dependencies: ["BFKit"])
@@ -246,7 +246,7 @@ Todo
 
 - [ ] Add tvOS support
 - [ ] Create a new Example App that shows all the functionalities of BFKit-Swift
-- [ ] 100% of code coverage with Unit Tests
+- [ ] ~100% of code coverage with Unit Tests
 - [ ] Improve code to get an _A_ from codebeat
 - [x] Add macOS support
 - [x] Add watchOS support

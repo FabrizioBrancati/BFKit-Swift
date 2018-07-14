@@ -1,6 +1,6 @@
 //
 //  BFButtonTests.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -24,30 +24,22 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
+@testable import BFKit
 import Foundation
 import UIKit
-@testable import BFKit
+import XCTest
 
-class BFButtonTests: XCTestCase {
-    var button: BFButton = BFButton(frame: CGRect(x: 0, y: 0, width: 100, height: 44), image: UIImage(color: UIColor.red)!, highlightedImage: UIImage(color: UIColor.red)!, fadeDuration: 1)
+internal class BFButtonTests: XCTestCase {
+    internal var button = BFButton(frame: CGRect(x: 0, y: 0, width: 100, height: 44), image: UIImage(color: UIColor.red)!, highlightedImage: UIImage(color: UIColor.red)!, fadeDuration: 1) // swiftlint:disable:this force_unwrapping
     
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testEncodeDecode() {
+    internal func testEncodeDecode() {
         FileManager.default.savePlist(object: button, in: .cache, filename: "BFButton")
         let decoded = FileManager.default.readPlist(from: .cache, filename: "BFButton") as? BFButton
         
         XCTAssertEqual(decoded?.frame, CGRect(x: 0, y: 0, width: 100, height: 44))
     }
     
-    func testIsHighlighted() {
+    internal func testIsHighlighted() {
         button.isHighlighted = true
         XCTAssertTrue(button.isHighlighted, "isHighlighted is not true")
         
@@ -55,13 +47,13 @@ class BFButtonTests: XCTestCase {
         XCTAssertTrue(!button.isHighlighted, "isHighlighted is not false")
     }
     
-    func testOverlayImageView() {
+    internal func testOverlayImageView() {
         button.overlayImageView = UIImageView(image: UIImage(color: UIColor.red))
         
         XCTAssertNotNil(button.overlayImageView.image)
     }
     
-    func testInitFrame() {
+    internal func testInitFrame() {
         XCTAssertTrue(!button.isHighlighted)
     }
 }

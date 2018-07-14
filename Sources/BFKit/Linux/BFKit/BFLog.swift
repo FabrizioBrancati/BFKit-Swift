@@ -1,6 +1,6 @@
 //
 //  BFLog.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -29,7 +29,7 @@ import Foundation
 // MARK: - Global functions
 
 /// The private BFLogClass created to manage the log strings.
-public struct BFLog {
+public enum BFLog {
     // MARK: - Variables
     
     /// Activate or not BFLog.
@@ -52,20 +52,20 @@ public struct BFLog {
     ///   - function: Function name. Default is #function.
     ///   - line: Line number. Default is #line.
     public static func log(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
-        if self.active {
+        if active {
             var newMessage = message
             if newMessage.hasSuffix("\n") == false {
                 newMessage += "\n"
             }
             
-            self.logged += newMessage
+            logged += newMessage
             
-            let filenameWithoutExtension = NSURL(string: String(describing: NSString(utf8String: filename)!))!.deletingPathExtension!.lastPathComponent
+            let filenameWithoutExtension = URL(string: String(describing: NSString(utf8String: filename)))?.deletingPathExtension().lastPathComponent ?? "Unknown file"
             let log = "\(filenameWithoutExtension):\(line) \(function): \(newMessage)"
             let timestamp = Date().description(dateSeparator: "-", usFormat: true, nanosecond: true)
             print("\(timestamp) \(filenameWithoutExtension):\(line) \(function): \(newMessage)", terminator: "")
             
-            self.detailedLog += log
+            detailedLog += log
         }
     }
     
@@ -79,7 +79,7 @@ public struct BFLog {
     ///   - function: Function name. Default is #function.
     ///   - line: Line number. Default is #line.
     public static func warning(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
-        self.log("⚠️ \(message)", filename: filename, function: function, line: line)
+        log("⚠️ \(message)", filename: filename, function: function, line: line)
     }
     
     /// Exenteds NSLog with an error sign.
@@ -92,7 +92,7 @@ public struct BFLog {
     ///   - function: Function name. Default is #function.
     ///   - line: Line number. Default is #line.
     public static func error(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
-        self.log("❗️ \(message)", filename: filename, function: function, line: line)
+        log("❗️ \(message)", filename: filename, function: function, line: line)
     }
     
     /// Exenteds NSLog with a debug sign.
@@ -105,7 +105,7 @@ public struct BFLog {
     ///   - function: Function name. Default is #function.
     ///   - line: Line number. Default is #line.
     public static func debug(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
-        self.log("🔵 \(message)", filename: filename, function: function, line: line)
+        log("🔵 \(message)", filename: filename, function: function, line: line)
     }
     
     /// Exenteds NSLog with an info sign.
@@ -118,7 +118,7 @@ public struct BFLog {
     ///   - function: Function name. Default is #function.
     ///   - line: Line number. Default is #line.
     public static func info(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
-        self.log("ℹ️ \(message)", filename: filename, function: function, line: line)
+        log("ℹ️ \(message)", filename: filename, function: function, line: line)
     }
     
     /// Clear the log string.
@@ -127,15 +127,13 @@ public struct BFLog {
         detailedLog = ""
     }
     
-    #if !os(Linux) && !os(macOS)
-        /// Save the Log in a file.
-        ///
-        /// - Parameters:
-        ///   - path: Save path.
-        ///   - filename: Log filename.
-        /// - Throws: write(toFile:, atomically:, encoding:) errors.
-        public static func saveLog(in path: FileManager.PathType, filename: String) throws {
-            try FileManager.default.save(file: filename, in: path, content: self.detailedLog)
-        }
-    #endif
+    /// Save the Log in a file.
+    ///
+    /// - Parameters:
+    ///   - path: Save path.
+    ///   - filename: Log filename.
+    /// - Throws: write(toFile:, atomically:, encoding:) errors.
+    public static func saveLog(in path: FileManager.PathType, filename: String) throws {
+        try FileManager.default.save(file: filename, in: path, content: detailedLog)
+    }
 }

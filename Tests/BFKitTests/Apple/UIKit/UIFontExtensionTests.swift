@@ -1,6 +1,6 @@
 //
 //  UIFontExtensionTests.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -24,64 +24,56 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
+@testable import BFKit
 import Foundation
 import UIKit
-@testable import BFKit
+import XCTest
 
-class UIFontExtensionTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testLightFont() {
+internal class UIFontExtensionTests: XCTestCase {
+    internal func testLightFont() {
         UIFont.lightFont = UIFont(fontName: .helvetica, size: 20)
         
-        XCTAssertEqual(UIFont.lightFont.fontName, FontName.helvetica.rawValue)
+        XCTAssertEqual(UIFont.lightFont?.fontName, FontName.helvetica.rawValue)
     }
     
-    func testRegularFont() {
+    internal func testRegularFont() {
         UIFont.regularFont = UIFont(fontName: .helvetica, size: 20)
         
-        XCTAssertEqual(UIFont.regularFont.fontName, FontName.helvetica.rawValue)
+        XCTAssertEqual(UIFont.regularFont?.fontName, FontName.helvetica.rawValue)
     }
     
-    func testBoldFont() {
+    internal func testBoldFont() {
         UIFont.boldFont = UIFont(fontName: .helvetica, size: 20)
         
-        XCTAssertEqual(UIFont.boldFont.fontName, FontName.helvetica.rawValue)
+        XCTAssertEqual(UIFont.boldFont?.fontName, FontName.helvetica.rawValue)
     }
     
-    func testInitFontNameSize() {
+    internal func testInitFontNameSize() {
         let font = UIFont(fontName: .helveticaNeue, size: 20)
         
-        XCTAssertEqual(font.fontName, FontName.helveticaNeue.rawValue)
+        XCTAssertEqual(font?.fontName, FontName.helveticaNeue.rawValue)
     }
     
-    func testAllFonts() {
+    internal func testAllFonts() {
         let fonts = UIFont.allFonts()
         
         XCTAssertNotNil(fonts)
         XCTAssertFalse(fonts.isEmpty)
     }
     
-    func testCalculateHeightWidthFontText() {
-        let height = UIFont.calculateHeight(width: 320, font: UIFont(fontName: .helvetica, size: 12), text: "This is a test\nOn multiple\nLines.\n\nBye.")
+    internal func testCalculateHeightWidthFontText() {
+        let height = UIFont.calculateHeight(width: 320, font: UIFont(fontName: .helvetica, size: 12)!, text: "This is a test\nOn multiple\nLines.\n\nBye.") // swiftlint:disable:this force_unwrapping
         
         XCTAssertGreaterThan(height, 0)
     }
     
-    func testCalculateHeightWidthFontSizeText() {
+    internal func testCalculateHeightWidthFontSizeText() {
         let height = UIFont.calculateHeight(width: 320, font: .helvetica, fontSize: 12, text: "This is a test\nOn multiple\nLines.\n\nBye.")
         
         XCTAssertGreaterThan(height, 0)
     }
     
-    func testFontsNameFamily() {
+    internal func testFontsNameFamily() {
         let fonts = UIFont.fontNames(for: .helvetica)
         
         XCTAssertFalse(fonts.isEmpty)

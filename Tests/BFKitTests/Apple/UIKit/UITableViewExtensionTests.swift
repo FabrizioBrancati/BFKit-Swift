@@ -1,6 +1,6 @@
 //
 //  UITableViewExtensionTests.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -24,42 +24,34 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
+@testable import BFKit
 import Foundation
 import UIKit
-@testable import BFKit
+import XCTest
 
-class UITableViewExtensionTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testIndexPathsSection() {
+internal class UITableViewExtensionTests: XCTestCase {
+    internal func testIndexPathsSection() {
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: 320, height: 500), style: .plain)
         let indexPaths = tableView.indexPaths(section: 0)
         
         XCTAssertTrue(indexPaths.isEmpty)
     }
     
-    func testNextIntedPathRowForSection() {
+    internal func testNextIntedPathRowForSection() {
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: 320, height: 500), style: .plain)
         let indexPath = tableView.nextIndexPath(row: 0, forSection: 0)
         
         XCTAssertNil(indexPath)
     }
     
-    func testPreviousIntedPathRowForSection() {
+    internal func testPreviousIntedPathRowForSection() {
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: 320, height: 500), style: .plain)
         let indexPath = tableView.previousIndexPath(row: 0, forSection: 0)
         
         XCTAssertNil(indexPath)
     }
     
-    func testInitFrameStyleCellSparatorStyleSeparatorInsetDataSourceDelegate() {
+    internal func testInitFrameStyleCellSparatorStyleSeparatorInsetDataSourceDelegate() {
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: 320, height: 500), style: .grouped, cellSeparatorStyle: .singleLine, separatorInset: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), dataSource: nil, delegate: nil)
         
         XCTAssertEqual(tableView.frame, CGRect(x: 0, y: 0, width: 320, height: 500))

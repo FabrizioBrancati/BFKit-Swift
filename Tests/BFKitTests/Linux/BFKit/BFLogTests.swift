@@ -1,6 +1,6 @@
 //
 //  BFLogTests.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -24,18 +24,18 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
-import Foundation
 @testable import BFKit
+import Foundation
+import XCTest
 
-class BFLogTests: XCTestCase {
-    static let allTests = [
+internal class BFLogTests: XCTestCase {
+    internal static let allTests = [
         ("testLog", testLog),
         ("testDetailedLog", testDetailedLog),
         ("testClear", testClear)
     ]
     
-    override func setUp() {
+    override internal func setUp() {
         super.setUp()
         
         BFLog.active = true
@@ -43,13 +43,13 @@ class BFLogTests: XCTestCase {
         BFLog.log("Test")
     }
     
-    override func tearDown() {
+    override internal func tearDown() {
         super.tearDown()
         
         BFLog.clear()
     }
     
-    func testLog() {
+    internal func testLog() {
         XCTAssertEqual(BFLog.logged, "Test\n")
         
         BFLog.log("Test")
@@ -73,10 +73,10 @@ class BFLogTests: XCTestCase {
         XCTAssertEqual(BFLog.logged, "Test\nTest\n⚠️ Warning\n❗️ Error\n🔵 Debug\nℹ️ Info\n")
     }
     
-    func testDetailedLog() {
+    internal func testDetailedLog() {
         BFLog.clear()
         
-        let filenameWithoutExtension = URL(string: String(describing: NSString(utf8String: #file)!))!.deletingPathExtension().lastPathComponent
+        let filenameWithoutExtension = URL(string: String(describing: NSString(utf8String: #file)!))!.deletingPathExtension().lastPathComponent // swiftlint:disable:this force_unwrapping
         let function = #function
         let line = #line + 2
         
@@ -85,34 +85,32 @@ class BFLogTests: XCTestCase {
         XCTAssertEqual(BFLog.detailedLog, "\(filenameWithoutExtension):\(line) \(function): Test\n")
     }
     
-    func testClear() {
+    internal func testClear() {
         BFLog.clear()
         
         XCTAssertEqual(BFLog.logged, "")
     }
     
-    #if !os(Linux) && !os(macOS)
-        func testSaveLog() {
-            do {
-                BFLog.clear()
-                
-                let filenameWithoutExtension = URL(string: String(describing: NSString(utf8String: #file)!))!.deletingPathExtension().lastPathComponent
-                let function = #function
-                let line = #line + 2
-                
-                BFLog.log("Test")
-                
-                try BFLog.saveLog(in: .documents, filename: "Test.log")
-                
-                guard let log = try FileManager.default.read(file: "Test.log", from: .documents) else {
-                    XCTFail("`testSaveLog` error")
-                    return
-                }
-                
-                XCTAssertEqual(log, "\(filenameWithoutExtension):\(line) \(function): Test\n")
-            } catch {
+    internal func testSaveLog() {
+        do {
+            BFLog.clear()
+            
+            let filenameWithoutExtension = URL(string: String(describing: NSString(utf8String: #file)!))!.deletingPathExtension().lastPathComponent // swiftlint:disable:this force_unwrapping
+            let function = #function
+            let line = #line + 2
+            
+            BFLog.log("Test")
+            
+            try BFLog.saveLog(in: .documents, filename: "Test.log")
+            
+            guard let log = try FileManager.default.read(file: "Test.log", from: .documents) else {
                 XCTFail("`testSaveLog` error")
+                return
             }
+            
+            XCTAssertEqual(log, "\(filenameWithoutExtension):\(line) \(function): Test\n")
+        } catch {
+            XCTFail("`testSaveLog` error")
         }
-    #endif
+    }
 }

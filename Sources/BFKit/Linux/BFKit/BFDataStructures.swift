@@ -1,6 +1,6 @@
 //
 //  BFDataStructures.swift
-//  BFKit
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -59,7 +59,7 @@ public struct List<Element: Equatable>: CustomStringConvertible {
     /// - Parameter element: The object to be deleted.
     /// - Returns: Retruns true if removed, otherwise false.
     public mutating func delete(_ element: Element) -> Bool {
-        guard let search = self.search(element) else {
+        guard let search = search(element) else {
             return false
         }
         
@@ -179,8 +179,8 @@ public struct Stack<Element: Equatable>: CustomStringConvertible {
     ///
     /// - Returns: Returns the removed element.
     public mutating func pop() -> Element? {
-        var element: Element? = nil
-        if !self.empty() {
+        var element: Element?
+        if !empty() {
             element = stack[stack.count - 1]
             stack.remove(at: stack.count - 1)
         }
