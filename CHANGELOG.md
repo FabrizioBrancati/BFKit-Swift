@@ -35,8 +35,8 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## [3.2.0](https://github.com/FabrizioBrancati/Queuer/releases/tag/3.2.0) - ???
-### ?? Jul 2018
+## [3.2.0](https://github.com/FabrizioBrancati/Queuer/releases/tag/3.2.0) - Big Improvements
+### 14 Jul 2018
 ### Added
 - Added `force` attribute to `generateUniqueIdentifier(save: Bool = default, force: Bool = default)` in UIDevice extension with a default value, hence no changes are required
 - Added `resetFirstStart(version: String = default)` in BFApp struct, to reset the App like has never been opened
