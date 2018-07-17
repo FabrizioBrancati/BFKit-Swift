@@ -19,11 +19,11 @@ matrix:
     - os: osx
       language: objective-c
       osx_image: xcode9.4
-      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=11.4,name=iPhone X"                     SCHEME="$IOS_SCHEME"     RUN_TESTS="YES" LINT="NO"  CODECOV="YES" EXAMPLE="NO"
+      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=11.4,name=iPhone X"                     SCHEME="$IOS_SCHEME"     RUN_TESTS="NO"  LINT="NO"  CODECOV="NO"  EXAMPLE="NO"
     - os: osx
       language: objective-c
       osx_image: xcode9.4
-      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=11.1,name=iPhone 7 Plus"                SCHEME="$IOS_SCHEME"     RUN_TESTS="NO"  LINT="YES" CODECOV="NO" EXAMPLE="NO"
+      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=11.1,name=iPhone 7 Plus"                SCHEME="$IOS_SCHEME"     RUN_TESTS="YES" LINT="YES" CODECOV="YES" EXAMPLE="NO"
     - os: osx
       language: objective-c
       osx_image: xcode9.4
