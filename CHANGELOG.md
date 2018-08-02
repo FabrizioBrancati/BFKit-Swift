@@ -35,6 +35,12 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+## Develop
+### Improved
+- Updated SwiftLint to 0.27.0
+
+---
+
 ## [3.2.0](https://github.com/FabrizioBrancati/Queuer/releases/tag/3.2.0) - Big Improvements
 ### 14 Jul 2018
 ### Added
