@@ -80,7 +80,11 @@ open class BFButton: UIButton {
         super.init(coder: aDecoder)
         
         fadeDuration = aDecoder.decodeDouble(forKey: "FadeDuration")
-        overlayImageView = (aDecoder.decodeObject(forKey: "OverlayImageView") as! UIImageView) // swiftlint:disable:this force_cast
+        guard let decodedOverlayImageView = aDecoder.decodeObject(forKey: "OverlayImageView") as? UIImageView else {
+            return nil
+        }
+        
+        overlayImageView = decodedOverlayImageView
         overlayImageView.frame = imageView?.frame ?? CGRect.zero
         overlayImageView.bounds = imageView?.bounds ?? CGRect.zero
         

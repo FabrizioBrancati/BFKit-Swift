@@ -64,11 +64,17 @@ public extension UIImage {
         color.setFill()
         UIRectFill(rect)
         
-        let sizeString: String = "\(Int(size.width)) x \(Int(size.height))"
-        let style: NSMutableParagraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle // swiftlint:disable:this force_cast
+        let widthInt = Int(size.width)
+        let heightInt = Int(size.height)
+        let sizeString = "\(widthInt) x \(heightInt)"
+        guard let paragraphStyle = NSParagraphStyle.default.mutableCopy() as? NSMutableParagraphStyle else {
+            return nil
+        }
+        
+        let style = paragraphStyle
         style.alignment = .center
         style.minimumLineHeight = size.height / 2
-        let attributes: Dictionary = [NSAttributedString.Key.paragraphStyle: style]
+        let attributes = [NSAttributedString.Key.paragraphStyle: style]
         sizeString.draw(in: rect, withAttributes: attributes)
         
         if let result = UIGraphicsGetImageFromCurrentImageContext(), let cgImage = result.cgImage {
