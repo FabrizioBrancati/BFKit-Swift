@@ -190,15 +190,17 @@ public extension Color {
     
     /// Returns the HEX string from UIColor or NSColor.
     public var hex: String {
-        var red: CGFloat = 0
-        var green: CGFloat = 0
-        var blue: CGFloat = 0
-        var alpha: CGFloat = 0
+        var red: CGFloat = 0.0
+        var green: CGFloat = 0.0
+        var blue: CGFloat = 0.0
+        var alpha: CGFloat = 0.0
         
         getRed(&red, green: &green, blue: &blue, alpha: &alpha)
         
-        var rgb: Int = (Int)(red * 255) << 16 | (Int)(green * 255) << 8
-        rgb = rgb | (Int)(blue * 255) << 0
+        let redInt = (Int)(red * 255)
+        let greenInt = (Int)(green * 255)
+        let blueInt = (Int)(blue * 255)
+        let rgb: Int = redInt << 16 | greenInt << 8 | blueInt << 0
         
         return String(format: "#%06x", rgb)
     }

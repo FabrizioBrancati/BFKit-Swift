@@ -53,17 +53,12 @@ public enum BFLog {
     ///   - line: Line number. Default is #line.
     public static func log(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
         if active {
-            var newMessage = message
-            if newMessage.hasSuffix("\n") == false {
-                newMessage += "\n"
-            }
-            
-            logged += newMessage
+            logged += message
             
             let filenameWithoutExtension = URL(string: String(describing: NSString(utf8String: filename)))?.deletingPathExtension().lastPathComponent ?? "Unknown file"
-            let log = "\(filenameWithoutExtension):\(line) \(function): \(newMessage)"
+            let log = "\(filenameWithoutExtension):\(line) \(function): \(message)"
             let timestamp = Date().description(dateSeparator: "-", usFormat: true, nanosecond: true)
-            print("\(timestamp) \(filenameWithoutExtension):\(line) \(function): \(newMessage)", terminator: "")
+            print("\(timestamp) \(filenameWithoutExtension):\(line) \(function): \(message)", terminator: "\n")
             
             detailedLog += log
         }

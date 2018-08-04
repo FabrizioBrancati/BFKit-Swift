@@ -44,9 +44,9 @@ public extension UIImage {
     ///
     /// - Parameter dummy: This parameter must contain: "100x100", "100x100.#FFFFFF" or "100x100.blue" (if it is a color defined in UIColor class) if you want to define a color. Default color is lightGray.
     public convenience init?(dummyImage dummy: String) {
-        var size = CGSize.zero, color: UIColor = UIColor.lightGray
+        var size = CGSize.zero, color = UIColor.lightGray
         
-        let array: Array = dummy.components(separatedBy: ".")
+        let array = dummy.components(separatedBy: ".")
         if !array.isEmpty {
             let sizeString: String = array[0]
             
@@ -833,7 +833,9 @@ public extension UIImage {
             var effectImage = self
             
             let hasBlur = Float(blurRadius) > Float.ulpOfOne
-            let hasSaturationChange = Float(abs(saturation - 1)) > Float.ulpOfOne
+            let saturationABS = abs(saturation - 1)
+            let saturationABSFloat = Float(saturationABS)
+            let hasSaturationChange = saturationABSFloat > Float.ulpOfOne
             
             if hasBlur || hasSaturationChange {
                 UIGraphicsBeginImageContextWithOptions(size, false, UIImage.screenScale())
