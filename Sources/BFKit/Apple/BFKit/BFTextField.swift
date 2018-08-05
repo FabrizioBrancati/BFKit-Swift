@@ -79,6 +79,7 @@ open class BFTextField: UITextField {
         guard let text = text else {
             return
         }
+        
         if maxNumberOfCharacters != 0, text.count >= maxNumberOfCharacters {
             self.text = text.substring(to: maxNumberOfCharacters)
         }
