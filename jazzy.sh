@@ -14,4 +14,10 @@ jazzy \
   --xcodebuild-arguments -scheme,"BFKit iOS" \
   --module BFKit \
   --root-url https://github.com/FabrizioBrancati/BFKit-Swift \
-  --output Docs/
+  --output Docs/ \
+  --theme jony \
+  --docset-icon Resources/Icon-32.png \
+  --root-url https://github.fabriziobrancati.com/documentation/BFKit-Swift/ \
+  --dash_url https://github.fabriziobrancati.com/documentation/BFKit-Swift/docsets/BFKit.xml
+
+  cp -r Resources Docs/Resources

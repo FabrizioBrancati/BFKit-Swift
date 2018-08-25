@@ -1,10 +1,10 @@
 <p align="center">
-<img src="https://github.fabriziobrancati.com/bfkit/resources/banner-swift-new.png" alt="BFKit-Swift Banner">
+<img src="Resources/Banner.png" alt="BFKit-Swift Banner">
 </p>
 
 [![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit-Swift.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit-Swift)
 [![Codecov](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift/branch/master/graph/badge.svg)](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift)
-[![codebeat badge](https://codebeat.co/badges/d8a270f8-3d56-4834-be65-6e1d45f878c3)](https://codebeat.co/projects/github-com-fabriziobrancati-bfkit-swift-master)
+[![codebeat badge](https://codebeat.co/badges/b8c2fc8c-73f4-4faf-b95b-85209eeaecbe)](https://codebeat.co/projects/github-com-fabriziobrancati-bfkit-swift-master)
 [![Swift Package Manager Compatible](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/BFKit-Swift.svg?style=flat)][Documentation]
@@ -16,7 +16,6 @@
 ---
 
 <p align="center">
-    <a href="#objective-c-version-">Objective-C Version</a> &bull;
     <a href="#features">Features</a> &bull;
     <a href="#classes-and-extensions-compatibility">Classes and Extensions Compatibility</a> &bull;
     <a href="#requirements">Requirements</a> &bull;
@@ -32,11 +31,6 @@
 </p>
 
 ---
-
-Objective-C Version <img src="http://github.fabriziobrancati.com/bfkit/resources/objc-icon.png" height="25" width="25">
-===================
-
-If you are looking for Objective-C version check it out here: **[BFKit](https://github.com/FabrizioBrancati/BFKit)**.
 
 Features
 ========
@@ -230,7 +224,7 @@ Documentation
 =============
 
 ### [Documentation]
-100% Documented
+Jazzy generated documentation - 100% Documented
 
 Changelog
 =========
@@ -272,4 +266,4 @@ License
 BFKit-Swift is available under the MIT license. See the **[LICENSE](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)** file for more info.
 
 [Documentation]: https://github.fabriziobrancati.com/documentation/BFKit-Swift/
-[✓]: https://github.fabriziobrancati.com/bfkit/resources/check.png
+[✓]: Resources/Check.png
