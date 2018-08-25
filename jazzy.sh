@@ -20,4 +20,4 @@ jazzy \
   --root-url https://github.fabriziobrancati.com/documentation/BFKit-Swift/ \
   --dash_url https://github.fabriziobrancati.com/documentation/BFKit-Swift/docsets/BFKit.xml
 
-  cp -r Resources Docs/Resources
+cp -r Resources Docs/Resources
