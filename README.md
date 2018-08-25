@@ -222,8 +222,8 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
 Documentation
 =============
 
-### [Documentation](https://github.fabriziobrancati.com/documentation/BFKit-Swift/)
-Jazzy Generated documentation - 100% Documented
+### [Documentation]
+Jazzy generated documentation - 100% Documented
 
 Changelog
 =========
@@ -264,4 +264,5 @@ License
 
 BFKit-Swift is available under the MIT license. See the **[LICENSE](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)** file for more info.
 
+[Documentation]: https://github.fabriziobrancati.com/documentation/BFKit-Swift/
 [✓]: Resources/Check.png
