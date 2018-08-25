@@ -134,7 +134,7 @@ public extension Color {
             #if canImport(UIKit)
                 getRed(&red, green: &green, blue: &blue, alpha: &alpha)
             #elseif canImport(AppKit)
-                if colorSpace.colorSpaceModel == .RGB {
+                if colorSpace.colorSpaceModel == .rgb {
                     getRed(&red, green: &green, blue: &blue, alpha: &alpha)
                 } else if colorSpace.colorSpaceModel == .gray {
                     var white: CGFloat = 0.0
