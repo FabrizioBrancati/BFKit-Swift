@@ -150,7 +150,6 @@
 		490315741F0C358600499354 /* ThreadExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314E01F0C2EA600499354 /* ThreadExtensionTests.swift */; };
 		490315751F0C3A9F00499354 /* FileManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903147D1F0C2EA600499354 /* FileManager+Extensions.swift */; };
 		490315771F0C3A9F00499354 /* NSPointerArray+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903147F1F0C2EA600499354 /* NSPointerArray+Extensions.swift */; };
-		491537001F269C9F007C8338 /* Info-watchOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 491536FF1F269C9F007C8338 /* Info-watchOS.plist */; };
 		491537011F269CF0007C8338 /* BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 490314AB1F0C2EA600499354 /* BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		491537021F269CF0007C8338 /* BFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 490314AB1F0C2EA600499354 /* BFKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		493868011F10F98700A793F7 /* NSAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903147E1F0C2EA600499354 /* NSAttributedString+Extensions.swift */; };
@@ -793,7 +792,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				491537001F269C9F007C8338 /* Info-watchOS.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
