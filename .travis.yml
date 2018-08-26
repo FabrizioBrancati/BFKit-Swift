@@ -64,7 +64,7 @@ before_install:
       gem install cocoapods --pre --no-rdoc --no-ri --no-document;
       brew update;
       brew outdated carthage || brew upgrade carthage;
-      rvm use $RVM_RUBY_VERSION
+      rvm use $RVM_RUBY_VERSION;
     fi
 
 install:
@@ -73,7 +73,7 @@ install:
     fi
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then
       ./install_swiftlint.sh;
-      bundle install --without=documentation --path ../travis_bundle_dir
+      bundle install --without=documentation --path ../travis_bundle_dir;
     fi
 
 script:
@@ -110,5 +110,5 @@ script:
 
 after_success:
   - if [ "$COVERAGE" == "YES" ]; then
-      slather
+      slather;
     fi
