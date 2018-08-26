@@ -4,7 +4,6 @@ env:
     - MACOS_SCHEME="BFKit macOS"
     - WATCHOS_SCHEME="BFKit watchOS"
     - EXAMPLE_SCHEME="BFKitExample"
-    - RVM_RUBY_VERSION=system
 
 matrix:
   include:
@@ -64,7 +63,6 @@ before_install:
       gem install cocoapods --pre --no-rdoc --no-ri --no-document;
       brew update;
       brew outdated carthage || brew upgrade carthage;
-      rvm use $RVM_RUBY_VERSION;
       gem install slather;
     fi
 
