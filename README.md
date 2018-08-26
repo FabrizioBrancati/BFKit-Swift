@@ -4,6 +4,7 @@
 
 [![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit-Swift.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit-Swift)
 [![Codecov](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift/branch/master/graph/badge.svg)](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift)
+[![Coverage Status](https://coveralls.io/repos/github/FabrizioBrancati/BFKit-Swift/badge.svg?branch=master)](https://coveralls.io/github/FabrizioBrancati/BFKit-Swift?branch=master)
 [![codebeat badge](https://codebeat.co/badges/b8c2fc8c-73f4-4faf-b95b-85209eeaecbe)](https://codebeat.co/projects/github-com-fabriziobrancati-bfkit-swift-master)
 [![Swift Package Manager Compatible](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
