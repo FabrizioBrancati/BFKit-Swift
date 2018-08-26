@@ -54,24 +54,24 @@ internal class FileManagerExtensionTests: XCTestCase {
     
     internal func testReadFileOfType() {
         do {
-            try FileManager.default.save(file: "Test.txt", in: .documents, content: "Test")
-            let file = try FileManager.default.read(file: "Test.txt", from: .documents)
+            try FileManager.default.save(file: "Test.txt", in: .temporary, content: "Test")
+            let file = try FileManager.default.read(file: "Test.txt", from: .temporary)
             
             XCTAssertNotNil(file)
         } catch {
-            XCTFail("`testReadFileOfType` error")
+            XCTFail("`testReadFileOfType` error: \(error.localizedDescription)")
         }
     }
     
     internal func testSavePlistObjectInFilename() {
-        let saved = FileManager.default.savePlist(object: ["1", "2", "3", "4", "5"], in: .documents, filename: "Test")
+        let saved = FileManager.default.savePlist(object: ["1", "2", "3", "4", "5"], in: .temporary, filename: "Test")
         
         XCTAssertTrue(saved)
     }
     
     internal func testReadPlistFromFilename() {
-        FileManager.default.savePlist(object: ["1", "2", "3", "4", "5"], in: .documents, filename: "Test")
-        let readed = FileManager.default.readPlist(from: .documents, filename: "Test")
+        FileManager.default.savePlist(object: ["1", "2", "3", "4", "5"], in: .temporary, filename: "Test")
+        let readed = FileManager.default.readPlist(from: .temporary, filename: "Test")
         
         XCTAssertNotNil(readed)
     }
@@ -107,13 +107,14 @@ internal class FileManagerExtensionTests: XCTestCase {
     }
     
     internal func testSizeFileFrom() {
-        FileManager.default.savePlist(object: ["1", "2", "3", "4", "5"], in: .documents, filename: "Test")
+        FileManager.default.savePlist(object: ["1", "2", "3", "4", "5"], in: .temporary, filename: "Test")
+        
         do {
-            let size = try FileManager.default.size(file: "Test.plist", from: .documents)
+            let size = try FileManager.default.size(file: "Test.plist", from: .temporary)
             
             XCTAssertNotNil(size)
             
-            let sizeNil = try FileManager.default.size(file: "TestNil.plist", from: .documents)
+            let sizeNil = try FileManager.default.size(file: "TestNil.plist", from: .temporary)
             
             XCTAssertNil(sizeNil)
         } catch {

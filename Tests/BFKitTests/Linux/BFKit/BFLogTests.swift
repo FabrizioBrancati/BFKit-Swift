@@ -101,16 +101,16 @@ internal class BFLogTests: XCTestCase {
             
             BFLog.log("Test")
             
-            try BFLog.saveLog(in: .documents, filename: "Test.log")
+            try BFLog.saveLog(in: .temporary, filename: "Test.log")
             
-            guard let log = try FileManager.default.read(file: "Test.log", from: .documents) else {
+            guard let log = try FileManager.default.read(file: "Test.log", from: .temporary) else {
                 XCTFail("`testSaveLog` error")
                 return
             }
             
             XCTAssertEqual(log, "\(filenameWithoutExtension):\(line) \(function): Test\n")
         } catch {
-            XCTFail("`testSaveLog` error")
+            XCTFail("`testSaveLog` error: \(error.localizedDescription)")
         }
     }
 }

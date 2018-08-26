@@ -31,19 +31,19 @@ import XCTest
 
 internal class UIScreenExtensionTests: XCTestCase {
     internal func testScreenWidth() {
-        XCTAssertEqual(UIScreen.screenWidth, 414)
+        XCTAssertGreaterThan(UIScreen.screenWidth, 350)
     }
     
     internal func testScreenHeight() {
-        XCTAssertEqual(UIScreen.screenHeight, 736)
+        XCTAssertGreaterThan(UIScreen.screenHeight, 700)
     }
     
     internal func testMaxScreenLength() {
-        XCTAssertEqual(UIScreen.maxScreenLength, 736)
+        XCTAssertGreaterThan(UIScreen.screenHeight, 700)
     }
     
     internal func testMinScreenLength() {
-        XCTAssertEqual(UIScreen.minScreenLength, 414)
+        XCTAssertGreaterThan(UIScreen.screenWidth, 350)
     }
     
     internal func testIsRetina() {
@@ -55,6 +55,7 @@ internal class UIScreenExtensionTests: XCTestCase {
     }
     
     internal func testFixedScreenSize() {
-        XCTAssertEqual(UIScreen.fixedScreenSize(), CGSize(width: 414, height: 736))
+        XCTAssertGreaterThan(UIScreen.fixedScreenSize().width, 350)
+        XCTAssertGreaterThan(UIScreen.fixedScreenSize().height, 700)
     }
 }
