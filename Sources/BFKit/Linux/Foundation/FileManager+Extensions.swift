@@ -33,17 +33,19 @@ public extension FileManager {
     // MARK: - Variables
     
     /// Path type enum.
-    ///
-    /// - mainBundle: Main bundle path.
-    /// - library: Library path.
-    /// - documents: Documents path.
-    /// - cache: Cache path.
     public enum PathType: Int {
+        /// Main bundle path.
         case mainBundle
+        /// Library path.
         case library
+        /// Documents path.
         case documents
+        /// Cache path.
         case cache
+        /// Application Support path.
         case applicationSupport
+        /// Temporary path.
+        case temporary
     }
     
     // MARK: - Functions
@@ -66,6 +68,8 @@ public extension FileManager {
             pathString = cachePath()
         case .applicationSupport:
             pathString = applicationSupportPath()
+        case .temporary:
+            pathString = temporaryPath()
         }
         
         return pathString
@@ -82,6 +86,7 @@ public extension FileManager {
         guard let path = FileManager.default.pathFor(path) else {
             return
         }
+        
         try content.write(toFile: path.appendingPathComponent(file), atomically: true, encoding: .utf8)
     }
     
@@ -96,6 +101,7 @@ public extension FileManager {
         guard let path = FileManager.default.pathFor(path) else {
             return nil
         }
+        
         return try String(contentsOfFile: path.appendingPathComponent(file), encoding: .utf8)
     }
     
@@ -201,6 +207,14 @@ public extension FileManager {
         }
         
         return applicationSupportURL.path.appendingPathComponent(file)
+    }
+    
+    /// Get Temporary path for a filename.
+    ///
+    /// - Parameter file: Filename.
+    /// - Returns: Returns the path as a String.
+    public func temporaryPath(file: String = "") -> String? {
+        return NSTemporaryDirectory().appendingPathComponent(file)
     }
     
     /// Returns the file size.

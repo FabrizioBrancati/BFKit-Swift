@@ -106,6 +106,12 @@ internal class FileManagerExtensionTests: XCTestCase {
         XCTAssertNotNil(path)
     }
     
+    internal func testTemporaryPathFile() {
+        let path = FileManager.default.temporaryPath()
+        
+        XCTAssertNotNil(path)
+    }
+    
     internal func testSizeFileFrom() {
         FileManager.default.savePlist(object: ["1", "2", "3", "4", "5"], in: .temporary, filename: "Test")
         
