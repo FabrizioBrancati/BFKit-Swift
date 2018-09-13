@@ -345,9 +345,9 @@ public extension Color {
     /// - Parameter alpha: Alpha value.
     /// - Returns: Returns the UIColor or NSColor instance.
     public static func random(alpha: CGFloat = 1.0) -> Color {
-        let red: Int = randomInt(range: 0...255)
-        let green: Int = randomInt(range: 0...255)
-        let blue: Int = randomInt(range: 0...255)
+        let red: Int = Int.random(in: 0...255)
+        let green: Int = Int.random(in: 0...255)
+        let blue: Int = Int.random(in: 0...255)
         
         return Color(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: alpha)
     }

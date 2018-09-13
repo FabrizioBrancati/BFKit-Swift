@@ -40,6 +40,11 @@ All notable changes to this project will be documented in this file.<br>
 - Added support to Xcode 10 and Swift 4.2
 
 ### Changed
+- BFTouchID is deprecated and will be removed in a future version of BFKit-Swift. Please use BFBiometrics enum instead
+- `lightFont` in UIFont extension is deprecated and will be removed in a future version of BFKit-Swift
+- `regularFont` in UIFont extension is deprecated and will be removed in a future version of BFKit-Swift
+- `boldFont` in UIFont extension is deprecated and will be removed in a future version of BFKit-Swift
+- All random functions in Number extension are deprecated and will be removed in a future version of BFKit-Swift
 - Changed from Codecov to Coveralls service for code coverage
 - Updated package tools version to 4.2
 
