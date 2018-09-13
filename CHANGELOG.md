@@ -41,6 +41,7 @@ All notable changes to this project will be documented in this file.<br>
 
 ### Changed
 - Changed from Codecov to Coveralls service for code coverage
+- Updated package tools version to 4.2
 
 ---
 
