@@ -136,16 +136,16 @@ public extension UIView {
                 cornerMask = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner]
             } else {
                 if corners.contains(.bottomLeft) {
-                    cornerMask.update(with: .layerMinXMinYCorner)
-                }
-                if corners.contains(.bottomRight) {
-                    cornerMask.update(with: .layerMaxXMinYCorner)
-                }
-                if corners.contains(.topLeft) {
                     cornerMask.update(with: .layerMinXMaxYCorner)
                 }
-                if corners.contains(.topRight) {
+                if corners.contains(.bottomRight) {
                     cornerMask.update(with: .layerMaxXMaxYCorner)
+                }
+                if corners.contains(.topLeft) {
+                    cornerMask.update(with: .layerMinXMinYCorner)
+                }
+                if corners.contains(.topRight) {
+                    cornerMask.update(with: .layerMaxXMinYCorner)
                 }
             }
             
