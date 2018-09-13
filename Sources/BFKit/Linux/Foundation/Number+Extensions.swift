@@ -51,6 +51,7 @@ public func radiansToDegrees(_ radians: Float) -> Float {
 ///   - minValue: Mininum random value. Default is 0.
 ///   - maxValue: Maxinum random value. Default is 1.
 /// - Returns: Returns the created random integer.
+@available(*, deprecated: 3.2, renamed: "Int.random", message: "`randomInt()` is deprecated and will be removed in a future version of BFKit-Swift.")
 public func randomInt(min minValue: Int = 0, max maxValue: Int = 100) -> Int {
     return randomInt(range: minValue...maxValue)
 }
@@ -60,6 +61,7 @@ public func randomInt(min minValue: Int = 0, max maxValue: Int = 100) -> Int {
 ///
 /// - Parameter range: Range random value.
 /// - Returns: Returns the created random integer.
+@available(*, deprecated: 3.2, renamed: "Int.random", message: "`randomInt()` is deprecated and will be removed in a future version of BFKit-Swift.")
 public func randomInt(range: ClosedRange<Int>) -> Int {
     return Int(randomFloat(range: Float(range.lowerBound)...Float(range.upperBound)) + 0.5)
 }
@@ -70,6 +72,7 @@ public func randomInt(range: ClosedRange<Int>) -> Int {
 ///   - minValue: Mininum random value. Default is 0.
 ///   - maxValue: Maxinum random value. Default is 1.
 /// - Returns: Returns the created random float.
+@available(*, deprecated: 3.2, renamed: "Float.random", message: "`randomFloat()` is deprecated and will be removed in a future version of BFKit-Swift.")
 public func randomFloat(min minValue: Float = 0, max maxValue: Float = 1) -> Float {
     return randomFloat(range: minValue...maxValue)
 }
@@ -79,6 +82,7 @@ public func randomFloat(min minValue: Float = 0, max maxValue: Float = 1) -> Flo
 ///
 /// - Parameter range: Range random value.
 /// - Returns: Returns the created random float.
+@available(*, deprecated: 3.2, renamed: "Float.random", message: "`randomFloat()` is deprecated and will be removed in a future version of BFKit-Swift.")
 public func randomFloat(range: ClosedRange<Float>) -> Float {
     return Float(range.upperBound - range.lowerBound) * abs(Float.random()) + Float(range.lowerBound)
 }
@@ -139,6 +143,7 @@ public extension Numeric {
     /// Creates a random integer number.
     ///
     /// - Returns: Returns the creates a random integer number.
+    @available(*, deprecated: 3.2, message: "`random()` is deprecated and will be removed in a future version of BFKit-Swift. Please use Swift 4.2 random functions.")
     static func random() -> Self {
         let numbers = Randomizer.get(count: MemoryLayout<Self>.size)
         return numbers.withUnsafeBufferPointer { bufferPointer in
@@ -163,6 +168,7 @@ public extension Double {
     /// Creates a random Double number.
     ///
     /// - Returns: Returns the created a random Double number.
+    @available(*, deprecated: 3.2, message: "`random()` is deprecated and will be removed in a future version of BFKit-Swift. Please use Swift 4.2 random functions.")
     static func random() -> Double {
         return Double(Int.random()) / Double(Int.max)
     }
@@ -177,7 +183,8 @@ public extension Float {
     
     /// Creates a random Float number.
     ///
-    /// - Returns: Returns the created a random Float number.
+    /// - Returns: Returns the created random Float number.
+    @available(*, deprecated: 3.2, message: "`random()` is deprecated and will be removed in a future version of BFKit-Swift. Please use Swift 4.2 random functions.")
     static func random() -> Float {
         return Float(Double.random())
     }
