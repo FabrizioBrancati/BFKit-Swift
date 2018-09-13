@@ -35,9 +35,13 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## Develop
+##  [3.2.1](https://github.com/FabrizioBrancati/Queuer/releases/tag/3.2.1) - That Corner Radius
+### 14 Sep 2018
 ### Improved
 - Updated SwiftLint to 0.27.0
+
+### Fixed
+- Fixed wrong corner radius in `cornerRadius(corners:, radius:)` in UIView extension
 
 ---
 
@@ -80,7 +84,7 @@ All notable changes to this project will be documented in this file.<br>
 - Added Hound CI
 
 ### Improved
-- Now `cornerRadius(corners:, radius:)` function in UIView extension uses `maskedCorners` for iOS 11 only
+- Now `cornerRadius(corners:, radius:)` function in UIView extension uses `maskedCorners` for iOS 11 or above
 - `fadeDuration` in BFButton class is now a TimeInterval
 - Updated device names based on [The iPhone Wiki](https://www.theiphonewiki.com/wiki/Models)
 - Updated SwiftLint to 0.25.0
