@@ -41,7 +41,7 @@ All notable changes to this project will be documented in this file.<br>
 - Updated SwiftLint to 0.27.0
 
 ### Fixed
-- Fixed wrong corner radius in `cornerRadius(corners:, radius:)` in UIView extension
+- Fixed wrong corner radius in `cornerRadius(corners:, radius:)` function in UIView extension
 
 ---
 
