@@ -75,8 +75,8 @@ public extension String {
     
     // MARK: - Functions
     
-    @available(*, deprecated: 3.2, renamed: "count", message: "`length` is deprecated and will be removed in BFKit-Swift 4.")
     /// Returns the lenght of the string.
+    @available(*, deprecated: 3.2, renamed: "count", message: "`length` is deprecated and will be removed in a future version of BFKit-Swift.")
     public var length: Int {
         return count
     }
