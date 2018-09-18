@@ -139,7 +139,7 @@ Thanks to [@tomasz-czyzak](https://github.com/tomasz-czyzak) for this release
 - Now `gradient(colors:, direction:)` returns a `CAGradientLayer` as a `@discardableResult`, so no changes are required
 
 ### Fixed
-- Fixed a bug on `substring(to:)` function on String extension [#32](https://github.com/FabrizioBrancati/BFKit-Swift/issue/32)
+- Fixed a bug on `substring(to:)` function on String extension [#32](https://github.com/FabrizioBrancati/BFKit-Swift/issues/32)
 - Fixed non designable `UIView`s
 
 ### Changed
@@ -231,10 +231,10 @@ Thanks to [@wdcurry](https://github.com/wdcurry) for this release
 - Updated with Swift 3.1 compatibility
 - Updated SwiftLint to 0.18.1
 - Improved tests
-- `mainBundlePath` in FileManager extension will now return the main bundle path if no file is specified [#27](https://github.com/FabrizioBrancati/BFKit-Swift/issue/27)
+- `mainBundlePath` in FileManager extension will now return the main bundle path if no file is specified [#27](https://github.com/FabrizioBrancati/BFKit-Swift/issues/27)
 
 ### Fixed
-- Fixed an issue with `randomInt()` function in Number extension [#26](https://github.com/FabrizioBrancati/BFKit-Swift/issue/26)
+- Fixed an issue with `randomInt()` function in Number extension [#26](https://github.com/FabrizioBrancati/BFKit-Swift/issues/26)
 
 Thanks to [@on123](https://github.com/on123) & [@jiongge](https://github.com/jiongge) for this release
 
