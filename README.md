@@ -199,7 +199,7 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
 - Create a **Package.swift** file in your **project directory** and write into:
 
     ```swift
-    // swift-tools-version:4.0
+    // swift-tools-version:4.2
     import PackageDescription
 
     let package = Package(
