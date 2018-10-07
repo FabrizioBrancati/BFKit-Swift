@@ -206,6 +206,14 @@ public extension FileManager {
             return nil
         }
         
+        if !FileManager.default.fileExists(atPath: applicationSupportURL.absoluteString, isDirectory: nil) {
+            do {
+                try FileManager.default.createDirectory(atPath: applicationSupportURL.path, withIntermediateDirectories: true, attributes: nil)
+            } catch {
+                return nil
+            }
+        }
+        
         return applicationSupportURL.path.appendingPathComponent(file)
     }
     
