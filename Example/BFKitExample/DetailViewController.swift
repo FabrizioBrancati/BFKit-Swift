@@ -84,6 +84,8 @@ class DetailViewController: UIViewController {
             BFLog.log("App name: \(BFApp.name)")
             BFLog.log("App build: \(BFApp.build)")
             BFLog.log("App version: \(BFApp.version)")
+            BFLog.log("App set: \(BFApp.setAppSetting(object: "Test", forKey: "Test"))")
+            BFLog.log("App get: \(BFApp.getAppSetting(objectKey: "Test"))")
             
             BFApp.onFirstStart { isFirstStart in
                 if isFirstStart {
