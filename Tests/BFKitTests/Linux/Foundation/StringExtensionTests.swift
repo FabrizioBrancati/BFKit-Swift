@@ -35,6 +35,8 @@ internal class StringExtensionTests: XCTestCase {
         ("testIntValue", testIntValue),
         ("testDataValue", testDataValue),
         ("testURLEncoded", testURLEncoded),
+        ("testLocalized", testLocalized),
+        ("testNumberValue", testNumberValue),
         ("testBase64Encoded", testBase64Encoded),
         ("testBase64Decoded", testBase64Decoded),
         ("testLength", testLength),
@@ -50,6 +52,9 @@ internal class StringExtensionTests: XCTestCase {
         ("testHasCaseSensitive", testHasCaseSensitive),
         ("testOccurrencesOfCaseSensitive", testOccurrencesOfCaseSensitive),
         ("testSentenceCapitalizedString", testSentenceCapitalizedString),
+        ("testQueryStringParameter", testQueryStringParameter),
+        ("testQueryDictionary", testQueryDictionary),
+        ("testIsURLValid", testIsURLValid),
         ("testLastPathComponent", testLastPathComponent),
         ("testPathExtension", testPathExtension),
         ("testDeletingLastPathComponent", testDeletingLastPathComponent),
@@ -119,6 +124,18 @@ internal class StringExtensionTests: XCTestCase {
         let encoded = string.urlEncoded
         
         XCTAssertEqual(encoded, "This%20is%20a%20test")
+    }
+    
+    internal func testLocalized() {
+        let localized = "This is a test".localized
+        
+        XCTAssertEqual(localized, "This is a test")
+    }
+    
+    internal func testNumberValue() {
+        let numberString = "42".numberValue
+        
+        XCTAssertEqual(numberString, 42)
     }
     
     internal func testBase64Encoded() {
@@ -229,6 +246,27 @@ internal class StringExtensionTests: XCTestCase {
         XCTAssertEqual(capitalized, "This is a test")
         XCTAssertEqual(notCapitalized, "This is a test")
         XCTAssertEqual(zeroLength, "")
+    }
+    
+    internal func testQueryStringParameter() {
+        let url = "https://www.google.com/search?q=test&oq=test&sourceid=chrome&ie=UTF-8"
+        let parameter = url.queryStringParameter(parameter: "sourceid")
+        
+        XCTAssertEqual(parameter, "chrome")
+    }
+    
+    internal func testQueryDictionary() {
+        let url = "q=test&oq=test&sourceid=chrome&ie=UTF-8"
+        let parameters = url.queryDictionary()
+        
+        XCTAssertEqual(parameters, ["q": "test", "oq": "test", "sourceid": "chrome", "ie": "UTF-8"])
+    }
+    
+    internal func testIsURLValid() {
+        let url = "https://www.google.com/search?q=test&oq=test&sourceid=chrome&ie=UTF-8"
+        let isValid = url.isURLValid()
+        
+        XCTAssertTrue(isValid)
     }
     
     internal func testLastPathComponent() {

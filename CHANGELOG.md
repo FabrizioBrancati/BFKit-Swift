@@ -38,6 +38,8 @@ All notable changes to this project will be documented in this file.<br>
 ## Swift 4.2
 ### Added
 - Added support to Xcode 10 and Swift 4.2
+- Added `localized` and `numberValue` variables in String extension
+- Added `queryStringParameter(parameter:)`, `queryDictionary()` and `urlValid()` functions in String extension
 
 ### Changed
 - BFTouchID is deprecated and will be removed in a future version of BFKit-Swift. Please use BFBiometrics enum instead
@@ -47,6 +49,9 @@ All notable changes to this project will be documented in this file.<br>
 - All random functions in Number extension are deprecated and will be removed in a future version of BFKit-Swift
 - Changed from Codecov to Coveralls service for code coverage
 - Updated package tools version to 4.2
+
+### Fixed
+- Now `.applicationSupport` case available in `PathType` enum in `FileManager` extension fully works, even if Application Support folder doesn't exist
 
 ---
 

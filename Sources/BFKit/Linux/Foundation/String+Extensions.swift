@@ -73,6 +73,18 @@ public extension String {
         return addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)
     }
     
+    /// Returns the localized string from self.
+    public var localized: String {
+        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
+    }
+    
+    /// Convert the String to a NSNumber.
+    public var numberValue: NSNumber? {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        return formatter.number(from: self)
+    }
+    
     // MARK: - Functions
     
     /// Returns the lenght of the string.
@@ -207,6 +219,41 @@ public extension String {
         let lowercase: String = substring(from: 1).lowercased()
 
         return uppercase + lowercase
+    }
+    
+    /// Returns the query parameter string.
+    ///
+    /// - Parameter parameter: Parameter to be searched.
+    /// - Returns: Returns the query parameter string.
+    func queryStringParameter(parameter: String) -> String? {
+        guard let url = URLComponents(string: self) else {
+            return nil
+        }
+        
+        return url.queryItems?.first(where: { $0.name == parameter })?.value
+    }
+    
+    /// Converts the query to a dictionary of parameters.
+    ///
+    /// - Returns: Returns the dictionary of parameters.
+    func queryDictionary() -> [String: String] {
+        var queryStrings: [String: String] = [:]
+        for pair in self.components(separatedBy: "&") {
+            let key = pair.components(separatedBy: "=")[0]
+            let value = pair.components(separatedBy: "=")[1].replacingOccurrences(of: "+", with: " ").removingPercentEncoding ?? ""
+            
+            queryStrings[key] = value
+        }
+        return queryStrings
+    }
+    
+    /// Check if the URL is a valid HTTP URL.
+    ///
+    /// - Returns: Returns if the URL is a valid HTTP URL
+    public func isURLValid() -> Bool {
+        let regEx = "((https|http)://)((\\w|-)+)(([.]|[/])((\\w|-)+))?.+"
+        let predicate = NSPredicate(format: "SELF MATCHES %@", argumentArray: [regEx])
+        return predicate.evaluate(with: self)
     }
     
     /// Convert a String to a NSAttributedString.
