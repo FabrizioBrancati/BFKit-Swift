@@ -54,7 +54,6 @@ internal class StringExtensionTests: XCTestCase {
         ("testSentenceCapitalizedString", testSentenceCapitalizedString),
         ("testQueryStringParameter", testQueryStringParameter),
         ("testQueryDictionary", testQueryDictionary),
-        ("testIsURLValid", testIsURLValid),
         ("testLastPathComponent", testLastPathComponent),
         ("testPathExtension", testPathExtension),
         ("testDeletingLastPathComponent", testDeletingLastPathComponent),
@@ -260,13 +259,6 @@ internal class StringExtensionTests: XCTestCase {
         let parameters = url.queryDictionary()
         
         XCTAssertEqual(parameters, ["q": "test", "oq": "test", "sourceid": "chrome", "ie": "UTF-8"])
-    }
-    
-    internal func testIsURLValid() {
-        let url = "https://www.google.com/search?q=test&oq=test&sourceid=chrome&ie=UTF-8"
-        let isValid = url.isURLValid()
-        
-        XCTAssertTrue(isValid)
     }
     
     internal func testLastPathComponent() {
@@ -517,6 +509,13 @@ internal class StringExtensionTests: XCTestCase {
             } catch {
                 XCTFail("`testMentions` error")
             }
+        }
+    
+        internal func testIsURLValid() {
+            let url = "https://www.google.com/search?q=test&oq=test&sourceid=chrome&ie=UTF-8"
+            let isValid = url.isURLValid()
+            
+            XCTAssertTrue(isValid)
         }
     #endif
 }
