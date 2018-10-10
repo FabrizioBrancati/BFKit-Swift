@@ -84,7 +84,7 @@ public extension Array {
     ///
     /// - returns: An element that was randomly selected from the array.
     public func random() -> Element {
-        return self[randomInt(range: 0...count - 1)]
+        return self[Int.random(in: 0...count - 1)]
     }
     
     /// Removes the element from self that is passed in.
@@ -150,22 +150,5 @@ public extension Array {
                 insert(object, at: toIndex)
             }
         }
-    }
-    
-    /// Shuffle the elements of `self` in-place.
-    public mutating func shuffle() {
-        for index in 0..<(count - 1) {
-            let newIndex = Int(randomInt(range: 0...Int(count - index))) + index
-            swap(from: index, to: newIndex)
-        }
-    }
-    
-    /// Return a copy of self with its elements shuffled.
-    ///
-    /// - Returns: Return a copy of `self` with its elements shuffled.
-    public func shuffled() -> [Element] {
-        var list = self
-        list.shuffle()
-        return list
     }
 }

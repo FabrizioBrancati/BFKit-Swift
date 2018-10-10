@@ -157,6 +157,11 @@
 		493868041F113C2800A793F7 /* UIColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314BD1F0C2EA600499354 /* UIColorExtensionTests.swift */; };
 		495BD1B520EC2DDB005DF1CB /* FileManagerExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314B71F0C2EA600499354 /* FileManagerExtensionTests.swift */; };
 		4971864C1D2339040032A98E /* BFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 497186411D2339040032A98E /* BFKit.framework */; };
+		498AE652216AB08500858554 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498AE651216AB08500858554 /* CGPoint.swift */; };
+		498AE653216AB08500858554 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498AE651216AB08500858554 /* CGPoint.swift */; };
+		498AE654216AB08500858554 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498AE651216AB08500858554 /* CGPoint.swift */; };
+		498AE657216AB1C700858554 /* CGPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498AE656216AB1C700858554 /* CGPointTests.swift */; };
+		498AE658216AB1C700858554 /* CGPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498AE656216AB1C700858554 /* CGPointTests.swift */; };
 		49B9259C1FE33218002F0F17 /* BFBiometrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B9259B1FE33217002F0F17 /* BFBiometrics.swift */; };
 		49B925D71FF29296002F0F17 /* BFBiometricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B925D51FF290E3002F0F17 /* BFBiometricsTests.swift */; };
 /* End PBXBuildFile section */
@@ -277,6 +282,8 @@
 		49381D411EAA084C00DBFC89 /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		497186411D2339040032A98E /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4971864B1D2339040032A98E /* BFKitTests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BFKitTests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		498AE651216AB08500858554 /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		498AE656216AB1C700858554 /* CGPointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointTests.swift; sourceTree = "<group>"; };
 		49B9259B1FE33217002F0F17 /* BFBiometrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFBiometrics.swift; sourceTree = "<group>"; };
 		49B925D51FF290E3002F0F17 /* BFBiometricsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFBiometricsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -347,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				490314771F0C2EA600499354 /* BFKit */,
+				498AE655216AB0B000858554 /* CoreGraphics */,
 				4903147C1F0C2EA600499354 /* Foundation */,
 				490314801F0C2EA600499354 /* UIKit */,
 				490314951F0C2EA600499354 /* WatchKit */,
@@ -474,6 +482,7 @@
 			isa = PBXGroup;
 			children = (
 				490314B11F0C2EA600499354 /* BFKit */,
+				498AE659216AB1CC00858554 /* CoreGraphics */,
 				490314B61F0C2EA600499354 /* Foundation */,
 				490314BA1F0C2EA600499354 /* UIKit */,
 			);
@@ -586,6 +595,22 @@
 				4903145D1F0C27CC00499354 /* BFKitTests macOS.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		498AE655216AB0B000858554 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				498AE651216AB08500858554 /* CGPoint.swift */,
+			);
+			path = CoreGraphics;
+			sourceTree = "<group>";
+		};
+		498AE659216AB1CC00858554 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				498AE656216AB1C700858554 /* CGPointTests.swift */,
+			);
+			path = CoreGraphics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -751,16 +776,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				id,
-				it,
-				"pt-BR",
-				ru,
-				sv,
-				uk,
-				vi,
-				"zh-Hans",
-				"zh-Hant",
-				fr,
 			);
 			mainGroup = 497186371D2339040032A98E;
 			productRefGroup = 497186421D2339040032A98E /* Products */;
@@ -829,6 +844,7 @@
 				493868031F10FE0300A793F7 /* UIColor+Extensions.swift in Sources */,
 				4903152C1F0C350F00499354 /* BFApp.swift in Sources */,
 				490315361F0C350F00499354 /* NSObject+Extensions.swift in Sources */,
+				498AE653216AB08500858554 /* CGPoint.swift in Sources */,
 				490315391F0C350F00499354 /* Set+Extensions.swift in Sources */,
 				4903152D1F0C350F00499354 /* BFDataStructures.swift in Sources */,
 				490315341F0C350F00499354 /* Date+Extensions.swift in Sources */,
@@ -856,6 +872,7 @@
 				4903156D1F0C358600499354 /* DateExtensionTests.swift in Sources */,
 				4903156B1F0C358600499354 /* CollectionExtensionTests.swift in Sources */,
 				4903156E1F0C358600499354 /* DictionaryExtensionTests.swift in Sources */,
+				498AE658216AB1C700858554 /* CGPointTests.swift in Sources */,
 				4903156C1F0C358600499354 /* DataExtensionTests.swift in Sources */,
 				490315721F0C358600499354 /* SetExtensionTests.swift in Sources */,
 				490315671F0C358600499354 /* BFDataStructuresTests.swift in Sources */,
@@ -874,6 +891,7 @@
 				490315161F0C31AD00499354 /* Collection+Extensions.swift in Sources */,
 				4903151E1F0C31AD00499354 /* String+Extensions.swift in Sources */,
 				4903151C1F0C31AD00499354 /* ProcessInfo+Extensions.swift in Sources */,
+				498AE654216AB08500858554 /* CGPoint.swift in Sources */,
 				4903151B1F0C31AD00499354 /* Number+Extensions.swift in Sources */,
 				490315201F0C31B000499354 /* FileManager+Extensions.swift in Sources */,
 				4903151F1F0C31AD00499354 /* Thread+Extensions.swift in Sources */,
@@ -913,6 +931,7 @@
 				49B9259C1FE33218002F0F17 /* BFBiometrics.swift in Sources */,
 				4903150B1F0C2F4600499354 /* UIToolbar+Extensions.swift in Sources */,
 				490315041F0C2F4600499354 /* UINavigationBar+Extensions.swift in Sources */,
+				498AE652216AB08500858554 /* CGPoint.swift in Sources */,
 				490314E71F0C2F2000499354 /* Date+Extensions.swift in Sources */,
 				490315071F0C2F4600499354 /* UIScrollView+Extensions.swift in Sources */,
 				490314E81F0C2F2000499354 /* Dictionary+Extensions.swift in Sources */,
@@ -983,6 +1002,7 @@
 				4903154B1F0C358000499354 /* UINavigationBarExtensionTests.swift in Sources */,
 				490315461F0C358000499354 /* UIDeviceExtensionTests.swift in Sources */,
 				4903153F1F0C358000499354 /* BFTouchIDTests.swift in Sources */,
+				498AE657216AB1C700858554 /* CGPointTests.swift in Sources */,
 				490315501F0C358000499354 /* UITextFieldExtensionTests.swift in Sources */,
 				490315541F0C358000499354 /* UIViewExtensionTests.swift in Sources */,
 				4903154A1F0C358000499354 /* UILabelExtensionTests.swift in Sources */,
@@ -1087,7 +1107,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1109,7 +1128,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1195,13 +1213,12 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3.2.1;
+				CURRENT_PROJECT_VERSION = 4.0.0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1216,9 +1233,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-function-bodies=100 -Xfrontend -warn-long-expression-type-checking=100";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1260,7 +1277,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3.2.1;
+				CURRENT_PROJECT_VERSION = 4.0.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1274,8 +1291,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-function-bodies=100 -Xfrontend -warn-long-expression-type-checking=100";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1303,7 +1321,6 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1340,8 +1357,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.FabrizioBrancati.BFKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1356,8 +1371,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.FabrizioBrancati.BFKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

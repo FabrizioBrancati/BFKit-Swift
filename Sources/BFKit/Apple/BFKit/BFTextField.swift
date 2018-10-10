@@ -47,7 +47,7 @@ open class BFTextField: UITextField {
         super.init(coder: aDecoder)
         
         maxNumberOfCharacters = aDecoder.decodeInteger(forKey: "MaxNumberOfCharacters")
-        NotificationCenter.default.addObserver(self, selector: #selector(BFTextField.textFieldDidChange(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: self)
+        NotificationCenter.default.addObserver(self, selector: #selector(BFTextField.textFieldDidChange(_:)), name: UITextField.textDidChangeNotification, object: self)
     }
     
     /// Encodes added variables.
@@ -66,7 +66,7 @@ open class BFTextField: UITextField {
         super.init(frame: frame)
         
         maxNumberOfCharacters = 0
-        NotificationCenter.default.addObserver(self, selector: #selector(BFTextField.textFieldDidChange(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: self)
+        NotificationCenter.default.addObserver(self, selector: #selector(BFTextField.textFieldDidChange(_:)), name: UITextField.textDidChangeNotification, object: self)
     }
     
     @objc
@@ -79,6 +79,7 @@ open class BFTextField: UITextField {
         guard let text = text else {
             return
         }
+        
         if maxNumberOfCharacters != 0, text.count >= maxNumberOfCharacters {
             self.text = text.substring(to: maxNumberOfCharacters)
         }

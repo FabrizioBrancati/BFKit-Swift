@@ -44,9 +44,9 @@ public extension UIImage {
     ///
     /// - Parameter dummy: This parameter must contain: "100x100", "100x100.#FFFFFF" or "100x100.blue" (if it is a color defined in UIColor class) if you want to define a color. Default color is lightGray.
     public convenience init?(dummyImage dummy: String) {
-        var size = CGSize.zero, color: UIColor = UIColor.lightGray
+        var size = CGSize.zero, color = UIColor.lightGray
         
-        let array: Array = dummy.components(separatedBy: ".")
+        let array = dummy.components(separatedBy: ".")
         if !array.isEmpty {
             let sizeString: String = array[0]
             
@@ -64,11 +64,17 @@ public extension UIImage {
         color.setFill()
         UIRectFill(rect)
         
-        let sizeString: String = "\(Int(size.width)) x \(Int(size.height))"
-        let style: NSMutableParagraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle // swiftlint:disable:this force_cast
+        let widthInt = Int(size.width)
+        let heightInt = Int(size.height)
+        let sizeString = "\(widthInt) x \(heightInt)"
+        guard let paragraphStyle = NSParagraphStyle.default.mutableCopy() as? NSMutableParagraphStyle else {
+            return nil
+        }
+        
+        let style = paragraphStyle
         style.alignment = .center
         style.minimumLineHeight = size.height / 2
-        let attributes: Dictionary = [NSAttributedStringKey.paragraphStyle: style]
+        let attributes = [NSAttributedString.Key.paragraphStyle: style]
         sizeString.draw(in: rect, withAttributes: attributes)
         
         if let result = UIGraphicsGetImageFromCurrentImageContext(), let cgImage = result.cgImage {
@@ -109,7 +115,7 @@ public extension UIImage {
     public convenience init?(text: String, font: FontName, fontSize: CGFloat, imageSize: CGSize) {
         UIGraphicsBeginImageContextWithOptions(imageSize, false, UIImage.screenScale())
         
-        text.draw(at: CGPoint(x: 0.0, y: 0.0), withAttributes: [NSAttributedStringKey.font: UIFont(fontName: font, size: fontSize) as Any])
+        text.draw(at: CGPoint(x: 0.0, y: 0.0), withAttributes: [NSAttributedString.Key.font: UIFont(fontName: font, size: fontSize) as Any])
         
         guard let image: UIImage = UIGraphicsGetImageFromCurrentImageContext(), let cgImage = image.cgImage else {
             UIGraphicsEndImageContext()
@@ -134,7 +140,7 @@ public extension UIImage {
             return nil
         }
         
-        let textAttributes = [NSAttributedStringKey.font: fontName]
+        let textAttributes = [NSAttributedString.Key.font: fontName]
         let textSize = maskedText.size(withAttributes: textAttributes)
         
         UIGraphicsBeginImageContextWithOptions(imageSize, false, UIImage.screenScale())
@@ -833,7 +839,9 @@ public extension UIImage {
             var effectImage = self
             
             let hasBlur = Float(blurRadius) > Float.ulpOfOne
-            let hasSaturationChange = Float(abs(saturation - 1)) > Float.ulpOfOne
+            let saturationABS = abs(saturation - 1)
+            let saturationABSFloat = Float(saturationABS)
+            let hasSaturationChange = saturationABSFloat > Float.ulpOfOne
             
             if hasBlur || hasSaturationChange {
                 UIGraphicsBeginImageContextWithOptions(size, false, UIImage.screenScale())

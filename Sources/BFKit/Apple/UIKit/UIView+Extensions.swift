@@ -388,7 +388,7 @@ public extension UIView {
     ///   - translation: Shake translation. Default is 5.
     public func shake(count: Float = 2, duration: TimeInterval = 0.15, translation: Float = 5) {
         let animation = CABasicAnimation(keyPath: "transform.translation.x")
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         animation.repeatCount = count
         animation.duration = (duration) / TimeInterval(animation.repeatCount)
         animation.autoreverses = true
@@ -407,7 +407,7 @@ public extension UIView {
         animation.duration = duration
         animation.fromValue = 0
         animation.toValue = 1
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         animation.autoreverses = true
         animation.repeatCount = count
         
@@ -435,7 +435,7 @@ public extension UIView {
         let frameTimes = [NSNumber(value: 0.05), NSNumber(value: 0.2), NSNumber(value: 0.6), NSNumber(value: 1.0)]
         animation.keyTimes = frameTimes
         
-        animation.fillMode = kCAFillModeForwards
+        animation.fillMode = CAMediaTimingFillMode.forwards
         animation.duration = durationPerBeat
         animation.repeatCount = count / Float(durationPerBeat)
         
@@ -449,10 +449,10 @@ public extension UIView {
     ///   - direction: Direction of the flip animation.
     public func flip(duration: TimeInterval, direction: UIViewAnimationFlipDirection) {
         let transition = CATransition()
-        transition.subtype = direction.rawValue
+        transition.subtype = CATransitionSubtype(rawValue: direction.rawValue)
         transition.startProgress = 0
         transition.endProgress = 1.0
-        transition.type = "flip"
+        transition.type = CATransitionType(rawValue: "flip")
         transition.duration = duration
         transition.repeatCount = 1
         transition.autoreverses = true
@@ -483,11 +483,11 @@ public extension UIView {
             center = CGPoint(x: startPosition, y: center.y)
         }
         
-        UIView.animate(withDuration: TimeInterval(duration / 2), delay: 1, options: UIViewAnimationOptions(), animations: {
+        UIView.animate(withDuration: TimeInterval(duration / 2), delay: 1, options: UIView.AnimationOptions(), animations: {
             self.center = CGPoint(x: endPosition, y: self.center.y)
         }, completion: { finished in
             if finished {
-                UIView.animate(withDuration: TimeInterval(duration / 2), delay: 1, options: UIViewAnimationOptions(), animations: {
+                UIView.animate(withDuration: TimeInterval(duration / 2), delay: 1, options: UIView.AnimationOptions(), animations: {
                     self.center = CGPoint(x: startPosition, y: self.center.y)
                 }, completion: { finished in
                     if finished {

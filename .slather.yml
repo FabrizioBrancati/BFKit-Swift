@@ -1,0 +1,5 @@
+coverage_service: coveralls
+xcodeproj: BFKit.xcodeproj
+scheme: BFKit iOS
+ignore:
+  - Tests/*

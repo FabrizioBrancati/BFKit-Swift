@@ -103,7 +103,7 @@ internal class BFAppTests: XCTestCase {
     internal func testAppSetting() {
         BFApp.setAppSetting(object: "Test", forKey: "Test")
         
-        XCTAssertEqual((BFApp.getAppSetting(objectKey: "Test") as! String), "Test") // swiftlint:disable:this force_cast
+        XCTAssertEqual((BFApp.getAppSetting(objectKey: "Test") as? String), "Test")
     }
 
     internal func testNSLocalizedString() {

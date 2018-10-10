@@ -2,7 +2,7 @@
 
 # Creates documentation using Jazzy.
 
-FRAMEWORK_VERSION=3.2.0
+FRAMEWORK_VERSION=4.0.0
 
 jazzy \
   --clean \
@@ -20,4 +20,4 @@ jazzy \
   --root-url https://github.fabriziobrancati.com/documentation/BFKit-Swift/ \
   --dash_url https://github.fabriziobrancati.com/documentation/BFKit-Swift/docsets/BFKit.xml
 
-  cp -r Resources Docs/Resources
+cp -r Resources Docs/Resources

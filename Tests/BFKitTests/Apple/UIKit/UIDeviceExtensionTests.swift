@@ -63,13 +63,13 @@ internal class UIDeviceExtensionTests: XCTestCase {
     internal func testOsVersion() {
         let osVersion = UIDevice.osVersion.substring(to: ".")
         
-        XCTAssertEqual(osVersion, "11")
+        XCTAssertGreaterThan(osVersion.intValue, 7)
     }
     
     internal func testOsMajorVersion() {
         let osVersion = UIDevice.osMajorVersion
         
-        XCTAssertEqual(osVersion, 11)
+        XCTAssertGreaterThan(osVersion, 7)
     }
     
     internal func testHardwareModel() {

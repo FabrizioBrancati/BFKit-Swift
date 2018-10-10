@@ -8,6 +8,9 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+### 4.x Releases
+- `4.0.x` Releases - [4.0.0](#400---swift-42-support)
+
 ### 3.x Releases
 - `3.2.x` Releases - [3.2.0](#320---big-improvements) | [3.2.1](#321---that-corner-radius)
 - `3.1.x` Releases - [3.1.0](#310---face-id-support) | [3.1.1](#311---some-improvements) | [3.1.2](#311---swift-41-support)
@@ -32,6 +35,29 @@ All notable changes to this project will be documented in this file.<br>
 - `1.2.x` Releases - [1.2.0](#120)
 - `1.1.x` Releases - [1.1.0](#110)
 - `1.0.x` Releases - [1.0.0](#100)
+
+---
+
+## [4.0.0](https://github.com/FabrizioBrancati/Queuer/releases/tag/4.0.0) - Swift 4.2 Support
+### 11 Oct 2018
+### Added
+- Added support to Xcode 10 and Swift 4.2
+- Added `localized` and `numberValue` variables in String extension
+- Added `queryStringParameter(parameter:)`, `queryDictionary()` and `urlValid()` functions in String extension
+
+### Changed
+- BFTouchID is deprecated and will be removed in a future version of BFKit-Swift. Please use BFBiometrics enum instead
+- `lightFont` in UIFont extension is deprecated and will be removed in a future version of BFKit-Swift
+- `regularFont` in UIFont extension is deprecated and will be removed in a future version of BFKit-Swift
+- `boldFont` in UIFont extension is deprecated and will be removed in a future version of BFKit-Swift
+- All random functions in Number extension are deprecated and will be removed in a future version of BFKit-Swift
+- Changed from Codecov to Coveralls service for code coverage
+
+### Improved
+- Updated package tools version to 4.2
+
+### Fixed
+- Now `.applicationSupport` case available in `PathType` enum in `FileManager` extension fully works, even if Application Support folder doesn't exist
 
 ---
 
@@ -124,7 +150,7 @@ Thanks to [@tomasz-czyzak](https://github.com/tomasz-czyzak) for this release
 - Now `gradient(colors:, direction:)` returns a `CAGradientLayer` as a `@discardableResult`, so no changes are required
 
 ### Fixed
-- Fixed a bug on `substring(to:)` function on String extension [#32](https://github.com/FabrizioBrancati/BFKit-Swift/issue/32)
+- Fixed a bug on `substring(to:)` function on String extension [#32](https://github.com/FabrizioBrancati/BFKit-Swift/issues/32)
 - Fixed non designable `UIView`s
 
 ### Changed
@@ -216,10 +242,10 @@ Thanks to [@wdcurry](https://github.com/wdcurry) for this release
 - Updated with Swift 3.1 compatibility
 - Updated SwiftLint to 0.18.1
 - Improved tests
-- `mainBundlePath` in FileManager extension will now return the main bundle path if no file is specified [#27](https://github.com/FabrizioBrancati/BFKit-Swift/issue/27)
+- `mainBundlePath` in FileManager extension will now return the main bundle path if no file is specified [#27](https://github.com/FabrizioBrancati/BFKit-Swift/issues/27)
 
 ### Fixed
-- Fixed an issue with `randomInt()` function in Number extension [#26](https://github.com/FabrizioBrancati/BFKit-Swift/issue/26)
+- Fixed an issue with `randomInt()` function in Number extension [#26](https://github.com/FabrizioBrancati/BFKit-Swift/issues/26)
 
 Thanks to [@on123](https://github.com/on123) & [@jiongge](https://github.com/jiongge) for this release
 

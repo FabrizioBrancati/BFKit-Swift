@@ -84,6 +84,8 @@ class DetailViewController: UIViewController {
             BFLog.log("App name: \(BFApp.name)")
             BFLog.log("App build: \(BFApp.build)")
             BFLog.log("App version: \(BFApp.version)")
+            BFLog.log("App set: \(BFApp.setAppSetting(object: "Test", forKey: "Test"))")
+            BFLog.log("App get: \(BFApp.getAppSetting(objectKey: "Test"))")
             
             BFApp.onFirstStart { isFirstStart in
                 if isFirstStart {
@@ -416,7 +418,7 @@ class DetailViewController: UIViewController {
         case .UITableView:
             scrollView.removeFromSuperview()
             
-            let tableView: UITableView = UITableView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), style: .plain, cellSeparatorStyle: .singleLine, separatorInset: UIEdgeInsetsMake(0, 15, 0, 0), dataSource: nil, delegate: nil)
+            let tableView: UITableView = UITableView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), style: .plain, cellSeparatorStyle: .singleLine, separatorInset: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0), dataSource: nil, delegate: nil)
             self.view.addSubview(tableView)
         case .UITextField:
             scrollView.contentSize = CGSize(width: UIScreen.screenWidth, height: UIScreen.screenHeight - 120)
@@ -608,7 +610,6 @@ class DetailViewController: UIViewController {
             let string: String = "Search in this string!"
             let isEmail: String = string.isEmail() ? "Is email: Yes" : "Is email: No"
             BFLog.log("\(isEmail)")
-            BFLog.log("Lenght: \(string.length)")
             BFLog.log("Char at index 5: \(string.character(at: 5))")
             BFLog.log("Substring with range: \(string.substring(with: 0..<5))")
             

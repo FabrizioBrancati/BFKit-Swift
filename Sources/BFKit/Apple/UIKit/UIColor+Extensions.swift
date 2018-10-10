@@ -134,7 +134,7 @@ public extension Color {
             #if canImport(UIKit)
                 getRed(&red, green: &green, blue: &blue, alpha: &alpha)
             #elseif canImport(AppKit)
-                if colorSpace.colorSpaceModel == .RGB {
+                if colorSpace.colorSpaceModel == .rgb {
                     getRed(&red, green: &green, blue: &blue, alpha: &alpha)
                 } else if colorSpace.colorSpaceModel == .gray {
                     var white: CGFloat = 0.0
@@ -190,15 +190,17 @@ public extension Color {
     
     /// Returns the HEX string from UIColor or NSColor.
     public var hex: String {
-        var red: CGFloat = 0
-        var green: CGFloat = 0
-        var blue: CGFloat = 0
-        var alpha: CGFloat = 0
+        var red: CGFloat = 0.0
+        var green: CGFloat = 0.0
+        var blue: CGFloat = 0.0
+        var alpha: CGFloat = 0.0
         
         getRed(&red, green: &green, blue: &blue, alpha: &alpha)
         
-        var rgb: Int = (Int)(red * 255) << 16 | (Int)(green * 255) << 8
-        rgb = rgb | (Int)(blue * 255) << 0
+        let redInt = (Int)(red * 255)
+        let greenInt = (Int)(green * 255)
+        let blueInt = (Int)(blue * 255)
+        let rgb: Int = redInt << 16 | greenInt << 8 | blueInt << 0
         
         return String(format: "#%06x", rgb)
     }
@@ -343,9 +345,9 @@ public extension Color {
     /// - Parameter alpha: Alpha value.
     /// - Returns: Returns the UIColor or NSColor instance.
     public static func random(alpha: CGFloat = 1.0) -> Color {
-        let red: Int = randomInt(range: 0...255)
-        let green: Int = randomInt(range: 0...255)
-        let blue: Int = randomInt(range: 0...255)
+        let red: Int = Int.random(in: 0...255)
+        let green: Int = Int.random(in: 0...255)
+        let blue: Int = Int.random(in: 0...255)
         
         return Color(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: alpha)
     }

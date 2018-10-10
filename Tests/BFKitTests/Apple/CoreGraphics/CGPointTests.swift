@@ -1,7 +1,6 @@
-// swift-tools-version:4.2
 //
-//  Package.swift
-//  BFKit
+//  CGPointTests.swift
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -25,19 +24,17 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+@testable import BFKit
+import Foundation
+import XCTest
 
-let package = Package(
-    name: "BFKit",
-    products: [
-        .library(name: "BFKit", targets: ["BFKit"])
-    ],
-    targets: [
-        .target(name: "BFKit", dependencies: [], exclude: [
-            "Apple"
-        ]),
-        .testTarget(name: "BFKitTests", dependencies: ["BFKit"], exclude: [
-            "Apple"
-        ])
-    ]
-)
+internal class CGPointTests: XCTestCase {
+    internal func testDistanceTo() {
+        let point1 = CGPoint.zero
+        let point2 = CGPoint(x: 0, y: 100)
+        
+        let distance = point1.distanceTo(point2)
+        
+        XCTAssertEqual(distance, 100)
+    }
+}

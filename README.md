@@ -3,15 +3,15 @@
 </p>
 
 [![Build Status](https://travis-ci.org/FabrizioBrancati/BFKit-Swift.svg?branch=master)](https://travis-ci.org/FabrizioBrancati/BFKit-Swift)
-[![Codecov](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift/branch/master/graph/badge.svg)](https://codecov.io/gh/FabrizioBrancati/BFKit-Swift)
+[![Coverage Status](https://coveralls.io/repos/github/FabrizioBrancati/BFKit-Swift/badge.svg?branch=master)](https://coveralls.io/github/FabrizioBrancati/BFKit-Swift?branch=master)
 [![codebeat badge](https://codebeat.co/badges/b8c2fc8c-73f4-4faf-b95b-85209eeaecbe)](https://codebeat.co/projects/github-com-fabriziobrancati-bfkit-swift-master)
 [![Swift Package Manager Compatible](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/BFKit-Swift.svg?style=flat)][Documentation]
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)
 <br>
-[![Language](https://img.shields.io/badge/language-Swift%204.0-orange.svg)](https://swift.org/)
-[![Platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20watchOS%20%7C%20Linux-ffc713.svg)][Documentation]
+[![Language](https://img.shields.io/badge/language-Swift%204.2-orange.svg)](https://swift.org/)
+[![Platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20watchOS%20%7C%20Linux-cc9c00.svg)][Documentation]
 
 ---
 
@@ -115,6 +115,7 @@ Requirements
 | 3.0...3.2 | 8.0...9.0 | 2.6.0           | 8.0+     | 10.10+     | 2.0+        | ![✓]      |
 | 4.0       | 9.0...9.2 | 3.0.0...3.1.1   | 8.0+ `*` | 10.10+ `*` | 2.0+ `*`    | ![✓]      |
 | 4.1       | 9.3...9.4 | 3.1.2...3.2.1   | 8.0+ `*` | 10.10+ `*` | 2.0+ `*`    | ![✓]      |
+| 4.2       | 10.0      | 4.0.0           | 8.0+ `*` | 10.10+ `*` | 2.0+ `*`    | ![✓]      |
 
 > `*` With App Extension Support
 
@@ -198,7 +199,7 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
 - Create a **Package.swift** file in your **project directory** and write into:
 
     ```swift
-    // swift-tools-version:4.0
+    // swift-tools-version:4.2
     import PackageDescription
 
     let package = Package(
@@ -207,7 +208,7 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
             .executable(name: "Project", targets: ["Project"])
         ],
         dependencies: [
-            .package(url: "https://github.com/FabrizioBrancati/BFKit-Swift.git", .upToNextMajor(from: "3.2.0"))
+            .package(url: "https://github.com/FabrizioBrancati/BFKit-Swift.git", .upToNextMajor(from: "4.0.0"))
         ],
         targets: [
             .target(name: "Project", dependencies: ["BFKit"])

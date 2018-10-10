@@ -53,7 +53,7 @@ public func radiansToDegrees(_ radians: Float) -> Float {
 /// - Returns: Returns the created random integer.
 @available(*, deprecated: 3.2, renamed: "Int.random", message: "`randomInt()` is deprecated and will be removed in a future version of BFKit-Swift.")
 public func randomInt(min minValue: Int = 0, max maxValue: Int = 100) -> Int {
-    return randomInt(range: minValue...maxValue)
+    return Int.random(in: minValue...maxValue)
 }
 
 /// Create a random integer between the given range.
@@ -63,7 +63,7 @@ public func randomInt(min minValue: Int = 0, max maxValue: Int = 100) -> Int {
 /// - Returns: Returns the created random integer.
 @available(*, deprecated: 3.2, renamed: "Int.random", message: "`randomInt()` is deprecated and will be removed in a future version of BFKit-Swift.")
 public func randomInt(range: ClosedRange<Int>) -> Int {
-    return Int(randomFloat(range: Float(range.lowerBound)...Float(range.upperBound)) + 0.5)
+    return Int(Float.random(in: Float(range.lowerBound)...Float(range.upperBound)) + 0.5)
 }
 
 /// Create a random float between the given range.
@@ -74,7 +74,7 @@ public func randomInt(range: ClosedRange<Int>) -> Int {
 /// - Returns: Returns the created random float.
 @available(*, deprecated: 3.2, renamed: "Float.random", message: "`randomFloat()` is deprecated and will be removed in a future version of BFKit-Swift.")
 public func randomFloat(min minValue: Float = 0, max maxValue: Float = 1) -> Float {
-    return randomFloat(range: minValue...maxValue)
+    return Float.random(in: minValue...maxValue)
 }
 
 /// Create a random float between the given range.
@@ -87,76 +87,7 @@ public func randomFloat(range: ClosedRange<Float>) -> Float {
     return Float(range.upperBound - range.lowerBound) * abs(Float.random()) + Float(range.lowerBound)
 }
 
-// MARK: - Randomizer struct
-
-/// Produces great cryptographically random numbers.
-private enum Randomizer {
-    #if os(Linux)
-        /// /dev/urandom file reader.
-        static let file = fopen("/dev/urandom", "r")! // swiftlint:disable:this force_unwrapping
-    #endif
-    /// Random queue.
-    static let queue = DispatchQueue(label: "random")
-    
-    #if os(Linux)
-        /// Get a random number of a given capacity.
-        ///
-        /// - Parameter count: Byte count.
-        /// - Returns: Return the random number.
-        static func get(count: Int) -> [Int8] {
-            let capacity = count + 1
-            var data = UnsafeMutablePointer<Int8>.allocate(capacity: capacity)
-            defer {
-                data.deallocate(capacity: capacity)
-            }
-            _ = queue.sync {
-                fgets(data, Int32(capacity), file)
-            }
-    
-            return Array(UnsafeMutableBufferPointer(start: data, count: count))
-        }
-    #else
-        /// Get a random number of a given capacity.
-        ///
-        /// - Parameter count: Byte count.
-        /// - Returns: Return the random number.
-        static func get(count: Int) -> [UInt8] {
-            let capacity = count + 1
-            var data = UnsafeMutablePointer<UInt8>.allocate(capacity: capacity)
-            var secure: Int32 = 0
-            defer {
-                data.deallocate()
-            }
-            _ = queue.sync {
-                secure = SecRandomCopyBytes(kSecRandomDefault, capacity, data)
-            }
-            
-            return secure == 0 ? Array(UnsafeMutableBufferPointer(start: data, count: count)) : [0]
-        }
-    #endif
-}
-
 // MARK: - Extensions
-
-/// This extension adds some useful function to Numeric.
-public extension Numeric {
-    /// Creates a random integer number.
-    ///
-    /// - Returns: Returns the creates a random integer number.
-    @available(*, deprecated: 3.2, message: "`random()` is deprecated and will be removed in a future version of BFKit-Swift. Please use Swift 4.2 random functions.")
-    static func random() -> Self {
-        let numbers = Randomizer.get(count: MemoryLayout<Self>.size)
-        return numbers.withUnsafeBufferPointer { bufferPointer in
-            if let baseAddress = bufferPointer.baseAddress {
-                return baseAddress.withMemoryRebound(to: self, capacity: 1) {
-                    return $0.pointee
-                }
-            }
-            
-            return 0
-        }
-    }
-}
 
 /// This extesion adds some useful functions to Double.
 public extension Double {
@@ -170,7 +101,7 @@ public extension Double {
     /// - Returns: Returns the created a random Double number.
     @available(*, deprecated: 3.2, message: "`random()` is deprecated and will be removed in a future version of BFKit-Swift. Please use Swift 4.2 random functions.")
     static func random() -> Double {
-        return Double(Int.random()) / Double(Int.max)
+        return Double.random(in: 1...1000)
     }
 }
 
@@ -186,7 +117,7 @@ public extension Float {
     /// - Returns: Returns the created random Float number.
     @available(*, deprecated: 3.2, message: "`random()` is deprecated and will be removed in a future version of BFKit-Swift. Please use Swift 4.2 random functions.")
     static func random() -> Float {
-        return Float(Double.random())
+        return Float.random(in: 1...1000)
     }
 }
 

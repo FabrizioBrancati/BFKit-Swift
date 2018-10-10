@@ -1,7 +1,6 @@
-// swift-tools-version:4.2
 //
-//  Package.swift
-//  BFKit
+//  CGPoint.swift
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -25,19 +24,20 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
+import Foundation
+import CoreGraphics
 
-let package = Package(
-    name: "BFKit",
-    products: [
-        .library(name: "BFKit", targets: ["BFKit"])
-    ],
-    targets: [
-        .target(name: "BFKit", dependencies: [], exclude: [
-            "Apple"
-        ]),
-        .testTarget(name: "BFKitTests", dependencies: ["BFKit"], exclude: [
-            "Apple"
-        ])
-    ]
-)
+// MARK: - CGPoint extension
+
+/// This extesion adds some useful functions to CGPoint.
+public extension CGPoint {
+    // MARK: - Functions
+    
+    /// Returns the distance between another CGPoint.
+    ///
+    /// - Parameter point: CGPoint to be used to calculate the distance.
+    /// - Returns: Returns the distance between another CGPoint.
+    public func distanceTo(_ point: CGPoint) -> CGFloat {
+        return sqrt(pow((point.x - self.x), 2) + pow((point.y - self.y), 2))
+    }
+}

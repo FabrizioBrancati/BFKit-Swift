@@ -61,7 +61,7 @@ class FoundationViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier) as UITableViewCell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier)
         
         cell?.textLabel?.text = FoundationArray[(indexPath as NSIndexPath).row]
         cell?.tag = (indexPath as NSIndexPath).row

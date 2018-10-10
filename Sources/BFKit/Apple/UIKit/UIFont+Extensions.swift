@@ -378,22 +378,22 @@ public extension UIFont {
         case zapfino = "Zapfino"
     }
     
-    @available(*, deprecated: 3.2, message: "`lightFont` is deprecated and will be removed in a future version of BFKit-Swift.")
     /// Static light font to use in App.
     ///
     /// Default is HelveticaNeueLight of size 12.
+    @available(*, deprecated: 3.2, message: "`lightFont` is deprecated and will be removed in a future version of BFKit-Swift.")
     @nonobjc public static var lightFont = UIFont(fontName: .helveticaNeueLight, size: 12)
     
-    @available(*, deprecated: 3.2, message: "`regularFont` is deprecated and will be removed in a future version of BFKit-Swift.")
     /// Static regular font to use in App.
     ///
     /// Default is HelveticaNeue of size 12.
+    @available(*, deprecated: 3.2, message: "`regularFont` is deprecated and will be removed in a future version of BFKit-Swift.")
     @nonobjc public static var regularFont = UIFont(fontName: .helveticaNeue, size: 12)
     
-    @available(*, deprecated: 3.2, message: "`boldFont` is deprecated and will be removed in a future version of BFKit-Swift.")
     /// Static bold font to use in App.
     ///
     /// Default is HelveticaNeueBold of size 12.
+    @available(*, deprecated: 3.2, message: "`boldFont` is deprecated and will be removed in a future version of BFKit-Swift.")
     @nonobjc public static var boldFont = UIFont(fontName: .helveticaNeueBold, size: 12)
     
     // MARK: - Functions
@@ -435,7 +435,7 @@ public extension UIFont {
         var size = CGSize.zero
         
         if !text.isEmpty {
-            let frame: CGRect = text.boundingRect(with: CGSize(width: width, height: 999_999), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+            let frame: CGRect = text.boundingRect(with: CGSize(width: width, height: 999_999), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
             size = CGSize(width: frame.size.width, height: frame.size.height + 1)
         }
         return size.height
