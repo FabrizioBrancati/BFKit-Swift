@@ -8,6 +8,9 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+### 4.x Releases
+- `4.0.x` Releases - [4.0.0](#400---swift-42-support)
+
 ### 3.x Releases
 - `3.2.x` Releases - [3.2.0](#320---big-improvements) | [3.2.1](#321---that-corner-radius)
 - `3.1.x` Releases - [3.1.0](#310---face-id-support) | [3.1.1](#311---some-improvements) | [3.1.2](#311---swift-41-support)
@@ -35,7 +38,8 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## Swift 4.2
+## [4.0.0](https://github.com/FabrizioBrancati/Queuer/releases/tag/4.0.0) - Swift 4.2 Support
+### 11 Oct 2018
 ### Added
 - Added support to Xcode 10 and Swift 4.2
 - Added `localized` and `numberValue` variables in String extension
@@ -48,6 +52,8 @@ All notable changes to this project will be documented in this file.<br>
 - `boldFont` in UIFont extension is deprecated and will be removed in a future version of BFKit-Swift
 - All random functions in Number extension are deprecated and will be removed in a future version of BFKit-Swift
 - Changed from Codecov to Coveralls service for code coverage
+
+### Improved
 - Updated package tools version to 4.2
 
 ### Fixed
