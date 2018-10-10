@@ -115,7 +115,7 @@ Requirements
 | 3.0...3.2 | 8.0...9.0 | 2.6.0           | 8.0+     | 10.10+     | 2.0+        | ![✓]      |
 | 4.0       | 9.0...9.2 | 3.0.0...3.1.1   | 8.0+ `*` | 10.10+ `*` | 2.0+ `*`    | ![✓]      |
 | 4.1       | 9.3...9.4 | 3.1.2...3.2.1   | 8.0+ `*` | 10.10+ `*` | 2.0+ `*`    | ![✓]      |
-| 4.2       | 10.0      | 4.x.x           | 8.0+ `*` | 10.10+ `*` | 2.0+ `*`    | ![✓]      |
+| 4.2       | 10.0      | 4.0.0           | 8.0+ `*` | 10.10+ `*` | 2.0+ `*`    | ![✓]      |
 
 > `*` With App Extension Support
 
@@ -208,7 +208,7 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
             .executable(name: "Project", targets: ["Project"])
         ],
         dependencies: [
-            .package(url: "https://github.com/FabrizioBrancati/BFKit-Swift.git", .upToNextMajor(from: "3.2.0"))
+            .package(url: "https://github.com/FabrizioBrancati/BFKit-Swift.git", .upToNextMajor(from: "4.0.0"))
         ],
         targets: [
             .target(name: "Project", dependencies: ["BFKit"])
