@@ -72,6 +72,11 @@ Classes and Extensions Compatibility
 | [String](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/String.html)                         | ![✓]    | ![✓]      | ![✓]        | ![✓]      |
 | [Thread](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Functions.html)                                 | ![✓]    | ![✓]      | ![✓]        | ![✓]      |
 
+### Core Graphics
+|                                                                                                                                         | **iOS** | **macOS** | **watchOS** | **Linux** |
+|-----------------------------------------------------------------------------------------------------------------------------------------|---------|-----------|-------------|-----------|
+| CGPoint         | ![✓]    | ![✓]      | ![✓]       | &nbsp;    |
+
 ### UIKit / AppKit
 |                                                                                                                                         | **iOS** | **macOS** | **watchOS** | **Linux** |
 |-----------------------------------------------------------------------------------------------------------------------------------------|---------|-----------|-------------|-----------|
@@ -99,7 +104,7 @@ Classes and Extensions Compatibility
 ### WatchKit
 |                                                                                                                              | **iOS** | **macOS** | **watchOS** | **Linux** |
 |------------------------------------------------------------------------------------------------------------------------------|---------|-----------|-------------|-----------|
-| [WKInterfaceController](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/WKInterfaceController.html) |         |           | ![✓]        |           |
+| [WKInterfaceController](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/WKInterfaceController.html) |         |           | ![✓]        | &nbsp;    |
 
 Requirements
 ============
