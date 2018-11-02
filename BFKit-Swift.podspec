@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
     'Sources/BFKit/Apple/Foundation/*.swift',
     'Sources/BFKit/Apple/UIKit/UIColor.swift'
 
-  s.watchos.deployment_target = '2.0'
+  s.watchos.deployment_target = '3.0'
   s.watchos.source_files      =
     'Sources/BFKit/Linux/**/*.swift',
     'Sources/BFKit/Apple/Foundation/*.swift',

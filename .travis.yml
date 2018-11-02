@@ -47,10 +47,6 @@ matrix:
     - os: osx
       language: objective-c
       osx_image: xcode10
-      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=2.0,name=Apple Watch - 38mm"            SCHEME="$WATCHOS_SCHEME" RUN_TESTS="NO"  LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
-    - os: osx
-      language: objective-c
-      osx_image: xcode10
       env: PROJ="BFKit.xcodeproj"                DESTINATION="arch=x86_64"                               SCHEME="$MACOS_SCHEME"   RUN_TESTS="NO"  LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
     - os: osx
       language: objective-c
