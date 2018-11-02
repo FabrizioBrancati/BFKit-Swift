@@ -20,12 +20,14 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.10'
   s.osx.source_files      =
     'Sources/BFKit/Linux/**/*.swift',
+    'Sources/BFKit/Apple/CoreGraphics/*.swift',
     'Sources/BFKit/Apple/Foundation/*.swift',
     'Sources/BFKit/Apple/UIKit/UIColor.swift'
 
   s.watchos.deployment_target = '3.0'
   s.watchos.source_files      =
     'Sources/BFKit/Linux/**/*.swift',
+    'Sources/BFKit/Apple/CoreGraphics/*.swift',
     'Sources/BFKit/Apple/Foundation/*.swift',
     'Sources/BFKit/Apple/UIKit/{UIColor.swift,UIFont.swift,UIImage.swift}',
     'Sources/BFKit/Apple/WatchKit/*.swift'
