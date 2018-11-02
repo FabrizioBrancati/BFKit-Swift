@@ -208,14 +208,23 @@ public extension UIDevice {
         // iPad Pro 9.7
         case "iPad6,3":         return "iPad Pro (9.7-inch)"
         case "iPad6,4":         return "iPad Pro (9.7-inch)"
+        // iPad Pro 10.5
+        case "iPad7,3":         return "iPad Pro (10.5-inch)"
+        case "iPad7,4":         return "iPad Pro (10.5-inch)"
+        // iPad Pro 11
+        case "iPad8,1":         return "iPad Pro (11-inch)"
+        case "iPad8,2":         return "iPad Pro (11-inch)"
+        case "iPad8,3":         return "iPad Pro (11-inch)"
+        case "iPad8,4":         return "iPad Pro (11-inch)"
         // iPad Pro 12.9
         case "iPad6,7":         return "iPad Pro (12.9-inch)"
         case "iPad6,8":         return "iPad Pro (12.9-inch)"
         case "iPad7,1":         return "iPad Pro (12.9-inch, 2nd generation)"
         case "iPad7,2":         return "iPad Pro (12.9-inch, 2nd generation)"
-        // iPad Pro 10.5
-        case "iPad7,3":         return "iPad Pro (10.5-inch)"
-        case "iPad7,4":         return "iPad Pro (10.5-inch)"
+        case "iPad8,5":         return "iPad Pro (12.9-inch, 3rd generation)"
+        case "iPad8,6":         return "iPad Pro (12.9-inch, 3rd generation)"
+        case "iPad8,7":         return "iPad Pro (12.9-inch, 3rd generation)"
+        case "iPad8,8":         return "iPad Pro (12.9-inch, 3rd generation)"
         // Apple TV
         case "AppleTV2,1":      return "Apple TV (2nd generation)"
         case "AppleTV3,1":      return "Apple TV (3rd generation)"
