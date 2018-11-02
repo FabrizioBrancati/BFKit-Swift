@@ -38,6 +38,14 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+## Develop
+### Added
+- Added new iPad Pro 11-inch and 12.9-inch in UIDevice extension
+- Added missing CoreGraphics files to CocoaPods
+
+### Removed
+- Removed watchOS 2.0 support in favour of watchOS 3.0, thanks to an App Store submission bug [#11](https://github.com/FabrizioBrancati/Queuer/issues/11)
+
 ## [4.0.0](https://github.com/FabrizioBrancati/Queuer/releases/tag/4.0.0) - Swift 4.2 Support
 ### 11 Oct 2018
 ### Added
