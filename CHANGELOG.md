@@ -46,6 +46,11 @@ All notable changes to this project will be documented in this file.<br>
 ### Removed
 - Removed watchOS 2.0 support in favour of watchOS 3.0, thanks to an App Store submission bug [#11](https://github.com/FabrizioBrancati/Queuer/issues/11)
 
+### Improved
+- Updated SwiftLint to 0.28.1
+
+---
+
 ## [4.0.0](https://github.com/FabrizioBrancati/Queuer/releases/tag/4.0.0) - Swift 4.2 Support
 ### 11 Oct 2018
 ### Added
