@@ -47,6 +47,7 @@ All notable changes to this project will be documented in this file.<br>
 - Removed watchOS 2.0 support in favour of watchOS 3.0, thanks to an App Store submission bug [#11](https://github.com/FabrizioBrancati/Queuer/issues/11)
 
 ### Improved
+- Improved settings reading and saving in FileManager extension
 - Updated SwiftLint to 0.28.1
 
 ---
