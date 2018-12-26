@@ -112,13 +112,13 @@ public enum BFApp {
         defaults.removeObject(forKey: key)
     }
     
-    @discardableResult
     /// Set the App setting for a given object and key. The file will be saved in the Library directory.
     ///
     /// - Parameters:
     ///   - object: Object to set.
     ///   - objectKey: Key to set the object.
     /// - Returns: Returns true if the operation was successful, otherwise false.
+    @discardableResult
     public static func setAppSetting(object: Any, forKey objectKey: String) -> Bool {
         return FileManager.default.setSettings(filename: BFApp.name, object: object, forKey: objectKey)
     }

@@ -105,7 +105,6 @@ public extension FileManager {
         return try String(contentsOfFile: path.appendingPathComponent(file), encoding: .utf8)
     }
     
-    @discardableResult
     /// Save an object into a PLIST with given filename.
     ///
     /// - Parameters:
@@ -113,6 +112,7 @@ public extension FileManager {
     ///   - path: Path of PLIST.
     ///   - filename: PLIST filename.
     /// - Returns: Returns true if the operation was successful, otherwise false.
+    @discardableResult
     public func savePlist(object: Any, in path: PathType, filename: String) -> Bool {
         let path = checkPlist(path: path, filename: filename)
         
@@ -346,7 +346,6 @@ public extension FileManager {
         }
     }
     
-    @discardableResult
     /// Set settings for object and key. The file will be saved in the Library path if not exist.
     ///
     /// - Parameters:
@@ -356,6 +355,7 @@ public extension FileManager {
     /// - Returns: Returns true if the operation was successful, otherwise false.
     /// - Throws: Throws BFKitError errors.
     public func setSettings(filename: String, object: Any, forKey objKey: String) -> Bool {
+    @discardableResult
         guard var path = FileManager.default.pathFor(.applicationSupport) else {
             return false
         }

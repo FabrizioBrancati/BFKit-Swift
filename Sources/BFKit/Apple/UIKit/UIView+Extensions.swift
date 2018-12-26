@@ -202,13 +202,13 @@ public extension UIView {
         layer.masksToBounds = maskToBounds
     }
     
-    @discardableResult
     /// Create a linear gradient.
     ///
     /// - Parameters:
     ///   - colors: Array of UIColor instances.
     ///   - direction: Direction of the gradient.
     /// - Returns: Returns the created CAGradientLayer.
+    @discardableResult
     public func gradient(colors: [UIColor], direction: UIViewGradientDirection) -> CAGradientLayer {
         let gradient = CAGradientLayer()
         gradient.frame = bounds
