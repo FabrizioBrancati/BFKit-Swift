@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 4.x Releases
-- `4.0.x` Releases - [4.0.0](#400---swift-42-support)
+- `4.0.x` Releases - [4.0.0](#400---swift-42-support) | [4.0.1](#401---release-it-please)
 
 ### 3.x Releases
 - `3.2.x` Releases - [3.2.0](#320---big-improvements) | [3.2.1](#321---that-corner-radius)
@@ -38,7 +38,8 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## Develop
+## [4.0.1](https://github.com/FabrizioBrancati/Queuer/releases/tag/4.0.1) - Release It Please
+### 27 Dec 2018
 ### Added
 - Added new iPad Pro 11-inch and 12.9-inch in UIDevice extension
 - Added missing CoreGraphics files to CocoaPods
