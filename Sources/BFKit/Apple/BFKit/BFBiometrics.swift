@@ -126,26 +126,37 @@ public enum BFBiometrics {
         switch error {
         case LAError.authenticationFailed:
             return .authenticationFailed
+
         case LAError.userCancel:
             return .userCancel
+
         case LAError.userFallback:
             return .userFallback
+
         case LAError.systemCancel:
             return .systemCancel
+
         case LAError.passcodeNotSet:
             return .passcodeNotSet
+
         case LAError.biometryNotAvailable:
             return .notAvailable
+
         case LAError.biometryNotEnrolled:
             return .notEnrolled
+
         case LAError.biometryLockout:
             return .lockout
+
         case LAError.appCancel:
             return .appCancel
+
         case LAError.invalidContext:
             return .invalidContext
+
         case LAError.notInteractive:
             return .notInteractive
+
         default:
             return .error
         }
@@ -163,26 +174,37 @@ public enum BFBiometrics {
             switch error {
             case LAError.authenticationFailed:
                 return .authenticationFailed
+
             case LAError.userCancel:
                 return .userCancel
+
             case LAError.userFallback:
                 return .userFallback
+
             case LAError.systemCancel:
                 return .systemCancel
+
             case LAError.passcodeNotSet:
                 return .passcodeNotSet
+
             case LAError.touchIDNotAvailable:
                 return .notAvailable
+
             case LAError.touchIDNotEnrolled:
                 return .notEnrolled
+
             case LAError.touchIDLockout:
                 return .lockout
+
             case LAError.appCancel:
                 return .appCancel
+
             case LAError.invalidContext:
                 return .invalidContext
+
             case LAError.notInteractive:
                 return .notInteractive
+
             default:
                 return .error
             }
@@ -201,20 +223,28 @@ public enum BFBiometrics {
             switch error {
             case LAError.authenticationFailed:
                 return .authenticationFailed
+
             case LAError.userCancel:
                 return .userCancel
+
             case LAError.userFallback:
                 return .userFallback
+
             case LAError.systemCancel:
                 return .systemCancel
+
             case LAError.passcodeNotSet:
                 return .passcodeNotSet
+
             case LAError.touchIDNotAvailable:
                 return .notAvailable
+
             case LAError.touchIDNotEnrolled:
                 return .notEnrolled
+
             case LAError.notInteractive:
                 return .notInteractive
+
             default:
                 return .error
             }

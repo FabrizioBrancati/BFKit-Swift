@@ -31,13 +31,13 @@ import WatchKit
 
 /// Extends WKInterfaceController with animatable functions.
 public extension WKInterfaceController {
-    @available(watchOS 3.0, *)
     /// Create a shake effect.
     ///
     /// - Parameters:
     ///   - group: WKInterfaceGroup to apply shake effect.
     ///   - duration: Shake duration. Default is 0.15.
     ///   - translation: Shake translation. Default is 10.
+    @available(watchOS 3.0, *)
     public func shake(group: WKInterfaceGroup, duration: TimeInterval = 0.15, translation: Float = 10) {
         animate(withDuration: duration / 3) {
             group.setContentInset(UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0))
@@ -54,24 +54,24 @@ public extension WKInterfaceController {
         }
     }
     
-    @available(watchOS 3.0, *)
     /// Create a fade effect an a label.
     ///
     /// - Parameters:
     ///   - label: WKInterfaceLabel to apply fade effect.
     ///   - duration: Fade duration. Default is 0.5.
     ///   - string: String to fade to.
+    @available(watchOS 3.0, *)
     public func fade(label: WKInterfaceLabel, duration: TimeInterval = 0.5, toString string: String) {
         fade(label: label, duration: duration, toAttributedString: string.attributedString)
     }
     
-    @available(watchOS 3.0, *)
     /// Create a fade effect an a label.
     ///
     /// - Parameters:
     ///   - label: WKInterfaceLabel to apply fade effect.
     ///   - duration: Fade duration. Default is 0.2.
     ///   - string: String to fade to.
+    @available(watchOS 3.0, *)
     public func fade(label: WKInterfaceLabel, duration: TimeInterval = 0.5, toAttributedString string: NSAttributedString) {
         animate(withDuration: duration / 2) {
             label.setAlpha(0)

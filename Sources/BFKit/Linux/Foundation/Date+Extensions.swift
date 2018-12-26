@@ -196,14 +196,19 @@ public extension Date {
             switch component {
             case .year:
                 dateComponents.year = value
+
             case .month:
                 dateComponents.month = value
+
             case .day:
                 dateComponents.day = value
+
             case .hour:
                 dateComponents.hour = value
+
             case .minute:
                 dateComponents.minute = value
+
             case .second:
                 dateComponents.second = value
             }

@@ -230,7 +230,7 @@ public extension String {
             return nil
         }
         
-        return url.queryItems?.first(where: { $0.name == parameter })?.value
+        return url.queryItems?.first { $0.name == parameter }?.value
     }
     
     /// Converts the query to a dictionary of parameters.

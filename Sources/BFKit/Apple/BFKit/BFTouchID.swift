@@ -89,18 +89,25 @@ public enum BFTouchID {
                         switch error {
                         case LAError.authenticationFailed:
                             completion(.authenticationFailed)
+
                         case LAError.userCancel:
                             completion(.userCancel)
+
                         case LAError.userFallback:
                             completion(.userFallback)
+
                         case LAError.systemCancel:
                             completion(.systemCancel)
+
                         case LAError.touchIDLockout:
                             completion(.lockout)
+
                         case LAError.appCancel:
                             completion(.appCancel)
+
                         case LAError.invalidContext:
                             completion(.invalidContext)
+
                         default:
                             completion(.error)
                         }
@@ -108,12 +115,16 @@ public enum BFTouchID {
                         switch error {
                         case LAError.authenticationFailed:
                             completion(.authenticationFailed)
+
                         case LAError.userCancel:
                             completion(.userCancel)
+
                         case LAError.userFallback:
                             completion(.userFallback)
+
                         case LAError.systemCancel:
                             completion(.systemCancel)
+
                         default:
                             completion(.error)
                         }
@@ -130,16 +141,22 @@ public enum BFTouchID {
                 switch error {
                 case LAError.passcodeNotSet:
                     completion(.passcodeNotSet)
+
                 case LAError.touchIDNotAvailable:
                     completion(.notAvailable)
+
                 case LAError.touchIDNotEnrolled:
                     completion(.notEnrolled)
+
                 case LAError.touchIDLockout:
                     completion(.lockout)
+
                 case LAError.appCancel:
                     completion(.appCancel)
+
                 case LAError.invalidContext:
                     completion(.invalidContext)
+
                 default:
                     completion(.error)
                 }
@@ -147,10 +164,13 @@ public enum BFTouchID {
                 switch error {
                 case LAError.passcodeNotSet:
                     completion(.passcodeNotSet)
+
                 case LAError.touchIDNotAvailable:
                     completion(.notAvailable)
+
                 case LAError.touchIDNotEnrolled:
                     completion(.notEnrolled)
+
                 default:
                     completion(.error)
                 }

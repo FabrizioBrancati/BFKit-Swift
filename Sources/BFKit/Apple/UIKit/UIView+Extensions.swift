@@ -224,21 +224,27 @@ public extension UIView {
         case .vertical:
             gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
             gradient.endPoint = CGPoint(x: 0.5, y: 1.0)
+
         case .horizontal:
             gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
             gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
+
         case .diagonalLeftTopToRightDown:
             gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
             gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
+
         case .diagonalLeftDownToRightTop:
             gradient.startPoint = CGPoint(x: 0.0, y: 1.0)
             gradient.endPoint = CGPoint(x: 1.0, y: 0.0)
+
         case .diagonalRightTopToLeftDown:
             gradient.startPoint = CGPoint(x: 1.0, y: 0.0)
             gradient.endPoint = CGPoint(x: 0.0, y: 1.0)
+
         case .diagonalRightDownToLeftTop:
             gradient.startPoint = CGPoint(x: 1.0, y: 1.0)
             gradient.endPoint = CGPoint(x: 0.0, y: 0.0)
+
         case let .custom(startPoint, endPoint):
             gradient.startPoint = startPoint
             gradient.endPoint = endPoint
@@ -283,21 +289,27 @@ public extension UIView {
         case .vertical:
             startPoint = CGPoint(x: bounds.midX, y: 0.0)
             endPoint = CGPoint(x: bounds.midX, y: bounds.height)
+
         case .horizontal:
             startPoint = CGPoint(x: 0.0, y: bounds.midY)
             endPoint = CGPoint(x: bounds.width, y: bounds.midY)
+
         case .diagonalLeftTopToRightDown:
             startPoint = CGPoint(x: 0.0, y: 0.0)
             endPoint = CGPoint(x: bounds.width, y: bounds.height)
+
         case .diagonalLeftDownToRightTop:
             startPoint = CGPoint(x: 0.0, y: bounds.height)
             endPoint = CGPoint(x: bounds.width, y: 0.0)
+
         case .diagonalRightTopToLeftDown:
             startPoint = CGPoint(x: bounds.width, y: 0.0)
             endPoint = CGPoint(x: 0.0, y: bounds.height)
+
         case .diagonalRightDownToLeftTop:
             startPoint = CGPoint(x: bounds.width, y: bounds.height)
             endPoint = CGPoint(x: 0.0, y: 0.0)
+
         case let .custom(customStartPoint, customEndPoint):
             startPoint = customStartPoint
             endPoint = customEndPoint
@@ -310,6 +322,7 @@ public extension UIView {
         switch type {
         case .linear:
             context.drawLinearGradient(gradient, start: startPoint, end: endPoint, options: .drawsBeforeStartLocation)
+
         case .radial:
             context.drawRadialGradient(gradient, startCenter: startPoint, startRadius: 0.0, endCenter: endPoint, endRadius: 1.0, options: .drawsBeforeStartLocation)
         }
@@ -474,6 +487,7 @@ public extension UIView {
         case .leftToRight:
             startPosition = frame.size.width / 2
             endPosition = -(frame.size.width / 2) + topView.frame.size.width
+
         case .rightToLeft:
             startPosition = -(frame.size.width / 2) + topView.frame.size.width
             endPosition = frame.size.width / 2
@@ -483,21 +497,25 @@ public extension UIView {
             center = CGPoint(x: startPosition, y: center.y)
         }
         
-        UIView.animate(withDuration: TimeInterval(duration / 2), delay: 1, options: UIView.AnimationOptions(), animations: {
-            self.center = CGPoint(x: endPosition, y: self.center.y)
-        }, completion: { finished in
-            if finished {
-                UIView.animate(withDuration: TimeInterval(duration / 2), delay: 1, options: UIView.AnimationOptions(), animations: {
-                    self.center = CGPoint(x: startPosition, y: self.center.y)
-                }, completion: { finished in
-                    if finished {
-                        if repeatAnimation {
-                            self.translateAround(topView: topView, duration: duration, direction: direction, repeatAnimation: repeatAnimation, startFromEdge: startFromEdge)
+        UIView.animate(
+            withDuration: TimeInterval(duration / 2), delay: 1, options: UIView.AnimationOptions(), animations: {
+                self.center = CGPoint(x: endPosition, y: self.center.y)
+            }, completion: { finished in
+                if finished {
+                    UIView.animate(
+                        withDuration: TimeInterval(duration / 2), delay: 1, options: UIView.AnimationOptions(), animations: {
+                            self.center = CGPoint(x: startPosition, y: self.center.y)
+                        }, completion: { finished in
+                            if finished {
+                                if repeatAnimation {
+                                    self.translateAround(topView: topView, duration: duration, direction: direction, repeatAnimation: repeatAnimation, startFromEdge: startFromEdge)
+                                }
+                            }
                         }
-                    }
-                })
+                    )
+                }
             }
-        })
+        )
     }
     
     /// Animate along path.

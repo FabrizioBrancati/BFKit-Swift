@@ -38,17 +38,19 @@ public extension UIViewController {
         let selectedIndexPaths = tableView.indexPathsForSelectedRows ?? []
         
         if let coordinator = transitionCoordinator {
-            coordinator.animateAlongsideTransition(in: parent?.view, animation: { coordinatorContext in
-                selectedIndexPaths.forEach {
-                    tableView.deselectRow(at: $0, animated: coordinatorContext.isAnimated)
-                }
-            }, completion: { coordinatorContext in
-                if coordinatorContext.isCancelled {
+            coordinator.animateAlongsideTransition(
+                in: parent?.view, animation: { coordinatorContext in
                     selectedIndexPaths.forEach {
-                        tableView.selectRow(at: $0, animated: false, scrollPosition: .none)
+                        tableView.deselectRow(at: $0, animated: coordinatorContext.isAnimated)
+                    }
+                }, completion: { coordinatorContext in
+                    if coordinatorContext.isCancelled {
+                        selectedIndexPaths.forEach {
+                            tableView.selectRow(at: $0, animated: false, scrollPosition: .none)
+                        }
                     }
                 }
-            })
+            )
         } else {
             selectedIndexPaths.forEach {
                 tableView.deselectRow(at: $0, animated: false)

@@ -61,18 +61,25 @@ public enum BFPassword {
         switch lengthScore(password) + numbersScore(password) + symbolsScore(password) + lowercasedCharactersScore(password) + uppercasedCharactersScore(password) {
         case 1...49:
             return .veryWeak
+
         case 50...59:
             return .weak
+
         case 60...69:
             return .average
+
         case 70...79:
             return .strong
+
         case 80...89:
             return .veryStrong
+
         case 90...99:
             return .secure
+
         case 100...Int.max:
             return .verySecure
+
         default:
             return .veryWeak
         }
@@ -88,10 +95,13 @@ public enum BFPassword {
         switch lenght {
         case 1...4:
             return 5
+
         case 5...8:
             return 10
+
         case 9...Int.max:
             return 20
+
         default:
             return 0
         }
@@ -107,10 +117,13 @@ public enum BFPassword {
         switch numbers {
         case 1:
             return 10
+
         case 2:
             return 15
+
         case 3...Int.max:
             return 20
+
         default:
             return 0
         }
@@ -126,10 +139,13 @@ public enum BFPassword {
         switch symbols {
         case 1:
             return 15
+
         case 2:
             return 20
+
         case 3...Int.max:
             return 25
+
         default:
             return 0
         }
@@ -145,10 +161,13 @@ public enum BFPassword {
         switch lowercasedCharacters {
         case 1:
             return 5
+
         case 2:
             return 7
+
         case 3...Int.max:
             return 10
+
         default:
             return 0
         }
@@ -164,10 +183,13 @@ public enum BFPassword {
         switch uppercasedCharacters {
         case 1:
             return 10
+
         case 2:
             return 15
+
         case 3...Int.max:
             return 25
+
         default:
             return 0
         }

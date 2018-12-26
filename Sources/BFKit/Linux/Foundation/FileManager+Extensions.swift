@@ -60,14 +60,19 @@ public extension FileManager {
         switch path {
         case .mainBundle:
             pathString = mainBundlePath()
+
         case .library:
             pathString = libraryPath()
+
         case .documents:
             pathString = documentsPath()
+
         case .cache:
             pathString = cachePath()
+
         case .applicationSupport:
             pathString = applicationSupportPath()
+
         case .temporary:
             pathString = temporaryPath()
         }
