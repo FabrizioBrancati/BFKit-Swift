@@ -48,7 +48,7 @@ All notable changes to this project will be documented in this file.<br>
 
 ### Improved
 - Improved settings reading and saving in FileManager extension
-- Updated SwiftLint to 0.28.1
+- Updated SwiftLint to 0.29.2
 
 ---
 
