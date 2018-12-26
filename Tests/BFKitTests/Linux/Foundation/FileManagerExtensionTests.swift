@@ -200,4 +200,10 @@ internal class FileManagerExtensionTests: XCTestCase {
         
         XCTAssertNotNil(settings)
     }
+    
+    internal func testGetEmptySettingsFilenameForKey() {
+        let settings = FileManager.default.getSettings(filename: "Test3", forKey: "Test")
+        
+        XCTAssertNil(settings)
+    }
 }

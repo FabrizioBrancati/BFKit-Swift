@@ -354,18 +354,32 @@ public extension FileManager {
     ///   - objKey: Object key.
     /// - Returns: Returns true if the operation was successful, otherwise false.
     /// - Throws: Throws BFKitError errors.
-    public func setSettings(filename: String, object: Any, forKey objKey: String) -> Bool {
     @discardableResult
+    public func setSettings(filename: String, object: Any, forKey objectKey: String) -> Bool {
         guard var path = FileManager.default.pathFor(.applicationSupport) else {
             return false
         }
+        
         path = path.appendingPathComponent("\(filename)-Settings.plist")
         
-        let loadedPlist = FileManager.default.fileExists(atPath: path) ? NSMutableDictionary(contentsOfFile: path) ?? NSMutableDictionary() : NSMutableDictionary()
+        var settings: [String: Any]
         
-        loadedPlist[objKey] = object
+        if let plistData = try? Data(contentsOf: URL(fileURLWithPath: path)), let plistFile = try? PropertyListSerialization.propertyList(from: plistData, format: nil), let plistDictionary = plistFile as? [String: Any] {
+            settings = plistDictionary
+        } else {
+            settings = [:]
+        }
         
-        return loadedPlist.write(toFile: path, atomically: true)
+        settings[objectKey] = object
+        
+        do {
+            let plistData = try PropertyListSerialization.data(fromPropertyList: settings, format: .xml, options: 0)
+            try plistData.write(to: URL(fileURLWithPath: path))
+            
+            return true
+        } catch {
+            return false
+        }
     }
     
     /// Get settings for key.
@@ -374,14 +388,21 @@ public extension FileManager {
     ///   - filename: Settings filename. "-Settings" will be automatically added.
     ///   - forKey: Object key.
     /// - Returns: Returns the object for the given key.
-    public func getSettings(filename: String, forKey: String) -> Any? {
+    public func getSettings(filename: String, forKey objectKey: String) -> Any? {
         guard var path = FileManager.default.pathFor(.applicationSupport) else {
             return nil
         }
+        
         path = path.appendingPathComponent("\(filename)-Settings.plist")
         
-        let loadedPlist = FileManager.default.fileExists(atPath: path) ? NSMutableDictionary(contentsOfFile: path) ?? NSMutableDictionary() : NSMutableDictionary()
+        var settings: [String: Any]
         
-        return loadedPlist.object(forKey: forKey)
+        if let plistData = try? Data(contentsOf: URL(fileURLWithPath: path)), let plistFile = try? PropertyListSerialization.propertyList(from: plistData, format: nil), let plistDictionary = plistFile as? [String: Any] {
+            settings = plistDictionary
+        } else {
+            settings = [:]
+        }
+        
+        return settings[objectKey]
     }
 }
