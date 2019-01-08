@@ -38,6 +38,13 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+### Added
+- Adding iPhone XS, iPhone XS Max and iPhone XR in UIDevice extension
+
+Thanks to [@gennick](https://github.com/gennick) for this release
+
+---
+
 ## [4.0.1](https://github.com/FabrizioBrancati/Queuer/releases/tag/4.0.1) - Release It Please
 ### 27 Dec 2018
 ### Added
