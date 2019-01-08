@@ -169,6 +169,12 @@ public extension UIDevice {
         // iPhone X
         case "iPhone10,3":      return "iPhone X"
         case "iPhone10,6":      return "iPhone X"
+        // iPhone XS / iPhone XS Max
+        case "iPhone11,2":      return "iPhone XS"
+        case "iPhone11,4":      return "iPhone XS Max"
+        case "iPhone11,6":      return "iPhone XS Max"
+        // iPhone XR
+        case "iPhone11,8":      return "iPhone XR"
         // iPod touch
         case "iPod1,1":         return "iPod touch (1st generation)"
         case "iPod2,1":         return "iPod touch (2nd generation)"
