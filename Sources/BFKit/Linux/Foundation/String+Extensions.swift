@@ -168,7 +168,7 @@ public extension String {
     /// - Parameter character: The character to search.
     /// - Returns: Returns the index of the given character, -1 if not found.
     public func index(of character: Character) -> Int {
-        guard let index: Index = index(of: character) else {
+        guard let index: Index = firstIndex(of: character) else {
             return -1
         }
         

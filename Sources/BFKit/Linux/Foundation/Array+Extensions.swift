@@ -95,7 +95,7 @@ public extension Array {
         for index in self {
             array.append("\(index)")
         }
-        let index = array.index(of: "\(object)")
+        let index = array.firstIndex(of: "\(object)")
         if let index = index {
             remove(at: index)
         }
