@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 4.x Releases
+- `4.1.x` Releases - [4.1.0](#410---spend-that-money)
 - `4.0.x` Releases - [4.0.0](#400---swift-42-support) | [4.0.1](#401---release-it-please)
 
 ### 3.x Releases
@@ -38,14 +39,7 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## [5.0.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/5.0.0) - Swift 5.0 Support
-### XX XXX 2019
-### Added
-- Added support to Xcode 10.2 and Swift 5.0
-
----
-
-## [4.1.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/4.0.1) - Use That Money
+## [4.1.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/4.1.0) - Spend That Money
 ### 03 Feb 2019
 ### Added
 - Added iPhone XS, iPhone XS Max and iPhone XR in UIDevice extension

@@ -32,7 +32,7 @@ import Foundation
 #endif
 
 /// BFKit version string.
-public let BFKitVersion = "4.0.1"
+public let BFKitVersion = "4.1.0"
 
 /// BFKit author string.
 public let BFKitAuthor = "Fabrizio Brancati"
