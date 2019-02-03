@@ -38,8 +38,15 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+## [5.0.0](https://github.com/FabrizioBrancati/Queuer/releases/tag/5.0.0) - Swift 5.0 Support
+### XX XXX 2019
 ### Added
-- Adding iPhone XS, iPhone XS Max and iPhone XR in UIDevice extension
+- Added `isFromTestFlight` function in BFApp enum to check if the app has been installed from TestFlight
+
+---
+
+### Added
+- Added iPhone XS, iPhone XS Max and iPhone XR in UIDevice extension
 
 Thanks to [@gennick](https://github.com/gennick) for this release
 

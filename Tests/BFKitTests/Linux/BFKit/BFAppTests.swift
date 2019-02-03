@@ -37,7 +37,8 @@ internal class BFAppTests: XCTestCase {
         ("testOnFirstStart", testOnFirstStart),
         ("testOnFirstStartVersion", testOnFirstStartVersion),
         ("testResetFirstStart", testResetFirstStart),
-        ("testResetFirstStartVersion", testResetFirstStartVersion)
+        ("testResetFirstStartVersion", testResetFirstStartVersion),
+        ("testIsFromTestFlight", testIsFromTestFlight)
     ]
     
     internal let testVersion = "10.0.0"
@@ -108,5 +109,9 @@ internal class BFAppTests: XCTestCase {
 
     internal func testNSLocalizedString() {
         XCTAssertEqual(NSLocalizedString(""), "")
+    }
+    
+    internal func testIsFromTestFlight() {
+        XCTAssertFalse(BFApp.isFromTestFlight())
     }
 }
