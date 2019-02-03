@@ -38,6 +38,8 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+## [4.1.0](https://github.com/FabrizioBrancati/Queuer/releases/tag/4.0.1) - Use That Money
+### 03 Feb 2019
 ### Added
 - Adding iPhone XS, iPhone XS Max and iPhone XR in UIDevice extension
 
