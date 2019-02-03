@@ -38,23 +38,31 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
-## [4.1.0](https://github.com/FabrizioBrancati/Queuer/releases/tag/4.0.1) - Use That Money
+## [5.0.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/5.0.0) - Swift 5.0 Support
+### XX XXX 2019
+### Added
+- Added support to Xcode 10.2 and Swift 5.0
+
+---
+
+## [4.1.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/4.0.1) - Use That Money
 ### 03 Feb 2019
 ### Added
-- Adding iPhone XS, iPhone XS Max and iPhone XR in UIDevice extension
+- Added iPhone XS, iPhone XS Max and iPhone XR in UIDevice extension
+- Added `isFromTestFlight` function in BFApp enum to check if the app has been installed from TestFlight
 
 Thanks to [@gennick](https://github.com/gennick) for this release
 
 ---
 
-## [4.0.1](https://github.com/FabrizioBrancati/Queuer/releases/tag/4.0.1) - Release It Please
+## [4.0.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/4.0.1) - Release It Please
 ### 27 Dec 2018
 ### Added
 - Added new iPad Pro 11-inch and 12.9-inch in UIDevice extension
 - Added missing CoreGraphics files to CocoaPods
 
 ### Removed
-- Removed watchOS 2.0 support in favor of watchOS 3.0, thanks to an App Store submission bug [#11](https://github.com/FabrizioBrancati/Queuer/issues/11)
+- Removed watchOS 2.0 support in favor of watchOS 3.0, thanks to an App Store submission bug [#11](https://github.com/FabrizioBrancati/BFKit-Swift/issues/11)
 
 ### Improved
 - Improved settings reading and saving in FileManager extension
@@ -62,7 +70,7 @@ Thanks to [@gennick](https://github.com/gennick) for this release
 
 ---
 
-## [4.0.0](https://github.com/FabrizioBrancati/Queuer/releases/tag/4.0.0) - Swift 4.2 Support
+## [4.0.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/4.0.0) - Swift 4.2 Support
 ### 11 Oct 2018
 ### Added
 - Added support to Xcode 10 and Swift 4.2
@@ -85,7 +93,7 @@ Thanks to [@gennick](https://github.com/gennick) for this release
 
 ---
 
-## [3.2.1](https://github.com/FabrizioBrancati/Queuer/releases/tag/3.2.1) - That Corner Radius
+## [3.2.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/3.2.1) - That Corner Radius
 ### 14 Sep 2018
 ### Improved
 - Updated SwiftLint to 0.27.0
@@ -95,7 +103,7 @@ Thanks to [@gennick](https://github.com/gennick) for this release
 
 ---
 
-## [3.2.0](https://github.com/FabrizioBrancati/Queuer/releases/tag/3.2.0) - Big Improvements
+## [3.2.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/3.2.0) - Big Improvements
 ### 14 Jul 2018
 ### Added
 - Added `force` attribute to `generateUniqueIdentifier(save: Bool = default, force: Bool = default)` in UIDevice extension with a default value, hence no changes are required
@@ -120,7 +128,7 @@ Thanks to [@gennick](https://github.com/gennick) for this release
 
 ---
 
-## [3.1.2](https://github.com/FabrizioBrancati/Queuer/releases/tag/3.1.2) - Swift 4.1 Support
+## [3.1.2](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/3.1.2) - Swift 4.1 Support
 ### 2 Apr 2018
 ### Added
 - Added support to Xcode 9.3 and Swift 4.1

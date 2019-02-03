@@ -130,6 +130,17 @@ public enum BFApp {
     public static func getAppSetting(objectKey: String) -> Any? {
         return FileManager.default.getSettings(filename: BFApp.name, forKey: objectKey)
     }
+    
+    /// Check if the app has been installed from TestFlight.
+    ///
+    /// - Returns: Returns `true` if the app has been installed via TestFlight, otherwise `false`.
+    public static func isFromTestFlight() -> Bool {
+        guard let appStoreReceiptURL = Bundle.main.appStoreReceiptURL else {
+            return false
+        }
+        
+        return appStoreReceiptURL.lastPathComponent == "sandboxReceipt"
+    }
 }
 
 // MARK: - BFApp extension
