@@ -72,6 +72,7 @@ internal class StringExtensionTests: XCTestCase {
         ("testCountLowercasedCharacters", testCountLowercasedCharacters),
         ("testCountUppercasedCharacters", testCountUppercasedCharacters),
         ("testCountNumbers", testCountNumbers),
+        ("testCountPunctuations", testCountPunctuations),
         ("testCountSymbols", testCountSymbols),
         ("testStringFromHEX", testStringFromHEX),
         ("testIsAnagramOf", testIsAnagramOf),
@@ -373,6 +374,14 @@ internal class StringExtensionTests: XCTestCase {
         let numbers = string.countNumbers()
         
         XCTAssertEqual(numbers, 0)
+    }
+    
+    internal func testCountPunctuations() {
+        let symbols = string.countPunctuations()
+        let hasSymbols = "-.,!/".countPunctuations()
+        
+        XCTAssertEqual(symbols, 0)
+        XCTAssertEqual(hasSymbols, 5)
     }
     
     internal func testCountSymbols() {

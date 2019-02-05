@@ -427,72 +427,56 @@ public extension String {
     ///
     /// - Returns: Number of lowercase characters.
     public func countLowercasedCharacters() -> Int {
-        var countChar = 0
-        for index in 0 ..< count {
-            guard let character = UnicodeScalar((NSString(string: self)).character(at: index)) else {
-                return 0
-            }
-            let isLowercase = CharacterSet.lowercaseLetters.contains(character)
-            if isLowercase {
-                countChar += 1
-            }
+        var countLowercased = 0
+        for char in self where char.isLowercase {
+            countLowercased += 1
         }
         
-        return countChar
+        return countLowercased
     }
     
     /// Count the number of uppercase characters.
     ///
     /// - Returns: Number of uppercase characters.
     public func countUppercasedCharacters() -> Int {
-        var countChar = 0
-        for index in 0 ..< count {
-            guard let character = UnicodeScalar((NSString(string: self)).character(at: index)) else {
-                return 0
-            }
-            let isUppercase = CharacterSet.uppercaseLetters.contains(character)
-            if isUppercase {
-                countChar += 1
-            }
+        var countUppercased = 0
+        for char in self where char.isUppercase {
+            countUppercased += 1
         }
         
-        return countChar
+        return countUppercased
     }
     
     /// Count the number of numbers.
     ///
     /// - Returns: Number of numbers.
     public func countNumbers() -> Int {
-        var countNumber = 0
-        for index in 0 ..< count {
-            guard let character = UnicodeScalar((NSString(string: self)).character(at: index)) else {
-                return 0
-            }
-            let isNumber = CharacterSet(charactersIn: "0123456789").contains(character)
-            if isNumber {
-                countNumber += 1
-            }
+        var countNumbers = 0
+        for char in self where char.isNumber {
+            countNumbers += 1
         }
         
-        return countNumber
+        return countNumbers
+    }
+    
+    /// Count the number of punctuations.
+    ///
+    /// - Returns: Number of punctuations.
+    func countPunctuations() -> Int {
+        var countPuntuactions = 0
+        for char in self where char.isPunctuation {
+            countPuntuactions += 1
+        }
+        
+        return countPuntuactions
     }
     
     /// Count the number of symbols.
     ///
     /// - Returns: Number of symbols.
+    @available(*, deprecated: 4.1, renamed: "countPunctuations")
     public func countSymbols() -> Int {
-        var countSymbol = 0
-        for index in 0 ..< count {
-            guard let character = UnicodeScalar((NSString(string: self)).character(at: index)) else {
-                return 0
-            }
-            let isSymbol = CharacterSet(charactersIn: "`~!?@#$€£¥§%^&*()_+-={}[]:\";.,<>'•\\|/").contains(character)
-            if isSymbol {
-                countSymbol += 1
-            }
-        }
-        
-        return countSymbol
+        return countPunctuations()
     }
     
     /// Convert HEX string (separated by space) to "usual" characters string.
