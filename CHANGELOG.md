@@ -8,6 +8,9 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+### 5.x Releases
+- `5.0.x` Releases - [5.0.0](#500---swift-50-support)
+
 ### 4.x Releases
 - `4.1.x` Releases - [4.1.0](#410---spend-that-money)
 - `4.0.x` Releases - [4.0.0](#400---swift-42-support) | [4.0.1](#401---release-it-please)
@@ -43,6 +46,12 @@ All notable changes to this project will be documented in this file.<br>
 ### XX XXX 2019
 ### Added
 - Added support to Xcode 10.2 and Swift 5.0
+
+### Changed
+- Renamed `countSymbols()` to `countPunctuations()` in String extension, the old one has been deprecated but still valid
+
+### Improved
+- Improved `count*` chars functions in String extension
 
 ---
 
