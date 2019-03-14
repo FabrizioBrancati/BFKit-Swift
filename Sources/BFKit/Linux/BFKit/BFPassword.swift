@@ -134,7 +134,7 @@ public enum BFPassword {
     /// - Parameter password: Password to be scored.
     /// - Returns: Return the score based on number of symbols in password.
     private static func symbolsScore(_ password: String) -> Int {
-        let symbols = password.countSymbols()
+        let symbols = password.countPunctuations()
         
         switch symbols {
         case 1:
