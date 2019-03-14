@@ -47,8 +47,12 @@ All notable changes to this project will be documented in this file.<br>
 ### Added
 - Added support to Xcode 10.2 and Swift 5.0
 
+### Removed
+- Removed all the deprecated functions and vars
+
 ### Changed
 - Renamed `countSymbols()` to `countPunctuations()` in String extension, the old one has been deprecated but still valid
+- Changed parameter type and return type of `degreesToRadians` and `radiansToDegrees` from `Float` to `Double` in Number extension
 
 ### Improved
 - Improved `count*` chars functions in String extension
