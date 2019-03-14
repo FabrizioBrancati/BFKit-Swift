@@ -39,7 +39,6 @@ internal class StringExtensionTests: XCTestCase {
         ("testNumberValue", testNumberValue),
         ("testBase64Encoded", testBase64Encoded),
         ("testBase64Decoded", testBase64Decoded),
-        ("testLength", testLength),
         ("testChatacterAt", testChatacterAt),
         ("testSubstringFromIndex", testSubstringFromIndex),
         ("testSubstringFromCharacter", testSubstringFromCharacter),
@@ -73,7 +72,6 @@ internal class StringExtensionTests: XCTestCase {
         ("testCountUppercasedCharacters", testCountUppercasedCharacters),
         ("testCountNumbers", testCountNumbers),
         ("testCountPunctuations", testCountPunctuations),
-        ("testCountSymbols", testCountSymbols),
         ("testStringFromHEX", testStringFromHEX),
         ("testIsAnagramOf", testIsAnagramOf),
         ("testIsPalindrome", testIsPalindrome),
@@ -154,12 +152,6 @@ internal class StringExtensionTests: XCTestCase {
         
         XCTAssertEqual(decoded, string)
         XCTAssertNotEqual(decodedInvalid, string)
-    }
-    
-    internal func testLength() {
-        let length = string.length
-        
-        XCTAssertEqual(length, 14)
     }
     
     internal func testChatacterAt() {
@@ -379,14 +371,6 @@ internal class StringExtensionTests: XCTestCase {
     internal func testCountPunctuations() {
         let symbols = string.countPunctuations()
         let hasSymbols = "-.,!/".countPunctuations()
-        
-        XCTAssertEqual(symbols, 0)
-        XCTAssertEqual(hasSymbols, 5)
-    }
-    
-    internal func testCountSymbols() {
-        let symbols = string.countSymbols()
-        let hasSymbols = "-.,!/".countSymbols()
         
         XCTAssertEqual(symbols, 0)
         XCTAssertEqual(hasSymbols, 5)
