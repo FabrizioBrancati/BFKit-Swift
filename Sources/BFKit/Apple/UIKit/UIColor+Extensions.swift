@@ -84,7 +84,7 @@ public extension Color {
 
     #if canImport(UIKit)
         /// RGB properties: red.
-        public var redComponent: CGFloat {
+        var redComponent: CGFloat {
             guard canProvideRGBComponents(), let component = cgColor.__unsafeComponents else {
                 return 0.0
             }
@@ -93,7 +93,7 @@ public extension Color {
         }
 
         /// RGB properties: green.
-        public var greenComponent: CGFloat {
+        var greenComponent: CGFloat {
             guard canProvideRGBComponents(), let component = cgColor.__unsafeComponents else {
                 return 0.0
             }
@@ -105,7 +105,7 @@ public extension Color {
         }
 
         /// RGB properties: blue.
-        public var blueComponent: CGFloat {
+        var blueComponent: CGFloat {
             guard canProvideRGBComponents(), let component = cgColor.__unsafeComponents else {
                 return 0.0
             }
@@ -117,7 +117,7 @@ public extension Color {
         }
 
         /// RGB properties: white.
-        public var whiteComponent: CGFloat {
+        var whiteComponent: CGFloat {
             guard cgColor.colorSpace?.model == CGColorSpaceModel.monochrome, let component = cgColor.__unsafeComponents else {
                 return 0.0
             }

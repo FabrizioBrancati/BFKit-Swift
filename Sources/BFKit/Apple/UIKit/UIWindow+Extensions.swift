@@ -68,7 +68,7 @@ public extension UIWindow {
     ///
     /// - Parameter save: Set to true to save, otherwise false.
     /// - Returns: Returns the screenshot as an UIImage.
-    public func windowScreenshot(save: Bool = false) -> UIImage? {
+    func windowScreenshot(save: Bool = false) -> UIImage? {
         guard let orientation: UIInterfaceOrientation = (UIApplication.value(forKey: "sharedApplication") as? UIApplication)?.statusBarOrientation else {
             return nil
         }
@@ -120,14 +120,14 @@ public extension UIWindow {
     ///   - save: Set to true to save, otherwise false.
     ///   - completion: Completion handler with the UIImage.
     ///   - screenshot: The screenshot image.
-    public func windowScreenshot(delay: Double, save: Bool = false, completion: @escaping (_ screenshot: UIImage?) -> Void) {
+    func windowScreenshot(delay: Double, save: Bool = false, completion: @escaping (_ screenshot: UIImage?) -> Void) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
             completion(self.windowScreenshot(save: save))
         }
     }
 
     /// Show touch on screen.
-    public func activateTouch() {
+    func activateTouch() {
         guard !sendEventExchanged else {
             return
         }
@@ -141,7 +141,7 @@ public extension UIWindow {
     }
 
     /// Hide touch on screen.
-    public func deactivateTouch() {
+    func deactivateTouch() {
         guard sendEventExchanged else {
             return
         }
@@ -212,6 +212,8 @@ public extension UIWindow {
                         }
                     )
                 }
+            @unknown default:
+                break
             }
         }
     }

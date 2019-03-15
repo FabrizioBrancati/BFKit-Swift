@@ -40,7 +40,7 @@ public extension UIButton {
     ///   - title: Button title.
     ///   - backgroundImage: Button background image.
     ///   - highlightedBackgroundImage: Button highlighted background image.
-    public convenience init(frame: CGRect, title: String, backgroundImage: UIImage? = nil, highlightedBackgroundImage: UIImage? = nil) {
+    convenience init(frame: CGRect, title: String, backgroundImage: UIImage? = nil, highlightedBackgroundImage: UIImage? = nil) {
         self.init(frame: frame)
         self.frame = frame
         setTitle(title, for: UIControl.State.normal)
@@ -54,7 +54,7 @@ public extension UIButton {
     ///   - frame: Button frame.
     ///   - title: Button title.
     ///   - color: Button color, the highlighted color will be automatically created.
-    public convenience init(frame: CGRect, title: String, color: UIColor) {
+    convenience init(frame: CGRect, title: String, color: UIColor) {
         guard let components: UnsafePointer<CGFloat> = color.cgColor.__unsafeComponents else {
             self.init(frame: frame, title: title)
             return
@@ -70,7 +70,7 @@ public extension UIButton {
     ///   - title: Button title.
     ///   - color: Button color.
     ///   - highlightedColor: Button highlighted color.
-    public convenience init(frame: CGRect, title: String, color: UIColor, highlightedColor: UIColor) {
+    convenience init(frame: CGRect, title: String, color: UIColor, highlightedColor: UIColor) {
         self.init(frame: frame, title: title, backgroundImage: UIImage(color: color), highlightedBackgroundImage: UIImage(color: highlightedColor))
     }
     
@@ -80,7 +80,7 @@ public extension UIButton {
     ///   - frame: Button frame
     ///   - image: Button image
     ///   - highlightedImage: Button highlighted image
-    public convenience init(frame: CGRect, image: UIImage, highlightedImage: UIImage? = nil) {
+    convenience init(frame: CGRect, image: UIImage, highlightedImage: UIImage? = nil) {
         self.init(frame: frame)
         self.frame = frame
         setImage(image, for: UIControl.State.normal)
@@ -92,7 +92,7 @@ public extension UIButton {
     /// - Parameters:
     ///   - fontName: Font name from the FontName enum declared in UIFontExtension.
     ///   - size:Font size.
-    public func setTitleFont(_ fontName: FontName, size: CGFloat) {
+    func setTitleFont(_ fontName: FontName, size: CGFloat) {
         if let titleLabel = titleLabel {
             titleLabel.font = UIFont(fontName: fontName, size: size)
         }
@@ -101,7 +101,7 @@ public extension UIButton {
     /// Set the title color.
     ///
     /// - Parameter color: Font color, the highlighted color will be automatically created.
-    public func setTitleColor(_ color: UIColor) {
+    func setTitleColor(_ color: UIColor) {
         setTitleColor(color, highlightedColor: color.withAlphaComponent(0.4))
     }
     
@@ -110,7 +110,7 @@ public extension UIButton {
     /// - Parameters:
     ///   - color: Button color
     ///   - highlightedColor: Button highlighted color
-    public func setTitleColor(_ color: UIColor, highlightedColor: UIColor) {
+    func setTitleColor(_ color: UIColor, highlightedColor: UIColor) {
         setTitleColor(color, for: UIControl.State.normal)
         setTitleColor(highlightedColor, for: UIControl.State.highlighted)
     }

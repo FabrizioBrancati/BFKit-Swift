@@ -37,7 +37,7 @@ public extension UITableView {
     ///
     /// - Parameter section: The section.
     /// - Returns: Return an array with all the IndexPaths.
-    public func indexPaths(section: Int) -> [IndexPath] {
+    func indexPaths(section: Int) -> [IndexPath] {
         var indexPaths: [IndexPath] = []
         let rows: Int = numberOfRows(inSection: section)
         for index in 0 ..< rows {
@@ -54,7 +54,7 @@ public extension UITableView {
     ///   - row: Row of the index path.
     ///   - section: Section of the index path
     /// - Returns: Returns the next index path.
-    public func nextIndexPath(row: Int, forSection section: Int) -> IndexPath? {
+    func nextIndexPath(row: Int, forSection section: Int) -> IndexPath? {
         let indexPath: [IndexPath] = indexPaths(section: section)
         guard indexPath != [] else {
             return nil
@@ -69,7 +69,7 @@ public extension UITableView {
     ///   - row: Row of the index path.
     ///   - section: Section of the index path.
     /// - Returns: Returns the previous index path.
-    public func previousIndexPath(row: Int, forSection section: Int) -> IndexPath? {
+    func previousIndexPath(row: Int, forSection section: Int) -> IndexPath? {
         let indexPath: [IndexPath] = indexPaths(section: section)
         guard indexPath != [] else {
             return nil
@@ -87,7 +87,7 @@ public extension UITableView {
     ///   - separatorInset: Cell separator inset.
     ///   - dataSource: TableView data source.
     ///   - delegate: TableView delegate.
-    public convenience init(frame: CGRect, style: UITableView.Style, cellSeparatorStyle: UITableViewCell.SeparatorStyle, separatorInset: UIEdgeInsets, dataSource: UITableViewDataSource?, delegate: UITableViewDelegate?) {
+    convenience init(frame: CGRect, style: UITableView.Style, cellSeparatorStyle: UITableViewCell.SeparatorStyle, separatorInset: UIEdgeInsets, dataSource: UITableViewDataSource?, delegate: UITableViewDelegate?) {
         self.init(frame: frame, style: style)
         separatorStyle = cellSeparatorStyle
         self.separatorInset = separatorInset

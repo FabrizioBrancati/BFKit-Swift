@@ -34,7 +34,7 @@ public extension UIViewController {
     /// Use this in viewWillAppear(_:)
     ///
     /// - Parameter tableView: UITableView to be delected.
-    public func smoothlyDeselectRows(tableView: UITableView) {
+    func smoothlyDeselectRows(tableView: UITableView) {
         let selectedIndexPaths = tableView.indexPathsForSelectedRows ?? []
         
         if let coordinator = transitionCoordinator {
@@ -64,7 +64,7 @@ public extension UIViewController {
     /// - parameter message: An optional String for the UIAlertController's message.
     /// - parameter actions: An array of actions that will be added to the UIAlertController.
     /// - parameter alertType: The style of the UIAlertController.
-    public func present(title: String, message: String, actions: [UIAlertAction], alertType: UIAlertController.Style = .alert) {
+    func present(title: String, message: String, actions: [UIAlertAction], alertType: UIAlertController.Style = .alert) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: alertType)
         for action in actions {
             alert.addAction(action)
@@ -78,7 +78,7 @@ public extension UIViewController {
     /// - Parameters:
     ///   - visible: Set if visible.
     ///   - animated: Set if the transition must be animated.
-    public func setTabBarVisible(_ visible: Bool, animated: Bool, duration: TimeInterval = 0.3) {
+    func setTabBarVisible(_ visible: Bool, animated: Bool, duration: TimeInterval = 0.3) {
         let frame = tabBarController?.tabBar.frame
         
         guard isTabBarVisible() != visible, let height = frame?.size.height else {
@@ -100,7 +100,7 @@ public extension UIViewController {
     /// Returns if the tab bar is visible.
     ///
     /// - Returns: Returns if the tab bar is visible.
-    public func isTabBarVisible() -> Bool {
+    func isTabBarVisible() -> Bool {
         guard let tabBarOriginY = tabBarController?.tabBar.frame.origin.y else {
             return false
         }
