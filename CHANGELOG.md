@@ -52,7 +52,8 @@ All notable changes to this project will be documented in this file.<br>
 
 ### Changed
 - Renamed `countSymbols()` to `countPunctuations()` in String extension, the old one has been deprecated but still valid
-- Changed parameter type and return type of `degreesToRadians` and `radiansToDegrees` from `Float` to `Double` in Number extension
+- Changed parameter type and return type of `degreesToRadians(_:)` and `radiansToDegrees(_:)` from `Float` to `Double` in Number extension
+- Changed parameter type of `rotate(radians:)` and `rotate(degrees:)` from `Float` to `Double` in UIImage extension
 
 ### Improved
 - Improved `count*` chars functions in String extension
