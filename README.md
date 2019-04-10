@@ -32,11 +32,6 @@
 
 ---
 
-Swift 5.0
-=========
-
-If you need Swift 5.0 support, switch to the `swift-5` branch!
-
 Features
 ========
 
