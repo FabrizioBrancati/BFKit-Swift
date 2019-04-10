@@ -34,7 +34,7 @@ public extension NSPointerArray {
     /// Adds an object to the array.
     ///
     /// - Parameter object: Object to be added.
-    public func add(_ object: AnyObject?) {
+    func add(_ object: AnyObject?) {
         guard let strongObject = object else {
             return
         }
@@ -48,7 +48,7 @@ public extension NSPointerArray {
     /// - Parameters:
     ///   - object: Object to be inserted.
     ///   - index: Index.
-    public func insert(_ object: AnyObject?, at index: Int) {
+    func insert(_ object: AnyObject?, at index: Int) {
         guard index < count, let strongObject = object else {
             return
         }
@@ -62,7 +62,7 @@ public extension NSPointerArray {
     /// - Parameters:
     ///   - index: Index.
     ///   - object: Replacing object.
-    public func replace(at index: Int, with object: AnyObject?) {
+    func replace(at index: Int, with object: AnyObject?) {
         guard index < count, let strongObject = object else {
             return
         }
@@ -75,7 +75,7 @@ public extension NSPointerArray {
     ///
     /// - Parameter index: Index.
     /// - Returns: Returns an object at index.
-    public func object(at index: Int) -> AnyObject? {
+    func object(at index: Int) -> AnyObject? {
         guard index < count, let pointer = pointer(at: index) else {
             return nil
         }
@@ -86,7 +86,7 @@ public extension NSPointerArray {
     /// Remove an object at a given index.
     ///
     /// - Parameter index: Index.
-    public func remove(at index: Int) {
+    func remove(at index: Int) {
         guard index < count else {
             return
         }

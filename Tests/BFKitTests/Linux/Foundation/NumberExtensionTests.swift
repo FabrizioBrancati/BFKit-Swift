@@ -32,10 +32,6 @@ internal class NumberExtensionTests: XCTestCase {
     internal static let allTests = [
         ("testDegreesToRadians", testDegreesToRadians),
         ("testRadiansToDegrees", testRadiansToDegrees),
-        ("testRandomIntMinMax", testRandomIntMinMax),
-        ("testRandomIntRange", testRandomIntRange),
-        ("testRandomFloat", testRandomFloat),
-        ("testRandomFloatMinMax", testRandomFloatMinMax),
         ("testIntArray", testIntArray),
         ("testFloatArray", testFloatArray),
         ("testDoubleArray", testDoubleArray)
@@ -48,59 +44,9 @@ internal class NumberExtensionTests: XCTestCase {
     }
     
     internal func testRadiansToDegrees() {
-        let degrees = radiansToDegrees(Float.pi)
+        let degrees = radiansToDegrees(Double.pi)
         
         XCTAssert(degrees >= 179 && degrees <= 181)
-    }
-    
-    internal func testRandomIntMinMax() {
-        var random: [Int] = []
-        
-        for _ in 0...10 {
-            random.append(randomInt(min: 0, max: 1))
-        }
-        
-        if random.contains(0) {
-            XCTAssertTrue(true)
-        } else {
-            XCTFail("`testRandomIntMinMax` error")
-        }
-        if random.contains(1) {
-            XCTAssertTrue(true)
-        } else {
-            XCTFail("`testRandomIntMinMax` error")
-        }
-    }
-    
-    internal func testRandomIntRange() {
-        var random: [Int] = []
-        
-        for _ in 0...10 {
-            random.append(randomInt(range: 0...1))
-        }
-        
-        if random.contains(0) {
-            XCTAssertTrue(true)
-        } else {
-            XCTFail("`testRandomIntRange` error")
-        }
-        if random.contains(1) {
-            XCTAssertTrue(true)
-        } else {
-            XCTFail("`testRandomIntRange` error")
-        }
-    }
-    
-    internal func testRandomFloat() {
-        let random = randomFloat()
-        
-        XCTAssert(random >= 0.0 && random <= 1.0)
-    }
-    
-    internal func testRandomFloatMinMax() {
-        let random = randomFloat(min: 2.0, max: 2.5)
-        
-        XCTAssert(random >= 2.0 && random <= 2.5)
     }
     
     internal func testIntArray() {

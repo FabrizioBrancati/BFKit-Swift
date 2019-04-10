@@ -50,7 +50,7 @@ public extension UITextField {
     ///   - clearButtonMode: TextField clear button mode.
     ///   - autoCorrectionType: TextField auto correction type.
     ///   - delegate: TextField delegate. Set nil if it has no delegate.
-    public convenience init(frame: CGRect, placeholder: String, font: UIFont, textColor: UIColor, returnKeyType: UIReturnKeyType, keyboardType: UIKeyboardType, secure: Bool, borderStyle: UITextField.BorderStyle, autocapitalizationType: UITextAutocapitalizationType, keyboardAppearance: UIKeyboardAppearance, enablesReturnKeyAutomatically: Bool, clearButtonMode: UITextField.ViewMode, autocorrectionType: UITextAutocorrectionType, delegate: UITextFieldDelegate?) {
+    convenience init(frame: CGRect, placeholder: String, font: UIFont, textColor: UIColor, returnKeyType: UIReturnKeyType, keyboardType: UIKeyboardType, secure: Bool, borderStyle: UITextField.BorderStyle, autocapitalizationType: UITextAutocapitalizationType, keyboardAppearance: UIKeyboardAppearance, enablesReturnKeyAutomatically: Bool, clearButtonMode: UITextField.ViewMode, autocorrectionType: UITextAutocorrectionType, delegate: UITextFieldDelegate?) {
         self.init(frame: frame)
         self.borderStyle = borderStyle
         self.autocorrectionType = autocorrectionType
@@ -85,7 +85,7 @@ public extension UITextField {
     ///   - clearButtonMode: TextField clear button mode.
     ///   - autoCorrectionType: TextField auto correction type.
     ///   - delegate: TextField delegate. Set nil if it has no delegate.
-    public convenience init(frame: CGRect, placeholder: String, font: FontName, fontSize: CGFloat, textColor: UIColor, returnKeyType: UIReturnKeyType, keyboardType: UIKeyboardType, secure: Bool, borderStyle: UITextField.BorderStyle, autocapitalizationType: UITextAutocapitalizationType, keyboardAppearance: UIKeyboardAppearance, enablesReturnKeyAutomatically: Bool, clearButtonMode: UITextField.ViewMode, autocorrectionType: UITextAutocorrectionType, delegate: UITextFieldDelegate?) {
+    convenience init(frame: CGRect, placeholder: String, font: FontName, fontSize: CGFloat, textColor: UIColor, returnKeyType: UIReturnKeyType, keyboardType: UIKeyboardType, secure: Bool, borderStyle: UITextField.BorderStyle, autocapitalizationType: UITextAutocapitalizationType, keyboardAppearance: UIKeyboardAppearance, enablesReturnKeyAutomatically: Bool, clearButtonMode: UITextField.ViewMode, autocorrectionType: UITextAutocorrectionType, delegate: UITextFieldDelegate?) {
         self.init(frame: frame)
         self.borderStyle = borderStyle
         self.autocorrectionType = autocorrectionType
@@ -103,12 +103,12 @@ public extension UITextField {
     }
     
     /// Paste the pasteboard text to UITextField.
-    public func pasteFromPasteboard() {
+    func pasteFromPasteboard() {
         text = UIPasteboard.getString()
     }
     
     /// Copy UITextField text to pasteboard.
-    public func copyToPasteboard() {
+    func copyToPasteboard() {
         guard let text = text else {
             return
         }

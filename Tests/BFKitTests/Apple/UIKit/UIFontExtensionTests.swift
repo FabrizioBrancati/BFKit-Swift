@@ -29,25 +29,7 @@ import Foundation
 import UIKit
 import XCTest
 
-internal class UIFontExtensionTests: XCTestCase {
-    internal func testLightFont() {
-        UIFont.lightFont = UIFont(fontName: .helvetica, size: 20)
-        
-        XCTAssertEqual(UIFont.lightFont?.fontName, FontName.helvetica.rawValue)
-    }
-    
-    internal func testRegularFont() {
-        UIFont.regularFont = UIFont(fontName: .helvetica, size: 20)
-        
-        XCTAssertEqual(UIFont.regularFont?.fontName, FontName.helvetica.rawValue)
-    }
-    
-    internal func testBoldFont() {
-        UIFont.boldFont = UIFont(fontName: .helvetica, size: 20)
-        
-        XCTAssertEqual(UIFont.boldFont?.fontName, FontName.helvetica.rawValue)
-    }
-    
+internal class UIFontExtensionTests: XCTestCase {    
     internal func testInitFontNameSize() {
         let font = UIFont(fontName: .helveticaNeue, size: 20)
         

@@ -33,7 +33,8 @@ public extension Set {
     /// Randomly selects an element from self and returns it.
     ///
     /// - returns: An element that was randomly selected from the set.
-    public func random() -> Element {
-        return self[index(startIndex, offsetBy: Int.random(in: 0...count - 1))]
+    func random() -> Element {
+        let randomOffset = Int.random(in: 0...count - 1)
+        return self[index(startIndex, offsetBy: randomOffset)]
     }
 }

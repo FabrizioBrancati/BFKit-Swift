@@ -8,6 +8,9 @@ All notable changes to this project will be documented in this file.<br>
 
 ---
 
+### 5.x Releases
+- `5.0.x` Releases - [5.0.0](#500---swift-50-support)
+
 ### 4.x Releases
 - `4.1.x` Releases - [4.1.0](#410---spend-that-money)
 - `4.0.x` Releases - [4.0.0](#400---swift-42-support) | [4.0.1](#401---release-it-please)
@@ -36,6 +39,28 @@ All notable changes to this project will be documented in this file.<br>
 - `1.2.x` Releases - [1.2.0](#120)
 - `1.1.x` Releases - [1.1.0](#110)
 - `1.0.x` Releases - [1.0.0](#100)
+
+---
+
+## [5.0.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/5.0.0) - Swift 5.0 Support
+### 11 Apr 2019
+### Added
+- Added support to Xcode 10.2 and Swift 5.0
+
+### Removed
+- Removed all the deprecated functions and variables
+
+### Changed
+- Renamed `countSymbols()` to `countPunctuations()` in String extension, the old one has been deprecated but still valid
+- Changed parameter type and return type of `degreesToRadians(_:)` and `radiansToDegrees(_:)` from `Float` to `Double` in Number extension
+- Changed parameter type of `rotate(radians:)` and `rotate(degrees:)` from `Float` to `Double` in UIImage extension
+- Changed `search(_:)` function in List struct that now returns `Int` instead of `Int?` by returning `-1` instead of `nil` if the `Element` is not found
+- Changed BFLog messages from emojis to `[ERROR]`, `[WARNING]`, `[DEBUG]` and `[INFO]`
+
+### Improved
+- Improved `count*` chars functions in String extension
+- Improved build performance
+- Updated SwiftLint to 0.31.0
 
 ---
 

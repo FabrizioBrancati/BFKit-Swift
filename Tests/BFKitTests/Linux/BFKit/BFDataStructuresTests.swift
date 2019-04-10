@@ -101,7 +101,7 @@ internal class BFDataStructuresTests: XCTestCase {
     
     internal func testListSearchElement() {
         XCTAssertEqual(list.search(1), 0)
-        XCTAssertNil(list.search(4))
+        XCTAssertEqual(list.search(4), -1)
     }
     
     // MARK: - Queue tests

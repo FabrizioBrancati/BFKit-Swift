@@ -42,7 +42,7 @@ public extension UIScrollView {
     ///   - pagingEnabled: Set if ScrollView has paging enabled.
     ///   - showScrollIndicators: Set if ScrollView has to show the scroll indicators, vertical and horizontal.
     ///   - delegate: ScrollView delegate.
-    public convenience init(frame: CGRect, contentSize: CGSize, clipsToBounds: Bool, pagingEnabled: Bool, showScrollIndicators: Bool, delegate: UIScrollViewDelegate?) {
+    convenience init(frame: CGRect, contentSize: CGSize, clipsToBounds: Bool, pagingEnabled: Bool, showScrollIndicators: Bool, delegate: UIScrollViewDelegate?) {
         self.init(frame: frame)
         self.delegate = delegate
         isPagingEnabled = pagingEnabled

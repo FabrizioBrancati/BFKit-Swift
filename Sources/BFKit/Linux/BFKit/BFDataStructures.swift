@@ -59,11 +59,13 @@ public struct List<Element: Equatable>: CustomStringConvertible {
     /// - Parameter element: The object to be deleted.
     /// - Returns: Retruns true if removed, otherwise false.
     public mutating func delete(_ element: Element) -> Bool {
-        guard let search = search(element) else {
+        let firstElement = search(element)
+            
+        guard firstElement > -1 else {
             return false
         }
         
-        list.remove(at: search)
+        list.remove(at: firstElement)
         return true
     }
     
@@ -86,12 +88,12 @@ public struct List<Element: Equatable>: CustomStringConvertible {
     ///
     /// - Parameter element: The element to search.
     /// - Returns: Returns the index of the searched element.
-    public func search(_ element: Element) -> Int? {
+    public func search(_ element: Element) -> Int {
         for index in 0 ..< list.count where list[index] == element {
             return index
         }
         
-        return nil
+        return -1
     }
 }
 

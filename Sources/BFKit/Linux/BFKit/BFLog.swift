@@ -74,7 +74,7 @@ public enum BFLog {
     ///   - function: Function name. Default is #function.
     ///   - line: Line number. Default is #line.
     public static func warning(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
-        log("⚠️ \(message)", filename: filename, function: function, line: line)
+        log("[WARNING] \(message)", filename: filename, function: function, line: line)
     }
     
     /// Exenteds NSLog with an error sign.
@@ -87,7 +87,7 @@ public enum BFLog {
     ///   - function: Function name. Default is #function.
     ///   - line: Line number. Default is #line.
     public static func error(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
-        log("❗️ \(message)", filename: filename, function: function, line: line)
+        log("[ERROR] \(message)", filename: filename, function: function, line: line)
     }
     
     /// Exenteds NSLog with a debug sign.
@@ -100,7 +100,7 @@ public enum BFLog {
     ///   - function: Function name. Default is #function.
     ///   - line: Line number. Default is #line.
     public static func debug(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
-        log("🔵 \(message)", filename: filename, function: function, line: line)
+        log("[DEBUG] \(message)", filename: filename, function: function, line: line)
     }
     
     /// Exenteds NSLog with an info sign.
@@ -113,7 +113,7 @@ public enum BFLog {
     ///   - function: Function name. Default is #function.
     ///   - line: Line number. Default is #line.
     public static func info(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
-        log("ℹ️ \(message)", filename: filename, function: function, line: line)
+        log("[INFO] \(message)", filename: filename, function: function, line: line)
     }
     
     /// Clear the log string.

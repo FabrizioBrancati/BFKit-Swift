@@ -10,7 +10,7 @@
 [![Version](https://img.shields.io/cocoapods/v/BFKit-Swift.svg?style=flat)][Documentation]
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)
 <br>
-[![Language](https://img.shields.io/badge/language-Swift%204.2-orange.svg)](https://swift.org/)
+[![Language](https://img.shields.io/badge/language-Swift%205.0-orange.svg)](https://swift.org/)
 [![Platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20watchOS%20%7C%20Linux-cc9c00.svg)][Documentation]
 
 ---
@@ -31,11 +31,6 @@
 </p>
 
 ---
-
-Swift 5.0
-=========
-
-If you need Swift 5.0 support, switch to the `swift-5` branch!
 
 Features
 ========
@@ -126,6 +121,7 @@ Requirements
 | 4.0       | 9.0...9.2 | 3.0.0...3.1.1   | 8.0+ `*` | 10.10+ `*` | 2.0+ `*`    | ![✓]      |
 | 4.1       | 9.3...9.4 | 3.1.2...3.2.1   | 8.0+ `*` | 10.10+ `*` | 2.0+ `*`    | ![✓]      |
 | 4.2       | 10.0      | 4.0.0...4.1.0   | 8.0+ `*` | 10.10+ `*` | 2.0+ `*`    | ![✓]      |
+| 5.0       | 10.2      | 5.0.0           | 8.0+ `*` | 10.10+ `*` | 2.0+ `*`    | ![✓]      |
 
 > `*` With App Extension Support
 
@@ -209,7 +205,7 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
 - Create a **Package.swift** file in your **project directory** and write into:
 
     ```swift
-    // swift-tools-version:4.2
+    // swift-tools-version:5.0
     import PackageDescription
 
     let package = Package(

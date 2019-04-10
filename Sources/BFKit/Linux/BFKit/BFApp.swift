@@ -150,27 +150,27 @@ public extension BFApp {
     // MARK: - Variables
     
     /// Return the App name.
-    public static var name: String = {
+    static var name: String = {
         return BFApp.stringFromInfoDictionary(forKey: "CFBundleDisplayName")
     }()
     
     /// Returns the App version.
-    public static var version: String = {
+    static var version: String = {
         return BFApp.stringFromInfoDictionary(forKey: "CFBundleShortVersionString")
     }()
     
     /// Returns the App build.
-    public static var build: String = {
+    static var build: String = {
         return BFApp.stringFromInfoDictionary(forKey: "CFBundleVersion")
     }()
     
     /// Returns the App executable.
-    public static var executable: String = {
+    static var executable: String = {
         return BFApp.stringFromInfoDictionary(forKey: "CFBundleExecutable")
     }()
     
     /// Returns the App bundle.
-    public static var bundle: String = {
+    static var bundle: String = {
         return BFApp.stringFromInfoDictionary(forKey: "CFBundleIdentifier")
     }()
     

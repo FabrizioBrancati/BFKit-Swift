@@ -36,7 +36,7 @@ public extension Collection {
     ///
     /// - Returns: Returns the JSON as String or nil if error while parsing.
     /// - Throws: Throws JSONSerialization and BFKitError.jsonSerialization errors.
-    public func json() throws -> String {
+    func json() throws -> String {
         let jsonData: Data = try JSONSerialization.data(withJSONObject: self, options: [])
         
         guard let json = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue) else {
