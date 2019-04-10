@@ -29,6 +29,10 @@ import Foundation
 import XCTest
 
 internal class BFLogTests: XCTestCase {
+    internal static let allTests = [
+        ("testClear", testClear)
+    ]
+    
     override internal func setUp() {
         super.setUp()
         
