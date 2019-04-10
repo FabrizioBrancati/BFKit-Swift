@@ -30,7 +30,6 @@ import XCTest
 
 internal class BFLogTests: XCTestCase {
     internal static let allTests = [
-        ("testDetailedLog", testDetailedLog),
         ("testClear", testClear)
     ]
     
