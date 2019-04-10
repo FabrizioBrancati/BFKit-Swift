@@ -33,7 +33,6 @@ XCTMain(
     [
         testCase(BFAppTests.allTests),
         testCase(BFDataStructuresTests.allTests),
-        testCase(BFLogTests.allTests),
         testCase(BFPasswordTests.allTests),
         testCase(ArrayExtensionTests.allTests),
         testCase(CollectionExtensionTests.allTests),
