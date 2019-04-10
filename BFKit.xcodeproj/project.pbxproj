@@ -53,7 +53,6 @@
 		490315101F0C31A600499354 /* BFApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314991F0C2EA600499354 /* BFApp.swift */; };
 		490315111F0C31A600499354 /* BFDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903149A1F0C2EA600499354 /* BFDataStructures.swift */; };
 		490315121F0C31A600499354 /* BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903149B1F0C2EA600499354 /* BFKit.swift */; };
-		490315131F0C31A600499354 /* BFLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903149C1F0C2EA600499354 /* BFLog.swift */; };
 		490315141F0C31A600499354 /* BFPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903149D1F0C2EA600499354 /* BFPassword.swift */; };
 		490315151F0C31AD00499354 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903149F1F0C2EA600499354 /* Array+Extensions.swift */; };
 		490315161F0C31AD00499354 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314A01F0C2EA600499354 /* Collection+Extensions.swift */; };
@@ -77,7 +76,6 @@
 		4903152C1F0C350F00499354 /* BFApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314991F0C2EA600499354 /* BFApp.swift */; };
 		4903152D1F0C350F00499354 /* BFDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903149A1F0C2EA600499354 /* BFDataStructures.swift */; };
 		4903152E1F0C350F00499354 /* BFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903149B1F0C2EA600499354 /* BFKit.swift */; };
-		4903152F1F0C350F00499354 /* BFLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903149C1F0C2EA600499354 /* BFLog.swift */; };
 		490315301F0C350F00499354 /* BFPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903149D1F0C2EA600499354 /* BFPassword.swift */; };
 		490315311F0C350F00499354 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903149F1F0C2EA600499354 /* Array+Extensions.swift */; };
 		490315321F0C350F00499354 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314A01F0C2EA600499354 /* Collection+Extensions.swift */; };
@@ -133,7 +131,6 @@
 		490315651F0C358000499354 /* ThreadExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314E01F0C2EA600499354 /* ThreadExtensionTests.swift */; };
 		490315661F0C358600499354 /* BFAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314D11F0C2EA600499354 /* BFAppTests.swift */; };
 		490315671F0C358600499354 /* BFDataStructuresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314D21F0C2EA600499354 /* BFDataStructuresTests.swift */; };
-		490315681F0C358600499354 /* BFLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314D31F0C2EA600499354 /* BFLogTests.swift */; };
 		490315691F0C358600499354 /* BFPasswordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314D41F0C2EA600499354 /* BFPasswordTests.swift */; };
 		4903156A1F0C358600499354 /* ArrayExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314D61F0C2EA600499354 /* ArrayExtensionTests.swift */; };
 		4903156B1F0C358600499354 /* CollectionExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314D71F0C2EA600499354 /* CollectionExtensionTests.swift */; };
@@ -363,6 +360,7 @@
 			children = (
 				49B9259B1FE33217002F0F17 /* BFBiometrics.swift */,
 				490314781F0C2EA600499354 /* BFButton.swift */,
+				4903149C1F0C2EA600499354 /* BFLog.swift */,
 				490314791F0C2EA600499354 /* BFSystemSound.swift */,
 				4903147A1F0C2EA600499354 /* BFTextField.swift */,
 			);
@@ -428,7 +426,6 @@
 				490314991F0C2EA600499354 /* BFApp.swift */,
 				4903149A1F0C2EA600499354 /* BFDataStructures.swift */,
 				4903149B1F0C2EA600499354 /* BFKit.swift */,
-				4903149C1F0C2EA600499354 /* BFLog.swift */,
 				4903149D1F0C2EA600499354 /* BFPassword.swift */,
 			);
 			path = BFKit;
@@ -489,6 +486,7 @@
 			children = (
 				49B925D51FF290E3002F0F17 /* BFBiometricsTests.swift */,
 				490314B21F0C2EA600499354 /* BFButtonTests.swift */,
+				490314D31F0C2EA600499354 /* BFLogTests.swift */,
 				490314B31F0C2EA600499354 /* BFSystemSoundTests.swift */,
 				490314B41F0C2EA600499354 /* BFTextFieldTests.swift */,
 			);
@@ -545,7 +543,6 @@
 			children = (
 				490314D11F0C2EA600499354 /* BFAppTests.swift */,
 				490314D21F0C2EA600499354 /* BFDataStructuresTests.swift */,
-				490314D31F0C2EA600499354 /* BFLogTests.swift */,
 				490314D41F0C2EA600499354 /* BFPasswordTests.swift */,
 			);
 			path = BFKit;
@@ -829,7 +826,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4903152F1F0C350F00499354 /* BFLog.swift in Sources */,
 				490315321F0C350F00499354 /* Collection+Extensions.swift in Sources */,
 				4903153A1F0C350F00499354 /* String+Extensions.swift in Sources */,
 				490315381F0C350F00499354 /* ProcessInfo+Extensions.swift in Sources */,
@@ -874,7 +870,6 @@
 				490315691F0C358600499354 /* BFPasswordTests.swift in Sources */,
 				490315711F0C358600499354 /* ProcessInfoExtensionTests.swift in Sources */,
 				4903156A1F0C358600499354 /* ArrayExtensionTests.swift in Sources */,
-				490315681F0C358600499354 /* BFLogTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -882,7 +877,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				490315131F0C31A600499354 /* BFLog.swift in Sources */,
 				490315161F0C31AD00499354 /* Collection+Extensions.swift in Sources */,
 				4903151E1F0C31AD00499354 /* String+Extensions.swift in Sources */,
 				4903151C1F0C31AD00499354 /* ProcessInfo+Extensions.swift in Sources */,
