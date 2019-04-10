@@ -58,19 +58,19 @@ internal class BFLogTests: XCTestCase {
         
         BFLog.warning("Warning")
         
-        XCTAssertEqual(BFLog.logged, "Test\nTest\n⚠️ Warning\n")
+        XCTAssertEqual(BFLog.logged, "Test\nTest\n[WARNING] Warning\n")
         
         BFLog.error("Error")
         
-        XCTAssertEqual(BFLog.logged, "Test\nTest\n⚠️ Warning\n❗️ Error\n")
+        XCTAssertEqual(BFLog.logged, "Test\nTest\n[WARNING] Warning\n[ERROR] Error\n")
         
         BFLog.debug("Debug")
         
-        XCTAssertEqual(BFLog.logged, "Test\nTest\n⚠️ Warning\n❗️ Error\n🔵 Debug\n")
+        XCTAssertEqual(BFLog.logged, "Test\nTest\n[WARNING] Warning\n[ERROR] Error\n[DEBUG] Debug\n")
         
         BFLog.info("Info")
         
-        XCTAssertEqual(BFLog.logged, "Test\nTest\n⚠️ Warning\n❗️ Error\n🔵 Debug\nℹ️ Info\n")
+        XCTAssertEqual(BFLog.logged, "Test\nTest\n[WARNING] Warning\n[ERROR] Error\n[DEBUG] Debug\n[INFO] Info\n")
     }
     
     internal func testDetailedLog() {

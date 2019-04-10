@@ -34,7 +34,7 @@ import Foundation
 /// - Parameter degrees: Degrees to be converted.
 /// - Returns: Returns the convertion result.
 public func degreesToRadians(_ degrees: Double) -> Double {
-    return Double(degrees) * Double.pi / 180
+    return degrees * Double.pi / 180
 }
 
 /// Radians to degrees conversion.
@@ -42,7 +42,7 @@ public func degreesToRadians(_ degrees: Double) -> Double {
 /// - Parameter radians: Radians to be converted.
 /// - Returns: Returns the convertion result.
 public func radiansToDegrees(_ radians: Double) -> Double {
-    return Double(radians) * 180 / Double.pi
+    return radians * 180 / Double.pi
 }
 
 // MARK: - Extensions

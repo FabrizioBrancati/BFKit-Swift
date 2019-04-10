@@ -108,7 +108,7 @@ public extension String {
     /// - Parameter character: The character.
     /// - Returns: Returns the substring from character.
     func substring(from character: Character) -> String {
-        let index: Int = self.index(of: character)
+        let index = self.index(of: character)
         guard index > -1 else {
             return ""
         }

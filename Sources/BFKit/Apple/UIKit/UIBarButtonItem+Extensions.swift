@@ -41,6 +41,7 @@ public extension UIBarButtonItem {
     convenience init(barButtonSpaceType space: UIBarButtonItem.SystemItem, width: CGFloat = 0.0) {
         if space == .fixedSpace || space == .flexibleSpace {
             self.init(barButtonSystemItem: space, target: nil, action: nil)
+            
             if space == .fixedSpace {
                 self.width = width
             }
