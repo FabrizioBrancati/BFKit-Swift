@@ -11,7 +11,6 @@
 		495BD1EC20F0D9DB005DF1CB /* BFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495BD1B920F0D9DB005DF1CB /* BFButton.swift */; };
 		495BD1ED20F0D9DB005DF1CB /* BFSystemSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495BD1BA20F0D9DB005DF1CB /* BFSystemSound.swift */; };
 		495BD1EE20F0D9DB005DF1CB /* BFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495BD1BB20F0D9DB005DF1CB /* BFTextField.swift */; };
-		495BD1EF20F0D9DB005DF1CB /* BFTouchID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495BD1BC20F0D9DB005DF1CB /* BFTouchID.swift */; };
 		495BD1F020F0D9DB005DF1CB /* NSAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495BD1BE20F0D9DB005DF1CB /* NSAttributedString+Extensions.swift */; };
 		495BD1F120F0D9DB005DF1CB /* NSPointerArray+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495BD1BF20F0D9DB005DF1CB /* NSPointerArray+Extensions.swift */; };
 		495BD1F220F0D9DB005DF1CB /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495BD1C120F0D9DB005DF1CB /* UIBarButtonItem+Extensions.swift */; };
@@ -66,7 +65,6 @@
 		495BD1B920F0D9DB005DF1CB /* BFButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFButton.swift; sourceTree = "<group>"; };
 		495BD1BA20F0D9DB005DF1CB /* BFSystemSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFSystemSound.swift; sourceTree = "<group>"; };
 		495BD1BB20F0D9DB005DF1CB /* BFTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFTextField.swift; sourceTree = "<group>"; };
-		495BD1BC20F0D9DB005DF1CB /* BFTouchID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFTouchID.swift; sourceTree = "<group>"; };
 		495BD1BE20F0D9DB005DF1CB /* NSAttributedString+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extensions.swift"; sourceTree = "<group>"; };
 		495BD1BF20F0D9DB005DF1CB /* NSPointerArray+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSPointerArray+Extensions.swift"; sourceTree = "<group>"; };
 		495BD1C120F0D9DB005DF1CB /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
@@ -159,7 +157,6 @@
 				495BD1B920F0D9DB005DF1CB /* BFButton.swift */,
 				495BD1BA20F0D9DB005DF1CB /* BFSystemSound.swift */,
 				495BD1BB20F0D9DB005DF1CB /* BFTextField.swift */,
-				495BD1BC20F0D9DB005DF1CB /* BFTouchID.swift */,
 			);
 			path = BFKit;
 			sourceTree = "<group>";
@@ -318,19 +315,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Fabrizio Brancati";
 				TargetAttributes = {
 					49FB86651DF34B2400AC7E4A = {
 						CreatedOnToolsVersion = 8.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = 49FB86611DF34B2400AC7E4A /* Build configuration list for PBXProject "BFKitExample" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -399,7 +396,6 @@
 				495BD20B20F0D9DC005DF1CB /* BFPassword.swift in Sources */,
 				495BD1F820F0D9DC005DF1CB /* UIImageView+Extensions.swift in Sources */,
 				495BD20220F0D9DC005DF1CB /* UIView+Extensions.swift in Sources */,
-				495BD1EF20F0D9DB005DF1CB /* BFTouchID.swift in Sources */,
 				495BD1FC20F0D9DC005DF1CB /* UIScreen+Extensions.swift in Sources */,
 				495BD20A20F0D9DC005DF1CB /* BFLog.swift in Sources */,
 				49FB86821DF34B5500AC7E4A /* BFKitViewController.swift in Sources */,
@@ -439,6 +435,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -498,6 +495,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -560,6 +558,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.FabrizioBrancati.BFKitExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -576,6 +575,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.FabrizioBrancati.BFKitExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

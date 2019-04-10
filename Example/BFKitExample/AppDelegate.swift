@@ -36,8 +36,7 @@ let BFKitArray = [  "BFApp",
                     "BFLog",
                     "BFPassword",
                     "BFSystemSound",
-                    "BFTextField",
-                    "BFTouchID"]
+                    "BFTextField"]
 
 let UIKitArray = [  "UIButton",
                     "UIColor",
