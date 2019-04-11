@@ -12,6 +12,11 @@ matrix:
       sudo: required
       dist: trusty
       env: SPM="YES"
+    - os: linux
+      language: generic
+      sudo: required
+      dist: xenial
+      env: SPM="YES"
     - os: osx
       language: objective-c
       osx_image: xcode10.2
