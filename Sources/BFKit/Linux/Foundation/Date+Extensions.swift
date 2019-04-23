@@ -35,14 +35,13 @@ public extension Date {
     /// Set and get current year.
     var year: Int {
         get {
-            let calendar = Calendar.autoupdatingCurrent
-            let components = calendar.dateComponents([.year], from: self)
+            #if os(Linux)
+                let calendar = Calendar(identifier: .gregorian)
+            #else
+                let calendar = Calendar.autoupdatingCurrent
+            #endif
             
-            guard let year = components.year else {
-                return 0
-            }
-            
-            return year
+            return calendar.component(.year, from: self)
         }
         set {
             update(components: [.year: newValue])
@@ -52,14 +51,13 @@ public extension Date {
     /// Set and get current month.
     var month: Int {
         get {
-            let calendar = Calendar.autoupdatingCurrent
-            let components = calendar.dateComponents([.month], from: self)
+            #if os(Linux)
+                let calendar = Calendar(identifier: .gregorian)
+            #else
+                let calendar = Calendar.autoupdatingCurrent
+            #endif
             
-            guard let month = components.month else {
-                return 0
-            }
-            
-            return month
+            return calendar.component(.month, from: self)
         }
         set {
             update(components: [.month: newValue])
@@ -69,14 +67,13 @@ public extension Date {
     /// Set and get current day.
     var day: Int {
         get {
-            let calendar = Calendar.autoupdatingCurrent
-            let components = calendar.dateComponents([.day], from: self)
+            #if os(Linux)
+                let calendar = Calendar(identifier: .gregorian)
+            #else
+                let calendar = Calendar.autoupdatingCurrent
+            #endif
             
-            guard let day = components.day else {
-                return 0
-            }
-            
-            return day
+            return calendar.component(.day, from: self)
         }
         set {
             update(components: [.day: newValue])
@@ -86,14 +83,13 @@ public extension Date {
     /// Set and get current hour.
     var hour: Int {
         get {
-            let calendar = Calendar.autoupdatingCurrent
-            let components = calendar.dateComponents([.hour], from: self)
+            #if os(Linux)
+                let calendar = Calendar(identifier: .gregorian)
+            #else
+                let calendar = Calendar.autoupdatingCurrent
+            #endif
             
-            guard let hour = components.hour else {
-                return 0
-            }
-            
-            return hour
+            return calendar.component(.hour, from: self)
         }
         set {
             update(components: [.hour: newValue])
@@ -103,14 +99,13 @@ public extension Date {
     /// Set and get current minute.
     var minute: Int {
         get {
-            let calendar = Calendar.autoupdatingCurrent
-            let components = calendar.dateComponents([.minute], from: self)
+            #if os(Linux)
+                let calendar = Calendar(identifier: .gregorian)
+            #else
+                let calendar = Calendar.autoupdatingCurrent
+            #endif
             
-            guard let minute = components.minute else {
-                return 0
-            }
-            
-            return minute
+            return calendar.component(.minute, from: self)
         }
         set {
             update(components: [.minute: newValue])
@@ -120,14 +115,13 @@ public extension Date {
     /// Set and get current second.
     var second: Int {
         get {
-            let calendar = Calendar.autoupdatingCurrent
-            let components = calendar.dateComponents([.second], from: self)
+            #if os(Linux)
+                let calendar = Calendar(identifier: .gregorian)
+            #else
+                let calendar = Calendar.autoupdatingCurrent
+            #endif
             
-            guard let second = components.second else {
-                return 0
-            }
-            
-            return second
+            return calendar.component(.second, from: self)
         }
         set {
             update(components: [.second: newValue])
@@ -136,14 +130,13 @@ public extension Date {
     
     /// Get current nanosecond.
     var nanosecond: Int {
-        let calendar = Calendar.autoupdatingCurrent
-        let components = calendar.dateComponents([.nanosecond], from: self)
+        #if os(Linux)
+            let calendar = Calendar(identifier: .gregorian)
+        #else
+            let calendar = Calendar.autoupdatingCurrent
+        #endif
         
-        guard let nanosecond = components.nanosecond else {
-            return 0
-        }
-        
-        return nanosecond
+        return calendar.component(.nanosecond, from: self)
     }
     
     /// Get the weekday number from 
@@ -155,14 +148,13 @@ public extension Date {
     /// - 6 - Friday.
     /// - 7 - Saturday.
     var weekday: Int {
-        let calendar = Calendar.autoupdatingCurrent
-        let components = calendar.dateComponents([.weekday], from: self)
+        #if os(Linux)
+            let calendar = Calendar(identifier: .gregorian)
+        #else
+            let calendar = Calendar.autoupdatingCurrent
+        #endif
         
-        guard let weekday = components.weekday else {
-            return 0
-        }
-        
-        return weekday
+        return calendar.component(.weekday, from: self)
     }
     
     /// Editable date components.
@@ -189,8 +181,13 @@ public extension Date {
     /// - Parameters:
     ///   - components: Dictionary of components and values to be updated.
     mutating func update(components: [EditableDateComponents: Int]) {
-        let autoupdatingCalendar = Calendar.autoupdatingCurrent
-        var dateComponents = autoupdatingCalendar.dateComponents([.year, .month, .day, .weekday, .hour, .minute, .second, .nanosecond], from: self)
+        #if os(Linux)
+            let calendar = Calendar(identifier: .gregorian)
+        #else
+            let calendar = Calendar.autoupdatingCurrent
+        #endif
+        
+        var dateComponents = calendar.dateComponents([.year, .month, .day, .weekday, .hour, .minute, .second, .nanosecond], from: self)
         
         for (component, value) in components {
             switch component {
@@ -214,7 +211,6 @@ public extension Date {
             }
         }
         
-        let calendar = Calendar(identifier: autoupdatingCalendar.identifier)
         guard let date = calendar.date(from: dateComponents) else {
             return
         }
@@ -240,7 +236,12 @@ public extension Date {
         components.minute = minute
         components.second = second
         
-        let calendar = Calendar.autoupdatingCurrent
+        #if os(Linux)
+            let calendar = Calendar(identifier: .gregorian)
+        #else
+            let calendar = Calendar.autoupdatingCurrent
+        #endif
+        
         guard let date = calendar.date(from: components) else {
             return nil
         }
@@ -254,8 +255,14 @@ public extension Date {
     ///   - format: Date String format. Default is "yyyy-MM-dd". Example: "2014-05-20".
     ///   - locale: Locale, default is "en_US_POSIX". You can use Locale.current.identifier.
     init?(parse dateString: String, format: String = "yyyy-MM-dd", locale: String = "en_US_POSIX") {
+        #if os(Linux)
+            let calendar = Calendar(identifier: .gregorian)
+        #else
+            let calendar = Calendar.autoupdatingCurrent
+        #endif
+        
         let dateFormatter = DateFormatter()
-        dateFormatter.calendar = Calendar.autoupdatingCurrent
+        dateFormatter.calendar = calendar
         dateFormatter.locale = Locale(identifier: locale)
         dateFormatter.timeZone = TimeZone.current
         dateFormatter.dateFormat = format
@@ -323,7 +330,12 @@ public extension Date {
     /// - Parameter toDate: The another date.
     /// - Returns: Returns the months between the two dates.
     func monthsBetween(_ toDate: Date) -> Int {
-        let calendar = Calendar.autoupdatingCurrent
+        #if os(Linux)
+            let calendar = Calendar(identifier: .gregorian)
+        #else
+            let calendar = Calendar.autoupdatingCurrent
+        #endif
+        
         let components = calendar.dateComponents([.month], from: self, to: toDate)
         
         guard let month = components.month else {
@@ -354,7 +366,12 @@ public extension Date {
     /// - Parameter anotherDate: The another date to compare as Date.
     /// - Returns: Returns true if is same day, otherwise false.
     func isSame(_ anotherDate: Date) -> Bool {
-        let calendar = Calendar.autoupdatingCurrent
+        #if os(Linux)
+            let calendar = Calendar(identifier: .gregorian)
+        #else
+            let calendar = Calendar.autoupdatingCurrent
+        #endif
+        
         let componentsSelf = calendar.dateComponents([.year, .month, .day], from: self)
         let componentsAnotherDate = calendar.dateComponents([.year, .month, .day], from: anotherDate)
         
@@ -366,7 +383,13 @@ public extension Date {
     /// - Parameter days: The number of days to add.
     /// - Returns: Returns self by adding the gived days number.
     func addingDays(_ days: Int) -> Date? {
-        return Calendar.autoupdatingCurrent.date(byAdding: .day, value: days, to: self)
+        #if os(Linux)
+            let calendar = Calendar(identifier: .gregorian)
+        #else
+            let calendar = Calendar.autoupdatingCurrent
+        #endif
+        
+        return calendar.date(byAdding: .day, value: days, to: self)
     }
     
     /// Add days to 
@@ -408,7 +431,12 @@ public extension Date {
     ///
     /// - Returns: Date after removing all components but not year, month and day.
     func shortDate() -> Date {
-        let calendar = Calendar.autoupdatingCurrent
+        #if os(Linux)
+            let calendar = Calendar(identifier: .gregorian)
+        #else
+            let calendar = Calendar.autoupdatingCurrent
+        #endif
+        
         let components = calendar.dateComponents([.year, .month, .day], from: self)
         
         guard let date = calendar.date(from: components) else {
