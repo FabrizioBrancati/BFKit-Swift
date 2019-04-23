@@ -43,7 +43,7 @@ matrix:
       os: osx
       language: objective-c
       osx_image: xcode10.2
-      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=9.0,name=iPhone 5s"                     SCHEME="$IOS_SCHEME"     RUN_TESTS="YES" LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
+      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=9.0,name=iPhone 5s"                     SCHEME="$IOS_SCHEME"     RUN_TESTS="NO" LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
     - name: macOS / Xcode 10.2 / watchOS 5.2 / Apple Watch 4 - 44mm
       os: osx
       language: objective-c
@@ -59,11 +59,6 @@ matrix:
       language: objective-c
       osx_image: xcode10.2
       env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=3.2,name=Apple Watch Series 2 - 42mm"   SCHEME="$WATCHOS_SCHEME" RUN_TESTS="NO"  LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
-    - name: macOS / Xcode 10.2
-      os: osx
-      language: objective-c
-      osx_image: xcode10.2
-      env: PROJ="BFKit.xcodeproj"                DESTINATION="arch=x86_64"                               SCHEME="$MACOS_SCHEME"   RUN_TESTS="YES" LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
     - name: macOS / Xcode 10.2
       os: osx
       language: objective-c
