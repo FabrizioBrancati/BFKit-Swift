@@ -47,20 +47,21 @@ All notable changes to this project will be documented in this file.<br>
 ### Added
 - Added support to Xcode 10.2 and Swift 5.0
 
-### Removed
-- Removed all the deprecated functions and variables
-
 ### Changed
 - Renamed `countSymbols()` to `countPunctuations()` in String extension, the old one has been deprecated but still valid
 - Changed parameter type and return type of `degreesToRadians(_:)` and `radiansToDegrees(_:)` from `Float` to `Double` in Number extension
 - Changed parameter type of `rotate(radians:)` and `rotate(degrees:)` from `Float` to `Double` in UIImage extension
 - Changed `search(_:)` function in List struct that now returns `Int` instead of `Int?` by returning `-1` instead of `nil` if the `Element` is not found
 - Changed BFLog messages from emojis to `[ERROR]`, `[WARNING]`, `[DEBUG]` and `[INFO]`
+- Changed the behavior of Calendar instances in Date extension on Linux
 
 ### Improved
 - Improved `count*` chars functions in String extension
 - Improved build performance
 - Updated SwiftLint to 0.31.0
+
+### Removed
+- Removed all the deprecated functions and variables
 
 ---
 
@@ -80,12 +81,12 @@ Thanks to [@gennick](https://github.com/gennick) for this release
 - Added new iPad Pro 11-inch and 12.9-inch in UIDevice extension
 - Added missing CoreGraphics files to CocoaPods
 
-### Removed
-- Removed watchOS 2.0 support in favor of watchOS 3.0, thanks to an App Store submission bug [#11](https://github.com/FabrizioBrancati/BFKit-Swift/issues/11)
-
 ### Improved
 - Improved settings reading and saving in FileManager extension
 - Updated SwiftLint to 0.29.2
+
+### Removed
+- Removed watchOS 2.0 support in favor of watchOS 3.0, thanks to an App Store submission bug [#11](https://github.com/FabrizioBrancati/BFKit-Swift/issues/11)
 
 ---
 
