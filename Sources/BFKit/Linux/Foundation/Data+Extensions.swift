@@ -35,14 +35,14 @@ public extension Data {
     /// Convert self to a UTF8 String.
     ///
     /// - Returns: Returns self as UTF8 NSString.
-    public func utf8() -> String? {
+    func utf8() -> String? {
         return String(data: self, encoding: .utf8)
     }
     
     /// Convert self to a ASCII String.
     ///
     /// - Returns: Returns self as ASCII String.
-    public func ascii() -> String? {
+    func ascii() -> String? {
         return String(data: self, encoding: .ascii)
     }
     
@@ -51,7 +51,7 @@ public extension Data {
     /// Useful for push notifications.
     ///
     /// - Returns: Returns self as String from UUID.
-    public func readableUUID() -> String {
+    func readableUUID() -> String {
         return description.trimmingCharacters(in: CharacterSet(charactersIn: "<>")).replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "-", with: "")
     }
 }

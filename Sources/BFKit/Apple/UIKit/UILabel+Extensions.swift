@@ -43,7 +43,7 @@ public extension UILabel {
     ///   - alignment: Label text alignment.
     ///   - lines: Label text lines.
     ///   - shadowColor: Label text shadow color.
-    public convenience init(frame: CGRect, text: String, font: UIFont, color: UIColor, alignment: NSTextAlignment, lines: Int, shadowColor: UIColor = UIColor.clear) {
+    convenience init(frame: CGRect, text: String, font: UIFont, color: UIColor, alignment: NSTextAlignment, lines: Int, shadowColor: UIColor = UIColor.clear) {
         self.init(frame: frame)
         self.font = font
         self.text = text
@@ -65,7 +65,7 @@ public extension UILabel {
     ///   - alignment: Label text alignment.
     ///   - lines: Label text lines.
     ///   - shadowColor: Label text shadow color.
-    public convenience init(frame: CGRect, text: String, font: FontName, fontSize: CGFloat, color: UIColor, alignment: NSTextAlignment, lines: Int, shadowColor: UIColor = UIColor.clear) {
+    convenience init(frame: CGRect, text: String, font: FontName, fontSize: CGFloat, color: UIColor, alignment: NSTextAlignment, lines: Int, shadowColor: UIColor = UIColor.clear) {
         self.init(frame: frame)
         self.font = UIFont(fontName: font, size: fontSize)
         self.text = text
@@ -79,7 +79,7 @@ public extension UILabel {
     /// Calculates height based on text, width and font.
     ///
     /// - Returns: Returns calculated height.
-    public func calculateHeight() -> CGFloat {
+    func calculateHeight() -> CGFloat {
         guard let text = text else {
             return 0
         }
@@ -92,7 +92,7 @@ public extension UILabel {
     ///   - font: New font to be setted.
     ///   - fromIndex: The start index.
     ///   - toIndex: The end index.
-    public func setFont(_ font: UIFont, fromIndex: Int, toIndex: Int) {
+    func setFont(_ font: UIFont, fromIndex: Int, toIndex: Int) {
         guard let text = text else {
             return
         }
@@ -107,7 +107,7 @@ public extension UILabel {
     ///   - fontSize: New font size.
     ///   - fromIndex: The start index.
     ///   - toIndex: The end index.
-    public func setFont(_ font: FontName, fontSize: CGFloat, fromIndex: Int, toIndex: Int) {
+    func setFont(_ font: FontName, fontSize: CGFloat, fromIndex: Int, toIndex: Int) {
         guard let text = text, let font = UIFont(fontName: font, size: fontSize) else {
             return
         }

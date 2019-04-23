@@ -38,7 +38,7 @@ public extension Dictionary {
     /// - Parameters:
     ///   - value: Value to be added.
     ///   - key: Key to be added.
-    public mutating func append(_ value: Value, forKey key: Key) {
+    mutating func append(_ value: Value, forKey key: Key) {
         self[key] = value
     }
 }

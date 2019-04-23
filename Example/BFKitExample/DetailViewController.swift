@@ -33,41 +33,40 @@ class DetailViewController: UIViewController {
     var detailType: DetailType = .BFApp
     
     enum DetailType : String {
-        case BFApp = "BFApp"
-        case BFBiometrics = "BFBiometrics"
-        case BFButton = "BFButton"
-        case BFDataStructures = "BFDataStructures"
-        case BFLog = "BFLog"
-        case BFPassword = "BFPassword"
-        case BFSystemSound = "BFSystemSound"
-        case BFTextField = "BFTextField"
-        case BFTouchID = "BFTouchID"
-        case UIButton = "UIButton"
-        case UIColor = "UIColor"
-        case UIDevice = "UIDevice"
-        case UIFont = "UIFont"
-        case UIImage = "UIImage"
-        case UIImageView = "UIImageView"
-        case UILabel = "UILabel"
-        case UINavigationBar = "UINavigationBar"
-        case UIScreen = "UIScreen"
-        case UIScrollView = "UIScrollView"
-        case UITableView = "UITableView"
-        case UITextField = "UITextField"
-        case UITextView = "UITextView"
-        case UIToolbar = "UIToolbar"
-        case UIView = "UIView"
-        case UIWebView = "UIWebView"
-        case UIWindow = "UIWindow"
-        case Array = "Array"
-        case Collection = "Collection"
-        case Data = "Data"
-        case Date = "Date"
-        case FileManager = "FileManager"
-        case Number = "Number"
-        case NSObject = "NSObject"
-        case Thread = "Thread"
-        case String = "String"
+        case BFApp
+        case BFBiometrics
+        case BFButton
+        case BFDataStructures
+        case BFLog
+        case BFPassword
+        case BFSystemSound
+        case BFTextField
+        case UIButton
+        case UIColor
+        case UIDevice
+        case UIFont
+        case UIImage
+        case UIImageView
+        case UILabel
+        case UINavigationBar
+        case UIScreen
+        case UIScrollView
+        case UITableView
+        case UITextField
+        case UITextView
+        case UIToolbar
+        case UIView
+        case UIWebView
+        case UIWindow
+        case Array
+        case Collection
+        case Data
+        case Date
+        case FileManager
+        case Number
+        case NSObject
+        case Thread
+        case String
     }
     
     override func viewDidLoad() {
@@ -85,7 +84,7 @@ class DetailViewController: UIViewController {
             BFLog.log("App build: \(BFApp.build)")
             BFLog.log("App version: \(BFApp.version)")
             BFLog.log("App set: \(BFApp.setAppSetting(object: "Test", forKey: "Test"))")
-            BFLog.log("App get: \(BFApp.getAppSetting(objectKey: "Test"))")
+            BFLog.log("App get: \(BFApp.getAppSetting(objectKey: "Test") ?? "")")
             
             BFApp.onFirstStart { isFirstStart in
                 if isFirstStart {
@@ -136,7 +135,7 @@ class DetailViewController: UIViewController {
             list.insert("3")
             BFLog.log("\n\nInsert: 1\nInsert: 2\nInsert: 3\nList: \(list)")
             BFLog.log("Search index 0: \(list.search(at: 0)!)")
-            let search = list.search("3")!
+            let search = list.search("3")
             BFLog.log("Search object \"3\": \(search)")
             let deleted = list.delete("3")
             BFLog.log("Delete: 3 - \(deleted) \nList: \(list)")
@@ -200,29 +199,6 @@ class DetailViewController: UIViewController {
             textField.maxNumberOfCharacters = 5
             
             scrollView.addSubview(textField)
-        case .BFTouchID:
-            scrollView.contentSize = CGSize(width: UIScreen.screenWidth, height: UIScreen.screenHeight - 120)
-            
-            let normalLabel: UILabel = UILabel(frame: CGRect(x: 20, y: 20, width: UIScreen.screenWidth - 40, height: 50), text: "Waiting for Touch ID...", font: .helveticaNeue, fontSize: 16, color: UIColor.black, alignment: .center, lines: 2)
-            scrollView.addSubview(normalLabel)
-            
-            BFTouchID.showTouchID(reason: "Authentication", completion: { result in
-                switch result {
-                case .success:
-                    runOnMainThread({
-                        normalLabel.text = "Authorized"
-                    })
-                case .authenticationFailed:
-                    runOnMainThread({
-                        normalLabel.text = "Not owner"
-                    })
-                default:
-                    runOnMainThread({
-                        let error = "Error"
-                        normalLabel.text = "\(error): \(result.rawValue)"
-                    })
-                }
-            })
         case .UIButton:
             scrollView.contentSize = CGSize(width: UIScreen.screenWidth, height: UIScreen.screenHeight - 120)
             
@@ -572,9 +548,7 @@ class DetailViewController: UIViewController {
             
             BFLog.clear()
             
-            BFLog.log("Radians to degrees: \(radiansToDegrees(Float.pi))")
-            BFLog.log("Random int: \(randomInt(min: 10, max: 50))")
-            BFLog.log("Random float: \(randomFloat(min: 0.1, max: 0.9)))")
+            BFLog.log("Radians to degrees: \(radiansToDegrees(Double.pi))")
             
             let textView: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight), text: BFLog.logged, font: .helveticaNeue, fontSize: 16, textColor: UIColor.black, alignment: .left, dataDetectorTypes: .all, editable: false, selectable: false, returnKeyType: .default, keyboardType: .default, secure: false, autocapitalizationType: .none, keyboardAppearance: .default, enablesReturnKeyAutomatically: true, autocorrectionType: .default, delegate: nil)
             self.view.addSubview(textView)

@@ -36,7 +36,7 @@ public extension UIWebView {
     /// Load the requested website.
     ///
     /// - Parameter website: Website to load.
-    public func loadWebsite(_ website: String) {
+    func loadWebsite(_ website: String) {
         guard let url = URL(string: website) else {
             return
         }

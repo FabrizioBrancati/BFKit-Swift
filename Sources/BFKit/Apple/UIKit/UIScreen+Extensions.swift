@@ -34,21 +34,21 @@ public extension UIScreen {
     // MARK: - Variables
     
     /// Get the screen width.
-    public static var screenWidth: CGFloat {
+    static var screenWidth: CGFloat {
         return UIScreen.fixedScreenSize().width
     }
     
     /// Get the screen height.
-    public static var screenHeight: CGFloat {
+    static var screenHeight: CGFloat {
         return UIScreen.fixedScreenSize().height
     }
     
     /// Get the maximum screen length.
-    public static var maxScreenLength: CGFloat {
+    static var maxScreenLength: CGFloat {
         return max(screenWidth, screenHeight)
     }
     /// Get the minimum screen length.
-    public static var minScreenLength: CGFloat {
+    static var minScreenLength: CGFloat {
         return min(screenWidth, screenHeight)
     }
     
@@ -57,21 +57,21 @@ public extension UIScreen {
     /// Check if current device has a Retina display.
     ///
     /// - Returns: Returns true if it has a Retina display, otherwise false.
-    public static func isRetina() -> Bool {
+    static func isRetina() -> Bool {
         return UIScreen.main.responds(to: #selector(UIScreen.displayLink(withTarget:selector:))) && UIScreen.main.scale == 2.0
     }
     
     /// Check if current device has a Retina HD display.
     ///
     /// - Returns: Returns true if it has a Retina HD display, otherwise false.
-    public static func isRetinaHD() -> Bool {
+    static func isRetinaHD() -> Bool {
         return UIScreen.main.responds(to: #selector(UIScreen.displayLink(withTarget:selector:))) && UIScreen.main.scale == 3.0
     }
     
     /// Returns fixed screen size, based on device orientation.
     ///
     /// - Returns: Returns a GCSize with the fixed screen size.
-    public static func fixedScreenSize() -> CGSize {
+    static func fixedScreenSize() -> CGSize {
         return UIScreen.main.bounds.size
     }
 }

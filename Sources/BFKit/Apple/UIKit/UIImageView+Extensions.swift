@@ -40,7 +40,7 @@ public extension UIImageView {
     ///   - frame: UIImageView frame.
     ///   - image: UIImageView image.
     /// - Returns: Returns the created UIImageView.
-    public convenience init(frame: CGRect, image: UIImage) {
+    convenience init(frame: CGRect, image: UIImage) {
         self.init(frame: frame)
         self.image = image
     }
@@ -52,7 +52,7 @@ public extension UIImageView {
     ///   - size: UIImageView size.
     ///   - center: UIImageView center.
     /// - Returns: Returns the created UIImageView.
-    public convenience init(image: UIImage, size: CGSize, center: CGPoint) {
+    convenience init(image: UIImage, size: CGSize, center: CGPoint) {
         self.init(frame: CGRect(x: 0, y: 0, width: size.width, height: size.height))
         self.image = image
         self.center = center
@@ -64,7 +64,7 @@ public extension UIImageView {
     ///   - image: UIImageView image.
     ///   - center: UIImageView center.
     /// - Returns: Returns the created UIImageView.
-    public convenience init(image: UIImage, center: CGPoint) {
+    convenience init(image: UIImage, center: CGPoint) {
         self.init(image: image)
         self.center = center
     }
@@ -75,7 +75,7 @@ public extension UIImageView {
     ///   - imageTemplate: UIImage template.
     ///   - tintColor: Template color.
     /// - Returns: Returns the created UIImageView.
-    public convenience init(imageTemplate: UIImage, tintColor: UIColor) {
+    convenience init(imageTemplate: UIImage, tintColor: UIColor) {
         var newImageTemplate = imageTemplate
         self.init(image: newImageTemplate)
         newImageTemplate = newImageTemplate.withRenderingMode(.alwaysTemplate)
@@ -89,7 +89,7 @@ public extension UIImageView {
     ///   - radius: Shadow radius.
     ///   - offset: Shadow offset.
     ///   - opacity: Shadow opacity.
-    public func shadow(color: UIColor, radius: CGFloat, offset: CGSize, opacity: Float) {
+    func shadow(color: UIColor, radius: CGFloat, offset: CGSize, opacity: Float) {
         layer.shadowColor = color.cgColor
         layer.shadowRadius = radius
         layer.shadowOffset = offset
@@ -100,7 +100,7 @@ public extension UIImageView {
     /// Mask the current UIImageView with an UIImage.
     ///
     /// - Parameter image: The mask UIImage.
-    public func mask(image: UIImage) {
+    func mask(image: UIImage) {
         let mask = CALayer()
         mask.contents = image.cgImage
         mask.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)

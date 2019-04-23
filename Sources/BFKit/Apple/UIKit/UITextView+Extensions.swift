@@ -52,7 +52,7 @@ public extension UITextView {
     ///   - enablesReturnKeyAutomatically: Set if the TextView has to automatically enables the return key.
     ///   - autocorrectionType: TextView auto correction type.
     ///   - delegate: TextView delegate. Set nil if it has no delegate.
-    public convenience init(frame: CGRect, text: String, font: UIFont, textColor: UIColor, alignment: NSTextAlignment, dataDetectorTypes: UIDataDetectorTypes, editable: Bool, selectable: Bool, returnKeyType: UIReturnKeyType, keyboardType: UIKeyboardType, secure: Bool, autocapitalizationType: UITextAutocapitalizationType, keyboardAppearance: UIKeyboardAppearance, enablesReturnKeyAutomatically: Bool, autocorrectionType: UITextAutocorrectionType, delegate: UITextViewDelegate?) {
+    convenience init(frame: CGRect, text: String, font: UIFont, textColor: UIColor, alignment: NSTextAlignment, dataDetectorTypes: UIDataDetectorTypes, editable: Bool, selectable: Bool, returnKeyType: UIReturnKeyType, keyboardType: UIKeyboardType, secure: Bool, autocapitalizationType: UITextAutocapitalizationType, keyboardAppearance: UIKeyboardAppearance, enablesReturnKeyAutomatically: Bool, autocorrectionType: UITextAutocorrectionType, delegate: UITextViewDelegate?) {
         self.init(frame: frame)
         self.text = text
         self.autocorrectionType = autocorrectionType
@@ -91,7 +91,7 @@ public extension UITextView {
     ///   - enablesReturnKeyAutomatically: Set if the TextView has to automatically enables the return key.
     ///   - autocorrectionType: TextView auto correction type.
     ///   - delegate: TextView delegate. Set nil if it has no delegate.
-    public convenience init(frame: CGRect, text: String, font: FontName, fontSize: CGFloat, textColor: UIColor, alignment: NSTextAlignment, dataDetectorTypes: UIDataDetectorTypes, editable: Bool, selectable: Bool, returnKeyType: UIReturnKeyType, keyboardType: UIKeyboardType, secure: Bool, autocapitalizationType: UITextAutocapitalizationType, keyboardAppearance: UIKeyboardAppearance, enablesReturnKeyAutomatically: Bool, autocorrectionType: UITextAutocorrectionType, delegate: UITextViewDelegate?) {
+    convenience init(frame: CGRect, text: String, font: FontName, fontSize: CGFloat, textColor: UIColor, alignment: NSTextAlignment, dataDetectorTypes: UIDataDetectorTypes, editable: Bool, selectable: Bool, returnKeyType: UIReturnKeyType, keyboardType: UIKeyboardType, secure: Bool, autocapitalizationType: UITextAutocapitalizationType, keyboardAppearance: UIKeyboardAppearance, enablesReturnKeyAutomatically: Bool, autocorrectionType: UITextAutocorrectionType, delegate: UITextViewDelegate?) {
         self.init(frame: frame)
         self.text = text
         self.autocorrectionType = autocorrectionType
@@ -111,12 +111,12 @@ public extension UITextView {
     }
     
     /// Paste the pasteboard text to UITextView
-    public func pasteFromPasteboard() {
+    func pasteFromPasteboard() {
         text = UIPasteboard.getString()
     }
     
     /// Copy UITextView text to pasteboard
-    public func copyToPasteboard() {
+    func copyToPasteboard() {
         UIPasteboard.copy(text: text)
     }
 }

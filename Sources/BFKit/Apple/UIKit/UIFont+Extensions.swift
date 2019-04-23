@@ -297,7 +297,7 @@ public extension UIFont {
     // MARK: - Variables
     
     /// All font family names available from iOS 7.0 to iOS 11.0.
-    public enum FamilyFontName: String {
+    enum FamilyFontName: String {
         case academyEngravedLET = "Academy Engraved LET"
         case alNile = "Al Nile"
         case americanTypewriter = "American Typewriter"
@@ -378,24 +378,6 @@ public extension UIFont {
         case zapfino = "Zapfino"
     }
     
-    /// Static light font to use in App.
-    ///
-    /// Default is HelveticaNeueLight of size 12.
-    @available(*, deprecated: 3.2, message: "`lightFont` is deprecated and will be removed in a future version of BFKit-Swift.")
-    @nonobjc public static var lightFont = UIFont(fontName: .helveticaNeueLight, size: 12)
-    
-    /// Static regular font to use in App.
-    ///
-    /// Default is HelveticaNeue of size 12.
-    @available(*, deprecated: 3.2, message: "`regularFont` is deprecated and will be removed in a future version of BFKit-Swift.")
-    @nonobjc public static var regularFont = UIFont(fontName: .helveticaNeue, size: 12)
-    
-    /// Static bold font to use in App.
-    ///
-    /// Default is HelveticaNeueBold of size 12.
-    @available(*, deprecated: 3.2, message: "`boldFont` is deprecated and will be removed in a future version of BFKit-Swift.")
-    @nonobjc public static var boldFont = UIFont(fontName: .helveticaNeueBold, size: 12)
-    
     // MARK: - Functions
     
     /// Create an UIFont object from the given font name and size, may returns an Helvetica font, if the given font doesn't exist.
@@ -403,14 +385,14 @@ public extension UIFont {
     /// - Parameters:
     ///   - fontName: Font name.
     ///   - size: Size of the font.
-    public convenience init?(fontName: FontName, size: CGFloat) {
+    convenience init?(fontName: FontName, size: CGFloat) {
         self.init(name: fontName.rawValue, size: size)
     }
     
     /// Print in console all family and font names.
     ///
     /// - Returns: Returns all the font family names.
-    public static func allFonts() -> [String: [String]] {
+    static func allFonts() -> [String: [String]] {
         var fontFamilies = UIFont.familyNames
         var fontFamilyDictionary: [String: [String]] = [:]
         
@@ -431,7 +413,7 @@ public extension UIFont {
     ///   - font: Font used in text.
     ///   - text: Text.
     /// - Returns: Returns calculated height of string within width using given font.
-    public static func calculateHeight(width: CGFloat, font: UIFont, text: String) -> CGFloat {
+    static func calculateHeight(width: CGFloat, font: UIFont, text: String) -> CGFloat {
         var size = CGSize.zero
         
         if !text.isEmpty {
@@ -449,7 +431,7 @@ public extension UIFont {
     ///   - size: Font size.
     ///   - text: Text.
     /// - Returns: Returns calculated height of string within width using given font
-    public static func calculateHeight(width: CGFloat, font: FontName, fontSize: CGFloat, text: String) -> CGFloat {
+    static func calculateHeight(width: CGFloat, font: FontName, fontSize: CGFloat, text: String) -> CGFloat {
         let font = UIFont(fontName: font, size: fontSize) ?? UIFont()
         return calculateHeight(width: width, font: font, text: text)
     }
@@ -458,7 +440,7 @@ public extension UIFont {
     ///
     /// - Parameter familyFontName: Family fonts.
     /// - Returns: Returns all fonts for the given family.
-    public static func fontNames(for family: FamilyFontName) -> [Any] {
+    static func fontNames(for family: FamilyFontName) -> [Any] {
         return UIFont.fontNames(forFamilyName: family.rawValue)
     }
 }

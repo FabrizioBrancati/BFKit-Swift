@@ -38,7 +38,7 @@ public extension UIToolbar {
     /// - Parameters:
     ///   - transparent: Set to true if trasparent, otherwise false.
     ///   - translucent: Set to true if translucent, otherwise false.
-    public func setTransparent(_ transparent: Bool, translucent: Bool = true) {
+    func setTransparent(_ transparent: Bool, translucent: Bool = true) {
         if transparent {
             setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
             setShadowImage(UIImage(), forToolbarPosition: .any)
