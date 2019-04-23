@@ -28,7 +28,7 @@ matrix:
       os: osx
       language: objective-c
       osx_image: xcode10.2
-      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=12.2,name=iPhone X"                     SCHEME="$IOS_SCHEME"     RUN_TESTS="NO"  LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
+      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=12.2,name=iPhone X"                     SCHEME="$IOS_SCHEME"     RUN_TESTS="YES" LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
     - name: macOS / Xcode 10.2 / iOS 11.4 / iPhone 7 Plus
       os: osx
       language: objective-c
@@ -38,12 +38,12 @@ matrix:
       os: osx
       language: objective-c
       osx_image: xcode10.2
-      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=10.3.1,name=iPhone 6"                   SCHEME="$IOS_SCHEME"     RUN_TESTS="NO"  LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
+      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=10.3.1,name=iPhone 6"                   SCHEME="$IOS_SCHEME"     RUN_TESTS="YES" LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
     - name: macOS / Xcode 10.2 / iOS 9.0 / iPhone 5s
       os: osx
       language: objective-c
       osx_image: xcode10.2
-      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=9.0,name=iPhone 5s"                     SCHEME="$IOS_SCHEME"     RUN_TESTS="NO"  LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
+      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=9.0,name=iPhone 5s"                     SCHEME="$IOS_SCHEME"     RUN_TESTS="YES" LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
     - name: macOS / Xcode 10.2 / watchOS 5.2 / Apple Watch 4 - 44mm
       os: osx
       language: objective-c
@@ -63,13 +63,13 @@ matrix:
       os: osx
       language: objective-c
       osx_image: xcode10.2
-      env: PROJ="BFKit.xcodeproj"                DESTINATION="arch=x86_64"                               SCHEME="$MACOS_SCHEME"   RUN_TESTS="NO"  LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
+      env: PROJ="BFKit.xcodeproj"                DESTINATION="arch=x86_64"                               SCHEME="$MACOS_SCHEME"   RUN_TESTS="YES" LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
     - name: macOS / Xcode 10.2
       os: osx
       language: objective-c
       osx_image: xcode10.2
       env: PROJ="BFKit.xcodeproj"                DESTINATION="arch=x86_64"                               SCHEME="$MACOS_SCHEME"   RUN_TESTS="YES" LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
-    - name: macOS / Xcode 10.2 / iOS 12.2 / iPhone 7 Plus
+    - name: macOS / Xcode 10.2 / iOS 12.2 / iPhone 7 Plus / Demo
       os: osx
       language: objective-c
       osx_image: xcode10.2
