@@ -86,7 +86,7 @@ Thanks to [@gennick](https://github.com/gennick) for this release
 - Updated SwiftLint to 0.29.2
 
 ### Removed
-- Removed watchOS 2.0 support in favor of watchOS 3.0, thanks to an App Store submission bug [#11](https://github.com/FabrizioBrancati/BFKit-Swift/issues/11)
+- Removed watchOS 2.0 support in favor of watchOS 3.0, thanks to an App Store submission bug [#11](https://github.com/FabrizioBrancati/Queuer/issues/11)
 
 ---
 
