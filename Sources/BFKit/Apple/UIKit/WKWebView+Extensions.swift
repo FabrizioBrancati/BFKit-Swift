@@ -1,6 +1,6 @@
 //
-//  UIWebView+Extensions.swift
-//  BFKit-Swift
+//  WKWebView+Extensions.swift
+//  BFKit iOS
 //
 //  The MIT License (MIT)
 //
@@ -26,21 +26,21 @@
 
 import Foundation
 import UIKit
+import WebKit
 
-// MARK: - UIWebView extension
+// MARK: - WKWebView extension
 
-/// This extesion adds some useful functions to UIWebView.
-public extension UIWebView {
-    // MARK: - Functions
-    
-    /// Load the requested website.
-    ///
-    /// - Parameter website: Website to load.
-    func loadWebsite(_ website: String) {
-        guard let url = URL(string: website) else {
-            return
-        }
-        
-        loadRequest(URLRequest(url: url))
+/// This exension adds some useful functions to WKWebView.
+extension WKWebView {
+  // MARK: - Functions
+  
+  /// Load the requested website.
+  ///
+  /// - Parameter website: Website to load
+  func load(Website website: String) {
+    guard let url = URL(string: website) else {
+      return
     }
+    load(URLRequest(url: url))
+  }
 }
