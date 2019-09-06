@@ -1,5 +1,5 @@
 //
-//  UIWebViewExtensionTests.swift
+//  WKWebViewExtensionTests.swift
 //  BFKit-Swift
 //
 //  The MIT License (MIT)
