@@ -1,6 +1,6 @@
 //
 //  WKWebView+Extensions.swift
-//  BFKit iOS
+//  BFKit-Swift
 //
 //  The MIT License (MIT)
 //
@@ -37,7 +37,7 @@ extension WKWebView {
   /// Load the requested website.
   ///
   /// - Parameter website: Website to load
-  func load(Website website: String) {
+  func load(_ website: String) {
     guard let url = URL(string: website) else {
       return
     }
