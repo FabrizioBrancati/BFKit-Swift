@@ -26,7 +26,6 @@
 
 @testable import BFKit
 import Foundation
-import UIKit
 import WebKit
 import XCTest
 
