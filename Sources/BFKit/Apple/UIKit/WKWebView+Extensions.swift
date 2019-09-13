@@ -37,7 +37,7 @@ extension WKWebView {
   /// Load the requested website.
   ///
   /// - Parameter website: Website to load
-  func load(_ website: String) {
+  func load(website: String) {
     guard let url = URL(string: website) else {
       return
     }
