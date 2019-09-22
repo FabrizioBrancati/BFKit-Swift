@@ -39,7 +39,7 @@ internal class WKWebViewExtensionTests: XCTestCase {
   }
   
   internal func testLoadWebsite() {
-    webView.load("https://www.fabriziobrancati.com")
+    webView.load(website: "https://www.fabriziobrancati.com")
     
     webView.evaluateJavaScript("document.getElementsByTagName('html')[0].innerHTML") { html, error in
       if error != nil {
@@ -56,4 +56,3 @@ internal class WKWebViewExtensionTests: XCTestCase {
     }
   }
 }
-

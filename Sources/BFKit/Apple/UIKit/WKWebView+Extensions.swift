@@ -31,7 +31,7 @@ import WebKit
 // MARK: - WKWebView extension
 
 /// This exension adds some useful functions to WKWebView.
-extension WKWebView {
+public extension WKWebView {
   // MARK: - Functions
   
   /// Load the requested website.
