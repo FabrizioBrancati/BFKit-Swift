@@ -162,6 +162,8 @@
 		498AE658216AB1C700858554 /* CGPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498AE656216AB1C700858554 /* CGPointTests.swift */; };
 		49B9259C1FE33218002F0F17 /* BFBiometrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B9259B1FE33217002F0F17 /* BFBiometrics.swift */; };
 		49B925D71FF29296002F0F17 /* BFBiometricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B925D51FF290E3002F0F17 /* BFBiometricsTests.swift */; };
+		49CCD9E023383321000C1675 /* WKWebView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD2342231D549B001575C3 /* WKWebView+Extensions.swift */; };
+		49CCD9E123383340000C1675 /* WKWebViewExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD2344231D5546001575C3 /* WKWebViewExtensionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -349,6 +351,7 @@
 		490314761F0C2EA600499354 /* Apple */ = {
 			isa = PBXGroup;
 			children = (
+				49CCD9DD233832FF000C1675 /* WebKit */,
 				490314771F0C2EA600499354 /* BFKit */,
 				498AE655216AB0B000858554 /* CoreGraphics */,
 				4903147C1F0C2EA600499354 /* Foundation */,
@@ -400,7 +403,6 @@
 				490314911F0C2EA600499354 /* UIViewController+Extensions.swift */,
 				490314921F0C2EA600499354 /* UIView+Extensions.swift */,
 				490314941F0C2EA600499354 /* UIWindow+Extensions.swift */,
-				32DD2342231D549B001575C3 /* WKWebView+Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -476,6 +478,7 @@
 		490314B01F0C2EA600499354 /* Apple */ = {
 			isa = PBXGroup;
 			children = (
+				49CCD9DE23383310000C1675 /* WebKit */,
 				490314B11F0C2EA600499354 /* BFKit */,
 				498AE659216AB1CC00858554 /* CoreGraphics */,
 				490314B61F0C2EA600499354 /* Foundation */,
@@ -526,7 +529,6 @@
 				490314CB1F0C2EA600499354 /* UIViewControllerExtensionTests.swift */,
 				490314CC1F0C2EA600499354 /* UIViewExtensionTests.swift */,
 				490314CE1F0C2EA600499354 /* UIWindowExtensionTests.swift */,
-				32DD2344231D5546001575C3 /* WKWebViewExtensionTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -605,6 +607,22 @@
 				498AE656216AB1C700858554 /* CGPointTests.swift */,
 			);
 			path = CoreGraphics;
+			sourceTree = "<group>";
+		};
+		49CCD9DD233832FF000C1675 /* WebKit */ = {
+			isa = PBXGroup;
+			children = (
+				32DD2342231D549B001575C3 /* WKWebView+Extensions.swift */,
+			);
+			path = WebKit;
+			sourceTree = "<group>";
+		};
+		49CCD9DE23383310000C1675 /* WebKit */ = {
+			isa = PBXGroup;
+			children = (
+				32DD2344231D5546001575C3 /* WKWebViewExtensionTests.swift */,
+			);
+			path = WebKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -830,6 +848,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4903152F1F0C350F00499354 /* BFLog.swift in Sources */,
+				49CCD9E023383321000C1675 /* WKWebView+Extensions.swift in Sources */,
 				490315321F0C350F00499354 /* Collection+Extensions.swift in Sources */,
 				4903153A1F0C350F00499354 /* String+Extensions.swift in Sources */,
 				490315381F0C350F00499354 /* ProcessInfo+Extensions.swift in Sources */,
@@ -866,6 +885,7 @@
 				4903156F1F0C358600499354 /* NSObjectExtensionTests.swift in Sources */,
 				4903156D1F0C358600499354 /* DateExtensionTests.swift in Sources */,
 				4903156B1F0C358600499354 /* CollectionExtensionTests.swift in Sources */,
+				49CCD9E123383340000C1675 /* WKWebViewExtensionTests.swift in Sources */,
 				4903156E1F0C358600499354 /* DictionaryExtensionTests.swift in Sources */,
 				498AE658216AB1C700858554 /* CGPointTests.swift in Sources */,
 				4903156C1F0C358600499354 /* DataExtensionTests.swift in Sources */,

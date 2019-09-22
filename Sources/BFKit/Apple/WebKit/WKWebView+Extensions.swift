@@ -25,7 +25,6 @@
 //  SOFTWARE.
 
 import Foundation
-import UIKit
 import WebKit
 
 // MARK: - WKWebView extension
