@@ -1,5 +1,5 @@
 //
-//  UIWebViewExtensionTests.swift
+//  WKWebView+Extensions.swift
 //  BFKit-Swift
 //
 //  The MIT License (MIT)
@@ -24,28 +24,23 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-@testable import BFKit
 import Foundation
 import UIKit
-import XCTest
+import WebKit
 
-internal class UIWebViewExtensionTests: XCTestCase {
-    internal var webView = UIWebView()
-    
-    override internal func setUp() {
-        super.setUp()
-        
-        webView = UIWebView(frame: CGRect(x: 0, y: 0, width: 320, height: 500))
+// MARK: - WKWebView extension
+
+/// This exension adds some useful functions to WKWebView.
+extension WKWebView {
+  // MARK: - Functions
+  
+  /// Load the requested website.
+  ///
+  /// - Parameter website: Website to load
+  func load(website: String) {
+    guard let url = URL(string: website) else {
+      return
     }
-    
-    internal func testLoadWebsite() {
-        webView.loadWebsite("https://www.fabriziobrancati.com")
-        
-        guard let html = webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('html')[0].innerHTML") else {
-            XCTFail("`testLoadWebsite` error")
-            return
-        }
-        
-        XCTAssertFalse(html.isEmpty)
-    }
+    load(URLRequest(url: url))
+  }
 }

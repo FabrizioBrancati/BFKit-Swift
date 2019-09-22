@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32DD2343231D549B001575C3 /* WKWebView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD2342231D549B001575C3 /* WKWebView+Extensions.swift */; };
+		32DD2346231D5577001575C3 /* WKWebViewExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD2344231D5546001575C3 /* WKWebViewExtensionTests.swift */; };
 		4903145E1F0C27CC00499354 /* BFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490314551F0C27CB00499354 /* BFKit.framework */; };
 		490314E41F0C2F2000499354 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903149F1F0C2EA600499354 /* Array+Extensions.swift */; };
 		490314E51F0C2F2000499354 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314A01F0C2EA600499354 /* Collection+Extensions.swift */; };
@@ -48,7 +50,6 @@
 		4903150B1F0C2F4600499354 /* UIToolbar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314901F0C2EA600499354 /* UIToolbar+Extensions.swift */; };
 		4903150C1F0C2F4600499354 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314911F0C2EA600499354 /* UIViewController+Extensions.swift */; };
 		4903150D1F0C2F4600499354 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314921F0C2EA600499354 /* UIView+Extensions.swift */; };
-		4903150E1F0C2F4600499354 /* UIWebView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314931F0C2EA600499354 /* UIWebView+Extensions.swift */; };
 		4903150F1F0C2F4600499354 /* UIWindow+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314941F0C2EA600499354 /* UIWindow+Extensions.swift */; };
 		490315101F0C31A600499354 /* BFApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314991F0C2EA600499354 /* BFApp.swift */; };
 		490315111F0C31A600499354 /* BFDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903149A1F0C2EA600499354 /* BFDataStructures.swift */; };
@@ -114,7 +115,6 @@
 		490315521F0C358000499354 /* UIToolbarExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314CA1F0C2EA600499354 /* UIToolbarExtensionTests.swift */; };
 		490315531F0C358000499354 /* UIViewControllerExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314CB1F0C2EA600499354 /* UIViewControllerExtensionTests.swift */; };
 		490315541F0C358000499354 /* UIViewExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314CC1F0C2EA600499354 /* UIViewExtensionTests.swift */; };
-		490315551F0C358000499354 /* UIWebViewExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314CD1F0C2EA600499354 /* UIWebViewExtensionTests.swift */; };
 		490315561F0C358000499354 /* UIWindowExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314CE1F0C2EA600499354 /* UIWindowExtensionTests.swift */; };
 		490315571F0C358000499354 /* BFAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314D11F0C2EA600499354 /* BFAppTests.swift */; };
 		490315581F0C358000499354 /* BFDataStructuresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490314D21F0C2EA600499354 /* BFDataStructuresTests.swift */; };
@@ -182,6 +182,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32DD2342231D549B001575C3 /* WKWebView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+Extensions.swift"; sourceTree = "<group>"; };
+		32DD2344231D5546001575C3 /* WKWebViewExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewExtensionTests.swift; sourceTree = "<group>"; };
 		490314551F0C27CB00499354 /* BFKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4903145D1F0C27CC00499354 /* BFKitTests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BFKitTests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		490314781F0C2EA600499354 /* BFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFButton.swift; sourceTree = "<group>"; };
@@ -208,7 +210,6 @@
 		490314901F0C2EA600499354 /* UIToolbar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIToolbar+Extensions.swift"; sourceTree = "<group>"; };
 		490314911F0C2EA600499354 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		490314921F0C2EA600499354 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		490314931F0C2EA600499354 /* UIWebView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWebView+Extensions.swift"; sourceTree = "<group>"; };
 		490314941F0C2EA600499354 /* UIWindow+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extensions.swift"; sourceTree = "<group>"; };
 		490314961F0C2EA600499354 /* WKInterfaceController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKInterfaceController+Extensions.swift"; sourceTree = "<group>"; };
 		490314991F0C2EA600499354 /* BFApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFApp.swift; sourceTree = "<group>"; };
@@ -254,7 +255,6 @@
 		490314CA1F0C2EA600499354 /* UIToolbarExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIToolbarExtensionTests.swift; sourceTree = "<group>"; };
 		490314CB1F0C2EA600499354 /* UIViewControllerExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensionTests.swift; sourceTree = "<group>"; };
 		490314CC1F0C2EA600499354 /* UIViewExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensionTests.swift; sourceTree = "<group>"; };
-		490314CD1F0C2EA600499354 /* UIWebViewExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWebViewExtensionTests.swift; sourceTree = "<group>"; };
 		490314CE1F0C2EA600499354 /* UIWindowExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtensionTests.swift; sourceTree = "<group>"; };
 		490314D11F0C2EA600499354 /* BFAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFAppTests.swift; sourceTree = "<group>"; };
 		490314D21F0C2EA600499354 /* BFDataStructuresTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFDataStructuresTests.swift; sourceTree = "<group>"; };
@@ -399,8 +399,8 @@
 				490314901F0C2EA600499354 /* UIToolbar+Extensions.swift */,
 				490314911F0C2EA600499354 /* UIViewController+Extensions.swift */,
 				490314921F0C2EA600499354 /* UIView+Extensions.swift */,
-				490314931F0C2EA600499354 /* UIWebView+Extensions.swift */,
 				490314941F0C2EA600499354 /* UIWindow+Extensions.swift */,
+				32DD2342231D549B001575C3 /* WKWebView+Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -525,8 +525,8 @@
 				490314CA1F0C2EA600499354 /* UIToolbarExtensionTests.swift */,
 				490314CB1F0C2EA600499354 /* UIViewControllerExtensionTests.swift */,
 				490314CC1F0C2EA600499354 /* UIViewExtensionTests.swift */,
-				490314CD1F0C2EA600499354 /* UIWebViewExtensionTests.swift */,
 				490314CE1F0C2EA600499354 /* UIWindowExtensionTests.swift */,
+				32DD2344231D5546001575C3 /* WKWebViewExtensionTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -924,6 +924,7 @@
 				490314FC1F0C2F4600499354 /* UIBarButtonItem+Extensions.swift in Sources */,
 				490314ED1F0C2F2000499354 /* String+Extensions.swift in Sources */,
 				49B9259C1FE33218002F0F17 /* BFBiometrics.swift in Sources */,
+				32DD2343231D549B001575C3 /* WKWebView+Extensions.swift in Sources */,
 				4903150B1F0C2F4600499354 /* UIToolbar+Extensions.swift in Sources */,
 				490315041F0C2F4600499354 /* UINavigationBar+Extensions.swift in Sources */,
 				498AE652216AB08500858554 /* CGPoint.swift in Sources */,
@@ -954,7 +955,6 @@
 				490314E51F0C2F2000499354 /* Collection+Extensions.swift in Sources */,
 				490314FF1F0C2F4600499354 /* UIDevice+Extensions.swift in Sources */,
 				4903150A1F0C2F4600499354 /* UITextView+Extensions.swift in Sources */,
-				4903150E1F0C2F4600499354 /* UIWebView+Extensions.swift in Sources */,
 				490314FB1F0C2F4200499354 /* NSPointerArray+Extensions.swift in Sources */,
 				490314F11F0C2F3C00499354 /* BFDataStructures.swift in Sources */,
 			);
@@ -971,6 +971,7 @@
 				4903155E1F0C358000499354 /* DateExtensionTests.swift in Sources */,
 				4903155B1F0C358000499354 /* ArrayExtensionTests.swift in Sources */,
 				490315631F0C358000499354 /* SetExtensionTests.swift in Sources */,
+				32DD2346231D5577001575C3 /* WKWebViewExtensionTests.swift in Sources */,
 				490315601F0C358000499354 /* NSObjectExtensionTests.swift in Sources */,
 				4903154F1F0C358000499354 /* UITableViewExtensionTests.swift in Sources */,
 				490315411F0C358000499354 /* NSAttributedStringExtensionTests.swift in Sources */,
@@ -991,7 +992,6 @@
 				490315611F0C358000499354 /* NumberExtensionTests.swift in Sources */,
 				490315441F0C358000499354 /* UIButtonExtensionTests.swift in Sources */,
 				490315491F0C358000499354 /* UIImageViewExtensionTests.swift in Sources */,
-				490315551F0C358000499354 /* UIWebViewExtensionTests.swift in Sources */,
 				4903155A1F0C358000499354 /* BFPasswordTests.swift in Sources */,
 				4903154B1F0C358000499354 /* UINavigationBarExtensionTests.swift in Sources */,
 				490315461F0C358000499354 /* UIDeviceExtensionTests.swift in Sources */,
