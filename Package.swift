@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.1
 //
 //  Package.swift
 //  BFKit
@@ -29,15 +29,16 @@ import PackageDescription
 
 let package = Package(
     name: "BFKit",
+    platforms: [
+        .iOS(.v8),
+        .macOS(.v10_10),
+        .watchOS(.v2)
+    ],
     products: [
         .library(name: "BFKit", targets: ["BFKit"])
     ],
     targets: [
-        .target(name: "BFKit", dependencies: [], exclude: [
-            "Apple"
-        ]),
-        .testTarget(name: "BFKitTests", dependencies: ["BFKit"], exclude: [
-            "Apple"
-        ])
+        .target(name: "BFKit", dependencies: [], exclude: ["Apple"]),
+        .testTarget(name: "BFKitTests", dependencies: ["BFKit"], exclude: ["Apple"])
     ]
 )
