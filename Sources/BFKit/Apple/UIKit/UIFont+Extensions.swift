@@ -30,6 +30,7 @@ import UIKit
 // MARK: - Global variables
 
 /// All font names for all family available from iOS 7.0 to iOS 11.0.
+@available(*, deprecated, message:"FontName is deprecated and will be removed in future versions of BFKit-Swift.")
 public enum FontName: String {
     case academyEngravedLetPlain = "AcademyEngravedLetPlain"
     case alNile = "AlNile"
@@ -297,6 +298,7 @@ public extension UIFont {
     // MARK: - Variables
     
     /// All font family names available from iOS 7.0 to iOS 11.0.
+    @available(*, deprecated, message:"FamilyFontName is deprecated and will be removed in future versions of BFKit-Swift.")
     enum FamilyFontName: String {
         case academyEngravedLET = "Academy Engraved LET"
         case alNile = "Al Nile"
