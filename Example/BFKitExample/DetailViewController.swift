@@ -56,7 +56,6 @@ class DetailViewController: UIViewController {
         case UITextView
         case UIToolbar
         case UIView
-        case UIWebView
         case UIWindow
         case Array
         case Collection
@@ -444,13 +443,6 @@ class DetailViewController: UIViewController {
             let smoothGradientLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 20, width: UIScreen.screenWidth - 40, height: 25), text: "Smooth Gradient View", font: .helveticaNeue, fontSize: 16, color: UIColor.white, alignment: .center, lines: 1, shadowColor: UIColor.black)
             smoothGradientView.addSubview(smoothGradientLabel)
             scrollView.addSubview(smoothGradientView)
-        case .UIWebView:
-            scrollView.removeFromSuperview()
-            
-            let webView: UIWebView = UIWebView(frame: CGRect(x: 0, y: 0, width: UIScreen.screenWidth, height: UIScreen.screenHeight))
-            webView.loadWebsite("https://www.google.com")
-            webView.removeShadow()
-            self.view.addSubview(webView)
         case .UIWindow:
             scrollView.removeFromSuperview()
             
