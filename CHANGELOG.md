@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ### 6.x Releases
-- `6.0.x` Releases - [6.0.0](#600---swift-51-support)
+- `6.0.x` Releases - [6.0.0](#600---swift-51-support) | [6.0.1](#401---fixing-pod)
 
 ### 5.x Releases
 - `5.0.x` Releases - [5.0.0](#500---swift-50-support)
@@ -42,6 +42,13 @@ All notable changes to this project will be documented in this file.<br>
 - `1.2.x` Releases - [1.2.0](#120)
 - `1.1.x` Releases - [1.1.0](#110)
 - `1.0.x` Releases - [1.0.0](#100)
+
+---
+
+## [6.0.1](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/6.0.1) - Fixing Pod
+### 20 Oct 2019
+### Fixed
+- Fixed `swift_version` in podspec file
 
 ---
 
