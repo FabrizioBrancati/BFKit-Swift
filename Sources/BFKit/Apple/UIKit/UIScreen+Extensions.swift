@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 - 2018 Fabrizio Brancati.
+//  Copyright (c) 2015 - 2019 Fabrizio Brancati.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -35,21 +35,21 @@ public extension UIScreen {
     
     /// Get the screen width.
     static var screenWidth: CGFloat {
-        return UIScreen.fixedScreenSize().width
+        UIScreen.fixedScreenSize().width
     }
     
     /// Get the screen height.
     static var screenHeight: CGFloat {
-        return UIScreen.fixedScreenSize().height
+        UIScreen.fixedScreenSize().height
     }
     
     /// Get the maximum screen length.
     static var maxScreenLength: CGFloat {
-        return max(screenWidth, screenHeight)
+        max(screenWidth, screenHeight)
     }
     /// Get the minimum screen length.
     static var minScreenLength: CGFloat {
-        return min(screenWidth, screenHeight)
+        min(screenWidth, screenHeight)
     }
     
     // MARK: - Functions
@@ -58,20 +58,20 @@ public extension UIScreen {
     ///
     /// - Returns: Returns true if it has a Retina display, otherwise false.
     static func isRetina() -> Bool {
-        return UIScreen.main.responds(to: #selector(UIScreen.displayLink(withTarget:selector:))) && UIScreen.main.scale == 2.0
+        UIScreen.main.responds(to: #selector(UIScreen.displayLink(withTarget:selector:))) && UIScreen.main.scale == 2.0
     }
     
     /// Check if current device has a Retina HD display.
     ///
     /// - Returns: Returns true if it has a Retina HD display, otherwise false.
     static func isRetinaHD() -> Bool {
-        return UIScreen.main.responds(to: #selector(UIScreen.displayLink(withTarget:selector:))) && UIScreen.main.scale == 3.0
+        UIScreen.main.responds(to: #selector(UIScreen.displayLink(withTarget:selector:))) && UIScreen.main.scale == 3.0
     }
     
     /// Returns fixed screen size, based on device orientation.
     ///
     /// - Returns: Returns a GCSize with the fixed screen size.
     static func fixedScreenSize() -> CGSize {
-        return UIScreen.main.bounds.size
+        UIScreen.main.bounds.size
     }
 }

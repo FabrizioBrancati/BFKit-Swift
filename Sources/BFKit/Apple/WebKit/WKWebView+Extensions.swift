@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 - 2018 Fabrizio Brancati.
+//  Copyright (c) 2015 - 2019 Fabrizio Brancati.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -25,13 +25,12 @@
 //  SOFTWARE.
 
 import Foundation
-import UIKit
 import WebKit
 
 // MARK: - WKWebView extension
 
 /// This exension adds some useful functions to WKWebView.
-extension WKWebView {
+public extension WKWebView {
   // MARK: - Functions
   
   /// Load the requested website.
@@ -41,6 +40,7 @@ extension WKWebView {
     guard let url = URL(string: website) else {
       return
     }
+    
     load(URLRequest(url: url))
   }
 }

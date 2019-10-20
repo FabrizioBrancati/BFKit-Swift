@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 - 2018 Fabrizio Brancati.
+//  Copyright (c) 2015 - 2019 Fabrizio Brancati.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -304,35 +304,35 @@ public extension NSAttributedString {
     ///
     /// - Returns: Returns a NSAttributedString.
     func textAlignmentLeft() -> NSAttributedString {
-        return textAlignment(.left)
+        textAlignment(.left)
     }
     
     /// Set text alignment to right.
     ///
     /// - Returns: Returns a NSAttributedString.
     func textAlignmentRight() -> NSAttributedString {
-        return textAlignment(.right)
+        textAlignment(.right)
     }
     
     /// Set text alignment to center.
     ///
     /// - Returns: Returns a NSAttributedString.
     func textAlignmentCenter() -> NSAttributedString {
-        return textAlignment(.center)
+        textAlignment(.center)
     }
     
     /// Set text alignment to justified.
     ///
     /// - Returns: Returns a NSAttributedString.
     func textAlignmentJustified() -> NSAttributedString {
-        return textAlignment(.justified)
+        textAlignment(.justified)
     }
     
     /// Returns a list of all string attributes.
     ///
     /// - Returns: Returns a list of all string attributes.
     func attributes() -> [NSAttributedString.Key: Any] {
-        return attributes(at: 0, longestEffectiveRange: nil, in: attributedStringRange(nil))
+        attributes(at: 0, longestEffectiveRange: nil, in: attributedStringRange(nil))
     }
     
     /// Set text alignment.
@@ -351,6 +351,6 @@ public extension NSAttributedString {
     /// - Parameter range: Given NSRange.
     /// - Returns: Returns self NSRange if the given NSRange is nil.
     private func attributedStringRange(_ range: NSRange?) -> NSRange {
-        return range ?? NSRange(location: 0, length: string.count)
+        range ?? NSRange(location: 0, length: string.count)
     }
 }

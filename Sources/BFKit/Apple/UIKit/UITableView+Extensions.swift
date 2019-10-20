@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 - 2018 Fabrizio Brancati.
+//  Copyright (c) 2015 - 2019 Fabrizio Brancati.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -56,7 +56,7 @@ public extension UITableView {
     /// - Returns: Returns the next index path.
     func nextIndexPath(row: Int, forSection section: Int) -> IndexPath? {
         let indexPath: [IndexPath] = indexPaths(section: section)
-        guard indexPath != [] else {
+        guard indexPath.isNotEmpty else {
             return nil
         }
         
@@ -71,7 +71,7 @@ public extension UITableView {
     /// - Returns: Returns the previous index path.
     func previousIndexPath(row: Int, forSection section: Int) -> IndexPath? {
         let indexPath: [IndexPath] = indexPaths(section: section)
-        guard indexPath != [] else {
+        guard indexPath.isNotEmpty else {
             return nil
         }
         

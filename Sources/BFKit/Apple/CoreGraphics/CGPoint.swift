@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 - 2018 Fabrizio Brancati.
+//  Copyright (c) 2015 - 2019 Fabrizio Brancati.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -38,6 +38,6 @@ public extension CGPoint {
     /// - Parameter point: CGPoint to be used to calculate the distance.
     /// - Returns: Returns the distance between another CGPoint.
     func distanceTo(_ point: CGPoint) -> CGFloat {
-        return sqrt(pow((point.x - self.x), 2) + pow((point.y - self.y), 2))
+        sqrt(pow((point.x - self.x), 2) + pow((point.y - self.y), 2))
     }
 }

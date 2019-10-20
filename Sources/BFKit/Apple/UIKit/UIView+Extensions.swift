@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 - 2018 Fabrizio Brancati.
+//  Copyright (c) 2015 - 2019 Fabrizio Brancati.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -36,51 +36,48 @@ public extension UIView {
     // MARK: - Variables
     
     /// Direction of flip animation.
-    ///
-    /// - top: Flip animation from top.
-    /// - left: Flip animation from left.
-    /// - right: Flip animation from right.
-    /// - bottom: Flip animation from bottom.
     enum UIViewAnimationFlipDirection: String {
+        /// Flip animation from top.
         case top = "fromTop"
+        /// Flip animation from left.
         case left = "fromLeft"
+        /// Flip animation from right.
         case right = "fromRight"
+        /// Flip animation from bottom.
         case bottom = "fromBottom"
     }
     
     /// Direction of the translation.
-    ///
-    /// - leftToRight: Translation from left to right.
-    /// - rightToLeft: Translation from right to left.
     enum UIViewAnimationTranslationDirection: Int {
+        /// Translation from left to right.
         case leftToRight
+        /// Translation from right to left.
         case rightToLeft
     }
     
     /// Direction of the linear gradient.
-    ///
-    /// - vertical: Linear gradient vertical.
-    /// - horizontal: Linear gradient horizontal.
-    /// - diagonalLeftToRightAndTopToDown: Linear gradient from left top to right down.
-    /// - diagonalLeftToRightAndDownToTop: Linear gradient from left down to right top.
-    /// - diagonalRightToLeftAndTopToDown: Linear gradient from right top to left down.
-    /// - diagonalRightToLeftAndDownToTop: Linear gradient from right down to left top.
     enum UIViewGradientDirection {
+        /// Linear gradient vertical.
         case vertical
+        /// Linear gradient horizontal.
         case horizontal
+        /// Linear gradient from left top to right down.
         case diagonalLeftTopToRightDown
+        /// Linear gradient from left down to right top.
         case diagonalLeftDownToRightTop
+        /// Linear gradient from right top to left down.
         case diagonalRightTopToLeftDown
+        ///  Linear gradient from right down to left top.
         case diagonalRightDownToLeftTop
+        /// Custom gradient direction.
         case custom(startPoint: CGPoint, endPoint: CGPoint)
     }
     
     /// Type of gradient.
-    ///
-    /// - linear: Linear gradient.
-    /// - radial: Radial gradient.
     enum UIViewGradientType {
+        /// Linear gradient.
         case linear
+        /// Radial gradient.
         case radial
     }
     
@@ -498,12 +495,18 @@ public extension UIView {
         }
         
         UIView.animate(
-            withDuration: TimeInterval(duration / 2), delay: 1, options: UIView.AnimationOptions(), animations: {
+            withDuration: TimeInterval(duration / 2),
+            delay: 1,
+            options: UIView.AnimationOptions(),
+            animations: {
                 self.center = CGPoint(x: endPosition, y: self.center.y)
             }, completion: { finished in
                 if finished {
                     UIView.animate(
-                        withDuration: TimeInterval(duration / 2), delay: 1, options: UIView.AnimationOptions(), animations: {
+                        withDuration: TimeInterval(duration / 2),
+                        delay: 1,
+                        options: UIView.AnimationOptions(),
+                        animations: {
                             self.center = CGPoint(x: startPosition, y: self.center.y)
                         }, completion: { finished in
                             if finished {
@@ -545,7 +548,7 @@ extension UIView {
     /// Inspectable border size.
     @IBInspectable public var borderWidth: CGFloat {
         get {
-            return layer.borderWidth
+            layer.borderWidth
         }
         set {
             layer.borderWidth = newValue
@@ -558,6 +561,7 @@ extension UIView {
             guard let borderColor = layer.borderColor else {
                 return UIColor.clear
             }
+            
             return UIColor(cgColor: borderColor)
         }
         set {
@@ -572,7 +576,7 @@ extension UIView {
     /// Set it to false if you want to enable shadow.
     @IBInspectable public var maskToBounds: Bool {
         get {
-            return layer.masksToBounds
+            layer.masksToBounds
         }
         set {
             layer.masksToBounds = newValue
@@ -584,7 +588,7 @@ extension UIView {
     /// Remeber to set maskToBounds to true.
     @IBInspectable public var cornerRadius: CGFloat {
         get {
-            return layer.cornerRadius
+            layer.cornerRadius
         }
         set {
             layer.cornerRadius = newValue
@@ -599,6 +603,7 @@ extension UIView {
             guard let shadowColor = layer.shadowColor else {
                 return UIColor.clear
             }
+            
             return UIColor(cgColor: shadowColor)
         }
         set {
@@ -611,7 +616,7 @@ extension UIView {
     /// Remeber to set maskToBounds to false.
     @IBInspectable public var shadowOpacity: Float {
         get {
-            return layer.shadowOpacity
+            layer.shadowOpacity
         }
         set {
             layer.shadowOpacity = newValue
@@ -623,7 +628,7 @@ extension UIView {
     /// Remeber to set maskToBounds to false.
     @IBInspectable public var shadowOffsetX: CGFloat {
         get {
-            return layer.shadowOffset.width
+            layer.shadowOffset.width
         }
         set {
             layer.shadowOffset = CGSize(width: newValue, height: layer.shadowOffset.height)
@@ -635,7 +640,7 @@ extension UIView {
     /// Remeber to set maskToBounds to false.
     @IBInspectable public var shadowOffsetY: CGFloat {
         get {
-            return layer.shadowOffset.height
+            layer.shadowOffset.height
         }
         set {
             layer.shadowOffset = CGSize(width: layer.shadowOffset.width, height: newValue)
@@ -647,7 +652,7 @@ extension UIView {
     /// Remeber to set maskToBounds to false.
     @IBInspectable public var shadowRadius: CGFloat {
         get {
-            return layer.shadowRadius
+            layer.shadowRadius
         }
         set {
             layer.shadowRadius = newValue

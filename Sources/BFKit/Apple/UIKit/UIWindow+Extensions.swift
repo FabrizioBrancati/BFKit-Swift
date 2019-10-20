@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 - 2018 Fabrizio Brancati.
+//  Copyright (c) 2015 - 2019 Fabrizio Brancati.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -47,6 +47,7 @@ public func showTouchOnScreen() {
     guard let window = (UIApplication.value(forKey: "sharedApplication") as? UIApplication)?.keyWindow else {
         return
     }
+    
     window.activateTouch()
 }
 
@@ -55,6 +56,7 @@ public func hideTouchOnScreen() {
     guard let window = (UIApplication.value(forKey: "sharedApplication") as? UIApplication)?.keyWindow else {
         return
     }
+    
     window.deactivateTouch()
 }
 
@@ -84,6 +86,7 @@ public extension UIWindow {
         guard let context: CGContext = UIGraphicsGetCurrentContext() else {
             return nil
         }
+        
         context.saveGState()
         context.translateBy(x: center.x, y: center.y)
         context.concatenate(transform)
@@ -95,6 +98,7 @@ public extension UIWindow {
             guard let context = UIGraphicsGetCurrentContext() else {
                 return nil
             }
+            
             layer.render(in: context)
         }
 
@@ -200,7 +204,8 @@ public extension UIWindow {
             case .ended, .cancelled:
                 if let touchImageView = touchImages[touch.hash] {
                     UIView.animate(
-                        withDuration: 0.2, animations: {
+                        withDuration: 0.2,
+                        animations: {
                             touchImageView.alpha = 0.0
                             touchImageView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
                         }, completion: { finished -> Void in

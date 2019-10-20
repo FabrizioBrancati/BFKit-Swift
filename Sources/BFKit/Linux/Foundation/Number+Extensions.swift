@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 - 2018 Fabrizio Brancati.
+//  Copyright (c) 2015 - 2019 Fabrizio Brancati.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -34,7 +34,7 @@ import Foundation
 /// - Parameter degrees: Degrees to be converted.
 /// - Returns: Returns the convertion result.
 public func degreesToRadians(_ degrees: Double) -> Double {
-    return degrees * Double.pi / 180
+    degrees * Double.pi / 180
 }
 
 /// Radians to degrees conversion.
@@ -42,7 +42,7 @@ public func degreesToRadians(_ degrees: Double) -> Double {
 /// - Parameter radians: Radians to be converted.
 /// - Returns: Returns the convertion result.
 public func radiansToDegrees(_ radians: Double) -> Double {
-    return radians * 180 / Double.pi
+    radians * 180 / Double.pi
 }
 
 // MARK: - Extensions
@@ -51,7 +51,7 @@ public func radiansToDegrees(_ radians: Double) -> Double {
 public extension Double {
     /// Gets the individual numbers, and puts them into an array. All negative numbers will start with 0.
     var array: [Int] {
-        return description.map { Int(String($0)) ?? 0 }
+        description.map { Int(String($0)) ?? 0 }
     }
 }
 
@@ -59,7 +59,7 @@ public extension Double {
 public extension Float {
     /// Gets the individual numbers, and puts them into an array. All negative numbers will start with 0.
     var array: [Int] {
-        return description.map { Int(String($0)) ?? 0 }
+        description.map { Int(String($0)) ?? 0 }
     }
 }
 
@@ -67,7 +67,7 @@ public extension Float {
 public extension Int {
     /// Gets the individual numbers, and puts them into an array. All negative numbers will start with 0.
     var array: [Int] {
-        return description.map { Int(String($0)) ?? 0 }
+        description.map { Int(String($0)) ?? 0 }
     }
 }
 
@@ -85,7 +85,7 @@ infix operator <=>: ComparisonPrecedence
 ///   - right: Right tuple to be compared (Number, Number).
 /// - Returns: Returns true if `left` it is in `right` range but not equal.
 public func <> <T: Comparable>(left: T, right: (T, T)) -> Bool {
-    return left > right.0 && left < right.1
+    left > right.0 && left < right.1
 }
 
 /// Returns true if `left` is in `right` range or equal.
@@ -95,5 +95,5 @@ public func <> <T: Comparable>(left: T, right: (T, T)) -> Bool {
 ///   - right: Right tuple to be compared (Number, Number).
 /// - Returns: Returns true if `left` it is in `right` range or equal.
 public func <=> <T: Comparable>(left: T, right: (T, T)) -> Bool {
-    return left >= right.0 && left <= right.1
+    left >= right.0 && left <= right.1
 }

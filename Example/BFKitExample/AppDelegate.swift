@@ -53,7 +53,6 @@ let UIKitArray = [  "UIButton",
                     "UITextView",
                     "UIToolbar",
                     "UIView",
-                    "UIWebView",
                     "UIWindow"]
 
 let FoundationArray = [ "Array",

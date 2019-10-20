@@ -98,8 +98,12 @@ Classes and Extensions Compatibility
 | [UIToolbar](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIToolbar.html) | ![✓] | | | |
 | [UIView](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIView.html) | ![✓] | | | |
 | [UIViewController](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/Sources/BFKit/iOS/UIKit/UIViewControllerExtension.swift) | ![✓] | | | |
-| [UIWebView](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIWebView.html) | ![✓] | | | |
 | [UIWindow](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIWindow.html) | ![✓] | | | &nbsp; |
+
+### WebKit
+|                 | **iOS** | **macOS** | **watchOS** | **Linux** |
+|-----------------|---------|-----------|-------------|-----------|
+| [UIWebView](https://github.fabriziobrancati.com/documentation/BFKit-Swift/Extensions/UIWebView.html) | ![✓] | ![✓] | | &nbsp; |
 
 ### WatchKit
 |                 | **iOS** | **macOS** | **watchOS** | **Linux** |
@@ -109,19 +113,20 @@ Classes and Extensions Compatibility
 Requirements
 ============
 
-| **Swift** | **Xcode** | **BFKit-Swift** | **iOS**  | **macOS**  | **watchOS** | **Linux** |
-|-----------|-----------|-----------------|----------|------------|-------------|-----------|
-| 1.2       | 6.3       | 1.0.0...1.4.1   | 7.0+     |            |             |           |
-| 2.0...2.1 | 7.0       | 1.5.0...1.6.2   | 7.0+     |            |             |           |
-| 2.2       | 7.3       | 1.6.3...1.7.0   | 7.0+     |            |             |           |
-| 2.3       | 8.0       | 1.8.0           | 7.0+     |            |             |           |
-| 3.0...3.1 | 8.0...8.3 | 2.0.0...2.3.0   | 8.0+     |            |             | ![✓]      |
-| 3.0...3.1 | 8.0...8.3 | 2.4.0...2.5.0   | 8.0+     |            | 2.0+        | ![✓]      |
-| 3.0...3.2 | 8.0...9.0 | 2.6.0           | 8.0+     | 10.10+     | 2.0+        | ![✓]      |
-| 4.0       | 9.0...9.2 | 3.0.0...3.1.1   | 8.0+ `*` | 10.10+ `*` | 2.0+ `*`    | ![✓]      |
-| 4.1       | 9.3...9.4 | 3.1.2...3.2.1   | 8.0+ `*` | 10.10+ `*` | 2.0+ `*`    | ![✓]      |
-| 4.2       | 10.0      | 4.0.0...4.1.0   | 8.0+ `*` | 10.10+ `*` | 2.0+ `*`    | ![✓]      |
-| 5.0       | 10.2      | 5.0.0           | 8.0+ `*` | 10.10+ `*` | 2.0+ `*`    | ![✓]      |
+| **Swift** | **Xcode**   | **BFKit-Swift** | **iOS**  | **macOS**  | **watchOS** | **Linux** |
+|-----------|-------------|-----------------|----------|------------|-------------|-----------|
+| 1.2       | 6.3         | 1.0.0...1.4.1   | 7.0+     |            |             |           |
+| 2.0...2.1 | 7.0         | 1.5.0...1.6.2   | 7.0+     |            |             |           |
+| 2.2       | 7.3         | 1.6.3...1.7.0   | 7.0+     |            |             |           |
+| 2.3       | 8.0         | 1.8.0           | 7.0+     |            |             |           |
+| 3.0...3.1 | 8.0...8.3   | 2.0.0...2.3.0   | 8.0+     |            |             | ![✓]      |
+| 3.0...3.1 | 8.0...8.3   | 2.4.0...2.5.0   | 8.0+     |            | 2.0+        | ![✓]      |
+| 3.0...3.2 | 8.0...9.0   | 2.6.0           | 8.0+     | 10.10+     | 2.0+        | ![✓]      |
+| 4.0       | 9.0...9.2   | 3.0.0...3.1.1   | 8.0+ `*` | 10.10+ `*` | 3.0+ `*`    | ![✓]      |
+| 4.1       | 9.3...9.4   | 3.1.2...3.2.1   | 8.0+ `*` | 10.10+ `*` | 3.0+ `*`    | ![✓]      |
+| 4.2       | 10.0        | 4.0.0...4.1.0   | 8.0+ `*` | 10.10+ `*` | 3.0+ `*`    | ![✓]      |
+| 5.0       | 10.2...10.3 | 5.0.0           | 8.0+ `*` | 10.10+ `*` | 3.0+ `*`    | ![✓]      |
+| 5.1       | 11          | 6.0.0           | 8.0+ `*` | 10.10+ `*` | 3.0+ `*`    | ![✓]      |
 
 > `*` With App Extension Support
 
@@ -205,7 +210,7 @@ See [Requirements](https://github.com/FabrizioBrancati/BFKit-Swift#requirements)
 - Create a **Package.swift** file in your **project directory** and write into:
 
     ```swift
-    // swift-tools-version:5.0
+    // swift-tools-version:5.1
     import PackageDescription
 
     let package = Package(

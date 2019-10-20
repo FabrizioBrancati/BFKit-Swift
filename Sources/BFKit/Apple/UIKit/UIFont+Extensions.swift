@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 - 2018 Fabrizio Brancati.
+//  Copyright (c) 2015 - 2019 Fabrizio Brancati.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -30,6 +30,7 @@ import UIKit
 // MARK: - Global variables
 
 /// All font names for all family available from iOS 7.0 to iOS 11.0.
+@available(*, deprecated, message:"FontName is deprecated and will be removed in future versions of BFKit-Swift.")
 public enum FontName: String {
     case academyEngravedLetPlain = "AcademyEngravedLetPlain"
     case alNile = "AlNile"
@@ -297,6 +298,7 @@ public extension UIFont {
     // MARK: - Variables
     
     /// All font family names available from iOS 7.0 to iOS 11.0.
+    @available(*, deprecated, message:"FamilyFontName is deprecated and will be removed in future versions of BFKit-Swift.")
     enum FamilyFontName: String {
         case academyEngravedLET = "Academy Engraved LET"
         case alNile = "Al Nile"
@@ -441,6 +443,6 @@ public extension UIFont {
     /// - Parameter familyFontName: Family fonts.
     /// - Returns: Returns all fonts for the given family.
     static func fontNames(for family: FamilyFontName) -> [Any] {
-        return UIFont.fontNames(forFamilyName: family.rawValue)
+        UIFont.fontNames(forFamilyName: family.rawValue)
     }
 }

@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 - 2018 Fabrizio Brancati.
+//  Copyright (c) 2015 - 2019 Fabrizio Brancati.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -34,13 +34,13 @@ public extension ProcessInfo {
     ///
     /// - Returns: eturns system uptime.
     static func uptime() -> TimeInterval {
-        return ProcessInfo.processInfo.systemUptime
+        ProcessInfo.processInfo.systemUptime
     }
     
     /// Returns sysyem uptime as Date.
     ///
     /// - Returns: Returns sysyem uptime as Date.
     static func uptimeDate() -> Date {
-        return Date(timeIntervalSinceNow: -uptime())
+        Date(timeIntervalSinceNow: -uptime())
     }
 }

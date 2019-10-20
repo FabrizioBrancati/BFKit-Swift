@@ -19,56 +19,31 @@ matrix:
       sudo: required
       dist: xenial
       env: SPM="YES"
-    - name: macOS / Xcode 10.2 / SwiftPM
+    - name: macOS / Xcode 11.1 / SwiftPM
       os: osx
       language: objective-c
-      osx_image: xcode10.2
+      osx_image: xcode11.1
       env: SPM="YES"
-    - name: macOS / Xcode 10.2 / iOS 12.2 / iPhone X
+    - name: macOS / Xcode 11.1 / iOS 13.1 / iPhone 11 Pro Max
       os: osx
       language: objective-c
-      osx_image: xcode10.2
-      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=12.2,name=iPhone X"                     SCHEME="$IOS_SCHEME"     RUN_TESTS="YES" LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
-    - name: macOS / Xcode 10.2 / iOS 11.4 / iPhone 7 Plus
+      osx_image: xcode11.1
+      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=13.1,name=iPhone 11 Pro Max"            SCHEME="$IOS_SCHEME"     RUN_TESTS="YES" LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
+    - name: macOS / Xcode 11.1 / watchOS 6.0 / Apple Watch Series 5 - 44mm
       os: osx
       language: objective-c
-      osx_image: xcode10.2
-      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=11.4,name=iPhone 7 Plus"                SCHEME="$IOS_SCHEME"     RUN_TESTS="YES" LINT="YES" COVERAGE="YES" EXAMPLE="NO"
-    - name: macOS / Xcode 10.2 / iOS 10.3.1 / iPhone 6
+      osx_image: xcode11.1
+      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=6.0,name=Apple Watch Series 5 - 44mm"   SCHEME="$WATCHOS_SCHEME" RUN_TESTS="NO"  LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
+    - name: macOS / Xcode 11.1
       os: osx
       language: objective-c
-      osx_image: xcode10.2
-      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=10.3.1,name=iPhone 6"                   SCHEME="$IOS_SCHEME"     RUN_TESTS="YES" LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
-    - name: macOS / Xcode 10.2 / iOS 9.0 / iPhone 5s
-      os: osx
-      language: objective-c
-      osx_image: xcode10.2
-      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=9.0,name=iPhone 5s"                     SCHEME="$IOS_SCHEME"     RUN_TESTS="NO" LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
-    - name: macOS / Xcode 10.2 / watchOS 5.2 / Apple Watch 4 - 44mm
-      os: osx
-      language: objective-c
-      osx_image: xcode10.2
-      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=5.2,name=Apple Watch Series 4 - 44mm"   SCHEME="$WATCHOS_SCHEME" RUN_TESTS="NO"  LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
-    - name: macOS / Xcode 10.2 / watchOS 4.2 / Apple Watch 3 - 38mm
-      os: osx
-      language: objective-c
-      osx_image: xcode10.2
-      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=4.2,name=Apple Watch Series 3 - 38mm"   SCHEME="$WATCHOS_SCHEME" RUN_TESTS="NO"  LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
-    - name: macOS / Xcode 10.2 / watchOS 3.2 / Apple Watch 2 - 42mm
-      os: osx
-      language: objective-c
-      osx_image: xcode10.2
-      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=3.2,name=Apple Watch Series 2 - 42mm"   SCHEME="$WATCHOS_SCHEME" RUN_TESTS="NO"  LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
-    - name: macOS / Xcode 10.2
-      os: osx
-      language: objective-c
-      osx_image: xcode10.2
+      osx_image: xcode11.1
       env: PROJ="BFKit.xcodeproj"                DESTINATION="arch=x86_64"                               SCHEME="$MACOS_SCHEME"   RUN_TESTS="YES" LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
-    - name: macOS / Xcode 10.2 / iOS 12.2 / iPhone 7 Plus / Demo
+    - name: macOS / Xcode 11.1 / iOS 13.1 / iPhone 8 Plus / Demo
       os: osx
       language: objective-c
-      osx_image: xcode10.2
-      env: PROJ="Example/BFKitExample.xcodeproj" DESTINATION="OS=12.2,name=iPhone 7 Plus"                SCHEME="$EXAMPLE_SCHEME" RUN_TESTS="NO"  LINT="NO"  COVERAGE="NO"  EXAMPLE="YES"
+      osx_image: xcode11.1
+      env: PROJ="Example/BFKitExample.xcodeproj" DESTINATION="OS=13.1,name=iPhone 8 Plus"                SCHEME="$EXAMPLE_SCHEME" RUN_TESTS="NO"  LINT="NO"  COVERAGE="NO"  EXAMPLE="YES"
 
 before_install:
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then

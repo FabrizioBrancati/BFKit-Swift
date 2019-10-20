@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 - 2018 Fabrizio Brancati.
+//  Copyright (c) 2015 - 2019 Fabrizio Brancati.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -36,6 +36,6 @@ public extension NSObject {
     ///
     /// - Returns: Returns if the object is valid
     func isValid() -> Bool {
-        return !(self is NSNull)
+        !(self is NSNull)
     }
 }

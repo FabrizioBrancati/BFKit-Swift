@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 - 2018 Fabrizio Brancati.
+//  Copyright (c) 2015 - 2019 Fabrizio Brancati.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -47,7 +47,8 @@ open class BFButton: UIButton {
                 }
             } else {
                 UIView.animate(
-                    withDuration: fadeDuration, animations: { [weak self] in
+                    withDuration: fadeDuration,
+                    animations: { [weak self] in
                         self?.overlayImageView.alpha = 0
                     }, completion: { [weak self] completed in
                         if completed {

@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 - 2018 Fabrizio Brancati.
+//  Copyright (c) 2015 - 2019 Fabrizio Brancati.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -32,7 +32,7 @@ import Foundation
 #endif
 
 /// BFKit version string.
-public let BFKitVersion = "5.0.0"
+public let BFKitVersion = "6.0.0"
 
 /// BFKit author string.
 public let BFKitAuthor = "Fabrizio Brancati"

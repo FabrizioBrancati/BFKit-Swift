@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 - 2018 Fabrizio Brancati.
+//  Copyright (c) 2015 - 2019 Fabrizio Brancati.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -69,7 +69,7 @@ public extension Array {
     ///
     /// - Returns: Returns a Bool value indicating whether the collection is not empty.
     var isNotEmpty: Bool {
-        return !isEmpty
+        !isEmpty
     }
     
     /// Simulates the array as a circle. When it is out of range, begins again.
@@ -77,14 +77,14 @@ public extension Array {
     /// - Parameter index: The index.
     /// - Returns: Returns the object at a given index.
     func circleObject(at index: Int) -> Element {
-        return self[superCircle(at: index, size: count)]
+        self[superCircle(at: index, size: count)]
     }
     
     /// Randomly selects an element from self and returns it.
     ///
     /// - returns: An element that was randomly selected from the array.
     func random() -> Element {
-        return self[Int.random(in: 0...count - 1)]
+        self[Int.random(in: 0...count - 1)]
     }
     
     /// Removes the element from self that is passed in.

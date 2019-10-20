@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 - 2018 Fabrizio Brancati.
+//  Copyright (c) 2015 - 2019 Fabrizio Brancati.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -41,7 +41,7 @@ internal let BFDeviceIdentifierDefaultsKey = "BFDeviceIdentifier"
 /// - Parameter version: Version, like "9.0".
 /// - Returns: Returns true if equal, otherwise false.
 public func osVersionEqual(_ version: String) -> Bool {
-    return UIDevice.current.systemVersion.compare(version, options: .numeric) == .orderedSame
+    UIDevice.current.systemVersion.compare(version, options: .numeric) == .orderedSame
 }
 
 /// Compare OS versions.
@@ -49,7 +49,7 @@ public func osVersionEqual(_ version: String) -> Bool {
 /// - Parameter version: Version, like "9.0".
 /// - Returns: Returns true if greater, otherwise false.
 public func osVersionGreaterThan(_ version: String) -> Bool {
-    return UIDevice.current.systemVersion.compare(version, options: .numeric) == .orderedDescending
+    UIDevice.current.systemVersion.compare(version, options: .numeric) == .orderedDescending
 }
 
 /// Compare OS versions.
@@ -57,7 +57,7 @@ public func osVersionGreaterThan(_ version: String) -> Bool {
 /// - Parameter version: Version, like "9.0".
 /// - Returns: Returns true if greater or equal, otherwise false.
 public func osVersionGreaterThanOrEqual(_ version: String) -> Bool {
-    return UIDevice.current.systemVersion.compare(version, options: .numeric) != .orderedAscending
+    UIDevice.current.systemVersion.compare(version, options: .numeric) != .orderedAscending
 }
 
 /// Compare OS versions.
@@ -65,7 +65,7 @@ public func osVersionGreaterThanOrEqual(_ version: String) -> Bool {
 /// - Parameter version: Version, like "9.0".
 /// - Returns: Returns true if less, otherwise false.
 public func osVersionLessThan(_ version: String) -> Bool {
-    return UIDevice.current.systemVersion.compare(version, options: .numeric) == .orderedAscending
+    UIDevice.current.systemVersion.compare(version, options: .numeric) == .orderedAscending
 }
 
 /// Compare OS versions.
@@ -73,7 +73,7 @@ public func osVersionLessThan(_ version: String) -> Bool {
 /// - Parameter version: Version, like "9.0".
 /// - Returns: Returns true if less or equal, otherwise false.
 public func osVersionLessThanOrEqual(_ version: String) -> Bool {
-    return UIDevice.current.systemVersion.compare(version, options: .numeric) != .orderedDescending
+    UIDevice.current.systemVersion.compare(version, options: .numeric) != .orderedDescending
 }
 
 // MARK: - UIDevice extension
@@ -84,7 +84,7 @@ public extension UIDevice {
     
     /// Get OS version string.
     static var osVersion: String {
-        return UIDevice.current.systemVersion
+        UIDevice.current.systemVersion
     }
     
     /// Returns OS version without subversions.
@@ -95,6 +95,7 @@ public extension UIDevice {
         guard let intSubVersion = Int(subVersion) else {
             return 0
         }
+        
         return intSubVersion
     }
     
@@ -175,6 +176,12 @@ public extension UIDevice {
         case "iPhone11,6":      return "iPhone XS Max"
         // iPhone XR
         case "iPhone11,8":      return "iPhone XR"
+        // iPhone 11
+        case "iPhone12,1":      return "iPhone 11"
+        // iPhone 11 Pro Max
+        case "iPhone12,3":      return "iPhone 11 Pro"
+        // iPhone 11 Pro
+        case "iPhone12,5":      return "iPhone 11 Pro Max"
         // iPod touch
         case "iPod1,1":         return "iPod touch (1st generation)"
         case "iPod2,1":         return "iPod touch (2nd generation)"
@@ -182,6 +189,7 @@ public extension UIDevice {
         case "iPod4,1":         return "iPod touch (4th generation)"
         case "iPod5,1":         return "iPod touch (5th generation)"
         case "iPod7,1":         return "iPod touch (6th generation)"
+        case "iPod9,1":         return "iPod touch (7th generation)"
         // iPad / iPad Air
         case "iPad1,1":         return "iPad"
         case "iPad2,1":         return "iPad 2"
@@ -199,8 +207,10 @@ public extension UIDevice {
         case "iPad4,3":         return "iPad Air"
         case "iPad5,3":         return "iPad Air 2"
         case "iPad5,4":         return "iPad Air 2"
-        case "iPad6,11":         return "iPad Air 2"
-        case "iPad6,12":         return "iPad Air 2"
+        case "iPad6,11":        return "iPad Air 2"
+        case "iPad6,12":        return "iPad Air 2"
+        case "iPad11,3":        return "iPad Air (3rd generation)"
+        case "iPad11,4":        return "iPad Air (3rd generation)"
         // iPad mini
         case "iPad2,5":         return "iPad mini"
         case "iPad2,6":         return "iPad mini"
@@ -211,6 +221,10 @@ public extension UIDevice {
         case "iPad4,7":         return "iPad mini 3"
         case "iPad4,8":         return "iPad mini 3"
         case "iPad4,9":         return "iPad mini 3"
+        case "iPad5,1":         return "iPad mini 4"
+        case "iPad5,2":         return "iPad mini 4"
+        case "iPad11,1":        return "iPad mini (5th generation)"
+        case "iPad11,2":        return "iPad mini (5th generation)"
         // iPad Pro 9.7
         case "iPad6,3":         return "iPad Pro (9.7-inch)"
         case "iPad6,4":         return "iPad Pro (9.7-inch)"
@@ -248,38 +262,38 @@ public extension UIDevice {
     
     /// Returns current device CPU frequency.
     static var cpuFrequency: Int {
-        return getSysInfo(HW_CPU_FREQ)
+        getSysInfo(HW_CPU_FREQ)
     }
     
     /// Returns current device BUS frequency.
     static var busFrequency: Int {
-        return getSysInfo(HW_TB_FREQ)
+        getSysInfo(HW_TB_FREQ)
     }
     
     /// Returns device RAM size.
     static var ramSize: Int {
-        return getSysInfo(HW_MEMSIZE)
+        getSysInfo(HW_MEMSIZE)
     }
     
     /// Returns device CPUs number.
     static var cpusNumber: Int {
-        return getSysInfo(HW_NCPU)
+        getSysInfo(HW_NCPU)
     }
     
     /// Returns device total memory.
     static var totalMemory: Int {
-        return getSysInfo(HW_PHYSMEM)
+        getSysInfo(HW_PHYSMEM)
     }
     
     /// Returns current device non-kernel memory.
     static var userMemory: Int {
-        return getSysInfo(HW_USERMEM)
+        getSysInfo(HW_USERMEM)
     }
     
     /// Retruns if current device is running in low power mode.
     @available(iOS 9.0, *)
     static var isLowPowerModeEnabled: Bool {
-        return ProcessInfo.processInfo.isLowPowerModeEnabled
+        ProcessInfo.processInfo.isLowPowerModeEnabled
     }
     
     /// Low power mode observer.
@@ -305,42 +319,42 @@ public extension UIDevice {
     ///
     /// - Returns: Returns true if it is an iPhone, otherwise false.
     static func isPhone() -> Bool {
-        return hardwareModel.substring(to: 6) == "iPhone"
+        hardwareModel.substring(to: 6) == "iPhone"
     }
     
     /// Check if current device is an iPad.
     ///
     /// - Returns: Returns true if it is an iPad, otherwise false.
     static func isPad() -> Bool {
-        return hardwareModel.substring(to: 4) == "iPad"
+        hardwareModel.substring(to: 4) == "iPad"
     }
     
     /// Check if current device is an iPod.
     ///
     /// - Returns: Returns true if it is an iPod, otherwise false.
     static func isPod() -> Bool {
-        return hardwareModel.substring(to: 4) == "iPod"
+        hardwareModel.substring(to: 4) == "iPod"
     }
     
     /// Check if current device is an Apple TV.
     ///
     /// - Returns: Returns true if it is an Apple TV, otherwise false.
     static func isTV() -> Bool {
-        return hardwareModel.substring(to: 7) == "AppleTV"
+        hardwareModel.substring(to: 7) == "AppleTV"
     }
     
     /// Check if current device is an Applw Watch.
     ///
     /// - Returns: Returns true if it is an Apple Watch, otherwise false.
     static func isWatch() -> Bool {
-        return hardwareModel.substring(to: 5) == "Watch"
+        hardwareModel.substring(to: 5) == "Watch"
     }
     
     /// Check if current device is a Simulator.
     ///
     /// - Returns: Returns true if it is a Simulator, otherwise false.
     static func isSimulator() -> Bool {
-        return detailedModel == "Simulator"
+        detailedModel == "Simulator"
     }
     
     /// Returns if current device is jailbroken.
@@ -359,14 +373,14 @@ public extension UIDevice {
     ///
     /// - Returns: eturns system uptime.
     static func uptime() -> TimeInterval {
-        return ProcessInfo.processInfo.systemUptime
+        ProcessInfo.processInfo.systemUptime
     }
     
     /// Returns sysyem uptime as Date.
     ///
     /// - Returns: Returns sysyem uptime as Date.
     static func uptimeDate() -> Date {
-        return Date(timeIntervalSinceNow: -uptime())
+        Date(timeIntervalSinceNow: -uptime())
     }
     
     /// Returns current device total disk space

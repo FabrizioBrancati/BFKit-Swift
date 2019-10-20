@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 - 2018 Fabrizio Brancati.
+//  Copyright (c) 2015 - 2019 Fabrizio Brancati.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -34,12 +34,12 @@ public struct List<Element: Equatable>: CustomStringConvertible {
     
     /// Count of the elements in list.
     public var count: Int {
-        return list.count
+        list.count
     }
     
     /// Describe the List.
     public var description: String {
-        return "\(list)"
+        "\(list)"
     }
     
     /// The array behind the List.
@@ -81,7 +81,7 @@ public struct List<Element: Equatable>: CustomStringConvertible {
     /// - Parameter index: The index.
     /// - Returns: Returns the element of the searched index.
     public func search(at index: Int) -> Element? {
-        return list.safeObject(at: index)
+        list.safeObject(at: index)
     }
     
     /// Search an element and returns the index.
@@ -105,12 +105,12 @@ public struct Queue<Element: Equatable>: CustomStringConvertible {
     
     /// Count of the elements in list.
     public var count: Int {
-        return queue.count
+        queue.count
     }
     
     /// Describe the Queue.
     public var description: String {
-        return "\(queue)"
+        "\(queue)"
     }
     
     /// The array behind the Queue.
@@ -126,6 +126,7 @@ public struct Queue<Element: Equatable>: CustomStringConvertible {
             queue.remove(at: 0)
             return true
         }
+        
         return false
     }
     
@@ -145,7 +146,7 @@ public struct Queue<Element: Equatable>: CustomStringConvertible {
     ///
     /// - Returns: Returns the Queue top element.
     public func top() -> Element? {
-        return queue.first
+        queue.first
     }
 }
 
@@ -157,12 +158,12 @@ public struct Stack<Element: Equatable>: CustomStringConvertible {
     
     /// Count of the elements in list.
     public var count: Int {
-        return stack.count
+        stack.count
     }
     
     /// Describe the Stack.
     public var description: String {
-        return "\(stack)"
+        "\(stack)"
     }
     
     /// The array behind Stack.
@@ -174,7 +175,7 @@ public struct Stack<Element: Equatable>: CustomStringConvertible {
     ///
     /// - Returns: Returns true if the Stack is empty, otherwise false.
     public func empty() -> Bool {
-        return stack.isEmpty
+        stack.isEmpty
     }
     
     /// Removes an element on top of the Stack.
