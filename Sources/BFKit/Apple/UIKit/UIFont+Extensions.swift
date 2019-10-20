@@ -441,6 +441,6 @@ public extension UIFont {
     /// - Parameter familyFontName: Family fonts.
     /// - Returns: Returns all fonts for the given family.
     static func fontNames(for family: FamilyFontName) -> [Any] {
-        return UIFont.fontNames(forFamilyName: family.rawValue)
+        UIFont.fontNames(forFamilyName: family.rawValue)
     }
 }

@@ -38,6 +38,6 @@ public extension CGPoint {
     /// - Parameter point: CGPoint to be used to calculate the distance.
     /// - Returns: Returns the distance between another CGPoint.
     func distanceTo(_ point: CGPoint) -> CGFloat {
-        return sqrt(pow((point.x - self.x), 2) + pow((point.y - self.y), 2))
+        sqrt(pow((point.x - self.x), 2) + pow((point.y - self.y), 2))
     }
 }

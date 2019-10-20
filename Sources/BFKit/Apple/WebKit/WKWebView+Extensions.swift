@@ -40,6 +40,7 @@ public extension WKWebView {
     guard let url = URL(string: website) else {
       return
     }
+    
     load(URLRequest(url: url))
   }
 }

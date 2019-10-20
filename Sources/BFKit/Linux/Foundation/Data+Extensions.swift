@@ -36,14 +36,14 @@ public extension Data {
     ///
     /// - Returns: Returns self as UTF8 NSString.
     func utf8() -> String? {
-        return String(data: self, encoding: .utf8)
+        String(data: self, encoding: .utf8)
     }
     
     /// Convert self to a ASCII String.
     ///
     /// - Returns: Returns self as ASCII String.
     func ascii() -> String? {
-        return String(data: self, encoding: .ascii)
+        String(data: self, encoding: .ascii)
     }
     
     /// Convert self UUID to String.
@@ -52,6 +52,6 @@ public extension Data {
     ///
     /// - Returns: Returns self as String from UUID.
     func readableUUID() -> String {
-        return description.trimmingCharacters(in: CharacterSet(charactersIn: "<>")).replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "-", with: "")
+        description.trimmingCharacters(in: CharacterSet(charactersIn: "<>")).replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "-", with: "")
     }
 }

@@ -34,13 +34,13 @@ public extension ProcessInfo {
     ///
     /// - Returns: eturns system uptime.
     static func uptime() -> TimeInterval {
-        return ProcessInfo.processInfo.systemUptime
+        ProcessInfo.processInfo.systemUptime
     }
     
     /// Returns sysyem uptime as Date.
     ///
     /// - Returns: Returns sysyem uptime as Date.
     static func uptimeDate() -> Date {
-        return Date(timeIntervalSinceNow: -uptime())
+        Date(timeIntervalSinceNow: -uptime())
     }
 }

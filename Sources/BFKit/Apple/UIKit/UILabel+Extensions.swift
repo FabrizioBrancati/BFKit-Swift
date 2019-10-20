@@ -83,6 +83,7 @@ public extension UILabel {
         guard let text = text else {
             return 0
         }
+        
         return UIFont.calculateHeight(width: frame.size.width, font: font, text: text)
     }
     

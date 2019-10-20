@@ -545,7 +545,7 @@ extension UIView {
     /// Inspectable border size.
     @IBInspectable public var borderWidth: CGFloat {
         get {
-            return layer.borderWidth
+            layer.borderWidth
         }
         set {
             layer.borderWidth = newValue
@@ -558,6 +558,7 @@ extension UIView {
             guard let borderColor = layer.borderColor else {
                 return UIColor.clear
             }
+            
             return UIColor(cgColor: borderColor)
         }
         set {
@@ -572,7 +573,7 @@ extension UIView {
     /// Set it to false if you want to enable shadow.
     @IBInspectable public var maskToBounds: Bool {
         get {
-            return layer.masksToBounds
+            layer.masksToBounds
         }
         set {
             layer.masksToBounds = newValue
@@ -584,7 +585,7 @@ extension UIView {
     /// Remeber to set maskToBounds to true.
     @IBInspectable public var cornerRadius: CGFloat {
         get {
-            return layer.cornerRadius
+            layer.cornerRadius
         }
         set {
             layer.cornerRadius = newValue
@@ -599,6 +600,7 @@ extension UIView {
             guard let shadowColor = layer.shadowColor else {
                 return UIColor.clear
             }
+            
             return UIColor(cgColor: shadowColor)
         }
         set {
@@ -611,7 +613,7 @@ extension UIView {
     /// Remeber to set maskToBounds to false.
     @IBInspectable public var shadowOpacity: Float {
         get {
-            return layer.shadowOpacity
+            layer.shadowOpacity
         }
         set {
             layer.shadowOpacity = newValue
@@ -623,7 +625,7 @@ extension UIView {
     /// Remeber to set maskToBounds to false.
     @IBInspectable public var shadowOffsetX: CGFloat {
         get {
-            return layer.shadowOffset.width
+            layer.shadowOffset.width
         }
         set {
             layer.shadowOffset = CGSize(width: newValue, height: layer.shadowOffset.height)
@@ -635,7 +637,7 @@ extension UIView {
     /// Remeber to set maskToBounds to false.
     @IBInspectable public var shadowOffsetY: CGFloat {
         get {
-            return layer.shadowOffset.height
+            layer.shadowOffset.height
         }
         set {
             layer.shadowOffset = CGSize(width: layer.shadowOffset.width, height: newValue)
@@ -647,7 +649,7 @@ extension UIView {
     /// Remeber to set maskToBounds to false.
     @IBInspectable public var shadowRadius: CGFloat {
         get {
-            return layer.shadowRadius
+            layer.shadowRadius
         }
         set {
             layer.shadowRadius = newValue

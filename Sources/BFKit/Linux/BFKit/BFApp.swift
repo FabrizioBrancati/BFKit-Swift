@@ -33,7 +33,7 @@ import Foundation
 /// - Parameter key: The key of the localized string.
 /// - Returns: Returns a localized string.
 public func NSLocalizedString(_ key: String) -> String {
-    return NSLocalizedString(key, comment: "")
+    NSLocalizedString(key, comment: "")
 }
 
 // MARK: - BFApp struct
@@ -120,7 +120,7 @@ public enum BFApp {
     /// - Returns: Returns true if the operation was successful, otherwise false.
     @discardableResult
     public static func setAppSetting(object: Any, forKey objectKey: String) -> Bool {
-        return FileManager.default.setSettings(filename: BFApp.name, object: object, forKey: objectKey)
+        FileManager.default.setSettings(filename: BFApp.name, object: object, forKey: objectKey)
     }
     
     /// Get the App setting for a given key.
@@ -128,7 +128,7 @@ public enum BFApp {
     /// - Parameter objectKey: Key to get the object.
     /// - Returns: Returns the object for the given key.
     public static func getAppSetting(objectKey: String) -> Any? {
-        return FileManager.default.getSettings(filename: BFApp.name, forKey: objectKey)
+        FileManager.default.getSettings(filename: BFApp.name, forKey: objectKey)
     }
     
     /// Check if the app has been installed from TestFlight.
@@ -151,27 +151,27 @@ public extension BFApp {
     
     /// Return the App name.
     static var name: String = {
-        return BFApp.stringFromInfoDictionary(forKey: "CFBundleDisplayName")
+        BFApp.stringFromInfoDictionary(forKey: "CFBundleDisplayName")
     }()
     
     /// Returns the App version.
     static var version: String = {
-        return BFApp.stringFromInfoDictionary(forKey: "CFBundleShortVersionString")
+        BFApp.stringFromInfoDictionary(forKey: "CFBundleShortVersionString")
     }()
     
     /// Returns the App build.
     static var build: String = {
-        return BFApp.stringFromInfoDictionary(forKey: "CFBundleVersion")
+        BFApp.stringFromInfoDictionary(forKey: "CFBundleVersion")
     }()
     
     /// Returns the App executable.
     static var executable: String = {
-        return BFApp.stringFromInfoDictionary(forKey: "CFBundleExecutable")
+        BFApp.stringFromInfoDictionary(forKey: "CFBundleExecutable")
     }()
     
     /// Returns the App bundle.
     static var bundle: String = {
-        return BFApp.stringFromInfoDictionary(forKey: "CFBundleIdentifier")
+        BFApp.stringFromInfoDictionary(forKey: "CFBundleIdentifier")
     }()
     
     // MARK: - Functions

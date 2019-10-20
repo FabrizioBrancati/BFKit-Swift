@@ -47,6 +47,7 @@ public func showTouchOnScreen() {
     guard let window = (UIApplication.value(forKey: "sharedApplication") as? UIApplication)?.keyWindow else {
         return
     }
+    
     window.activateTouch()
 }
 
@@ -55,6 +56,7 @@ public func hideTouchOnScreen() {
     guard let window = (UIApplication.value(forKey: "sharedApplication") as? UIApplication)?.keyWindow else {
         return
     }
+    
     window.deactivateTouch()
 }
 
@@ -84,6 +86,7 @@ public extension UIWindow {
         guard let context: CGContext = UIGraphicsGetCurrentContext() else {
             return nil
         }
+        
         context.saveGState()
         context.translateBy(x: center.x, y: center.y)
         context.concatenate(transform)
@@ -95,6 +98,7 @@ public extension UIWindow {
             guard let context = UIGraphicsGetCurrentContext() else {
                 return nil
             }
+            
             layer.render(in: context)
         }
 

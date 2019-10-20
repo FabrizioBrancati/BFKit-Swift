@@ -58,7 +58,7 @@ public func RGBA(_ red: Int, _ green: Int, _ blue: Int, _ alpha: Float) -> Color
 ///   - blue: Blue value.
 /// - Returns: Returns the created UIColor or NSColor.
 public func ARGB( _ alpha: Float, _ red: Int, _ green: Int, _ blue: Int) -> Color {
-    return RGBA(red, green, blue, alpha)
+    RGBA(red, green, blue, alpha)
 }
 
 /// Create an UIColor or NSColor in format RGB.
@@ -285,7 +285,7 @@ public extension Color {
     ///
     /// - Returns: Returns the color.
     func contrasting() -> Color {
-        return luminance > 0.5 ? Color.black : Color.white
+        luminance > 0.5 ? Color.black : Color.white
     }
 
     /// A complementary color that should look good.
@@ -445,6 +445,6 @@ public extension Color {
     ///   - alpha: Alpha value.
     /// - Returns: Returns an UIColor or NSColor instance.
     static func color(color: Color, alpha: CGFloat) -> Color {
-        return color.withAlphaComponent(alpha)
+        color.withAlphaComponent(alpha)
     }
 }

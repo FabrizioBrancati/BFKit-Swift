@@ -34,22 +34,22 @@ public extension String {
 
     /// Gets the individual characters and puts them in an array as Strings.
     var array: [String] {
-        return description.map { String($0) }
+        description.map { String($0) }
     }
     
     /// Returns the Float value
     var floatValue: Float {
-        return NSString(string: self).floatValue
+        NSString(string: self).floatValue
     }
     
     /// Returns the Int value
     var intValue: Int {
-        return Int(NSString(string: self).intValue)
+        Int(NSString(string: self).intValue)
     }
 
     /// Convert self to a Data.
     var dataValue: Data? {
-        return data(using: .utf8)
+        data(using: .utf8)
     }
     
     /// Encoded string to Base64.
@@ -57,6 +57,7 @@ public extension String {
         guard let data: Data = data(using: .utf8) else {
             return ""
         }
+        
         return data.base64EncodedString()
     }
     
@@ -65,17 +66,18 @@ public extension String {
         guard let data = Data(base64Encoded: String(self), options: .ignoreUnknownCharacters), let dataString = NSString(data: data, encoding: String.Encoding.utf8.rawValue) else {
             return ""
         }
+        
         return String(describing: dataString)
     }
     
     /// Encode self to an encoded url string.
     var urlEncoded: String? {
-        return addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)
+        addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)
     }
     
     /// Returns the localized string from self.
     var localized: String {
-        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
+        NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
     }
     
     /// Convert the String to a NSNumber.
@@ -92,7 +94,7 @@ public extension String {
     /// - Parameter index: The index.
     /// - Returns: Returns the character at a given index, starts from 0.
     func character(at index: Int) -> Character {
-        return self[self.index(startIndex, offsetBy: index)]
+        self[self.index(startIndex, offsetBy: index)]
     }
     
     /// Returns a new string containing the characters of the String from the one at a given index to the end.
@@ -100,7 +102,7 @@ public extension String {
     /// - Parameter index: The index.
     /// - Returns: Returns the substring from index.
     func substring(from index: Int) -> String {
-        return String(self[self.index(startIndex, offsetBy: index)...])
+        String(self[self.index(startIndex, offsetBy: index)...])
     }
     
     /// Creates a substring from the given character.
@@ -112,6 +114,7 @@ public extension String {
         guard index > -1 else {
             return ""
         }
+        
         return substring(from: index + 1)
     }
     
@@ -123,6 +126,7 @@ public extension String {
         guard index <= count else {
             return ""
         }
+        
         return String(self[..<self.index(startIndex, offsetBy: index)])
     }
     
@@ -135,6 +139,7 @@ public extension String {
         guard index > -1 else {
             return ""
         }
+        
         return substring(to: index)
     }
     
@@ -154,7 +159,7 @@ public extension String {
     /// - Parameter range: The range.
     /// - Returns: Returns the string between the range.
     func substring(with range: CountableClosedRange<Int>) -> String {
-        return substring(with: Range(uncheckedBounds: (lower: range.lowerBound, upper: range.upperBound + 1)))
+        substring(with: Range(uncheckedBounds: (lower: range.lowerBound, upper: range.upperBound + 1)))
     }
     
     /// Returns the index of the given character.
@@ -176,7 +181,7 @@ public extension String {
     ///   - caseSensitive: If the search has to be case-sensitive or not.
     /// - Returns: Returns true if founded, otherwise false.
     func range(of string: String, caseSensitive: Bool = true) -> Bool {
-        return caseSensitive ? (range(of: string) != nil) : (lowercased().range(of: string.lowercased()) != nil)
+        caseSensitive ? (range(of: string) != nil) : (lowercased().range(of: string.lowercased()) != nil)
     }
     
     /// Check if self has the given substring in case-sensitiv or case-insensitive.
@@ -186,7 +191,7 @@ public extension String {
     ///   - caseSensitive: If the search has to be case-sensitive or not.
     /// - Returns: Returns true if founded, otherwise false.
     func has(_ string: String, caseSensitive: Bool = true) -> Bool {
-        return range(of: string, caseSensitive: caseSensitive)
+        range(of: string, caseSensitive: caseSensitive)
     }
     
     /// Returns the number of occurrences of a String into 
@@ -209,6 +214,7 @@ public extension String {
         guard !isEmpty else {
             return ""
         }
+        
         let uppercase: String = substring(to: 1).uppercased()
         let lowercase: String = substring(from: 1).lowercased()
 
@@ -261,32 +267,32 @@ public extension String {
     ///
     ///     string.attributedString.font(UIFont(fontName: .helveticaNeue, size: 20)).backgroundColor(UIColor.red)
     var attributedString: NSAttributedString {
-        return NSAttributedString(string: self)
+        NSAttributedString(string: self)
     }
     
     /// Returns the last path component.
     var lastPathComponent: String {
-        return NSString(string: self).lastPathComponent
+        NSString(string: self).lastPathComponent
     }
 
     /// Returns the path extension.
     var pathExtension: String {
-        return NSString(string: self).pathExtension
+        NSString(string: self).pathExtension
     }
 
     /// Delete the last path component.
     var deletingLastPathComponent: String {
-        return NSString(string: self).deletingLastPathComponent
+        NSString(string: self).deletingLastPathComponent
     }
 
     /// Delete the path extension.
     var deletingPathExtension: String {
-        return NSString(string: self).deletingPathExtension
+        NSString(string: self).deletingPathExtension
     }
 
     /// Returns an array of path components.
     var pathComponents: [String] {
-        return NSString(string: self).pathComponents
+        NSString(string: self).pathComponents
     }
     
     /// Appends a path component to the string.
@@ -295,7 +301,6 @@ public extension String {
     /// - Returns: Returns all the string.
     func appendingPathComponent(_ path: String) -> String {
         let string = NSString(string: self)
-
         return string.appendingPathComponent(path)
     }
     
@@ -305,7 +310,6 @@ public extension String {
     /// - Returns: Returns all the string.
     func appendingPathExtension(_ ext: String) -> String? {
         let nsSt = NSString(string: self)
-
         return nsSt.appendingPathExtension(ext)
     }
     
@@ -313,21 +317,21 @@ public extension String {
     ///
     /// - Returns: Converts self to an UUID APNS valid (No "<>" or "-" or spaces).
     func readableUUID() -> String {
-        return trimmingCharacters(in: CharacterSet(charactersIn: "<>")).replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "-", with: "")
+        trimmingCharacters(in: CharacterSet(charactersIn: "<>")).replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "-", with: "")
     }
     
     /// Returns string with the first character uppercased.
     ///
     /// - returns: Returns string with the first character uppercased.
     func uppercasedFirst() -> String {
-        return String(prefix(1)).uppercased() + String(dropFirst())
+        String(prefix(1)).uppercased() + String(dropFirst())
     }
     
     /// Returns string with the first character lowercased.
     ///
     /// - returns: Returns string with the first character lowercased.
     func lowercasedFirst() -> String {
-        return String(prefix(1)).lowercased() + String(dropFirst())
+        String(prefix(1)).lowercased() + String(dropFirst())
     }
     
     /// Returns the reversed String.
@@ -509,21 +513,21 @@ public extension String {
     ///
     /// - Parameter index: Returns the character at the given index.
     subscript(index: Int) -> Character {
-        return self[self.index(startIndex, offsetBy: index)]
+        self[self.index(startIndex, offsetBy: index)]
     }
     
     /// Returns the index of the given character, -1 if not found.
     ///
     /// - Parameter character: Returns the index of the given character, -1 if not found.
     subscript(character: Character) -> Int {
-        return index(of: character)
+        index(of: character)
     }
     
     /// Returns the character at the given index as String.
     ///
     /// - Parameter index: Returns the character at the given index as String.
     subscript(index: Int) -> String {
-        return String(self[index])
+        String(self[index])
     }
     
     /// Returns the string from a given range.
@@ -531,7 +535,7 @@ public extension String {
     ///
     /// - Parameter range: Returns the string from a given range.
     subscript(range: Range<Int>) -> String {
-        return substring(with: range)
+        substring(with: range)
     }
     
     /// Returns if self is a valid UUID or not.
@@ -576,7 +580,7 @@ public extension String {
     ///
     /// - Returns: Returns localized String using self as key.
     func localize() -> String {
-        return NSLocalizedString(self, comment: "")
+        NSLocalizedString(self, comment: "")
     }
     
     // MARK: - Functions not available on Linux
@@ -651,5 +655,5 @@ infix operator ???: NilCoalescingPrecedence
 ///   - defaultValue: The default value.
 /// - Returns: Returns defaultValue if optional is nil, otherwise returns optional.
 public func ??? <T>(optional: T?, defaultValue: @autoclosure () -> String) -> String {
-    return optional.map { String(describing: $0) } ?? defaultValue()
+    optional.map { String(describing: $0) } ?? defaultValue()
 }

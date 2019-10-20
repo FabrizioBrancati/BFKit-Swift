@@ -358,7 +358,7 @@ public extension Date {
     ///
     /// - Returns: Returns if self is today.
     func isToday() -> Bool {
-        return isSame(Date())
+        isSame(Date())
     }
     
     /// Compare self with another date.
@@ -477,7 +477,7 @@ public extension Date {
     /// - Parameter date: Date to compare.
     /// - Returns: Returns a true if self is equal to another one, otherwise false.
     func isEqual(_ date: Date) -> Bool {
-        return isSame(date)
+        isSame(date)
     }
     
     /// Create a Date with the yesterday date.

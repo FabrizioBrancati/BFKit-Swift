@@ -42,6 +42,7 @@ public extension Collection {
         guard let json = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue) else {
             throw BFKitError.jsonSerialization
         }
+        
         return String(describing: json)
     }
 }

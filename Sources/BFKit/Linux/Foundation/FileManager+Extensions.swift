@@ -154,6 +154,7 @@ public extension FileManager {
         guard let path = FileManager.default.pathFor(path), let finalPath = path.appendingPathComponent(filename).appendingPathExtension("plist") else {
             return (false, "")
         }
+        
         return (true, finalPath)
     }
     
@@ -163,7 +164,7 @@ public extension FileManager {
     /// - Parameter file: Filename.
     /// - Returns: Returns the path as a String.
     func mainBundlePath(file: String = "") -> String? {
-        return file.isEmpty ? Bundle.main.bundlePath : Bundle.main.path(forResource: file.deletingPathExtension, ofType: file.pathExtension)
+        file.isEmpty ? Bundle.main.bundlePath : Bundle.main.path(forResource: file.deletingPathExtension, ofType: file.pathExtension)
     }
     
     /// Get Documents path for a filename.
@@ -227,7 +228,7 @@ public extension FileManager {
     /// - Parameter file: Filename.
     /// - Returns: Returns the path as a String.
     func temporaryPath(file: String = "") -> String? {
-        return NSTemporaryDirectory().appendingPathComponent(file)
+        NSTemporaryDirectory().appendingPathComponent(file)
     }
     
     /// Returns the file size.
@@ -316,6 +317,7 @@ public extension FileManager {
         guard let originPath = FileManager.default.pathFor(origin), let destinationPath = FileManager.default.pathFor(destination) else {
             throw BFKitError.pathNotExist
         }
+        
         guard destination != .mainBundle else {
             throw BFKitError.pathNotAllowed
         }
@@ -326,6 +328,7 @@ public extension FileManager {
         guard !FileManager.default.fileExists(atPath: finalOriginPath) else {
             return (finalOriginPath, finalDestinationPath, true)
         }
+        
         return (finalOriginPath, finalDestinationPath, false)
     }
     
