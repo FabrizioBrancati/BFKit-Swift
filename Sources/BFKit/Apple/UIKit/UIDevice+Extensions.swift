@@ -176,6 +176,12 @@ public extension UIDevice {
         case "iPhone11,6":      return "iPhone XS Max"
         // iPhone XR
         case "iPhone11,8":      return "iPhone XR"
+        // iPhone 11
+        case "iPhone12,1":      return "iPhone 11"
+        // iPhone 11 Pro Max
+        case "iPhone12,3":      return "iPhone 11 Pro"
+        // iPhone 11 Pro
+        case "iPhone12,5":      return "iPhone 11 Pro Max"
         // iPod touch
         case "iPod1,1":         return "iPod touch (1st generation)"
         case "iPod2,1":         return "iPod touch (2nd generation)"
@@ -183,6 +189,7 @@ public extension UIDevice {
         case "iPod4,1":         return "iPod touch (4th generation)"
         case "iPod5,1":         return "iPod touch (5th generation)"
         case "iPod7,1":         return "iPod touch (6th generation)"
+        case "iPod9,1":         return "iPod touch (7th generation)"
         // iPad / iPad Air
         case "iPad1,1":         return "iPad"
         case "iPad2,1":         return "iPad 2"
@@ -200,8 +207,10 @@ public extension UIDevice {
         case "iPad4,3":         return "iPad Air"
         case "iPad5,3":         return "iPad Air 2"
         case "iPad5,4":         return "iPad Air 2"
-        case "iPad6,11":         return "iPad Air 2"
-        case "iPad6,12":         return "iPad Air 2"
+        case "iPad6,11":        return "iPad Air 2"
+        case "iPad6,12":        return "iPad Air 2"
+        case "iPad11,3":        return "iPad Air (3rd generation)"
+        case "iPad11,4":        return "iPad Air (3rd generation)"
         // iPad mini
         case "iPad2,5":         return "iPad mini"
         case "iPad2,6":         return "iPad mini"
@@ -212,6 +221,10 @@ public extension UIDevice {
         case "iPad4,7":         return "iPad mini 3"
         case "iPad4,8":         return "iPad mini 3"
         case "iPad4,9":         return "iPad mini 3"
+        case "iPad5,1":         return "iPad mini 4"
+        case "iPad5,2":         return "iPad mini 4"
+        case "iPad11,1":        return "iPad mini (5th generation)"
+        case "iPad11,2":        return "iPad mini (5th generation)"
         // iPad Pro 9.7
         case "iPad6,3":         return "iPad Pro (9.7-inch)"
         case "iPad6,4":         return "iPad Pro (9.7-inch)"
