@@ -204,7 +204,8 @@ public extension UIWindow {
             case .ended, .cancelled:
                 if let touchImageView = touchImages[touch.hash] {
                     UIView.animate(
-                        withDuration: 0.2, animations: {
+                        withDuration: 0.2,
+                        animations: {
                             touchImageView.alpha = 0.0
                             touchImageView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
                         }, completion: { finished -> Void in

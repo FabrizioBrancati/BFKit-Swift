@@ -36,51 +36,48 @@ public extension UIView {
     // MARK: - Variables
     
     /// Direction of flip animation.
-    ///
-    /// - top: Flip animation from top.
-    /// - left: Flip animation from left.
-    /// - right: Flip animation from right.
-    /// - bottom: Flip animation from bottom.
     enum UIViewAnimationFlipDirection: String {
+        /// Flip animation from top.
         case top = "fromTop"
+        /// Flip animation from left.
         case left = "fromLeft"
+        /// Flip animation from right.
         case right = "fromRight"
+        /// Flip animation from bottom.
         case bottom = "fromBottom"
     }
     
     /// Direction of the translation.
-    ///
-    /// - leftToRight: Translation from left to right.
-    /// - rightToLeft: Translation from right to left.
     enum UIViewAnimationTranslationDirection: Int {
+        /// Translation from left to right.
         case leftToRight
+        /// Translation from right to left.
         case rightToLeft
     }
     
     /// Direction of the linear gradient.
-    ///
-    /// - vertical: Linear gradient vertical.
-    /// - horizontal: Linear gradient horizontal.
-    /// - diagonalLeftToRightAndTopToDown: Linear gradient from left top to right down.
-    /// - diagonalLeftToRightAndDownToTop: Linear gradient from left down to right top.
-    /// - diagonalRightToLeftAndTopToDown: Linear gradient from right top to left down.
-    /// - diagonalRightToLeftAndDownToTop: Linear gradient from right down to left top.
     enum UIViewGradientDirection {
+        /// Linear gradient vertical.
         case vertical
+        /// Linear gradient horizontal.
         case horizontal
+        /// Linear gradient from left top to right down.
         case diagonalLeftTopToRightDown
+        /// Linear gradient from left down to right top.
         case diagonalLeftDownToRightTop
+        /// Linear gradient from right top to left down.
         case diagonalRightTopToLeftDown
+        ///  Linear gradient from right down to left top.
         case diagonalRightDownToLeftTop
+        /// Custom gradient direction.
         case custom(startPoint: CGPoint, endPoint: CGPoint)
     }
     
     /// Type of gradient.
-    ///
-    /// - linear: Linear gradient.
-    /// - radial: Radial gradient.
     enum UIViewGradientType {
+        /// Linear gradient.
         case linear
+        /// Radial gradient.
         case radial
     }
     
@@ -498,12 +495,18 @@ public extension UIView {
         }
         
         UIView.animate(
-            withDuration: TimeInterval(duration / 2), delay: 1, options: UIView.AnimationOptions(), animations: {
+            withDuration: TimeInterval(duration / 2),
+            delay: 1,
+            options: UIView.AnimationOptions(),
+            animations: {
                 self.center = CGPoint(x: endPosition, y: self.center.y)
             }, completion: { finished in
                 if finished {
                     UIView.animate(
-                        withDuration: TimeInterval(duration / 2), delay: 1, options: UIView.AnimationOptions(), animations: {
+                        withDuration: TimeInterval(duration / 2),
+                        delay: 1,
+                        options: UIView.AnimationOptions(),
+                        animations: {
                             self.center = CGPoint(x: startPosition, y: self.center.y)
                         }, completion: { finished in
                             if finished {

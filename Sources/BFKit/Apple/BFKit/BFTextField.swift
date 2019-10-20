@@ -50,15 +50,6 @@ open class BFTextField: UITextField {
         NotificationCenter.default.addObserver(self, selector: #selector(BFTextField.textFieldDidChange(_:)), name: UITextField.textDidChangeNotification, object: self)
     }
     
-    /// Encodes added variables.
-    ///
-    /// - Parameter aCoder: NSCoder.
-    override open func encode(with aCoder: NSCoder) {
-        super.encode(with: aCoder)
-        
-        aCoder.encode(maxNumberOfCharacters, forKey: "MaxNumberOfCharacters")
-    }
-    
     /// Override init with frame.
     ///
     /// - Parameter frame: TextField frame.
@@ -67,6 +58,15 @@ open class BFTextField: UITextField {
         
         maxNumberOfCharacters = 0
         NotificationCenter.default.addObserver(self, selector: #selector(BFTextField.textFieldDidChange(_:)), name: UITextField.textDidChangeNotification, object: self)
+    }
+    
+    /// Encodes added variables.
+    ///
+    /// - Parameter aCoder: NSCoder.
+    override open func encode(with aCoder: NSCoder) {
+        super.encode(with: aCoder)
+        
+        aCoder.encode(maxNumberOfCharacters, forKey: "MaxNumberOfCharacters")
     }
     
     @objc

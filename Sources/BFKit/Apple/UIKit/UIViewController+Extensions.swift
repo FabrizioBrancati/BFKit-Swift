@@ -39,7 +39,8 @@ public extension UIViewController {
         
         if let coordinator = transitionCoordinator {
             coordinator.animateAlongsideTransition(
-                in: parent?.view, animation: { coordinatorContext in
+                in: parent?.view,
+                animation: { coordinatorContext in
                     selectedIndexPaths.forEach {
                         tableView.deselectRow(at: $0, animated: coordinatorContext.isAnimated)
                     }

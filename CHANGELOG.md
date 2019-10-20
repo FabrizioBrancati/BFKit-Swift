@@ -59,6 +59,9 @@ All notable changes to this project will be documented in this file.<br>
 - Removed support to UIWebView [#44](https://github.com/FabrizioBrancati/BFKit-Swift/pull/44)
 - Removed `isURLValid` on Linux
 
+### Improved
+- Updated SwiftLint to 0.35.0
+
 Thanks to [@Tripwire999](https://github.com/Tripwire999) for this release
 
 ---

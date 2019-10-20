@@ -47,7 +47,8 @@ open class BFButton: UIButton {
                 }
             } else {
                 UIView.animate(
-                    withDuration: fadeDuration, animations: { [weak self] in
+                    withDuration: fadeDuration,
+                    animations: { [weak self] in
                         self?.overlayImageView.alpha = 0
                     }, completion: { [weak self] completed in
                         if completed {
