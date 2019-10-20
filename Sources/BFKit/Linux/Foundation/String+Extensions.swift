@@ -247,14 +247,16 @@ public extension String {
         return queryStrings
     }
     
-    /// Check if the URL is a valid HTTP URL.
-    ///
-    /// - Returns: Returns if the URL is a valid HTTP URL
-    func isURLValid() -> Bool {
-        let regEx = "((https|http)://)((\\w|-)+)(([.]|[/])((\\w|-)+))?.+"
-        let predicate = NSPredicate(format: "SELF MATCHES %@", argumentArray: [regEx])
-        return predicate.evaluate(with: self)
-    }
+    #if !os(Linux)
+        /// Check if the URL is a valid HTTP URL.
+        ///
+        /// - Returns: Returns if the URL is a valid HTTP URL
+        func isURLValid() -> Bool {
+            let regEx = "((https|http)://)((\\w|-)+)(([.]|[/])((\\w|-)+))?.+"
+            let predicate = NSPredicate(format: "SELF MATCHES %@", argumentArray: [regEx])
+            return predicate.evaluate(with: self)
+        }
+    #endif
     
     /// Convert a String to a NSAttributedString.
     /// With that variable you can customize a String with a style.
