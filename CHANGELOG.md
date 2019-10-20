@@ -46,7 +46,7 @@ All notable changes to this project will be documented in this file.<br>
 ---
 
 ## [6.0.0](https://github.com/FabrizioBrancati/BFKit-Swift/releases/tag/6.0.0) - Swift 5.1 Support
-### XX XXX 2019
+### 20 Oct 2019
 ### Added
 - Added support to Xcode 11.1 and Swift 5.1
 - Added support to WKWebView [#44](https://github.com/FabrizioBrancati/BFKit-Swift/pull/44)
