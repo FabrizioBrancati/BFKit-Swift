@@ -32,7 +32,7 @@ let package = Package(
     platforms: [
         .iOS(.v8),
         .macOS(.v10_10),
-        .watchOS(.v2)
+        .watchOS(.v3)
     ],
     products: [
         .library(name: "BFKit", targets: ["BFKit"])
