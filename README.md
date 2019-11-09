@@ -4,14 +4,18 @@
 
 [![Build Status](https://travis-ci.com/FabrizioBrancati/BFKit-Swift.svg?branch=master)](https://travis-ci.com/FabrizioBrancati/BFKit-Swift)
 [![Coverage Status](https://coveralls.io/repos/github/FabrizioBrancati/BFKit-Swift/badge.svg?branch=master)](https://coveralls.io/github/FabrizioBrancati/BFKit-Swift?branch=master)
-[![codebeat badge](https://codebeat.co/badges/b8c2fc8c-73f4-4faf-b95b-85209eeaecbe)](https://codebeat.co/projects/github-com-fabriziobrancati-bfkit-swift-master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/60359bcef632cb10685b/maintainability)](https://codeclimate.com/github/FabrizioBrancati/BFKit-Swift/maintainability)
+[![Codebeat Badge](https://codebeat.co/badges/b8c2fc8c-73f4-4faf-b95b-85209eeaecbe)](https://codebeat.co/projects/github-com-fabriziobrancati-bfkit-swift-master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e414ec81c78244038cd4a26078553a00)](https://www.codacy.com/manual/FabrizioBrancati/BFKit-Swift)
+<br>
+[![Documentation](https://github.fabriziobrancati.com/documentation/Queuer/badge.svg)](https://github.fabriziobrancati.com/documentation/BFKit-Swift/)
 [![Swift Package Manager Compatible](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Version](https://img.shields.io/cocoapods/v/BFKit-Swift.svg?style=flat)][Documentation]
-[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)
 <br>
+[![Version](https://img.shields.io/cocoapods/v/BFKit-Swift.svg?style=flat)][Documentation]
 [![Language](https://img.shields.io/badge/language-Swift%205.1-orange.svg)](https://swift.org/)
 [![Platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20watchOS%20%7C%20Linux-cc9c00.svg)][Documentation]
+[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/FabrizioBrancati/BFKit-Swift/blob/master/LICENSE)
 
 ---
 
