@@ -28,7 +28,7 @@ matrix:
       os: osx
       language: objective-c
       osx_image: xcode11.3
-      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=13.1,name=iPhone 11 Pro Max"            SCHEME="$IOS_SCHEME"     RUN_TESTS="YES" LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
+      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=13.1,name=iPhone 11 Pro Max"            SCHEME="$IOS_SCHEME"     RUN_TESTS="YES" LINT="NO"  COVERAGE="YES" EXAMPLE="NO"
     - name: macOS / Xcode 11.3 / watchOS 6.0 / Apple Watch Series 5 - 44mm
       os: osx
       language: objective-c
