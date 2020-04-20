@@ -19,30 +19,30 @@ matrix:
       sudo: required
       dist: xenial
       env: SPM="YES"
-    - name: macOS / Xcode 11.1 / SwiftPM
+    - name: macOS / Xcode 11.3 / SwiftPM
       os: osx
       language: objective-c
-      osx_image: xcode11.1
+      osx_image: xcode11.3
       env: SPM="YES"
-    - name: macOS / Xcode 11.1 / iOS 13.1 / iPhone 11 Pro Max
+    - name: macOS / Xcode 11.3 / iOS 13.1 / iPhone 11 Pro Max
       os: osx
       language: objective-c
-      osx_image: xcode11.1
+      osx_image: xcode11.3
       env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=13.1,name=iPhone 11 Pro Max"            SCHEME="$IOS_SCHEME"     RUN_TESTS="YES" LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
-    - name: macOS / Xcode 11.1 / watchOS 6.0 / Apple Watch Series 5 - 44mm
+    - name: macOS / Xcode 11.3 / watchOS 6.0 / Apple Watch Series 5 - 44mm
       os: osx
       language: objective-c
-      osx_image: xcode11.1
+      osx_image: xcode11.3
       env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=6.0,name=Apple Watch Series 5 - 44mm"   SCHEME="$WATCHOS_SCHEME" RUN_TESTS="NO"  LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
-    - name: macOS / Xcode 11.1
+    - name: macOS / Xcode 11.3
       os: osx
       language: objective-c
-      osx_image: xcode11.1
+      osx_image: xcode11.3
       env: PROJ="BFKit.xcodeproj"                DESTINATION="arch=x86_64"                               SCHEME="$MACOS_SCHEME"   RUN_TESTS="YES" LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
-    - name: macOS / Xcode 11.1 / iOS 13.1 / iPhone 8 Plus / Demo
+    - name: macOS / Xcode 11.3 / iOS 13.1 / iPhone 8 Plus / Demo
       os: osx
       language: objective-c
-      osx_image: xcode11.1
+      osx_image: xcode11.3
       env: PROJ="Example/BFKitExample.xcodeproj" DESTINATION="OS=13.1,name=iPhone 8 Plus"                SCHEME="$EXAMPLE_SCHEME" RUN_TESTS="NO"  LINT="NO"  COVERAGE="NO"  EXAMPLE="YES"
 
 before_install:
