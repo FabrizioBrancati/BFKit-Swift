@@ -19,7 +19,13 @@ matrix:
       sudo: required
       dist: xenial
       env: SPM="YES"
-    - name: macOS / Xcode 11.3 / SwiftPM
+    - name: Ubuntu 18.04 / SwiftPM
+      os: linux
+      language: generic
+      sudo: required
+      dist: bionic
+      env: SPM="YES"
+    - name: macOS / Xcode 11.4 / SwiftPM
       os: osx
       language: objective-c
       osx_image: xcode11.4
