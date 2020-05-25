@@ -387,6 +387,7 @@ public extension UIFont {
     /// - Parameters:
     ///   - fontName: Font name.
     ///   - size: Size of the font.
+    @available(*, deprecated, message:"init(fontName:, size:) is deprecated and will be removed in future versions of BFKit-Swift.")
     convenience init?(fontName: FontName, size: CGFloat) {
         self.init(name: fontName.rawValue, size: size)
     }
@@ -433,6 +434,7 @@ public extension UIFont {
     ///   - size: Font size.
     ///   - text: Text.
     /// - Returns: Returns calculated height of string within width using given font
+    @available(*, deprecated, message:"calculateHeight(width:, font:, fontSize:, text:) is deprecated and will be removed in future versions of BFKit-Swift.")
     static func calculateHeight(width: CGFloat, font: FontName, fontSize: CGFloat, text: String) -> CGFloat {
         let font = UIFont(fontName: font, size: fontSize) ?? UIFont()
         return calculateHeight(width: width, font: font, text: text)
@@ -442,6 +444,7 @@ public extension UIFont {
     ///
     /// - Parameter familyFontName: Family fonts.
     /// - Returns: Returns all fonts for the given family.
+    @available(*, deprecated, message:"fontNames(for:) is deprecated and will be removed in future versions of BFKit-Swift.")
     static func fontNames(for family: FamilyFontName) -> [Any] {
         UIFont.fontNames(forFamilyName: family.rawValue)
     }
