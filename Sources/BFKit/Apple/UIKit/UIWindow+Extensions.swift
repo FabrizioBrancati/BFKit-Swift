@@ -217,8 +217,14 @@ public extension UIWindow {
                         }
                     )
                 }
-            @unknown default:
+            case .regionEntered:
                 break
+            case .regionMoved:
+                break
+            case .regionExited:
+                break
+            @unknown default:
+                break 
             }
         }
     }
