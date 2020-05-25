@@ -217,10 +217,13 @@ public extension UIWindow {
                         }
                     )
                 }
+
             case .regionEntered:
                 break
+
             case .regionMoved:
                 break
+
             case .regionExited:
                 break
             @unknown default:
