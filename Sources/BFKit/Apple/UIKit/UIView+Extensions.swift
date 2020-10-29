@@ -258,6 +258,7 @@ public extension UIView {
     /// - Parameters:
     ///   - colors: Array of UIColor instances.
     ///   - direction: Direction of the gradient.
+    ///   - type: The type of the gradient.
     func smoothGradient(colors: [UIColor], direction: UIViewGradientDirection, type: UIViewGradientType = .linear) {
         UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIImage.screenScale())
         guard let context = UIGraphicsGetCurrentContext() else {
