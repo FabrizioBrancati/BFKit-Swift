@@ -258,6 +258,7 @@ public extension UIView {
     /// - Parameters:
     ///   - colors: Array of UIColor instances.
     ///   - direction: Direction of the gradient.
+    ///   - type: The type of the gradient.
     func smoothGradient(colors: [UIColor], direction: UIViewGradientDirection, type: UIViewGradientType = .linear) {
         UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIImage.screenScale())
         guard let context = UIGraphicsGetCurrentContext() else {
@@ -265,14 +266,11 @@ public extension UIView {
         }
         
         let colorSpace = CGColorSpaceCreateDeviceRGB()
-        var locations: [CGFloat] = [0.0, 1.0]
+        var locations: [CGFloat] = []
         var components: [CGFloat] = []
         
-        for (index, color) in colors.enumerated() {
-            if index != 0 && index != 1 {
-                locations.insert(CGFloat(Float(1) / Float(colors.count - 1)), at: 1)
-            }
-            
+        colors.enumerated().forEach { index, color in
+            locations.append(CGFloat(Float(1) / Float(colors.count - 1) * Float(index)))
             components.append(color.redComponent)
             components.append(color.greenComponent)
             components.append(color.blueComponent)
