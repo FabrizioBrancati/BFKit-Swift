@@ -22,31 +22,41 @@ jobs:
       language: generic
       dist: bionic
       env: SPM="YES"
-    - name: macOS / Xcode 11.4 / SwiftPM
+    - name: macOS / Xcode 12.1 / SwiftPM
       os: osx
       language: objective-c
-      osx_image: xcode11.4
+      osx_image: xcode12.1
       env: SPM="YES"
-    - name: macOS / Xcode 11.4 / iOS 13.1 / iPhone 11 Pro Max
+    - name: macOS / Xcode 12.1 / iOS 14.1 / iPhone 12 Pro Max
       os: osx
       language: objective-c
-      osx_image: xcode11.4
+      osx_image: xcode12.1
+      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=14.1,name=iPhone 12 Pro Max"            SCHEME="$IOS_SCHEME"     RUN_TESTS="YES" LINT="NO"  COVERAGE="YES" EXAMPLE="NO"
+    - name: macOS / Xcode 12.1 / iOS 13.1 / iPhone 11 Pro Max
+      os: osx
+      language: objective-c
+      osx_image: xcode12.1
       env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=13.1,name=iPhone 11 Pro Max"            SCHEME="$IOS_SCHEME"     RUN_TESTS="YES" LINT="NO"  COVERAGE="YES" EXAMPLE="NO"
-    - name: macOS / Xcode 11.4 / watchOS 6.0 / Apple Watch Series 5 - 44mm
+    - name: macOS / Xcode 12.1 / watchOS 7.0 / Apple Watch Series 6 - 44mm
       os: osx
       language: objective-c
-      osx_image: xcode11.4
+      osx_image: xcode12.1
+      env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=7.0,name=Apple Watch Series 6 - 44mm"   SCHEME="$WATCHOS_SCHEME" RUN_TESTS="NO"  LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
+    - name: macOS / Xcode 12.1 / watchOS 6.0 / Apple Watch Series 5 - 44mm
+      os: osx
+      language: objective-c
+      osx_image: xcode12.1
       env: PROJ="BFKit.xcodeproj"                DESTINATION="OS=6.0,name=Apple Watch Series 5 - 44mm"   SCHEME="$WATCHOS_SCHEME" RUN_TESTS="NO"  LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
-    - name: macOS / Xcode 11.4
+    - name: macOS / Xcode 12.1
       os: osx
       language: objective-c
-      osx_image: xcode11.4
+      osx_image: xcode12.1
       env: PROJ="BFKit.xcodeproj"                DESTINATION="arch=x86_64"                               SCHEME="$MACOS_SCHEME"   RUN_TESTS="YES" LINT="NO"  COVERAGE="NO"  EXAMPLE="NO"
-    - name: macOS / Xcode 11.4 / iOS 13.1 / iPhone 8 Plus / Demo
+    - name: macOS / Xcode 12.1 / iOS 14.1 / iPhone 8 Plus / Demo
       os: osx
       language: objective-c
-      osx_image: xcode11.4
-      env: PROJ="Example/BFKitExample.xcodeproj" DESTINATION="OS=13.1,name=iPhone 8 Plus"                SCHEME="$EXAMPLE_SCHEME" RUN_TESTS="NO"  LINT="NO"  COVERAGE="NO"  EXAMPLE="YES"
+      osx_image: xcode12.1
+      env: PROJ="Example/BFKitExample.xcodeproj" DESTINATION="OS=14.1,name=iPhone 8 Plus"                SCHEME="$EXAMPLE_SCHEME" RUN_TESTS="NO"  LINT="NO"  COVERAGE="NO"  EXAMPLE="YES"
 
 before_install:
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then
