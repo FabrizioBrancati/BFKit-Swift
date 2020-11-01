@@ -217,37 +217,33 @@ public enum BFBiometrics {
     /// - Returns: Returns the error as Result enum.
     @available(iOS 8.0, *)
     private static func handleErrorOS8(_ error: NSError) -> Result {
-        if #available(iOS 9.0, *) {
-            return handleErrorOS9(error)
-        } else {
-            switch error {
-            case LAError.authenticationFailed:
-                return .authenticationFailed
+        switch error {
+        case LAError.authenticationFailed:
+            return .authenticationFailed
 
-            case LAError.userCancel:
-                return .userCancel
+        case LAError.userCancel:
+            return .userCancel
 
-            case LAError.userFallback:
-                return .userFallback
+        case LAError.userFallback:
+            return .userFallback
 
-            case LAError.systemCancel:
-                return .systemCancel
+        case LAError.systemCancel:
+            return .systemCancel
 
-            case LAError.passcodeNotSet:
-                return .passcodeNotSet
+        case LAError.passcodeNotSet:
+            return .passcodeNotSet
 
-            case LAError.touchIDNotAvailable:
-                return .notAvailable
+        case LAError.touchIDNotAvailable:
+            return .notAvailable
 
-            case LAError.touchIDNotEnrolled:
-                return .notEnrolled
+        case LAError.touchIDNotEnrolled:
+            return .notEnrolled
 
-            case LAError.notInteractive:
-                return .notInteractive
+        case LAError.notInteractive:
+            return .notInteractive
 
-            default:
-                return .error
-            }
+        default:
+            return .error
         }
     }
 }
