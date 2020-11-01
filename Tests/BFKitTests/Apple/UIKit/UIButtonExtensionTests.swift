@@ -71,14 +71,14 @@ internal class UIButtonExtensionTests: XCTestCase {
     
     internal func testSetTitleFont() {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 320, height: 44), title: "Test")
-        button.setTitleFont(.helvetica, size: 18)
+        button.setTitleFont("HelveticaNeue", size: 18)
         
         XCTAssertEqual(button.frame.origin.x, 0)
         XCTAssertEqual(button.frame.origin.y, 0)
         XCTAssertEqual(button.frame.size.width, 320)
         XCTAssertEqual(button.frame.size.height, 44)
         XCTAssertEqual(button.title(for: UIControl.State.normal), "Test")
-        XCTAssertEqual(button.titleLabel?.font?.fontName, "Helvetica")
+        XCTAssertEqual(button.titleLabel?.font?.fontName, "HelveticaNeue")
         XCTAssertEqual(button.titleLabel?.font?.pointSize, 18)
     }
     

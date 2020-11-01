@@ -29,13 +29,7 @@ import Foundation
 import UIKit
 import XCTest
 
-internal class UIFontExtensionTests: XCTestCase {    
-    internal func testInitFontNameSize() {
-        let font = UIFont(fontName: .helveticaNeue, size: 20)
-        
-        XCTAssertEqual(font?.fontName, FontName.helveticaNeue.rawValue)
-    }
-    
+internal class UIFontExtensionTests: XCTestCase {
     internal func testAllFonts() {
         let fonts = UIFont.allFonts()
         
@@ -44,19 +38,13 @@ internal class UIFontExtensionTests: XCTestCase {
     }
     
     internal func testCalculateHeightWidthFontText() {
-        let height = UIFont.calculateHeight(width: 320, font: UIFont(fontName: .helvetica, size: 12)!, text: "This is a test\nOn multiple\nLines.\n\nBye.") // swiftlint:disable:this force_unwrapping
-        
-        XCTAssertGreaterThan(height, 0)
-    }
-    
-    internal func testCalculateHeightWidthFontSizeText() {
-        let height = UIFont.calculateHeight(width: 320, font: .helvetica, fontSize: 12, text: "This is a test\nOn multiple\nLines.\n\nBye.")
+      let height = UIFont.calculateHeight(width: 320, font: UIFont(name: "HelveticaNeue", size: 12)!, text: "This is a test\nOn multiple\nLines.\n\nBye.") // swiftlint:disable:this force_unwrapping
         
         XCTAssertGreaterThan(height, 0)
     }
     
     internal func testFontsNameFamily() {
-        let fonts = UIFont.fontNames(for: .helvetica)
+      let fonts = UIFont.fontNames(forFamilyName: "Helvetica")
         
         XCTAssertFalse(fonts.isEmpty)
     }

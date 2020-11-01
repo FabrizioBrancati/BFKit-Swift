@@ -76,7 +76,7 @@ public extension UITextView {
     /// - Parameters:
     ///   - frame: TextView frame.
     ///   - text: TextView text.
-    ///   - font: TextView text font name.
+    ///   - fontName: TextView text font name.
     ///   - fontSize: TextView text size.
     ///   - textColor: TextView text color.
     ///   - alignment: TextView text alignment.
@@ -91,7 +91,7 @@ public extension UITextView {
     ///   - enablesReturnKeyAutomatically: Set if the TextView has to automatically enables the return key.
     ///   - autocorrectionType: TextView auto correction type.
     ///   - delegate: TextView delegate. Set nil if it has no delegate.
-    convenience init(frame: CGRect, text: String, font: FontName, fontSize: CGFloat, textColor: UIColor, alignment: NSTextAlignment, dataDetectorTypes: UIDataDetectorTypes, editable: Bool, selectable: Bool, returnKeyType: UIReturnKeyType, keyboardType: UIKeyboardType, secure: Bool, autocapitalizationType: UITextAutocapitalizationType, keyboardAppearance: UIKeyboardAppearance, enablesReturnKeyAutomatically: Bool, autocorrectionType: UITextAutocorrectionType, delegate: UITextViewDelegate?) {
+    convenience init(frame: CGRect, text: String, fontName: String, fontSize: CGFloat, textColor: UIColor, alignment: NSTextAlignment, dataDetectorTypes: UIDataDetectorTypes, editable: Bool, selectable: Bool, returnKeyType: UIReturnKeyType, keyboardType: UIKeyboardType, secure: Bool, autocapitalizationType: UITextAutocapitalizationType, keyboardAppearance: UIKeyboardAppearance, enablesReturnKeyAutomatically: Bool, autocorrectionType: UITextAutocorrectionType, delegate: UITextViewDelegate?) {
         self.init(frame: frame)
         self.text = text
         self.autocorrectionType = autocorrectionType
@@ -103,7 +103,7 @@ public extension UITextView {
         self.enablesReturnKeyAutomatically = enablesReturnKeyAutomatically
         isSecureTextEntry = secure
         self.keyboardAppearance = keyboardAppearance
-        self.font = UIFont(fontName: font, size: fontSize)
+        self.font = UIFont(name: fontName, size: fontSize)
         self.delegate = delegate
         self.dataDetectorTypes = dataDetectorTypes
         isEditable = editable

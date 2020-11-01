@@ -92,9 +92,9 @@ public extension UIButton {
     /// - Parameters:
     ///   - fontName: Font name from the FontName enum declared in UIFontExtension.
     ///   - size:Font size.
-    func setTitleFont(_ fontName: FontName, size: CGFloat) {
+    func setTitleFont(_ fontName: String, size: CGFloat) {
         if let titleLabel = titleLabel {
-            titleLabel.font = UIFont(fontName: fontName, size: size)
+            titleLabel.font = UIFont(name: fontName, size: size)
         }
     }
     

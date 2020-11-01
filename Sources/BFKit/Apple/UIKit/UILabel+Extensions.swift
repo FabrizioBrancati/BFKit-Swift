@@ -59,15 +59,15 @@ public extension UILabel {
     /// - Parameters:
     ///   - frame: Label frame.
     ///   - text: Label text.
-    ///   - font: Label font name.
+    ///   - fontName: Label font name.
     ///   - size: Label font size.
     ///   - color: Label text color.
     ///   - alignment: Label text alignment.
     ///   - lines: Label text lines.
     ///   - shadowColor: Label text shadow color.
-    convenience init(frame: CGRect, text: String, font: FontName, fontSize: CGFloat, color: UIColor, alignment: NSTextAlignment, lines: Int, shadowColor: UIColor = UIColor.clear) {
+    convenience init(frame: CGRect, text: String, fontName: String, fontSize: CGFloat, color: UIColor, alignment: NSTextAlignment, lines: Int, shadowColor: UIColor = UIColor.clear) {
         self.init(frame: frame)
-        self.font = UIFont(fontName: font, size: fontSize)
+        self.font = UIFont(name: fontName, size: fontSize)
         self.text = text
         backgroundColor = UIColor.clear
         textColor = color
@@ -104,12 +104,12 @@ public extension UILabel {
     /// Sets a custom font from a character at an index to character at another index.
     ///
     /// - Parameters:
-    ///   - font: New font to be setted.
+    ///   - fontName: New font to be setted.
     ///   - fontSize: New font size.
     ///   - fromIndex: The start index.
     ///   - toIndex: The end index.
-    func setFont(_ font: FontName, fontSize: CGFloat, fromIndex: Int, toIndex: Int) {
-        guard let text = text, let font = UIFont(fontName: font, size: fontSize) else {
+    func setFont(_ fontName: String, fontSize: CGFloat, fromIndex: Int, toIndex: Int) {
+        guard let text = text, let font = UIFont(name: fontName, size: fontSize) else {
             return
         }
         

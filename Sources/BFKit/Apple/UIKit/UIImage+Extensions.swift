@@ -109,13 +109,13 @@ public extension UIImage {
     ///
     /// - Parameters:
     ///   - text: Text.
-    ///   - font: Text font name.
+    ///   - fontName: Text font name.
     ///   - fontSize: Text font size.
     ///   - imageSize: Image size.
-    convenience init?(text: String, font: FontName, fontSize: CGFloat, imageSize: CGSize) {
+    convenience init?(text: String, fontName: String, fontSize: CGFloat, imageSize: CGSize) {
         UIGraphicsBeginImageContextWithOptions(imageSize, false, UIImage.screenScale())
         
-        text.draw(at: CGPoint(x: 0.0, y: 0.0), withAttributes: [NSAttributedString.Key.font: UIFont(fontName: font, size: fontSize) as Any])
+        text.draw(at: CGPoint(x: 0.0, y: 0.0), withAttributes: [NSAttributedString.Key.font: UIFont(name: fontName, size: fontSize) as Any])
         
         guard let image: UIImage = UIGraphicsGetImageFromCurrentImageContext(), let cgImage = image.cgImage else {
             UIGraphicsEndImageContext()
@@ -135,12 +135,12 @@ public extension UIImage {
     ///   - fontSize: Text font size.
     ///   - imageSize: Image size.
     ///   - backgroundColor: Image background color.
-    convenience init?(maskedText: String, font: FontName, fontSize: CGFloat, imageSize: CGSize, backgroundColor: UIColor) {
-        guard let fontName = UIFont(fontName: font, size: fontSize) else {
+    convenience init?(maskedText: String, fontName: String, fontSize: CGFloat, imageSize: CGSize, backgroundColor: UIColor) {
+        guard let font = UIFont(name: fontName, size: fontSize) else {
             return nil
         }
         
-        let textAttributes = [NSAttributedString.Key.font: fontName]
+        let textAttributes = [NSAttributedString.Key.font: font]
         let textSize = maskedText.size(withAttributes: textAttributes)
         
         UIGraphicsBeginImageContextWithOptions(imageSize, false, UIImage.screenScale())
